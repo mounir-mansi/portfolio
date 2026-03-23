@@ -1,0 +1,125 @@
+.connexion-page {
+  min-height: 100svh;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+
+.connexion-box {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  padding: 2.5em 2em;
+  width: 100%;
+  max-width: 400px;
+}
+
+.connexion-box h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.2em;
+}
+
+.connexion-sub {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1.8em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  margin-bottom: 1.2em;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-group input {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.7em 1em;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--cream);
+  width: 100%;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.pwd-wrapper {
+  position: relative;
+}
+
+.pwd-wrapper input {
+  padding-right: 3em;
+}
+
+.toggle-pwd {
+  position: absolute;
+  right: 0.8em;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.connexion-error {
+  background: #fef2f2;
+  color: #dc2626;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.6em 1em;
+  border-radius: 6px;
+  margin-bottom: 1em;
+}
+
+.btn-connexion {
+  width: 100%;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 0.8em;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 1.2em;
+}
+
+.btn-connexion:hover:not(:disabled) {
+  background: var(--accent-light);
+}
+
+.btn-connexion:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
