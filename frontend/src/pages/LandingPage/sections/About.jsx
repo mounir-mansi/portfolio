@@ -39,7 +39,7 @@ export default function About({ section }) {
         </div>
         <div className="about-photo">
           {img ? (
-            <img src={img} alt="Mounir Mansi" />
+            <img src={img} alt="Mounir" />
           ) : (
             <div className="about-photo-placeholder">
               <i className="fa-solid fa-user" />

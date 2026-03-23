@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <a href="/#home" className="navbar-logo">
-        <span className="logo-name">Mounir Mansi</span>
+        <span className="logo-name">Mounir</span>
         <span className="logo-sub">Développeur Fullstack</span>
       </a>
 

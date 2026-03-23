@@ -32,7 +32,7 @@ export default function AdminScreen() {
   return (
     <div className="admin">
       <header className="admin-header">
-        <a href="/" className="admin-logo">Mounir Mansi</a>
+        <a href="/" className="admin-logo">Mounir</a>
         <div className="admin-header-right">
           <a href="/" className="admin-link-site">← Voir le site</a>
           <button className="admin-logout" onClick={handleLogout}>Déconnexion</button>

@@ -12,7 +12,7 @@ export default function Hero({ section }) {
       <div className="hero-overlay" />
       <div className="hero-content">
         <p className="hero-greeting">Bonjour, je suis</p>
-        <h1 className="hero-title">Mounir Mansi</h1>
+        <h1 className="hero-title">Mounir</h1>
         <p className="hero-subtitle">Développeur Fullstack — React &amp; Node.js</p>
         <p className="hero-desc">
           Je conçois et déploie des applications web modernes, de la base de données au déploiement en production.
