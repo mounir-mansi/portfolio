@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { apiFetch } from "../../../utils/api";
 import "./AdminTab.css";
 
-const EMPTY = { title: "", description: "", stack: "", liveUrl: "", githubUrl: "", featured: false };
+const EMPTY = {
+  title: "", description: "", longDescription: "", highlights: "",
+  stack: "", liveUrl: "", githubUrl: "", featured: false, order: 0,
+};
 
 export default function AdminProjects() {
   const [projects, setProjects] = useState([]);
@@ -25,7 +28,17 @@ export default function AdminProjects() {
 
   const startEdit = (p) => {
     setEditId(p.id);
-    setForm({ title: p.title, description: p.description, stack: p.stack.join(", "), liveUrl: p.liveUrl || "", githubUrl: p.githubUrl || "", featured: p.featured });
+    setForm({
+      title: p.title,
+      description: p.description,
+      longDescription: p.longDescription || "",
+      highlights: p.highlights?.join("\n") || "",
+      stack: p.stack.join(", "),
+      liveUrl: p.liveUrl || "",
+      githubUrl: p.githubUrl || "",
+      featured: p.featured,
+      order: p.order,
+    });
     setImage(null);
     setShowForm(true);
   };
@@ -43,11 +56,7 @@ export default function AdminProjects() {
       const url = editId ? `/admin/projects/${editId}` : "/admin/projects";
       const method = editId ? "PUT" : "POST";
 
-      const res = await fetch(`${import.meta.env.VITE_API_URL}${url}`, {
-        method,
-        credentials: "include",
-        body: fd,
-      });
+      const res = await fetch(url, { method, credentials: "include", body: fd });
       if (!res.ok) throw new Error();
       resetForm();
       load();
@@ -78,6 +87,7 @@ export default function AdminProjects() {
       {showForm && (
         <form className="admin-form" onSubmit={handleSubmit}>
           <h3>{editId ? "Modifier le projet" : "Nouveau projet"}</h3>
+
           <div className="form-row">
             <div className="form-group">
               <label>Titre *</label>
@@ -88,10 +98,24 @@ export default function AdminProjects() {
               <input name="stack" value={form.stack} onChange={handleChange} placeholder="React, Node, PostgreSQL" />
             </div>
           </div>
+
           <div className="form-group">
-            <label>Description *</label>
-            <textarea name="description" rows={3} value={form.description} onChange={handleChange} required />
+            <label>Description courte * <span className="label-hint">(affiché sur la carte)</span></label>
+            <textarea name="description" rows={2} value={form.description} onChange={handleChange} required />
           </div>
+
+          <div className="form-group">
+            <label>Description complète <span className="label-hint">(page dédiée du projet)</span></label>
+            <textarea name="longDescription" rows={5} value={form.longDescription} onChange={handleChange}
+              placeholder="Décris le projet en détail : contexte, objectif, défis..." />
+          </div>
+
+          <div className="form-group">
+            <label>Points clés <span className="label-hint">(un par ligne)</span></label>
+            <textarea name="highlights" rows={4} value={form.highlights} onChange={handleChange}
+              placeholder={"Authentification JWT sécurisée\nDéploiement sur VPS avec Nginx\nGalerie photos Cloudflare R2"} />
+          </div>
+
           <div className="form-row">
             <div className="form-group">
               <label>URL Live</label>
@@ -102,16 +126,22 @@ export default function AdminProjects() {
               <input name="githubUrl" value={form.githubUrl} onChange={handleChange} type="url" />
             </div>
           </div>
+
           <div className="form-row">
             <div className="form-group form-check">
               <input type="checkbox" id="featured" name="featured" checked={form.featured} onChange={handleChange} />
-              <label htmlFor="featured">Projet mis en avant</label>
+              <label htmlFor="featured">Mis en avant</label>
+            </div>
+            <div className="form-group">
+              <label>Ordre</label>
+              <input name="order" type="number" value={form.order} onChange={handleChange} style={{ width: "80px" }} />
             </div>
             <div className="form-group">
               <label>Image (JPEG/PNG/WebP, max 5 Mo)</label>
               <input type="file" accept="image/jpeg,image/png,image/webp" onChange={(e) => setImage(e.target.files[0])} />
             </div>
           </div>
+
           <div className="form-actions">
             <button type="submit" className="btn-primary-sm" disabled={saving}>{saving ? "Sauvegarde..." : "Sauvegarder"}</button>
             <button type="button" className="btn-sm" onClick={resetForm}>Annuler</button>
@@ -124,8 +154,11 @@ export default function AdminProjects() {
           <div key={p.id} className={`project-admin-card ${p.featured ? "featured" : ""}`}>
             {p.imageUrl && <img src={p.imageUrl} alt={p.title} className="project-thumb" />}
             <div className="project-admin-body">
-              <strong>{p.title}</strong>
-              {p.featured && <span className="tag-featured">Mis en avant</span>}
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5em", flexWrap: "wrap" }}>
+                <strong>{p.title}</strong>
+                {p.featured && <span className="tag-featured">Mis en avant</span>}
+                {p.longDescription && <span className="tag-detail"><i className="fa-solid fa-file-lines" /> Détail</span>}
+              </div>
               <p>{p.description}</p>
               {p.stack?.length > 0 && (
                 <div className="stack-tags">

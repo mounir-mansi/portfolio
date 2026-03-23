@@ -81,6 +81,9 @@
   border-radius: 14px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+  cursor: pointer;
+  color: inherit;
 }
 
 .project-card:hover {
@@ -95,6 +98,36 @@
 
 .project-img {
   position: relative;
+  overflow: hidden;
+}
+
+.card-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(59,130,246,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.card-hover-overlay span {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.project-card:hover .card-hover-overlay {
+  opacity: 1;
+}
+
+.project-card:hover .project-img img {
+  transform: scale(1.04);
+  transition: transform 0.3s;
 }
 
 .project-img img {
@@ -190,10 +223,11 @@
   color: var(--text);
 }
 
-.btn-link-ghost:hover {
-  background: var(--cream);
-  border-color: var(--accent);
+.btn-link-detail {
+  background: transparent;
+  border: 1.5px solid var(--accent);
   color: var(--accent);
+  margin-left: auto;
 }
 
 @media (max-width: 768px) {

@@ -30,18 +30,20 @@ model ContactMessage {
 }
 
 model Project {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String
-  stack       String[]
-  imageKey    String?
-  imageUrl    String?
-  liveUrl     String?
-  githubUrl   String?
-  featured    Boolean  @default(false)
-  order       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id              Int      @id @default(autoincrement())
+  title           String
+  description     String
+  longDescription String?
+  highlights      String[]
+  stack           String[]
+  imageKey        String?
+  imageUrl        String?
+  liveUrl         String?
+  githubUrl       String?
+  featured        Boolean  @default(false)
+  order           Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model Skill {

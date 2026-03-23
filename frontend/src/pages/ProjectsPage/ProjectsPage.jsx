@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import "./ProjectsPage.css";
@@ -65,7 +66,7 @@ export default function ProjectsPage() {
 
 function ProjectCard({ project: p, featured }) {
   return (
-    <article className={`project-card ${featured ? "featured" : ""}`}>
+    <Link to={`/projets/${p.id}`} className={`project-card ${featured ? "featured" : ""}`}>
       <div className="project-img">
         {p.imageUrl ? (
           <img src={p.imageUrl} alt={p.title} />
@@ -75,6 +76,9 @@ function ProjectCard({ project: p, featured }) {
           </div>
         )}
         {featured && <span className="featured-badge"><i className="fa-solid fa-star" /> Mis en avant</span>}
+        <div className="card-hover-overlay">
+          <span><i className="fa-solid fa-arrow-right" /> Voir le projet</span>
+        </div>
       </div>
       <div className="project-body">
         <h3>{p.title}</h3>
@@ -86,17 +90,20 @@ function ProjectCard({ project: p, featured }) {
         )}
         <div className="project-links">
           {p.liveUrl && (
-            <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-link">
+            <span className="btn-link">
               <i className="fa-solid fa-arrow-up-right-from-square" /> Voir le site
-            </a>
+            </span>
           )}
           {p.githubUrl && (
-            <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-link btn-link-ghost">
+            <span className="btn-link btn-link-ghost">
               <i className="fa-brands fa-github" /> Code
-            </a>
+            </span>
           )}
+          <span className="btn-link btn-link-detail">
+            <i className="fa-solid fa-circle-info" /> Détails
+          </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

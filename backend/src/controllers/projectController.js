@@ -1,6 +1,18 @@
 const prisma = require("../lib/prisma");
 const { deleteS3Object } = require("../lib/deleteS3Object");
 
+function parseStack(stack, fallback = []) {
+  if (Array.isArray(stack)) return stack;
+  if (stack) return stack.split(",").map((s) => s.trim()).filter(Boolean);
+  return fallback;
+}
+
+function parseHighlights(highlights, fallback = []) {
+  if (Array.isArray(highlights)) return highlights;
+  if (highlights) return highlights.split("\n").map((s) => s.trim()).filter(Boolean);
+  return fallback;
+}
+
 async function getProjects(req, res) {
   try {
     const projects = await prisma.project.findMany({
@@ -12,22 +24,33 @@ async function getProjects(req, res) {
   }
 }
 
+async function getProjectById(req, res) {
+  const id = Number(req.params.id);
+  try {
+    const project = await prisma.project.findUnique({ where: { id } });
+    if (!project) return res.status(404).json({ error: "Projet introuvable" });
+    res.json(project);
+  } catch {
+    res.status(500).json({ error: "Erreur serveur" });
+  }
+}
+
 async function createProject(req, res) {
-  const { title, description, stack, liveUrl, githubUrl, featured, order } = req.body;
+  const { title, description, longDescription, highlights, stack, liveUrl, githubUrl, featured, order } = req.body;
   if (!title?.trim() || !description?.trim())
     return res.status(400).json({ error: "Titre et description requis" });
 
   const imageKey = req.file?.key || null;
-  const imageUrl = imageKey
-    ? `${process.env.R2_PUBLIC_URL}/${imageKey}`
-    : null;
+  const imageUrl = imageKey ? `${process.env.R2_PUBLIC_URL}/${imageKey}` : null;
 
   try {
     const project = await prisma.project.create({
       data: {
         title: title.trim(),
         description: description.trim(),
-        stack: Array.isArray(stack) ? stack : stack ? stack.split(",").map((s) => s.trim()) : [],
+        longDescription: longDescription?.trim() || null,
+        highlights: parseHighlights(highlights),
+        stack: parseStack(stack),
         liveUrl: liveUrl || null,
         githubUrl: githubUrl || null,
         featured: featured === "true" || featured === true,
@@ -45,7 +68,7 @@ async function createProject(req, res) {
 
 async function updateProject(req, res) {
   const id = Number(req.params.id);
-  const { title, description, stack, liveUrl, githubUrl, featured, order } = req.body;
+  const { title, description, longDescription, highlights, stack, liveUrl, githubUrl, featured, order } = req.body;
 
   try {
     const existing = await prisma.project.findUnique({ where: { id } });
@@ -55,10 +78,7 @@ async function updateProject(req, res) {
     let imageUrl = existing.imageUrl;
 
     if (req.file) {
-      // Supprimer ancienne image si elle existe
-      if (existing.imageKey) {
-        await deleteS3Object(existing.imageKey).catch(console.error);
-      }
+      if (existing.imageKey) await deleteS3Object(existing.imageKey).catch(console.error);
       imageKey = req.file.key;
       imageUrl = `${process.env.R2_PUBLIC_URL}/${imageKey}`;
     }
@@ -68,7 +88,9 @@ async function updateProject(req, res) {
       data: {
         title: title?.trim() || existing.title,
         description: description?.trim() || existing.description,
-        stack: Array.isArray(stack) ? stack : stack ? stack.split(",").map((s) => s.trim()) : existing.stack,
+        longDescription: longDescription !== undefined ? longDescription?.trim() || null : existing.longDescription,
+        highlights: highlights !== undefined ? parseHighlights(highlights) : existing.highlights,
+        stack: stack !== undefined ? parseStack(stack, existing.stack) : existing.stack,
         liveUrl: liveUrl ?? existing.liveUrl,
         githubUrl: githubUrl ?? existing.githubUrl,
         featured: featured !== undefined ? featured === "true" || featured === true : existing.featured,
@@ -89,11 +111,7 @@ async function deleteProject(req, res) {
   try {
     const project = await prisma.project.findUnique({ where: { id } });
     if (!project) return res.status(404).json({ error: "Projet introuvable" });
-
-    if (project.imageKey) {
-      await deleteS3Object(project.imageKey).catch(console.error);
-    }
-
+    if (project.imageKey) await deleteS3Object(project.imageKey).catch(console.error);
     await prisma.project.delete({ where: { id } });
     res.json({ ok: true });
   } catch {
@@ -101,4 +119,4 @@ async function deleteProject(req, res) {
   }
 }
 
-module.exports = { getProjects, createProject, updateProject, deleteProject };
+module.exports = { getProjects, getProjectById, createProject, updateProject, deleteProject };
