@@ -59,6 +59,12 @@
   color: var(--white);
 }
 
+.nav-links li a.active {
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  font-weight: 700;
+}
+
 .btn-cta {
   background: var(--accent) !important;
   color: var(--white) !important;

@@ -1,0 +1,102 @@
+.skills-page {
+  min-height: calc(100svh - 60px);
+  background: var(--cream);
+}
+
+.skills-page-header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 4em 4em 3em;
+  text-align: center;
+}
+
+.section-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  margin-bottom: 0.6em;
+}
+
+.skills-page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 0.8em;
+}
+
+.skills-intro {
+  color: rgba(255,255,255,0.72);
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.skills-loading {
+  text-align: center;
+  color: var(--text-light);
+  padding: 4em;
+}
+
+.skills-page-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.cat-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-bottom: 1.2em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1em;
+}
+
+.skill-card {
+  background: var(--white);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.4em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  cursor: default;
+}
+
+.skill-card i {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(59,130,246,0.13);
+  border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .skills-page-header { padding: 3em 1.5em 2em; }
+  .skills-page-header h1 { font-size: 1.8rem; }
+  .skills-page-body { padding: 2.5em 1.5em; gap: 2em; }
+  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+}

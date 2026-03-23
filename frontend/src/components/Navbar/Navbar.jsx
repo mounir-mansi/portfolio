@@ -1,26 +1,27 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../utils/useAuth";
 import "./Navbar.css";
 
 const NAV_LINKS = [
-  { href: "/#home", label: "Accueil" },
-  { href: "/#about", label: "À propos" },
-  { href: "/#skills", label: "Compétences" },
-  { href: "/#projects", label: "Projets" },
-  { href: "/#contact", label: "Contact" },
+  { to: "/", label: "Accueil" },
+  { to: "/a-propos", label: "À propos" },
+  { to: "/competences", label: "Compétences" },
+  { to: "/projets", label: "Projets" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="navbar">
-      <a href="/#home" className="navbar-logo">
+      <Link to="/" className="navbar-logo" onClick={() => setOpen(false)}>
         <span className="logo-name">Mounir</span>
         <span className="logo-sub">Développeur Fullstack</span>
-      </a>
+      </Link>
 
       <button
         className="burger"
@@ -32,10 +33,14 @@ export default function Navbar() {
 
       <ul className={`nav-links ${open ? "open" : ""}`}>
         {NAV_LINKS.map((l) => (
-          <li key={l.href}>
-            <a href={l.href} onClick={() => setOpen(false)}>
+          <li key={l.to}>
+            <Link
+              to={l.to}
+              className={location.pathname === l.to ? "active" : ""}
+              onClick={() => setOpen(false)}
+            >
               {l.label}
-            </a>
+            </Link>
           </li>
         ))}
         {user && (
@@ -53,9 +58,9 @@ export default function Navbar() {
           </>
         )}
         <li>
-          <a href="/#contact" className="btn-cta" onClick={() => setOpen(false)}>
+          <Link to="/contact" className="btn-cta" onClick={() => setOpen(false)}>
             <i className="fa-solid fa-envelope" /> Me contacter
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
