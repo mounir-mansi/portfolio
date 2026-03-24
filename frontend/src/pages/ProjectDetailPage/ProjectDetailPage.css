@@ -318,4 +318,7 @@
 
 @media (max-width: 600px) {
   .detail-header-content h1 { font-size: 1.6rem; }
+  .detail-footer-nav { flex-wrap: nowrap; }
+  .detail-footer-nav .detail-btn-outline,
+  .detail-footer-nav .detail-btn-primary { flex: 1; justify-content: center; white-space: nowrap; }
 }
