@@ -47,24 +47,6 @@ export default function HomePage() {
               <i className="fa-brands fa-github" /> GitHub
             </a>
           </div>
-          <div className="home-nav-cards">
-            <Link to="/a-propos" className="nav-card">
-              <i className="fa-solid fa-user" />
-              <span>À propos</span>
-            </Link>
-            <Link to="/competences" className="nav-card">
-              <i className="fa-solid fa-code" />
-              <span>Compétences</span>
-            </Link>
-            <Link to="/projets" className="nav-card">
-              <i className="fa-solid fa-briefcase" />
-              <span>Projets</span>
-            </Link>
-            <Link to="/contact" className="nav-card">
-              <i className="fa-solid fa-envelope" />
-              <span>Contact</span>
-            </Link>
-          </div>
         </div>
         <div className="home-logo-side">
           <img src="/logo-transparent.png" alt="ManDev Web" className="home-logo-img" />
