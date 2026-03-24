@@ -35,7 +35,6 @@ export default function ContactPage() {
     <Layout>
       <div className="contact-page">
         <div className="contact-page-header">
-          <p className="section-tag">Contact</p>
           <h1>Travaillons ensemble</h1>
           <p className="contact-intro">
             Un projet web, une question ou simplement envie d'échanger&nbsp;? Je suis disponible.
@@ -43,36 +42,6 @@ export default function ContactPage() {
         </div>
 
         <div className="contact-page-body">
-          <div className="contact-info">
-            <div className="contact-info-card">
-              <i className="fa-brands fa-github" />
-              <div>
-                <strong>GitHub</strong>
-                <a href="https://github.com/mounir-mansi" target="_blank" rel="noopener noreferrer">
-                  github.com/mounir-mansi
-                </a>
-              </div>
-            </div>
-            <div className="contact-info-card">
-              <i className="fa-solid fa-envelope" />
-              <div>
-                <strong>Email</strong>
-                <span>Via le formulaire ci-contre</span>
-              </div>
-            </div>
-            <div className="contact-info-card">
-              <i className="fa-solid fa-location-dot" />
-              <div>
-                <strong>Localisation</strong>
-                <span>France</span>
-              </div>
-            </div>
-            <div className="contact-availability">
-              <span className="availability-dot" />
-              Disponible pour de nouveaux projets
-            </div>
-          </div>
-
           <form className="contact-form" onSubmit={handleSubmit} noValidate>
             <div className="form-group">
               <label htmlFor="name">Nom</label>

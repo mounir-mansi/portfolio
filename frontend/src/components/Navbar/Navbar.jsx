@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { to: "/a-propos", label: "À propos" },
   { to: "/competences", label: "Compétences" },
   { to: "/projets", label: "Projets" },
-  { to: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -19,8 +18,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-logo" onClick={() => setOpen(false)}>
-        <span className="logo-name">Mounir</span>
-        <span className="logo-sub">Développeur Fullstack</span>
+        <img src="/logo-transparent.png" alt="ManDev Web" className="navbar-logo-img" />
       </Link>
 
       <button

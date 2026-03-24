@@ -23,35 +23,28 @@ export default function ProjectsPage() {
     <Layout>
       <div className="projects-page">
         <div className="projects-page-header">
-          <p className="section-tag">Projets</p>
           <h1>Mes réalisations</h1>
           <p className="projects-intro">
-            Des projets fullstack conçus et déployés de A à Z — du backend sécurisé à l'interface utilisateur.
+            Des applications web complètes — de la base de données à l'interface, déployées en production.
           </p>
         </div>
 
         {loading ? (
-          <p className="projects-loading">Chargement...</p>
+          <div className="projects-page-body">
+            <div className="skeleton-hero" />
+            <div className="projects-grid">
+              <div className="skeleton-card" />
+              <div className="skeleton-card" />
+            </div>
+          </div>
         ) : (
           <div className="projects-page-body">
-            {featured.length > 0 && (
-              <>
-                <h2 className="projects-section-title">
-                  <i className="fa-solid fa-star" /> Mis en avant
-                </h2>
-                <div className="projects-featured-grid">
-                  {featured.map((p) => <ProjectCard key={p.id} project={p} featured />)}
-                </div>
-              </>
-            )}
+            {featured.map((p) => <ProjectCardHero key={p.id} project={p} />)}
 
             {rest.length > 0 && (
-              <>
-                <h2 className="projects-section-title">Autres projets</h2>
-                <div className="projects-grid">
-                  {rest.map((p) => <ProjectCard key={p.id} project={p} />)}
-                </div>
-              </>
+              <div className="projects-grid">
+                {rest.map((p) => <ProjectCard key={p.id} project={p} />)}
+              </div>
             )}
 
             {projects.length === 0 && (
@@ -61,6 +54,29 @@ export default function ProjectsPage() {
         )}
       </div>
     </Layout>
+  );
+}
+
+function ProjectCardHero({ project: p }) {
+  return (
+    <Link to={`/projets/${p.id}`} className="project-hero-card"
+      style={p.imageUrl ? { backgroundImage: `url(${p.imageUrl})` } : {}}>
+      <div className="project-hero-overlay" />
+      <div className="project-hero-content">
+        <div className="project-hero-top">
+          {p.stack?.length > 0 && (
+            <div className="project-hero-stack">
+              {p.stack.slice(0, 5).map((t, i) => <span key={i} className="hero-stack-tag">{t}</span>)}
+            </div>
+          )}
+        </div>
+        <div className="project-hero-bottom">
+          <h2>{p.title}</h2>
+          <p>{p.description}</p>
+          <span className="hero-cta"><i className="fa-solid fa-arrow-right" /> Voir le projet</span>
+        </div>
+      </div>
+    </Link>
   );
 }
 
@@ -75,7 +91,6 @@ function ProjectCard({ project: p, featured }) {
             <i className="fa-solid fa-code" />
           </div>
         )}
-        {featured && <span className="featured-badge"><i className="fa-solid fa-star" /> Mis en avant</span>}
         <div className="card-hover-overlay">
           <span><i className="fa-solid fa-arrow-right" /> Voir le projet</span>
         </div>

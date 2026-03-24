@@ -23,12 +23,17 @@ export default function HomePage() {
         style={bg ? { backgroundImage: `url(${bg})` } : {}}
       >
         <div className="home-overlay" />
+        <div className="home-hero-inner">
         <div className="home-content">
           <p className="home-greeting">Bonjour, je suis</p>
           <h1 className="home-title">Mounir</h1>
-          <p className="home-subtitle">Développeur Fullstack — React &amp; Node.js</p>
+          <div className="home-badges">
+            <span className="home-badge"><i className="fa-solid fa-code" /> Développeur Fullstack</span>
+            <span className="home-badge home-badge-accent"><i className="fa-solid fa-briefcase" /> Freelance</span>
+          </div>
+          <p className="home-subtitle">React &amp; Node.js — de la DB au déploiement</p>
           <p className="home-desc">
-            Je conçois et déploie des applications web modernes, de la base de données au déploiement en production.
+            Disponible pour vos projets web : sites vitrines, applications sur mesure, APIs. Je gère tout, du backend sécurisé à la mise en production sur VPS.
           </p>
           <div className="home-ctas">
             <Link to="/projets" className="btn-primary">Voir mes projets</Link>
@@ -60,6 +65,10 @@ export default function HomePage() {
               <span>Contact</span>
             </Link>
           </div>
+        </div>
+        <div className="home-logo-side">
+          <img src="/logo-transparent.png" alt="ManDev Web" className="home-logo-img" />
+        </div>
         </div>
       </section>
     </Layout>

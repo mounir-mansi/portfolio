@@ -1,14 +1,18 @@
+/* === Palette ManDev Web — navy profond + bleu-violet === */
 :root {
-  --primary: #0f172a;
-  --primary-dark: #1e293b;
-  --accent: #3b82f6;
-  --accent-light: #60a5fa;
-  --navy: #0f172a;
-  --gold-light: #fbbf24;
+  --primary: #0d1228;
+  --primary-dark: #080d1a;
+  --accent: #0ea5e9;
+  --accent-light: #38bdf8;
+  --navy: #0d1228;
+  --gold-light: #38bdf8;
   --cream: #f8fafc;
-  --text: #1e293b;
+  --text: #0d1228;
   --text-light: #64748b;
   --white: #ffffff;
+  --hero-from: #0d1228;
+  --hero-mid: #0f2044;
+  --hero-to: rgba(14, 165, 233, 0.2);
 
   font-family: "Work Sans", system-ui, sans-serif;
   font-size: 16px;

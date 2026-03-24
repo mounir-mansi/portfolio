@@ -4,44 +4,29 @@
 }
 
 .contact-page-header {
-  background: var(--primary);
-  color: var(--white);
-  padding: 4em 4em 3em;
-  text-align: center;
-}
-
-.section-tag {
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--gold-light);
-  margin-bottom: 0.6em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em 4em 1em;
 }
 
 .contact-page-header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 900;
-  color: var(--white);
-  margin-bottom: 0.8em;
+  color: var(--primary);
+  margin-bottom: 0.4em;
 }
 
 .contact-intro {
-  color: rgba(255,255,255,0.72);
+  color: var(--text-light);
   font-size: 1rem;
   max-width: 480px;
-  margin: 0 auto;
   line-height: 1.7;
 }
 
 .contact-page-body {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 4em;
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 3em;
-  align-items: start;
+  padding: 2em 4em 4em;
 }
 
 .contact-info {

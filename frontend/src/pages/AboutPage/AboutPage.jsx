@@ -14,32 +14,28 @@ export default function AboutPage() {
       .catch(() => {});
   }, []);
 
-  const img = section?.imageUrl || null;
   const text = section?.text || null;
 
   return (
     <Layout>
       <div className="about-page">
         <div className="about-page-inner">
-          <div className="about-page-text">
-            <p className="section-tag">À propos</p>
+          <div className="about-left">
             <h1>Passionné par le web,<br />de bout en bout</h1>
+
             <div className="about-page-body">
               {text ? (
                 <p>{text}</p>
               ) : (
                 <>
                   <p>
-                    Développeur fullstack basé en France, je crée des applications web modernes avec
-                    une attention particulière à la performance, la sécurité et l'expérience utilisateur.
+                    Développeur fullstack freelance, je conçois et livre des applications web complètes —
+                    du serveur jusqu'à l'interface — avec une attention particulière à la performance,
+                    la sécurité et l'expérience utilisateur.
                   </p>
                   <p>
-                    De la conception de l'API à l'interface utilisateur, en passant par le déploiement
-                    sur VPS — je prends en charge l'ensemble du cycle de vie d'un projet.
-                  </p>
-                  <p>
-                    J'aime les projets concrets&#x202F;: sites vitrines pour des PME locales,
-                    applications métier, ou outils sur mesure.
+                    Je travaille sur des projets variés&#x202F;: plateformes métier, applications interactives,
+                    outils sur mesure, sites vitrines. Disponible à distance, je m'adapte aux besoins de chaque client.
                   </p>
                 </>
               )}
@@ -47,27 +43,68 @@ export default function AboutPage() {
 
             <div className="about-badges">
               <span className="badge">React</span>
+              <span className="badge">Next.js</span>
+              <span className="badge">TypeScript</span>
               <span className="badge">Node.js</span>
+              <span className="badge">Express</span>
               <span className="badge">PostgreSQL</span>
+              <span className="badge">MySQL</span>
+              <span className="badge">Prisma</span>
               <span className="badge">Linux / VPS</span>
               <span className="badge">Nginx</span>
               <span className="badge">Cloudflare</span>
+              <span className="badge">Git</span>
+              <span className="badge">Vite</span>
+              <span className="badge">REST API</span>
+              <span className="badge">Tailwind</span>
+              <span className="badge">JWT</span>
+              <span className="badge">PM2</span>
             </div>
 
             <div className="about-ctas">
               <Link to="/projets" className="btn-about-primary">Voir mes projets</Link>
               <Link to="/contact" className="btn-about-outline">Me contacter</Link>
             </div>
-          </div>
 
-          <div className="about-page-photo">
-            {img ? (
-              <img src={img} alt="Mounir" />
-            ) : (
-              <div className="about-photo-placeholder">
-                <i className="fa-solid fa-user" />
+            {/* Parcours */}
+            <div className="about-timeline">
+              <h2 className="timeline-title"><i className="fa-solid fa-route" /> Parcours</h2>
+              <div className="timeline">
+
+                <div className="timeline-item">
+                  <div className="timeline-dot" />
+                  <div className="timeline-content">
+                    <span className="timeline-label">Simplon</span>
+                    <p>Diplôme Développeur Web &amp; Web Mobile — ma première immersion dans le monde du code. C'est là que tout a commencé&#x202F;: HTML, CSS, JavaScript, les bases du backend.</p>
+                  </div>
+                </div>
+
+                <div className="timeline-item">
+                  <div className="timeline-dot timeline-dot-sm" />
+                  <div className="timeline-content">
+                    <span className="timeline-label">Initiation Python</span>
+                    <p>Une formation courte d'un mois pour explorer un autre paradigme — logique, scripting, automatisation. Une parenthèse qui a élargi ma façon de penser le code.</p>
+                  </div>
+                </div>
+
+                <div className="timeline-item">
+                  <div className="timeline-dot" />
+                  <div className="timeline-content">
+                    <span className="timeline-label">Wild Code School</span>
+                    <p>Formation Fullstack JavaScript intensive — React, Node.js, bases de données, projets en équipe. Le niveau monte, les projets deviennent réels.</p>
+                  </div>
+                </div>
+
+                <div className="timeline-item">
+                  <div className="timeline-dot timeline-dot-accent" />
+                  <div className="timeline-content">
+                    <span className="timeline-label">Autodidacte — en continu</span>
+                    <p>Après les formations, j'ai continué seul&#x202F;: déployer sur VPS, sécuriser des serveurs, construire des projets de A à Z. Essayer, échouer, comprendre, recommencer. C'est là que j'ai vraiment appris.</p>
+                  </div>
+                </div>
+
               </div>
-            )}
+            </div>
           </div>
         </div>
 

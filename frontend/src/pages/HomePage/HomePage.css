@@ -1,24 +1,46 @@
 .home-hero {
-  min-height: calc(100svh - 60px);
+  height: calc(100svh - 52px);
   background-color: var(--primary);
   background-size: cover;
   background-position: center;
   position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .home-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.72) 100%);
+  background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-mid, #1a1f4e) 55%, var(--hero-to) 100%);
+}
+
+.home-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 3em 5em 3em 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2em;
 }
 
 .home-content {
-  position: relative;
-  z-index: 1;
-  max-width: 680px;
-  padding: 3em 5em;
+  max-width: 620px;
+}
+
+.home-logo-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.home-logo-img {
+  width: 520px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 50px rgba(14, 165, 233, 0.4));
 }
 
 .home-greeting {
@@ -37,8 +59,34 @@
   margin-bottom: 0.15em;
 }
 
+.home-badges {
+  display: flex;
+  gap: 0.6em;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+
+.home-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35em 0.9em;
+  border-radius: 999px;
+}
+
+.home-badge-accent {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  color: #0d1228;
+}
+
 .home-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--accent-light);
   margin-bottom: 1em;
@@ -122,8 +170,14 @@
   color: var(--white);
 }
 
+@media (max-width: 1024px) {
+  .home-logo-img { width: 320px; }
+  .home-hero-inner { gap: 2em; padding: 3em 3em; }
+}
+
 @media (max-width: 768px) {
-  .home-content { padding: 2em 1.5em; }
+  .home-hero-inner { grid-template-columns: 1fr; padding: 2.5em 1.5em; gap: 0; }
+  .home-logo-side { display: none; }
   .home-title { font-size: 3em; }
   .home-nav-cards { gap: 0.6em; }
   .nav-card { min-width: 75px; padding: 0.8em 1em; }

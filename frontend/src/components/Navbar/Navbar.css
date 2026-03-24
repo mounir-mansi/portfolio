@@ -8,29 +8,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.6em 4em;
+  padding: 0.25em 4em;
   box-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 .navbar-logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  align-items: center;
 }
 
-.logo-name {
-  font-size: 1.15rem;
-  font-weight: 700;
-  font-style: italic;
-  color: var(--white);
-}
-
-.logo-sub {
-  font-size: 0.65rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gold-light);
+.navbar-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-links {
