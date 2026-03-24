@@ -179,8 +179,11 @@
 }
 
 @media (max-width: 768px) {
-  .contact-page-header { padding: 3em 1.5em 2em; }
+  .contact-page-header { padding: 2em 1.5em 0.5em; }
   .contact-page-header h1 { font-size: 1.8rem; }
-  .contact-page-body { padding: 2em 1.2em; }
+  .contact-intro { font-size: 0.9rem; }
+  .contact-page-body { padding: 1em 1.2em 2em; }
+  .contact-form { padding: 1.4em; gap: 1em; }
   .form-group input, .form-group textarea { font-size: 16px; }
+  .form-group textarea { height: 100px; min-height: unset; }
 }

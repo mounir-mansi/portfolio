@@ -209,8 +209,9 @@
 }
 
 @media (max-width: 768px) {
-  .about-page-inner { padding: 3em 1.5em; }
-  .about-page-text h1 { font-size: 2rem; }
+  .about-page-inner { padding: 2em 1.5em 3em; }
+  .about-left h1 { font-size: 1.8rem; }
+  .about-page-text h1 { font-size: 1.8rem; }
   .about-values { grid-template-columns: 1fr 1fr; padding: 2em 1.5em; }
   .about-badges { justify-content: flex-start; }
   .about-badges .badge { flex: 1 1 auto; text-align: center; }
