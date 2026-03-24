@@ -105,14 +105,9 @@ function ProjectCard({ project: p, featured }) {
         )}
         <div className="project-links">
           {p.liveUrl && (
-            <span className="btn-link">
+            <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-link btn-link-live" onClick={(e) => e.stopPropagation()}>
               <i className="fa-solid fa-arrow-up-right-from-square" /> Voir le site
-            </span>
-          )}
-          {p.githubUrl && (
-            <span className="btn-link btn-link-ghost">
-              <i className="fa-brands fa-github" /> Code
-            </span>
+            </a>
           )}
           <span className="btn-link btn-link-detail">
             <i className="fa-solid fa-circle-info" /> Détails
