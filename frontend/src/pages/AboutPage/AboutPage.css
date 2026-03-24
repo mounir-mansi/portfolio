@@ -212,6 +212,10 @@
   .about-page-inner { padding: 3em 1.5em; }
   .about-page-text h1 { font-size: 2rem; }
   .about-values { grid-template-columns: 1fr 1fr; padding: 2em 1.5em; }
+  .about-badges { justify-content: center; }
+  .about-ctas { flex-wrap: nowrap; }
+  .about-ctas .btn-about-primary,
+  .about-ctas .btn-about-outline { flex: 1; text-align: center; white-space: nowrap; }
 }
 
 @media (max-width: 480px) {
