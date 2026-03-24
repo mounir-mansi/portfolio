@@ -54,11 +54,6 @@ export default function ProjectDetailPage() {
                   <i className="fa-solid fa-arrow-up-right-from-square" /> Voir le site
                 </a>
               )}
-              {project.githubUrl && (
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="detail-btn-outline">
-                  <i className="fa-brands fa-github" /> Voir le code
-                </a>
-              )}
             </div>
           </div>
         </div>
