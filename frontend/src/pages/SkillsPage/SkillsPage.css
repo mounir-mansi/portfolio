@@ -85,8 +85,8 @@
 }
 
 @media (max-width: 768px) {
-  .skills-page-header { padding: 3em 1.5em 2em; }
+  .skills-page-header { padding: 2em 1.5em 0.5em; flex-direction: column; gap: 0.5em; }
   .skills-page-header h1 { font-size: 1.8rem; }
-  .skills-page-body { padding: 2.5em 1.5em; gap: 2em; }
+  .skills-page-body { padding: 1.2em 1.5em 3em; gap: 2em; }
   .skills-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
 }
