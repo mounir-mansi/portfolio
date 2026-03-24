@@ -48,7 +48,7 @@ app.use(router);
 if (process.env.NODE_ENV === "production") {
   const dist = path.join(__dirname, "../../frontend/dist");
   app.use(express.static(dist));
-  app.get("*", (req, res) => {
+  app.get("/{*path}", (req, res) => {
     res.sendFile(path.join(dist, "index.html"));
   });
 }
