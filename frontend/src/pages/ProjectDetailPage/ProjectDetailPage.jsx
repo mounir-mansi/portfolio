@@ -145,7 +145,7 @@ export default function ProjectDetailPage() {
                       <div><strong>Site en ligne</strong><span>Non disponible</span></div>
                     </div>
                   )}
-                  {project.githubUrl ? (
+                  {project.githubUrl && (
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="detail-link-item">
                       <i className="fa-brands fa-github" />
                       <div>
@@ -154,11 +154,6 @@ export default function ProjectDetailPage() {
                       </div>
                       <i className="fa-solid fa-arrow-up-right-from-square detail-link-arrow" />
                     </a>
-                  ) : (
-                    <div className="detail-link-item detail-link-empty">
-                      <i className="fa-brands fa-github" />
-                      <div><strong>Code source</strong><span>Privé</span></div>
-                    </div>
                   )}
                 </div>
               </div>
