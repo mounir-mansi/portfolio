@@ -359,7 +359,7 @@
   .projects-intro { margin: 0; font-size: 0.9rem; }
   .projects-page-body { padding: 0.5em 1.2em 3em; }
   .projects-grid { grid-template-columns: 1fr; }
-  .project-hero-card { height: 420px; }
+  .project-hero-card { height: 380px; }
   .project-hero-content { padding: 1.5em; }
   .project-hero-bottom h2 { font-size: 2rem; }
   .project-img img { object-fit: contain; background: var(--cream); height: 200px; }
