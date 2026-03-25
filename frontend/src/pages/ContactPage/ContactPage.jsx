@@ -46,7 +46,7 @@ export default function ContactPage() {
             <div className="form-group">
               <label htmlFor="name">Nom</label>
               <input
-                id="name" name="name" type="text"
+                id="name" name="name" type="text" autoComplete="name"
                 value={form.name} onChange={handleChange}
                 placeholder="Votre nom" required
               />
@@ -54,7 +54,7 @@ export default function ContactPage() {
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
-                id="email" name="email" type="email"
+                id="email" name="email" type="email" autoComplete="email"
                 value={form.email} onChange={handleChange}
                 placeholder="votre@email.com" required
               />

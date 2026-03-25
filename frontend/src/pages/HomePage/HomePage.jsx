@@ -20,13 +20,14 @@ export default function HomePage() {
     <Layout>
       <section
         className="home-hero"
+        aria-labelledby="hero-title"
         style={bg ? { backgroundImage: `url(${bg})` } : {}}
       >
         <div className="home-overlay" />
         <div className="home-hero-inner">
         <div className="home-content">
           <p className="home-greeting">Bonjour, je suis</p>
-          <h1 className="home-title">Mounir</h1>
+          <h1 className="home-title" id="hero-title">Mounir</h1>
           <div className="home-badges">
             <span className="home-badge"><i className="fa-solid fa-code" aria-hidden="true" /> Développeur Fullstack</span>
             <span className="home-badge home-badge-accent"><i className="fa-solid fa-briefcase" aria-hidden="true" /> Freelance</span>
