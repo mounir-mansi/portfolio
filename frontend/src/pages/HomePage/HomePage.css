@@ -117,6 +117,7 @@
 }
 
 .btn-primary:hover { background: var(--accent-light); }
+.btn-primary:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 3px; }
 
 .btn-outline {
   border: 2px solid rgba(255,255,255,0.4);
@@ -135,6 +136,7 @@
   border-color: var(--white);
   background: rgba(255,255,255,0.07);
 }
+.btn-outline:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
 
 .home-nav-cards {
   display: flex;
@@ -168,6 +170,11 @@
   border-color: rgba(255,255,255,0.35);
   transform: translateY(-3px);
   color: var(--white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-card { transition: background 0.2s, border-color 0.2s; }
+  .nav-card:hover { transform: none; }
 }
 
 @media (max-width: 1024px) {

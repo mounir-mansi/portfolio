@@ -60,7 +60,7 @@ export default function AdminSkills() {
       <div className="tab-header">
         <h2>Compétences</h2>
         <button className="btn-primary-sm" onClick={() => { resetForm(); setShowForm(true); }}>
-          <i className="fa-solid fa-plus" /> Ajouter
+          <i className="fa-solid fa-plus" aria-hidden="true" /> Ajouter
         </button>
       </div>
 
@@ -100,11 +100,11 @@ export default function AdminSkills() {
           <div className="skills-admin-grid">
             {skills.filter((s) => s.category === cat).map((s) => (
               <div key={s.id} className="skill-admin-card">
-                <i className={s.icon || "fa-solid fa-code"} />
+                <i className={s.icon || "fa-solid fa-code"} aria-hidden="true" />
                 <span>{s.name}</span>
                 <div className="skill-actions">
-                  <button className="btn-icon" onClick={() => startEdit(s)}><i className="fa-solid fa-pen" /></button>
-                  <button className="btn-icon btn-icon-danger" onClick={() => deleteSkill(s.id)}><i className="fa-solid fa-trash" /></button>
+                  <button className="btn-icon" onClick={() => startEdit(s)} aria-label={`Modifier ${s.name}`}><i className="fa-solid fa-pen" aria-hidden="true" /></button>
+                  <button className="btn-icon btn-icon-danger" onClick={() => deleteSkill(s.id)} aria-label={`Supprimer ${s.name}`}><i className="fa-solid fa-trash" aria-hidden="true" /></button>
                 </div>
               </div>
             ))}

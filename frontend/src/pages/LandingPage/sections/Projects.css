@@ -13,6 +13,7 @@
   font-weight: 800;
   color: var(--primary);
   margin-bottom: 2.5em;
+  text-wrap: balance;
 }
 
 .projects-empty {
@@ -69,6 +70,7 @@
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 0.5em;
+  text-wrap: pretty;
 }
 
 .project-body p {
@@ -116,6 +118,11 @@
   background: var(--accent-light);
 }
 
+.btn-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .btn-link-ghost {
   background: transparent;
   border: 1.5px solid #e2e8f0;
@@ -135,5 +142,14 @@
 
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+  .project-card:hover {
+    transform: none;
   }
 }

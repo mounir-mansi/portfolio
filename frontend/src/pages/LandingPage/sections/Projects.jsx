@@ -23,10 +23,10 @@ export default function Projects({ projects }) {
             <article key={p.id} className={`project-card ${p.featured ? "featured" : ""}`}>
               <div className="project-img">
                 {p.imageUrl ? (
-                  <img src={p.imageUrl} alt={p.title} />
+                  <img src={p.imageUrl} alt={p.title} width="320" height="200" />
                 ) : (
                   <div className="project-img-placeholder">
-                    <i className="fa-solid fa-code" />
+                    <i className="fa-solid fa-code" aria-hidden="true" />
                   </div>
                 )}
               </div>
@@ -43,12 +43,12 @@ export default function Projects({ projects }) {
                 <div className="project-links">
                   {p.liveUrl && (
                     <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-link">
-                      <i className="fa-solid fa-arrow-up-right-from-square" /> Voir le site
+                      <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" /> Voir le site
                     </a>
                   )}
                   {p.githubUrl && (
                     <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-link btn-link-ghost">
-                      <i className="fa-brands fa-github" /> Code
+                      <i className="fa-brands fa-github" aria-hidden="true" /> Code
                     </a>
                   )}
                 </div>

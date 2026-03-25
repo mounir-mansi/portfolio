@@ -57,7 +57,7 @@ export default function SkillsPage() {
                 <div className="skills-grid">
                   {skills.filter((s) => s.category === cat).map((s, i) => (
                     <div key={i} className="skill-card">
-                      <i className={s.icon || "fa-solid fa-code"} />
+                      <i className={s.icon || "fa-solid fa-code"} aria-hidden="true" />
                       <span>{s.name}</span>
                     </div>
                   ))}

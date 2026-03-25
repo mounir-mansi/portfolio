@@ -157,6 +157,11 @@
   background: #e2e8f0;
 }
 
+.btn-sm:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .btn-sm:disabled {
   opacity: 0.6;
   cursor: not-allowed;
@@ -204,6 +209,11 @@
   background: var(--accent-light);
 }
 
+.btn-primary-sm:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .btn-primary-sm:disabled,
 .btn-primary-sm.disabled {
   opacity: 0.6;
@@ -223,6 +233,11 @@
 
 .btn-icon:hover { background: var(--cream); color: var(--accent); }
 .btn-icon-danger:hover { background: #fef2f2; color: #dc2626; }
+
+.btn-icon:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 
 /* Admin form */
 .admin-form {

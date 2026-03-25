@@ -17,6 +17,7 @@
   font-size: 2rem;
   font-weight: 900;
   color: var(--primary);
+  text-wrap: balance;
 }
 
 .skills-intro {
@@ -48,6 +49,7 @@
   margin-bottom: 1.2em;
   padding-bottom: 0.5em;
   border-bottom: 2px solid #e2e8f0;
+  text-wrap: balance;
 }
 
 .skills-grid {
@@ -89,4 +91,13 @@
   .skills-page-header h1 { font-size: 1.8rem; }
   .skills-page-body { padding: 1.2em 1.5em 3em; gap: 2em; }
   .skills-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card {
+    transition: none;
+  }
+  .skill-card:hover {
+    transform: none;
+  }
 }

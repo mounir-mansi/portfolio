@@ -65,7 +65,7 @@ export default function ConnexionScreen() {
                 onClick={() => setShowPwd((v) => !v)}
                 aria-label={showPwd ? "Masquer" : "Afficher"}
               >
-                <i className={`fa-solid ${showPwd ? "fa-eye-slash" : "fa-eye"}`} />
+                <i className={`fa-solid ${showPwd ? "fa-eye-slash" : "fa-eye"}`} aria-hidden="true" />
               </button>
             </div>
           </div>

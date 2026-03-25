@@ -31,6 +31,12 @@
 
 .detail-back:hover { color: var(--white); }
 
+.detail-back:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.8);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .detail-featured-badge {
   display: inline-flex;
   align-items: center;
@@ -49,6 +55,7 @@
   font-weight: 900;
   color: var(--white);
   margin-bottom: 0.6em;
+  text-wrap: balance;
 }
 
 .detail-description {
@@ -80,6 +87,11 @@
 
 .detail-btn-primary:hover { background: var(--accent-light); }
 
+.detail-btn-primary:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
 .detail-btn-outline {
   border: 2px solid rgba(255,255,255,0.35);
   color: var(--white);
@@ -96,6 +108,11 @@
 .detail-btn-outline:hover {
   border-color: var(--white);
   background: rgba(255,255,255,0.07);
+}
+
+.detail-btn-outline:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
 }
 
 /* Body */
@@ -250,6 +267,12 @@
   color: var(--accent);
 }
 
+.detail-link-item:not(.detail-link-empty):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
 .detail-link-item > i:first-child {
   font-size: 1.1rem;
   color: var(--accent);
@@ -306,6 +329,11 @@
 .detail-footer-nav .detail-btn-outline:hover {
   background: var(--accent);
   color: var(--white);
+}
+
+.detail-footer-nav .detail-btn-outline:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 @media (max-width: 900px) {

@@ -46,6 +46,13 @@
   color: var(--white);
 }
 
+.admin-link-site:focus-visible,
+.admin-logout:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.8);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .admin-tabs {
   background: var(--primary-dark);
   display: flex;
@@ -77,6 +84,11 @@
 .admin-tab.active {
   background: var(--accent);
   color: var(--white);
+}
+
+.admin-tab:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.8);
+  outline-offset: 2px;
 }
 
 .admin-content {

@@ -71,7 +71,7 @@ export default function ContactPage() {
               <p className={`form-status ${status.ok ? "ok" : "err"}`}>{status.msg}</p>
             )}
             <button type="submit" className="btn-submit" disabled={loading}>
-              {loading ? "Envoi en cours..." : <><i className="fa-solid fa-paper-plane" /> Envoyer le message</>}
+              {loading ? "Envoi en cours..." : <><i className="fa-solid fa-paper-plane" aria-hidden="true" /> Envoyer le message</>}
             </button>
           </form>
         </div>

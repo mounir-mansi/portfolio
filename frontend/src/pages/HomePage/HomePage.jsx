@@ -28,8 +28,8 @@ export default function HomePage() {
           <p className="home-greeting">Bonjour, je suis</p>
           <h1 className="home-title">Mounir</h1>
           <div className="home-badges">
-            <span className="home-badge"><i className="fa-solid fa-code" /> Développeur Fullstack</span>
-            <span className="home-badge home-badge-accent"><i className="fa-solid fa-briefcase" /> Freelance</span>
+            <span className="home-badge"><i className="fa-solid fa-code" aria-hidden="true" /> Développeur Fullstack</span>
+            <span className="home-badge home-badge-accent"><i className="fa-solid fa-briefcase" aria-hidden="true" /> Freelance</span>
           </div>
           <p className="home-subtitle">React &amp; Node.js — de la DB au déploiement</p>
           <p className="home-desc">
@@ -44,12 +44,12 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="btn-outline"
             >
-              <i className="fa-brands fa-github" /> GitHub
+              <i className="fa-brands fa-github" aria-hidden="true" /> GitHub
             </a>
           </div>
         </div>
         <div className="home-logo-side">
-          <img src="/logo-transparent.png" alt="ManDev Web" className="home-logo-img" />
+          <img src="/logo-transparent.png" alt="ManDev Web" className="home-logo-img" width="520" height="520" />
         </div>
         </div>
       </section>

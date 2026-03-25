@@ -13,6 +13,7 @@
   font-weight: 800;
   color: var(--primary);
   margin-bottom: 2.5em;
+  text-wrap: balance;
 }
 
 .skills-categories {
@@ -72,5 +73,14 @@
 
   .skills-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card {
+    transition: none;
+  }
+  .skill-card:hover {
+    transform: none;
   }
 }

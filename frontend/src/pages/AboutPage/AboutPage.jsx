@@ -68,7 +68,7 @@ export default function AboutPage() {
 
             {/* Parcours */}
             <div className="about-timeline">
-              <h2 className="timeline-title"><i className="fa-solid fa-route" /> Parcours</h2>
+              <h2 className="timeline-title"><i className="fa-solid fa-route" aria-hidden="true" /> Parcours</h2>
               <div className="timeline">
 
                 <div className="timeline-item">
@@ -110,22 +110,22 @@ export default function AboutPage() {
 
         <div className="about-values">
           <div className="value-card">
-            <i className="fa-solid fa-shield-halved" />
+            <i className="fa-solid fa-shield-halved" aria-hidden="true" />
             <h3>Sécurité</h3>
             <p>JWT httpOnly, Fail2ban, UFW, Nginx — la sécurité n'est pas une option.</p>
           </div>
           <div className="value-card">
-            <i className="fa-solid fa-bolt" />
+            <i className="fa-solid fa-bolt" aria-hidden="true" />
             <h3>Performance</h3>
             <p>Build Vite optimisé, PostgreSQL avec Prisma, cache Cloudflare.</p>
           </div>
           <div className="value-card">
-            <i className="fa-solid fa-mobile-screen" />
+            <i className="fa-solid fa-mobile-screen" aria-hidden="true" />
             <h3>Responsive</h3>
             <p>Chaque projet est testé sur mobile, tablette et desktop.</p>
           </div>
           <div className="value-card">
-            <i className="fa-solid fa-rocket" />
+            <i className="fa-solid fa-rocket" aria-hidden="true" />
             <h3>Déploiement</h3>
             <p>De zéro à la mise en production sur VPS avec SSL, PM2 et monitoring.</p>
           </div>

@@ -17,6 +17,7 @@
   font-size: 2rem;
   font-weight: 900;
   color: var(--primary);
+  text-wrap: balance;
 }
 
 .projects-intro {
@@ -107,6 +108,7 @@
   color: var(--white);
   margin-bottom: 0.4em;
   line-height: 1.1;
+  text-wrap: balance;
 }
 
 .project-hero-bottom p {
@@ -228,6 +230,7 @@
   width: 100%;
   height: 220px;
   object-fit: cover;
+  object-position: top;
 }
 
 .project-card.featured .project-img img {
@@ -278,6 +281,7 @@
   font-weight: 800;
   color: var(--primary);
   margin-bottom: 0.5em;
+  text-wrap: pretty;
 }
 
 .project-body p {
@@ -326,6 +330,11 @@
 
 .btn-link:hover { background: var(--accent-light); }
 
+.btn-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .btn-link-ghost {
   background: transparent;
   border: 1.5px solid #e2e8f0;
@@ -355,4 +364,27 @@
   .project-links { flex-wrap: nowrap; }
   .project-links .btn-link-live,
   .project-links .btn-link-detail { flex: 1; justify-content: center; margin-left: 0; }
+}
+
+.project-hero-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+  .project-card:hover {
+    transform: none;
+  }
+  .project-card:hover .project-img img {
+    transform: none;
+    transition: none;
+  }
 }

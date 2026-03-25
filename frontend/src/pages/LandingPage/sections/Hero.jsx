@@ -26,7 +26,7 @@ export default function Hero({ section }) {
             rel="noopener noreferrer"
             className="btn-outline"
           >
-            <i className="fa-brands fa-github" /> GitHub
+            <i className="fa-brands fa-github" aria-hidden="true" /> GitHub
           </a>
         </div>
       </div>

@@ -38,12 +38,12 @@ export default function ProjectDetailPage() {
         {/* Header */}
         <div className="detail-header">
           <Link to="/projets" className="detail-back">
-            <i className="fa-solid fa-arrow-left" /> Tous les projets
+            <i className="fa-solid fa-arrow-left" aria-hidden="true" /> Tous les projets
           </Link>
           <div className="detail-header-content">
             {project.featured && (
               <span className="detail-featured-badge">
-                <i className="fa-solid fa-star" /> Mis en avant
+                <i className="fa-solid fa-star" aria-hidden="true" /> Mis en avant
               </span>
             )}
             <h1>{project.title}</h1>
@@ -51,7 +51,7 @@ export default function ProjectDetailPage() {
             <div className="detail-ctas">
               {project.liveUrl && (
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="detail-btn-primary">
-                  <i className="fa-solid fa-arrow-up-right-from-square" /> Voir le site
+                  <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" /> Voir le site
                 </a>
               )}
             </div>
@@ -73,7 +73,7 @@ export default function ProjectDetailPage() {
               {/* Description longue */}
               {project.longDescription && (
                 <div className="detail-section">
-                  <h2><i className="fa-solid fa-file-lines" /> À propos du projet</h2>
+                  <h2><i className="fa-solid fa-file-lines" aria-hidden="true" /> À propos du projet</h2>
                   <div className="detail-long-desc">
                     {project.longDescription.split("\n").map((line, i) =>
                       line.trim() ? <p key={i}>{line}</p> : null
@@ -85,11 +85,11 @@ export default function ProjectDetailPage() {
               {/* Points clés */}
               {project.highlights?.length > 0 && (
                 <div className="detail-section">
-                  <h2><i className="fa-solid fa-list-check" /> Points clés</h2>
+                  <h2><i className="fa-solid fa-list-check" aria-hidden="true" /> Points clés</h2>
                   <ul className="detail-highlights">
                     {project.highlights.map((h, i) => (
                       <li key={i}>
-                        <i className="fa-solid fa-check" />
+                        <i className="fa-solid fa-check" aria-hidden="true" />
                         <span>{h}</span>
                       </li>
                     ))}
@@ -100,7 +100,7 @@ export default function ProjectDetailPage() {
               {/* Message si pas de détails encore */}
               {!project.longDescription && !project.highlights?.length && (
                 <div className="detail-section detail-placeholder">
-                  <i className="fa-solid fa-pen-to-square" />
+                  <i className="fa-solid fa-pen-to-square" aria-hidden="true" />
                   <p>La description détaillée de ce projet sera ajoutée prochainement depuis le panneau admin.</p>
                 </div>
               )}
@@ -112,7 +112,7 @@ export default function ProjectDetailPage() {
               {/* Stack */}
               {project.stack?.length > 0 && (
                 <div className="detail-card">
-                  <h3><i className="fa-solid fa-layer-group" /> Stack technique</h3>
+                  <h3><i className="fa-solid fa-layer-group" aria-hidden="true" /> Stack technique</h3>
                   <div className="detail-stack">
                     {project.stack.map((t, i) => (
                       <span key={i} className="stack-tag">{t}</span>
@@ -123,31 +123,31 @@ export default function ProjectDetailPage() {
 
               {/* Liens */}
               <div className="detail-card">
-                <h3><i className="fa-solid fa-link" /> Liens</h3>
+                <h3><i className="fa-solid fa-link" aria-hidden="true" /> Liens</h3>
                 <div className="detail-links-list">
                   {project.liveUrl ? (
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="detail-link-item">
-                      <i className="fa-solid fa-globe" />
+                      <i className="fa-solid fa-globe" aria-hidden="true" />
                       <div>
                         <strong>Site en ligne</strong>
                         <span>{project.liveUrl}</span>
                       </div>
-                      <i className="fa-solid fa-arrow-up-right-from-square detail-link-arrow" />
+                      <i className="fa-solid fa-arrow-up-right-from-square detail-link-arrow" aria-hidden="true" />
                     </a>
                   ) : (
                     <div className="detail-link-item detail-link-empty">
-                      <i className="fa-solid fa-globe" />
+                      <i className="fa-solid fa-globe" aria-hidden="true" />
                       <div><strong>Site en ligne</strong><span>Non disponible</span></div>
                     </div>
                   )}
                   {project.githubUrl && (
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="detail-link-item">
-                      <i className="fa-brands fa-github" />
+                      <i className="fa-brands fa-github" aria-hidden="true" />
                       <div>
                         <strong>Code source</strong>
                         <span>GitHub</span>
                       </div>
-                      <i className="fa-solid fa-arrow-up-right-from-square detail-link-arrow" />
+                      <i className="fa-solid fa-arrow-up-right-from-square detail-link-arrow" aria-hidden="true" />
                     </a>
                   )}
                 </div>
@@ -155,7 +155,7 @@ export default function ProjectDetailPage() {
 
               {/* Date */}
               <div className="detail-card">
-                <h3><i className="fa-solid fa-calendar" /> Date</h3>
+                <h3><i className="fa-solid fa-calendar" aria-hidden="true" /> Date</h3>
                 <p className="detail-date">
                   {new Date(project.createdAt).toLocaleDateString("fr-FR", { year: "numeric", month: "long" })}
                 </p>
@@ -167,10 +167,10 @@ export default function ProjectDetailPage() {
           {/* Navigation bas de page */}
           <div className="detail-footer-nav">
             <Link to="/projets" className="detail-btn-outline">
-              <i className="fa-solid fa-arrow-left" /> Retour aux projets
+              <i className="fa-solid fa-arrow-left" aria-hidden="true" /> Retour aux projets
             </Link>
             <Link to="/contact" className="detail-btn-primary">
-              <i className="fa-solid fa-envelope" /> Me contacter
+              <i className="fa-solid fa-envelope" aria-hidden="true" /> Me contacter
             </Link>
           </div>
 

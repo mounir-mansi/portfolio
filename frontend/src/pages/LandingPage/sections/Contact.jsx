@@ -41,7 +41,7 @@ export default function Contact() {
           </p>
           <div className="contact-links">
             <a href="https://github.com/mounir-mansi" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-github" /> GitHub
+              <i className="fa-brands fa-github" aria-hidden="true" /> GitHub
             </a>
           </div>
         </div>

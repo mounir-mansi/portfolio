@@ -80,7 +80,7 @@ export default function AdminProjects() {
       <div className="tab-header">
         <h2>Projets</h2>
         <button className="btn-primary-sm" onClick={() => { resetForm(); setShowForm(true); }}>
-          <i className="fa-solid fa-plus" /> Ajouter
+          <i className="fa-solid fa-plus" aria-hidden="true" /> Ajouter
         </button>
       </div>
 
@@ -152,12 +152,12 @@ export default function AdminProjects() {
       <div className="projects-admin-grid">
         {projects.map((p) => (
           <div key={p.id} className={`project-admin-card ${p.featured ? "featured" : ""}`}>
-            {p.imageUrl && <img src={p.imageUrl} alt={p.title} className="project-thumb" />}
+            {p.imageUrl && <img src={p.imageUrl} alt={p.title} className="project-thumb" width="120" height="90" />}
             <div className="project-admin-body">
               <div style={{ display: "flex", alignItems: "center", gap: "0.5em", flexWrap: "wrap" }}>
                 <strong>{p.title}</strong>
                 {p.featured && <span className="tag-featured">Mis en avant</span>}
-                {p.longDescription && <span className="tag-detail"><i className="fa-solid fa-file-lines" /> Détail</span>}
+                {p.longDescription && <span className="tag-detail"><i className="fa-solid fa-file-lines" aria-hidden="true" /> Détail</span>}
               </div>
               <p>{p.description}</p>
               {p.stack?.length > 0 && (
@@ -167,10 +167,10 @@ export default function AdminProjects() {
               )}
               <div className="msg-actions">
                 <button className="btn-sm btn-accent" onClick={() => startEdit(p)}>
-                  <i className="fa-solid fa-pen" /> Modifier
+                  <i className="fa-solid fa-pen" aria-hidden="true" /> Modifier
                 </button>
-                <button className="btn-sm btn-danger" onClick={() => deleteProject(p.id)}>
-                  <i className="fa-solid fa-trash" />
+                <button className="btn-sm btn-danger" onClick={() => deleteProject(p.id)} aria-label="Supprimer">
+                  <i className="fa-solid fa-trash" aria-hidden="true" />
                 </button>
               </div>
             </div>

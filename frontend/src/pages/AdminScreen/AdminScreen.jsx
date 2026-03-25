@@ -46,7 +46,7 @@ export default function AdminScreen() {
             className={`admin-tab ${tab === t.id ? "active" : ""}`}
             onClick={() => setTab(t.id)}
           >
-            <i className={`fa-solid ${t.icon}`} /> {t.label}
+            <i className={`fa-solid ${t.icon}`} aria-hidden="true" /> {t.label}
           </button>
         ))}
       </div>

@@ -73,7 +73,7 @@ function ProjectCardHero({ project: p }) {
         <div className="project-hero-bottom">
           <h2>{p.title}</h2>
           <p>{p.description}</p>
-          <span className="hero-cta"><i className="fa-solid fa-arrow-right" /> Voir le projet</span>
+          <span className="hero-cta"><i className="fa-solid fa-arrow-right" aria-hidden="true" /> Voir le projet</span>
         </div>
       </div>
     </Link>
@@ -88,11 +88,11 @@ function ProjectCard({ project: p, featured }) {
           <img src={p.imageUrl} alt={p.title} />
         ) : (
           <div className="project-img-placeholder">
-            <i className="fa-solid fa-code" />
+            <i className="fa-solid fa-code" aria-hidden="true" />
           </div>
         )}
         <div className="card-hover-overlay">
-          <span><i className="fa-solid fa-arrow-right" /> Voir le projet</span>
+          <span><i className="fa-solid fa-arrow-right" aria-hidden="true" /> Voir le projet</span>
         </div>
       </div>
       <div className="project-body">
@@ -106,11 +106,11 @@ function ProjectCard({ project: p, featured }) {
         <div className="project-links">
           {p.liveUrl && (
             <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-link btn-link-live" onClick={(e) => e.stopPropagation()}>
-              <i className="fa-solid fa-arrow-up-right-from-square" /> Voir le site
+              <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" /> Voir le site
             </a>
           )}
           <span className="btn-link btn-link-detail">
-            <i className="fa-solid fa-circle-info" /> Détails
+            <i className="fa-solid fa-circle-info" aria-hidden="true" /> Détails
           </span>
         </div>
       </div>

@@ -81,10 +81,10 @@ export default function AdminMessages() {
                 className="btn-sm btn-accent"
                 onClick={() => { setReplyId(msg.id); setReplyText(""); markRead(msg.id); }}
               >
-                <i className="fa-solid fa-reply" /> Répondre
+                <i className="fa-solid fa-reply" aria-hidden="true" /> Répondre
               </button>
-              <button className="btn-sm btn-danger" onClick={() => deleteMsg(msg.id)}>
-                <i className="fa-solid fa-trash" />
+              <button className="btn-sm btn-danger" onClick={() => deleteMsg(msg.id)} aria-label="Supprimer">
+                <i className="fa-solid fa-trash" aria-hidden="true" />
               </button>
             </div>
             {replyId === msg.id && (

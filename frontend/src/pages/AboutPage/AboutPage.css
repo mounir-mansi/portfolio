@@ -33,6 +33,7 @@
   color: var(--primary);
   margin-bottom: 0.8em;
   line-height: 1.2;
+  text-wrap: balance;
 }
 
 .about-page-body {
@@ -79,6 +80,11 @@
 
 .btn-about-primary:hover { background: var(--accent-light); }
 
+.btn-about-primary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .btn-about-outline {
   border: 2px solid var(--accent);
   color: var(--accent);
@@ -92,6 +98,11 @@
 .btn-about-outline:hover {
   background: var(--accent);
   color: var(--white);
+}
+
+.btn-about-outline:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 
@@ -121,6 +132,7 @@
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 0.4em;
+  text-wrap: balance;
 }
 
 .value-card p {
@@ -222,4 +234,13 @@
 
 @media (max-width: 480px) {
   .about-values { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .value-card {
+    transition: none;
+  }
+  .value-card:hover {
+    transform: none;
+  }
 }

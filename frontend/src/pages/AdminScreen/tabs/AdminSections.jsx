@@ -60,10 +60,10 @@ export default function AdminSections() {
           <div key={key} className="section-admin-card">
             <h3>{label}</h3>
             {sections[key]?.imageUrl ? (
-              <img src={sections[key].imageUrl} alt={label} className="section-preview" />
+              <img src={sections[key].imageUrl} alt={label} className="section-preview" width="280" height="160" />
             ) : (
               <div className="section-placeholder">
-                <i className="fa-solid fa-image" />
+                <i className="fa-solid fa-image" aria-hidden="true" />
                 <span>Aucune image</span>
               </div>
             )}
@@ -86,7 +86,7 @@ export default function AdminSections() {
                 onChange={(e) => handleUpload(key, e.target.files[0], texts[key])}
               />
               <span className={`btn-primary-sm ${uploading === key ? "disabled" : ""}`}>
-                <i className="fa-solid fa-upload" />
+                <i className="fa-solid fa-upload" aria-hidden="true" />
                 {uploading === key ? "Upload..." : sections[key]?.imageUrl ? "Changer l'image" : "Charger une image"}
               </span>
             </label>
