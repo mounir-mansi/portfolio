@@ -6,7 +6,7 @@ const { upload, uploadFixed } = require("../middleware/handleUpload");
 
 const { login, logout, me } = require("../controllers/authController");
 const { submitContact, getMessages, markRead, deleteMessage, replyMessage } = require("../controllers/contactController");
-const { getProjects, getProjectById, createProject, updateProject, deleteProject } = require("../controllers/projectController");
+const { getProjects, getAllProjects, getProjectById, createProject, updateProject, deleteProject, toggleVisible } = require("../controllers/projectController");
 const { getSkills, createSkill, updateSkill, deleteSkill } = require("../controllers/skillController");
 const { getSections, uploadSection } = require("../controllers/sectionController");
 
@@ -25,8 +25,10 @@ router.post("/admin/messages/:id/reply", verifyToken, replyMessage);
 // Projets
 router.get("/api/projects", getProjects);
 router.get("/api/projects/:id", getProjectById);
+router.get("/admin/projects", verifyToken, getAllProjects);
 router.post("/admin/projects", verifyToken, upload("projects").single("image"), createProject);
 router.put("/admin/projects/:id", verifyToken, upload("projects").single("image"), updateProject);
+router.patch("/admin/projects/:id/visible", verifyToken, toggleVisible);
 router.delete("/admin/projects/:id", verifyToken, deleteProject);
 
 // Skills
