@@ -180,7 +180,7 @@ async function main() {
     await prisma.project.upsert({
       where: { id },
       update: data,
-      create: data,
+      create: { id, ...data },
     });
     console.log(`Projet upsert : ${p.title}`);
   }
