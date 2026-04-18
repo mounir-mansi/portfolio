@@ -34,6 +34,7 @@ function LangRouter() {
       <Route path="projets" element={<ProjectsPage />} />
       <Route path="projets/:id" element={<ProjectDetailPage />} />
       <Route path="contact" element={<ContactPage />} />
+      <Route path="connexion" element={<ConnexionScreen />} />
     </Routes>
   );
 }
