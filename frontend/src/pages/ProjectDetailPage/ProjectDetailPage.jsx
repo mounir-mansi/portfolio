@@ -1,35 +1,42 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import "./ProjectDetailPage.css";
 
+const LOCALE_MAP = { fr: "fr-FR", en: "en-GB", it: "it-IT", es: "es-ES" };
+
 export default function ProjectDetailPage() {
-  const { id } = useParams();
+  const { id, lang = "fr" } = useParams();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
+  const lp = (path) => `/${lang}${path}`;
 
   useEffect(() => {
-    apiFetch(`/api/projects/${id}`)
+    apiFetch(`/api/projects/${id}?lang=${lang}`)
       .then((r) => {
         if (!r.ok) throw new Error("not found");
         return r.json();
       })
       .then(setProject)
-      .catch(() => navigate("/projets", { replace: true }))
+      .catch(() => navigate(lp("/projets"), { replace: true }))
       .finally(() => setLoading(false));
-  }, [id]);
+  }, [id, lang]);
 
   if (loading) {
     return (
       <Layout>
-        <div className="detail-loading">Chargement...</div>
+        <div className="detail-loading">{t("detail.loading")}</div>
       </Layout>
     );
   }
 
   if (!project) return null;
+
+  const locale = LOCALE_MAP[lang] || "fr-FR";
 
   return (
     <Layout>
@@ -37,13 +44,13 @@ export default function ProjectDetailPage() {
 
         {/* Header */}
         <div className="detail-header">
-          <Link to="/projets" className="detail-back">
-            <i className="fa-solid fa-arrow-left" aria-hidden="true" /> Tous les projets
+          <Link to={lp("/projets")} className="detail-back">
+            <i className="fa-solid fa-arrow-left" aria-hidden="true" /> {t("detail.all_projects")}
           </Link>
           <div className="detail-header-content">
             {project.featured && (
               <span className="detail-featured-badge">
-                <i className="fa-solid fa-star" aria-hidden="true" /> Mis en avant
+                <i className="fa-solid fa-star" aria-hidden="true" /> {t("detail.featured")}
               </span>
             )}
             <h1>{project.title}</h1>
@@ -51,7 +58,7 @@ export default function ProjectDetailPage() {
             <div className="detail-ctas">
               {project.liveUrl && (
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="detail-btn-primary">
-                  <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" /> Voir le site
+                  <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" /> {t("detail.live_site")}
                 </a>
               )}
             </div>
@@ -73,7 +80,7 @@ export default function ProjectDetailPage() {
               {/* Description longue */}
               {project.longDescription && (
                 <div className="detail-section">
-                  <h2><i className="fa-solid fa-file-lines" aria-hidden="true" /> À propos du projet</h2>
+                  <h2><i className="fa-solid fa-file-lines" aria-hidden="true" /> {t("detail.about_project")}</h2>
                   <div className="detail-long-desc">
                     {project.longDescription.split("\n").map((line, i) =>
                       line.trim() ? <p key={i}>{line}</p> : null
@@ -85,7 +92,7 @@ export default function ProjectDetailPage() {
               {/* Points clés */}
               {project.highlights?.length > 0 && (
                 <div className="detail-section">
-                  <h2><i className="fa-solid fa-list-check" aria-hidden="true" /> Points clés</h2>
+                  <h2><i className="fa-solid fa-list-check" aria-hidden="true" /> {t("detail.key_points")}</h2>
                   <ul className="detail-highlights">
                     {project.highlights.map((h, i) => (
                       <li key={i}>
@@ -101,7 +108,7 @@ export default function ProjectDetailPage() {
               {!project.longDescription && !project.highlights?.length && (
                 <div className="detail-section detail-placeholder">
                   <i className="fa-solid fa-pen-to-square" aria-hidden="true" />
-                  <p>La description détaillée de ce projet sera ajoutée prochainement depuis le panneau admin.</p>
+                  <p>{t("detail.placeholder")}</p>
                 </div>
               )}
 
@@ -112,10 +119,10 @@ export default function ProjectDetailPage() {
               {/* Stack */}
               {project.stack?.length > 0 && (
                 <div className="detail-card">
-                  <h3><i className="fa-solid fa-layer-group" aria-hidden="true" /> Stack technique</h3>
+                  <h3><i className="fa-solid fa-layer-group" aria-hidden="true" /> {t("detail.stack")}</h3>
                   <div className="detail-stack">
-                    {project.stack.map((t, i) => (
-                      <span key={i} className="stack-tag">{t}</span>
+                    {project.stack.map((tag, i) => (
+                      <span key={i} className="stack-tag">{tag}</span>
                     ))}
                   </div>
                 </div>
@@ -123,13 +130,13 @@ export default function ProjectDetailPage() {
 
               {/* Liens */}
               <div className="detail-card">
-                <h3><i className="fa-solid fa-link" aria-hidden="true" /> Liens</h3>
+                <h3><i className="fa-solid fa-link" aria-hidden="true" /> {t("detail.links")}</h3>
                 <div className="detail-links-list">
                   {project.liveUrl ? (
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="detail-link-item">
                       <i className="fa-solid fa-globe" aria-hidden="true" />
                       <div>
-                        <strong>Site en ligne</strong>
+                        <strong>{t("detail.live_site")}</strong>
                         <span>{project.liveUrl}</span>
                       </div>
                       <i className="fa-solid fa-arrow-up-right-from-square detail-link-arrow" aria-hidden="true" />
@@ -137,14 +144,14 @@ export default function ProjectDetailPage() {
                   ) : (
                     <div className="detail-link-item detail-link-empty">
                       <i className="fa-solid fa-globe" aria-hidden="true" />
-                      <div><strong>Site en ligne</strong><span>Non disponible</span></div>
+                      <div><strong>{t("detail.live_site")}</strong><span>{t("detail.not_available")}</span></div>
                     </div>
                   )}
                   {project.githubUrl && (
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="detail-link-item">
                       <i className="fa-brands fa-github" aria-hidden="true" />
                       <div>
-                        <strong>Code source</strong>
+                        <strong>{t("detail.source_code")}</strong>
                         <span>GitHub</span>
                       </div>
                       <i className="fa-solid fa-arrow-up-right-from-square detail-link-arrow" aria-hidden="true" />
@@ -155,9 +162,9 @@ export default function ProjectDetailPage() {
 
               {/* Date */}
               <div className="detail-card">
-                <h3><i className="fa-solid fa-calendar" aria-hidden="true" /> Date</h3>
+                <h3><i className="fa-solid fa-calendar" aria-hidden="true" /> {t("detail.date")}</h3>
                 <p className="detail-date">
-                  {new Date(project.createdAt).toLocaleDateString("fr-FR", { year: "numeric", month: "long" })}
+                  {new Date(project.createdAt).toLocaleDateString(locale, { year: "numeric", month: "long" })}
                 </p>
               </div>
 
@@ -166,11 +173,11 @@ export default function ProjectDetailPage() {
 
           {/* Navigation bas de page */}
           <div className="detail-footer-nav">
-            <Link to="/projets" className="detail-btn-outline">
-              <i className="fa-solid fa-arrow-left" aria-hidden="true" /> Retour aux projets
+            <Link to={lp("/projets")} className="detail-btn-outline">
+              <i className="fa-solid fa-arrow-left" aria-hidden="true" /> {t("detail.back")}
             </Link>
-            <Link to="/contact" className="detail-btn-primary">
-              <i className="fa-solid fa-envelope" aria-hidden="true" /> Me contacter
+            <Link to={lp("/contact")} className="detail-btn-primary">
+              <i className="fa-solid fa-envelope" aria-hidden="true" /> {t("detail.contact")}
             </Link>
           </div>
 

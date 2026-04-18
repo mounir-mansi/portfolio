@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Chi sono",
+    "skills": "Competenze",
+    "projects": "Progetti",
+    "contact": "Contattami",
+    "admin": "Admin",
+    "logout": "Esci"
+  },
+  "home": {
+    "greeting": "Ciao, sono",
+    "badge_dev": "Sviluppatore Fullstack",
+    "badge_freelance": "Freelance",
+    "subtitle": "React & Node.js — dal DB al deploy",
+    "desc": "Disponibile per i tuoi progetti web: siti vetrina, applicazioni su misura, API. Gestisco tutto, dal backend sicuro alla messa in produzione su VPS.",
+    "see_projects": "Vedi i miei progetti",
+    "contact": "Contattami"
+  },
+  "about": {
+    "title1": "Appassionato del web,",
+    "title2": "da cima a fondo",
+    "p1": "Sviluppatore fullstack freelance, progetto e consegno applicazioni web complete — dal server all'interfaccia — con particolare attenzione alle prestazioni, alla sicurezza e all'esperienza utente.",
+    "p2": "Lavoro su progetti diversi: piattaforme aziendali, applicazioni interattive, strumenti personalizzati, siti vetrina. Disponibile da remoto, mi adatto alle esigenze di ogni cliente.",
+    "see_projects": "Vedi i miei progetti",
+    "contact": "Contattami",
+    "timeline_title": "Percorso",
+    "simplon_title": "Simplon",
+    "simplon_text": "Diploma di Sviluppatore Web & Web Mobile — il mio primo contatto col mondo del codice. È lì che è iniziato tutto: HTML, CSS, JavaScript, le basi del backend.",
+    "python_title": "Introduzione a Python",
+    "python_text": "Un breve corso di un mese per esplorare un altro paradigma — logica, scripting, automazione. Una parentesi che ha ampliato il mio modo di pensare il codice.",
+    "wcs_title": "Wild Code School",
+    "wcs_text": "Bootcamp Fullstack JavaScript intensivo — React, Node.js, database, progetti di squadra. Il livello sale, i progetti diventano reali.",
+    "self_title": "Autodidatta — in continuo",
+    "self_text": "Dopo i corsi, ho continuato da solo: deploy su VPS, messa in sicurezza di server, costruire progetti da zero. Provare, fallire, capire, ricominciare. È lì che ho davvero imparato.",
+    "val_security": "Sicurezza",
+    "val_security_desc": "JWT httpOnly, Fail2ban, UFW, Nginx — la sicurezza non è opzionale.",
+    "val_perf": "Performance",
+    "val_perf_desc": "Build Vite ottimizzata, PostgreSQL con Prisma, cache Cloudflare.",
+    "val_responsive": "Responsive",
+    "val_responsive_desc": "Ogni progetto è testato su mobile, tablet e desktop.",
+    "val_deploy": "Deploy",
+    "val_deploy_desc": "Da zero alla produzione su VPS con SSL, PM2 e monitoring."
+  },
+  "skills": {
+    "title": "Il mio stack tecnico",
+    "intro": "Le tecnologie che uso per progettare, sviluppare e distribuire progetti web completi — dal frontend al server.",
+    "cat_database": "Database",
+    "cat_deploy": "Deploy",
+    "cat_tools": "Strumenti"
+  },
+  "projects": {
+    "title": "I miei lavori",
+    "intro": "Applicazioni web complete — dal database all'interfaccia, messe in produzione.",
+    "see_project": "Vedi il progetto",
+    "see_site": "Vedi il sito",
+    "details": "Dettagli",
+    "empty": "I progetti arrivano presto..."
+  },
+  "contact": {
+    "title": "Lavoriamo insieme",
+    "intro": "Un progetto web, una domanda o semplicemente voglia di parlare? Sono disponibile.",
+    "name": "Nome",
+    "name_placeholder": "Il tuo nome",
+    "email": "Email",
+    "message": "Messaggio",
+    "message_placeholder": "Descrivi il tuo progetto o la tua richiesta...",
+    "submit": "Invia il messaggio",
+    "sending": "Invio in corso...",
+    "success": "Messaggio inviato! Ti rispondo presto.",
+    "error": "Errore durante l'invio."
+  },
+  "detail": {
+    "loading": "Caricamento...",
+    "all_projects": "Tutti i progetti",
+    "featured": "In evidenza",
+    "about_project": "Sul progetto",
+    "key_points": "Punti chiave",
+    "stack": "Stack tecnico",
+    "links": "Link",
+    "live_site": "Sito online",
+    "source_code": "Codice sorgente",
+    "not_available": "Non disponibile",
+    "date": "Data",
+    "back": "Torna ai progetti",
+    "contact": "Contattami",
+    "placeholder": "La descrizione dettagliata di questo progetto sarà aggiunta presto dal pannello admin."
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati"
+  }
+}

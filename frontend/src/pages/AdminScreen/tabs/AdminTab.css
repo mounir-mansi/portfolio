@@ -322,6 +322,20 @@
   border-color: var(--accent);
 }
 
+.project-admin-card.hidden-project {
+  opacity: 0.5;
+}
+
+.tag-hidden {
+  background: #fef9c3;
+  color: #92400e;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.1em 0.5em;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
 .project-thumb {
   width: 120px;
   height: 90px;
@@ -486,6 +500,51 @@
   display: flex;
 }
 
+/* --- Onglets de langue dans l'admin --- */
+.lang-tabs {
+  display: flex;
+  gap: 0.3em;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  border-bottom: 2px solid var(--border, #e5e7eb);
+  padding-bottom: 0.5em;
+}
+
+.lang-tab-btn {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px 6px 0 0;
+  padding: 0.35em 0.85em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--text-muted, #6b7280);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.lang-tab-btn:hover {
+  background: var(--bg-light, #f3f4f6);
+  color: var(--text, #111);
+}
+
+.lang-tab-btn.active {
+  background: var(--accent, #e63946);
+  color: #fff;
+  border-color: var(--accent, #e63946);
+}
+
+/* Badge traduction disponible */
+.tag-lang {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
 @media (max-width: 600px) {
   .form-row {
     grid-template-columns: 1fr;
@@ -500,3 +559,4 @@
     height: 150px;
   }
 }
+

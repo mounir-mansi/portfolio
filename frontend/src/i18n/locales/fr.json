@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Me contacter",
+    "admin": "Admin",
+    "logout": "Déconnexion"
+  },
+  "home": {
+    "greeting": "Bonjour, je suis",
+    "badge_dev": "Développeur Fullstack",
+    "badge_freelance": "Freelance",
+    "subtitle": "React & Node.js — de la DB au déploiement",
+    "desc": "Disponible pour vos projets web : sites vitrines, applications sur mesure, APIs. Je gère tout, du backend sécurisé à la mise en production sur VPS.",
+    "see_projects": "Voir mes projets",
+    "contact": "Me contacter"
+  },
+  "about": {
+    "title1": "Passionné par le web,",
+    "title2": "de bout en bout",
+    "p1": "Développeur fullstack freelance, je conçois et livre des applications web complètes — du serveur jusqu'à l'interface — avec une attention particulière à la performance, la sécurité et l'expérience utilisateur.",
+    "p2": "Je travaille sur des projets variés : plateformes métier, applications interactives, outils sur mesure, sites vitrines. Disponible à distance, je m'adapte aux besoins de chaque client.",
+    "see_projects": "Voir mes projets",
+    "contact": "Me contacter",
+    "timeline_title": "Parcours",
+    "simplon_title": "Simplon",
+    "simplon_text": "Diplôme Développeur Web & Web Mobile — ma première immersion dans le monde du code. C'est là que tout a commencé : HTML, CSS, JavaScript, les bases du backend.",
+    "python_title": "Initiation Python",
+    "python_text": "Une formation courte d'un mois pour explorer un autre paradigme — logique, scripting, automatisation. Une parenthèse qui a élargi ma façon de penser le code.",
+    "wcs_title": "Wild Code School",
+    "wcs_text": "Formation Fullstack JavaScript intensive — React, Node.js, bases de données, projets en équipe. Le niveau monte, les projets deviennent réels.",
+    "self_title": "Autodidacte — en continu",
+    "self_text": "Après les formations, j'ai continué seul : déployer sur VPS, sécuriser des serveurs, construire des projets de A à Z. Essayer, échouer, comprendre, recommencer. C'est là que j'ai vraiment appris.",
+    "val_security": "Sécurité",
+    "val_security_desc": "JWT httpOnly, Fail2ban, UFW, Nginx — la sécurité n'est pas une option.",
+    "val_perf": "Performance",
+    "val_perf_desc": "Build Vite optimisé, PostgreSQL avec Prisma, cache Cloudflare.",
+    "val_responsive": "Responsive",
+    "val_responsive_desc": "Chaque projet est testé sur mobile, tablette et desktop.",
+    "val_deploy": "Déploiement",
+    "val_deploy_desc": "De zéro à la mise en production sur VPS avec SSL, PM2 et monitoring."
+  },
+  "skills": {
+    "title": "Ma stack technique",
+    "intro": "Les technologies que j'utilise pour concevoir, développer et déployer des projets web complets — du frontend au serveur.",
+    "cat_database": "Base de données",
+    "cat_deploy": "Déploiement",
+    "cat_tools": "Outils"
+  },
+  "projects": {
+    "title": "Mes réalisations",
+    "intro": "Des applications web complètes — de la base de données à l'interface, déployées en production.",
+    "see_project": "Voir le projet",
+    "see_site": "Voir le site",
+    "details": "Détails",
+    "empty": "Les projets arrivent bientôt..."
+  },
+  "contact": {
+    "title": "Travaillons ensemble",
+    "intro": "Un projet web, une question ou simplement envie d'échanger ? Je suis disponible.",
+    "name": "Nom",
+    "name_placeholder": "Votre nom",
+    "email": "Email",
+    "message": "Message",
+    "message_placeholder": "Décrivez votre projet ou votre demande...",
+    "submit": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé ! Je vous réponds rapidement.",
+    "error": "Erreur lors de l'envoi."
+  },
+  "detail": {
+    "loading": "Chargement...",
+    "all_projects": "Tous les projets",
+    "featured": "Mis en avant",
+    "about_project": "À propos du projet",
+    "key_points": "Points clés",
+    "stack": "Stack technique",
+    "links": "Liens",
+    "live_site": "Site en ligne",
+    "source_code": "Code source",
+    "not_available": "Non disponible",
+    "date": "Date",
+    "back": "Retour aux projets",
+    "contact": "Me contacter",
+    "placeholder": "La description détaillée de ce projet sera ajoutée prochainement depuis le panneau admin."
+  },
+  "footer": {
+    "rights": "Tous droits réservés"
+  }
+}

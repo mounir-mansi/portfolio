@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact me",
+    "admin": "Admin",
+    "logout": "Log out"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "badge_dev": "Fullstack Developer",
+    "badge_freelance": "Freelance",
+    "subtitle": "React & Node.js — from DB to deployment",
+    "desc": "Available for your web projects: showcase sites, custom applications, APIs. I handle everything, from a secure backend to VPS production.",
+    "see_projects": "View my projects",
+    "contact": "Contact me"
+  },
+  "about": {
+    "title1": "Passionate about the web,",
+    "title2": "end to end",
+    "p1": "Freelance fullstack developer, I design and deliver complete web applications — from server to interface — with particular attention to performance, security and user experience.",
+    "p2": "I work on diverse projects: business platforms, interactive applications, custom tools, showcase sites. Available remotely, I adapt to each client's needs.",
+    "see_projects": "View my projects",
+    "contact": "Contact me",
+    "timeline_title": "Journey",
+    "simplon_title": "Simplon",
+    "simplon_text": "Web & Mobile Web Developer diploma — my first immersion into the world of code. That's where it all started: HTML, CSS, JavaScript, backend basics.",
+    "python_title": "Python Introduction",
+    "python_text": "A short one-month course to explore another paradigm — logic, scripting, automation. A detour that broadened my way of thinking about code.",
+    "wcs_title": "Wild Code School",
+    "wcs_text": "Intensive Fullstack JavaScript bootcamp — React, Node.js, databases, team projects. The level rises, projects become real.",
+    "self_title": "Self-taught — ongoing",
+    "self_text": "After the courses, I continued alone: deploying on VPS, securing servers, building projects from A to Z. Try, fail, understand, start again. That's where I really learned.",
+    "val_security": "Security",
+    "val_security_desc": "JWT httpOnly, Fail2ban, UFW, Nginx — security is not optional.",
+    "val_perf": "Performance",
+    "val_perf_desc": "Optimized Vite build, PostgreSQL with Prisma, Cloudflare cache.",
+    "val_responsive": "Responsive",
+    "val_responsive_desc": "Every project is tested on mobile, tablet and desktop.",
+    "val_deploy": "Deployment",
+    "val_deploy_desc": "From zero to VPS production with SSL, PM2 and monitoring."
+  },
+  "skills": {
+    "title": "My tech stack",
+    "intro": "The technologies I use to design, develop and deploy complete web projects — from frontend to server.",
+    "cat_database": "Database",
+    "cat_deploy": "Deployment",
+    "cat_tools": "Tools"
+  },
+  "projects": {
+    "title": "My work",
+    "intro": "Complete web applications — from database to interface, deployed in production.",
+    "see_project": "View project",
+    "see_site": "View site",
+    "details": "Details",
+    "empty": "Projects coming soon..."
+  },
+  "contact": {
+    "title": "Let's work together",
+    "intro": "A web project, a question or just want to chat? I'm available.",
+    "name": "Name",
+    "name_placeholder": "Your name",
+    "email": "Email",
+    "message": "Message",
+    "message_placeholder": "Describe your project or request...",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent! I'll get back to you quickly.",
+    "error": "Error sending message."
+  },
+  "detail": {
+    "loading": "Loading...",
+    "all_projects": "All projects",
+    "featured": "Featured",
+    "about_project": "About the project",
+    "key_points": "Key highlights",
+    "stack": "Tech stack",
+    "links": "Links",
+    "live_site": "Live site",
+    "source_code": "Source code",
+    "not_available": "Not available",
+    "date": "Date",
+    "back": "Back to projects",
+    "contact": "Contact me",
+    "placeholder": "The detailed description of this project will be added soon from the admin panel."
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}

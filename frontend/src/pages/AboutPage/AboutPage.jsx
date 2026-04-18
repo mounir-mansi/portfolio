@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import "./AboutPage.css";
 
 export default function AboutPage() {
   const [section, setSection] = useState(null);
+  const { t } = useTranslation();
+  const { lang = "fr" } = useParams();
+  const lp = (path) => `/${lang}${path}`;
 
   useEffect(() => {
-    apiFetch("/api/sections")
+    apiFetch(`/api/sections?lang=${lang}`)
       .then((r) => r.json())
       .then((d) => setSection(d.about || null))
       .catch(() => {});
-  }, []);
+  }, [lang]);
 
   const text = section?.text || null;
 
@@ -21,22 +25,15 @@ export default function AboutPage() {
       <div className="about-page">
         <div className="about-page-inner">
           <div className="about-left">
-            <h1>Passionné par le web,<br />de bout en bout</h1>
+            <h1>{t("about.title1")}<br />{t("about.title2")}</h1>
 
             <div className="about-page-body">
               {text ? (
                 <p>{text}</p>
               ) : (
                 <>
-                  <p>
-                    Développeur fullstack freelance, je conçois et livre des applications web complètes —
-                    du serveur jusqu'à l'interface — avec une attention particulière à la performance,
-                    la sécurité et l'expérience utilisateur.
-                  </p>
-                  <p>
-                    Je travaille sur des projets variés&#x202F;: plateformes métier, applications interactives,
-                    outils sur mesure, sites vitrines. Disponible à distance, je m'adapte aux besoins de chaque client.
-                  </p>
+                  <p>{t("about.p1")}</p>
+                  <p>{t("about.p2")}</p>
                 </>
               )}
             </div>
@@ -62,44 +59,44 @@ export default function AboutPage() {
             </div>
 
             <div className="about-ctas">
-              <Link to="/projets" className="btn-about-primary">Voir mes projets</Link>
-              <Link to="/contact" className="btn-about-outline">Me contacter</Link>
+              <Link to={lp("/projets")} className="btn-about-primary">{t("about.see_projects")}</Link>
+              <Link to={lp("/contact")} className="btn-about-outline">{t("about.contact")}</Link>
             </div>
 
             {/* Parcours */}
             <div className="about-timeline">
-              <h2 className="timeline-title"><i className="fa-solid fa-route" aria-hidden="true" /> Parcours</h2>
+              <h2 className="timeline-title"><i className="fa-solid fa-route" aria-hidden="true" /> {t("about.timeline_title")}</h2>
               <div className="timeline">
 
                 <div className="timeline-item">
                   <div className="timeline-dot" />
                   <div className="timeline-content">
-                    <span className="timeline-label">Simplon</span>
-                    <p>Diplôme Développeur Web &amp; Web Mobile — ma première immersion dans le monde du code. C'est là que tout a commencé&#x202F;: HTML, CSS, JavaScript, les bases du backend.</p>
+                    <span className="timeline-label">{t("about.simplon_title")}</span>
+                    <p>{t("about.simplon_text")}</p>
                   </div>
                 </div>
 
                 <div className="timeline-item">
                   <div className="timeline-dot timeline-dot-sm" />
                   <div className="timeline-content">
-                    <span className="timeline-label">Initiation Python</span>
-                    <p>Une formation courte d'un mois pour explorer un autre paradigme — logique, scripting, automatisation. Une parenthèse qui a élargi ma façon de penser le code.</p>
+                    <span className="timeline-label">{t("about.python_title")}</span>
+                    <p>{t("about.python_text")}</p>
                   </div>
                 </div>
 
                 <div className="timeline-item">
                   <div className="timeline-dot" />
                   <div className="timeline-content">
-                    <span className="timeline-label">Wild Code School</span>
-                    <p>Formation Fullstack JavaScript intensive — React, Node.js, bases de données, projets en équipe. Le niveau monte, les projets deviennent réels.</p>
+                    <span className="timeline-label">{t("about.wcs_title")}</span>
+                    <p>{t("about.wcs_text")}</p>
                   </div>
                 </div>
 
                 <div className="timeline-item">
                   <div className="timeline-dot timeline-dot-accent" />
                   <div className="timeline-content">
-                    <span className="timeline-label">Autodidacte — en continu</span>
-                    <p>Après les formations, j'ai continué seul&#x202F;: déployer sur VPS, sécuriser des serveurs, construire des projets de A à Z. Essayer, échouer, comprendre, recommencer. C'est là que j'ai vraiment appris.</p>
+                    <span className="timeline-label">{t("about.self_title")}</span>
+                    <p>{t("about.self_text")}</p>
                   </div>
                 </div>
 
@@ -111,23 +108,23 @@ export default function AboutPage() {
         <div className="about-values">
           <div className="value-card">
             <i className="fa-solid fa-shield-halved" aria-hidden="true" />
-            <h3>Sécurité</h3>
-            <p>JWT httpOnly, Fail2ban, UFW, Nginx — la sécurité n'est pas une option.</p>
+            <h3>{t("about.val_security")}</h3>
+            <p>{t("about.val_security_desc")}</p>
           </div>
           <div className="value-card">
             <i className="fa-solid fa-bolt" aria-hidden="true" />
-            <h3>Performance</h3>
-            <p>Build Vite optimisé, PostgreSQL avec Prisma, cache Cloudflare.</p>
+            <h3>{t("about.val_perf")}</h3>
+            <p>{t("about.val_perf_desc")}</p>
           </div>
           <div className="value-card">
             <i className="fa-solid fa-mobile-screen" aria-hidden="true" />
-            <h3>Responsive</h3>
-            <p>Chaque projet est testé sur mobile, tablette et desktop.</p>
+            <h3>{t("about.val_responsive")}</h3>
+            <p>{t("about.val_responsive_desc")}</p>
           </div>
           <div className="value-card">
             <i className="fa-solid fa-rocket" aria-hidden="true" />
-            <h3>Déploiement</h3>
-            <p>De zéro à la mise en production sur VPS avec SSL, PM2 et monitoring.</p>
+            <h3>{t("about.val_deploy")}</h3>
+            <p>{t("about.val_deploy_desc")}</p>
           </div>
         </div>
       </div>

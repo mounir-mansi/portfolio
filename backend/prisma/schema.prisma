@@ -30,20 +30,33 @@ model ContactMessage {
 }
 
 model Project {
-  id              Int      @id @default(autoincrement())
-  title           String
-  description     String
-  longDescription String?
-  highlights      String[]
-  stack           String[]
-  imageKey        String?
-  imageUrl        String?
-  liveUrl         String?
-  githubUrl       String?
-  featured        Boolean  @default(false)
-  order           Int      @default(0)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  id                  Int      @id @default(autoincrement())
+  title               String
+  title_en            String?
+  title_it            String?
+  title_es            String?
+  description         String
+  description_en      String?
+  description_it      String?
+  description_es      String?
+  longDescription     String?
+  longDescription_en  String?
+  longDescription_it  String?
+  longDescription_es  String?
+  highlights          String[]
+  highlights_en       String[]
+  highlights_it       String[]
+  highlights_es       String[]
+  stack               String[]
+  imageKey            String?
+  imageUrl            String?
+  liveUrl             String?
+  githubUrl           String?
+  featured            Boolean  @default(false)
+  visible             Boolean  @default(true)
+  order               Int      @default(0)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 }
 
 model Skill {
@@ -61,5 +74,8 @@ model Section {
   imageKey  String?
   imageUrl  String?
   text      String?
+  text_en   String?
+  text_it   String?
+  text_es   String?
   updatedAt DateTime @updatedAt
 }

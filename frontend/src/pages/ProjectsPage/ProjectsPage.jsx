@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import "./ProjectsPage.css";
@@ -7,14 +8,17 @@ import "./ProjectsPage.css";
 export default function ProjectsPage() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
+  const { lang = "fr" } = useParams();
+  const lp = (path) => `/${lang}${path}`;
 
   useEffect(() => {
-    apiFetch("/api/projects")
+    apiFetch(`/api/projects?lang=${lang}`)
       .then((r) => r.json())
       .then(setProjects)
       .catch(() => {})
       .finally(() => setLoading(false));
-  }, []);
+  }, [lang]);
 
   const featured = projects.filter((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
@@ -23,10 +27,8 @@ export default function ProjectsPage() {
     <Layout>
       <div className="projects-page">
         <div className="projects-page-header">
-          <h1>Mes réalisations</h1>
-          <p className="projects-intro">
-            Des applications web complètes — de la base de données à l'interface, déployées en production.
-          </p>
+          <h1>{t("projects.title")}</h1>
+          <p className="projects-intro">{t("projects.intro")}</p>
         </div>
 
         {loading ? (
@@ -39,16 +41,16 @@ export default function ProjectsPage() {
           </div>
         ) : (
           <div className="projects-page-body">
-            {featured.map((p) => <ProjectCardHero key={p.id} project={p} />)}
+            {featured.map((p) => <ProjectCardHero key={p.id} project={p} lp={lp} t={t} />)}
 
             {rest.length > 0 && (
               <div className="projects-grid">
-                {rest.map((p) => <ProjectCard key={p.id} project={p} />)}
+                {rest.map((p) => <ProjectCard key={p.id} project={p} lp={lp} t={t} />)}
               </div>
             )}
 
             {projects.length === 0 && (
-              <p className="projects-empty">Les projets arrivent bientôt...</p>
+              <p className="projects-empty">{t("projects.empty")}</p>
             )}
           </div>
         )}
@@ -57,9 +59,9 @@ export default function ProjectsPage() {
   );
 }
 
-function ProjectCardHero({ project: p }) {
+function ProjectCardHero({ project: p, lp, t }) {
   return (
-    <Link to={`/projets/${p.id}`} className="project-hero-card"
+    <Link to={lp(`/projets/${p.id}`)} className="project-hero-card"
       style={p.imageUrl ? { backgroundImage: `url(${p.imageUrl})` } : {}}>
       <div className="project-hero-overlay" />
       <div className="project-hero-content">
@@ -73,16 +75,16 @@ function ProjectCardHero({ project: p }) {
         <div className="project-hero-bottom">
           <h2>{p.title}</h2>
           <p>{p.description}</p>
-          <span className="hero-cta"><i className="fa-solid fa-arrow-right" aria-hidden="true" /> Voir le projet</span>
+          <span className="hero-cta"><i className="fa-solid fa-arrow-right" aria-hidden="true" /> {t("projects.see_project")}</span>
         </div>
       </div>
     </Link>
   );
 }
 
-function ProjectCard({ project: p, featured }) {
+function ProjectCard({ project: p, lp, t }) {
   return (
-    <Link to={`/projets/${p.id}`} className={`project-card ${featured ? "featured" : ""}`}>
+    <Link to={lp(`/projets/${p.id}`)} className="project-card">
       <div className="project-img">
         {p.imageUrl ? (
           <img src={p.imageUrl} alt={p.title} />
@@ -92,7 +94,7 @@ function ProjectCard({ project: p, featured }) {
           </div>
         )}
         <div className="card-hover-overlay">
-          <span><i className="fa-solid fa-arrow-right" aria-hidden="true" /> Voir le projet</span>
+          <span><i className="fa-solid fa-arrow-right" aria-hidden="true" /> {t("projects.see_project")}</span>
         </div>
       </div>
       <div className="project-body">
@@ -100,17 +102,17 @@ function ProjectCard({ project: p, featured }) {
         <p>{p.description}</p>
         {p.stack?.length > 0 && (
           <div className="project-stack">
-            {p.stack.map((t, i) => <span key={i} className="stack-tag">{t}</span>)}
+            {p.stack.map((tag, i) => <span key={i} className="stack-tag">{tag}</span>)}
           </div>
         )}
         <div className="project-links">
           {p.liveUrl && (
             <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-link btn-link-live" onClick={(e) => e.stopPropagation()}>
-              <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" /> Voir le site
+              <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" /> {t("projects.see_site")}
             </a>
           )}
           <span className="btn-link btn-link-detail">
-            <i className="fa-solid fa-circle-info" aria-hidden="true" /> Détails
+            <i className="fa-solid fa-circle-info" aria-hidden="true" /> {t("projects.details")}
           </span>
         </div>
       </div>
