@@ -22,8 +22,11 @@ model BlacklistedToken {
 model ContactMessage {
   id        Int      @id @default(autoincrement())
   name      String
-  email     String
-  message   String
+  email     String?
+  phone     String?
+  activity  String?
+  message   String?
+  source    String   @default("contact")
   read      Boolean  @default(false)
   replied   Boolean  @default(false)
   createdAt DateTime @default(now())

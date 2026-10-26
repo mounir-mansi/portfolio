@@ -9,21 +9,32 @@ const escapeHtml = (str) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-async function sendContactNotification({ name, email, message }) {
+async function sendContactNotification({ name, email, phone, activity, message, source }) {
+  const isQuote = source === "devis";
   const safeName = escapeHtml(name);
-  const safeEmail = escapeHtml(email);
-  const safeMessage = escapeHtml(message).replace(/\n/g, "<br>");
+  const lines = [`<p><strong>Nom :</strong> ${safeName}</p>`];
+
+  if (phone) {
+    const safePhone = escapeHtml(phone);
+    const telHref = phone.replace(/[^\d+]/g, "");
+    lines.push(`<p><strong>Téléphone :</strong> <a href="tel:${telHref}">${safePhone}</a></p>`);
+  }
+  if (activity) lines.push(`<p><strong>Activité :</strong> ${escapeHtml(activity)}</p>`);
+  if (email) lines.push(`<p><strong>Email :</strong> ${escapeHtml(email)}</p>`);
+  if (message) {
+    lines.push(`<p><strong>Message :</strong></p>`);
+    lines.push(`<p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`);
+  }
 
   await resend.emails.send({
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_CONTACT,
-    subject: `Nouveau message de ${safeName} — Portfolio`,
+    subject: isQuote
+      ? `Demande de maquette gratuite de ${safeName}`
+      : `Nouveau message de ${safeName} — Portfolio`,
     html: `
-      <h2>Nouveau message depuis le portfolio</h2>
-      <p><strong>Nom :</strong> ${safeName}</p>
-      <p><strong>Email :</strong> ${safeEmail}</p>
-      <p><strong>Message :</strong></p>
-      <p>${safeMessage}</p>
+      <h2>${isQuote ? "Nouvelle demande de maquette gratuite" : "Nouveau message depuis le portfolio"}</h2>
+      ${lines.join("\n      ")}
     `,
   });
 }
