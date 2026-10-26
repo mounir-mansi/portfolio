@@ -260,7 +260,7 @@
     "page_menu": "Menú o carta",
     "page_commande": "Pedidos en línea",
     "page_autre": "Otra",
-    "page_other_label": "¿Qué otra página?",
+    "page_other_label": "¿Qué otras páginas o secciones? Sepáralas con una coma.",
     "step3_title": "¿Qué estilo te gusta?",
     "theme_label": "Fondo del sitio",
     "theme_clair": "Claro",
@@ -304,7 +304,9 @@
     "sections_hint": "Las secciones se suceden en una sola página. Marca todo lo que te interese.",
     "pages_hint": "Hasta 5 páginas. Marca las que te interesen.",
     "contents_title": "¿Qué quieres presentar?",
-    "section_accueil": "Presentación de tu actividad"
+    "section_accueil": "Presentación de tu actividad",
+    "page_other_placeholder": "Galería de fotos, Blog, Noticias",
+    "page_other_plus": "Cuentan dentro de tus 5 páginas."
   },
   "meta": {
     "suffix": "ManDev Web",

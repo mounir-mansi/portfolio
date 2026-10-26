@@ -260,7 +260,7 @@
     "page_menu": "Menu ou carte",
     "page_commande": "Commande en ligne",
     "page_autre": "Autre",
-    "page_other_label": "Quelle autre page ?",
+    "page_other_label": "Quelles autres pages ou sections ? Séparez-les par une virgule.",
     "step3_title": "Quel style vous plaît ?",
     "theme_label": "Fond du site",
     "theme_clair": "Clair",
@@ -304,7 +304,9 @@
     "sections_hint": "Les sections s'enchaînent sur une seule page. Cochez tout ce qui vous intéresse.",
     "pages_hint": "Jusqu'à 5 pages. Cochez celles qui vous intéressent.",
     "contents_title": "Que souhaitez-vous présenter ?",
-    "section_accueil": "Présentation de votre activité"
+    "section_accueil": "Présentation de votre activité",
+    "page_other_placeholder": "Galerie photos, Blog, Actualités",
+    "page_other_plus": "Elles comptent dans vos 5 pages."
   },
   "meta": {
     "suffix": "ManDev Web",

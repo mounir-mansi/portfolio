@@ -359,7 +359,12 @@ export default function QuickQuote() {
                 <div className="quote-field">
                   <label htmlFor="quote-pages-autre">{t("quote.page_other_label")}</label>
                   <input id="quote-pages-autre" type="text" maxLength={300} value={brief.pagesAutre}
+                    placeholder={t("quote.page_other_placeholder")}
+                    aria-describedby={brief.pack === "vitrine-plus" ? "quote-pages-autre-hint" : undefined}
                     onChange={(e) => setBrief((b) => ({ ...b, pagesAutre: e.target.value }))} />
+                  {brief.pack === "vitrine-plus" && (
+                    <p id="quote-pages-autre-hint" className="quote-hint">{t("quote.page_other_plus")}</p>
+                  )}
                 </div>
               )}
               {actions(false)}

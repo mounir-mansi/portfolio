@@ -260,7 +260,7 @@
     "page_menu": "Menu",
     "page_commande": "Ordini online",
     "page_autre": "Altro",
-    "page_other_label": "Quale altra pagina?",
+    "page_other_label": "Quali altre pagine o sezioni? Separale con una virgola.",
     "step3_title": "Che stile ti piace?",
     "theme_label": "Sfondo del sito",
     "theme_clair": "Chiaro",
@@ -304,7 +304,9 @@
     "sections_hint": "Le sezioni si susseguono su un'unica pagina. Seleziona tutto ciò che ti interessa.",
     "pages_hint": "Fino a 5 pagine. Seleziona quelle che ti interessano.",
     "contents_title": "Cosa vorresti presentare?",
-    "section_accueil": "Presentazione della tua attività"
+    "section_accueil": "Presentazione della tua attività",
+    "page_other_placeholder": "Galleria foto, Blog, Novità",
+    "page_other_plus": "Contano tra le tue 5 pagine."
   },
   "meta": {
     "suffix": "ManDev Web",

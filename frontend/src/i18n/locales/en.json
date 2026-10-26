@@ -260,7 +260,7 @@
     "page_menu": "Menu",
     "page_commande": "Online ordering",
     "page_autre": "Other",
-    "page_other_label": "Which other page?",
+    "page_other_label": "Which other pages or sections? Separate them with a comma.",
     "step3_title": "What style do you like?",
     "theme_label": "Site background",
     "theme_clair": "Light",
@@ -304,7 +304,9 @@
     "sections_hint": "Sections follow each other on a single page. Tick everything that interests you.",
     "pages_hint": "Up to 5 pages. Tick the ones you want.",
     "contents_title": "What would you like to present?",
-    "section_accueil": "Presentation of your business"
+    "section_accueil": "Presentation of your business",
+    "page_other_placeholder": "Photo gallery, Blog, News",
+    "page_other_plus": "They count towards your 5 pages."
   },
   "meta": {
     "suffix": "ManDev Web",
