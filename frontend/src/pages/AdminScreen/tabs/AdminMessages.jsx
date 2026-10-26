@@ -65,24 +65,33 @@ export default function AdminMessages() {
               <div className="msg-meta">
                 {!msg.read && <span className="unread-dot" />}
                 <strong>{msg.name}</strong>
-                <span className="msg-email">{msg.email}</span>
+                {msg.source === "devis" && <span className="tag-quote">Maquette gratuite</span>}
+                {msg.phone && (
+                  <a className="msg-email" href={`tel:${msg.phone.replace(/[^\d+]/g, "")}`}>{msg.phone}</a>
+                )}
+                {msg.email && <span className="msg-email">{msg.email}</span>}
+                {msg.activity && <span className="msg-email">{msg.activity}</span>}
                 {msg.replied && <span className="tag-replied">Répondu</span>}
               </div>
               <span className="msg-date">{new Date(msg.createdAt).toLocaleDateString("fr-FR")}</span>
             </div>
-            <p className="msg-body">{msg.message}</p>
+            {msg.message && <p className="msg-body">{msg.message}</p>}
             <div className="msg-actions">
               {!msg.read && (
                 <button className="btn-sm" onClick={() => markRead(msg.id)}>
                   Marquer lu
                 </button>
               )}
-              <button
-                className="btn-sm btn-accent"
-                onClick={() => { setReplyId(msg.id); setReplyText(""); markRead(msg.id); }}
-              >
-                <i className="fa-solid fa-reply" aria-hidden="true" /> Répondre
-              </button>
+              {msg.email ? (
+                <button
+                  className="btn-sm btn-accent"
+                  onClick={() => { setReplyId(msg.id); setReplyText(""); markRead(msg.id); }}
+                >
+                  <i className="fa-solid fa-reply" aria-hidden="true" /> Répondre
+                </button>
+              ) : (
+                <span className="msg-email">Pas d'email : à rappeler</span>
+              )}
               <button className="btn-sm btn-danger" onClick={() => deleteMsg(msg.id)} aria-label="Supprimer">
                 <i className="fa-solid fa-trash" aria-hidden="true" />
               </button>
