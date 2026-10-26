@@ -30,51 +30,52 @@ export default function ConnexionScreen() {
   };
 
   return (
-    <div className="connexion-page">
-      <div className="connexion-box">
-        <h1>Administration</h1>
-        <p className="connexion-sub">Accès réservé</p>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
+    <main className="login-page">
+      <div className="login-box">
+        <h1 className="login-title">Administration</h1>
+        <p className="login-sub">Accès réservé</p>
+        <form onSubmit={handleSubmit} className="login-form">
+          <div className="login-field">
             <label htmlFor="username">Identifiant</label>
             <input
               id="username"
               type="text"
+              autoComplete="username"
               value={form.username}
               onChange={(e) => setForm((f) => ({ ...f, username: e.target.value }))}
-              placeholder="admin"
               required
               autoFocus
             />
           </div>
-          <div className="form-group">
+          <div className="login-field">
             <label htmlFor="password">Mot de passe</label>
-            <div className="pwd-wrapper">
+            <div className="login-pwd">
               <input
                 id="password"
                 type={showPwd ? "text" : "password"}
+                autoComplete="current-password"
                 value={form.password}
                 onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))}
-                placeholder="••••••••"
                 required
               />
               <button
                 type="button"
-                className="toggle-pwd"
+                className="login-toggle"
                 onClick={() => setShowPwd((v) => !v)}
-                aria-label={showPwd ? "Masquer" : "Afficher"}
+                aria-pressed={showPwd}
+                aria-label={showPwd ? "Masquer le mot de passe" : "Afficher le mot de passe"}
               >
                 <i className={`fa-solid ${showPwd ? "fa-eye-slash" : "fa-eye"}`} aria-hidden="true" />
               </button>
             </div>
           </div>
-          {error && <p className="connexion-error">{error}</p>}
-          <button type="submit" className="btn-connexion" disabled={loading}>
+          {error && <p className="login-error" role="alert">{error}</p>}
+          <button type="submit" className="btn-primary login-submit" disabled={loading}>
             {loading ? "Connexion..." : "Se connecter"}
           </button>
         </form>
-        <a href="/" className="back-link">← Retour au site</a>
+        <a href="/" className="login-back">Retour au site</a>
       </div>
-    </div>
+    </main>
   );
 }

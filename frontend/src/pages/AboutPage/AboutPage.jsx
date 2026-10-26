@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
+import SkillsIndex from "../../components/SkillsIndex/SkillsIndex";
 import { apiFetch } from "../../utils/api";
 import "./AboutPage.css";
 
@@ -13,6 +14,12 @@ export default function AboutPage() {
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
   const lp = (path) => `/${lang}${path}`;
+  const { hash } = useLocation();
+
+  // Ancre (#stack) après une redirection depuis l'ancienne page Compétences
+  useEffect(() => {
+    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+  }, [hash]);
 
   useEffect(() => {
     apiFetch(`/api/sections?lang=${lang}`)
@@ -53,6 +60,12 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
+
+        <section id="stack" aria-labelledby="about-stack-title">
+          <h2 id="about-stack-title" className="about-section-title">{t("skills.title")}</h2>
+          <p className="about-section-intro">{t("skills.intro")}</p>
+          <SkillsIndex />
+        </section>
 
         <section>
           <h2 className="about-section-title">{t("about.timeline_title")}</h2>

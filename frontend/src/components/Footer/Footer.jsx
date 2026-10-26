@@ -2,19 +2,21 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 import "./Footer.css";
 
-export default function Footer() {
+export default function Footer({ hideCta = false }) {
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
 
   return (
-    <footer className="footer">
+    <footer className={`footer ${hideCta ? "footer--compact" : ""}`}>
       <div className="container footer-inner">
-        <div className="footer-cta">
-          <p className="eyebrow">{t("footer.eyebrow")}</p>
-          <Link to={`/${lang}/contact`} className="footer-big">
-            {t("footer.big")} <span aria-hidden="true">↗</span>
-          </Link>
-        </div>
+        {!hideCta && (
+          <div className="footer-cta">
+            <p className="eyebrow">{t("footer.eyebrow")}</p>
+            <Link to={`/${lang}/contact`} className="footer-big">
+              {t("footer.big")} <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+        )}
 
         <div className="footer-bottom">
           <p className="footer-copy">

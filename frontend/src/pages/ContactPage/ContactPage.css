@@ -142,3 +142,17 @@
 .contact-alt .contact-alt-list a:hover {
   color: var(--accent-text);
 }
+
+/* Desktop : formulaire à gauche, coordonnées directes à droite */
+@media (min-width: 1024px) {
+  .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 36rem) minmax(0, 24rem);
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .contact-layout .contact-alt {
+    margin-top: 0;
+  }
+}

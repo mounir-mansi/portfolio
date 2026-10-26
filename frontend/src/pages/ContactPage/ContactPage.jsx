@@ -140,13 +140,13 @@ export default function ContactPage() {
     );
 
   return (
-    <Layout>
+    <Layout hideFooterCta>
       <header className="page-head container">
         <h1 className="page-title">{t("contact.title")}</h1>
         <p className="page-intro">{t("contact.intro")}</p>
       </header>
 
-      <div className="page-body container">
+      <div className="page-body container contact-layout">
         <form className="contact-form" onSubmit={handleSubmit} noValidate>
           <div className="form-group">
             <label htmlFor="name">{t("contact.name")}</label>

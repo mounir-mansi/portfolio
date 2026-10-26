@@ -183,6 +183,13 @@
     "contact": "Contact me",
     "placeholder": "The detailed description of this project will be added soon from the admin panel."
   },
+  "notfound": {
+    "title": "Page not found",
+    "text": "This address doesn't exist or has moved.",
+    "home": "Back to home",
+    "projects": "See my work",
+    "contact": "Contact me"
+  },
   "footer": {
     "rights": "All rights reserved",
     "eyebrow": "Got a project in mind?",

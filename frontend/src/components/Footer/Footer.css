@@ -4,6 +4,11 @@
   background: var(--bg-sunken);
 }
 
+/* Sans appel à l'action (page Contact) : pas besoin du grand espace du haut */
+.footer--compact {
+  padding-top: 2.5rem;
+}
+
 .footer-cta {
   display: flex;
   flex-direction: column;

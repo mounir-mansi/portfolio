@@ -183,6 +183,13 @@
     "contact": "Me contacter",
     "placeholder": "La description détaillée de ce projet sera ajoutée prochainement depuis le panneau admin."
   },
+  "notfound": {
+    "title": "Page introuvable",
+    "text": "Cette adresse n'existe pas ou a été déplacée.",
+    "home": "Retour à l'accueil",
+    "projects": "Voir les réalisations",
+    "contact": "Me contacter"
+  },
   "footer": {
     "rights": "Tous droits réservés",
     "eyebrow": "Un projet en tête ?",

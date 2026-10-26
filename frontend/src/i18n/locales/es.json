@@ -183,6 +183,13 @@
     "contact": "Contáctame",
     "placeholder": "La descripción detallada de este proyecto se añadirá pronto desde el panel de administración."
   },
+  "notfound": {
+    "title": "Página no encontrada",
+    "text": "Esta dirección no existe o se ha movido.",
+    "home": "Volver al inicio",
+    "projects": "Ver proyectos",
+    "contact": "Contáctame"
+  },
   "footer": {
     "rights": "Todos los derechos reservados",
     "eyebrow": "¿Tienes un proyecto?",
