@@ -476,9 +476,109 @@
 /* Desktop : chaque section tient dans la hauteur de l'écran (zone utile = hauteur moins la navbar).
    Tailles et espacements suivent la hauteur de la fenêtre. Le mobile n'est pas concerné. */
 @media (min-width: 1024px) {
-  /* Hero minimal : sa hauteur suit son contenu, sans grand vide autour */
   .hero {
     padding-block: clamp(1.25rem, 3.5vh, 2.5rem);
+  }
+
+  /* Le contenu grandit avec la hauteur de l'écran pour remplir la section */
+  .hero-title {
+    font-size: clamp(3rem, 15.5vh, 10.5rem);
+  }
+
+  .hero-eyebrow {
+    margin-bottom: clamp(1rem, 4vh, 2.5rem);
+  }
+
+  .hero-sub {
+    margin-top: clamp(1rem, 4vh, 2.5rem);
+    font-size: clamp(1.15rem, 3vh, 1.9rem);
+    max-width: 42rem;
+  }
+
+  .hero-ctas {
+    margin-top: clamp(1.5rem, 5vh, 3.5rem);
+  }
+
+  .hero .btn-primary,
+  .hero .btn-outline {
+    padding-block: clamp(0.95em, 1.6vh, 1.2em);
+  }
+
+  .hero-offer {
+    margin-top: clamp(1.25rem, 3vh, 2rem);
+    font-size: clamp(1.05rem, 2.2vh, 1.4rem);
+  }
+
+  .hero-call {
+    font-size: clamp(0.95rem, 1.9vh, 1.2rem);
+  }
+
+  .hero-proof img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .block-head {
+    margin-bottom: clamp(1.5rem, 6vh, 4rem);
+  }
+
+  .block-title {
+    font-size: clamp(2.2rem, 8.5vh, 6rem);
+  }
+
+  .service {
+    gap: clamp(0.75rem, 2vh, 1.6rem);
+    padding: clamp(1.5rem, 5.5vh, 3.75rem) clamp(1.25rem, 2.5vw, 2.25rem);
+  }
+
+  .service-name {
+    font-size: clamp(1.6rem, 4vh, 2.6rem);
+  }
+
+  .service-list {
+    gap: clamp(0.4rem, 1vh, 0.8rem);
+    font-size: clamp(0.95rem, 1.9vh, 1.15rem);
+  }
+
+  .work-link {
+    padding-block: clamp(1.25rem, 5.5vh, 3.75rem);
+  }
+
+  .work-title {
+    font-size: min(var(--step-3), 7vh);
+  }
+
+  .steps {
+    align-items: stretch;
+  }
+
+  .step {
+    padding-top: clamp(1.5rem, 6vh, 4rem);
+    gap: clamp(0.75rem, 2.4vh, 1.75rem);
+  }
+
+  .step-num {
+    font-size: clamp(3.5rem, 15vh, 9rem);
+  }
+
+  .step-title {
+    font-size: clamp(1.5rem, 4vh, 2.6rem);
+  }
+
+  .step-desc {
+    font-size: clamp(1rem, 2.2vh, 1.35rem);
+  }
+
+  .final-inner {
+    gap: clamp(1.75rem, 5vh, 3.5rem);
+  }
+
+  .final-title {
+    font-size: clamp(3rem, 17vh, 11.5rem);
+  }
+
+  .final .btn-primary {
+    padding-block: clamp(0.95em, 1.8vh, 1.3em);
+    font-size: clamp(1rem, 2.2vh, 1.4rem);
   }
 
   .hero-grid {

@@ -63,6 +63,20 @@
   :root {
     --section-y: clamp(1.75rem, 4.5vh, 3.5rem);
   }
+
+  /* Chaque section occupe toute la hauteur de l'écran (moins la navbar), contenu centré */
+  main > .hero,
+  main > .block {
+    min-height: calc(100svh - 4.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Pied de page : l'appel final reste plein écran, le reste suit */
+  main > .block > .container {
+    width: 100%;
+  }
 }
 
 *, *::before, *::after {
