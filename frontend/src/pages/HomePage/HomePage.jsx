@@ -40,7 +40,6 @@ export default function HomePage() {
     if (el) el.scrollIntoView();
   }, [hash]);
 
-  const facts = t("home.facts", { returnObjects: true });
   const services = t("home.services", { returnObjects: true });
   const steps = t("home.steps", { returnObjects: true });
 
@@ -79,29 +78,8 @@ export default function HomePage() {
             </Link>
           )}
 
-          <dl className="hero-facts reveal" style={{ "--delay": "320ms" }}>
-            {Array.isArray(facts) && facts.map((f) => (
-              <div key={f.label} className="fact">
-                <dt className="eyebrow">{f.label}</dt>
-                <dd>{f.value}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </section>
-
-      {/* BANDEAU */}
-      <div className="marquee" aria-hidden="true">
-        <div className="marquee-track">
-          {[0, 1].map((k) => (
-            <span key={k} className="marquee-set">
-              {t("home.marquee").split("·").map((w, i) => (
-                <span key={`${k}-${i}`}>{w.trim()}<i>✺</i></span>
-              ))}
-            </span>
-          ))}
-        </div>
-      </div>
 
       {/* MAQUETTE GRATUITE */}
       <QuickQuote />

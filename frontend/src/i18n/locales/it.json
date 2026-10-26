@@ -29,21 +29,6 @@
     "cta_work": "Vedi i lavori",
     "offer": "Bozza gratuita entro 72 ore lavorative · senza impegno",
     "call": "Una domanda?",
-    "facts": [
-      {
-        "label": "Consegna",
-        "value": "Chiavi in mano"
-      },
-      {
-        "label": "Funzionalità",
-        "value": "Prenotazioni e pagamenti online"
-      },
-      {
-        "label": "Sicurezza",
-        "value": "HTTPS, backup, aggiornamenti"
-      }
-    ],
-    "marquee": "Siti vetrina · Prenotazioni online · Pagamenti Stripe · Area admin · SEO locale · Hosting sicuro",
     "services_eyebrow": "Servizi",
     "services_title": "Cosa costruisco per te",
     "services_cta": "Ricevi la mia bozza gratuita",

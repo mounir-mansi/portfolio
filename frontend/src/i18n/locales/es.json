@@ -29,21 +29,6 @@
     "cta_work": "Ver trabajos",
     "offer": "Maqueta gratis en 72 horas laborables · sin compromiso",
     "call": "¿Una pregunta?",
-    "facts": [
-      {
-        "label": "Entrega",
-        "value": "Llave en mano"
-      },
-      {
-        "label": "Funciones",
-        "value": "Reservas y pagos en línea"
-      },
-      {
-        "label": "Seguridad",
-        "value": "HTTPS, copias, actualizaciones"
-      }
-    ],
-    "marquee": "Sitios escaparate · Reservas online · Pagos Stripe · Panel admin · SEO local · Alojamiento seguro",
     "services_eyebrow": "Servicios",
     "services_title": "Lo que construyo para ti",
     "services_cta": "Recibir mi maqueta gratis",

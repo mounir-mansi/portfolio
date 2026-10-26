@@ -101,60 +101,6 @@
   color: var(--accent-text);
 }
 
-.hero-facts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-  border-top: 1px solid var(--line);
-}
-
-.fact {
-  padding: 1.5rem 1.5rem 0 0;
-}
-
-.fact dd {
-  margin-top: 0.5rem;
-  font-family: var(--font-display);
-  font-size: var(--step-2);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-/* ===== BANDEAU ===== */
-.marquee {
-  border-block: 1px solid var(--line);
-  overflow: hidden;
-  background: var(--bg-sunken);
-  padding-block: 1rem;
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 38s linear infinite;
-}
-
-.marquee-set {
-  display: flex;
-  align-items: center;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--step-2);
-  font-weight: 300;
-  color: var(--fg-muted);
-  white-space: nowrap;
-}
-
-.marquee-set i {
-  font-style: normal;
-  font-size: 0.7em;
-  margin-inline: 1.5rem;
-  color: var(--accent-text);
-}
-
-@keyframes marquee {
-  to { transform: translateX(-50%); }
-}
-
 /* ===== BLOCS ===== */
 .block {
   padding-block: var(--section-y);
@@ -477,10 +423,6 @@
     column-gap: clamp(2rem, 5vw, 4rem);
   }
 
-  .hero-facts {
-    grid-column: 1 / -1;
-  }
-
   .hero-proof {
     display: flex;
     flex-direction: column;
@@ -534,8 +476,16 @@
 /* Desktop : chaque section tient dans la hauteur de l'écran (zone utile = hauteur moins la navbar).
    Tailles et espacements suivent la hauteur de la fenêtre. Le mobile n'est pas concerné. */
 @media (min-width: 1024px) {
+  /* Hero minimal : il occupe l'écran (hauteur moins la navbar) et son contenu est centré verticalement */
   .hero {
-    padding-block: clamp(2rem, 6vh, 4.5rem) clamp(2rem, 5vh, 4rem);
+    display: flex;
+    align-items: center;
+    min-height: calc(100svh - 4.5rem);
+    padding-block: clamp(2rem, 6vh, 4.5rem);
+  }
+
+  .hero-grid {
+    width: 100%;
   }
 
   .hero-grid {
@@ -561,10 +511,6 @@
 
   .hero-ctas {
     margin-top: clamp(1.25rem, 3.5vh, 2.5rem);
-  }
-
-  .fact {
-    padding-top: clamp(1rem, 2.5vh, 1.5rem);
   }
 
   .block-head {
@@ -643,15 +589,6 @@
     aspect-ratio: 16 / 10;
   }
 
-  .fact {
-    padding-top: 0.75rem;
-  }
-
-  .fact dd {
-    margin-top: 0.25rem;
-    font-size: var(--step-1);
-  }
-
   .block-head {
     margin-bottom: 0.75rem;
   }
@@ -685,7 +622,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track,
   .pulse {
     animation: none;
   }

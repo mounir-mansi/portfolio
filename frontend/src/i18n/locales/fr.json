@@ -29,21 +29,6 @@
     "cta_work": "Voir les réalisations",
     "offer": "Maquette gratuite sous 72 h ouvrées · sans engagement",
     "call": "Une question ?",
-    "facts": [
-      {
-        "label": "Livraison",
-        "value": "Clé en main"
-      },
-      {
-        "label": "Fonctionnalités",
-        "value": "Réservation et paiement en ligne"
-      },
-      {
-        "label": "Sécurité",
-        "value": "HTTPS, sauvegardes, mises à jour"
-      }
-    ],
-    "marquee": "Sites vitrines · Réservation en ligne · Paiement Stripe · Espace admin · SEO local · Hébergement sécurisé",
     "services_eyebrow": "Services",
     "services_title": "Ce que je construis pour vous",
     "services_cta": "Recevoir ma maquette gratuite",

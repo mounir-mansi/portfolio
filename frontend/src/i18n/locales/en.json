@@ -29,21 +29,6 @@
     "cta_work": "See my work",
     "offer": "Free mockup within 72 working hours · no commitment",
     "call": "A question?",
-    "facts": [
-      {
-        "label": "Delivery",
-        "value": "Turnkey"
-      },
-      {
-        "label": "Features",
-        "value": "Online booking and payment"
-      },
-      {
-        "label": "Security",
-        "value": "HTTPS, backups, updates"
-      }
-    ],
-    "marquee": "Showcase sites · Online booking · Stripe payments · Admin area · Local SEO · Secure hosting",
     "services_eyebrow": "Services",
     "services_title": "What I build for you",
     "services_cta": "Get my free mockup",
