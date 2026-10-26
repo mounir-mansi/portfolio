@@ -1,7 +1,12 @@
 const crypto = require("crypto");
+const multer = require("multer");
 const prisma = require("../lib/prisma");
+const storage = require("../lib/briefStorage");
+const { detectFileType, MIME_BY_EXT, FILE_ID_REGEX } = require("../lib/fileType");
 const { sendContactNotification, sendBriefNotification, sendReply } = require("../lib/emailSender");
 
+const MAX_FILE_BYTES = 10 * 1024 * 1024;
+const MAX_MENU_FILES = 3;
 const BRIEF_TTL_MS = 2 * 60 * 60 * 1000;
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
 
@@ -110,9 +115,7 @@ async function updateBrief(req, res) {
     if (!body.pages.every((p) => BRIEF_OPTIONS.pages.includes(p)))
       return res.status(400).json({ error: "Pages invalides." });
     data.pages = [...new Set(body.pages)];
-    // Le pack Vitrine + comprend jusqu'à 5 pages
-    if ((data.pack || row.pack) === "vitrine-plus" && data.pages.length > 5)
-      return res.status(400).json({ error: "5 pages maximum." });
+
   }
   for (const key of ["theme", "echeance", "creneau"]) {
     if (body[key] === undefined) continue;
@@ -126,6 +129,15 @@ async function updateBrief(req, res) {
       return res.status(400).json({ error: "Texte invalide ou trop long." });
     data[key] = body[key].trim() || null;
   }
+  // Le pack Vitrine + comprend jusqu'à 5 pages : cases cochées + pages ajoutées à la main
+  if ((data.pack || row.pack) === "vitrine-plus" && (data.pages !== undefined || data.pagesAutre !== undefined)) {
+    const pages = data.pages !== undefined ? data.pages : row.pages;
+    const autre = data.pagesAutre !== undefined ? data.pagesAutre : row.pagesAutre;
+    const added = autre ? autre.split(",").map((x) => x.trim()).filter(Boolean).length : 0;
+    const total = pages.filter((p) => p !== "autre").length + (pages.includes("autre") ? Math.max(added, 1) : 0);
+    if (total > 5) return res.status(400).json({ error: "5 pages maximum." });
+  }
+
   if (body.aLogo !== undefined) {
     if (typeof body.aLogo !== "boolean") return res.status(400).json({ error: "Valeur invalide." });
     data.aLogo = body.aLogo;
@@ -142,6 +154,111 @@ async function updateBrief(req, res) {
   } catch (err) {
     console.error("brief error:", err);
     res.status(500).json({ error: "Erreur serveur" });
+  }
+}
+
+// ---- Fichiers importés par le visiteur (menu, logo) ----
+
+async function requireBriefToken(req, res, next) {
+  const token = req.get("x-brief-token") || "";
+  if (!/^[a-f0-9]{48}$/.test(token)) return res.status(401).json({ error: "Lien expiré." });
+  try {
+    const row = await prisma.contactMessage.findUnique({ where: { briefTokenHash: sha256(token) } });
+    if (!row || !row.briefExpiresAt || row.briefExpiresAt < new Date())
+      return res.status(401).json({ error: "Lien expiré." });
+    req.briefRow = row;
+    next();
+  } catch (err) {
+    console.error("brief token error:", err);
+    res.status(500).json({ error: "Erreur serveur" });
+  }
+}
+
+const memoryUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: MAX_FILE_BYTES, files: 1, fields: 0 },
+}).single("file");
+
+function receiveFile(req, res, next) {
+  memoryUpload(req, res, (err) => {
+    if (!err) return next();
+    if (err.code === "LIMIT_FILE_SIZE")
+      return res.status(413).json({ error: "Fichier trop volumineux (10 Mo maximum)." });
+    return res.status(400).json({ error: "Fichier invalide." });
+  });
+}
+
+async function uploadBriefFile(req, res) {
+  const row = req.briefRow;
+  const kind = req.query.kind;
+  if (!["menu", "logo"].includes(kind)) return res.status(400).json({ error: "Type de fichier invalide." });
+  if (!req.file) return res.status(400).json({ error: "Aucun fichier reçu." });
+
+  const type = detectFileType(req.file.buffer);
+  if (!type) return res.status(400).json({ error: "Format non accepté (PDF, JPEG, PNG ou WebP)." });
+  if (kind === "menu" && row.menuFiles.length >= MAX_MENU_FILES)
+    return res.status(400).json({ error: "3 fichiers maximum." });
+
+  const fileId = `${crypto.randomBytes(16).toString("hex")}.${type.ext}`;
+  try {
+    await storage.put(`brief/${row.id}/${fileId}`, req.file.buffer, type.mime);
+
+    if (kind === "menu") {
+      await prisma.contactMessage.update({ where: { id: row.id }, data: { menuFiles: { push: fileId } } });
+    } else {
+      await prisma.contactMessage.update({ where: { id: row.id }, data: { logoFile: fileId, aLogo: true } });
+      if (row.logoFile) await storage.remove(`brief/${row.id}/${row.logoFile}`);
+    }
+    res.json({ ok: true, fileId });
+  } catch (err) {
+    console.error("upload error:", err);
+    res.status(500).json({ error: "Erreur serveur" });
+  }
+}
+
+async function deleteBriefFile(req, res) {
+  const row = req.briefRow;
+  const { fileId } = req.params;
+  if (!FILE_ID_REGEX.test(fileId)) return res.status(400).json({ error: "Fichier invalide." });
+
+  try {
+    if (row.menuFiles.includes(fileId)) {
+      await prisma.contactMessage.update({ where: { id: row.id }, data: { menuFiles: row.menuFiles.filter((f) => f !== fileId) } });
+    } else if (row.logoFile === fileId) {
+      await prisma.contactMessage.update({ where: { id: row.id }, data: { logoFile: null } });
+    } else {
+      return res.status(404).json({ error: "Fichier introuvable." });
+    }
+    await storage.remove(`brief/${row.id}/${fileId}`);
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("delete file error:", err);
+    res.status(500).json({ error: "Erreur serveur" });
+  }
+}
+
+// Téléchargement par l'admin (route protégée) : toujours en pièce jointe, jamais affiché ni exécuté dans le navigateur
+async function downloadBriefFile(req, res) {
+  const { fileId } = req.params;
+  if (!FILE_ID_REGEX.test(fileId)) return res.status(400).json({ error: "Fichier invalide." });
+  try {
+    const row = await prisma.contactMessage.findUnique({ where: { id: Number(req.params.id) } });
+    const menuIndex = row ? row.menuFiles.indexOf(fileId) : -1;
+    if (!row || (menuIndex === -1 && row.logoFile !== fileId)) return res.status(404).json({ error: "Fichier introuvable." });
+
+    const ext = fileId.split(".")[1];
+    const buffer = await storage.get(`brief/${row.id}/${fileId}`);
+    const name = menuIndex === -1 ? `logo.${ext}` : `menu-${menuIndex + 1}.${ext}`;
+    res.set({
+      "Content-Type": MIME_BY_EXT[ext],
+      "Content-Disposition": `attachment; filename="${name}"`,
+      "X-Content-Type-Options": "nosniff",
+      "Cache-Control": "private, no-store",
+    });
+    res.send(buffer);
+  } catch (err) {
+    console.error("download error:", err);
+    res.status(404).json({ error: "Fichier introuvable." });
   }
 }
 
@@ -170,6 +287,11 @@ async function markRead(req, res) {
 
 async function deleteMessage(req, res) {
   try {
+    const existing = await prisma.contactMessage.findUnique({ where: { id: Number(req.params.id) } });
+    if (existing) {
+      const ids = [...(existing.menuFiles || []), existing.logoFile].filter(Boolean);
+      await Promise.all(ids.map((fileId) => storage.remove(`brief/${existing.id}/${fileId}`)));
+    }
     await prisma.contactMessage.delete({
       where: { id: Number(req.params.id) },
     });
@@ -206,4 +328,4 @@ async function replyMessage(req, res) {
   }
 }
 
-module.exports = { submitContact, updateBrief, getMessages, markRead, deleteMessage, replyMessage };
+module.exports = { submitContact, updateBrief, requireBriefToken, receiveFile, uploadBriefFile, deleteBriefFile, downloadBriefFile, getMessages, markRead, deleteMessage, replyMessage };

@@ -5,7 +5,7 @@ const { verifyToken } = require("../middleware/auth");
 const { upload, uploadFixed } = require("../middleware/handleUpload");
 
 const { login, logout, me } = require("../controllers/authController");
-const { submitContact, updateBrief, getMessages, markRead, deleteMessage, replyMessage } = require("../controllers/contactController");
+const { submitContact, updateBrief, requireBriefToken, receiveFile, uploadBriefFile, deleteBriefFile, downloadBriefFile, getMessages, markRead, deleteMessage, replyMessage } = require("../controllers/contactController");
 const { getProjects, getAllProjects, getProjectById, createProject, updateProject, deleteProject, toggleVisible } = require("../controllers/projectController");
 const { getSkills, createSkill, updateSkill, deleteSkill } = require("../controllers/skillController");
 const { getSections, uploadSection } = require("../controllers/sectionController");
@@ -18,6 +18,9 @@ router.get("/admin/me", verifyToken, me);
 // Contact
 router.post("/contact", submitContact);
 router.patch("/contact/brief", updateBrief);
+router.post("/contact/brief/files", requireBriefToken, receiveFile, uploadBriefFile);
+router.delete("/contact/brief/files/:fileId", requireBriefToken, deleteBriefFile);
+router.get("/admin/messages/:id/files/:fileId", verifyToken, downloadBriefFile);
 router.get("/admin/messages", verifyToken, getMessages);
 router.patch("/admin/messages/:id/read", verifyToken, markRead);
 router.delete("/admin/messages/:id", verifyToken, deleteMessage);

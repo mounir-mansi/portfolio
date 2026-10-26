@@ -30,6 +30,9 @@ model ContactMessage {
   source    String   @default("contact")
   // Brief facultatif complété après l'envoi de la demande (formulaire en étapes)
   pack           String?
+  // Identifiants (aléatoires) des fichiers importés ; le fichier est dans brief/<id du message>/<identifiant>
+  menuFiles      String[]
+  logoFile       String?
   pages          String[]
   pagesAutre     String?
   theme          String?

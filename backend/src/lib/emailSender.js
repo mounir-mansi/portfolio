@@ -62,6 +62,8 @@ async function sendBriefNotification(row) {
   if (row.activity) lines.push(`<p><strong>Activité :</strong> ${escapeHtml(row.activity)}</p>`);
 
   if (row.pack) lines.push(`<p><strong>Type de site :</strong> ${PACK_LABELS[row.pack]}</p>`);
+  if (row.menuFiles && row.menuFiles.length) lines.push(`<p><strong>Menu importé :</strong> ${row.menuFiles.length} fichier(s), à télécharger dans l'espace admin</p>`);
+  if (row.logoFile) lines.push(`<p><strong>Logo importé :</strong> oui, à télécharger dans l'espace admin</p>`);
   const pages = (row.pages || []).map((p) => PAGE_LABELS[p] || p);
   if (pages.length) lines.push(`<p><strong>${row.pack === "vitrine" ? "Sections souhaitées" : "Pages souhaitées"} :</strong> ${escapeHtml(pages.join(", "))}</p>`);
   if (row.pagesAutre) lines.push(`<p><strong>Autre page :</strong> ${escapeHtml(row.pagesAutre)}</p>`);
