@@ -56,9 +56,10 @@
         "name": "Showcase +",
         "price_prefix": "From",
         "price": "€990",
-        "desc": "Your site becomes a tool: bookings, online payment, content you can edit yourself.",
+        "desc": "A multi-page website that showcases your expertise and brings you enquiries from new customers.",
         "items": [
           "Everything in Showcase",
+          "Up to 5 pages, mockup approved before development",
           "Stripe online payment",
           "Admin area",
           "Multilingual"

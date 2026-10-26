@@ -56,9 +56,10 @@
         "name": "Vetrina +",
         "price_prefix": "Da",
         "price": "990 €",
-        "desc": "Il tuo sito diventa uno strumento: prenotazioni, pagamento online, contenuti modificabili da te.",
+        "desc": "Un sito di più pagine che valorizza il tuo mestiere e ti porta richieste di nuovi clienti.",
         "items": [
           "Tutto il pack Vetrina",
+          "Fino a 5 pagine, bozza approvata prima dello sviluppo",
           "Pagamento online Stripe",
           "Area di amministrazione",
           "Multilingua"

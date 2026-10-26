@@ -56,9 +56,10 @@
         "name": "Escaparate +",
         "price_prefix": "Desde",
         "price": "990 €",
-        "desc": "Tu web se convierte en una herramienta: reservas, pago online, contenido que editas tú.",
+        "desc": "Un sitio de varias páginas que destaca tu oficio y te trae solicitudes de nuevos clientes.",
         "items": [
           "Todo el pack Escaparate",
+          "Hasta 5 páginas, maqueta aprobada antes del desarrollo",
           "Pago online Stripe",
           "Panel de administración",
           "Multilingüe"

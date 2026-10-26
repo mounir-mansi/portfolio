@@ -56,9 +56,10 @@
         "name": "Vitrine +",
         "price_prefix": "À partir de",
         "price": "990 €",
-        "desc": "Votre site devient un outil : réservations, paiement en ligne, contenu que vous modifiez vous-même.",
+        "desc": "Un site de plusieurs pages qui met en valeur votre savoir-faire et vous apporte des demandes de clients.",
         "items": [
           "Tout le pack Vitrine",
+          "Jusqu'à 5 pages, maquette validée avant le développement",
           "Paiement en ligne Stripe",
           "Espace d'administration",
           "Multilingue"
