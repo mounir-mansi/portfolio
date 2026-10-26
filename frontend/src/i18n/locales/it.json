@@ -32,7 +32,7 @@
     "services_eyebrow": "Servizi",
     "services_title": "Cosa costruisco per te",
     "services_cta": "Ricevi la mia bozza gratuita",
-    "popular": "Il più scelto",
+    "popular": "Consigliato",
     "services_cta_contact":"Fai una domanda",
     "price_note": "Prezzi in euro, IVA non applicabile ({{article}}).",
     "services": [
@@ -43,10 +43,12 @@
         "price": "490 €",
         "desc": "Un sito chiaro e veloce che presenta la tua attività e invita a contattarti.",
         "items": [
+          "Una pagina con più sezioni",
           "Design su misura",
-          "Responsive mobile",
-          "SEO locale di base",
-          "Modulo di contatto"
+          "Note legali",
+          "Pulsante di chiamata e modulo di contatto",
+          "Visibile su Google nella tua città",
+          "Leggibile su telefono, tablet e computer"
         ]
       },
       {
@@ -67,7 +69,7 @@
         "name": "Manutenzione",
         "price_prefix": "",
         "price": "50 € / mese",
-        "desc": "Mi occupo di hosting, sicurezza e aggiornamenti. Tu pensi al tuo lavoro.",
+        "desc": "Un'opzione per più serenità e sicurezza: ospito il tuo sito, lo proteggo e lo tengo aggiornato. Tu pensi al tuo lavoro.",
         "items": [
           "Hosting sicuro",
           "Backup e monitoraggio",

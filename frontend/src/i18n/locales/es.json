@@ -32,7 +32,7 @@
     "services_eyebrow": "Servicios",
     "services_title": "Lo que construyo para ti",
     "services_cta": "Recibir mi maqueta gratis",
-    "popular": "El más elegido",
+    "popular": "Recomendado",
     "services_cta_contact":"Hacer una pregunta",
     "price_note": "Precios en euros, IVA no aplicable ({{article}}).",
     "services": [
@@ -43,10 +43,12 @@
         "price": "490 €",
         "desc": "Un sitio claro y rápido que presenta tu negocio y invita a contactarte.",
         "items": [
+          "Una página con varias secciones",
           "Diseño a medida",
-          "Adaptado a móvil",
-          "SEO local básico",
-          "Formulario de contacto"
+          "Aviso legal",
+          "Botón de llamada y formulario de contacto",
+          "Visible en Google en tu ciudad",
+          "Fácil de leer en móvil, tablet y ordenador"
         ]
       },
       {
@@ -67,7 +69,7 @@
         "name": "Mantenimiento",
         "price_prefix": "",
         "price": "50 € / mes",
-        "desc": "Me ocupo del alojamiento, la seguridad y las actualizaciones. Tú te centras en tu negocio.",
+        "desc": "Una opción para más tranquilidad y seguridad: alojo tu sitio, lo protejo y lo mantengo actualizado. Tú te centras en tu negocio.",
         "items": [
           "Alojamiento seguro",
           "Copias y supervisión",

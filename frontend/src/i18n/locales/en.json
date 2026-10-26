@@ -32,7 +32,7 @@
     "services_eyebrow": "Services",
     "services_title": "What I build for you",
     "services_cta": "Get my free mockup",
-    "popular": "Most popular",
+    "popular": "Recommended",
     "services_cta_contact":"Ask a question",
     "price_note": "Prices in euros, VAT not applicable ({{article}}).",
     "services": [
@@ -43,10 +43,12 @@
         "price": "€490",
         "desc": "A clear, fast website that presents your business and makes people want to get in touch.",
         "items": [
+          "One page with several sections",
           "Custom design",
-          "Mobile responsive",
-          "Basic local SEO",
-          "Contact form"
+          "Legal notice page",
+          "Call button and contact form",
+          "Visible on Google in your city",
+          "Easy to read on phone, tablet and computer"
         ]
       },
       {
@@ -67,7 +69,7 @@
         "name": "Maintenance",
         "price_prefix": "",
         "price": "€50 / month",
-        "desc": "I handle hosting, security and updates so you can focus on your business.",
+        "desc": "An option for extra peace of mind and security: I host your site, protect it and keep it up to date, so you can focus on your business.",
         "items": [
           "Secure hosting",
           "Backups and monitoring",

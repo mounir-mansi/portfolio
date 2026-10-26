@@ -32,7 +32,7 @@
     "services_eyebrow": "Services",
     "services_title": "Ce que je construis pour vous",
     "services_cta": "Recevoir ma maquette gratuite",
-    "popular": "Le plus choisi",
+    "popular": "Recommandé",
     "services_cta_contact":"Me poser une question",
     "price_note": "Prix en euros, TVA non applicable ({{article}}).",
     "services": [
@@ -43,10 +43,12 @@
         "price": "490 €",
         "desc": "Un site clair et rapide qui présente votre activité et donne envie de vous contacter.",
         "items": [
+          "Une page avec plusieurs sections",
           "Design sur mesure",
-          "Responsive mobile",
-          "SEO local de base",
-          "Formulaire de contact"
+          "Mentions légales",
+          "Bouton d'appel et formulaire de contact",
+          "Visible sur Google dans votre ville",
+          "Lisible sur téléphone, tablette et ordinateur"
         ]
       },
       {
@@ -67,7 +69,7 @@
         "name": "Maintenance",
         "price_prefix": "",
         "price": "50 € / mois",
-        "desc": "Je m'occupe de l'hébergement, de la sécurité et des mises à jour. Vous gardez l'esprit libre.",
+        "desc": "Une option pour plus de sérénité et de sécurité : j'héberge votre site, je le protège et je le mets à jour. Vous gardez l'esprit libre.",
         "items": [
           "Hébergement sécurisé",
           "Sauvegardes et surveillance",
