@@ -7,12 +7,10 @@ export const LEGAL = {
   publisher: "Mounir Mansi",
   status: "Entrepreneur individuel (micro-entreprise)",
   siren: "794 472 613",
-  // SIRET (14 chiffres : SIREN + 5 chiffres d'établissement) : à ajouter si tu veux l'afficher
-  siret: "",
-  vat: "TVA non applicable, article 293 B du Code général des impôts",
+  siret: "794 472 613 00023",
   // OBLIGATOIRE pour un site professionnel : adresse professionnelle déclarée ou de domiciliation.
   // Tant qu'elle est vide, la ligne n'apparaît pas et `npm run build` affiche un avertissement.
-  address: "",
+  address: "121 boulevard National, 13003 Marseille",
   email: CONTACT_EMAIL,
   phone: CONTACT_PHONE_DISPLAY,
   host: {
@@ -23,3 +21,12 @@ export const LEGAL = {
   updated: "26 octobre 2026",
   jurisdiction: "Toulouse",
 };
+
+// Franchise en base de TVA (micro-entreprise). Le code des impôts est recodifié : d'après impots.gouv.fr,
+// la référence « article L. 223-3 du CIBS » s'applique à partir du 1er janvier 2027 ; avant, l'article 293 B du CGI.
+const CIBS_FROM = new Date("2027-01-01T00:00:00");
+
+export const vatArticle = () =>
+  Date.now() >= CIBS_FROM.getTime() ? "article L. 223-3 du CIBS" : "article 293 B du CGI";
+
+export const vatMention = () => `TVA non applicable, ${vatArticle()}`;

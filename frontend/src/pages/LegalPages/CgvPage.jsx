@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import LegalPage from "./LegalPage";
-import { LEGAL } from "../../data/legal";
+import { LEGAL, vatMention } from "../../data/legal";
 
 export default function CgvPage() {
   const { lang = "fr" } = useParams();
@@ -29,7 +29,7 @@ export default function CgvPage() {
 
       <h2>4. Prix</h2>
       <p>
-        Les prix sont exprimés en euros. {LEGAL.vat}. Les tarifs « à partir de » sont indicatifs : le prix définitif est
+        Les prix sont exprimés en euros. {vatMention()}. Les tarifs « à partir de » sont indicatifs : le prix définitif est
         celui du devis accepté. À titre indicatif : pack Vitrine à partir de 490 €, pack Vitrine + à partir de 990 €,
         maintenance à 50 € par mois.
       </p>

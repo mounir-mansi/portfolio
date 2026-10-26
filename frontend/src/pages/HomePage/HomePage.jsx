@@ -9,6 +9,7 @@ import QuickQuote from "../../components/QuickQuote/QuickQuote";
 import Faq from "../../components/Faq/Faq";
 import Reviews from "../../components/Reviews/Reviews";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from "../../utils/contactInfo";
+import { vatArticle } from "../../data/legal";
 import "./HomePage.css";
 
 const pad = (n) => String(n + 1).padStart(2, "0");
@@ -138,7 +139,7 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-          <p className="services-note">{t("home.price_note")}</p>
+          <p className="services-note">{t("home.price_note", { article: vatArticle() })}</p>
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import LegalPage from "./LegalPage";
-import { LEGAL } from "../../data/legal";
+import { LEGAL, vatMention } from "../../data/legal";
 
 export default function MentionsLegalesPage() {
   const { lang = "fr" } = useParams();
@@ -16,7 +16,7 @@ export default function MentionsLegalesPage() {
         {LEGAL.address && <div><dt>Adresse</dt><dd>{LEGAL.address}</dd></div>}
         <div><dt>Téléphone</dt><dd><a href={`tel:${LEGAL.phone.replace(/\s/g, "")}`}>{LEGAL.phone}</a></dd></div>
         <div><dt>Email</dt><dd><a href={`mailto:${LEGAL.email}`}>{LEGAL.email}</a></dd></div>
-        <div><dt>TVA</dt><dd>{LEGAL.vat}</dd></div>
+        <div><dt>TVA</dt><dd>{vatMention()}</dd></div>
         <div><dt>Directeur de la publication</dt><dd>{LEGAL.publisher}</dd></div>
       </dl>
 

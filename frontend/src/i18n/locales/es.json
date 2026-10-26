@@ -48,7 +48,7 @@
     "services_title": "Lo que construyo para ti",
     "services_cta": "Recibir mi maqueta gratis",
     "services_cta_contact": "Hacer una pregunta",
-    "price_note": "Precios en euros, IVA no aplicable (artículo 293 B del código tributario francés).",
+    "price_note": "Precios en euros, IVA no aplicable ({{article}}).",
     "services": [
       {
         "tag": "Pack 01",

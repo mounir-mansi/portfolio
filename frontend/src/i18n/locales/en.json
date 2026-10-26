@@ -48,7 +48,7 @@
     "services_title": "What I build for you",
     "services_cta": "Get my free mockup",
     "services_cta_contact": "Ask a question",
-    "price_note": "Prices in euros, VAT not applicable (article 293 B of the French tax code).",
+    "price_note": "Prices in euros, VAT not applicable ({{article}}).",
     "services": [
       {
         "tag": "Pack 01",
