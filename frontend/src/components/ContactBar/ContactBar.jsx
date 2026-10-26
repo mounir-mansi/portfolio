@@ -10,14 +10,18 @@ export default function ContactBar() {
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
   const { pathname } = useLocation();
-  const [quoteInView, setQuoteInView] = useState(false);
+  // L'état mémorise la page à laquelle il se rapporte : changer de page l'invalide sans le réinitialiser à la main
+  const [quote, setQuote] = useState({ path: "", inView: false });
+  const quoteInView = quote.path === pathname && quote.inView;
   const onContactPage = pathname.endsWith("/contact");
 
   useEffect(() => {
-    setQuoteInView(false);
     const target = document.getElementById("devis");
     if (!target || !("IntersectionObserver" in window)) return;
-    const io = new IntersectionObserver(([entry]) => setQuoteInView(entry.isIntersecting), { threshold: 0.15 });
+    const io = new IntersectionObserver(
+      ([entry]) => setQuote({ path: pathname, inView: entry.isIntersecting }),
+      { threshold: 0.15 }
+    );
     io.observe(target);
     return () => io.disconnect();
   }, [pathname]);
