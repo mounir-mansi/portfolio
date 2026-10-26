@@ -569,3 +569,8 @@
   }
 }
 
+
+.msg-file {
+  margin-right: 0.75em;
+  text-decoration: underline;
+}

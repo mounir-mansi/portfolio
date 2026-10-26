@@ -16,7 +16,9 @@ export default function ConfidentialitePage() {
         <li>
           <strong>Demande de maquette gratuite :</strong> nom, nom du commerce, numéro de téléphone, activité et, si
           vous le souhaitez, adresse email. Vous pouvez ensuite préciser, de façon facultative, les pages souhaitées,
-          votre style (fond clair ou sombre, couleurs, logo existant), l'échéance et un créneau de rappel.
+          votre style (fond clair ou sombre, couleurs), l'échéance et un créneau de rappel. Vous pouvez aussi importer, de
+          façon facultative, votre menu ou votre carte (PDF ou photos) et votre logo : ces fichiers sont stockés
+          dans un espace privé, accessibles uniquement par moi, et supprimés avec votre demande.
         </li>
         <li>
           <strong>Formulaire de contact :</strong> nom, adresse email et message.

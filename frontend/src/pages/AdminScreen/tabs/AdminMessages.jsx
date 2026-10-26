@@ -88,6 +88,15 @@ export default function AdminMessages() {
                 {msg.creneau && <span><strong>Rappel :</strong> {msg.creneau}.</span>}
               </p>
             )}
+            {(msg.menuFiles?.length > 0 || msg.logoFile) && (
+              <p className="msg-body msg-brief">
+                <strong>Fichiers :</strong>{" "}
+                {(msg.menuFiles || []).map((f, i) => (
+                  <a key={f} className="msg-file" href={`/admin/messages/${msg.id}/files/${f}`} download>Menu {i + 1}</a>
+                ))}
+                {msg.logoFile && <a className="msg-file" href={`/admin/messages/${msg.id}/files/${msg.logoFile}`} download>Logo</a>}
+              </p>
+            )}
             <div className="msg-actions">
               {!msg.read && (
                 <button className="btn-sm" onClick={() => markRead(msg.id)}>

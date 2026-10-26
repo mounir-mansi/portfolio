@@ -8,6 +8,7 @@ import {
   CONTACT_PHONE_HREF,
   CONTACT_WHATSAPP_HREF,
 } from "../../utils/contactInfo";
+import FileUploader from "./FileUploader";
 import "./QuickQuote.css";
 
 // Mêmes règles que le backend (contactController.js, source "devis")
@@ -34,6 +35,8 @@ const PALETTES = [
 ];
 const TOTAL_STEPS = 5;
 const MAX_PLUS_PAGES = 5;
+const MAX_OTHER_PAGES = 5;
+const MAX_MENU_FILES = 3;
 const TYPES = ["vitrine", "vitrine-plus", "indecis"];
 
 function validate(form) {
@@ -56,8 +59,10 @@ export default function QuickQuote() {
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState(null);
   const [brief, setBrief] = useState({
-    pack: "", pages: [], pagesAutre: "", theme: "", palette: "", couleursAutre: "", aLogo: null, echeance: "", creneau: "",
+    pack: "", pages: [], autres: [""], theme: "", palette: "", couleursAutre: "", echeance: "", creneau: "",
   });
+  const [menuFiles, setMenuFiles] = useState([]);
+  const [logoFiles, setLogoFiles] = useState([]);
   const headingRef = useRef(null);
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
@@ -146,7 +151,8 @@ export default function QuickQuote() {
     if (n === 3) {
       const p = {};
       if (brief.pages.length) p.pages = brief.pages;
-      if (brief.pages.includes("autre") && brief.pagesAutre.trim()) p.pagesAutre = brief.pagesAutre.trim();
+      const autres = brief.autres.map((x) => x.trim().replace(/,/g, " ")).filter(Boolean);
+      if (brief.pages.includes("autre") && autres.length) p.pagesAutre = autres.join(", ");
       return p;
     }
     if (n === 4) {
@@ -155,7 +161,6 @@ export default function QuickQuote() {
       const palette = PALETTES.find((x) => x.id === brief.palette);
       const colors = [palette?.fr, brief.couleursAutre.trim()].filter(Boolean).join(", ");
       if (colors) p.couleurs = colors;
-      if (brief.aLogo !== null) p.aLogo = brief.aLogo;
       return p;
     }
     const p = {};
@@ -191,7 +196,11 @@ export default function QuickQuote() {
     setStep(final || step >= TOTAL_STEPS ? TOTAL_STEPS + 1 : step + 1);
   };
 
-  const atPageLimit = brief.pack === "vitrine-plus" && brief.pages.length >= MAX_PLUS_PAGES;
+  const checkedPages = brief.pages.filter((p) => p !== "autre").length;
+  const pageCount = checkedPages + (brief.pages.includes("autre") ? brief.autres.length : 0);
+  const atPageLimit = brief.pack === "vitrine-plus" && pageCount >= MAX_PLUS_PAGES;
+  const canAddOther = brief.autres.length < MAX_OTHER_PAGES && !atPageLimit;
+  const hasMenu = brief.pages.includes("menu") || brief.pages.includes("commande");
 
   const toggleListItem = (key, value) =>
     setBrief((b) => ({
@@ -356,16 +365,31 @@ export default function QuickQuote() {
                 ))}
               </div>
               {brief.pages.includes("autre") && (
-                <div className="quote-field">
-                  <label htmlFor="quote-pages-autre">{t("quote.page_other_label")}</label>
-                  <input id="quote-pages-autre" type="text" maxLength={300} value={brief.pagesAutre}
-                    placeholder={t("quote.page_other_placeholder")}
-                    aria-describedby={brief.pack === "vitrine-plus" ? "quote-pages-autre-hint" : undefined}
-                    onChange={(e) => setBrief((b) => ({ ...b, pagesAutre: e.target.value }))} />
-                  {brief.pack === "vitrine-plus" && (
-                    <p id="quote-pages-autre-hint" className="quote-hint">{t("quote.page_other_plus")}</p>
-                  )}
-                </div>
+                <fieldset className="quote-choices quote-others">
+                  <legend>{t("quote.page_other_label")}</legend>
+                  {brief.autres.map((value, i) => (
+                    <div key={i} className="quote-other-row">
+                      <input type="text" maxLength={50} value={value}
+                        id={`quote-pages-autre-${i}`}
+                        aria-label={t("quote.page_other_item", { n: i + 1 })}
+                        placeholder={i === 0 ? t("quote.page_other_placeholder") : ""}
+                        onChange={(e) => setBrief((b) => ({ ...b, autres: b.autres.map((x, j) => (j === i ? e.target.value : x)) }))} />
+                      {brief.autres.length > 1 && (
+                        <button type="button" className="quote-icon-btn" aria-label={t("quote.page_remove", { n: i + 1 })}
+                          onClick={() => setBrief((b) => ({ ...b, autres: b.autres.filter((_, j) => j !== i) }))}>×</button>
+                      )}
+                    </div>
+                  ))}
+                  <button type="button" className="quote-link quote-add" disabled={!canAddOther}
+                    onClick={() => setBrief((b) => ({ ...b, autres: [...b.autres, ""] }))}>
+                    + {t("quote.page_add")}
+                  </button>
+                  {brief.pack === "vitrine-plus" && <p className="quote-hint">{t("quote.page_other_plus")}</p>}
+                </fieldset>
+              )}
+              {hasMenu && token && (
+                <FileUploader token={token} kind="menu" max={MAX_MENU_FILES} files={menuFiles} onChange={setMenuFiles}
+                  titleKey="quote.menu_upload_title" hintKey="quote.menu_upload_hint" />
               )}
               {actions(false)}
             </div>
@@ -396,9 +420,10 @@ export default function QuickQuote() {
                 <input id="quote-colors-autre" type="text" maxLength={150} value={brief.couleursAutre}
                   onChange={(e) => setBrief((b) => ({ ...b, couleursAutre: e.target.value }))} />
               </div>
-              {radioGroup(t("quote.logo_label"), "logo", ["yes", "no"],
-                brief.aLogo === null ? "" : brief.aLogo ? "yes" : "no",
-                (v) => setBrief((b) => ({ ...b, aLogo: v === "yes" })), (o) => t(`quote.${o}`))}
+              {token && (
+                <FileUploader token={token} kind="logo" max={1} files={logoFiles} onChange={setLogoFiles}
+                  titleKey="quote.logo_upload_title" hintKey="quote.logo_upload_hint" />
+              )}
               {actions(false)}
             </div>
           )}
