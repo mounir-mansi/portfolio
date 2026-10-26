@@ -1,23 +1,31 @@
 .back-to-top {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 9000;
+  right: 1.5rem;
+  /* au-dessus du bouton WhatsApp (desktop) ; au-dessus de la barre de contact (mobile) */
+  bottom: 6.25rem;
+  z-index: 55;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   background: var(--accent);
-  color: var(--white);
+  color: var(--accent-ink);
   border: none;
   cursor: pointer;
   font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: background 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s var(--ease);
 }
 
 .back-to-top:hover {
-  background: var(--primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 860px) {
+  .back-to-top {
+    right: 1rem;
+    bottom: calc(var(--bar-h, 0px) + 1rem + env(safe-area-inset-bottom));
+  }
 }

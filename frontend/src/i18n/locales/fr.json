@@ -14,16 +14,21 @@
     "aria_menu": "Menu",
     "aria_lang_group": "Choisir la langue",
     "aria_lang": "Langue : {{code}}",
-    "back_to_top": "Retour en haut"
+    "back_to_top": "Retour en haut",
+    "call": "Appeler",
+    "mockup": "Maquette gratuite",
+    "aria_contact": "Contact rapide"
   },
   "home": {
-    "eyebrow": "Studio web · Freelance",
+    "eyebrow": "Studio web · Toulouse et partout en France",
     "title_a": "Des sites qui",
     "title_em": "font venir",
     "title_b": "vos clients.",
     "sub": "Sites vitrines et applications web rapides, sécurisés et livrés clé en main pour les commerces et les PME.",
-    "cta_quote": "Demander un devis",
+    "cta_quote": "Recevoir ma maquette gratuite",
     "cta_work": "Voir les réalisations",
+    "offer": "Maquette gratuite sous 72 h ouvrées · sans engagement",
+    "call": "Une question ?",
     "facts": [
       {
         "label": "Livraison",
@@ -41,11 +46,14 @@
     "marquee": "Sites vitrines · Réservation en ligne · Paiement Stripe · Espace admin · SEO local · Hébergement sécurisé",
     "services_eyebrow": "Services",
     "services_title": "Ce que je construis pour vous",
-    "services_cta": "Parler de mon projet",
+    "services_cta": "Recevoir ma maquette gratuite",
+    "services_cta_contact": "Me poser une question",
     "services": [
       {
         "tag": "Pack 01",
         "name": "Vitrine",
+        "price_prefix": "À partir de",
+        "price": "490 €",
         "desc": "Un site clair et rapide qui présente votre activité et donne envie de vous contacter.",
         "items": [
           "Design sur mesure",
@@ -57,6 +65,8 @@
       {
         "tag": "Pack 02",
         "name": "Vitrine +",
+        "price_prefix": "À partir de",
+        "price": "990 €",
         "desc": "Votre site devient un outil : réservations, paiement en ligne, contenu que vous modifiez vous-même.",
         "items": [
           "Tout le pack Vitrine",
@@ -68,6 +78,8 @@
       {
         "tag": "Pack 03",
         "name": "Maintenance",
+        "price_prefix": "",
+        "price": "50 € / mois",
         "desc": "Je m'occupe de l'hébergement, de la sécurité et des mises à jour. Vous gardez l'esprit libre.",
         "items": [
           "Hébergement sécurisé",
@@ -215,6 +227,7 @@
   "footer": {
     "rights": "Tous droits réservés",
     "eyebrow": "Un projet en tête ?",
-    "big": "Parlons-en"
+    "big": "Parlons-en",
+    "zone": "Toulouse · partout en France, à distance"
   }
 }

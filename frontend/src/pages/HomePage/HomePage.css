@@ -76,6 +76,30 @@
   gap: 0.9rem;
 }
 
+.hero-offer {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+}
+
+.hero-call {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+}
+
+.hero-call a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
+  transition: color 0.2s;
+}
+
+.hero-call a:hover {
+  color: var(--accent-text);
+}
+
 .hero-facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
@@ -201,6 +225,25 @@
 .service-name {
   font-size: var(--step-2);
   font-weight: 400;
+}
+
+.service-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+}
+
+.service-price-prefix {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+
+.service-price strong {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .service-desc {

@@ -6,6 +6,7 @@ import { apiFetch } from "../../utils/api";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
 import QuickQuote from "../../components/QuickQuote/QuickQuote";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from "../../utils/contactInfo";
 import "./HomePage.css";
 
 const pad = (n) => String(n + 1).padStart(2, "0");
@@ -54,11 +55,18 @@ export default function HomePage() {
             </h1>
             <p className="hero-sub reveal" style={{ "--delay": "160ms" }}>{t("home.sub")}</p>
             <div className="hero-ctas reveal" style={{ "--delay": "240ms" }}>
-              <Link to={lp("/contact")} className="btn-primary">
+              <Link to={{ pathname: lp(""), hash: "#devis" }} className="btn-primary">
                 {t("home.cta_quote")} <span aria-hidden="true">↗</span>
               </Link>
               <Link to={lp("/projets")} className="btn-outline">{t("home.cta_work")}</Link>
             </div>
+            <p className="hero-offer reveal" style={{ "--delay": "280ms" }}>{t("home.offer")}</p>
+            <p className="hero-call reveal" style={{ "--delay": "320ms" }}>
+              {t("home.call")}{" "}
+              <a href={`tel:${CONTACT_PHONE_HREF}`}>{CONTACT_PHONE_DISPLAY}</a>
+              {" · "}
+              <a href={CONTACT_WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </p>
           </div>
 
           {projects[0] && projects[0].imageUrl && (
@@ -108,13 +116,23 @@ export default function HomePage() {
               <article key={s.name} className="service reveal" style={{ "--delay": `${i * 90}ms` }}>
                 <p className="service-tag">{s.tag}</p>
                 <h3 className="service-name">{s.name}</h3>
+                <p className="service-price">
+                  {s.price_prefix && <span className="service-price-prefix">{s.price_prefix}</span>}
+                  <strong>{s.price}</strong>
+                </p>
                 <p className="service-desc">{s.desc}</p>
                 <ul className="service-list">
                   {s.items.map((it) => <li key={it}>{it}</li>)}
                 </ul>
-                <Link to={lp("/contact")} className="service-link">
-                  {t("home.services_cta")} <span aria-hidden="true">↗</span>
-                </Link>
+                {i < 2 ? (
+                  <Link to={{ pathname: lp(""), hash: "#devis" }} className="service-link">
+                    {t("home.services_cta")} <span aria-hidden="true">↗</span>
+                  </Link>
+                ) : (
+                  <Link to={lp("/contact")} className="service-link">
+                    {t("home.services_cta_contact")} <span aria-hidden="true">↗</span>
+                  </Link>
+                )}
               </article>
             ))}
           </div>
@@ -190,7 +208,7 @@ export default function HomePage() {
         <div className="container final-inner reveal">
           <p className="eyebrow">{t("home.final_eyebrow")}</p>
           <h2 className="final-title">{t("home.final_title")}</h2>
-          <Link to={lp("/contact")} className="btn-primary">
+          <Link to={{ pathname: lp(""), hash: "#devis" }} className="btn-primary">
             {t("home.cta_quote")} <span aria-hidden="true">↗</span>
           </Link>
         </div>

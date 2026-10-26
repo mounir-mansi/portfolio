@@ -120,7 +120,11 @@ export default function Navbar() {
             </div>
           </li>
           <li>
-            <Link to={lp("/contact")} className="btn-cta" onClick={close}>
+            <Link
+              to={location.pathname.endsWith("/contact") ? lp("/contact") : { pathname: lp(""), hash: "#devis" }}
+              className="btn-cta"
+              onClick={close}
+            >
               {t("nav.quote")} <span aria-hidden="true">↗</span>
             </Link>
           </li>

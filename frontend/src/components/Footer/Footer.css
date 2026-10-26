@@ -39,6 +39,48 @@
   transform: translate(0.08em, -0.08em);
 }
 
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+}
+
+.footer-contact-list a {
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
+  transition: color 0.2s;
+}
+
+.footer-contact-list a:hover {
+  color: var(--accent-text);
+}
+
+.footer-zone {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--fg-muted);
+}
+
+/* Zones tactiles confortables sur téléphone */
+@media (pointer: coarse) {
+  .footer-contact-list a,
+  .footer-links a {
+    display: inline-block;
+    padding-block: 0.75rem;
+  }
+}
+
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;

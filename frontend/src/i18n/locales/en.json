@@ -14,16 +14,21 @@
     "aria_menu": "Menu",
     "aria_lang_group": "Choose language",
     "aria_lang": "Language: {{code}}",
-    "back_to_top": "Back to top"
+    "back_to_top": "Back to top",
+    "call": "Call",
+    "mockup": "Free mockup",
+    "aria_contact": "Quick contact"
   },
   "home": {
-    "eyebrow": "Web studio · Freelance",
+    "eyebrow": "Web studio · Toulouse and all over France",
     "title_a": "Websites that",
     "title_em": "bring in",
     "title_b": "your customers.",
     "sub": "Fast, secure showcase sites and web apps, delivered turnkey for local businesses and SMEs.",
-    "cta_quote": "Get a quote",
+    "cta_quote": "Get my free mockup",
     "cta_work": "See my work",
+    "offer": "Free mockup within 72 working hours · no commitment",
+    "call": "A question?",
     "facts": [
       {
         "label": "Delivery",
@@ -41,11 +46,14 @@
     "marquee": "Showcase sites · Online booking · Stripe payments · Admin area · Local SEO · Secure hosting",
     "services_eyebrow": "Services",
     "services_title": "What I build for you",
-    "services_cta": "Discuss my project",
+    "services_cta": "Get my free mockup",
+    "services_cta_contact": "Ask a question",
     "services": [
       {
         "tag": "Pack 01",
         "name": "Showcase",
+        "price_prefix": "From",
+        "price": "€490",
         "desc": "A clear, fast website that presents your business and makes people want to get in touch.",
         "items": [
           "Custom design",
@@ -57,6 +65,8 @@
       {
         "tag": "Pack 02",
         "name": "Showcase +",
+        "price_prefix": "From",
+        "price": "€990",
         "desc": "Your site becomes a tool: bookings, online payment, content you can edit yourself.",
         "items": [
           "Everything in Showcase",
@@ -68,6 +78,8 @@
       {
         "tag": "Pack 03",
         "name": "Maintenance",
+        "price_prefix": "",
+        "price": "€50 / month",
         "desc": "I handle hosting, security and updates so you can focus on your business.",
         "items": [
           "Secure hosting",
@@ -215,6 +227,7 @@
   "footer": {
     "rights": "All rights reserved",
     "eyebrow": "Got a project in mind?",
-    "big": "Let's talk"
+    "big": "Let's talk",
+    "zone": "Toulouse · all over France, remotely"
   }
 }

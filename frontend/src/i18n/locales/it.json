@@ -14,16 +14,21 @@
     "aria_menu": "Menu",
     "aria_lang_group": "Scegli la lingua",
     "aria_lang": "Lingua: {{code}}",
-    "back_to_top": "Torna su"
+    "back_to_top": "Torna su",
+    "call": "Chiama",
+    "mockup": "Bozza gratuita",
+    "aria_contact": "Contatto rapido"
   },
   "home": {
-    "eyebrow": "Studio web · Freelance",
+    "eyebrow": "Studio web · Tolosa e in tutta la Francia",
     "title_a": "Siti che",
     "title_em": "portano",
     "title_b": "i tuoi clienti.",
     "sub": "Siti vetrina e applicazioni web veloci, sicure e chiavi in mano per negozi e PMI.",
-    "cta_quote": "Richiedi un preventivo",
+    "cta_quote": "Ricevi la mia bozza gratuita",
     "cta_work": "Vedi i lavori",
+    "offer": "Bozza gratuita entro 72 ore lavorative · senza impegno",
+    "call": "Una domanda?",
     "facts": [
       {
         "label": "Consegna",
@@ -41,11 +46,14 @@
     "marquee": "Siti vetrina · Prenotazioni online · Pagamenti Stripe · Area admin · SEO locale · Hosting sicuro",
     "services_eyebrow": "Servizi",
     "services_title": "Cosa costruisco per te",
-    "services_cta": "Parliamo del progetto",
+    "services_cta": "Ricevi la mia bozza gratuita",
+    "services_cta_contact": "Fai una domanda",
     "services": [
       {
         "tag": "Pack 01",
         "name": "Vetrina",
+        "price_prefix": "Da",
+        "price": "490 €",
         "desc": "Un sito chiaro e veloce che presenta la tua attività e invita a contattarti.",
         "items": [
           "Design su misura",
@@ -57,6 +65,8 @@
       {
         "tag": "Pack 02",
         "name": "Vetrina +",
+        "price_prefix": "Da",
+        "price": "990 €",
         "desc": "Il tuo sito diventa uno strumento: prenotazioni, pagamento online, contenuti modificabili da te.",
         "items": [
           "Tutto il pack Vetrina",
@@ -68,6 +78,8 @@
       {
         "tag": "Pack 03",
         "name": "Manutenzione",
+        "price_prefix": "",
+        "price": "50 € / mese",
         "desc": "Mi occupo di hosting, sicurezza e aggiornamenti. Tu pensi al tuo lavoro.",
         "items": [
           "Hosting sicuro",
@@ -215,6 +227,7 @@
   "footer": {
     "rights": "Tutti i diritti riservati",
     "eyebrow": "Hai un progetto in mente?",
-    "big": "Parliamone"
+    "big": "Parliamone",
+    "zone": "Tolosa · in tutta la Francia, a distanza"
   }
 }

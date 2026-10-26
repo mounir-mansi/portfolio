@@ -1,5 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_HREF,
+  CONTACT_WHATSAPP_HREF,
+} from "../../utils/contactInfo";
 import "./Footer.css";
 
 export default function Footer({ hideCta = false }) {
@@ -12,11 +18,22 @@ export default function Footer({ hideCta = false }) {
         {!hideCta && (
           <div className="footer-cta">
             <p className="eyebrow">{t("footer.eyebrow")}</p>
-            <Link to={`/${lang}/contact`} className="footer-big">
+            <Link to={{ pathname: `/${lang}`, hash: "#devis" }} className="footer-big">
               {t("footer.big")} <span aria-hidden="true">↗</span>
             </Link>
           </div>
         )}
+
+        <div className="footer-contact">
+          <ul className="footer-contact-list">
+            <li><a href={`tel:${CONTACT_PHONE_HREF}`}>{CONTACT_PHONE_DISPLAY}</a></li>
+            <li>
+              <a href={CONTACT_WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </li>
+            <li><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
+          </ul>
+          <p className="footer-zone">{t("footer.zone")}</p>
+        </div>
 
         <div className="footer-bottom">
           <p className="footer-copy">

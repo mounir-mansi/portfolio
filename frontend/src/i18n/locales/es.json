@@ -14,16 +14,21 @@
     "aria_menu": "Menú",
     "aria_lang_group": "Elegir idioma",
     "aria_lang": "Idioma: {{code}}",
-    "back_to_top": "Volver arriba"
+    "back_to_top": "Volver arriba",
+    "call": "Llamar",
+    "mockup": "Maqueta gratis",
+    "aria_contact": "Contacto rápido"
   },
   "home": {
-    "eyebrow": "Estudio web · Freelance",
+    "eyebrow": "Estudio web · Toulouse y toda Francia",
     "title_a": "Webs que",
     "title_em": "traen",
     "title_b": "a tus clientes.",
     "sub": "Sitios escaparate y aplicaciones web rápidas, seguras y llave en mano para comercios y pymes.",
-    "cta_quote": "Pedir presupuesto",
+    "cta_quote": "Recibir mi maqueta gratis",
     "cta_work": "Ver trabajos",
+    "offer": "Maqueta gratis en 72 horas laborables · sin compromiso",
+    "call": "¿Una pregunta?",
     "facts": [
       {
         "label": "Entrega",
@@ -41,11 +46,14 @@
     "marquee": "Sitios escaparate · Reservas online · Pagos Stripe · Panel admin · SEO local · Alojamiento seguro",
     "services_eyebrow": "Servicios",
     "services_title": "Lo que construyo para ti",
-    "services_cta": "Hablar de mi proyecto",
+    "services_cta": "Recibir mi maqueta gratis",
+    "services_cta_contact": "Hacer una pregunta",
     "services": [
       {
         "tag": "Pack 01",
         "name": "Escaparate",
+        "price_prefix": "Desde",
+        "price": "490 €",
         "desc": "Un sitio claro y rápido que presenta tu negocio y invita a contactarte.",
         "items": [
           "Diseño a medida",
@@ -57,6 +65,8 @@
       {
         "tag": "Pack 02",
         "name": "Escaparate +",
+        "price_prefix": "Desde",
+        "price": "990 €",
         "desc": "Tu web se convierte en una herramienta: reservas, pago online, contenido que editas tú.",
         "items": [
           "Todo el pack Escaparate",
@@ -68,6 +78,8 @@
       {
         "tag": "Pack 03",
         "name": "Mantenimiento",
+        "price_prefix": "",
+        "price": "50 € / mes",
         "desc": "Me ocupo del alojamiento, la seguridad y las actualizaciones. Tú te centras en tu negocio.",
         "items": [
           "Alojamiento seguro",
@@ -215,6 +227,7 @@
   "footer": {
     "rights": "Todos los derechos reservados",
     "eyebrow": "¿Tienes un proyecto?",
-    "big": "Hablemos"
+    "big": "Hablemos",
+    "zone": "Toulouse · toda Francia, a distancia"
   }
 }

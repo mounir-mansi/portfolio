@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import BackToTop from "../BackToTop/BackToTop";
+import ContactBar from "../ContactBar/ContactBar";
 
 export default function Layout({ children, noFooter, hideFooterCta }) {
   const { t } = useTranslation();
@@ -18,6 +19,7 @@ export default function Layout({ children, noFooter, hideFooterCta }) {
       <main id="main" tabIndex={-1} style={{ paddingTop: "4.5rem" }}>{children}</main>
       {!noFooter && <Footer hideCta={hideFooterCta} />}
       <BackToTop />
+      <ContactBar />
     </>
   );
 }
