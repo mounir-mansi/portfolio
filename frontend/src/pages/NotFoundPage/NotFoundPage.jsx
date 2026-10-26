@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
@@ -8,6 +9,15 @@ export default function NotFoundPage() {
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
   usePageTitle(t("meta.notfound"));
+
+  // Une page d'erreur ne doit pas être indexée
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex";
+    document.head.appendChild(meta);
+    return () => meta.remove();
+  }, []);
 
   return (
     <Layout>

@@ -195,6 +195,34 @@
     "contact": "Contáctame",
     "placeholder": "La descripción detallada de este proyecto se añadirá pronto desde el panel de administración."
   },
+  "faq": {
+    "title": "Tus preguntas, mis respuestas",
+    "items": [
+      {
+        "q": "¿Cómo funciona la maqueta gratuita?",
+        "a": "Me cuentas tu actividad y dejas tu número. En 72 horas laborables te envío una maqueta de tu página de inicio. La miras con calma y decides después, sin compromiso."
+      },
+      {
+        "q": "¿Cuánto cuesta una web?",
+        "a": "El pack Escaparate empieza en 490 €. El pack Escaparate + (reservas, pago online, panel de administración, multilingüe) empieza en 990 €. El mantenimiento, con alojamiento seguro, copias y actualizaciones, cuesta 50 € al mes. Te doy el precio exacto antes de empezar."
+      },
+      {
+        "q": "¿En cuánto tiempo estará mi web en línea?",
+        "a": "Depende del pack y de lo rápido que valides cada etapa. Te confirmo el plazo en nuestra primera conversación, antes de cualquier compromiso."
+      },
+      {
+        "q": "¿Hace falta vernos?",
+        "a": "No. Todo se hace a distancia, por teléfono, WhatsApp y email, en toda Francia. Si estás en Toulouse, también podemos vernos."
+      },
+      {
+        "q": "¿Qué incluye el mantenimiento de 50 € al mes?",
+        "a": "Alojamiento seguro, copias y supervisión, actualizaciones regulares y soporte rápido."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Confiaron en mí"
+  },
   "quote": {
     "title": "Recibe la maqueta de tu página de inicio",
     "offer": "Gratuita, en 72 horas laborables, sin compromiso. Después decides si trabajamos juntos.",
@@ -211,7 +239,8 @@
   },
   "meta": {
     "suffix": "ManDev Web",
-    "home": "ManDev Web — Creación de sitios y aplicaciones web",
+    "home": "Creación de sitios web en Toulouse y toda Francia, desde 490 € — ManDev Web",
+    "description": "Creación de sitios web llave en mano en Toulouse y toda Francia, desde 490 €. Maqueta gratuita de tu página de inicio en 72 horas laborables, sin compromiso.",
     "projects": "Proyectos",
     "about": "Sobre mí",
     "contact": "Contacto",

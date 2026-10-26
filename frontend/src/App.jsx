@@ -9,6 +9,7 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage/ProjectDetailPage";
 import ConnexionScreen from "./pages/ConnexionScreen/ConnexionScreen";
 import AdminScreen from "./pages/AdminScreen/AdminScreen";
+import useSeoTags from "./utils/useSeoTags";
 
 const LANGS = ["fr", "en", "it", "es"];
 
@@ -24,6 +25,7 @@ function LangRouter() {
   const { pathname, hash } = useLocation();
   // Page courante sans le segment de langue : changer de langue ne remonte pas la page
   const route = pathname.split("/").slice(2).join("/");
+  useSeoTags(lang, route);
 
   useEffect(() => {
     if (LANGS.includes(lang)) {

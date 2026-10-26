@@ -195,6 +195,34 @@
     "contact": "Contattami",
     "placeholder": "La descrizione dettagliata di questo progetto sarà aggiunta presto dal pannello admin."
   },
+  "faq": {
+    "title": "Le tue domande, le mie risposte",
+    "items": [
+      {
+        "q": "Come funziona la bozza gratuita?",
+        "a": "Mi racconti la tua attività e lasci il tuo numero. Entro 72 ore lavorative ti invio una bozza della tua home page. La guardi con calma e poi decidi, senza impegno."
+      },
+      {
+        "q": "Quanto costa un sito web?",
+        "a": "Il pack Vetrina parte da 490 €. Il pack Vetrina + (prenotazioni, pagamento online, area di amministrazione, multilingua) parte da 990 €. La manutenzione, con hosting sicuro, backup e aggiornamenti, costa 50 € al mese. Ti do il prezzo esatto prima di iniziare."
+      },
+      {
+        "q": "In quanto tempo il mio sito è online?",
+        "a": "Dipende dal pack scelto e da quanto velocemente approvi le varie fasi. Ti confermo i tempi fin dal primo confronto, prima di qualsiasi impegno."
+      },
+      {
+        "q": "Serve incontrarsi?",
+        "a": "No. Tutto si fa a distanza, per telefono, WhatsApp ed email, in tutta la Francia. Se sei a Tolosa, possiamo anche vederci."
+      },
+      {
+        "q": "Cosa comprende la manutenzione da 50 € al mese?",
+        "a": "Hosting sicuro, backup e monitoraggio, aggiornamenti regolari e supporto reattivo."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Hanno scelto me"
+  },
   "quote": {
     "title": "Ricevi la bozza della tua home page",
     "offer": "Gratuita, entro 72 ore lavorative, senza impegno. Poi decidi tu se lavorare insieme.",
@@ -211,7 +239,8 @@
   },
   "meta": {
     "suffix": "ManDev Web",
-    "home": "ManDev Web — Creazione di siti e applicazioni web",
+    "home": "Creazione di siti web a Tolosa e in tutta la Francia, da 490 € — ManDev Web",
+    "description": "Creazione di siti web chiavi in mano a Tolosa e in tutta la Francia, da 490 €. Bozza gratuita della tua home page entro 72 ore lavorative, senza impegno.",
     "projects": "Progetti",
     "about": "Chi sono",
     "contact": "Contatti",

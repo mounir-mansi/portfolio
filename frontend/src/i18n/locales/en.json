@@ -195,6 +195,34 @@
     "contact": "Contact me",
     "placeholder": "The detailed description of this project will be added soon from the admin panel."
   },
+  "faq": {
+    "title": "Your questions, answered",
+    "items": [
+      {
+        "q": "How does the free mockup work?",
+        "a": "You tell me about your business and leave your number. Within 72 working hours, I send you a mockup of your homepage. You look at it at your own pace and decide afterwards, with no commitment."
+      },
+      {
+        "q": "How much does a website cost?",
+        "a": "The Showcase pack starts at €490. The Showcase + pack (booking, online payment, admin area, multilingual) starts at €990. Maintenance, with secure hosting, backups and updates, is €50 per month. I give you the exact price before we start."
+      },
+      {
+        "q": "How long until my site is live?",
+        "a": "It depends on the pack and on how quickly you approve each step. I confirm the timeline during our first conversation, before any commitment."
+      },
+      {
+        "q": "Do we need to meet?",
+        "a": "No. Everything is done remotely, by phone, WhatsApp and email, anywhere in France. If you are in Toulouse, we can also meet in person."
+      },
+      {
+        "q": "What does the €50 per month maintenance include?",
+        "a": "Secure hosting, backups and monitoring, regular updates and responsive support."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "They trusted me"
+  },
   "quote": {
     "title": "Get a mockup of your homepage",
     "offer": "Free, within 72 working hours, no commitment. You then decide whether we work together.",
@@ -211,7 +239,8 @@
   },
   "meta": {
     "suffix": "ManDev Web",
-    "home": "ManDev Web — Websites and web applications",
+    "home": "Website design in Toulouse and across France, from €490 — ManDev Web",
+    "description": "Turnkey website design in Toulouse and across France, from €490. Free mockup of your homepage within 72 working hours, no commitment.",
     "projects": "Projects",
     "about": "About",
     "contact": "Contact",

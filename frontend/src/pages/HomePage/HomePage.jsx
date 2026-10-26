@@ -6,6 +6,8 @@ import { apiFetch } from "../../utils/api";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
 import QuickQuote from "../../components/QuickQuote/QuickQuote";
+import Faq from "../../components/Faq/Faq";
+import Reviews from "../../components/Reviews/Reviews";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from "../../utils/contactInfo";
 import "./HomePage.css";
 
@@ -183,6 +185,9 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* AVIS (invisible tant que src/data/reviews.js est vide) */}
+      <Reviews />
+
       {/* PROCESS */}
       <section id="process" className="block">
         <div className="container">
@@ -202,6 +207,9 @@ export default function HomePage() {
           </ol>
         </div>
       </section>
+
+      {/* FAQ */}
+      <Faq />
 
       {/* APPEL FINAL */}
       <section className="block final">

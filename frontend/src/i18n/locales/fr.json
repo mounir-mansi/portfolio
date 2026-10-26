@@ -195,6 +195,34 @@
     "contact": "Me contacter",
     "placeholder": "La description détaillée de ce projet sera ajoutée prochainement depuis le panneau admin."
   },
+  "faq": {
+    "title": "Vos questions, mes réponses",
+    "items": [
+      {
+        "q": "Comment se passe la maquette gratuite ?",
+        "a": "Vous me dites votre activité et laissez votre numéro. Sous 72 h ouvrées, je vous envoie une maquette de votre page d'accueil. Vous la regardez tranquillement et vous décidez ensuite, sans engagement."
+      },
+      {
+        "q": "Combien coûte un site internet ?",
+        "a": "Le pack Vitrine démarre à 490 €. Le pack Vitrine + (réservation, paiement en ligne, espace d'administration, multilingue) démarre à 990 €. La maintenance, avec hébergement sécurisé, sauvegardes et mises à jour, est à 50 € par mois. Je vous donne le prix exact avant de commencer."
+      },
+      {
+        "q": "En combien de temps mon site est-il en ligne ?",
+        "a": "Cela dépend du pack choisi et de la rapidité avec laquelle vous validez les étapes. Je vous confirme le délai dès notre premier échange, avant tout engagement."
+      },
+      {
+        "q": "Faut-il se rencontrer ?",
+        "a": "Non. Tout se fait à distance, par téléphone, WhatsApp et email, partout en France. Si vous êtes à Toulouse, nous pouvons aussi nous voir."
+      },
+      {
+        "q": "Que comprend la maintenance à 50 € par mois ?",
+        "a": "L'hébergement sécurisé, les sauvegardes et la surveillance, les mises à jour régulières et un support réactif."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Ils m'ont fait confiance"
+  },
   "quote": {
     "title": "Recevez la maquette de votre page d'accueil",
     "offer": "Gratuite, sous 72 h ouvrées, sans engagement. Vous décidez ensuite si nous travaillons ensemble.",
@@ -211,7 +239,8 @@
   },
   "meta": {
     "suffix": "ManDev Web",
-    "home": "ManDev Web — Création de sites et applications web",
+    "home": "Création de site internet à Toulouse, dès 490 € — ManDev Web",
+    "description": "Création de site internet clé en main à Toulouse et partout en France, dès 490 €. Maquette gratuite de votre page d'accueil sous 72 h ouvrées, sans engagement.",
     "projects": "Projets",
     "about": "À propos",
     "contact": "Contact",
