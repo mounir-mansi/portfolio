@@ -114,20 +114,22 @@
     "self_title": "Autodidacte — en continu",
     "self_text": "Après les formations, j'ai continué seul : déployer sur VPS, sécuriser des serveurs, construire des projets de A à Z. Essayer, échouer, comprendre, recommencer. C'est là que j'ai vraiment appris.",
     "val_security": "Sécurité",
-    "val_security_desc": "JWT httpOnly, Fail2ban, UFW, Nginx — la sécurité n'est pas une option.",
+    "val_security_desc": "Connexion chiffrée, accès verrouillés et sauvegardes : votre site et les données de vos clients sont protégés.",
     "val_perf": "Performance",
-    "val_perf_desc": "Build Vite optimisé, PostgreSQL avec Prisma, cache Cloudflare.",
-    "val_responsive": "Responsive",
-    "val_responsive_desc": "Chaque projet est testé sur mobile, tablette et desktop.",
-    "val_deploy": "Déploiement",
-    "val_deploy_desc": "De zéro à la mise en production sur VPS avec SSL, PM2 et monitoring."
+    "val_perf_desc": "Un site qui s'affiche vite, y compris sur mobile.",
+    "val_responsive": "Sur tous les écrans",
+    "val_responsive_desc": "Chaque site est testé sur mobile, tablette et ordinateur.",
+    "val_deploy": "Mise en ligne",
+    "val_deploy_desc": "Je mets le site en ligne et je m'en occupe : hébergement, certificat HTTPS, surveillance."
   },
   "skills": {
-    "title": "Ma stack technique",
-    "intro": "Les technologies que j'utilise pour concevoir, développer et déployer des projets web complets — du frontend au serveur.",
-    "cat_database": "Base de données",
-    "cat_deploy": "Déploiement",
-    "cat_tools": "Outils"
+    "title": "Ce qui fait tourner votre site",
+    "intro": "Les outils que j'utilise pour que votre site reste rapide, sûr et facile à faire évoluer.",
+    "cat_frontend": "Des pages rapides, belles sur mobile",
+    "cat_backend": "Comptes, paiements et réservations",
+    "cat_database": "Des données fiables, sauvegardées",
+    "cat_deploy": "Un site en ligne, sécurisé",
+    "cat_tools": "Un suivi propre, des mises à jour"
   },
   "projects": {
     "title": "Mes réalisations",
@@ -143,6 +145,7 @@
     "name": "Nom",
     "name_placeholder": "Votre nom",
     "email": "Email",
+    "email_placeholder": "votre@email.com",
     "message": "Message",
     "message_placeholder": "Décrivez votre projet ou votre demande...",
     "submit": "Envoyer le message",

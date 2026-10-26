@@ -114,20 +114,22 @@
     "self_title": "Autodidatta — in continuo",
     "self_text": "Dopo i corsi, ho continuato da solo: deploy su VPS, messa in sicurezza di server, costruire progetti da zero. Provare, fallire, capire, ricominciare. È lì che ho davvero imparato.",
     "val_security": "Sicurezza",
-    "val_security_desc": "JWT httpOnly, Fail2ban, UFW, Nginx — la sicurezza non è opzionale.",
+    "val_security_desc": "Connessione cifrata, accessi protetti e backup: il tuo sito e i dati dei tuoi clienti sono al sicuro.",
     "val_perf": "Performance",
-    "val_perf_desc": "Build Vite ottimizzata, PostgreSQL con Prisma, cache Cloudflare.",
-    "val_responsive": "Responsive",
-    "val_responsive_desc": "Ogni progetto è testato su mobile, tablet e desktop.",
-    "val_deploy": "Deploy",
-    "val_deploy_desc": "Da zero alla produzione su VPS con SSL, PM2 e monitoring."
+    "val_perf_desc": "Un sito che si carica in fretta, anche da mobile.",
+    "val_responsive": "Su ogni schermo",
+    "val_responsive_desc": "Ogni sito è testato su mobile, tablet e computer.",
+    "val_deploy": "Messa online",
+    "val_deploy_desc": "Metto il sito online e me ne occupo: hosting, certificato HTTPS, monitoraggio."
   },
   "skills": {
-    "title": "Il mio stack tecnico",
-    "intro": "Le tecnologie che uso per progettare, sviluppare e distribuire progetti web completi — dal frontend al server.",
-    "cat_database": "Database",
-    "cat_deploy": "Deploy",
-    "cat_tools": "Strumenti"
+    "title": "Ciò che fa funzionare il tuo sito",
+    "intro": "Gli strumenti che uso perché il tuo sito resti veloce, sicuro e facile da far evolvere.",
+    "cat_frontend": "Pagine veloci, belle anche su mobile",
+    "cat_backend": "Account, pagamenti e prenotazioni",
+    "cat_database": "Dati affidabili e con backup",
+    "cat_deploy": "Un sito online e sicuro",
+    "cat_tools": "Controllo ordinato e aggiornamenti regolari"
   },
   "projects": {
     "title": "I miei lavori",
@@ -143,6 +145,7 @@
     "name": "Nome",
     "name_placeholder": "Il tuo nome",
     "email": "Email",
+    "email_placeholder": "tuo@email.com",
     "message": "Messaggio",
     "message_placeholder": "Descrivi il tuo progetto o la tua richiesta...",
     "submit": "Invia il messaggio",

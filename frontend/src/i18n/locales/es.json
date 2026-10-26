@@ -114,20 +114,22 @@
     "self_title": "Autodidacta — en curso",
     "self_text": "Después de los cursos, seguí solo: desplegar en VPS, asegurar servidores, construir proyectos de A a Z. Intentar, fallar, entender, volver a empezar. Ahí es donde realmente aprendí.",
     "val_security": "Seguridad",
-    "val_security_desc": "JWT httpOnly, Fail2ban, UFW, Nginx — la seguridad no es opcional.",
+    "val_security_desc": "Conexión cifrada, accesos protegidos y copias de seguridad: tu sitio y los datos de tus clientes están protegidos.",
     "val_perf": "Rendimiento",
-    "val_perf_desc": "Build Vite optimizado, PostgreSQL con Prisma, caché Cloudflare.",
-    "val_responsive": "Responsive",
-    "val_responsive_desc": "Cada proyecto se prueba en móvil, tablet y escritorio.",
-    "val_deploy": "Despliegue",
-    "val_deploy_desc": "De cero a producción en VPS con SSL, PM2 y monitorización."
+    "val_perf_desc": "Un sitio que carga rápido, también en el móvil.",
+    "val_responsive": "En todas las pantallas",
+    "val_responsive_desc": "Cada sitio se prueba en móvil, tablet y ordenador.",
+    "val_deploy": "Puesta en línea",
+    "val_deploy_desc": "Pongo el sitio en línea y me ocupo de él: alojamiento, certificado HTTPS, monitorización."
   },
   "skills": {
-    "title": "Mi stack técnico",
-    "intro": "Las tecnologías que uso para diseñar, desarrollar y desplegar proyectos web completos — del frontend al servidor.",
-    "cat_database": "Base de datos",
-    "cat_deploy": "Despliegue",
-    "cat_tools": "Herramientas"
+    "title": "Lo que hace funcionar tu sitio",
+    "intro": "Las herramientas que uso para que tu sitio siga siendo rápido, seguro y fácil de evolucionar.",
+    "cat_frontend": "Páginas rápidas, bonitas en el móvil",
+    "cat_backend": "Cuentas, pagos y reservas",
+    "cat_database": "Datos fiables y con copia de seguridad",
+    "cat_deploy": "Un sitio en línea y seguro",
+    "cat_tools": "Seguimiento ordenado y actualizaciones regulares"
   },
   "projects": {
     "title": "Mis trabajos",
@@ -143,6 +145,7 @@
     "name": "Nombre",
     "name_placeholder": "Tu nombre",
     "email": "Email",
+    "email_placeholder": "tu@email.com",
     "message": "Mensaje",
     "message_placeholder": "Describe tu proyecto o solicitud...",
     "submit": "Enviar mensaje",

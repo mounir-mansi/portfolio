@@ -211,6 +211,37 @@ p {
   color: var(--accent-text);
 }
 
+.btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* En-tête commun des pages secondaires */
+.page-head {
+  padding-block: clamp(3rem, 7vw, 6rem) clamp(2rem, 4vw, 3.5rem);
+}
+
+.page-title {
+  font-size: var(--step-3);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  max-width: 18ch;
+}
+
+.page-intro {
+  margin-top: 1.5rem;
+  max-width: 38rem;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+.page-body {
+  padding-bottom: var(--section-y);
+}
+
 /* Reveal au scroll (classe ajoutée par useReveal) */
 .reveal {
   opacity: 0;

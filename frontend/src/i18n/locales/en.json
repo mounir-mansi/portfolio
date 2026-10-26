@@ -114,20 +114,22 @@
     "self_title": "Self-taught — ongoing",
     "self_text": "After the courses, I continued alone: deploying on VPS, securing servers, building projects from A to Z. Try, fail, understand, start again. That's where I really learned.",
     "val_security": "Security",
-    "val_security_desc": "JWT httpOnly, Fail2ban, UFW, Nginx — security is not optional.",
+    "val_security_desc": "Encrypted connection, locked-down access and backups: your site and your customers' data stay protected.",
     "val_perf": "Performance",
-    "val_perf_desc": "Optimized Vite build, PostgreSQL with Prisma, Cloudflare cache.",
-    "val_responsive": "Responsive",
-    "val_responsive_desc": "Every project is tested on mobile, tablet and desktop.",
-    "val_deploy": "Deployment",
-    "val_deploy_desc": "From zero to VPS production with SSL, PM2 and monitoring."
+    "val_perf_desc": "A site that loads fast, including on mobile.",
+    "val_responsive": "On every screen",
+    "val_responsive_desc": "Every site is tested on mobile, tablet and desktop.",
+    "val_deploy": "Going live",
+    "val_deploy_desc": "I put the site online and look after it: hosting, HTTPS certificate, monitoring."
   },
   "skills": {
-    "title": "My tech stack",
-    "intro": "The technologies I use to design, develop and deploy complete web projects — from frontend to server.",
-    "cat_database": "Database",
-    "cat_deploy": "Deployment",
-    "cat_tools": "Tools"
+    "title": "What keeps your site running",
+    "intro": "The tools I use to keep your site fast, secure and easy to evolve.",
+    "cat_frontend": "Fast pages that look good on mobile",
+    "cat_backend": "Accounts, payments and bookings",
+    "cat_database": "Reliable, backed-up data",
+    "cat_deploy": "A secure, live website",
+    "cat_tools": "Clean tracking and regular updates"
   },
   "projects": {
     "title": "My work",
@@ -143,6 +145,7 @@
     "name": "Name",
     "name_placeholder": "Your name",
     "email": "Email",
+    "email_placeholder": "you@email.com",
     "message": "Message",
     "message_placeholder": "Describe your project or request...",
     "submit": "Send message",

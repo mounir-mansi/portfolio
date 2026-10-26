@@ -31,6 +31,10 @@ const DEFAULT_SKILLS = [
 
 // Mappe les catégories FR de l'API vers les clés de traduction
 const CAT_KEY_MAP = {
+  "Frontend": "cat_frontend",
+  "Backend": "cat_backend",
+  "frontend": "cat_frontend",
+  "backend": "cat_backend",
   "Base de données": "cat_database",
   "Déploiement": "cat_deploy",
   "Outils": "cat_tools",
@@ -59,27 +63,24 @@ export default function SkillsPage() {
 
   return (
     <Layout>
-      <div className="skills-page">
-        <div className="skills-page-header">
-          <h1>{t("skills.title")}</h1>
-          <p className="skills-intro">{t("skills.intro")}</p>
-        </div>
+      <header className="page-head container">
+        <h1 className="page-title">{t("skills.title")}</h1>
+        <p className="page-intro">{t("skills.intro")}</p>
+      </header>
 
-        <div className="skills-page-body">
+      <div className="page-body container">
+        <ul className="skills-index">
           {categories.map((cat) => (
-            <div key={cat} className="skills-cat-block">
-              <h2 className="cat-label">{getCatLabel(cat)}</h2>
-              <div className="skills-grid">
+            <li key={cat} className="skills-index-row">
+              <h2 className="skills-index-title">{getCatLabel(cat)}</h2>
+              <ul className="skills-index-tech">
                 {skills.filter((s) => s.category === cat).map((s, i) => (
-                  <div key={i} className="skill-card">
-                    <i className={s.icon || "fa-solid fa-code"} aria-hidden="true" />
-                    <span>{s.name}</span>
-                  </div>
+                  <li key={i}>{s.name}</li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </Layout>
   );
