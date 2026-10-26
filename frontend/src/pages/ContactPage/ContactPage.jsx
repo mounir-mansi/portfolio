@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
@@ -48,6 +49,7 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const statusRef = useRef(null);
   const { t } = useTranslation();
+  const { lang = "fr" } = useParams();
   usePageTitle(t("meta.contact"));
 
   useEffect(() => { saveDraft(form); }, [form]);
@@ -187,6 +189,10 @@ export default function ContactPage() {
           <button type="submit" className="btn-primary contact-submit" disabled={loading}>
             {loading ? t("contact.sending") : t("contact.submit")}
           </button>
+          <p className="contact-note">
+            {t("quote.note")}{" "}
+            <Link to={`/${lang}/confidentialite`}>{t("legal.privacy")}</Link>
+          </p>
         </form>
 
         <aside className="contact-alt">

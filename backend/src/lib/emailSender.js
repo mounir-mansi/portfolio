@@ -51,7 +51,7 @@ async function sendReply({ to, name, replyMessage }) {
       <p>Bonjour ${safeName},</p>
       <p>${safeReply}</p>
       <br>
-      <p>Mounir Mansi</p>
+      <p>ManDev Web</p>
     `,
   });
 }

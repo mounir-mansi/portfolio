@@ -5,6 +5,7 @@ import {
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_HREF,
   CONTACT_WHATSAPP_HREF,
+  GITHUB_URL,
 } from "../../utils/contactInfo";
 import "./Footer.css";
 
@@ -41,7 +42,7 @@ export default function Footer({ hideCta = false }) {
           </p>
           <ul className="footer-links">
             <li>
-              <a href="https://github.com/mounir-mansi" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
             </li>
             <li>
               <Link to={`/${lang}/contact`}>Contact</Link>
@@ -51,6 +52,12 @@ export default function Footer({ hideCta = false }) {
             </li>
           </ul>
         </div>
+
+        <ul className="footer-legal">
+          <li><Link to={`/${lang}/mentions-legales`}>{t("legal.mentions")}</Link></li>
+          <li><Link to={`/${lang}/confidentialite`}>{t("legal.privacy_short")}</Link></li>
+          <li><Link to={`/${lang}/cgv`}>{t("legal.terms_short")}</Link></li>
+        </ul>
       </div>
     </footer>
   );

@@ -82,6 +82,24 @@
   align-self: flex-start;
 }
 
+.contact-form .contact-note {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+.contact-form .contact-note a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
+  transition: color 0.2s;
+}
+
+.contact-form .contact-note a:hover {
+  color: var(--accent-text);
+}
+
 .contact-form .form-group [aria-invalid="true"] {
   border-color: var(--danger);
 }

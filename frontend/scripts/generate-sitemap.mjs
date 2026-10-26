@@ -4,7 +4,7 @@ import { writeFileSync } from "node:fs";
 
 const SITE = "https://mandev.fr";
 const LANGS = ["fr", "en", "it", "es"];
-const PAGES = ["", "/projets", "/a-propos", "/contact"];
+const PAGES = ["", "/projets", "/a-propos", "/contact", "/mentions-legales", "/confidentialite", "/cgv"];
 
 const entry = (lang, page) => {
   const alternates = [

@@ -48,6 +48,7 @@
     "services_title": "Ce que je construis pour vous",
     "services_cta": "Recevoir ma maquette gratuite",
     "services_cta_contact": "Me poser une question",
+    "price_note": "Prix en euros, TVA non applicable (article 293 B du CGI).",
     "services": [
       {
         "tag": "Pack 01",
@@ -194,6 +195,14 @@
     "back": "Retour aux projets",
     "contact": "Me contacter",
     "placeholder": "La description détaillée de ce projet sera ajoutée prochainement depuis le panneau admin."
+  },
+  "legal": {
+    "mentions": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "privacy_short": "Confidentialité",
+    "terms": "Conditions générales de vente",
+    "terms_short": "CGV",
+    "fr_only": "Ce document est rédigé en français, langue du contrat."
   },
   "faq": {
     "title": "Vos questions, mes réponses",

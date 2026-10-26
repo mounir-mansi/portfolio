@@ -72,10 +72,29 @@
   color: var(--fg-muted);
 }
 
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--fg-muted);
+}
+
+.footer-legal a {
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+  color: var(--accent-text);
+}
+
 /* Zones tactiles confortables sur téléphone */
 @media (pointer: coarse) {
   .footer-contact-list a,
-  .footer-links a {
+  .footer-links a,
+  .footer-legal a {
     display: inline-block;
     padding-block: 0.75rem;
   }

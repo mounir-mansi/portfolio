@@ -48,6 +48,7 @@
     "services_title": "What I build for you",
     "services_cta": "Get my free mockup",
     "services_cta_contact": "Ask a question",
+    "price_note": "Prices in euros, VAT not applicable (article 293 B of the French tax code).",
     "services": [
       {
         "tag": "Pack 01",
@@ -194,6 +195,14 @@
     "back": "Back to projects",
     "contact": "Contact me",
     "placeholder": "The detailed description of this project will be added soon from the admin panel."
+  },
+  "legal": {
+    "mentions": "Legal notice",
+    "privacy": "Privacy policy",
+    "privacy_short": "Privacy",
+    "terms": "Terms and conditions of sale",
+    "terms_short": "Terms",
+    "fr_only": "This document is written in French, the language of the contract."
   },
   "faq": {
     "title": "Your questions, answered",

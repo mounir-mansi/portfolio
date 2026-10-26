@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { apiFetch } from "../../utils/api";
 import {
@@ -33,6 +34,7 @@ export default function QuickQuote() {
   const [loading, setLoading] = useState(false);
   const statusRef = useRef(null);
   const { t } = useTranslation();
+  const { lang = "fr" } = useParams();
 
   // Déplace le focus sur le résultat pour qu'il soit annoncé
   useEffect(() => {
@@ -175,7 +177,10 @@ export default function QuickQuote() {
           <button type="submit" className="btn-primary quote-submit" disabled={loading}>
             {loading ? t("contact.sending") : t("quote.submit")}
           </button>
-          <p className="quote-note">{t("quote.note")}</p>
+          <p className="quote-note">
+            {t("quote.note")}{" "}
+            <Link to={`/${lang}/confidentialite`}>{t("legal.privacy")}</Link>
+          </p>
         </form>
 
         <div className="quote-direct reveal">

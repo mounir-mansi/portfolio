@@ -9,6 +9,9 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage/ProjectDetailPage";
 import ConnexionScreen from "./pages/ConnexionScreen/ConnexionScreen";
 import AdminScreen from "./pages/AdminScreen/AdminScreen";
+import MentionsLegalesPage from "./pages/LegalPages/MentionsLegalesPage";
+import ConfidentialitePage from "./pages/LegalPages/ConfidentialitePage";
+import CgvPage from "./pages/LegalPages/CgvPage";
 import useSeoTags from "./utils/useSeoTags";
 
 const LANGS = ["fr", "en", "it", "es"];
@@ -51,6 +54,9 @@ function LangRouter() {
       <Route path="projets" element={<ProjectsPage />} />
       <Route path="projets/:id" element={<ProjectDetailPage />} />
       <Route path="contact" element={<ContactPage />} />
+      <Route path="mentions-legales" element={<MentionsLegalesPage />} />
+      <Route path="confidentialite" element={<ConfidentialitePage />} />
+      <Route path="cgv" element={<CgvPage />} />
       <Route path="connexion" element={<ConnexionScreen />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

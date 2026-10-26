@@ -138,6 +138,7 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+          <p className="services-note">{t("home.price_note")}</p>
         </div>
       </section>
 

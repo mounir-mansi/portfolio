@@ -48,6 +48,7 @@
     "services_title": "Cosa costruisco per te",
     "services_cta": "Ricevi la mia bozza gratuita",
     "services_cta_contact": "Fai una domanda",
+    "price_note": "Prezzi in euro, IVA non applicabile (articolo 293 B del codice tributario francese).",
     "services": [
       {
         "tag": "Pack 01",
@@ -194,6 +195,14 @@
     "back": "Torna ai progetti",
     "contact": "Contattami",
     "placeholder": "La descrizione dettagliata di questo progetto sarà aggiunta presto dal pannello admin."
+  },
+  "legal": {
+    "mentions": "Note legali",
+    "privacy": "Informativa sulla privacy",
+    "privacy_short": "Privacy",
+    "terms": "Condizioni generali di vendita",
+    "terms_short": "CGV",
+    "fr_only": "Questo documento è redatto in francese, lingua del contratto."
   },
   "faq": {
     "title": "Le tue domande, le mie risposte",

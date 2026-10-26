@@ -128,4 +128,100 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/contact"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/contact"/>
   </url>
+  <url>
+    <loc>https://mandev.fr/fr/mentions-legales</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/mentions-legales"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/en/mentions-legales</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/mentions-legales"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/it/mentions-legales</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/mentions-legales"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/es/mentions-legales</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/mentions-legales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/mentions-legales"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/fr/confidentialite</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/confidentialite"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/en/confidentialite</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/confidentialite"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/it/confidentialite</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/confidentialite"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/es/confidentialite</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/confidentialite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/confidentialite"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/fr/cgv</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/cgv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/cgv"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/cgv"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/cgv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/cgv"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/en/cgv</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/cgv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/cgv"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/cgv"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/cgv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/cgv"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/it/cgv</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/cgv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/cgv"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/cgv"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/cgv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/cgv"/>
+  </url>
+  <url>
+    <loc>https://mandev.fr/es/cgv</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mandev.fr/fr/cgv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mandev.fr/en/cgv"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mandev.fr/it/cgv"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/cgv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/cgv"/>
+  </url>
 </urlset>

@@ -48,6 +48,7 @@
     "services_title": "Lo que construyo para ti",
     "services_cta": "Recibir mi maqueta gratis",
     "services_cta_contact": "Hacer una pregunta",
+    "price_note": "Precios en euros, IVA no aplicable (artículo 293 B del código tributario francés).",
     "services": [
       {
         "tag": "Pack 01",
@@ -194,6 +195,14 @@
     "back": "Volver a proyectos",
     "contact": "Contáctame",
     "placeholder": "La descripción detallada de este proyecto se añadirá pronto desde el panel de administración."
+  },
+  "legal": {
+    "mentions": "Aviso legal",
+    "privacy": "Política de privacidad",
+    "privacy_short": "Privacidad",
+    "terms": "Condiciones generales de venta",
+    "terms_short": "CGV",
+    "fr_only": "Este documento está redactado en francés, la lengua del contrato."
   },
   "faq": {
     "title": "Tus preguntas, mis respuestas",
