@@ -266,3 +266,31 @@ describe("Nom du commerce", () => {
     expect(res.status).toBe(400);
   });
 });
+
+describe("Type de site (pack) dans le brief", () => {
+  const nouvelle = async (s) => (await request(app).post("/contact").send({ source: "devis", name: `${AUTO} Pack ${s}`, phone: "0612345678", activity: "Bar" })).body.token;
+  const patch = (b) => request(app).patch("/contact/brief").send(b);
+
+  test("enregistre le pack et refuse une valeur inconnue", async () => {
+    const token = await nouvelle("ok");
+    expect((await patch({ token, pack: "vitrine-plus" })).status).toBe(200);
+    expect((await patch({ token, pack: "premium" })).status).toBe(400);
+    const row = await prisma.contactMessage.findFirst({ where: { name: `${AUTO} Pack ok` } });
+    expect(row.pack).toBe("vitrine-plus");
+  });
+
+  test("Vitrine + : 5 pages maximum, y compris si le pack est envoyé avant", async () => {
+    const token = await nouvelle("max");
+    await patch({ token, pack: "vitrine-plus" });
+    const six = ["accueil", "services", "realisations", "apropos", "tarifs", "avis"];
+    expect((await patch({ token, pages: six })).status).toBe(400);
+    expect((await patch({ token, pages: six.slice(0, 5) })).status).toBe(200);
+  });
+
+  test("Vitrine : pas de limite à 5 sections", async () => {
+    const token = await nouvelle("sections");
+    await patch({ token, pack: "vitrine" });
+    const six = ["accueil", "services", "realisations", "apropos", "tarifs", "avis"];
+    expect((await patch({ token, pages: six })).status).toBe(200);
+  });
+});

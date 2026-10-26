@@ -32,7 +32,9 @@ const PALETTES = [
   { id: "bleu-blanc", fr: "Bleu et blanc", a: "#2d6cdf", b: "#f5f8ff" },
   { id: "noir-blanc", fr: "Noir et blanc", a: "#111111", b: "#f5f5f5" },
 ];
-const TOTAL_STEPS = 4;
+const TOTAL_STEPS = 5;
+const MAX_PLUS_PAGES = 5;
+const TYPES = ["vitrine", "vitrine-plus", "indecis"];
 
 function validate(form) {
   const errors = {};
@@ -54,7 +56,7 @@ export default function QuickQuote() {
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState(null);
   const [brief, setBrief] = useState({
-    pages: [], pagesAutre: "", theme: "", palette: "", couleursAutre: "", aLogo: null, echeance: "", creneau: "",
+    pack: "", pages: [], pagesAutre: "", theme: "", palette: "", couleursAutre: "", aLogo: null, echeance: "", creneau: "",
   });
   const headingRef = useRef(null);
   const { t } = useTranslation();
@@ -140,13 +142,14 @@ export default function QuickQuote() {
 
   // Champs envoyés pour chaque étape (uniquement ce qui a été rempli)
   const stepPayload = (n) => {
-    if (n === 2) {
+    if (n === 2) return brief.pack ? { pack: brief.pack } : {};
+    if (n === 3) {
       const p = {};
       if (brief.pages.length) p.pages = brief.pages;
       if (brief.pages.includes("autre") && brief.pagesAutre.trim()) p.pagesAutre = brief.pagesAutre.trim();
       return p;
     }
-    if (n === 3) {
+    if (n === 4) {
       const p = {};
       if (brief.theme) p.theme = brief.theme;
       const palette = PALETTES.find((x) => x.id === brief.palette);
@@ -187,6 +190,8 @@ export default function QuickQuote() {
     }
     setStep(final || step >= TOTAL_STEPS ? TOTAL_STEPS + 1 : step + 1);
   };
+
+  const atPageLimit = brief.pack === "vitrine-plus" && brief.pages.length >= MAX_PLUS_PAGES;
 
   const toggleListItem = (key, value) =>
     setBrief((b) => ({
@@ -318,13 +323,35 @@ export default function QuickQuote() {
 
           {step === 2 && (
             <div className="quote-step">
-              {heading("quote.step2_title")}
-              <p className="quote-hint">{t("quote.step2_hint")}</p>
+              {heading("quote.type_title")}
+              <p className="quote-hint">{t("quote.type_hint")}</p>
+              <fieldset className="quote-types">
+                <legend className="sr-only">{t("quote.type_title")}</legend>
+                {TYPES.map((ty) => (
+                  <label key={ty} className={`quote-type ${brief.pack === ty ? "is-on" : ""}`}>
+                    <input type="radio" name="pack" value={ty} checked={brief.pack === ty}
+                      onChange={() => setBrief((b) => ({ ...b, pack: ty, pages: ty === "vitrine-plus" ? b.pages.slice(0, MAX_PLUS_PAGES) : b.pages }))} />
+                    <strong>{t(`quote.type_${ty}`)}</strong>
+                    <span>{t(`quote.type_${ty}_desc`)}</span>
+                  </label>
+                ))}
+              </fieldset>
+              {actions(false)}
+            </div>
+          )}
+
+          {step === 3 && (
+            <div className="quote-step">
+              {heading(brief.pack === "vitrine" ? "quote.sections_title" : brief.pack === "vitrine-plus" ? "quote.step2_title" : "quote.contents_title")}
+              <p className="quote-hint">
+                {brief.pack === "vitrine" ? t("quote.sections_hint") : brief.pack === "vitrine-plus" ? t("quote.pages_hint") : t("quote.step2_hint")}
+              </p>
               <div className="quote-checks">
                 {PAGES.map((p) => (
                   <label key={p} className={`quote-choice ${brief.pages.includes(p) ? "is-on" : ""}`}>
-                    <input type="checkbox" checked={brief.pages.includes(p)} onChange={() => toggleListItem("pages", p)} />
-                    <span>{t(`quote.page_${p}`)}</span>
+                    <input type="checkbox" checked={brief.pages.includes(p)} onChange={() => toggleListItem("pages", p)}
+                      disabled={atPageLimit && !brief.pages.includes(p)} />
+                    <span>{p === "accueil" && brief.pack === "vitrine" ? t("quote.section_accueil") : t(`quote.page_${p}`)}</span>
                   </label>
                 ))}
               </div>
@@ -339,7 +366,7 @@ export default function QuickQuote() {
             </div>
           )}
 
-          {step === 3 && (
+          {step === 4 && (
             <div className="quote-step">
               {heading("quote.step3_title")}
               {radioGroup(t("quote.theme_label"), "theme", THEMES, brief.theme,
@@ -371,7 +398,7 @@ export default function QuickQuote() {
             </div>
           )}
 
-          {step === 4 && (
+          {step === 5 && (
             <div className="quote-step">
               {heading("quote.step4_title")}
               {radioGroup(t("quote.echeance_label"), "echeance", ECHEANCES, brief.echeance,

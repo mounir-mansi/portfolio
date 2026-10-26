@@ -484,3 +484,66 @@
     font-size: 0.9rem;
   }
 }
+
+/* Choix du type de site : trois cartes */
+.quote .quote-types {
+  display: grid;
+  gap: 0.6rem;
+  border: none;
+}
+
+.quote .quote-type {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.quote .quote-type strong {
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.quote .quote-type span {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+
+.quote .quote-type:hover {
+  border-color: var(--fg-faint);
+}
+
+.quote .quote-type.is-on {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+}
+
+.quote .quote-type input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.quote .quote-type:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.quote .quote-choice:has(input:disabled) {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.quote .quote-choice input:disabled {
+  cursor: not-allowed;
+}

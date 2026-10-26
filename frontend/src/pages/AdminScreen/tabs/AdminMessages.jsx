@@ -77,9 +77,10 @@ export default function AdminMessages() {
               <span className="msg-date">{new Date(msg.createdAt).toLocaleDateString("fr-FR")}</span>
             </div>
             {msg.message && <p className="msg-body">{msg.message}</p>}
-            {(msg.pages?.length > 0 || msg.theme || msg.couleurs || msg.echeance || msg.creneau || msg.aLogo !== null) && (
+            {(msg.pack || msg.pages?.length > 0 || msg.theme || msg.couleurs || msg.echeance || msg.creneau || msg.aLogo !== null) && (
               <p className="msg-body msg-brief">
-                {msg.pages?.length > 0 && <span><strong>Pages :</strong> {msg.pages.join(", ")}{msg.pagesAutre ? " (" + msg.pagesAutre + ")" : ""}. </span>}
+                {msg.pack && <span><strong>Type :</strong> {msg.pack}. </span>}
+                {msg.pages?.length > 0 && <span><strong>{msg.pack === "vitrine" ? "Sections" : "Pages"} :</strong> {msg.pages.join(", ")}{msg.pagesAutre ? " (" + msg.pagesAutre + ")" : ""}. </span>}
                 {msg.theme && <span><strong>Style :</strong> {msg.theme}. </span>}
                 {msg.couleurs && <span><strong>Couleurs :</strong> {msg.couleurs}. </span>}
                 {msg.aLogo !== null && <span><strong>Logo :</strong> {msg.aLogo ? "oui" : "non"}. </span>}

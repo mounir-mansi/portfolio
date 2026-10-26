@@ -33,7 +33,7 @@
     "services_title": "Ce que je construis pour vous",
     "services_cta": "Recevoir ma maquette gratuite",
     "popular": "Recommandé",
-    "services_cta_contact":"Me poser une question",
+    "services_cta_contact": "Me poser une question",
     "price_note": "Prix en euros, TVA non applicable ({{article}}).",
     "services": [
       {
@@ -222,7 +222,11 @@
   },
   "quote": {
     "title": "Recevez la maquette de votre page d'accueil",
-    "terms": ["Gratuite", "Sous 72 h ouvrées", "Sans engagement"],
+    "terms": [
+      "Gratuite",
+      "Sous 72 h ouvrées",
+      "Sans engagement"
+    ],
     "offer": "Vous décidez ensuite si nous travaillons ensemble.",
     "whatsapp": "Écrire sur WhatsApp",
     "name": "Nom et prénom",
@@ -287,7 +291,20 @@
     "creneau_soir": "Le soir",
     "creneau_peu-importe": "Peu importe",
     "done_title": "C'est envoyé, merci !",
-    "done_text": "Je vous rappelle pour parler de votre maquette. Elle vous est envoyée sous 72 h ouvrées après notre échange."
+    "done_text": "Je vous rappelle pour parler de votre maquette. Elle vous est envoyée sous 72 h ouvrées après notre échange.",
+    "type_title": "Quel type de site souhaitez-vous ?",
+    "type_hint": "Choisissez ce qui vous correspond, nous ajusterons ensemble.",
+    "type_vitrine": "Site vitrine",
+    "type_vitrine_desc": "Une seule page avec plusieurs sections",
+    "type_vitrine-plus": "Site vitrine +",
+    "type_vitrine-plus_desc": "Un site de plusieurs pages, jusqu'à 5",
+    "type_indecis": "Je ne sais pas encore",
+    "type_indecis_desc": "Conseillez-moi",
+    "sections_title": "Quelles sections souhaitez-vous ?",
+    "sections_hint": "Les sections s'enchaînent sur une seule page. Cochez tout ce qui vous intéresse.",
+    "pages_hint": "Jusqu'à 5 pages. Cochez celles qui vous intéressent.",
+    "contents_title": "Que souhaitez-vous présenter ?",
+    "section_accueil": "Présentation de votre activité"
   },
   "meta": {
     "suffix": "ManDev Web",

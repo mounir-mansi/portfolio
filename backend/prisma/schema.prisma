@@ -29,6 +29,7 @@ model ContactMessage {
   message   String?
   source    String   @default("contact")
   // Brief facultatif complété après l'envoi de la demande (formulaire en étapes)
+  pack           String?
   pages          String[]
   pagesAutre     String?
   theme          String?

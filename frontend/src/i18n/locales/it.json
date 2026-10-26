@@ -33,7 +33,7 @@
     "services_title": "Cosa costruisco per te",
     "services_cta": "Ricevi la mia bozza gratuita",
     "popular": "Consigliato",
-    "services_cta_contact":"Fai una domanda",
+    "services_cta_contact": "Fai una domanda",
     "price_note": "Prezzi in euro, IVA non applicabile ({{article}}).",
     "services": [
       {
@@ -222,7 +222,11 @@
   },
   "quote": {
     "title": "Ricevi la bozza della tua home page",
-    "terms": ["Gratuita", "Entro 72 ore lavorative", "Senza impegno"],
+    "terms": [
+      "Gratuita",
+      "Entro 72 ore lavorative",
+      "Senza impegno"
+    ],
     "offer": "Poi decidi tu se lavorare insieme.",
     "whatsapp": "Scrivi su WhatsApp",
     "name": "Nome e cognome",
@@ -287,7 +291,20 @@
     "creneau_soir": "La sera",
     "creneau_peu-importe": "Indifferente",
     "done_title": "Inviato, grazie!",
-    "done_text": "Ti richiamo per parlare della tua bozza. Te la invio entro 72 ore lavorative dalla nostra conversazione."
+    "done_text": "Ti richiamo per parlare della tua bozza. Te la invio entro 72 ore lavorative dalla nostra conversazione.",
+    "type_title": "Che tipo di sito desideri?",
+    "type_hint": "Scegli ciò che fa per te, aggiusteremo insieme.",
+    "type_vitrine": "Sito vetrina",
+    "type_vitrine_desc": "Una sola pagina con più sezioni",
+    "type_vitrine-plus": "Sito vetrina +",
+    "type_vitrine-plus_desc": "Un sito di più pagine, fino a 5",
+    "type_indecis": "Non lo so ancora",
+    "type_indecis_desc": "Consigliatemi",
+    "sections_title": "Quali sezioni vorresti?",
+    "sections_hint": "Le sezioni si susseguono su un'unica pagina. Seleziona tutto ciò che ti interessa.",
+    "pages_hint": "Fino a 5 pagine. Seleziona quelle che ti interessano.",
+    "contents_title": "Cosa vorresti presentare?",
+    "section_accueil": "Presentazione della tua attività"
   },
   "meta": {
     "suffix": "ManDev Web",

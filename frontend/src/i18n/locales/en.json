@@ -33,7 +33,7 @@
     "services_title": "What I build for you",
     "services_cta": "Get my free mockup",
     "popular": "Recommended",
-    "services_cta_contact":"Ask a question",
+    "services_cta_contact": "Ask a question",
     "price_note": "Prices in euros, VAT not applicable ({{article}}).",
     "services": [
       {
@@ -222,7 +222,11 @@
   },
   "quote": {
     "title": "Get a mockup of your homepage",
-    "terms": ["Free", "Within 72 working hours", "No commitment"],
+    "terms": [
+      "Free",
+      "Within 72 working hours",
+      "No commitment"
+    ],
     "offer": "You then decide whether we work together.",
     "whatsapp": "Message on WhatsApp",
     "name": "Full name",
@@ -287,7 +291,20 @@
     "creneau_soir": "In the evening",
     "creneau_peu-importe": "Any time",
     "done_title": "Sent, thank you!",
-    "done_text": "I'll call you to talk about your mockup. It is sent within 72 working hours after our conversation."
+    "done_text": "I'll call you to talk about your mockup. It is sent within 72 working hours after our conversation.",
+    "type_title": "What type of website do you want?",
+    "type_hint": "Choose what suits you, we'll adjust together.",
+    "type_vitrine": "Showcase website",
+    "type_vitrine_desc": "A single page with several sections",
+    "type_vitrine-plus": "Showcase website +",
+    "type_vitrine-plus_desc": "A multi-page site, up to 5 pages",
+    "type_indecis": "I don't know yet",
+    "type_indecis_desc": "Advise me",
+    "sections_title": "Which sections would you like?",
+    "sections_hint": "Sections follow each other on a single page. Tick everything that interests you.",
+    "pages_hint": "Up to 5 pages. Tick the ones you want.",
+    "contents_title": "What would you like to present?",
+    "section_accueil": "Presentation of your business"
   },
   "meta": {
     "suffix": "ManDev Web",

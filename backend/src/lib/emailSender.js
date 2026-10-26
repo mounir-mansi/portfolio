@@ -44,6 +44,11 @@ const PAGE_LABELS = {
   accueil: "Accueil", services: "Services", realisations: "Réalisations", apropos: "À propos", tarifs: "Tarifs",
   avis: "Avis", contact: "Contact", menu: "Menu ou carte", commande: "Commande en ligne", autre: "Autre",
 };
+const PACK_LABELS = {
+  vitrine: "Vitrine (1 page, plusieurs sections)",
+  "vitrine-plus": "Vitrine + (jusqu'à 5 pages)",
+  indecis: "Ne sait pas encore, souhaite un conseil",
+};
 const THEME_LABELS = { clair: "Site clair", sombre: "Site sombre", indifferent: "Sans préférence" };
 const ECHEANCE_LABELS = { asap: "Dès que possible", "1mois": "D'ici un mois", "2-3mois": "Dans 2 à 3 mois", "pas-presse": "Pas pressé" };
 const CRENEAU_LABELS = { matin: "Le matin", "apres-midi": "L'après-midi", soir: "Le soir", "peu-importe": "Peu importe" };
@@ -56,8 +61,9 @@ async function sendBriefNotification(row) {
   if (row.company) lines.push(`<p><strong>Commerce / entreprise :</strong> ${escapeHtml(row.company)}</p>`);
   if (row.activity) lines.push(`<p><strong>Activité :</strong> ${escapeHtml(row.activity)}</p>`);
 
+  if (row.pack) lines.push(`<p><strong>Type de site :</strong> ${PACK_LABELS[row.pack]}</p>`);
   const pages = (row.pages || []).map((p) => PAGE_LABELS[p] || p);
-  if (pages.length) lines.push(`<p><strong>Pages souhaitées :</strong> ${escapeHtml(pages.join(", "))}</p>`);
+  if (pages.length) lines.push(`<p><strong>${row.pack === "vitrine" ? "Sections souhaitées" : "Pages souhaitées"} :</strong> ${escapeHtml(pages.join(", "))}</p>`);
   if (row.pagesAutre) lines.push(`<p><strong>Autre page :</strong> ${escapeHtml(row.pagesAutre)}</p>`);
   if (row.theme) lines.push(`<p><strong>Style :</strong> ${THEME_LABELS[row.theme]}</p>`);
   if (row.couleurs) lines.push(`<p><strong>Couleurs :</strong> ${escapeHtml(row.couleurs)}</p>`);

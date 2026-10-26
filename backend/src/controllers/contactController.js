@@ -7,6 +7,7 @@ const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex"
 
 // Valeurs autorisées pour le brief (le reste est refusé)
 const BRIEF_OPTIONS = {
+  pack: ["vitrine", "vitrine-plus", "indecis"],
   pages: ["accueil", "services", "realisations", "apropos", "tarifs", "avis", "contact", "menu", "commande", "autre"],
   theme: ["clair", "sombre", "indifferent"],
   echeance: ["asap", "1mois", "2-3mois", "pas-presse"],
@@ -98,12 +99,20 @@ async function updateBrief(req, res) {
 
   const data = {};
 
+  if (body.pack !== undefined) {
+    if (!BRIEF_OPTIONS.pack.includes(body.pack)) return res.status(400).json({ error: "Valeur invalide." });
+    data.pack = body.pack;
+  }
+
   if (body.pages !== undefined) {
     if (!Array.isArray(body.pages) || body.pages.length > BRIEF_OPTIONS.pages.length)
       return res.status(400).json({ error: "Pages invalides." });
     if (!body.pages.every((p) => BRIEF_OPTIONS.pages.includes(p)))
       return res.status(400).json({ error: "Pages invalides." });
     data.pages = [...new Set(body.pages)];
+    // Le pack Vitrine + comprend jusqu'à 5 pages
+    if ((data.pack || row.pack) === "vitrine-plus" && data.pages.length > 5)
+      return res.status(400).json({ error: "5 pages maximum." });
   }
   for (const key of ["theme", "echeance", "creneau"]) {
     if (body[key] === undefined) continue;
