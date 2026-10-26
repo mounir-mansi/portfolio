@@ -485,18 +485,9 @@
     font-size: clamp(3rem, 15.5vh, 10.5rem);
   }
 
-  .hero-eyebrow {
-    margin-bottom: clamp(1rem, 4vh, 2.5rem);
-  }
-
   .hero-sub {
-    margin-top: clamp(1rem, 4vh, 2.5rem);
     font-size: clamp(1.15rem, 3vh, 1.9rem);
     max-width: 42rem;
-  }
-
-  .hero-ctas {
-    margin-top: clamp(1.5rem, 5vh, 3.5rem);
   }
 
   .hero .btn-primary,
@@ -505,7 +496,6 @@
   }
 
   .hero-offer {
-    margin-top: clamp(1.25rem, 3vh, 2rem);
     font-size: clamp(1.05rem, 2.2vh, 1.4rem);
   }
 
@@ -636,6 +626,61 @@
   .work-title {
     font-size: min(var(--step-3), 5.5vh);
   }
+}
+
+/* Desktop : le contenu s'étire pour remplir la hauteur de chaque section */
+@media (min-width: 1024px) {
+  /* Hero : la photo occupe toute la hauteur, le texte est centré en face */
+  .hero-grid {
+    flex: 1;
+    align-items: stretch;
+  }
+
+  /* Texte du hero : colonne haute, qui occupe presque toute la hauteur de la section */
+  .hero-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100svh - 4.5rem - 12vh);
+  }
+
+  .hero-main > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .hero-grid {
+    align-items: center;
+  }
+
+  .hero-proof {
+    min-height: 0;
+  }
+
+  /* Photo moins haute que la section : elle est centrée en face du texte */
+  .hero-proof {
+    align-self: center;
+  }
+
+  .hero-proof img {
+    flex: none;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    max-height: 64vh;
+    /* cadre la photo sur l'enseigne plutôt que sur le centre */
+    object-position: 28% 50%;
+  }
+
+  /* Services : les trois cartes occupent toute la hauteur restante */
+  #services .services {
+    flex: 1;
+    grid-template-rows: 1fr;
+  }
+
+  #services .service-link {
+    margin-top: auto;
+  }
+
 }
 
 /* Écrans bas (portables ~768 px de haut) : compactage supplémentaire, sans retirer de contenu */

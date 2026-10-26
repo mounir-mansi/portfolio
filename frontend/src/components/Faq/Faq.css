@@ -72,7 +72,7 @@
   }
 
   .faq .block-title {
-    font-size: clamp(2.4rem, 10vh, 7rem);
+    font-size: clamp(2.2rem, 6.5vh, 4.5rem);
   }
 
   .faq .faq-grid {

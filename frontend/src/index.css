@@ -64,18 +64,30 @@
     --section-y: clamp(1.75rem, 4.5vh, 3.5rem);
   }
 
-  /* Chaque section occupe toute la hauteur de l'écran (moins la navbar), contenu centré */
+  /* Les trois premières sections (hero, maquette, services) occupent toute la hauteur de l'écran
+     (moins la navbar) et leur contenu s'étire pour la remplir. Les autres gardent la hauteur de leur contenu. */
   main > .hero,
-  main > .block {
+  main > #devis,
+  main > #services {
     min-height: calc(100svh - 4.5rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-block: clamp(1.25rem, 3.5vh, 2.5rem);
   }
 
-  /* Pied de page : l'appel final reste plein écran, le reste suit */
-  main > .block > .container {
+  main > .hero > .container,
+  main > #devis > .container,
+  main > #services > .container {
     width: 100%;
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* Conteneur simple des services : colonne qui s'étire (les deux autres ont leur propre grille) */
+  #services > .container {
+    display: flex;
+    flex-direction: column;
   }
 }
 

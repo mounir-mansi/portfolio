@@ -262,6 +262,26 @@
   }
 }
 
+/* Desktop : le formulaire occupe toute la hauteur de la section */
+@media (min-width: 1024px) {
+  .quote .quote-grid {
+    flex: 1;
+    align-items: stretch;
+  }
+
+  .quote .quote-form {
+    justify-content: space-between;
+  }
+
+  .quote .quote-intro {
+    justify-content: center;
+  }
+
+  .quote .quote-direct {
+    align-self: end;
+  }
+}
+
 /* Écrans bas : formulaire plus compact */
 @media (min-width: 1024px) and (max-height: 760px) {
   .quote .quote-form {
