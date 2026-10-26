@@ -27,6 +27,18 @@ model ContactMessage {
   activity  String?
   message   String?
   source    String   @default("contact")
+  // Brief facultatif complété après l'envoi de la demande (formulaire en étapes)
+  pages          String[]
+  pagesAutre     String?
+  theme          String?
+  couleurs       String?
+  aLogo          Boolean?
+  echeance       String?
+  creneau        String?
+  briefDone      Boolean   @default(false)
+  // Empreinte (sha256) du jeton remis au visiteur : le jeton lui-même n'est jamais stocké
+  briefTokenHash String?   @unique
+  briefExpiresAt DateTime?
   read      Boolean  @default(false)
   replied   Boolean  @default(false)
   createdAt DateTime @default(now())

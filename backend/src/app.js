@@ -41,6 +41,15 @@ const loginLimiter = rateLimit({
 });
 app.use("/login", loginLimiter);
 
+// Rate limit formulaires (demande de maquette, contact, brief)
+const contactLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 30,
+  skip: () => process.env.NODE_ENV !== "production",
+  message: { error: "Trop de tentatives, réessayez dans quelques minutes." },
+});
+app.use("/contact", contactLimiter);
+
 // Routes API
 app.use(router);
 
