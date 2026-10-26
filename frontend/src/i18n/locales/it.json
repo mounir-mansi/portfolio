@@ -183,6 +183,14 @@
     "contact": "Contattami",
     "placeholder": "La descrizione dettagliata di questo progetto sarà aggiunta presto dal pannello admin."
   },
+  "meta": {
+    "suffix": "ManDev Web",
+    "home": "ManDev Web — Creazione di siti e applicazioni web",
+    "projects": "Progetti",
+    "about": "Chi sono",
+    "contact": "Contatti",
+    "notfound": "Pagina non trovata"
+  },
   "notfound": {
     "title": "Pagina non trovata",
     "text": "Questo indirizzo non esiste o è stato spostato.",

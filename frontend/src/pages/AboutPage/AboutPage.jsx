@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import SkillsIndex from "../../components/SkillsIndex/SkillsIndex";
 import { apiFetch } from "../../utils/api";
+import usePageTitle from "../../utils/usePageTitle";
 import "./AboutPage.css";
 
 const VALUES = ["security", "perf", "responsive", "deploy"];
@@ -15,6 +16,7 @@ export default function AboutPage() {
   const { lang = "fr" } = useParams();
   const lp = (path) => `/${lang}${path}`;
   const { hash } = useLocation();
+  usePageTitle(t("meta.about"));
 
   // Ancre (#stack) après une redirection depuis l'ancienne page Compétences
   useEffect(() => {

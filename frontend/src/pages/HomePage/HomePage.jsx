@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import useReveal from "../../utils/useReveal";
+import usePageTitle from "../../utils/usePageTitle";
 import "./HomePage.css";
 
 const pad = (n) => String(n + 1).padStart(2, "0");
@@ -24,6 +25,7 @@ export default function HomePage() {
       .finally(() => setProjectsLoaded(true));
   }, [lang]);
 
+  usePageTitle(t("meta.home"), { full: true });
   useReveal([projects.length, lang]);
 
   // Défilement vers l'ancre (#services) après navigation depuis une autre page

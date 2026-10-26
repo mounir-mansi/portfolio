@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "../../utils/contactInfo";
+import usePageTitle from "../../utils/usePageTitle";
 import "./ContactPage.css";
 
 // Mêmes règles que le backend (contactController.js)
@@ -47,6 +48,7 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const statusRef = useRef(null);
   const { t } = useTranslation();
+  usePageTitle(t("meta.contact"));
 
   useEffect(() => { saveDraft(form); }, [form]);
 

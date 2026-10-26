@@ -3,14 +3,30 @@
   inset: 0 0 auto 0;
   z-index: 50;
   border-bottom: 1px solid transparent;
-  transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+/* Le flou vit sur un pseudo-élément : un backdrop-filter sur le header en ferait le repère
+   des enfants position: fixed, et le menu mobile ne couvrirait plus que la hauteur de la navbar. */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  transition: opacity 0.3s;
 }
 
 .navbar--solid {
   background: var(--nav-bg);
-  backdrop-filter: blur(14px) saturate(1.2);
-  -webkit-backdrop-filter: blur(14px) saturate(1.2);
   border-bottom-color: var(--line);
+}
+
+.navbar--solid::before {
+  opacity: 1;
 }
 
 .navbar-inner {

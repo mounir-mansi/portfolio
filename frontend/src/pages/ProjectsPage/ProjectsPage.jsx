@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
+import usePageTitle from "../../utils/usePageTitle";
 import "./ProjectsPage.css";
 
 export default function ProjectsPage() {
@@ -11,6 +12,7 @@ export default function ProjectsPage() {
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
   const lp = (path) => `/${lang}${path}`;
+  usePageTitle(t("meta.projects"));
 
   useEffect(() => {
     apiFetch(`/api/projects?lang=${lang}`)

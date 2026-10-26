@@ -1,11 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
+import usePageTitle from "../../utils/usePageTitle";
 import "./NotFoundPage.css";
 
 export default function NotFoundPage() {
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
+  usePageTitle(t("meta.notfound"));
 
   return (
     <Layout>

@@ -183,6 +183,14 @@
     "contact": "Contact me",
     "placeholder": "The detailed description of this project will be added soon from the admin panel."
   },
+  "meta": {
+    "suffix": "ManDev Web",
+    "home": "ManDev Web — Websites and web applications",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "notfound": "Page not found"
+  },
   "notfound": {
     "title": "Page not found",
     "text": "This address doesn't exist or has moved.",

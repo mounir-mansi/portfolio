@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../utils/useAuth";
+import usePageTitle from "../../utils/usePageTitle";
 import "./ConnexionScreen.css";
 
 export default function ConnexionScreen() {
@@ -10,6 +11,7 @@ export default function ConnexionScreen() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showPwd, setShowPwd] = useState(false);
+  usePageTitle("Administration");
 
   useEffect(() => {
     if (user) navigate("/admin", { replace: true });

@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
+import usePageTitle from "../../utils/usePageTitle";
 import "./ProjectDetailPage.css";
 
 const LOCALE_MAP = { fr: "fr-FR", en: "en-GB", it: "it-IT", es: "es-ES" };
@@ -14,6 +15,7 @@ export default function ProjectDetailPage() {
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const lp = (path) => `/${lang}${path}`;
+  usePageTitle(project?.title);
 
   useEffect(() => {
     apiFetch(`/api/projects/${id}?lang=${lang}`)
