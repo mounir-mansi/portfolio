@@ -21,9 +21,9 @@
   },
   "home": {
     "eyebrow": "Studio web · Toulouse et partout en France",
-    "title_a": "Des sites qui",
-    "title_em": "font venir",
-    "title_b": "vos clients.",
+    "title_a": "Des sites vitrines qui",
+    "title_em": "transforment",
+    "title_b": "vos visiteurs en clients.",
     "sub": "Sites vitrines et applications web rapides, sécurisés et livrés clé en main pour les commerces et les PME.",
     "cta_quote": "Recevoir ma maquette gratuite",
     "cta_work": "Voir les réalisations",
@@ -32,7 +32,8 @@
     "services_eyebrow": "Services",
     "services_title": "Ce que je construis pour vous",
     "services_cta": "Recevoir ma maquette gratuite",
-    "services_cta_contact": "Me poser une question",
+    "popular": "Le plus choisi",
+    "services_cta_contact":"Me poser une question",
     "price_note": "Prix en euros, TVA non applicable ({{article}}).",
     "services": [
       {

@@ -482,7 +482,9 @@
 
   /* Le contenu grandit avec la hauteur de l'écran pour remplir la section */
   .hero-title {
-    font-size: clamp(3rem, 15.5vh, 10.5rem);
+    /* phrase longue : taille limitée par la hauteur ET par la largeur de la colonne de texte */
+    font-size: clamp(3rem, min(10.5vh, 5.2vw), 7rem);
+    max-width: 18ch;
   }
 
   .hero-sub {
@@ -585,7 +587,7 @@
 
   /* Le titre anglais est plus long et passe sur 3 lignes : taille réduite pour que le hero tienne */
   html[lang="en"] .hero-title {
-    font-size: min(var(--step-4), 9vh);
+    font-size: clamp(3rem, min(9.5vh, 4.8vw), 6.5rem);
   }
 
   .hero-sub {
@@ -760,5 +762,101 @@
 @media (prefers-reduced-motion: reduce) {
   .pulse {
     animation: none;
+  }
+}
+
+/* ===== SERVICES : cartes arrondies et séparées, pack central mis en avant ===== */
+#services .services {
+  border: none;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
+}
+
+#services .service {
+  position: relative;
+  border: 1px solid var(--line-strong);
+  border-radius: 24px;
+  background: var(--bg-raised);
+  transition: transform 0.4s var(--ease), border-color 0.3s;
+}
+
+#services .service:hover {
+  background: var(--bg-raised);
+  transform: translateY(-4px);
+}
+
+#services .service--featured {
+  border: 2px solid var(--accent);
+  background: linear-gradient(180deg, var(--accent-dim), var(--bg-raised) 55%);
+}
+
+#services .service-badge {
+  position: absolute;
+  top: 0;
+  left: 1.75rem;
+  transform: translateY(-50%);
+  padding: 0.35em 1em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+#services .service-name {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--fg-muted);
+}
+
+#services .service-price strong {
+  font-family: var(--font-body);
+  font-size: clamp(2.4rem, 5vh, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+#services .service-list li {
+  border-top: none;
+  padding-top: 0;
+  align-items: flex-start;
+}
+
+#services .service-list li::before {
+  content: "";
+  flex: none;
+  width: 0.5rem;
+  height: 0.85rem;
+  margin: 0.2rem 0.5rem 0 0.15rem;
+  border-right: 2px solid var(--accent-text);
+  border-bottom: 2px solid var(--accent-text);
+  transform: rotate(45deg);
+}
+
+#services .service-link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.85em 1.5em;
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+#services .service-link {
+  white-space: nowrap;
+  padding: 0.8em 1.25em;
+  font-size: 0.95rem;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  main > .hero .hero-title {
+    font-size: clamp(3rem, min(9vh, 4.3vw), 6.25rem);
+    max-width: 20ch;
   }
 }

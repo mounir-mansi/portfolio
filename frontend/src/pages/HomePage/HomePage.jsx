@@ -94,8 +94,8 @@ export default function HomePage() {
 
           <div className="services">
             {Array.isArray(services) && services.map((s, i) => (
-              <article key={s.name} className="service reveal" style={{ "--delay": `${i * 90}ms` }}>
-                <p className="service-tag">{s.tag}</p>
+              <article key={s.name} className={`service reveal ${i === 1 ? "service--featured" : ""}`} style={{ "--delay": `${i * 90}ms` }}>
+                {i === 1 && <span className="service-badge">{t("home.popular")}</span>}
                 <h3 className="service-name">{s.name}</h3>
                 <p className="service-price">
                   {s.price_prefix && <span className="service-price-prefix">{s.price_prefix}</span>}
@@ -106,12 +106,12 @@ export default function HomePage() {
                   {s.items.map((it) => <li key={it}>{it}</li>)}
                 </ul>
                 {i < 2 ? (
-                  <Link to={{ pathname: lp(""), hash: "#devis" }} className="service-link">
-                    {t("home.services_cta")} <span aria-hidden="true">↗</span>
+                  <Link to={{ pathname: lp(""), hash: "#devis" }} className={`service-link ${i === 1 ? "btn-primary" : "btn-outline"}`}>
+                    {t("home.services_cta")} <span aria-hidden="true">→</span>
                   </Link>
                 ) : (
-                  <Link to={lp("/contact")} className="service-link">
-                    {t("home.services_cta_contact")} <span aria-hidden="true">↗</span>
+                  <Link to={lp("/contact")} className="service-link btn-outline">
+                    {t("home.services_cta_contact")} <span aria-hidden="true">→</span>
                   </Link>
                 )}
               </article>

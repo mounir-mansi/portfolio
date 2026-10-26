@@ -21,9 +21,9 @@
   },
   "home": {
     "eyebrow": "Studio web · Tolosa e in tutta la Francia",
-    "title_a": "Siti che",
-    "title_em": "portano",
-    "title_b": "i tuoi clienti.",
+    "title_a": "Siti vetrina che",
+    "title_em": "trasformano",
+    "title_b": "i tuoi visitatori in clienti.",
     "sub": "Siti vetrina e applicazioni web veloci, sicure e chiavi in mano per negozi e PMI.",
     "cta_quote": "Ricevi la mia bozza gratuita",
     "cta_work": "Vedi i lavori",
@@ -32,7 +32,8 @@
     "services_eyebrow": "Servizi",
     "services_title": "Cosa costruisco per te",
     "services_cta": "Ricevi la mia bozza gratuita",
-    "services_cta_contact": "Fai una domanda",
+    "popular": "Il più scelto",
+    "services_cta_contact":"Fai una domanda",
     "price_note": "Prezzi in euro, IVA non applicabile ({{article}}).",
     "services": [
       {

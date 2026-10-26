@@ -21,9 +21,9 @@
   },
   "home": {
     "eyebrow": "Estudio web · Toulouse y toda Francia",
-    "title_a": "Webs que",
-    "title_em": "traen",
-    "title_b": "a tus clientes.",
+    "title_a": "Sitios web que",
+    "title_em": "convierten",
+    "title_b": "a tus visitantes en clientes.",
     "sub": "Sitios escaparate y aplicaciones web rápidas, seguras y llave en mano para comercios y pymes.",
     "cta_quote": "Recibir mi maqueta gratis",
     "cta_work": "Ver trabajos",
@@ -32,7 +32,8 @@
     "services_eyebrow": "Servicios",
     "services_title": "Lo que construyo para ti",
     "services_cta": "Recibir mi maqueta gratis",
-    "services_cta_contact": "Hacer una pregunta",
+    "popular": "El más elegido",
+    "services_cta_contact":"Hacer una pregunta",
     "price_note": "Precios en euros, IVA no aplicable ({{article}}).",
     "services": [
       {

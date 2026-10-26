@@ -21,9 +21,9 @@
   },
   "home": {
     "eyebrow": "Web studio · Toulouse and all over France",
-    "title_a": "Websites that",
-    "title_em": "bring in",
-    "title_b": "your customers.",
+    "title_a": "Showcase websites that",
+    "title_em": "turn",
+    "title_b": "your visitors into customers.",
     "sub": "Fast, secure showcase sites and web apps, delivered turnkey for local businesses and SMEs.",
     "cta_quote": "Get my free mockup",
     "cta_work": "See my work",
@@ -32,7 +32,8 @@
     "services_eyebrow": "Services",
     "services_title": "What I build for you",
     "services_cta": "Get my free mockup",
-    "services_cta_contact": "Ask a question",
+    "popular": "Most popular",
+    "services_cta_contact":"Ask a question",
     "price_note": "Prices in euros, VAT not applicable ({{article}}).",
     "services": [
       {
