@@ -14,8 +14,9 @@ export default function ConfidentialitePage() {
       <h2>Données collectées</h2>
       <ul>
         <li>
-          <strong>Demande de maquette gratuite :</strong> nom, numéro de téléphone, activité et, si vous le
-          souhaitez, adresse email.
+          <strong>Demande de maquette gratuite :</strong> nom, nom du commerce, numéro de téléphone, activité et, si
+          vous le souhaitez, adresse email. Vous pouvez ensuite préciser, de façon facultative, les pages souhaitées,
+          votre style (fond clair ou sombre, couleurs, logo existant), l'échéance et un créneau de rappel.
         </li>
         <li>
           <strong>Formulaire de contact :</strong> nom, adresse email et message.

@@ -25,6 +25,7 @@ model ContactMessage {
   email     String?
   phone     String?
   activity  String?
+  company   String?
   message   String?
   source    String   @default("contact")
   // Brief facultatif complété après l'envoi de la demande (formulaire en étapes)

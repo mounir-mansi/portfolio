@@ -70,12 +70,23 @@ export default function AdminMessages() {
                   <a className="msg-email" href={`tel:${msg.phone.replace(/[^\d+]/g, "")}`}>{msg.phone}</a>
                 )}
                 {msg.email && <span className="msg-email">{msg.email}</span>}
+                {msg.company && <span className="msg-email">{msg.company}</span>}
                 {msg.activity && <span className="msg-email">{msg.activity}</span>}
                 {msg.replied && <span className="tag-replied">Répondu</span>}
               </div>
               <span className="msg-date">{new Date(msg.createdAt).toLocaleDateString("fr-FR")}</span>
             </div>
             {msg.message && <p className="msg-body">{msg.message}</p>}
+            {(msg.pages?.length > 0 || msg.theme || msg.couleurs || msg.echeance || msg.creneau || msg.aLogo !== null) && (
+              <p className="msg-body msg-brief">
+                {msg.pages?.length > 0 && <span><strong>Pages :</strong> {msg.pages.join(", ")}{msg.pagesAutre ? " (" + msg.pagesAutre + ")" : ""}. </span>}
+                {msg.theme && <span><strong>Style :</strong> {msg.theme}. </span>}
+                {msg.couleurs && <span><strong>Couleurs :</strong> {msg.couleurs}. </span>}
+                {msg.aLogo !== null && <span><strong>Logo :</strong> {msg.aLogo ? "oui" : "non"}. </span>}
+                {msg.echeance && <span><strong>Pour quand :</strong> {msg.echeance}. </span>}
+                {msg.creneau && <span><strong>Rappel :</strong> {msg.creneau}.</span>}
+              </p>
+            )}
             <div className="msg-actions">
               {!msg.read && (
                 <button className="btn-sm" onClick={() => markRead(msg.id)}>

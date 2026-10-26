@@ -9,7 +9,7 @@ const escapeHtml = (str) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-async function sendContactNotification({ name, email, phone, activity, message, source }) {
+async function sendContactNotification({ name, email, phone, activity, company, message, source }) {
   const isQuote = source === "devis";
   const safeName = escapeHtml(name);
   const lines = [`<p><strong>Nom :</strong> ${safeName}</p>`];
@@ -19,6 +19,7 @@ async function sendContactNotification({ name, email, phone, activity, message, 
     const telHref = phone.replace(/[^\d+]/g, "");
     lines.push(`<p><strong>Téléphone :</strong> <a href="tel:${telHref}">${safePhone}</a></p>`);
   }
+  if (company) lines.push(`<p><strong>Commerce / entreprise :</strong> ${escapeHtml(company)}</p>`);
   if (activity) lines.push(`<p><strong>Activité :</strong> ${escapeHtml(activity)}</p>`);
   if (email) lines.push(`<p><strong>Email :</strong> ${escapeHtml(email)}</p>`);
   if (message) {
@@ -52,6 +53,7 @@ async function sendBriefNotification(row) {
   const safeName = escapeHtml(row.name);
   const lines = [`<p><strong>Nom :</strong> ${safeName}</p>`];
   if (row.phone) lines.push(`<p><strong>Téléphone :</strong> ${escapeHtml(row.phone)}</p>`);
+  if (row.company) lines.push(`<p><strong>Commerce / entreprise :</strong> ${escapeHtml(row.company)}</p>`);
   if (row.activity) lines.push(`<p><strong>Activité :</strong> ${escapeHtml(row.activity)}</p>`);
 
   const pages = (row.pages || []).map((p) => PAGE_LABELS[p] || p);

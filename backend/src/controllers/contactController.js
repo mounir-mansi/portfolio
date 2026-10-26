@@ -16,7 +16,7 @@ const BRIEF_OPTIONS = {
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_SEPARATORS = /[\s.\-()]/g;
 const PHONE_REGEX = /^\+?\d{8,15}$/;
-const MAX = { name: 100, email: 254, phone: 30, activity: 100, message: 2000 };
+const MAX = { name: 100, email: 254, phone: 30, activity: 100, company: 100, message: 2000 };
 
 const clean = (value) => (typeof value === "string" ? value.trim() : "");
 
@@ -30,6 +30,7 @@ async function submitContact(req, res) {
   const email = clean(body.email);
   const phone = clean(body.phone);
   const activity = clean(body.activity);
+  const company = clean(body.company);
   const message = clean(body.message);
 
   if (source === "devis") {
@@ -47,6 +48,8 @@ async function submitContact(req, res) {
     return res.status(400).json({ error: "Téléphone invalide." });
   if (activity.length > MAX.activity)
     return res.status(400).json({ error: "Activité trop longue." });
+  if (company.length > MAX.company)
+    return res.status(400).json({ error: "Nom du commerce trop long." });
   if (message.length > MAX.message)
     return res.status(400).json({ error: "Message trop long." });
 
@@ -61,6 +64,7 @@ async function submitContact(req, res) {
         email: email || null,
         phone: phone || null,
         activity: activity || null,
+        company: company || null,
         message: message || null,
         source,
         briefTokenHash: token ? sha256(token) : null,
@@ -69,7 +73,7 @@ async function submitContact(req, res) {
     });
 
     // Email best-effort (pas bloquant)
-    sendContactNotification({ name, email, phone, activity, message, source }).catch((err) =>
+    sendContactNotification({ name, email, phone, activity, company, message, source }).catch((err) =>
       console.error("Email notification error:", err)
     );
 

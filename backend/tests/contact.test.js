@@ -246,3 +246,23 @@ describe("Brief de la demande de maquette (formulaire en étapes)", () => {
     expect(row.phone).toBe("0612345678");
   });
 });
+
+describe("Nom du commerce", () => {
+  test("enregistré et transmis à la notification", async () => {
+    sendContactNotification.mockClear();
+    const res = await request(app).post("/contact").send({
+      source: "devis", name: `${AUTO} Commerce`, phone: "0612345678", activity: "Boulangerie", company: "Boulangerie du Midi",
+    });
+    expect(res.status).toBe(200);
+    const row = await prisma.contactMessage.findFirst({ where: { name: `${AUTO} Commerce` } });
+    expect(row.company).toBe("Boulangerie du Midi");
+    expect(sendContactNotification).toHaveBeenCalledWith(expect.objectContaining({ company: "Boulangerie du Midi" }));
+  });
+
+  test("trop long : 400", async () => {
+    const res = await request(app).post("/contact").send({
+      source: "devis", name: `${AUTO} Long`, phone: "0612345678", activity: "Boulangerie", company: "x".repeat(101),
+    });
+    expect(res.status).toBe(400);
+  });
+});
