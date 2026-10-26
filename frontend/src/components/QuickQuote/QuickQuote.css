@@ -1,0 +1,179 @@
+/* Section « maquette gratuite » : texte et coordonnées à gauche, formulaire à droite (desktop) */
+/* Mobile : offre, formulaire, puis coordonnées directes */
+.quote .quote-grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-areas:
+    "intro"
+    "form"
+    "direct";
+}
+
+.quote .quote-intro {
+  grid-area: intro;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.quote .block-title {
+  max-width: 16ch;
+}
+
+.quote .quote-offer {
+  max-width: 34rem;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+.quote .quote-direct {
+  grid-area: direct;
+  max-width: 28rem;
+}
+
+.quote .quote-direct-lead {
+  margin-bottom: 0.75rem;
+  color: var(--fg-muted);
+}
+
+.quote .quote-direct-list {
+  border-top: 1px solid var(--line-strong);
+}
+
+.quote .quote-direct-list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding-block: 0.9rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.quote .quote-direct-list span {
+  color: var(--fg-muted);
+}
+
+.quote .quote-direct-list a {
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
+  transition: color 0.2s;
+}
+
+.quote .quote-direct-list a:hover {
+  color: var(--accent-text);
+}
+
+/* Formulaire */
+.quote .quote-form {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.quote .quote-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quote .quote-field label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.quote .quote-field input {
+  width: 100%;
+  padding: 0.9em 1em;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  transition: border-color 0.2s;
+}
+
+.quote .quote-field input::placeholder {
+  color: var(--fg-muted);
+  opacity: 1;
+}
+
+.quote .quote-field input:hover {
+  border-color: var(--fg-faint);
+}
+
+.quote .quote-field input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.quote .quote-field input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.quote .quote-field [aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.quote .field-error {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--danger);
+}
+
+.quote .quote-status-box:empty {
+  display: none;
+}
+
+.quote .quote-status-box:focus {
+  outline: none;
+}
+
+.quote .form-status {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.quote .form-status.ok {
+  color: var(--accent-text);
+}
+
+.quote .form-status.err {
+  color: var(--danger);
+}
+
+.quote .quote-submit {
+  justify-content: center;
+}
+
+.quote .quote-note {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+@media (min-width: 1024px) {
+  .quote .quote-grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "intro form"
+      "direct form";
+    align-items: start;
+    column-gap: clamp(3rem, 7vw, 6rem);
+  }
+
+  .quote .quote-direct {
+    margin-top: 0;
+  }
+}

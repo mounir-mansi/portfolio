@@ -183,6 +183,20 @@
     "contact": "Contact me",
     "placeholder": "The detailed description of this project will be added soon from the admin panel."
   },
+  "quote": {
+    "title": "Get a mockup of your homepage",
+    "offer": "Free, within 72 working hours, no commitment. You then decide whether we work together.",
+    "name": "Full name",
+    "phone": "Phone",
+    "activity": "Your business",
+    "activity_placeholder": "Bakery, plumber, restaurant…",
+    "email": "Email (optional)",
+    "submit": "Get my free mockup",
+    "success": "Request received. I'll get back to you shortly.",
+    "error_phone": "Enter a valid phone number (for example 06 12 34 56 78).",
+    "error_activity": "Please tell me what your business does.",
+    "note": "Your details are only used to reply to you."
+  },
   "meta": {
     "suffix": "ManDev Web",
     "home": "ManDev Web — Websites and web applications",

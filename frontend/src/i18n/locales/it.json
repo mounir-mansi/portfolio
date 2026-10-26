@@ -183,6 +183,20 @@
     "contact": "Contattami",
     "placeholder": "La descrizione dettagliata di questo progetto sarà aggiunta presto dal pannello admin."
   },
+  "quote": {
+    "title": "Ricevi la bozza della tua home page",
+    "offer": "Gratuita, entro 72 ore lavorative, senza impegno. Poi decidi tu se lavorare insieme.",
+    "name": "Nome e cognome",
+    "phone": "Telefono",
+    "activity": "La tua attività",
+    "activity_placeholder": "Panetteria, idraulico, ristorante…",
+    "email": "Email (facoltativa)",
+    "submit": "Ricevi la mia bozza gratuita",
+    "success": "Richiesta ricevuta. Ti ricontatto a breve.",
+    "error_phone": "Inserisci un numero di telefono valido (ad esempio 06 12 34 56 78).",
+    "error_activity": "Indica la tua attività.",
+    "note": "I tuoi dati servono solo per risponderti."
+  },
   "meta": {
     "suffix": "ManDev Web",
     "home": "ManDev Web — Creazione di siti e applicazioni web",

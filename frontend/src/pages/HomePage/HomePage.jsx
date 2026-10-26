@@ -5,6 +5,7 @@ import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
+import QuickQuote from "../../components/QuickQuote/QuickQuote";
 import "./HomePage.css";
 
 const pad = (n) => String(n + 1).padStart(2, "0");
@@ -90,6 +91,9 @@ export default function HomePage() {
           ))}
         </div>
       </div>
+
+      {/* MAQUETTE GRATUITE */}
+      <QuickQuote />
 
       {/* SERVICES */}
       <section id="services" className="block">

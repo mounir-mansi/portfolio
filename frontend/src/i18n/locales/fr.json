@@ -183,6 +183,20 @@
     "contact": "Me contacter",
     "placeholder": "La description détaillée de ce projet sera ajoutée prochainement depuis le panneau admin."
   },
+  "quote": {
+    "title": "Recevez la maquette de votre page d'accueil",
+    "offer": "Gratuite, sous 72 h ouvrées, sans engagement. Vous décidez ensuite si nous travaillons ensemble.",
+    "name": "Nom et prénom",
+    "phone": "Téléphone",
+    "activity": "Votre activité",
+    "activity_placeholder": "Boulangerie, plombier, restaurant…",
+    "email": "Email (facultatif)",
+    "submit": "Recevoir ma maquette gratuite",
+    "success": "Demande bien reçue. Je vous recontacte rapidement.",
+    "error_phone": "Saisissez un numéro de téléphone valide (par exemple 06 12 34 56 78).",
+    "error_activity": "Indiquez votre activité.",
+    "note": "Vos coordonnées servent uniquement à vous répondre."
+  },
   "meta": {
     "suffix": "ManDev Web",
     "home": "ManDev Web — Création de sites et applications web",
