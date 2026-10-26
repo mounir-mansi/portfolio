@@ -874,3 +874,14 @@
 #services .service-name {
   margin-top: 1.1rem;
 }
+
+/* Au survol d'un projet, l'aperçu apparaît et la liste de technologies disparaît (elle passait derrière l'image) */
+.work-stack {
+  transition: opacity 0.3s;
+}
+
+@media (hover: hover) and (min-width: 900px) {
+  .work-link:hover .work-stack {
+    opacity: 0;
+  }
+}
