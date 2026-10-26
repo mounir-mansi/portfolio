@@ -171,11 +171,6 @@ p {
   color: var(--fg-muted);
 }
 
-.eyebrow .num {
-  color: var(--accent-text);
-  margin-right: 0.75em;
-}
-
 .btn-primary,
 .btn-outline {
   display: inline-flex;

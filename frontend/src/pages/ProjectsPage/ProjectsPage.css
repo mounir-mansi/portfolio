@@ -37,6 +37,7 @@
 
 .proj-media {
   aspect-ratio: 16 / 10;
+  max-height: 28rem;
   overflow: hidden;
   background: var(--bg-sunken);
 }

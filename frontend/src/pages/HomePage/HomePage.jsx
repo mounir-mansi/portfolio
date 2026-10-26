@@ -56,6 +56,13 @@ export default function HomePage() {
             </div>
           </div>
 
+          {projects[0] && projects[0].imageUrl && (
+            <Link to={lp(`/projets/${projects[0].id}`)} className="hero-proof reveal" style={{ "--delay": "240ms" }}>
+              <img src={projects[0].imageUrl} alt="" />
+              <span className="hero-proof-title">{projects[0].title}</span>
+            </Link>
+          )}
+
           <dl className="hero-facts reveal" style={{ "--delay": "320ms" }}>
             {Array.isArray(facts) && facts.map((f) => (
               <div key={f.label} className="fact">
@@ -84,7 +91,7 @@ export default function HomePage() {
       <section id="services" className="block">
         <div className="container">
           <header className="block-head reveal">
-            <p className="eyebrow"><span className="num">01</span>{t("home.services_eyebrow")}</p>
+            <p className="eyebrow">{t("home.services_eyebrow")}</p>
             <h2 className="block-title">{t("home.services_title")}</h2>
           </header>
 
@@ -112,7 +119,7 @@ export default function HomePage() {
           <div className="container">
             <header className="block-head block-head--row reveal">
               <div>
-                <p className="eyebrow"><span className="num">02</span>{t("home.work_eyebrow")}</p>
+                <p className="eyebrow">{t("home.work_eyebrow")}</p>
                 <h2 className="block-title">{t("home.work_title")}</h2>
               </div>
               <Link to={lp("/projets")} className="btn-outline">{t("home.work_all")}</Link>
@@ -122,7 +129,6 @@ export default function HomePage() {
               {projects.map((p, i) => (
                 <li key={p.id} className="work-item reveal" style={{ "--delay": `${i * 90}ms` }}>
                   <Link to={lp(`/projets/${p.id}`)} className="work-link">
-                    <span className="work-num">{pad(i)}</span>
                     <span className="work-body">
                       <span className="work-title">{p.title}</span>
                       <span className="work-desc">{p.description}</span>
@@ -148,7 +154,7 @@ export default function HomePage() {
       <section id="process" className="block">
         <div className="container">
           <header className="block-head reveal">
-            <p className="eyebrow"><span className="num">03</span>{t("home.process_eyebrow")}</p>
+            <p className="eyebrow">{t("home.process_eyebrow")}</p>
             <h2 className="block-title">{t("home.process_title")}</h2>
           </header>
 

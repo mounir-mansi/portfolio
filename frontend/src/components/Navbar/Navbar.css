@@ -94,11 +94,18 @@
   cursor: pointer;
   padding: 0.3em 0.45em;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--fg-faint);
+  color: var(--fg-muted);
   transition: color 0.2s;
+}
+
+@media (pointer: coarse) {
+  .lang-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
 }
 
 .lang-btn:hover {
