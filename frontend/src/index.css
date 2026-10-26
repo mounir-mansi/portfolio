@@ -58,6 +58,13 @@
   text-rendering: optimizeLegibility;
 }
 
+/* Desktop : les sections tiennent dans la hauteur de l'écran, donc l'espacement suit la hauteur (vh) */
+@media (min-width: 1024px) {
+  :root {
+    --section-y: clamp(2.5rem, 7vh, 5.5rem);
+  }
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
