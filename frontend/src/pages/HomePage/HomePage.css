@@ -641,7 +641,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: calc(100svh - 4.5rem - 12vh);
+    min-height: calc(100svh - 4.5rem - 24vh);
   }
 
   .hero-main > * {
@@ -650,23 +650,25 @@
   }
 
   .hero-grid {
-    align-items: center;
+    align-items: stretch;
   }
 
   .hero-proof {
     min-height: 0;
   }
 
-  /* Photo moins haute que la section : elle est centrée en face du texte */
+  /* Photo et texte ont la même hauteur : la photo remplit sa colonne, la légende reste dessous */
   .hero-proof {
-    align-self: center;
+    align-self: stretch;
+    min-height: 0;
   }
 
   .hero-proof img {
-    flex: none;
-    height: auto;
-    aspect-ratio: 4 / 5;
-    max-height: 64vh;
+    flex: 1;
+    min-height: 0;
+    height: 0;
+    aspect-ratio: auto;
+    max-height: none;
     /* cadre la photo sur l'enseigne plutôt que sur le centre */
     object-position: 28% 50%;
   }
@@ -721,10 +723,6 @@
 
   .hero-call {
     margin-top: 0.25rem;
-  }
-
-  .hero-proof img {
-    aspect-ratio: 16 / 10;
   }
 
   .block-head {

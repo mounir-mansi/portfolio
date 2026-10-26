@@ -76,6 +76,11 @@
     padding-block: clamp(1.25rem, 3.5vh, 2.5rem);
   }
 
+  /* Hero : marges plus généreuses, donc texte et photo un peu moins hauts que la section */
+  main > .hero {
+    padding-block: clamp(2rem, 9vh, 5rem);
+  }
+
   main > .hero > .container,
   main > #devis > .container,
   main > #services > .container {

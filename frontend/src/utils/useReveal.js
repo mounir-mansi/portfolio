@@ -17,7 +17,8 @@ export default function useReveal(deps = []) {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+      // pas de marge négative : un élément posé au bas du premier écran doit s'afficher
+      { threshold: 0.12 }
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
