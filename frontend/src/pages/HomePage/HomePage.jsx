@@ -10,6 +10,7 @@ const pad = (n) => String(n + 1).padStart(2, "0");
 
 export default function HomePage() {
   const [projects, setProjects] = useState([]);
+  const [projectsLoaded, setProjectsLoaded] = useState(false);
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
   const { hash } = useLocation();
@@ -19,7 +20,8 @@ export default function HomePage() {
     apiFetch(`/api/projects?lang=${lang}`)
       .then((r) => r.json())
       .then((d) => setProjects(Array.isArray(d) ? d.slice(0, 3) : []))
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setProjectsLoaded(true));
   }, [lang]);
 
   useReveal([projects.length, lang]);
@@ -114,6 +116,13 @@ export default function HomePage() {
       </section>
 
       {/* RÉALISATIONS */}
+      {!projectsLoaded && (
+        <section className="block block--raised" aria-hidden="true">
+          <div className="container work-skeleton">
+            <span /><span /><span />
+          </div>
+        </section>
+      )}
       {projects.length > 0 && (
         <section id="work" className="block block--raised">
           <div className="container">

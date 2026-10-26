@@ -81,3 +81,64 @@
 .contact-form .contact-submit {
   align-self: flex-start;
 }
+
+.contact-form .form-group [aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.contact-form .field-error {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--danger);
+}
+
+.contact-form .field-hint {
+  font-size: 0.85rem;
+  text-align: right;
+  color: var(--fg-muted);
+}
+
+/* Zone de résultat : reçoit le focus programmatique, pas de contour parasite */
+.contact-form .form-status-box:focus {
+  outline: none;
+}
+
+/* Coordonnées directes */
+.contact-alt {
+  max-width: 36rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.contact-alt .contact-alt-lead {
+  margin-bottom: 1rem;
+  color: var(--fg-muted);
+}
+
+.contact-alt .contact-alt-list {
+  border-top: 1px solid var(--line-strong);
+}
+
+.contact-alt .contact-alt-list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.contact-alt .contact-alt-list span {
+  color: var(--fg-muted);
+}
+
+.contact-alt .contact-alt-list a {
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
+  transition: color 0.2s;
+}
+
+.contact-alt .contact-alt-list a:hover {
+  color: var(--accent-text);
+}

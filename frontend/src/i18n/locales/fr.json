@@ -8,7 +8,13 @@
     "admin": "Admin",
     "logout": "Déconnexion",
     "services": "Services",
-    "quote": "Demander un devis"
+    "quote": "Demander un devis",
+    "skip": "Aller au contenu",
+    "aria_main": "Navigation principale",
+    "aria_menu": "Menu",
+    "aria_lang_group": "Choisir la langue",
+    "aria_lang": "Langue : {{code}}",
+    "back_to_top": "Retour en haut"
   },
   "home": {
     "eyebrow": "Studio web · Freelance",
@@ -100,8 +106,8 @@
   "about": {
     "title1": "Passionné par le web,",
     "title2": "de bout en bout",
-    "p1": "Développeur fullstack freelance, je conçois et livre des applications web complètes — du serveur jusqu'à l'interface — avec une attention particulière à la performance, la sécurité et l'expérience utilisateur.",
-    "p2": "Je travaille sur des projets variés : plateformes métier, applications interactives, outils sur mesure, sites vitrines. Disponible à distance, je m'adapte aux besoins de chaque client.",
+    "p1": "Je conçois et je livre des sites et des applications web complets pour les commerces et les PME : du design jusqu'à la mise en ligne, avec une attention particulière à la rapidité, à la sécurité et à la facilité d'utilisation.",
+    "p2": "Je travaille sur des projets variés : sites vitrines, commande et paiement en ligne, outils sur mesure. Je travaille à distance et je m'adapte aux besoins de chaque client.",
     "see_projects": "Voir mes projets",
     "contact": "Me contacter",
     "timeline_title": "Parcours",
@@ -151,7 +157,15 @@
     "submit": "Envoyer le message",
     "sending": "Envoi en cours...",
     "success": "Message envoyé ! Je vous réponds rapidement.",
-    "error": "Erreur lors de l'envoi."
+    "error": "Erreur lors de l'envoi.",
+    "error_name": "Indiquez votre nom.",
+    "error_email": "Saisissez une adresse email valide (par exemple nom@domaine.fr).",
+    "error_message": "Décrivez brièvement votre projet ou votre question.",
+    "error_check": "Le message n'a pas pu être envoyé. Vérifiez les champs et réessayez.",
+    "error_rate": "Trop de tentatives. Patientez une minute puis réessayez.",
+    "error_network": "Impossible d'envoyer le message pour le moment. Vos informations sont conservées : réessayez dans un instant, ou écrivez-moi à {{email}}.",
+    "alt_lead": "Vous préférez écrire ou appeler directement ?",
+    "alt_phone": "Téléphone"
   },
   "detail": {
     "loading": "Chargement...",

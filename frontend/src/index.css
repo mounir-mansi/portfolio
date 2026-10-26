@@ -103,6 +103,28 @@ a {
   color: inherit;
 }
 
+/* Lien d'évitement : visible uniquement au focus clavier */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 200;
+  padding: 0.7em 1.1em;
+  font-weight: 500;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-radius: 999px;
+  transform: translateY(-250%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+main:focus {
+  outline: none;
+}
+
 ul {
   list-style: none;
 }

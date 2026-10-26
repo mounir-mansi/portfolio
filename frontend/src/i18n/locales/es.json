@@ -8,7 +8,13 @@
     "admin": "Admin",
     "logout": "Cerrar sesión",
     "services": "Servicios",
-    "quote": "Pedir presupuesto"
+    "quote": "Pedir presupuesto",
+    "skip": "Saltar al contenido",
+    "aria_main": "Navegación principal",
+    "aria_menu": "Menú",
+    "aria_lang_group": "Elegir idioma",
+    "aria_lang": "Idioma: {{code}}",
+    "back_to_top": "Volver arriba"
   },
   "home": {
     "eyebrow": "Estudio web · Freelance",
@@ -100,8 +106,8 @@
   "about": {
     "title1": "Apasionado por la web,",
     "title2": "de principio a fin",
-    "p1": "Desarrollador fullstack freelance, diseño y entrego aplicaciones web completas — del servidor a la interfaz — con especial atención al rendimiento, la seguridad y la experiencia de usuario.",
-    "p2": "Trabajo en proyectos variados: plataformas de negocio, aplicaciones interactivas, herramientas a medida, sitios vitrina. Disponible de forma remota, me adapto a las necesidades de cada cliente.",
+    "p1": "Diseño y entrego sitios y aplicaciones web completos para comercios y pymes: del diseño a la puesta en línea, con especial atención a la rapidez, la seguridad y la facilidad de uso.",
+    "p2": "Trabajo en proyectos variados: sitios vitrina, pedidos y pagos en línea, herramientas a medida. Trabajo a distancia y me adapto a las necesidades de cada cliente.",
     "see_projects": "Ver mis proyectos",
     "contact": "Contáctame",
     "timeline_title": "Trayectoria",
@@ -151,7 +157,15 @@
     "submit": "Enviar mensaje",
     "sending": "Enviando...",
     "success": "¡Mensaje enviado! Te respondo pronto.",
-    "error": "Error al enviar el mensaje."
+    "error": "Error al enviar el mensaje.",
+    "error_name": "Indica tu nombre.",
+    "error_email": "Introduce una dirección de email válida (por ejemplo nombre@dominio.es).",
+    "error_message": "Describe brevemente tu proyecto o tu pregunta.",
+    "error_check": "No se pudo enviar el mensaje. Revisa los campos e inténtalo de nuevo.",
+    "error_rate": "Demasiados intentos. Espera un minuto e inténtalo de nuevo.",
+    "error_network": "No se puede enviar el mensaje en este momento. Tus datos se conservan: inténtalo de nuevo en un momento, o escríbeme a {{email}}.",
+    "alt_lead": "¿Prefieres escribir o llamar directamente?",
+    "alt_phone": "Teléfono"
   },
   "detail": {
     "loading": "Cargando...",

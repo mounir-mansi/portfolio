@@ -338,6 +338,25 @@
   }
 }
 
+/* Squelette de chargement des réalisations */
+@keyframes work-shimmer {
+  0% { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.work-skeleton {
+  display: grid;
+  border-top: 1px solid var(--line-strong);
+}
+
+.work-skeleton span {
+  height: 7.5rem;
+  border-bottom: 1px solid var(--line-strong);
+  background: linear-gradient(90deg, transparent 25%, var(--line) 50%, transparent 75%);
+  background-size: 600px 100%;
+  animation: work-shimmer 1.4s infinite linear;
+}
+
 /* ===== PROCESS ===== */
 .steps {
   display: grid;

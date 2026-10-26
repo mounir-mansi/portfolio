@@ -8,7 +8,13 @@
     "admin": "Admin",
     "logout": "Esci",
     "services": "Servizi",
-    "quote": "Richiedi un preventivo"
+    "quote": "Richiedi un preventivo",
+    "skip": "Vai al contenuto",
+    "aria_main": "Navigazione principale",
+    "aria_menu": "Menu",
+    "aria_lang_group": "Scegli la lingua",
+    "aria_lang": "Lingua: {{code}}",
+    "back_to_top": "Torna su"
   },
   "home": {
     "eyebrow": "Studio web · Freelance",
@@ -100,8 +106,8 @@
   "about": {
     "title1": "Appassionato del web,",
     "title2": "da cima a fondo",
-    "p1": "Sviluppatore fullstack freelance, progetto e consegno applicazioni web complete — dal server all'interfaccia — con particolare attenzione alle prestazioni, alla sicurezza e all'esperienza utente.",
-    "p2": "Lavoro su progetti diversi: piattaforme aziendali, applicazioni interattive, strumenti personalizzati, siti vetrina. Disponibile da remoto, mi adatto alle esigenze di ogni cliente.",
+    "p1": "Progetto e consegno siti e applicazioni web completi per negozi e PMI: dal design alla messa online, con particolare attenzione a velocità, sicurezza e facilità d'uso.",
+    "p2": "Lavoro su progetti diversi: siti vetrina, ordini e pagamenti online, strumenti su misura. Lavoro da remoto e mi adatto alle esigenze di ogni cliente.",
     "see_projects": "Vedi i miei progetti",
     "contact": "Contattami",
     "timeline_title": "Percorso",
@@ -151,7 +157,15 @@
     "submit": "Invia il messaggio",
     "sending": "Invio in corso...",
     "success": "Messaggio inviato! Ti rispondo presto.",
-    "error": "Errore durante l'invio."
+    "error": "Errore durante l'invio.",
+    "error_name": "Inserisci il tuo nome.",
+    "error_email": "Inserisci un indirizzo email valido (ad esempio nome@dominio.it).",
+    "error_message": "Descrivi brevemente il tuo progetto o la tua domanda.",
+    "error_check": "Non è stato possibile inviare il messaggio. Controlla i campi e riprova.",
+    "error_rate": "Troppi tentativi. Attendi un minuto e riprova.",
+    "error_network": "Impossibile inviare il messaggio al momento. I tuoi dati sono conservati: riprova tra poco, oppure scrivimi a {{email}}.",
+    "alt_lead": "Preferisci scrivere o chiamare direttamente?",
+    "alt_phone": "Telefono"
   },
   "detail": {
     "loading": "Caricamento...",

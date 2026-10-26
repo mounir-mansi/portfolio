@@ -8,7 +8,13 @@
     "admin": "Admin",
     "logout": "Log out",
     "services": "Services",
-    "quote": "Get a quote"
+    "quote": "Get a quote",
+    "skip": "Skip to content",
+    "aria_main": "Main navigation",
+    "aria_menu": "Menu",
+    "aria_lang_group": "Choose language",
+    "aria_lang": "Language: {{code}}",
+    "back_to_top": "Back to top"
   },
   "home": {
     "eyebrow": "Web studio · Freelance",
@@ -100,8 +106,8 @@
   "about": {
     "title1": "Passionate about the web,",
     "title2": "end to end",
-    "p1": "Freelance fullstack developer, I design and deliver complete web applications — from server to interface — with particular attention to performance, security and user experience.",
-    "p2": "I work on diverse projects: business platforms, interactive applications, custom tools, showcase sites. Available remotely, I adapt to each client's needs.",
+    "p1": "I design and deliver complete websites and web applications for local businesses and SMEs: from design to going live, with a focus on speed, security and ease of use.",
+    "p2": "I work on varied projects: showcase websites, online ordering and payment, custom tools. I work remotely and adapt to each client's needs.",
     "see_projects": "View my projects",
     "contact": "Contact me",
     "timeline_title": "Journey",
@@ -151,7 +157,15 @@
     "submit": "Send message",
     "sending": "Sending...",
     "success": "Message sent! I'll get back to you quickly.",
-    "error": "Error sending message."
+    "error": "Error sending message.",
+    "error_name": "Please enter your name.",
+    "error_email": "Enter a valid email address (for example name@domain.com).",
+    "error_message": "Briefly describe your project or question.",
+    "error_check": "Your message could not be sent. Check the fields and try again.",
+    "error_rate": "Too many attempts. Please wait a minute and try again.",
+    "error_network": "Unable to send your message right now. Your details are kept: try again in a moment, or write to me at {{email}}.",
+    "alt_lead": "Prefer to write or call directly?",
+    "alt_phone": "Phone"
   },
   "detail": {
     "loading": "Loading...",

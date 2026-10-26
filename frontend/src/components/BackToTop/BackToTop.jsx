@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./BackToTop.css";
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 400);
@@ -13,8 +15,8 @@ export default function BackToTop() {
   if (!visible) return null;
 
   return (
-    <button className="back-to-top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Retour en haut">
-      <i className="fa-solid fa-chevron-up" />
+    <button className="back-to-top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label={t("nav.back_to_top")}>
+      <i className="fa-solid fa-chevron-up" aria-hidden="true" />
     </button>
   );
 }
