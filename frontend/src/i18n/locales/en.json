@@ -6,16 +6,96 @@
     "projects": "Projects",
     "contact": "Contact me",
     "admin": "Admin",
-    "logout": "Log out"
+    "logout": "Log out",
+    "services": "Services",
+    "quote": "Get a quote"
   },
   "home": {
-    "greeting": "Hi, I'm",
-    "badge_dev": "Fullstack Developer",
-    "badge_freelance": "Freelance",
-    "subtitle": "React & Node.js — from DB to deployment",
-    "desc": "Available for your web projects: showcase sites, custom applications, APIs. I handle everything, from a secure backend to VPS production.",
-    "see_projects": "View my projects",
-    "contact": "Contact me"
+    "eyebrow": "Web studio · Freelance",
+    "title_a": "Websites that",
+    "title_em": "bring in",
+    "title_b": "your customers.",
+    "sub": "Fast, secure showcase sites and web apps, delivered turnkey for local businesses and SMEs.",
+    "cta_quote": "Get a quote",
+    "cta_work": "See my work",
+    "facts": [
+      {
+        "label": "Delivery",
+        "value": "Turnkey"
+      },
+      {
+        "label": "Stack",
+        "value": "React, Node, PostgreSQL"
+      },
+      {
+        "label": "Security",
+        "value": "HTTPS, backups, updates"
+      }
+    ],
+    "marquee": "Showcase sites · Online booking · Stripe payments · Admin area · Local SEO · Secure hosting",
+    "services_eyebrow": "Services",
+    "services_title": "What I build for you",
+    "services_cta": "Discuss my project",
+    "services": [
+      {
+        "tag": "Pack 01",
+        "name": "Showcase",
+        "desc": "A clear, fast website that presents your business and makes people want to get in touch.",
+        "items": [
+          "Custom design",
+          "Mobile responsive",
+          "Basic local SEO",
+          "Contact form"
+        ]
+      },
+      {
+        "tag": "Pack 02",
+        "name": "Showcase +",
+        "desc": "Your site becomes a tool: bookings, online payment, content you can edit yourself.",
+        "items": [
+          "Everything in Showcase",
+          "Stripe online payment",
+          "Admin area",
+          "Multilingual"
+        ]
+      },
+      {
+        "tag": "Pack 03",
+        "name": "Maintenance",
+        "desc": "I handle hosting, security and updates so you can focus on your business.",
+        "items": [
+          "Secure hosting",
+          "Backups and monitoring",
+          "Regular updates",
+          "Responsive support"
+        ]
+      }
+    ],
+    "work_eyebrow": "Work",
+    "work_title": "Recent projects",
+    "work_all": "All projects",
+    "process_eyebrow": "Method",
+    "process_title": "A simple process, no surprises",
+    "steps": [
+      {
+        "title": "Discovery",
+        "desc": "We define your needs, your audience and your goals together."
+      },
+      {
+        "title": "Mockup",
+        "desc": "You approve the design before a single line of code is written."
+      },
+      {
+        "title": "Build",
+        "desc": "I build the site while you follow progress and give feedback."
+      },
+      {
+        "title": "Launch",
+        "desc": "Deployment, security, SEO and a walkthrough."
+      }
+    ],
+    "final_eyebrow": "Next step",
+    "final_title": "Your website, done right."
   },
   "about": {
     "title1": "Passionate about the web,",
@@ -87,6 +167,8 @@
     "placeholder": "The detailed description of this project will be added soon from the admin panel."
   },
   "footer": {
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "eyebrow": "Got a project in mind?",
+    "big": "Let's talk"
   }
 }

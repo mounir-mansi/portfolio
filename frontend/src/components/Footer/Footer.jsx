@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./Footer.css";
 
 export default function Footer() {
@@ -8,13 +8,31 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer-links">
-        <a href="https://github.com/mounir-mansi" target="_blank" rel="noopener noreferrer">
-          <i className="fa-brands fa-github" /> GitHub
-        </a>
-        <a href={`/${lang}/contact`}><i className="fa-solid fa-envelope" /> Contact</a>
+      <div className="container footer-inner">
+        <div className="footer-cta">
+          <p className="eyebrow">{t("footer.eyebrow")}</p>
+          <Link to={`/${lang}/contact`} className="footer-big">
+            {t("footer.big")} <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+
+        <div className="footer-bottom">
+          <p className="footer-copy">
+            &copy; {new Date().getFullYear()} ManDev Web — {t("footer.rights")}
+          </p>
+          <ul className="footer-links">
+            <li>
+              <a href="https://github.com/mounir-mansi" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+            <li>
+              <Link to={`/${lang}/contact`}>Contact</Link>
+            </li>
+            <li>
+              <Link to={`/${lang}/projets`}>{t("nav.projects")}</Link>
+            </li>
+          </ul>
+        </div>
       </div>
-      <p className="footer-copy">&copy; {new Date().getFullYear()} ManDev Web — {t("footer.rights")}</p>
     </footer>
   );
 }

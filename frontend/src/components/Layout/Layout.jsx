@@ -6,7 +6,7 @@ export default function Layout({ children, noFooter }) {
   return (
     <>
       <Navbar />
-      <main style={{ paddingTop: "52px" }}>{children}</main>
+      <main style={{ paddingTop: "4.5rem" }}>{children}</main>
       {!noFooter && <Footer />}
       <BackToTop />
     </>

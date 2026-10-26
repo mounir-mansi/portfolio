@@ -6,16 +6,96 @@
     "projects": "Progetti",
     "contact": "Contattami",
     "admin": "Admin",
-    "logout": "Esci"
+    "logout": "Esci",
+    "services": "Servizi",
+    "quote": "Richiedi un preventivo"
   },
   "home": {
-    "greeting": "Ciao, sono",
-    "badge_dev": "Sviluppatore Fullstack",
-    "badge_freelance": "Freelance",
-    "subtitle": "React & Node.js — dal DB al deploy",
-    "desc": "Disponibile per i tuoi progetti web: siti vetrina, applicazioni su misura, API. Gestisco tutto, dal backend sicuro alla messa in produzione su VPS.",
-    "see_projects": "Vedi i miei progetti",
-    "contact": "Contattami"
+    "eyebrow": "Studio web · Freelance",
+    "title_a": "Siti che",
+    "title_em": "portano",
+    "title_b": "i tuoi clienti.",
+    "sub": "Siti vetrina e applicazioni web veloci, sicure e chiavi in mano per negozi e PMI.",
+    "cta_quote": "Richiedi un preventivo",
+    "cta_work": "Vedi i lavori",
+    "facts": [
+      {
+        "label": "Consegna",
+        "value": "Chiavi in mano"
+      },
+      {
+        "label": "Tecnologie",
+        "value": "React, Node, PostgreSQL"
+      },
+      {
+        "label": "Sicurezza",
+        "value": "HTTPS, backup, aggiornamenti"
+      }
+    ],
+    "marquee": "Siti vetrina · Prenotazioni online · Pagamenti Stripe · Area admin · SEO locale · Hosting sicuro",
+    "services_eyebrow": "Servizi",
+    "services_title": "Cosa costruisco per te",
+    "services_cta": "Parliamo del progetto",
+    "services": [
+      {
+        "tag": "Pack 01",
+        "name": "Vetrina",
+        "desc": "Un sito chiaro e veloce che presenta la tua attività e invita a contattarti.",
+        "items": [
+          "Design su misura",
+          "Responsive mobile",
+          "SEO locale di base",
+          "Modulo di contatto"
+        ]
+      },
+      {
+        "tag": "Pack 02",
+        "name": "Vetrina +",
+        "desc": "Il tuo sito diventa uno strumento: prenotazioni, pagamento online, contenuti modificabili da te.",
+        "items": [
+          "Tutto il pack Vetrina",
+          "Pagamento online Stripe",
+          "Area di amministrazione",
+          "Multilingua"
+        ]
+      },
+      {
+        "tag": "Pack 03",
+        "name": "Manutenzione",
+        "desc": "Mi occupo di hosting, sicurezza e aggiornamenti. Tu pensi al tuo lavoro.",
+        "items": [
+          "Hosting sicuro",
+          "Backup e monitoraggio",
+          "Aggiornamenti regolari",
+          "Supporto reattivo"
+        ]
+      }
+    ],
+    "work_eyebrow": "Lavori",
+    "work_title": "Progetti recenti",
+    "work_all": "Tutti i progetti",
+    "process_eyebrow": "Metodo",
+    "process_title": "Un processo semplice, senza sorprese",
+    "steps": [
+      {
+        "title": "Confronto",
+        "desc": "Definiamo insieme esigenze, target e obiettivi."
+      },
+      {
+        "title": "Mockup",
+        "desc": "Approvi il design prima che venga scritta una riga di codice."
+      },
+      {
+        "title": "Sviluppo",
+        "desc": "Costruisco il sito e tu segui l'avanzamento."
+      },
+      {
+        "title": "Online",
+        "desc": "Pubblicazione, sicurezza, SEO e formazione."
+      }
+    ],
+    "final_eyebrow": "Prossimo passo",
+    "final_title": "Il tuo sito, fatto bene."
   },
   "about": {
     "title1": "Appassionato del web,",
@@ -87,6 +167,8 @@
     "placeholder": "La descrizione dettagliata di questo progetto sarà aggiunta presto dal pannello admin."
   },
   "footer": {
-    "rights": "Tutti i diritti riservati"
+    "rights": "Tutti i diritti riservati",
+    "eyebrow": "Hai un progetto in mente?",
+    "big": "Parliamone"
   }
 }

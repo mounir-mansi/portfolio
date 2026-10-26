@@ -6,16 +6,96 @@
     "projects": "Proyectos",
     "contact": "Contáctame",
     "admin": "Admin",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "services": "Servicios",
+    "quote": "Pedir presupuesto"
   },
   "home": {
-    "greeting": "Hola, soy",
-    "badge_dev": "Desarrollador Fullstack",
-    "badge_freelance": "Freelance",
-    "subtitle": "React & Node.js — de la BD al despliegue",
-    "desc": "Disponible para tus proyectos web: sitios vitrina, aplicaciones a medida, APIs. Me encargo de todo, desde el backend seguro hasta la producción en VPS.",
-    "see_projects": "Ver mis proyectos",
-    "contact": "Contáctame"
+    "eyebrow": "Estudio web · Freelance",
+    "title_a": "Webs que",
+    "title_em": "traen",
+    "title_b": "a tus clientes.",
+    "sub": "Sitios escaparate y aplicaciones web rápidas, seguras y llave en mano para comercios y pymes.",
+    "cta_quote": "Pedir presupuesto",
+    "cta_work": "Ver trabajos",
+    "facts": [
+      {
+        "label": "Entrega",
+        "value": "Llave en mano"
+      },
+      {
+        "label": "Tecnologías",
+        "value": "React, Node, PostgreSQL"
+      },
+      {
+        "label": "Seguridad",
+        "value": "HTTPS, copias, actualizaciones"
+      }
+    ],
+    "marquee": "Sitios escaparate · Reservas online · Pagos Stripe · Panel admin · SEO local · Alojamiento seguro",
+    "services_eyebrow": "Servicios",
+    "services_title": "Lo que construyo para ti",
+    "services_cta": "Hablar de mi proyecto",
+    "services": [
+      {
+        "tag": "Pack 01",
+        "name": "Escaparate",
+        "desc": "Un sitio claro y rápido que presenta tu negocio y invita a contactarte.",
+        "items": [
+          "Diseño a medida",
+          "Adaptado a móvil",
+          "SEO local básico",
+          "Formulario de contacto"
+        ]
+      },
+      {
+        "tag": "Pack 02",
+        "name": "Escaparate +",
+        "desc": "Tu web se convierte en una herramienta: reservas, pago online, contenido que editas tú.",
+        "items": [
+          "Todo el pack Escaparate",
+          "Pago online Stripe",
+          "Panel de administración",
+          "Multilingüe"
+        ]
+      },
+      {
+        "tag": "Pack 03",
+        "name": "Mantenimiento",
+        "desc": "Me ocupo del alojamiento, la seguridad y las actualizaciones. Tú te centras en tu negocio.",
+        "items": [
+          "Alojamiento seguro",
+          "Copias y supervisión",
+          "Actualizaciones regulares",
+          "Soporte rápido"
+        ]
+      }
+    ],
+    "work_eyebrow": "Trabajos",
+    "work_title": "Proyectos recientes",
+    "work_all": "Todos los proyectos",
+    "process_eyebrow": "Método",
+    "process_title": "Un proceso simple, sin sorpresas",
+    "steps": [
+      {
+        "title": "Conversación",
+        "desc": "Definimos juntos tus necesidades, tu público y tus objetivos."
+      },
+      {
+        "title": "Maqueta",
+        "desc": "Apruebas el diseño antes de escribir una sola línea de código."
+      },
+      {
+        "title": "Desarrollo",
+        "desc": "Construyo el sitio y tú sigues el avance."
+      },
+      {
+        "title": "Lanzamiento",
+        "desc": "Despliegue, seguridad, SEO y formación."
+      }
+    ],
+    "final_eyebrow": "Siguiente paso",
+    "final_title": "Tu web, bien hecha."
   },
   "about": {
     "title1": "Apasionado por la web,",
@@ -87,6 +167,8 @@
     "placeholder": "La descripción detallada de este proyecto se añadirá pronto desde el panel de administración."
   },
   "footer": {
-    "rights": "Todos los derechos reservados"
+    "rights": "Todos los derechos reservados",
+    "eyebrow": "¿Tienes un proyecto?",
+    "big": "Hablemos"
   }
 }

@@ -6,16 +6,96 @@
     "projects": "Projets",
     "contact": "Me contacter",
     "admin": "Admin",
-    "logout": "Déconnexion"
+    "logout": "Déconnexion",
+    "services": "Services",
+    "quote": "Demander un devis"
   },
   "home": {
-    "greeting": "Bonjour, je suis",
-    "badge_dev": "Développeur Fullstack",
-    "badge_freelance": "Freelance",
-    "subtitle": "React & Node.js — de la DB au déploiement",
-    "desc": "Disponible pour vos projets web : sites vitrines, applications sur mesure, APIs. Je gère tout, du backend sécurisé à la mise en production sur VPS.",
-    "see_projects": "Voir mes projets",
-    "contact": "Me contacter"
+    "eyebrow": "Studio web · Freelance",
+    "title_a": "Des sites qui",
+    "title_em": "font venir",
+    "title_b": "vos clients.",
+    "sub": "Sites vitrines et applications web rapides, sécurisés et livrés clé en main pour les commerces et les PME.",
+    "cta_quote": "Demander un devis",
+    "cta_work": "Voir les réalisations",
+    "facts": [
+      {
+        "label": "Livraison",
+        "value": "Clé en main"
+      },
+      {
+        "label": "Technologies",
+        "value": "React, Node, PostgreSQL"
+      },
+      {
+        "label": "Sécurité",
+        "value": "HTTPS, sauvegardes, mises à jour"
+      }
+    ],
+    "marquee": "Sites vitrines · Réservation en ligne · Paiement Stripe · Espace admin · SEO local · Hébergement sécurisé",
+    "services_eyebrow": "Services",
+    "services_title": "Ce que je construis pour vous",
+    "services_cta": "Parler de mon projet",
+    "services": [
+      {
+        "tag": "Pack 01",
+        "name": "Vitrine",
+        "desc": "Un site clair et rapide qui présente votre activité et donne envie de vous contacter.",
+        "items": [
+          "Design sur mesure",
+          "Responsive mobile",
+          "SEO local de base",
+          "Formulaire de contact"
+        ]
+      },
+      {
+        "tag": "Pack 02",
+        "name": "Vitrine +",
+        "desc": "Votre site devient un outil : réservations, paiement en ligne, contenu que vous modifiez vous-même.",
+        "items": [
+          "Tout le pack Vitrine",
+          "Paiement en ligne Stripe",
+          "Espace d'administration",
+          "Multilingue"
+        ]
+      },
+      {
+        "tag": "Pack 03",
+        "name": "Maintenance",
+        "desc": "Je m'occupe de l'hébergement, de la sécurité et des mises à jour. Vous gardez l'esprit libre.",
+        "items": [
+          "Hébergement sécurisé",
+          "Sauvegardes et surveillance",
+          "Mises à jour régulières",
+          "Support réactif"
+        ]
+      }
+    ],
+    "work_eyebrow": "Réalisations",
+    "work_title": "Projets récents",
+    "work_all": "Tous les projets",
+    "process_eyebrow": "Méthode",
+    "process_title": "Un processus simple, sans surprise",
+    "steps": [
+      {
+        "title": "Échange",
+        "desc": "On définit ensemble vos besoins, votre cible et vos objectifs."
+      },
+      {
+        "title": "Maquette",
+        "desc": "Vous validez le design avant que la moindre ligne de code soit écrite."
+      },
+      {
+        "title": "Développement",
+        "desc": "Je construis le site, vous suivez l'avancement et donnez votre avis."
+      },
+      {
+        "title": "Mise en ligne",
+        "desc": "Déploiement, sécurité, référencement et prise en main."
+      }
+    ],
+    "final_eyebrow": "Prochaine étape",
+    "final_title": "Votre site, bien fait."
   },
   "about": {
     "title1": "Passionné par le web,",
@@ -87,6 +167,8 @@
     "placeholder": "La description détaillée de ce projet sera ajoutée prochainement depuis le panneau admin."
   },
   "footer": {
-    "rights": "Tous droits réservés"
+    "rights": "Tous droits réservés",
+    "eyebrow": "Un projet en tête ?",
+    "big": "Parlons-en"
   }
 }
