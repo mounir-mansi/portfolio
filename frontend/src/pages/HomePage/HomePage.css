@@ -860,3 +860,12 @@
     max-width: 20ch;
   }
 }
+
+/* Le badge « Recommandé » dépasse de la carte : espace réservé sous le titre pour qu'il ne le touche pas */
+#services .block-head {
+  margin-bottom: clamp(2rem, 6vh, 4rem);
+}
+
+#services .services {
+  margin-top: 1.25rem;
+}
