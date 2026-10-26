@@ -35,6 +35,7 @@ export default function QuickQuote() {
   const statusRef = useRef(null);
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
+  const terms = t("quote.terms", { returnObjects: true });
 
   // Déplace le focus sur le résultat pour qu'il soit annoncé
   useEffect(() => {
@@ -131,6 +132,11 @@ export default function QuickQuote() {
       <div className="container quote-grid">
         <div className="quote-intro reveal">
           <h2 id="quote-title" className="block-title">{t("quote.title")}</h2>
+          {Array.isArray(terms) && (
+            <ul className="quote-terms">
+              {terms.map((term) => <li key={term}>{term}</li>)}
+            </ul>
+          )}
           <p className="quote-offer">{t("quote.offer")}</p>
         </div>
 
@@ -192,7 +198,7 @@ export default function QuickQuote() {
             </li>
             <li>
               <span>WhatsApp</span>
-              <a href={CONTACT_WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">{CONTACT_PHONE_DISPLAY}</a>
+              <a href={CONTACT_WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">{t("quote.whatsapp")}</a>
             </li>
             <li>
               <span>{t("contact.email")}</span>

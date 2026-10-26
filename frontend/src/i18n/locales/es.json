@@ -234,7 +234,9 @@
   },
   "quote": {
     "title": "Recibe la maqueta de tu página de inicio",
-    "offer": "Gratuita, en 72 horas laborables, sin compromiso. Después decides si trabajamos juntos.",
+    "terms": ["Gratuita", "En 72 horas laborables", "Sin compromiso"],
+    "offer": "Después decides si trabajamos juntos.",
+    "whatsapp": "Escribir por WhatsApp",
     "name": "Nombre y apellidos",
     "phone": "Teléfono",
     "activity": "Tu actividad",

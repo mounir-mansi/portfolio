@@ -234,7 +234,9 @@
   },
   "quote": {
     "title": "Get a mockup of your homepage",
-    "offer": "Free, within 72 working hours, no commitment. You then decide whether we work together.",
+    "terms": ["Free", "Within 72 working hours", "No commitment"],
+    "offer": "You then decide whether we work together.",
+    "whatsapp": "Message on WhatsApp",
     "name": "Full name",
     "phone": "Phone",
     "activity": "Your business",

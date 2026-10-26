@@ -234,7 +234,9 @@
   },
   "quote": {
     "title": "Ricevi la bozza della tua home page",
-    "offer": "Gratuita, entro 72 ore lavorative, senza impegno. Poi decidi tu se lavorare insieme.",
+    "terms": ["Gratuita", "Entro 72 ore lavorative", "Senza impegno"],
+    "offer": "Poi decidi tu se lavorare insieme.",
+    "whatsapp": "Scrivi su WhatsApp",
     "name": "Nome e cognome",
     "phone": "Telefono",
     "activity": "La tua attività",

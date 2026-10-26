@@ -234,7 +234,9 @@
   },
   "quote": {
     "title": "Recevez la maquette de votre page d'accueil",
-    "offer": "Gratuite, sous 72 h ouvrées, sans engagement. Vous décidez ensuite si nous travaillons ensemble.",
+    "terms": ["Gratuite", "Sous 72 h ouvrées", "Sans engagement"],
+    "offer": "Vous décidez ensuite si nous travaillons ensemble.",
+    "whatsapp": "Écrire sur WhatsApp",
     "name": "Nom et prénom",
     "phone": "Téléphone",
     "activity": "Votre activité",
