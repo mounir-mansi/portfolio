@@ -476,16 +476,9 @@
 /* Desktop : chaque section tient dans la hauteur de l'écran (zone utile = hauteur moins la navbar).
    Tailles et espacements suivent la hauteur de la fenêtre. Le mobile n'est pas concerné. */
 @media (min-width: 1024px) {
-  /* Hero minimal : il occupe l'écran (hauteur moins la navbar) et son contenu est centré verticalement */
+  /* Hero minimal : sa hauteur suit son contenu, sans grand vide autour */
   .hero {
-    display: flex;
-    align-items: center;
-    min-height: calc(100svh - 4.5rem);
-    padding-block: clamp(2rem, 6vh, 4.5rem);
-  }
-
-  .hero-grid {
-    width: 100%;
+    padding-block: clamp(1.25rem, 3.5vh, 2.5rem);
   }
 
   .hero-grid {

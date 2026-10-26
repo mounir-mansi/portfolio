@@ -61,7 +61,7 @@
 /* Desktop : les sections tiennent dans la hauteur de l'écran, donc l'espacement suit la hauteur (vh) */
 @media (min-width: 1024px) {
   :root {
-    --section-y: clamp(2.5rem, 7vh, 5.5rem);
+    --section-y: clamp(1.75rem, 4.5vh, 3.5rem);
   }
 }
 
@@ -244,6 +244,12 @@ p {
 /* En-tête commun des pages secondaires */
 .page-head {
   padding-block: clamp(3rem, 7vw, 6rem) clamp(2rem, 4vw, 3.5rem);
+}
+
+@media (min-width: 1024px) {
+  .page-head {
+    padding-block: clamp(2rem, 6vh, 4.5rem) clamp(1.25rem, 3vh, 2.5rem);
+  }
 }
 
 .page-title {

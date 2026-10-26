@@ -9,6 +9,16 @@
   padding-top: 2.5rem;
 }
 
+@media (min-width: 1024px) {
+  .footer {
+    padding-block: clamp(2rem, 6vh, 4rem) 1.5rem;
+  }
+
+  .footer-cta {
+    padding-bottom: clamp(1.5rem, 4vh, 3rem);
+  }
+}
+
 .footer-cta {
   display: flex;
   flex-direction: column;
