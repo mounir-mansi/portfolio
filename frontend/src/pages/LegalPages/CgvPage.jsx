@@ -17,7 +17,8 @@ export default function CgvPage() {
       <h2>2. Maquette gratuite</h2>
       <p>
         La maquette de votre page d'accueil est gratuite et sans engagement. Elle est envoyée dans un délai indicatif
-        de 72 heures ouvrées à compter de la réception d'une demande complète. Elle reste la propriété de {LEGAL.brand}{" "}
+        de 72 heures ouvrées à compter de notre échange téléphonique, qui permet de recueillir les informations nécessaires
+        (activité, besoins, goûts). Elle reste la propriété de {LEGAL.brand}{" "}
         et ne peut pas être utilisée sans commande. Vous n'avez aucune obligation de poursuivre.
       </p>
 
