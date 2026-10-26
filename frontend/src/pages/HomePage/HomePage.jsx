@@ -19,7 +19,7 @@ export default function HomePage() {
   const [projectsLoaded, setProjectsLoaded] = useState(false);
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
-  const { hash } = useLocation();
+  const { hash, key } = useLocation();
   const lp = (path) => `/${lang}${path}`;
 
   useEffect(() => {
@@ -38,7 +38,8 @@ export default function HomePage() {
     if (!hash) return;
     const el = document.getElementById(hash.slice(1));
     if (el) el.scrollIntoView();
-  }, [hash]);
+    // `key` change à chaque clic sur un lien, même vers la même ancre : le défilement se refait
+  }, [hash, key]);
 
   const services = t("home.services", { returnObjects: true });
   const steps = t("home.steps", { returnObjects: true });

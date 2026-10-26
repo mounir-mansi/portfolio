@@ -20,6 +20,8 @@ app.use(
         process.env.CORS_ORIGIN,
         "http://localhost:5173",
         "http://localhost:3002",
+        // 127.0.0.1 et localhost sont deux origines différentes pour le navigateur : en développement, les deux sont permises
+        ...(process.env.NODE_ENV !== "production" ? ["http://127.0.0.1:5173", "http://127.0.0.1:3002"] : []),
       ].filter(Boolean);
       if (!origin || allowed.includes(origin)) return cb(null, true);
       cb(new Error("CORS non autorisé"));
