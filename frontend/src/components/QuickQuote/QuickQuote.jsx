@@ -26,14 +26,14 @@ const CRENEAUX = ["matin", "apres-midi", "soir", "peu-importe"];
 // Contrastes vérifiés : titres >= 4,5 sur le fond, accent >= 3 sur le fond, texte de bouton >= 4,5.
 // Le nom français est celui qui part dans l'email de brief.
 const PALETTES = [
-  { id: "boulangerie", fr: "Boulangerie, chaleur", clair: ["#F6EFE3", "#5B3A29", "#B85C14"], sombre: ["#1E1511", "#F0D9B5", "#E8913A"] },
-  { id: "restaurant", fr: "Restaurant élégant", clair: ["#F7F1E8", "#7A1F2B", "#946A10"], sombre: ["#14110F", "#D9B866", "#C93A4B"] },
-  { id: "nature", fr: "Nature et bio", clair: ["#F5F3EC", "#2F5D3A", "#8A5F3A"], sombre: ["#121A14", "#BFE0C4", "#D9A066"] },
-  { id: "marin", fr: "Marin et frais", clair: ["#F7FAFC", "#17365D", "#CC3A27"], sombre: ["#0C1626", "#BBD3F2", "#FF7A68"] },
-  { id: "beaute", fr: "Beauté et douceur", clair: ["#FBEFEF", "#5A2E4F", "#B8456A"], sombre: ["#1D1018", "#F4D3DE", "#E58AA8"] },
-  { id: "artisan", fr: "Artisan, chantier", clair: ["#F2F2F0", "#2B2F33", "#8F6600"], sombre: ["#15171A", "#F2F2F0", "#F2B705"] },
-  { id: "moderne", fr: "Moderne", clair: ["#F4F7FF", "#1B2A55", "#2F55D4"], sombre: ["#0E1420", "#E8EEFF", "#5B86FF"] },
-  { id: "sobre", fr: "Sobre et pro", clair: ["#FFFFFF", "#111111", "#D6322E"], sombre: ["#0F0F0F", "#F5F5F5", "#E5484D"] },
+  { id: "terre", fr: "Terre et cuivre", clair: ["#FEFAE0","#283618","#BC6C25"], sombre: ["#1C2314","#FEFAE0","#DDA15E"] },
+  { id: "ocean", fr: "Océan et sable", clair: ["#F7F1DC","#003049","#C62828"], sombre: ["#00202F","#EAE2B7","#F77F00"] },
+  { id: "sarcelle", fr: "Sarcelle et soleil", clair: ["#F7F4EA","#264653","#C4472F"], sombre: ["#14262D","#E9F2F0","#E9C46A"] },
+  { id: "rose", fr: "Rose poudré", clair: ["#FFF1EC","#5C4B57","#B5586B"], sombre: ["#241C24","#FFCDB2","#E5989B"] },
+  { id: "nuit", fr: "Nuit et menthe", clair: ["#F2FBFA","#0B132B","#1F7A78"], sombre: ["#0B132B","#E8FFFB","#5BC0BE"] },
+  { id: "sauge", fr: "Vert sauge", clair: ["#F1F3EC","#344E41","#4E7650"], sombre: ["#1B2621","#DAD7CD","#A3B18A"] },
+  { id: "bordeaux", fr: "Bordeaux et or", clair: ["#FAF3E6","#590D22","#9A6B14"], sombre: ["#1E0A10","#F0DCB4","#D4A84A"] },
+  { id: "contraste", fr: "Noir et rouge", clair: ["#FFFFFF","#14181F","#D62828"], sombre: ["#0E1116","#F5F5F5","#EF4444"] },
 ];
 const TOTAL_STEPS = 5;
 const MAX_PLUS_PAGES = 5;
@@ -415,10 +415,12 @@ export default function QuickQuote() {
                       <input type="radio" name="palette" value={p.id} checked={brief.palette === p.id}
                         onChange={() => setBrief((b) => ({ ...b, palette: b.palette === p.id ? "" : p.id }))}
                         onClick={() => brief.palette === p.id && setBrief((b) => ({ ...b, palette: "" }))} />
-                      <span className="quote-triplet" aria-hidden="true">
-                        {p[shownVariant].map((c) => <i key={c} style={{ background: c }} />)}
+                      <span className="quote-mock" aria-hidden="true" style={{ background: p[shownVariant][0] }}>
+                        <b style={{ background: p[shownVariant][1] }} />
+                        <b className="short" style={{ background: p[shownVariant][1] }} />
+                        <em style={{ background: p[shownVariant][2] }} />
                       </span>
-                      <span>{t(`quote.palette_${p.id}`)}</span>
+                      <span className="quote-palette-name">{t(`quote.palette_${p.id}`)}</span>
                     </label>
                   ))}
                 </div>

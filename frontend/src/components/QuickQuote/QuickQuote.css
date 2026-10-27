@@ -673,3 +673,66 @@
   width: 1rem;
   height: 1.6rem;
 }
+
+/* Palettes : mini-maquette (fond, titre, bouton) puis le nom dessous */
+.quote .quote-palettes {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.quote .quote-palette {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+  min-height: 0;
+  padding: 0.5rem;
+  border-radius: 14px;
+}
+
+.quote .quote-mock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  height: 3.4rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.35);
+}
+
+.quote .quote-mock b {
+  display: block;
+  width: 70%;
+  height: 7px;
+  border-radius: 3px;
+}
+
+.quote .quote-mock b.short {
+  width: 45%;
+  height: 4px;
+  opacity: 0.55;
+}
+
+.quote .quote-mock em {
+  display: block;
+  width: 38%;
+  height: 11px;
+  margin-top: 2px;
+  border-radius: 999px;
+}
+
+.quote .quote-palette-name {
+  font-size: 0.85rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .quote .quote-palettes {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .quote .quote-palette {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+}
