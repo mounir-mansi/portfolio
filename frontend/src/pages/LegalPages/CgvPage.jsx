@@ -74,15 +74,35 @@ export default function CgvPage() {
         référence.
       </p>
 
-      <h2>10. Maintenance</h2>
+      <h2>10. Nom de domaine</h2>
       <p>
-        La maintenance, à 50 € par mois, comprend l'hébergement sécurisé, les sauvegardes et la surveillance, les mises
-        à jour régulières et un support réactif. Elle est facturée mensuellement et se renouvelle chaque mois. Chaque
-        partie peut y mettre fin par email, sans frais, moyennant un <strong>préavis d'un mois</strong>. Les nouvelles
-        fonctionnalités et les refontes font l'objet d'un devis distinct.
+        Le nom de domaine est enregistré au nom du client, qui en est le titulaire. Lorsque je l'achète pour son compte,
+        je le lui refacture au prix coûtant. Si le client souscrit la maintenance, l'achat et le renouvellement du nom de
+        domaine (un seul par site, extensions courantes comme .fr ou .com) sont offerts tant qu'elle est active. À son
+        arrêt, le client prend en charge le renouvellement au prix coûtant, ou transfère le domaine chez lui. Sur simple
+        demande par email, je déverrouille le domaine et lui remets le code de transfert sous 48 h ouvrées, sans frais. Le
+        client me prévient avant tout transfert afin d'éviter une interruption du site.
       </p>
 
-      <h2>11. Responsabilité</h2>
+      <h2>11. Remise du site</h2>
+      <p>
+        À la livraison ou à tout moment sur simple demande, je remets au client, sans frais, les fichiers de son site :
+        dépôt de code privé transféré dans son compte GitHub, ou archive, avec les instructions de mise en ligne et, le
+        cas échéant, un export de ses données. Les composants techniques réutilisables, non spécifiques au client,
+        restent ma propriété ; le client en conserve le droit d'usage pour son site.
+      </p>
+
+      <h2>12. Maintenance</h2>
+      <p>
+        La maintenance, à 50 € par mois, comprend l'hébergement sécurisé, le nom de domaine (voir l'article 10), les
+        sauvegardes et la surveillance, les mises à jour de sécurité et un support réactif. Elle est facturée
+        mensuellement et se renouvelle chaque mois. Chaque partie peut y mettre fin par email, sans frais, moyennant un{" "}
+        <strong>préavis d'un mois</strong>. Le site reste hébergé jusqu'à la fin du préavis ; le client l'héberge ensuite
+        où il le souhaite, avec les fichiers remis selon l'article 11. Les nouvelles fonctionnalités et les refontes font
+        l'objet d'un devis distinct.
+      </p>
+
+      <h2>13. Responsabilité</h2>
       <p>
         {LEGAL.brand} est tenu à une obligation de moyens. Aucun résultat commercial ni positionnement dans les moteurs
         de recherche n'est garanti. La responsabilité est limitée au montant payé pour la prestation concernée et ne
@@ -90,19 +110,19 @@ export default function CgvPage() {
         domaine, etc.).
       </p>
 
-      <h2>12. Résiliation avant livraison</h2>
+      <h2>14. Résiliation avant livraison</h2>
       <p>
         Si le client met fin à la commande avant la livraison, l'acompte reste acquis en contrepartie du travail déjà
         engagé ; le travail réalisé au-delà de l'acompte est facturé au prorata de son avancement.
       </p>
 
-      <h2>13. Données personnelles</h2>
+      <h2>15. Données personnelles</h2>
       <p>
         Les données collectées sont traitées conformément à la{" "}
         <Link to={`/${lang}/confidentialite`}>politique de confidentialité</Link>.
       </p>
 
-      <h2>14. Droit applicable et litiges</h2>
+      <h2>16. Droit applicable et litiges</h2>
       <p>
         Les présentes conditions sont soumises au droit français. En cas de litige, les parties cherchent d'abord une
         solution amiable. À défaut, les tribunaux compétents du ressort de {LEGAL.jurisdiction} sont seuls compétents.
