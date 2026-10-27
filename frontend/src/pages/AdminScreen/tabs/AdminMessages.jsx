@@ -77,12 +77,13 @@ export default function AdminMessages() {
               <span className="msg-date">{new Date(msg.createdAt).toLocaleDateString("fr-FR")}</span>
             </div>
             {msg.message && <p className="msg-body">{msg.message}</p>}
-            {(msg.pack || msg.pages?.length > 0 || msg.theme || msg.couleurs || msg.echeance || msg.creneau || msg.aLogo !== null) && (
+            {(msg.pack || msg.police || msg.pages?.length > 0 || msg.theme || msg.couleurs || msg.echeance || msg.creneau || msg.aLogo !== null) && (
               <p className="msg-body msg-brief">
                 {msg.pack && <span><strong>Type :</strong> {msg.pack}. </span>}
                 {msg.pages?.length > 0 && <span><strong>{msg.pack === "vitrine" ? "Sections" : "Pages"} :</strong> {msg.pages.join(", ")}{msg.pagesAutre ? " (" + msg.pagesAutre + ")" : ""}. </span>}
                 {msg.theme && <span><strong>Style :</strong> {msg.theme}. </span>}
                 {msg.couleurs && <span><strong>Couleurs :</strong> {msg.couleurs}. </span>}
+                {msg.police && <span><strong>Police :</strong> {msg.police}. </span>}
                 {msg.aLogo !== null && <span><strong>Logo :</strong> {msg.aLogo ? "oui" : "non"}. </span>}
                 {msg.echeance && <span><strong>Pour quand :</strong> {msg.echeance}. </span>}
                 {msg.creneau && <span><strong>Rappel :</strong> {msg.creneau}.</span>}

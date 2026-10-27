@@ -50,3 +50,27 @@ describe("Couleurs de la charte graphique", () => {
     expect((await ligne("vide")).couleurs).toBeNull();
   });
 });
+
+describe("Police de la charte", () => {
+  const nouvelle = async (s) =>
+    (await request(app).post("/contact").send({ source: "devis", name: `${AUTO} ${s}`, phone: "0612345678", activity: "Bar" })).body.token;
+  const patch = (b) => request(app).patch("/contact/brief").send(b);
+  const ligne = (s) => prisma.contactMessage.findFirst({ where: { name: `${AUTO} ${s}` } });
+
+  test("nom de police accepté, accents et ponctuation courante comprises", async () => {
+    const token = await nouvelle("police");
+    expect((await patch({ token, police: "Playfair Display" })).status).toBe(200);
+    expect((await ligne("police")).police).toBe("Playfair Display");
+    expect((await patch({ token, police: "Source Sans 3, Bébas-Neue" })).status).toBe(200);
+  });
+
+  test("vide efface ; trop long, code HTML ou type inattendu refusés", async () => {
+    const token = await nouvelle("police2");
+    await patch({ token, police: "Montserrat" });
+    expect((await patch({ token, police: "" })).status).toBe(200);
+    expect((await ligne("police2")).police).toBeNull();
+    for (const police of ["x".repeat(81), '<script>alert(1)</script>', 'Arial"; drop table', 12, ["Arial"]]) {
+      expect((await patch({ token, police })).status).toBe(400);
+    }
+  });
+});

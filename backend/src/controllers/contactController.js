@@ -147,6 +147,15 @@ async function updateBrief(req, res) {
     data.couleurs = value ? value.toUpperCase().replace(/, ?/g, ", ") : null;
   }
 
+  // Police de la charte : un nom (80 caractères, lettres, chiffres, espaces, tiret, apostrophe, point, virgule)
+  if (body.police !== undefined) {
+    if (typeof body.police !== "string") return res.status(400).json({ error: "Police invalide." });
+    const police = body.police.trim();
+    if (police.length > 80 || (police && !/^[\p{L}\p{N} .,'’\-+&]+$/u.test(police)))
+      return res.status(400).json({ error: "Police invalide." });
+    data.police = police || null;
+  }
+
   if (body.aLogo !== undefined) {
     if (typeof body.aLogo !== "boolean") return res.status(400).json({ error: "Valeur invalide." });
     data.aLogo = body.aLogo;

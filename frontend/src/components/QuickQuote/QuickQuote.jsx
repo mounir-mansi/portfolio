@@ -70,7 +70,7 @@ export default function QuickQuote() {
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState(null);
   const [brief, setBrief] = useState({
-    pack: "", pages: [], autres: [""], theme: "", couleurs: "", echeance: "", creneau: "",
+    pack: "", pages: [], autres: [""], theme: "", couleurs: "", police: "", echeance: "", creneau: "",
   });
   const [menuFiles, setMenuFiles] = useState([]);
   const [logoFiles, setLogoFiles] = useState([]);
@@ -170,6 +170,7 @@ export default function QuickQuote() {
       const p = {};
       if (brief.theme) p.theme = brief.theme;
       if (colors.length) p.couleurs = colors.join(", ");
+      if (brief.police.trim()) p.police = brief.police.trim();
       return p;
     }
     const p = {};
@@ -435,6 +436,13 @@ export default function QuickQuote() {
                   </ul>
                 )}
                 {colorsInvalid && <p id="quote-colors-error" className="field-error" role="alert">{t("quote.charte_colors_error")}</p>}
+              </div>
+              <div className="quote-field">
+                <label htmlFor="quote-police">{t("quote.police_label")}</label>
+                <input id="quote-police" type="text" maxLength={80} value={brief.police} aria-describedby="quote-police-hint"
+                  placeholder={t("quote.police_placeholder")}
+                  onChange={(e) => setBrief((b) => ({ ...b, police: e.target.value }))} />
+                <p id="quote-police-hint" className="quote-hint">{t("quote.police_hint")}</p>
               </div>
               {actions(false)}
             </div>

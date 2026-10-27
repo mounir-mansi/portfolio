@@ -67,6 +67,7 @@ async function sendBriefNotification(row) {
   const pages = (row.pages || []).map((p) => PAGE_LABELS[p] || p);
   if (pages.length) lines.push(`<p><strong>${row.pack === "vitrine" ? "Sections souhaitées" : "Pages souhaitées"} :</strong> ${escapeHtml(pages.join(", "))}</p>`);
   if (row.pagesAutre) lines.push(`<p><strong>Autre page :</strong> ${escapeHtml(row.pagesAutre)}</p>`);
+  if (row.police) lines.push(`<p><strong>Police de la charte :</strong> ${escapeHtml(row.police)}</p>`);
   if (row.theme) lines.push(`<p><strong>Style :</strong> ${THEME_LABELS[row.theme]}</p>`);
   if (row.couleurs) lines.push(`<p><strong>Couleurs :</strong> ${escapeHtml(row.couleurs)}</p>`);
   if (row.aLogo !== null && row.aLogo !== undefined) lines.push(`<p><strong>Logo existant :</strong> ${row.aLogo ? "oui" : "non"}</p>`);

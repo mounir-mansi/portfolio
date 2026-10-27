@@ -37,6 +37,7 @@ model ContactMessage {
   pagesAutre     String?
   theme          String?
   couleurs       String?
+  police         String?
   aLogo          Boolean?
   echeance       String?
   creneau        String?
