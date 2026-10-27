@@ -123,7 +123,7 @@ async function updateBrief(req, res) {
       return res.status(400).json({ error: "Valeur invalide." });
     data[key] = body[key];
   }
-  for (const [key, max] of [["pagesAutre", 300], ["couleurs", 400]]) {
+  for (const [key, max] of [["pagesAutre", 300]]) {
     if (body[key] === undefined) continue;
     if (typeof body[key] !== "string" || body[key].length > max)
       return res.status(400).json({ error: "Texte invalide ou trop long." });
@@ -136,6 +136,15 @@ async function updateBrief(req, res) {
     const added = autre ? autre.split(",").map((x) => x.trim()).filter(Boolean).length : 0;
     const total = pages.filter((p) => p !== "autre").length + (pages.includes("autre") ? Math.max(added, 1) : 0);
     if (total > 5) return res.status(400).json({ error: "5 pages maximum." });
+  }
+
+  // Couleurs de la charte : uniquement des codes #RRGGBB (6 au maximum), le front convertit les rgb(...)
+  if (body.couleurs !== undefined) {
+    if (typeof body.couleurs !== "string") return res.status(400).json({ error: "Couleurs invalides." });
+    const value = body.couleurs.trim();
+    if (value && !/^#[0-9a-f]{6}(, ?#[0-9a-f]{6}){0,5}$/i.test(value))
+      return res.status(400).json({ error: "Couleurs invalides." });
+    data.couleurs = value ? value.toUpperCase().replace(/, ?/g, ", ") : null;
   }
 
   if (body.aLogo !== undefined) {

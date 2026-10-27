@@ -22,19 +22,28 @@ const PAGES = ["accueil", "services", "realisations", "apropos", "tarifs", "avis
 const THEMES = ["clair", "sombre", "indifferent"];
 const ECHEANCES = ["asap", "1mois", "2-3mois", "pas-presse"];
 const CRENEAUX = ["matin", "apres-midi", "soir", "peu-importe"];
-// Triplettes : [fond, principal (titres), accent (boutons)], en version claire et sombre.
-// Contrastes vérifiés : titres >= 4,5 sur le fond, accent >= 3 sur le fond, texte de bouton >= 4,5.
-// Le nom français est celui qui part dans l'email de brief.
-const PALETTES = [
-  { id: "terre", fr: "Terre et cuivre", clair: ["#FEFAE0","#283618","#BC6C25"], sombre: ["#1C2314","#FEFAE0","#DDA15E"] },
-  { id: "ocean", fr: "Océan et sable", clair: ["#F7F1DC","#003049","#C62828"], sombre: ["#00202F","#EAE2B7","#F77F00"] },
-  { id: "sarcelle", fr: "Sarcelle et soleil", clair: ["#F7F4EA","#264653","#C4472F"], sombre: ["#14262D","#E9F2F0","#E9C46A"] },
-  { id: "rose", fr: "Rose poudré", clair: ["#FFF1EC","#5C4B57","#B5586B"], sombre: ["#241C24","#FFCDB2","#E5989B"] },
-  { id: "nuit", fr: "Nuit et menthe", clair: ["#F2FBFA","#0B132B","#1F7A78"], sombre: ["#0B132B","#E8FFFB","#5BC0BE"] },
-  { id: "sauge", fr: "Vert sauge", clair: ["#F1F3EC","#344E41","#4E7650"], sombre: ["#1B2621","#DAD7CD","#A3B18A"] },
-  { id: "bordeaux", fr: "Bordeaux et or", clair: ["#FAF3E6","#590D22","#9A6B14"], sombre: ["#1E0A10","#F0DCB4","#D4A84A"] },
-  { id: "contraste", fr: "Noir et rouge", clair: ["#FFFFFF","#14181F","#D62828"], sombre: ["#0E1116","#F5F5F5","#EF4444"] },
-];
+// Couleurs de la charte graphique : #RGB, #RRGGBB, rgb(r, g, b) ou simplement « r, g, b ». Tout est converti en #RRGGBB.
+const COLOR_RE = /#(?:[0-9a-f]{6}|[0-9a-f]{3})\b|rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(?:,\s*[\d.]+\s*)?\)|\b\d{1,3}\s*[,\s]\s*\d{1,3}\s*[,\s]\s*\d{1,3}\b/gi;
+const MAX_COLORS = 6;
+
+function toHex(token) {
+  if (token.startsWith("#")) {
+    const h = token.slice(1);
+    return "#" + (h.length === 3 ? [...h].map((c) => c + c).join("") : h).toUpperCase();
+  }
+  const nums = token.match(/\d{1,3}/g).slice(0, 3).map(Number);
+  if (nums.some((n) => n > 255)) return null;
+  return "#" + nums.map((n) => n.toString(16).padStart(2, "0")).join("").toUpperCase();
+}
+
+function parseColors(text) {
+  const out = [];
+  for (const m of (text || "").matchAll(COLOR_RE)) {
+    const hex = toHex(m[0]);
+    if (hex && !out.includes(hex)) out.push(hex);
+  }
+  return out.slice(0, MAX_COLORS);
+}
 const TOTAL_STEPS = 5;
 const MAX_PLUS_PAGES = 5;
 const MAX_OTHER_PAGES = 5;
@@ -61,7 +70,7 @@ export default function QuickQuote() {
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState(null);
   const [brief, setBrief] = useState({
-    pack: "", pages: [], autres: [""], theme: "", palette: "", couleursAutre: "", echeance: "", creneau: "",
+    pack: "", pages: [], autres: [""], theme: "", couleurs: "", echeance: "", creneau: "",
   });
   const [menuFiles, setMenuFiles] = useState([]);
   const [logoFiles, setLogoFiles] = useState([]);
@@ -160,11 +169,7 @@ export default function QuickQuote() {
     if (n === 4) {
       const p = {};
       if (brief.theme) p.theme = brief.theme;
-      const palette = PALETTES.find((x) => x.id === brief.palette);
-      const [fond, principal, accent] = palette ? palette[shownVariant] : [];
-      const paletteText = palette ? `${palette.fr} (${shownVariant}) : fond ${fond}, principal ${principal}, accent ${accent}` : "";
-      const colors = [paletteText, brief.couleursAutre.trim()].filter(Boolean).join(" | ");
-      if (colors) p.couleurs = colors;
+      if (colors.length) p.couleurs = colors.join(", ");
       return p;
     }
     const p = {};
@@ -177,6 +182,10 @@ export default function QuickQuote() {
   // `final` : termine le brief, avec les réponses de l'étape courante.
   const advance = async ({ save, final }) => {
     if (loading) return;
+    if (save && step === 4 && colorsInvalid) {
+      document.getElementById("quote-colors")?.focus();
+      return;
+    }
     const payload = save ? stepPayload(step) : {};
     const hasData = Object.keys(payload).length > 0;
     if (token && (hasData || final)) {
@@ -200,8 +209,8 @@ export default function QuickQuote() {
     setStep(final || step >= TOTAL_STEPS ? TOTAL_STEPS + 1 : step + 1);
   };
 
-  // Les palettes s'affichent en version sombre si le visiteur a choisi un fond sombre, claire sinon
-  const shownVariant = brief.theme === "sombre" ? "sombre" : "clair";
+  const colors = parseColors(brief.couleurs);
+  const colorsInvalid = brief.couleurs.trim() !== "" && colors.length === 0;
   const checkedPages = brief.pages.filter((p) => p !== "autre").length;
   const pageCount = checkedPages + (brief.pages.includes("autre") ? brief.autres.length : 0);
   const atPageLimit = brief.pack === "vitrine-plus" && pageCount >= MAX_PLUS_PAGES;
@@ -406,35 +415,27 @@ export default function QuickQuote() {
               {heading("quote.step3_title")}
               {radioGroup(t("quote.theme_label"), "theme", THEMES, brief.theme,
                 (v) => setBrief((b) => ({ ...b, theme: v })), (o) => t(`quote.theme_${o}`))}
-              <fieldset className="quote-choices">
-                <legend>{t("quote.colors_label")}</legend>
-                <p className="quote-hint">{t("quote.colors_hint")}</p>
-                <div className="quote-palettes">
-                  {PALETTES.map((p) => (
-                    <label key={p.id} className={`quote-palette ${brief.palette === p.id ? "is-on" : ""}`}>
-                      <input type="radio" name="palette" value={p.id} checked={brief.palette === p.id}
-                        onChange={() => setBrief((b) => ({ ...b, palette: b.palette === p.id ? "" : p.id }))}
-                        onClick={() => brief.palette === p.id && setBrief((b) => ({ ...b, palette: "" }))} />
-                      <span className="quote-mock" aria-hidden="true" style={{ background: p[shownVariant][0] }}>
-                        <b style={{ background: p[shownVariant][1] }} />
-                        <b className="short" style={{ background: p[shownVariant][1] }} />
-                        <em style={{ background: p[shownVariant][2] }} />
-                      </span>
-                      <span className="quote-palette-name">{t(`quote.palette_${p.id}`)}</span>
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
-              <div className="quote-field">
-                <label htmlFor="quote-colors-autre">{t("quote.colors_other_label")}</label>
-                <input id="quote-colors-autre" type="text" maxLength={150} value={brief.couleursAutre}
-                  onChange={(e) => setBrief((b) => ({ ...b, couleursAutre: e.target.value }))} />
-                <p className="quote-hint">{t("quote.colors_other_hint")}</p>
-              </div>
               {token && (
                 <FileUploader token={token} kind="logo" max={1} files={logoFiles} onChange={setLogoFiles}
                   titleKey="quote.logo_upload_title" hintKey="quote.logo_upload_hint" />
               )}
+              <div className="quote-field">
+                <label htmlFor="quote-colors">{t("quote.charte_colors_label")}</label>
+                <input id="quote-colors" type="text" maxLength={150} value={brief.couleurs}
+                  placeholder="#C9A24B, rgb(30, 10, 16)"
+                  aria-invalid={colorsInvalid ? "true" : undefined}
+                  aria-describedby={colorsInvalid ? "quote-colors-error" : "quote-colors-hint"}
+                  onChange={(e) => setBrief((b) => ({ ...b, couleurs: e.target.value }))} />
+                <p id="quote-colors-hint" className="quote-hint">{t("quote.charte_colors_hint")}</p>
+                {colors.length > 0 && (
+                  <ul className="quote-color-chips" aria-label={t("quote.charte_colors_found")}>
+                    {colors.map((c) => (
+                      <li key={c}><i style={{ background: c }} aria-hidden="true" />{c}</li>
+                    ))}
+                  </ul>
+                )}
+                {colorsInvalid && <p id="quote-colors-error" className="field-error" role="alert">{t("quote.charte_colors_error")}</p>}
+              </div>
               {actions(false)}
             </div>
           )}

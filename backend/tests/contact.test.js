@@ -186,7 +186,7 @@ describe("Brief de la demande de maquette (formulaire en étapes)", () => {
   test("complète la demande par étapes", async () => {
     const token = await demande("etapes");
     expect((await patch({ token, pages: ["accueil", "menu", "commande"], pagesAutre: "Galerie photos" })).status).toBe(200);
-    expect((await patch({ token, theme: "sombre", couleurs: "bleu nuit et or", aLogo: true })).status).toBe(200);
+    expect((await patch({ token, theme: "sombre", couleurs: "#14213D, #D4A937", aLogo: true })).status).toBe(200);
     expect((await patch({ token, echeance: "1mois", creneau: "matin" })).status).toBe(200);
     const row = await prisma.contactMessage.findFirst({ where: { name: `${AUTO} Brief etapes` } });
     expect(row.pages).toEqual(["accueil", "menu", "commande"]);

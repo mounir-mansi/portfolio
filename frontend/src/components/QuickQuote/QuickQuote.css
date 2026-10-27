@@ -473,18 +473,6 @@
   }
 }
 
-@media (min-width: 1024px) {
-  .quote .quote-palettes {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .quote .quote-palette {
-    min-height: 40px;
-    padding: 0.35em 0.8em;
-    font-size: 0.9rem;
-  }
-}
-
 /* Choix du type de site : trois cartes */
 .quote .quote-types {
   display: grid;
@@ -659,80 +647,26 @@
   display: none;
 }
 
-/* Palette de trois couleurs : fond, principal, accent */
-.quote .quote-triplet {
-  display: inline-flex;
-  flex: none;
-  overflow: hidden;
-  border: 1px solid var(--line-strong);
-  border-radius: 8px;
-}
-
-.quote .quote-triplet i {
-  display: block;
-  width: 1rem;
-  height: 1.6rem;
-}
-
-/* Palettes : mini-maquette (fond, titre, bouton) puis le nom dessous */
-.quote .quote-palettes {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.quote .quote-palette {
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.4rem;
-  min-height: 0;
-  padding: 0.5rem;
-  border-radius: 14px;
-}
-
-.quote .quote-mock {
+/* Couleurs reconnues dans le champ de la charte graphique */
+.quote .quote-color-chips {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  height: 3.4rem;
-  padding: 0.5rem 0.65rem;
-  border-radius: 8px;
-  box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.35);
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
 }
 
-.quote .quote-mock b {
-  display: block;
-  width: 70%;
-  height: 7px;
-  border-radius: 3px;
-}
-
-.quote .quote-mock b.short {
-  width: 45%;
-  height: 4px;
-  opacity: 0.55;
-}
-
-.quote .quote-mock em {
-  display: block;
-  width: 38%;
-  height: 11px;
-  margin-top: 2px;
-  border-radius: 999px;
-}
-
-.quote .quote-palette-name {
+.quote .quote-color-chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
   font-size: 0.85rem;
-  line-height: 1.2;
-  text-align: center;
+  color: var(--fg);
 }
 
-@media (min-width: 1024px) {
-  .quote .quote-palettes {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .quote .quote-palette {
-    padding: 0.4rem;
-    font-size: 0.8rem;
-  }
+.quote .quote-color-chips i {
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
 }
