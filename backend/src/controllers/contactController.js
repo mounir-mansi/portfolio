@@ -123,7 +123,7 @@ async function updateBrief(req, res) {
       return res.status(400).json({ error: "Valeur invalide." });
     data[key] = body[key];
   }
-  for (const [key, max] of [["pagesAutre", 300], ["couleurs", 200]]) {
+  for (const [key, max] of [["pagesAutre", 300], ["couleurs", 400]]) {
     if (body[key] === undefined) continue;
     if (typeof body[key] !== "string" || body[key].length > max)
       return res.status(400).json({ error: "Texte invalide ou trop long." });

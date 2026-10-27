@@ -226,7 +226,7 @@ describe("Brief de la demande de maquette (formulaire en étapes)", () => {
     expect((await patch({ token, echeance: "hier" })).status).toBe(400);
     expect((await patch({ token, creneau: "nuit" })).status).toBe(400);
     expect((await patch({ token, aLogo: "oui" })).status).toBe(400);
-    expect((await patch({ token, couleurs: "x".repeat(201) })).status).toBe(400);
+    expect((await patch({ token, couleurs: "x".repeat(401) })).status).toBe(400);
     expect((await patch({ token, pagesAutre: "x".repeat(301) })).status).toBe(400);
   });
 

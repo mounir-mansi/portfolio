@@ -22,16 +22,18 @@ const PAGES = ["accueil", "services", "realisations", "apropos", "tarifs", "avis
 const THEMES = ["clair", "sombre", "indifferent"];
 const ECHEANCES = ["asap", "1mois", "2-3mois", "pas-presse"];
 const CRENEAUX = ["matin", "apres-midi", "soir", "peu-importe"];
-// Le nom français est celui qui part dans l'email de brief
+// Triplettes : [fond, principal (titres), accent (boutons)], en version claire et sombre.
+// Contrastes vérifiés : titres >= 4,5 sur le fond, accent >= 3 sur le fond, texte de bouton >= 4,5.
+// Le nom français est celui qui part dans l'email de brief.
 const PALETTES = [
-  { id: "bleu-or", fr: "Bleu nuit et or", a: "#14213d", b: "#d4a937" },
-  { id: "vert-creme", fr: "Vert et crème", a: "#2f5d3a", b: "#f3ecd6" },
-  { id: "rouge-noir", fr: "Rouge et noir", a: "#c0392b", b: "#161616" },
-  { id: "rose-blanc", fr: "Rose et blanc", a: "#e58fa8", b: "#fbf4f4" },
-  { id: "orange-brun", fr: "Orange et brun", a: "#e07a2f", b: "#4a2e1c" },
-  { id: "violet-gris", fr: "Violet et gris", a: "#6b4aa3", b: "#b8b8c2" },
-  { id: "bleu-blanc", fr: "Bleu et blanc", a: "#2d6cdf", b: "#f5f8ff" },
-  { id: "noir-blanc", fr: "Noir et blanc", a: "#111111", b: "#f5f5f5" },
+  { id: "boulangerie", fr: "Boulangerie, chaleur", clair: ["#F6EFE3", "#5B3A29", "#B85C14"], sombre: ["#1E1511", "#F0D9B5", "#E8913A"] },
+  { id: "restaurant", fr: "Restaurant élégant", clair: ["#F7F1E8", "#7A1F2B", "#946A10"], sombre: ["#14110F", "#D9B866", "#C93A4B"] },
+  { id: "nature", fr: "Nature et bio", clair: ["#F5F3EC", "#2F5D3A", "#8A5F3A"], sombre: ["#121A14", "#BFE0C4", "#D9A066"] },
+  { id: "marin", fr: "Marin et frais", clair: ["#F7FAFC", "#17365D", "#CC3A27"], sombre: ["#0C1626", "#BBD3F2", "#FF7A68"] },
+  { id: "beaute", fr: "Beauté et douceur", clair: ["#FBEFEF", "#5A2E4F", "#B8456A"], sombre: ["#1D1018", "#F4D3DE", "#E58AA8"] },
+  { id: "artisan", fr: "Artisan, chantier", clair: ["#F2F2F0", "#2B2F33", "#8F6600"], sombre: ["#15171A", "#F2F2F0", "#F2B705"] },
+  { id: "moderne", fr: "Moderne", clair: ["#F4F7FF", "#1B2A55", "#2F55D4"], sombre: ["#0E1420", "#E8EEFF", "#5B86FF"] },
+  { id: "sobre", fr: "Sobre et pro", clair: ["#FFFFFF", "#111111", "#D6322E"], sombre: ["#0F0F0F", "#F5F5F5", "#E5484D"] },
 ];
 const TOTAL_STEPS = 5;
 const MAX_PLUS_PAGES = 5;
@@ -159,7 +161,9 @@ export default function QuickQuote() {
       const p = {};
       if (brief.theme) p.theme = brief.theme;
       const palette = PALETTES.find((x) => x.id === brief.palette);
-      const colors = [palette?.fr, brief.couleursAutre.trim()].filter(Boolean).join(", ");
+      const [fond, principal, accent] = palette ? palette[shownVariant] : [];
+      const paletteText = palette ? `${palette.fr} (${shownVariant}) : fond ${fond}, principal ${principal}, accent ${accent}` : "";
+      const colors = [paletteText, brief.couleursAutre.trim()].filter(Boolean).join(" | ");
       if (colors) p.couleurs = colors;
       return p;
     }
@@ -196,6 +200,8 @@ export default function QuickQuote() {
     setStep(final || step >= TOTAL_STEPS ? TOTAL_STEPS + 1 : step + 1);
   };
 
+  // Les palettes s'affichent en version sombre si le visiteur a choisi un fond sombre, claire sinon
+  const shownVariant = brief.theme === "sombre" ? "sombre" : "clair";
   const checkedPages = brief.pages.filter((p) => p !== "autre").length;
   const pageCount = checkedPages + (brief.pages.includes("autre") ? brief.autres.length : 0);
   const atPageLimit = brief.pack === "vitrine-plus" && pageCount >= MAX_PLUS_PAGES;
@@ -402,14 +408,16 @@ export default function QuickQuote() {
                 (v) => setBrief((b) => ({ ...b, theme: v })), (o) => t(`quote.theme_${o}`))}
               <fieldset className="quote-choices">
                 <legend>{t("quote.colors_label")}</legend>
+                <p className="quote-hint">{t("quote.colors_hint")}</p>
                 <div className="quote-palettes">
                   {PALETTES.map((p) => (
                     <label key={p.id} className={`quote-palette ${brief.palette === p.id ? "is-on" : ""}`}>
                       <input type="radio" name="palette" value={p.id} checked={brief.palette === p.id}
                         onChange={() => setBrief((b) => ({ ...b, palette: b.palette === p.id ? "" : p.id }))}
                         onClick={() => brief.palette === p.id && setBrief((b) => ({ ...b, palette: "" }))} />
-                      <span className="quote-swatch" aria-hidden="true"
-                        style={{ background: `linear-gradient(135deg, ${p.a} 50%, ${p.b} 50%)` }} />
+                      <span className="quote-triplet" aria-hidden="true">
+                        {p[shownVariant].map((c) => <i key={c} style={{ background: c }} />)}
+                      </span>
                       <span>{t(`quote.palette_${p.id}`)}</span>
                     </label>
                   ))}
@@ -419,6 +427,7 @@ export default function QuickQuote() {
                 <label htmlFor="quote-colors-autre">{t("quote.colors_other_label")}</label>
                 <input id="quote-colors-autre" type="text" maxLength={150} value={brief.couleursAutre}
                   onChange={(e) => setBrief((b) => ({ ...b, couleursAutre: e.target.value }))} />
+                <p className="quote-hint">{t("quote.colors_other_hint")}</p>
               </div>
               {token && (
                 <FileUploader token={token} kind="logo" max={1} files={logoFiles} onChange={setLogoFiles}
