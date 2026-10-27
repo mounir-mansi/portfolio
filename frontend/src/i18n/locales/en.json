@@ -214,6 +214,10 @@
       {
         "q": "What does the €50 per month maintenance include?",
         "a": "With the rise of AI, automated attacks find security flaws much faster: a site that is no longer updated quickly becomes a target. Maintenance is an option for peace of mind. It includes secure hosting, the domain name, security updates, regular backups, site monitoring and responsive support if anything goes wrong. It can be cancelled with one month's notice."
+      },
+      {
+        "q": "Does the site really belong to me?",
+        "a": "Yes. Once the final payment is received, the site and its texts are yours, and the domain name is registered in your name. Maintenance is optional. At any time, on simple request, I hand over the files of your site, free of charge, so you can host it wherever you like."
       }
     ]
   },
