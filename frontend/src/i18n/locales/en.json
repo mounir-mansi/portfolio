@@ -317,7 +317,7 @@
     "charte_colors_error": "I don't recognise this format. Use a code like #C9A24B or rgb(201, 162, 75).",
     "police_label": "A font required by your brand guidelines?",
     "police_placeholder": "For example: Montserrat",
-    "police_hint": "Optional. If you don't know, no problem: uploading your guidelines is enough for me."
+    "police_hint": "Optional. If you don't know, no problem."
   },
   "meta": {
     "suffix": "ManDev Web",

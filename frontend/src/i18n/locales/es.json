@@ -317,7 +317,7 @@
     "charte_colors_error": "No reconozco este formato. Usa un código como #C9A24B o rgb(201, 162, 75).",
     "police_label": "¿Una fuente impuesta por tu identidad visual?",
     "police_placeholder": "Por ejemplo: Montserrat",
-    "police_hint": "Opcional. Si no lo sabes, no pasa nada: me basta con que subas tu manual."
+    "police_hint": "Opcional. Si no lo sabes, no pasa nada."
   },
   "meta": {
     "suffix": "ManDev Web",
