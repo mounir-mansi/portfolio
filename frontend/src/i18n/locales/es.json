@@ -314,7 +314,10 @@
     "charte_colors_label": "Los colores de tu identidad visual",
     "charte_colors_hint": "Opcional. Un código #hex o RGB por color, separados por una coma. Por ejemplo: #C9A24B, rgb(30, 10, 16)",
     "charte_colors_found": "Colores reconocidos",
-    "charte_colors_error": "No reconozco este formato. Usa un código como #C9A24B o rgb(201, 162, 75)."
+    "charte_colors_error": "No reconozco este formato. Usa un código como #C9A24B o rgb(201, 162, 75).",
+    "police_label": "¿Una fuente impuesta por tu identidad visual?",
+    "police_placeholder": "Por ejemplo: Montserrat",
+    "police_hint": "Opcional. Si no lo sabes, no pasa nada: me basta con que subas tu manual."
   },
   "meta": {
     "suffix": "ManDev Web",

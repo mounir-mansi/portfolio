@@ -314,7 +314,10 @@
     "charte_colors_label": "I colori della tua identità visiva",
     "charte_colors_hint": "Facoltativo. Un codice #hex o RGB per colore, separati da una virgola. Ad esempio: #C9A24B, rgb(30, 10, 16)",
     "charte_colors_found": "Colori riconosciuti",
-    "charte_colors_error": "Non riconosco questo formato. Usa un codice come #C9A24B o rgb(201, 162, 75)."
+    "charte_colors_error": "Non riconosco questo formato. Usa un codice come #C9A24B o rgb(201, 162, 75).",
+    "police_label": "Un carattere imposto dalla tua identità visiva?",
+    "police_placeholder": "Ad esempio: Montserrat",
+    "police_hint": "Facoltativo. Se non lo sai, non c'è problema: mi basta il caricamento del tuo manuale."
   },
   "meta": {
     "suffix": "ManDev Web",

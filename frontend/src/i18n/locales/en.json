@@ -314,7 +314,10 @@
     "charte_colors_label": "The colours of your brand guidelines",
     "charte_colors_hint": "Optional. One #hex or RGB code per colour, separated by a comma. For example: #C9A24B, rgb(30, 10, 16)",
     "charte_colors_found": "Recognised colours",
-    "charte_colors_error": "I don't recognise this format. Use a code like #C9A24B or rgb(201, 162, 75)."
+    "charte_colors_error": "I don't recognise this format. Use a code like #C9A24B or rgb(201, 162, 75).",
+    "police_label": "A font required by your brand guidelines?",
+    "police_placeholder": "For example: Montserrat",
+    "police_hint": "Optional. If you don't know, no problem: uploading your guidelines is enough for me."
   },
   "meta": {
     "suffix": "ManDev Web",
