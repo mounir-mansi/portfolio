@@ -32,7 +32,7 @@ export default function CgvPage() {
       <p>
         Les prix sont exprimés en euros. {vatMention()}. Les tarifs « à partir de » sont indicatifs : le prix définitif est
         celui du devis accepté. À titre indicatif : pack Vitrine à partir de 490 €, pack Vitrine + à partir de 990 €,
-        maintenance à 50 € par mois.
+        maintenance à 49 € par mois.
       </p>
 
       <h2>5. Paiement</h2>
@@ -94,7 +94,7 @@ export default function CgvPage() {
 
       <h2>12. Maintenance</h2>
       <p>
-        La maintenance, à 50 € par mois, comprend les sauvegardes et la surveillance, les mises à jour de sécurité et un
+        La maintenance, à 49 € par mois, comprend les sauvegardes et la surveillance, les mises à jour de sécurité et un
         support réactif. L'hébergement sécurisé et le nom de domaine (voir l'article 10) sont offerts avec tout contrat
         de maintenance. Le contrat est sans engagement de durée : il est facturé mensuellement et se renouvelle chaque
         mois, et chaque partie peut y mettre fin par email, sans frais, moyennant un{" "}
