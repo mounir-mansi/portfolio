@@ -21,13 +21,13 @@
   },
   "home": {
     "eyebrow": "Studio web · Tolosa e in tutta la Francia",
-    "title_a": "Siti vetrina che",
+    "title_a": "Siti per artigiani e commercianti che",
     "title_em": "trasformano",
     "title_b": "i tuoi visitatori in clienti.",
-    "sub": "Siti vetrina e applicazioni web veloci, sicure e chiavi in mano per negozi e PMI.",
+    "sub": "Un sito vetrina chiaro e veloce che ti porta chiamate e richieste di preventivo, chiavi in mano.",
     "cta_quote": "Ricevi la mia bozza gratuita",
     "cta_work": "Vedi i lavori",
-    "offer": "Bozza gratuita entro 72 ore lavorative · senza impegno",
+    "offer": "Da 490 € · Bozza gratuita entro 72 ore lavorative · Senza impegno · In tutta la Francia",
     "call": "Una domanda?",
     "services_eyebrow": "Servizi",
     "services_title": "Cosa costruisco per te",
@@ -102,7 +102,9 @@
       }
     ],
     "final_eyebrow": "Prossimo passo",
-    "final_title": "Il tuo sito, fatto bene."
+    "final_title": "Il tuo sito, fatto bene.",
+    "hero_quote_continue": "Descrivi il tuo progetto",
+    "hero_quote_activity_ph": "Idraulico, fornaio…"
   },
   "about": {
     "title1": "Appassionato del web,",

@@ -411,47 +411,12 @@
 }
 
 /* ===== RESPONSIVE ===== */
-/* Preuve visuelle du hero : capture du premier projet réel, desktop uniquement */
-.hero-proof {
-  display: none;
-}
-
+/* Hero sur grand écran : texte à gauche, carte « maquette gratuite » (HeroQuote) à droite */
 @media (min-width: 1024px) {
   .hero-grid {
-    /* Colonne image la plus large possible : elle s'arrête à ~50 px du bouton « Voir les réalisations » (plus large, le bouton passerait à la ligne) */
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     align-items: center;
-    column-gap: clamp(1.25rem, 2.5vw, 2rem);
-  }
-
-  .hero-proof {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .hero-proof img {
-    width: 100%;
-    aspect-ratio: 2 / 1; /* format des captures de projets : l'image n'est plus rognée */
-    object-fit: cover;
-    object-position: top;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    transition: transform 0.6s var(--ease);
-  }
-
-  .hero-proof:hover img {
-    transform: translateY(-4px);
-  }
-
-  .hero-proof-title {
-    font-size: 0.95rem;
-    color: var(--fg-muted);
-    transition: color 0.2s;
-  }
-
-  .hero-proof:hover .hero-proof-title {
-    color: var(--accent-text);
+    column-gap: clamp(1.25rem, 2.5vw, 2.5rem);
   }
 }
 
@@ -652,8 +617,8 @@
     align-items: stretch;
   }
 
-  /* La capture garde son format (≈2:1) et se centre dans la colonne : la rogner pour égaler la hauteur du texte coupait la page */
-  .hero-proof {
+  /* La carte du formulaire se centre dans la colonne, face au texte */
+  .hero-quote {
     align-self: center;
     min-height: 0;
   }
@@ -839,7 +804,8 @@
 
 @media (min-width: 1024px) {
   main > .hero .hero-title {
-    font-size: clamp(3rem, min(9vh, 4.3vw), 6.25rem);
+    /* plafonné à 4,2 rem : la colonne de texte fait ~585 px (le formulaire occupe l'autre moitié), au-delà le titre passe sur 5 lignes */
+    font-size: clamp(3rem, min(9vh, 4.3vw), 4.2rem);
     max-width: 20ch;
   }
 }

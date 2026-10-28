@@ -21,13 +21,13 @@
   },
   "home": {
     "eyebrow": "Studio web · Toulouse et partout en France",
-    "title_a": "Des sites vitrines qui",
+    "title_a": "Des sites pour artisans et commerçants qui",
     "title_em": "transforment",
     "title_b": "vos visiteurs en clients.",
-    "sub": "Sites vitrines et applications web rapides, sécurisés et livrés clé en main pour les commerces et les PME.",
+    "sub": "Un site vitrine clair et rapide qui vous apporte des appels et des demandes de devis, livré clé en main.",
     "cta_quote": "Recevoir ma maquette gratuite",
     "cta_work": "Voir les réalisations",
-    "offer": "Maquette gratuite sous 72 h ouvrées · sans engagement",
+    "offer": "Dès 490 € · Maquette gratuite sous 72 h ouvrées · Sans engagement · Partout en France",
     "call": "Une question ?",
     "services_eyebrow": "Services",
     "services_title": "Ce que je construis pour vous",
@@ -102,7 +102,9 @@
       }
     ],
     "final_eyebrow": "Prochaine étape",
-    "final_title": "Votre site, bien fait."
+    "final_title": "Votre site, bien fait.",
+    "hero_quote_continue": "Préciser mon projet",
+    "hero_quote_activity_ph": "Plombier, boulanger…"
   },
   "about": {
     "title1": "Passionné par le web,",
