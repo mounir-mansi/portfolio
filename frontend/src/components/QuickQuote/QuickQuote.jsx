@@ -325,7 +325,7 @@ export default function QuickQuote() {
               </div>
               <div className="quote-field">
                 <label htmlFor="quote-email">{t("quote.email")}</label>
-                <input {...fieldProps("email")} type="email" autoComplete="email" maxLength={254}
+                <input {...fieldProps("email")} type="email" autoComplete="email" maxLength={254} required
                   placeholder={t("contact.email_placeholder")} />
                 {fieldError("email")}
               </div>

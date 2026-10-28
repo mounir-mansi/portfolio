@@ -27,7 +27,7 @@
     "sub": "Un sitio escaparate claro y rápido que te trae llamadas y solicitudes de presupuesto, llave en mano.",
     "cta_quote": "Recibir mi maqueta gratis",
     "cta_work": "Ver trabajos",
-    "offer": "Desde 490 € · Maqueta gratis en 72 horas laborables · Sin compromiso · Toda Francia",
+    "offer": "Desde 490 € · Maqueta gratis en 72 horas · Sin compromiso",
     "call": "¿Una pregunta?",
     "services_eyebrow": "Servicios",
     "services_title": "Lo que construyo para ti",
@@ -230,7 +230,7 @@
     "title": "Recibe la maqueta de tu página de inicio",
     "terms": [
       "Gratuita",
-      "En 72 horas laborables",
+      "En 72 horas",
       "Sin compromiso"
     ],
     "offer": "Después decides si trabajamos juntos.",
@@ -239,7 +239,7 @@
     "phone": "Teléfono",
     "activity": "Tu actividad",
     "activity_placeholder": "Panadería, fontanero, restaurante…",
-    "email": "Email (opcional)",
+    "email": "Email",
     "submit": "Recibir mi maqueta gratis",
     "success": "Solicitud recibida. Te contacto en breve.",
     "error_phone": "Introduce un número de teléfono válido (por ejemplo 06 12 34 56 78).",

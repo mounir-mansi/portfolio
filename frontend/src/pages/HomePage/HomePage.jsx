@@ -62,7 +62,6 @@ export default function HomePage() {
               <Link to={{ pathname: lp(""), hash: "#devis" }} className="btn-primary">
                 {t("home.cta_quote")} <span aria-hidden="true">↗</span>
               </Link>
-              <Link to={lp("/projets")} className="btn-outline">{t("home.cta_work")}</Link>
             </div>
             <p className="hero-offer reveal" style={{ "--delay": "280ms" }}>{t("home.offer")}</p>
             <p className="hero-call reveal" style={{ "--delay": "320ms" }}>
