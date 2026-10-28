@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { CONTACT_EMAIL } from "../../utils/contactInfo";
 import { EMPTY, validate, sendQuoteRequest } from "../QuickQuote/quoteForm";
+import Honeypot from "../Honeypot/Honeypot";
+import { readHoneypot } from "../Honeypot/honeypotField";
 import "./HeroQuote.css";
 
 const FIELDS = ["name", "company", "phone", "email", "activity"];
@@ -35,6 +37,7 @@ export default function HeroQuote() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const trap = readHoneypot(e.currentTarget);
     if (loading) return;
     const found = validate(form);
     const mine = Object.keys(found).filter((k) => FIELDS.includes(k));
@@ -48,14 +51,15 @@ export default function HeroQuote() {
     setLoading(true);
     setStatus(null);
     try {
-      const res = await sendQuoteRequest(form);
+      const res = await sendQuoteRequest(form, trap);
       if (res.ok) {
         const data = await res.json().catch(() => ({}));
         setErrors({});
         setDone(true);
         window.dispatchEvent(new CustomEvent("quote:started", { detail: { form, token: data.token || null } }));
       } else if (res.status === 400) {
-        setStatus(t("contact.error_check"));
+        const data = await res.json().catch(() => ({}));
+        setStatus(t(data.code === "LINKS" ? "contact.error_links" : "contact.error_check", { email: CONTACT_EMAIL }));
       } else if (res.status === 429) {
         setStatus(t("contact.error_rate"));
       } else {
@@ -107,6 +111,7 @@ export default function HeroQuote() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} noValidate>
+          <Honeypot />
           <div className="hero-quote-grid">
             {field("name", { type: "text", autoComplete: "name", maxLength: 100 })}
             {field("company", { type: "text", autoComplete: "organization", maxLength: 100 })}

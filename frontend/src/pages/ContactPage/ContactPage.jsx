@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
+import Honeypot from "../../components/Honeypot/Honeypot";
+import { HONEYPOT_FIELD, readHoneypot } from "../../components/Honeypot/honeypotField";
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "../../utils/contactInfo";
 import usePageTitle from "../../utils/usePageTitle";
 import "./ContactPage.css";
@@ -87,6 +89,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const trap = readHoneypot(e.currentTarget);
     if (loading) return;
 
     const found = validate(form);
@@ -107,6 +110,7 @@ export default function ContactPage() {
           name: form.name.trim(),
           email: form.email.trim(),
           message: form.message.trim(),
+          [HONEYPOT_FIELD]: trap,
         }),
       });
       if (res.ok) {
@@ -114,7 +118,8 @@ export default function ContactPage() {
         setErrors({});
         setStatus({ ok: true, msg: t("contact.success") });
       } else if (res.status === 400) {
-        setStatus({ ok: false, msg: t("contact.error_check") });
+        const data = await res.json().catch(() => ({}));
+        setStatus({ ok: false, msg: t(data.code === "LINKS" ? "contact.error_links" : "contact.error_check", { email: CONTACT_EMAIL }) });
       } else if (res.status === 429) {
         setStatus({ ok: false, msg: t("contact.error_rate") });
       } else {
@@ -152,6 +157,7 @@ export default function ContactPage() {
 
       <div className="page-body container contact-layout">
         <form className="contact-form" onSubmit={handleSubmit} noValidate>
+          <Honeypot />
           <div className="form-group">
             <label htmlFor="name">{t("contact.name")}</label>
             <input

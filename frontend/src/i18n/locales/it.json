@@ -168,7 +168,8 @@
     "error_rate": "Troppi tentativi. Attendi un minuto e riprova.",
     "error_network": "Impossibile inviare il messaggio al momento. I tuoi dati sono conservati: riprova tra poco, oppure scrivimi a {{email}}.",
     "alt_lead": "Preferisci scrivere o chiamare direttamente?",
-    "alt_phone": "Telefono"
+    "alt_phone": "Telefono",
+    "error_links": "I link non sono accettati in questo modulo. Descrivi la tua esigenza a parole tue, oppure scrivimi a {{email}}."
   },
   "detail": {
     "loading": "Caricamento...",
