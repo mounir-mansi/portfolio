@@ -24,9 +24,15 @@
 }
 
 @media (max-width: 860px) {
+  /* au-dessus du bouton WhatsApp (56 px, à 1 rem du bas) */
   .back-to-top {
     right: 1rem;
-    bottom: calc(var(--bar-h, 0px) + 1rem + env(safe-area-inset-bottom));
+    bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+
+  /* WhatsApp caché (formulaire à l'écran) : le bouton descend dans le coin */
+  body.wa-hidden .back-to-top {
+    bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 }
 

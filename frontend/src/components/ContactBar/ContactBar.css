@@ -1,8 +1,4 @@
-.contact-bar {
-  display: none;
-}
-
-/* WhatsApp : desktop uniquement (sur mobile, la barre suffit) */
+/* Bouton WhatsApp flottant, en bas à droite sur tous les écrans */
 .wa-float {
   position: fixed;
   right: 1.5rem;
@@ -25,62 +21,21 @@
   transform: translateY(-3px);
 }
 
-@media (max-width: 860px) {
-  .wa-float {
-    display: none;
-  }
-
-  .contact-bar {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 40;
-    display: flex;
-    gap: 0.75rem;
-    padding: 0.75rem var(--gutter) calc(0.75rem + env(safe-area-inset-bottom));
-    background: var(--nav-bg);
-    border-top: 1px solid var(--line);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
-  }
-
-  .contact-bar[hidden] {
-    display: none;
-  }
-
-  .contact-bar a {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    padding-inline: 1rem;
-    font-weight: 500;
-    border-radius: 999px;
-    text-align: center;
-  }
-
-  .contact-bar-call {
-    color: var(--fg);
-    border: 1px solid var(--line-strong);
-  }
-
-  .contact-bar-quote {
-    color: var(--accent-ink);
-    background: var(--accent);
-  }
-
-  /* Place réservée en bas de page et décalage du bouton « retour en haut » */
-  body.has-bar {
-    --bar-h: 5rem;
-    padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom));
-  }
-}
-
 .wa-float svg {
   display: block;
   width: 1em;
   height: 1em;
   fill: currentColor;
+}
+
+@media (max-width: 860px) {
+  .wa-float {
+    right: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+
+  /* Caché quand un formulaire est à l'écran, pour ne pas gêner la saisie */
+  .wa-float--hide-mobile {
+    display: none;
+  }
 }
