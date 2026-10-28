@@ -1,5 +1,6 @@
 // Stockage privé des fichiers importés par les visiteurs (menu, logo).
-// Production : Cloudflare R2, sous le préfixe brief/. Développement : dossier local, pour ne jamais écrire dans le vrai bucket.
+// Production : bucket Cloudflare R2 privé dédié (R2_BRIEF_BUCKET), jamais le bucket public des photos du site.
+// Développement : dossier local, pour ne jamais écrire dans le vrai bucket.
 const fs = require("fs/promises");
 const path = require("path");
 const { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand } = require("@aws-sdk/client-s3");
@@ -24,6 +25,14 @@ const client = () => {
   return s3;
 };
 
+// Pas de repli sur R2_BUCKET : ce bucket est public, les fichiers des visiteurs ne doivent jamais y aller.
+function briefBucket() {
+  const bucket = process.env.R2_BRIEF_BUCKET;
+  if (!bucket) throw new Error("R2_BRIEF_BUCKET manquant : bucket privé des fichiers de brief non configuré");
+  if (bucket === process.env.R2_BUCKET) throw new Error("R2_BRIEF_BUCKET doit être différent de R2_BUCKET (bucket public)");
+  return bucket;
+}
+
 function checkKey(key) {
   if (!KEY_REGEX.test(key)) throw new Error("Clé de fichier invalide");
 }
@@ -33,7 +42,7 @@ const localPath = (key) => path.join(LOCAL_DIR, ...key.split("/"));
 async function put(key, buffer, contentType) {
   checkKey(key);
   if (useR2()) {
-    await client().send(new PutObjectCommand({ Bucket: process.env.R2_BUCKET, Key: key, Body: buffer, ContentType: contentType }));
+    await client().send(new PutObjectCommand({ Bucket: briefBucket(), Key: key, Body: buffer, ContentType: contentType }));
     return;
   }
   const file = localPath(key);
@@ -44,7 +53,7 @@ async function put(key, buffer, contentType) {
 async function get(key) {
   checkKey(key);
   if (useR2()) {
-    const res = await client().send(new GetObjectCommand({ Bucket: process.env.R2_BUCKET, Key: key }));
+    const res = await client().send(new GetObjectCommand({ Bucket: briefBucket(), Key: key }));
     return Buffer.from(await res.Body.transformToByteArray());
   }
   return fs.readFile(localPath(key));
@@ -53,7 +62,7 @@ async function get(key) {
 async function remove(key) {
   try {
     checkKey(key);
-    if (useR2()) await client().send(new DeleteObjectCommand({ Bucket: process.env.R2_BUCKET, Key: key }));
+    if (useR2()) await client().send(new DeleteObjectCommand({ Bucket: briefBucket(), Key: key }));
     else await fs.rm(localPath(key), { force: true });
   } catch (err) {
     console.error("briefStorage.remove:", err.message);
