@@ -1,4 +1,5 @@
 import { apiFetch } from "../../utils/api";
+import { HONEYPOT_FIELD } from "../Honeypot/honeypotField";
 
 // Mêmes règles que le backend (contactController.js, source "devis")
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -21,7 +22,7 @@ export function validate(form) {
 }
 
 // Étape 1 : envoi de la demande, partagé entre le formulaire du hero et la section #devis
-export function sendQuoteRequest(form) {
+export function sendQuoteRequest(form, trap = "") {
   return apiFetch("/contact", {
     method: "POST",
     body: JSON.stringify({
@@ -31,6 +32,7 @@ export function sendQuoteRequest(form) {
       phone: form.phone.trim(),
       activity: form.activity.trim(),
       email: form.email.trim(),
+      [HONEYPOT_FIELD]: trap,
     }),
   });
 }

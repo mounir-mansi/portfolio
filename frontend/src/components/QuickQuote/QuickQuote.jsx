@@ -10,6 +10,8 @@ import {
 } from "../../utils/contactInfo";
 import FileUploader from "./FileUploader";
 import { EMPTY, FIELDS, validate, sendQuoteRequest } from "./quoteForm";
+import Honeypot from "../Honeypot/Honeypot";
+import { readHoneypot } from "../Honeypot/honeypotField";
 import "./QuickQuote.css";
 
 
@@ -115,6 +117,7 @@ export default function QuickQuote() {
   // Étape 1 : envoie la demande. Elle est enregistrée même si le visiteur s'arrête ici.
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const trap = readHoneypot(e.currentTarget);
     if (loading) return;
 
     const found = validate(form);
@@ -129,14 +132,15 @@ export default function QuickQuote() {
     setLoading(true);
     setStatus(null);
     try {
-      const res = await sendQuoteRequest(form);
+      const res = await sendQuoteRequest(form, trap);
       if (res.ok) {
         const data = await res.json().catch(() => ({}));
         setToken(data.token || null);
         setErrors({});
         setStep(2);
       } else if (res.status === 400) {
-        setStatus({ ok: false, msg: t("contact.error_check") });
+        const data = await res.json().catch(() => ({}));
+        setStatus({ ok: false, msg: t(data.code === "LINKS" ? "contact.error_links" : "contact.error_check", { email: CONTACT_EMAIL }) });
       } else if (res.status === 429) {
         setStatus({ ok: false, msg: t("contact.error_rate") });
       } else {
@@ -299,6 +303,7 @@ export default function QuickQuote() {
 
           {step === 1 && (
             <form className="quote-step" onSubmit={handleSubmit} noValidate>
+              <Honeypot />
               <div className="quote-field">
                 <label htmlFor="quote-name">{t("quote.name")}</label>
                 <input {...fieldProps("name")} type="text" autoComplete="name" maxLength={100} required

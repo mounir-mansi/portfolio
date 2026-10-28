@@ -26,11 +26,21 @@ const MAX = { name: 100, email: 254, phone: 30, activity: 100, company: 100, mes
 
 const clean = (value) => (typeof value === "string" ? value.trim() : "");
 
+// Anti-spam : champ piège invisible (seuls les robots le remplissent) et refus des liens dans les champs texte.
+// Un vrai visiteur n'écrit presque jamais d'adresse web dans une demande de contact ou de maquette.
+const HONEYPOT_FIELD = "website_url_check";
+const LINK_REGEX = /(?:https?:\/\/|www\.)\S+|\b[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}\/\S+/i;
+const hasLink = (...values) => values.some((v) => LINK_REGEX.test(v));
+
 // Deux formulaires alimentent cette route :
 // - "contact" (page Contact) : nom, email et message requis
 // - "devis" (demande de maquette sur l'accueil) : nom, téléphone et activité requis, email facultatif
 async function submitContact(req, res) {
   const body = req.body || {};
+
+  // Champ piège rempli : c'est un robot. On répond comme si tout allait bien, sans rien enregistrer ni envoyer.
+  if (clean(body[HONEYPOT_FIELD])) return res.json({ ok: true });
+
   const source = body.source === "devis" ? "devis" : "contact";
   const name = clean(body.name);
   const email = clean(body.email);
@@ -58,6 +68,8 @@ async function submitContact(req, res) {
     return res.status(400).json({ error: "Nom du commerce trop long." });
   if (message.length > MAX.message)
     return res.status(400).json({ error: "Message trop long." });
+  if (hasLink(name, company, activity, message))
+    return res.status(400).json({ error: "Les liens ne sont pas acceptés dans ce formulaire.", code: "LINKS" });
 
   try {
     // Demande de maquette : on remet au visiteur un jeton à durée limitée pour compléter son brief.

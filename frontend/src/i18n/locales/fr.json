@@ -168,7 +168,8 @@
     "error_rate": "Trop de tentatives. Patientez une minute puis réessayez.",
     "error_network": "Impossible d'envoyer le message pour le moment. Vos informations sont conservées : réessayez dans un instant, ou écrivez-moi à {{email}}.",
     "alt_lead": "Vous préférez écrire ou appeler directement ?",
-    "alt_phone": "Téléphone"
+    "alt_phone": "Téléphone",
+    "error_links": "Les liens ne sont pas acceptés dans ce formulaire. Décrivez votre besoin avec vos propres mots, ou écrivez-moi à {{email}}."
   },
   "detail": {
     "loading": "Chargement...",

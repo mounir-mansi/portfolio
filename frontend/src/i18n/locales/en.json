@@ -168,7 +168,8 @@
     "error_rate": "Too many attempts. Please wait a minute and try again.",
     "error_network": "Unable to send your message right now. Your details are kept: try again in a moment, or write to me at {{email}}.",
     "alt_lead": "Prefer to write or call directly?",
-    "alt_phone": "Phone"
+    "alt_phone": "Phone",
+    "error_links": "Links are not accepted in this form. Please describe your need in your own words, or write to me at {{email}}."
   },
   "detail": {
     "loading": "Loading...",

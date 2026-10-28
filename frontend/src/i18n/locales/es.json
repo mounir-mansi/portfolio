@@ -168,7 +168,8 @@
     "error_rate": "Demasiados intentos. Espera un minuto e inténtalo de nuevo.",
     "error_network": "No se puede enviar el mensaje en este momento. Tus datos se conservan: inténtalo de nuevo en un momento, o escríbeme a {{email}}.",
     "alt_lead": "¿Prefieres escribir o llamar directamente?",
-    "alt_phone": "Teléfono"
+    "alt_phone": "Teléfono",
+    "error_links": "No se aceptan enlaces en este formulario. Describe tu necesidad con tus propias palabras, o escríbeme a {{email}}."
   },
   "detail": {
     "loading": "Cargando...",
