@@ -5,7 +5,7 @@ import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
-import QuickQuote from "../../components/QuickQuote/QuickQuote";
+import QuoteSection from "../../components/QuickQuote/QuoteSection";
 import HeroQuote from "../../components/HeroQuote/HeroQuote";
 import Faq from "../../components/Faq/Faq";
 import Reviews from "../../components/Reviews/Reviews";
@@ -41,9 +41,13 @@ export default function HomePage() {
     if (el && el.getClientRects().length > 0) {
       el.scrollIntoView();
     } else if (hash === "#devis") {
-      // Grand écran : le formulaire est dans le hero, la section #devis n'apparaît qu'après l'envoi
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-      document.getElementById("hero-quote-name")?.focus({ preventScroll: true });
+      // Grand écran : le formulaire est dans le hero, la section #devis n'apparaît qu'après l'envoi.
+      // Mobile : #devis ouvre la modale, la page ne bouge pas.
+      const first = document.getElementById("hero-quote-name");
+      if (first && first.getClientRects().length > 0) {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        first.focus({ preventScroll: true });
+      }
     }
     // `key` change à chaque clic sur un lien, même vers la même ancre : le défilement se refait
   }, [hash, key]);
@@ -93,7 +97,7 @@ export default function HomePage() {
       </section>
 
       {/* MAQUETTE GRATUITE */}
-      <QuickQuote />
+      <QuoteSection />
 
       {/* SERVICES */}
       <section id="services" className="block">

@@ -325,7 +325,8 @@
     "police_label": "¿Una fuente obligatoria?",
     "police_placeholder": "Ej. Montserrat",
     "police_hint": "Opcional. Si no lo sabes, no pasa nada.",
-    "step3_hint": "Todo es opcional: si no lo sabes, pasa simplemente al siguiente paso."
+    "step3_hint": "Todo es opcional: si no lo sabes, pasa simplemente al siguiente paso.",
+    "close": "Cerrar"
   },
   "meta": {
     "suffix": "ManDev Web",

@@ -49,7 +49,7 @@ const TYPES = ["vitrine", "vitrine-plus", "indecis"];
 
 // Section « Recevez la maquette gratuite » (ancre #devis sur l'accueil).
 // Étape 1 : la demande est envoyée tout de suite. Étapes 2 à 4 : brief facultatif qui complète la demande.
-export default function QuickQuote() {
+export default function QuickQuote({ variant = "section", onClose } = {}) {
   const [step, setStep] = useState(1);
   const [form, setForm] = useState(EMPTY);
   const [errors, setErrors] = useState({});
@@ -281,20 +281,8 @@ export default function QuickQuote() {
     <h3 ref={headingRef} tabIndex={-1} className="quote-step-title">{t(key)}</h3>
   );
 
-  return (
-    <section id="devis" className={`block quote${step === 1 ? " quote--step1" : ""}`} aria-labelledby="quote-title">
-      <div className="container quote-grid">
-        <div className="quote-intro reveal">
-          <h2 id="quote-title" className="block-title">{t("quote.title")}</h2>
-          {Array.isArray(t("quote.terms", { returnObjects: true })) && (
-            <ul className="quote-terms">
-              {t("quote.terms", { returnObjects: true }).map((term) => <li key={term}>{term}</li>)}
-            </ul>
-          )}
-          <p className="quote-offer">{t("quote.offer")}</p>
-        </div>
-
-        <div className="quote-form reveal" style={{ "--delay": "120ms" }}>
+  const formBlock = (
+        <div className={`quote-form${variant === "modal" ? "" : " reveal"}`} style={variant === "modal" ? undefined : { "--delay": "120ms" }}>
           {progress}
           <div aria-live="polite" className="quote-live">
             {step === 2 && <p className="form-status ok">{t("quote.received")}</p>}
@@ -463,9 +451,48 @@ export default function QuickQuote() {
             <div className="quote-step quote-done">
               {heading("quote.done_title")}
               <p className="quote-hint">{t("quote.done_text")}</p>
+              {variant === "modal" && (
+                <button type="button" className="btn-outline" onClick={onClose}>{t("quote.close")}</button>
+              )}
             </div>
           )}
         </div>
+  );
+
+  // Dans la modale : seulement le formulaire, avec un titre court à la première étape
+  if (variant === "modal") {
+    const terms = t("quote.terms", { returnObjects: true });
+    return (
+      <div className="quote quote--modal">
+        {step === 1 && (
+          <header className="quote-modal-intro">
+            <h2 id="quote-title" className="quote-modal-title">{t("quote.title")}</h2>
+            {Array.isArray(terms) && (
+              <ul className="quote-terms">
+                {terms.map((term) => <li key={term}>{term}</li>)}
+              </ul>
+            )}
+          </header>
+        )}
+        {formBlock}
+      </div>
+    );
+  }
+
+  return (
+    <section id="devis" className={`block quote${step === 1 ? " quote--step1" : ""}`} aria-labelledby="quote-title">
+      <div className="container quote-grid">
+        <div className="quote-intro reveal">
+          <h2 id="quote-title" className="block-title">{t("quote.title")}</h2>
+          {Array.isArray(t("quote.terms", { returnObjects: true })) && (
+            <ul className="quote-terms">
+              {t("quote.terms", { returnObjects: true }).map((term) => <li key={term}>{term}</li>)}
+            </ul>
+          )}
+          <p className="quote-offer">{t("quote.offer")}</p>
+        </div>
+
+        {formBlock}
 
         <div className="quote-direct reveal">
           <p className="quote-direct-lead">{t("contact.alt_lead")}</p>

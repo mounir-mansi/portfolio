@@ -3,7 +3,7 @@ import { Link, Navigate, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import HeroQuote from "../../components/HeroQuote/HeroQuote";
-import QuickQuote from "../../components/QuickQuote/QuickQuote";
+import QuoteSection from "../../components/QuickQuote/QuoteSection";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from "../../utils/contactInfo";
@@ -33,8 +33,12 @@ function MetierContent({ metier }) {
     if (section && section.getClientRects().length > 0) {
       section.scrollIntoView();
     } else {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-      document.getElementById("hero-quote-name")?.focus({ preventScroll: true });
+      // Grand écran : le formulaire est dans le hero. Mobile : #devis ouvre la modale, la page ne bouge pas.
+      const first = document.getElementById("hero-quote-name");
+      if (first && first.getClientRects().length > 0) {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        first.focus({ preventScroll: true });
+      }
     }
   }, [hash, key]);
 
@@ -182,7 +186,7 @@ function MetierContent({ metier }) {
       </section>
 
       {/* Formulaire complet (étapes 2 à 5) : visible après l'envoi du formulaire du hero, ou directement sur mobile */}
-      <QuickQuote />
+      <QuoteSection />
     </Layout>
   );
 }
