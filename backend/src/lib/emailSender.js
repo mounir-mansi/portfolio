@@ -151,6 +151,8 @@ async function sendReply({ to, name, replyMessage }) {
   await resend.emails.send({
     from: process.env.EMAIL_FROM,
     to,
+    // Le visiteur qui clique sur « Répondre » écrit à une vraie boîte (l'expéditeur noreply@ n'en a pas)
+    replyTo: process.env.EMAIL_REPLY_TO || process.env.EMAIL_CONTACT,
     subject: `Réponse à votre message — Portfolio`,
     html: `
       <p>Bonjour ${safeName},</p>
