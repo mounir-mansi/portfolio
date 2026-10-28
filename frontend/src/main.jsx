@@ -4,6 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./utils/useAuth";
 import App from "./App";
 import "./i18n/index.js";
+// Polices hébergées sur le site : aucun serveur tiers contacté pour l'affichage
+import "@fontsource-variable/fraunces/opsz.css";
+import "@fontsource-variable/fraunces/opsz-italic.css";
+import "@fontsource-variable/geist";
+import "@fontsource-variable/jetbrains-mono";
 import "./index.css";
 
 const theme = new URLSearchParams(window.location.search).get("theme");

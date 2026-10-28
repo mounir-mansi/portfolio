@@ -29,3 +29,10 @@
     bottom: calc(var(--bar-h, 0px) + 1rem + env(safe-area-inset-bottom));
   }
 }
+
+.back-to-top svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}

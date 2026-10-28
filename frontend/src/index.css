@@ -17,9 +17,10 @@
   --danger: #ff6b4a;
 
   /* Typographie */
-  --font-display: "Fraunces", "Times New Roman", serif;
-  --font-body: "Geist", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /* Polices hébergées sur le site (paquets @fontsource) : aucune requête vers Google */
+  --font-display: "Fraunces Variable", "Times New Roman", serif;
+  --font-body: "Geist Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 
   --step--1: clamp(0.78rem, 0.76rem + 0.1vw, 0.85rem);
   --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
