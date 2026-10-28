@@ -199,7 +199,7 @@
     "items": [
       {
         "q": "Come funziona la bozza gratuita?",
-        "a": "Compili un breve modulo in pochi passaggi e scegli tu quando ti chiamo. Questa chiamata mi permette di capire il tuo mestiere e i tuoi gusti. Entro 72 ore lavorative da quella conversazione ti invio un mockup della tua home page. Lo guardi con calma e decidi poi, senza alcun impegno."
+        "a": "Compili un breve modulo in pochi passaggi e scegli tu quando ti chiamo. Questa chiamata mi permette di capire il tuo mestiere e i tuoi gusti. Entro 72 ore da quella conversazione ti invio un mockup della tua home page. Lo guardi con calma e decidi poi, senza alcun impegno."
       },
       {
         "q": "Quanto costa un sito web?",
@@ -286,7 +286,7 @@
     "creneau_soir": "La sera",
     "creneau_peu-importe": "Indifferente",
     "done_title": "Inviato, grazie!",
-    "done_text": "Ti richiamo per parlare della tua bozza. Te la invio entro 72 ore lavorative dalla nostra conversazione.",
+    "done_text": "Ti richiamo per parlare della tua bozza. Te la invio entro 72 ore dalla nostra conversazione.",
     "type_title": "Che tipo di sito desideri?",
     "type_hint": "Scegli ciò che fa per te, aggiusteremo insieme.",
     "type_vitrine": "Sito vetrina",
@@ -328,7 +328,7 @@
   "meta": {
     "suffix": "ManDev Web",
     "home": "Creazione di siti web a Tolosa e in tutta la Francia, da 490 € — ManDev Web",
-    "description": "Creazione di siti web chiavi in mano a Tolosa e in tutta la Francia, da 490 €. Bozza gratuita della tua home page entro 72 ore lavorative, senza impegno.",
+    "description": "Creazione di siti web chiavi in mano a Tolosa e in tutta la Francia, da 490 €. Bozza gratuita della tua home page entro 72 ore, senza impegno.",
     "projects": "Progetti",
     "about": "Chi sono",
     "contact": "Contatti",

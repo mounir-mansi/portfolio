@@ -38,7 +38,13 @@ export default function HomePage() {
   useEffect(() => {
     if (!hash) return;
     const el = document.getElementById(hash.slice(1));
-    if (el) el.scrollIntoView();
+    if (el && el.getClientRects().length > 0) {
+      el.scrollIntoView();
+    } else if (hash === "#devis") {
+      // Grand écran : le formulaire est dans le hero, la section #devis n'apparaît qu'après l'envoi
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      document.getElementById("hero-quote-name")?.focus({ preventScroll: true });
+    }
     // `key` change à chaque clic sur un lien, même vers la même ancre : le défilement se refait
   }, [hash, key]);
 

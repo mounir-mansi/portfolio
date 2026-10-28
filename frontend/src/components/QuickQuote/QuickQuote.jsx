@@ -278,7 +278,7 @@ export default function QuickQuote() {
   );
 
   return (
-    <section id="devis" className="block quote" aria-labelledby="quote-title">
+    <section id="devis" className={`block quote${step === 1 ? " quote--step1" : ""}`} aria-labelledby="quote-title">
       <div className="container quote-grid">
         <div className="quote-intro reveal">
           <h2 id="quote-title" className="block-title">{t("quote.title")}</h2>

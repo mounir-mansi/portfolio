@@ -670,3 +670,10 @@
   border: 1px solid var(--line-strong);
   border-radius: 50%;
 }
+
+/* Sur grand écran, l'étape 1 est déjà dans le hero (HeroQuote) : cette section n'apparaît qu'une fois la demande envoyée, pour compléter les étapes 2 à 5 */
+@media (min-width: 1024px) {
+  main > #devis.quote--step1 {
+    display: none;
+  }
+}

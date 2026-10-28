@@ -199,7 +199,7 @@
     "items": [
       {
         "q": "How does the free mockup work?",
-        "a": "You fill in a short form in a few steps and choose when I call you. That call lets me understand your business and what you like. Within 72 working hours of that call, I send you a mockup of your home page. You look at it at your own pace and decide afterwards, with no commitment."
+        "a": "You fill in a short form in a few steps and choose when I call you. That call lets me understand your business and what you like. Within 72 hours of that call, I send you a mockup of your home page. You look at it at your own pace and decide afterwards, with no commitment."
       },
       {
         "q": "How much does a website cost?",
@@ -286,7 +286,7 @@
     "creneau_soir": "In the evening",
     "creneau_peu-importe": "Any time",
     "done_title": "Sent, thank you!",
-    "done_text": "I'll call you to talk about your mockup. It is sent within 72 working hours after our conversation.",
+    "done_text": "I'll call you to talk about your mockup. It is sent within 72 hours after our conversation.",
     "type_title": "What type of website do you want?",
     "type_hint": "Choose what suits you, we'll adjust together.",
     "type_vitrine": "Showcase website",
@@ -328,7 +328,7 @@
   "meta": {
     "suffix": "ManDev Web",
     "home": "Website design in Toulouse and across France, from €490 — ManDev Web",
-    "description": "Turnkey website design in Toulouse and across France, from €490. Free mockup of your homepage within 72 working hours, no commitment.",
+    "description": "Turnkey website design in Toulouse and across France, from €490. Free mockup of your homepage within 72 hours, no commitment.",
     "projects": "Projects",
     "about": "About",
     "contact": "Contact",
