@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../utils/useAuth";
+import LangMenu from "../LangMenu/LangMenu";
 import "./Navbar.css";
 
 const LANGS = ["fr", "en", "it", "es"];
@@ -105,19 +106,7 @@ export default function Navbar() {
             </>
           )}
           <li>
-            <div className="lang-switcher" role="group" aria-label={t("nav.aria_lang_group")}>
-              {LANGS.map((code) => (
-                <button
-                  key={code}
-                  className={`lang-btn ${lang === code ? "lang-active" : ""}`}
-                  onClick={() => switchLang(code)}
-                  aria-label={t("nav.aria_lang", { code: code.toUpperCase() })}
-                  aria-pressed={lang === code}
-                >
-                  {code}
-                </button>
-              ))}
-            </div>
+            <LangMenu lang={lang} langs={LANGS} onSelect={switchLang} />
           </li>
           <li>
             <Link

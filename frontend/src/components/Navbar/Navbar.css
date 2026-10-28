@@ -99,39 +99,6 @@
   transform: translateY(-2px);
 }
 
-.lang-switcher {
-  display: flex;
-  gap: 0.15rem;
-}
-
-.lang-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.3em 0.45em;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-  transition: color 0.2s;
-}
-
-@media (pointer: coarse) {
-  .lang-btn {
-    min-width: 44px;
-    min-height: 44px;
-  }
-}
-
-.lang-btn:hover {
-  color: var(--fg);
-}
-
-.lang-active {
-  color: var(--accent-text);
-}
-
 .burger {
   display: none;
   position: relative;
