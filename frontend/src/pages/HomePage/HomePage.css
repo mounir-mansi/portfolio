@@ -927,3 +927,41 @@
     margin-bottom: 0.5rem;
   }
 }
+
+/* ===== MÉTHODE sur mobile : numéro à gauche, titre et texte à sa droite (moins de défilement) ===== */
+@media (max-width: 760px) {
+  #process .steps {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+
+  #process .step {
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    column-gap: 0.9rem;
+    row-gap: 0.2rem;
+    align-items: start;
+    padding: 1rem 0 1.1rem;
+  }
+
+  #process .step-num {
+    grid-row: 1 / span 2;
+    font-size: 2rem;
+  }
+
+  #process .step-title {
+    grid-column: 2;
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+
+  #process .step-desc {
+    grid-column: 2;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  #process .block-head {
+    margin-bottom: 0.75rem;
+  }
+}

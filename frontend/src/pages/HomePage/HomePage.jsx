@@ -136,6 +136,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* PROCESS */}
+      <section id="process" className="block">
+        <div className="container">
+          <header className="block-head reveal">
+            <p className="eyebrow">{t("home.process_eyebrow")}</p>
+            <h2 className="block-title">{t("home.process_title")}</h2>
+          </header>
+
+          <ol className="steps">
+            {Array.isArray(steps) && steps.map((s, i) => (
+              <li key={s.title} className="step reveal" style={{ "--delay": `${i * 90}ms` }}>
+                <span className="step-num">{pad(i)}</span>
+                <h3 className="step-title">{s.title}</h3>
+                <p className="step-desc">{s.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* RÉALISATIONS */}
       {!projectsLoaded && (
         <section className="block block--raised" aria-hidden="true">
@@ -182,26 +202,6 @@ export default function HomePage() {
 
       {/* AVIS (invisible tant que src/data/reviews.js est vide) */}
       <Reviews />
-
-      {/* PROCESS */}
-      <section id="process" className="block">
-        <div className="container">
-          <header className="block-head reveal">
-            <p className="eyebrow">{t("home.process_eyebrow")}</p>
-            <h2 className="block-title">{t("home.process_title")}</h2>
-          </header>
-
-          <ol className="steps">
-            {Array.isArray(steps) && steps.map((s, i) => (
-              <li key={s.title} className="step reveal" style={{ "--delay": `${i * 90}ms` }}>
-                <span className="step-num">{pad(i)}</span>
-                <h3 className="step-title">{s.title}</h3>
-                <p className="step-desc">{s.desc}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
 
       {/* FAQ */}
       <Faq />
