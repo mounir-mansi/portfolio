@@ -103,7 +103,6 @@ export default function HomePage() {
       <section id="services" className="block">
         <div className="container">
           <header className="block-head reveal">
-            <p className="eyebrow">{t("home.services_eyebrow")}</p>
             <h2 className="block-title">{t("home.services_title")}</h2>
           </header>
 
@@ -171,8 +170,7 @@ export default function HomePage() {
           <div className="container">
             <header className="block-head block-head--row reveal">
               <div>
-                <p className="eyebrow">{t("home.work_eyebrow")}</p>
-                <h2 className="block-title">{t("home.work_title")}</h2>
+                    <h2 className="block-title">{t("home.work_title")}</h2>
               </div>
               <Link to={lp("/projets")} className="btn-outline">{t("home.work_all")}</Link>
             </header>
