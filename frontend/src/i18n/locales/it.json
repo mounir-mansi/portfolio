@@ -326,7 +326,8 @@
     "police_placeholder": "Es. Montserrat",
     "police_hint": "Facoltativo. Se non lo sai, non c'è problema.",
     "step3_hint": "Tutto è facoltativo: se non sai, vai semplicemente avanti.",
-    "close": "Chiudi"
+    "close": "Chiudi",
+    "modal_title": "Ricevi la tua bozza"
   },
   "meta": {
     "suffix": "ManDev Web",

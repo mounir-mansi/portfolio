@@ -326,7 +326,8 @@
     "police_placeholder": "E.g. Montserrat",
     "police_hint": "Optional. If you don't know, no problem.",
     "step3_hint": "Everything is optional: if you're not sure, just move on to the next step.",
-    "close": "Close"
+    "close": "Close",
+    "modal_title": "Get your mockup"
   },
   "meta": {
     "suffix": "ManDev Web",
