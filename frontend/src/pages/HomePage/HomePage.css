@@ -869,3 +869,61 @@
     opacity: 0;
   }
 }
+
+/* ===== SERVICES sur mobile : les trois packs défilent horizontalement (une carte à la fois, la suivante dépasse) ===== */
+@media (max-width: 760px) {
+  #services .services {
+    display: flex;
+    gap: 0.75rem;
+    margin-inline: calc(var(--gutter) * -1);
+    /* le badge « Recommandé » dépasse au-dessus de la carte : on lui laisse la place */
+    padding: 1.4rem var(--gutter) 0.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #services .services::-webkit-scrollbar {
+    display: none;
+  }
+
+  #services .service {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+    gap: 0.55rem;
+    padding: 1.1rem 1.1rem 1.25rem;
+  }
+
+  #services .service:hover {
+    transform: none;
+  }
+
+  #services .service-name {
+    margin-top: 0.85rem;
+  }
+
+  #services .service-price strong {
+    font-size: 2.2rem;
+  }
+
+  #services .service-desc {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  #services .service-list {
+    gap: 0.3rem;
+    font-size: 0.9rem;
+  }
+
+  #services .service-link {
+    align-self: stretch;
+    margin-top: 0.4rem;
+  }
+
+  #services .block-head {
+    margin-bottom: 0.5rem;
+  }
+}
