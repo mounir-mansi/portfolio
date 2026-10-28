@@ -27,7 +27,7 @@
     "sub": "A clear, fast showcase website that brings you calls and quote requests, delivered turnkey.",
     "cta_quote": "Get my free mockup",
     "cta_work": "See my work",
-    "offer": "From €490 · Free mockup within 72 working hours · No commitment · All over France",
+    "offer": "From €490 · Free mockup within 72 hours · No commitment",
     "call": "A question?",
     "services_eyebrow": "Services",
     "services_title": "What I build for you",
@@ -230,7 +230,7 @@
     "title": "Get a mockup of your homepage",
     "terms": [
       "Free",
-      "Within 72 working hours",
+      "Within 72 hours",
       "No commitment"
     ],
     "offer": "You then decide whether we work together.",
@@ -239,7 +239,7 @@
     "phone": "Phone",
     "activity": "Your business",
     "activity_placeholder": "Bakery, plumber, restaurant…",
-    "email": "Email (optional)",
+    "email": "Email",
     "submit": "Get my free mockup",
     "success": "Request received. I'll get back to you shortly.",
     "error_phone": "Enter a valid phone number (for example 06 12 34 56 78).",

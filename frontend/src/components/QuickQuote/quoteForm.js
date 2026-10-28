@@ -15,7 +15,8 @@ export function validate(form) {
   if (!form.company.trim()) errors.company = "quote.error_company";
   if (!PHONE_REGEX.test(form.phone.trim().replace(PHONE_SEPARATORS, ""))) errors.phone = "quote.error_phone";
   if (!form.activity.trim()) errors.activity = "quote.error_activity";
-  if (form.email.trim() && !EMAIL_REGEX.test(form.email.trim())) errors.email = "contact.error_email";
+  // L'email est obligatoire pour pouvoir envoyer la maquette
+  if (!EMAIL_REGEX.test(form.email.trim())) errors.email = "contact.error_email";
   return errors;
 }
 

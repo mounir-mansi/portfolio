@@ -5,7 +5,7 @@ import { CONTACT_EMAIL } from "../../utils/contactInfo";
 import { EMPTY, validate, sendQuoteRequest } from "../QuickQuote/quoteForm";
 import "./HeroQuote.css";
 
-const FIELDS = ["name", "company", "phone", "activity"];
+const FIELDS = ["name", "company", "phone", "email", "activity"];
 
 // Formulaire de l'étape 1 dans le hero (écrans larges). Il envoie la demande, puis la section #devis
 // (QuickQuote) reprend à l'étape 2 grâce à l'événement « quote:started ».
@@ -74,8 +74,8 @@ export default function HeroQuote() {
     section?.querySelector(".quote-step-title")?.focus({ preventScroll: true });
   };
 
-  const field = (name, props) => (
-    <div className="hero-quote-field">
+  const field = (name, { wide, ...props }) => (
+    <div className={`hero-quote-field${wide ? " is-wide" : ""}`}>
       <label htmlFor={`hero-quote-${name}`}>{t(`quote.${name}`)}</label>
       <input
         id={`hero-quote-${name}`}
@@ -111,7 +111,8 @@ export default function HeroQuote() {
             {field("name", { type: "text", autoComplete: "name", maxLength: 100 })}
             {field("company", { type: "text", autoComplete: "organization", maxLength: 100 })}
             {field("phone", { type: "tel", inputMode: "tel", autoComplete: "tel", maxLength: 30, placeholder: "06 12 34 56 78" })}
-            {field("activity", { type: "text", autoComplete: "off", maxLength: 100, placeholder: t("home.hero_quote_activity_ph") })}
+            {field("email", { type: "email", autoComplete: "email", maxLength: 254, placeholder: t("contact.email_placeholder") })}
+            {field("activity", { type: "text", autoComplete: "off", maxLength: 100, placeholder: t("home.hero_quote_activity_ph"), wide: true })}
           </div>
           <div aria-live="polite">{status && <p className="form-status err">{status}</p>}</div>
           <button type="submit" className="btn-primary hero-quote-submit" disabled={loading}>

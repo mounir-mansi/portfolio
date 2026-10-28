@@ -27,7 +27,7 @@
     "sub": "Un sito vetrina chiaro e veloce che ti porta chiamate e richieste di preventivo, chiavi in mano.",
     "cta_quote": "Ricevi la mia bozza gratuita",
     "cta_work": "Vedi i lavori",
-    "offer": "Da 490 € · Bozza gratuita entro 72 ore lavorative · Senza impegno · In tutta la Francia",
+    "offer": "Da 490 € · Bozza gratuita entro 72 ore · Senza impegno",
     "call": "Una domanda?",
     "services_eyebrow": "Servizi",
     "services_title": "Cosa costruisco per te",
@@ -230,7 +230,7 @@
     "title": "Ricevi la bozza della tua home page",
     "terms": [
       "Gratuita",
-      "Entro 72 ore lavorative",
+      "Entro 72 ore",
       "Senza impegno"
     ],
     "offer": "Poi decidi tu se lavorare insieme.",
@@ -239,7 +239,7 @@
     "phone": "Telefono",
     "activity": "La tua attività",
     "activity_placeholder": "Panetteria, idraulico, ristorante…",
-    "email": "Email (facoltativa)",
+    "email": "Email",
     "submit": "Ricevi la mia bozza gratuita",
     "success": "Richiesta ricevuta. Ti ricontatto a breve.",
     "error_phone": "Inserisci un numero di telefono valido (ad esempio 06 12 34 56 78).",

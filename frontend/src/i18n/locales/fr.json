@@ -27,7 +27,7 @@
     "sub": "Un site vitrine clair et rapide qui vous apporte des appels et des demandes de devis, livré clé en main.",
     "cta_quote": "Recevoir ma maquette gratuite",
     "cta_work": "Voir les réalisations",
-    "offer": "Dès 490 € · Maquette gratuite sous 72 h ouvrées · Sans engagement · Partout en France",
+    "offer": "Dès 490 € · Maquette gratuite sous 72 h · Sans engagement",
     "call": "Une question ?",
     "services_eyebrow": "Services",
     "services_title": "Ce que je construis pour vous",
@@ -230,7 +230,7 @@
     "title": "Recevez la maquette de votre page d'accueil",
     "terms": [
       "Gratuite",
-      "Sous 72 h ouvrées",
+      "Sous 72 h",
       "Sans engagement"
     ],
     "offer": "Vous décidez ensuite si nous travaillons ensemble.",
@@ -239,7 +239,7 @@
     "phone": "Téléphone",
     "activity": "Votre activité",
     "activity_placeholder": "Boulangerie, plombier, restaurant…",
-    "email": "Email (facultatif)",
+    "email": "Email",
     "submit": "Recevoir ma maquette gratuite",
     "success": "Demande bien reçue. Je vous recontacte rapidement.",
     "error_phone": "Saisissez un numéro de téléphone valide (par exemple 06 12 34 56 78).",
