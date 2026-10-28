@@ -310,7 +310,7 @@
   right: 7rem;
   top: 50%;
   width: 15rem;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 2 / 1; /* les captures de projets sont ~2:1 : évite de rogner les côtés */
   border-radius: var(--radius);
   overflow: hidden;
   opacity: 0;
