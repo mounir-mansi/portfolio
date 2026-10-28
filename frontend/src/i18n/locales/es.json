@@ -68,7 +68,7 @@
         "tag": "Pack 03",
         "name": "Mantenimiento",
         "price_prefix": "",
-        "price": "50 € / mes",
+        "price": "49 € / mes",
         "desc": "Una opción para más tranquilidad y seguridad: alojo tu sitio, lo protejo y lo mantengo actualizado. Tú te centras en tu negocio.",
         "items": [
           "Alojamiento seguro",
@@ -203,7 +203,7 @@
       },
       {
         "q": "¿Cuánto cuesta una web?",
-        "a": "El pack Escaparate empieza en 490 €. El pack Escaparate + (reservas, pago online, panel de administración, multilingüe) empieza en 990 €. El mantenimiento, con alojamiento seguro, copias y actualizaciones, cuesta 50 € al mes. Te doy el precio exacto antes de empezar."
+        "a": "El pack Escaparate empieza en 490 €. El pack Escaparate + (reservas, pago online, panel de administración, multilingüe) empieza en 990 €. El mantenimiento, con alojamiento seguro, copias y actualizaciones, cuesta 49 € al mes. Te doy el precio exacto antes de empezar."
       },
       {
         "q": "¿En cuánto tiempo estará mi web en línea?",
@@ -214,7 +214,7 @@
         "a": "No. Todo se hace a distancia, por teléfono, WhatsApp y email, en toda Francia. Si estás en Toulouse, también podemos vernos."
       },
       {
-        "q": "¿Qué incluye el mantenimiento de 50 € al mes?",
+        "q": "¿Qué incluye el mantenimiento de 49 € al mes?",
         "a": "Con el auge de las IA, los ataques automatizados detectan los fallos de seguridad mucho más rápido: un sitio que ya no se actualiza se convierte pronto en un objetivo. El mantenimiento es una opción para estar tranquilo. Incluye las actualizaciones de seguridad, las copias de seguridad periódicas, la vigilancia del sitio y un soporte ágil en caso de problema. El alojamiento y el nombre de dominio son gratuitos con cualquier contrato de mantenimiento. El contrato es sin compromiso y se puede cancelar con un mes de preaviso."
       },
       {

@@ -68,7 +68,7 @@
         "tag": "Pack 03",
         "name": "Maintenance",
         "price_prefix": "",
-        "price": "50 € / mois",
+        "price": "49 € / mois",
         "desc": "Une option pour plus de sérénité et de sécurité : j'héberge votre site, je le protège et je le mets à jour. Vous gardez l'esprit libre.",
         "items": [
           "Hébergement sécurisé",
@@ -203,7 +203,7 @@
       },
       {
         "q": "Combien coûte un site internet ?",
-        "a": "Le pack Vitrine démarre à 490 €. Le pack Vitrine + (réservation, paiement en ligne, espace d'administration, multilingue) démarre à 990 €. La maintenance, avec hébergement sécurisé, sauvegardes et mises à jour, est à 50 € par mois. Je vous donne le prix exact avant de commencer."
+        "a": "Le pack Vitrine démarre à 490 €. Le pack Vitrine + (réservation, paiement en ligne, espace d'administration, multilingue) démarre à 990 €. La maintenance, avec hébergement sécurisé, sauvegardes et mises à jour, est à 49 € par mois. Je vous donne le prix exact avant de commencer."
       },
       {
         "q": "En combien de temps mon site est-il en ligne ?",
@@ -214,7 +214,7 @@
         "a": "Non. Tout se fait à distance, par téléphone, WhatsApp et email, partout en France. Si vous êtes à Toulouse, nous pouvons aussi nous voir."
       },
       {
-        "q": "Que comprend la maintenance à 50 € par mois ?",
+        "q": "Que comprend la maintenance à 49 € par mois ?",
         "a": "Avec l'essor des IA, les attaques automatisées repèrent les failles de sécurité bien plus vite : un site qui n'est plus mis à jour devient vite une cible. La maintenance est une option pour garder l'esprit tranquille. Elle comprend les mises à jour de sécurité, les sauvegardes régulières, la surveillance du site et un support réactif en cas de problème. L'hébergement et le nom de domaine sont offerts avec tout contrat de maintenance. Le contrat est sans engagement et résiliable avec un préavis d'un mois."
       },
       {

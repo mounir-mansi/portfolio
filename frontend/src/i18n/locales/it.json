@@ -68,7 +68,7 @@
         "tag": "Pack 03",
         "name": "Manutenzione",
         "price_prefix": "",
-        "price": "50 € / mese",
+        "price": "49 € / mese",
         "desc": "Un'opzione per più serenità e sicurezza: ospito il tuo sito, lo proteggo e lo tengo aggiornato. Tu pensi al tuo lavoro.",
         "items": [
           "Hosting sicuro",
@@ -203,7 +203,7 @@
       },
       {
         "q": "Quanto costa un sito web?",
-        "a": "Il pack Vetrina parte da 490 €. Il pack Vetrina + (prenotazioni, pagamento online, area di amministrazione, multilingua) parte da 990 €. La manutenzione, con hosting sicuro, backup e aggiornamenti, costa 50 € al mese. Ti do il prezzo esatto prima di iniziare."
+        "a": "Il pack Vetrina parte da 490 €. Il pack Vetrina + (prenotazioni, pagamento online, area di amministrazione, multilingua) parte da 990 €. La manutenzione, con hosting sicuro, backup e aggiornamenti, costa 49 € al mese. Ti do il prezzo esatto prima di iniziare."
       },
       {
         "q": "In quanto tempo il mio sito è online?",
@@ -214,7 +214,7 @@
         "a": "No. Tutto si fa a distanza, per telefono, WhatsApp ed email, in tutta la Francia. Se sei a Tolosa, possiamo anche vederci."
       },
       {
-        "q": "Cosa comprende la manutenzione da 50 € al mese?",
+        "q": "Cosa comprende la manutenzione da 49 € al mese?",
         "a": "Con l'avvento delle IA, gli attacchi automatizzati individuano le falle di sicurezza molto più in fretta: un sito non più aggiornato diventa presto un bersaglio. La manutenzione è un'opzione per stare tranquilli. Comprende gli aggiornamenti di sicurezza, i backup regolari, il monitoraggio del sito e un supporto reattivo in caso di problemi. L'hosting e il nome di dominio sono offerti con qualsiasi contratto di manutenzione. Il contratto è senza vincoli e disdicibile con un mese di preavviso."
       },
       {

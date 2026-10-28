@@ -68,7 +68,7 @@
         "tag": "Pack 03",
         "name": "Maintenance",
         "price_prefix": "",
-        "price": "€50 / month",
+        "price": "€49 / month",
         "desc": "An option for extra peace of mind and security: I host your site, protect it and keep it up to date, so you can focus on your business.",
         "items": [
           "Secure hosting",
@@ -203,7 +203,7 @@
       },
       {
         "q": "How much does a website cost?",
-        "a": "The Showcase pack starts at €490. The Showcase + pack (booking, online payment, admin area, multilingual) starts at €990. Maintenance, with secure hosting, backups and updates, is €50 per month. I give you the exact price before we start."
+        "a": "The Showcase pack starts at €490. The Showcase + pack (booking, online payment, admin area, multilingual) starts at €990. Maintenance, with secure hosting, backups and updates, is €49 per month. I give you the exact price before we start."
       },
       {
         "q": "How long until my site is live?",
@@ -214,7 +214,7 @@
         "a": "No. Everything is done remotely, by phone, WhatsApp and email, anywhere in France. If you are in Toulouse, we can also meet in person."
       },
       {
-        "q": "What does the €50 per month maintenance include?",
+        "q": "What does the €49 per month maintenance include?",
         "a": "With the rise of AI, automated attacks find security flaws much faster: a site that is no longer updated quickly becomes a target. Maintenance is an option for peace of mind. It includes security updates, regular backups, site monitoring and responsive support if anything goes wrong. Hosting and the domain name are free with any maintenance contract. The contract has no commitment and can be cancelled with one month's notice."
       },
       {
