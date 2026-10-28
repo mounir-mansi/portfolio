@@ -1,0 +1,166 @@
+/* Page « Site internet pour [métier] » : le hero, la FAQ et le formulaire viennent de l'accueil, ici seulement les sections propres à la page */
+
+.metier-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  padding: 0;
+  list-style: none;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+/* 6 cartes : 1 colonne sur mobile, 2 sur tablette, 3 sur grand écran (jamais de case vide) */
+@media (min-width: 640px) {
+  .metier-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .metier-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.metier-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  background: var(--bg);
+}
+
+.metier-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.metier-card p {
+  color: var(--fg-muted);
+  line-height: 1.55;
+}
+
+/* Site de démonstration */
+.metier-demo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .metier-demo-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+}
+
+.metier-demo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.metier-demo-text > p {
+  color: var(--fg-muted);
+  line-height: 1.55;
+  max-width: 34rem;
+}
+
+.metier-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0;
+  list-style: none;
+}
+
+.metier-checks li {
+  display: flex;
+  gap: 0.6rem;
+  color: var(--fg);
+}
+
+.metier-checks li::before {
+  content: "✓";
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+.metier-note {
+  font-size: var(--step--1);
+  color: var(--fg-faint);
+}
+
+.metier-demo-shot {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: calc(var(--radius) * 2);
+  transition: transform 0.5s var(--ease);
+}
+
+.metier-demo-shot:hover {
+  transform: translateY(-4px);
+}
+
+.metier-demo-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Ce que vous recevez */
+.metier-offer-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.metier-offer-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 760px) {
+  .metier-offer-row {
+    grid-template-columns: minmax(11rem, 0.45fr) 1fr;
+  }
+}
+
+.metier-offer-row dt {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.2;
+  color: var(--fg);
+}
+
+.metier-offer-row dd {
+  margin: 0;
+  color: var(--fg-muted);
+  line-height: 1.55;
+  max-width: 44rem;
+}
+
+/* Appel à l'action final */
+.metier-final-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+  padding-block: clamp(1rem, 3vw, 2rem);
+}
+
+.metier-final-inner > p {
+  max-width: 36rem;
+  color: var(--fg-muted);
+  line-height: 1.55;
+}

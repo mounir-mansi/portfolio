@@ -347,5 +347,99 @@
     "eyebrow": "Un projet en tête ?",
     "big": "Parlons-en",
     "zone": "Toulouse · partout en France, à distance"
+  },
+  "metiers": {
+    "common": {
+      "offer_title": "Ce que vous recevez",
+      "offer": [
+        {
+          "name": "Pack Vitrine, dès 490 €",
+          "text": "Une page claire avec plusieurs sections : votre présentation, vos horaires, votre adresse, un bouton d'appel et un formulaire de contact."
+        },
+        {
+          "name": "Pack Vitrine +, dès 990 €",
+          "text": "Jusqu'à 5 pages, avec la réservation de table, le paiement en ligne et un espace d'administration pour modifier vos contenus vous-même."
+        },
+        {
+          "name": "Maintenance, 49 € par mois",
+          "text": "L'hébergement et le nom de domaine sont offerts, avec les mises à jour de sécurité et les sauvegardes. Sans engagement, résiliable avec un préavis d'un mois."
+        },
+        {
+          "name": "Délai",
+          "text": "Une fois la maquette validée et vos contenus reçus, 7 jours pour un site Vitrine et 2 semaines pour un site Vitrine +."
+        }
+      ],
+      "demo_link": "Voir le site de démonstration",
+      "demo_note": "Site imaginé par ManDev pour un restaurant fictif : le vôtre portera votre nom, vos photos et vos prix."
+    },
+    "pizzeria": {
+      "meta_title": "Site internet pour pizzeria",
+      "eyebrow": "Sites pour pizzerias",
+      "title_a": "Un site pour votre pizzeria qui",
+      "title_em": "remplit",
+      "title_b": "vos tables et vos commandes.",
+      "sub": "Votre carte lisible sur téléphone, un bouton pour appeler ou commander, vos horaires et votre adresse : vos clients vous trouvent, regardent la carte et décident en une minute.",
+      "cta": "Recevoir la maquette de ma pizzeria",
+      "points_eyebrow": "Pour vos clients",
+      "points_title": "Ce que vos clients cherchent, ils le trouvent en un clic",
+      "points": [
+        {
+          "name": "Votre carte",
+          "text": "Pizzas, prix, ingrédients et allergènes, lisibles sur téléphone. Vous la mettez à jour quand vos prix ou vos recettes changent."
+        },
+        {
+          "name": "Appeler ou commander",
+          "text": "Un bouton d'appel toujours visible et, si vous le souhaitez, la commande en ligne avec paiement par carte sécurisé."
+        },
+        {
+          "name": "Horaires et accès",
+          "text": "Vos horaires, votre adresse et l'itinéraire en un clic. Plus de client devant une porte fermée."
+        },
+        {
+          "name": "Des photos qui donnent faim",
+          "text": "Une galerie de vos pizzas et de votre salle, que vous alimentez depuis votre espace d'administration."
+        },
+        {
+          "name": "Réservation de table",
+          "text": "Vos clients réservent en ligne et vous recevez la demande par mail, pour remplir la salle les soirs calmes."
+        },
+        {
+          "name": "Un site rapide, pensé pour Google",
+          "text": "Lisible sur mobile, rapide à charger et construit pour être bien référencé quand on cherche une pizzeria près de chez vous."
+        }
+      ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un site de pizzeria déjà réalisé",
+      "demo_text": "{{name}}, un restaurant de pizzas et de kebabs : une carte que le patron modifie lui-même, la commande en ligne avec paiement par carte, la réservation de table et un espace d'administration.",
+      "demo_points": [
+        "Carte interactive, mise à jour depuis l'administration",
+        "Commande en ligne et paiement par carte",
+        "Réservation de table",
+        "Horaires, adresse et boutons d'appel"
+      ],
+      "faq": [
+        {
+          "q": "Puis-je modifier ma carte et mes prix moi-même ?",
+          "a": "Oui, avec le pack Vitrine + : un espace d'administration vous permet de changer vos plats, vos prix, vos photos et vos horaires sans passer par moi."
+        },
+        {
+          "q": "Mes clients peuvent-ils commander et payer en ligne ?",
+          "a": "Oui, avec le pack Vitrine + : la commande en ligne avec paiement par carte sécurisé. Vous voyez arriver les commandes dans votre espace d'administration."
+        },
+        {
+          "q": "Et si je n'ai pas de belles photos de mes pizzas ?",
+          "a": "Envoyez-moi celles que vous avez, même prises avec un téléphone : je les mets en valeur. Vous pourrez en ajouter d'autres ensuite."
+        },
+        {
+          "q": "En combien de temps mon site est-il en ligne ?",
+          "a": "Une fois la maquette validée et vos contenus reçus, un site Vitrine est en ligne en 7 jours et un site Vitrine + en 2 semaines. Le délai exact est confirmé dès notre premier échange, avant tout engagement."
+        }
+      ],
+      "final_title": "Recevez la maquette de votre pizzeria",
+      "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre pizzeria, puis je vous envoie la maquette de votre page d'accueil."
+    }
+  },
+  "seo": {
+    "site-pizzeria": "Site internet pour pizzeria : votre carte en ligne, un bouton d'appel et de commande, vos horaires et votre adresse. Maquette gratuite sous 72 h, dès 490 €."
   }
 }

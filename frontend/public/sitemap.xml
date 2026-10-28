@@ -224,4 +224,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://mandev.fr/es/cgv"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/cgv"/>
   </url>
+  <url>
+    <loc>https://mandev.fr/fr/site-pizzeria</loc>
+  </url>
 </urlset>

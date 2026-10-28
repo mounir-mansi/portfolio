@@ -33,10 +33,12 @@ export default function useSeoTags(lang, route) {
   }, [lang, route]);
 
   useEffect(() => {
-    const description = t("meta.description");
+    // Une page peut avoir sa propre description (seo.<route>), sinon celle du site
+    const own = route ? t(`seo.${route}`, { defaultValue: "" }) : "";
+    const description = own || t("meta.description");
     if (!description || description === "meta.description") return;
     ["meta[name='description']", "meta[property='og:description']", "meta[name='twitter:description']"].forEach((selector) => {
       document.querySelector(selector)?.setAttribute("content", description);
     });
-  }, [t, i18n.language]);
+  }, [t, i18n.language, route]);
 }
