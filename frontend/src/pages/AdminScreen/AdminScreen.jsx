@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// Icônes de l'admin, hébergées sur le site ; chargées seulement avec cette page (voir React.lazy dans App.jsx)
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { useAuth } from "../../utils/useAuth";
 import AdminMessages from "./tabs/AdminMessages";
 import AdminProjects from "./tabs/AdminProjects";

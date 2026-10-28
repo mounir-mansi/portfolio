@@ -77,3 +77,10 @@
     padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom));
   }
 }
+
+.wa-float svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}

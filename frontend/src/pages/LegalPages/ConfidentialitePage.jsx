@@ -84,8 +84,8 @@ export default function ConfidentialitePage() {
         tant que vous n'envoyez pas le formulaire.
       </p>
       <p>
-        Pour s'afficher, le site charge des polices (Google Fonts) et des icônes (Font Awesome, via cdnjs) depuis des
-        serveurs tiers : votre adresse IP leur est alors transmise.
+        Les polices et les icônes du site sont hébergées sur le site lui-même : aucun serveur tiers n'est contacté pour
+        l'afficher, et votre adresse IP ne leur est donc pas transmise.
       </p>
     </LegalPage>
   );

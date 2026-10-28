@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+// Icônes (œil du mot de passe), hébergées sur le site ; chargées seulement avec cette page (voir React.lazy dans App.jsx)
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { useAuth } from "../../utils/useAuth";
 import usePageTitle from "../../utils/usePageTitle";
 import "./ConnexionScreen.css";

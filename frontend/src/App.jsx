@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route, Navigate, useParams, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import HomePage from "./pages/HomePage/HomePage";
@@ -7,12 +7,14 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage/ProjectDetailPage";
-import ConnexionScreen from "./pages/ConnexionScreen/ConnexionScreen";
-import AdminScreen from "./pages/AdminScreen/AdminScreen";
 import MentionsLegalesPage from "./pages/LegalPages/MentionsLegalesPage";
 import ConfidentialitePage from "./pages/LegalPages/ConfidentialitePage";
 import CgvPage from "./pages/LegalPages/CgvPage";
 import useSeoTags from "./utils/useSeoTags";
+
+// Connexion et admin sont chargés à la demande : leurs icônes (Font Awesome) ne pèsent pas sur les pages publiques
+const ConnexionScreen = lazy(() => import("./pages/ConnexionScreen/ConnexionScreen"));
+const AdminScreen = lazy(() => import("./pages/AdminScreen/AdminScreen"));
 
 const LANGS = ["fr", "en", "it", "es"];
 
@@ -65,11 +67,13 @@ function LangRouter() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/fr" replace />} />
-      <Route path="/connexion" element={<ConnexionScreen />} />
-      <Route path="/admin" element={<AdminScreen />} />
-      <Route path="/:lang/*" element={<LangRouter />} />
-    </Routes>
+    <Suspense fallback={null}>
+      <Routes>
+        <Route path="/" element={<Navigate to="/fr" replace />} />
+        <Route path="/connexion" element={<ConnexionScreen />} />
+        <Route path="/admin" element={<AdminScreen />} />
+        <Route path="/:lang/*" element={<LangRouter />} />
+      </Routes>
+    </Suspense>
   );
 }
