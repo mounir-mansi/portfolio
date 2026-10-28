@@ -407,12 +407,14 @@ export default function QuickQuote() {
           {step === 4 && (
             <div className="quote-step">
               {heading("quote.step3_title")}
+              <p className="quote-hint">{t("quote.step3_hint")}</p>
               {radioGroup(t("quote.theme_label"), "theme", THEMES, brief.theme,
                 (v) => setBrief((b) => ({ ...b, theme: v })), (o) => t(`quote.theme_${o}`))}
               {token && (
                 <FileUploader token={token} kind="logo" max={1} files={logoFiles} onChange={setLogoFiles}
                   titleKey="quote.logo_upload_title" hintKey="quote.logo_upload_hint" />
               )}
+              <div className="quote-row">
               <div className="quote-field">
                 <label htmlFor="quote-colors">{t("quote.charte_colors_label")}</label>
                 <input id="quote-colors" type="text" maxLength={150} value={brief.couleurs}
@@ -432,10 +434,10 @@ export default function QuickQuote() {
               </div>
               <div className="quote-field">
                 <label htmlFor="quote-police">{t("quote.police_label")}</label>
-                <input id="quote-police" type="text" maxLength={80} value={brief.police} aria-describedby="quote-police-hint"
+                <input id="quote-police" type="text" maxLength={80} value={brief.police}
                   placeholder={t("quote.police_placeholder")}
                   onChange={(e) => setBrief((b) => ({ ...b, police: e.target.value }))} />
-                <p id="quote-police-hint" className="quote-hint">{t("quote.police_hint")}</p>
+              </div>
               </div>
               {actions(false)}
             </div>
