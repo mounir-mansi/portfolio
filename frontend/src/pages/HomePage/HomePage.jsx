@@ -168,30 +168,19 @@ export default function HomePage() {
       {projects.length > 0 && (
         <section id="work" className="block block--raised">
           <div className="container">
-            <header className="block-head block-head--row reveal">
-              <div>
-                    <h2 className="block-title">{t("home.work_title")}</h2>
-              </div>
-              <Link to={lp("/projets")} className="btn-outline">{t("home.work_all")}</Link>
+            <header className="block-head reveal">
+              <h2 className="block-title">{t("home.work_title")}</h2>
             </header>
 
-            <ul className="work">
+            <ul className="projects-grid">
               {projects.map((p, i) => (
-                <li key={p.id} className="work-item reveal" style={{ "--delay": `${i * 90}ms` }}>
-                  <Link to={lp(`/projets/${p.id}`)} className="work-link">
-                    <span className="work-body">
-                      <span className="work-title">{p.title}</span>
-                      <span className="work-desc">{p.description}</span>
+                <li key={p.id} className="project-card reveal" style={{ "--delay": `${i * 90}ms` }}>
+                  <Link to={lp(`/projets/${p.id}`)} className="project-card-link">
+                    <span className="project-card-media">
+                      {p.imageUrl && <img src={p.imageUrl} alt="" loading="lazy" width="1600" height="790" />}
                     </span>
-                    <span className="work-stack">
-                      {(p.stack || []).slice(0, 3).join(" · ")}
-                    </span>
-                    {p.imageUrl && (
-                      <span className="work-thumb">
-                        <img src={p.imageUrl} alt="" loading="lazy" />
-                      </span>
-                    )}
-                    <span className="work-arrow" aria-hidden="true">↗</span>
+                    <span className="project-card-title">{p.title}</span>
+                    <span className="project-card-desc">{p.description}</span>
                   </Link>
                 </li>
               ))}
