@@ -388,41 +388,6 @@
   animation: work-shimmer 1.4s infinite linear;
 }
 
-/* ===== PROCESS ===== */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 2.5rem 2rem;
-  counter-reset: none;
-}
-
-.step {
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line-strong);
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.step-num {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--step-3);
-  line-height: 1;
-  color: var(--accent-text);
-  font-weight: 300;
-}
-
-.step-title {
-  font-size: var(--step-1);
-  font-weight: 400;
-}
-
-.step-desc {
-  color: var(--fg-muted);
-  font-size: 0.95rem;
-}
-
 /* ===== APPEL FINAL ===== */
 .final {
   border-top: 1px solid var(--line);
@@ -534,27 +499,6 @@
 
   .work-title {
     font-size: min(var(--step-3), 7vh);
-  }
-
-  .steps {
-    align-items: stretch;
-  }
-
-  .step {
-    padding-top: clamp(1.5rem, 6vh, 4rem);
-    gap: clamp(0.75rem, 2.4vh, 1.75rem);
-  }
-
-  .step-num {
-    font-size: clamp(3.5rem, 15vh, 9rem);
-  }
-
-  .step-title {
-    font-size: clamp(1.5rem, 4vh, 2.6rem);
-  }
-
-  .step-desc {
-    font-size: clamp(1rem, 2.2vh, 1.35rem);
   }
 
   .final-inner {
@@ -925,43 +869,5 @@
 
   #services .block-head {
     margin-bottom: 0.5rem;
-  }
-}
-
-/* ===== MÉTHODE sur mobile : numéro à gauche, titre et texte à sa droite (moins de défilement) ===== */
-@media (max-width: 760px) {
-  #process .steps {
-    gap: 0;
-    grid-template-columns: 1fr;
-  }
-
-  #process .step {
-    display: grid;
-    grid-template-columns: 2.75rem 1fr;
-    column-gap: 0.9rem;
-    row-gap: 0.2rem;
-    align-items: start;
-    padding: 1rem 0 1.1rem;
-  }
-
-  #process .step-num {
-    grid-row: 1 / span 2;
-    font-size: 2rem;
-  }
-
-  #process .step-title {
-    grid-column: 2;
-    font-size: 1.15rem;
-    line-height: 1.2;
-  }
-
-  #process .step-desc {
-    grid-column: 2;
-    font-size: 0.9rem;
-    line-height: 1.45;
-  }
-
-  #process .block-head {
-    margin-bottom: 0.75rem;
   }
 }
