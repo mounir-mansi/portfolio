@@ -7,7 +7,7 @@ const prisma = new PrismaClient({ adapter });
 
 const projects = [
   {
-    id: 6,
+    id: 7,
     title: "Il Subito — Commande & Paiement en ligne",
     description: "Application fullstack de commande en ligne pour un kebab-pizzeria à Turin. Menu interactif, panier, paiement Stripe, comptes clients, interface admin complète.",
     longDescription: "Il Subito est une application web fullstack développée pour un restaurant kebab-pizzeria à Turin (Italie).\n\nLes clients peuvent parcourir le menu interactif, composer leur panier, créer un compte ou commander en tant qu'invité, puis payer en ligne via Stripe. Un système de statuts de commande en temps réel informe le client à chaque étape.\n\nL'interface admin permet au restaurateur de gérer le menu (plats, prix, disponibilité, options), les commandes en cours, la galerie, les événements et les messages de contact. L'authentification est sécurisée via JWT httpOnly et Google OAuth. Le site est déployé sur VPS avec Nginx, PM2 et SSL.",
@@ -91,8 +91,9 @@ const projects = [
     imageUrl: "/main-vitrine.png",
     liveUrl: "https://demo.mandev.fr",
     githubUrl: null,
-    featured: true,
-    order: 1,
+    featured: false,
+    visible: false,
+    order: 5,
   },
   {
     id: 4,
@@ -143,8 +144,8 @@ const projects = [
     imageUrl: "/main-gelateria.png",
     liveUrl: "https://gelateria-aurora.mandev.fr/",
     githubUrl: "https://github.com/mounir-mansi/gelateria-aurora.git",
-    featured: false,
-    order: 4,
+    featured: true,
+    order: 1,
   },
   {
     id: 3,
