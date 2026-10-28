@@ -13,6 +13,7 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from
 import { vatArticle } from "../../data/legal";
 import "./HomePage.css";
 
+const pad = (n) => String(n + 1).padStart(2, "0");
 
 export default function HomePage() {
   const [projects, setProjects] = useState([]);
@@ -52,6 +53,7 @@ export default function HomePage() {
   }, [hash, key]);
 
   const services = t("home.services", { returnObjects: true });
+  const steps = t("home.steps", { returnObjects: true });
 
   return (
     <Layout>
@@ -131,6 +133,25 @@ export default function HomePage() {
             ))}
           </div>
           <p className="services-note">{t("home.price_note", { article: vatArticle() })}</p>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section id="process" className="block">
+        <div className="container">
+          <header className="block-head reveal">
+            <h2 className="block-title">{t("home.process_title")}</h2>
+          </header>
+
+          <ol className="steps">
+            {Array.isArray(steps) && steps.map((s, i) => (
+              <li key={s.title} className="step reveal" style={{ "--delay": `${i * 90}ms` }}>
+                <span className="step-num">{pad(i)}</span>
+                <h3 className="step-title">{s.title}</h3>
+                <p className="step-desc">{s.desc}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

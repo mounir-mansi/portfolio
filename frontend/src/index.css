@@ -79,6 +79,7 @@
 
   /* Projets, méthode, FAQ : même hauteur d'écran, mais le contenu garde sa taille (espace ajouté haut et bas) */
   main > #work,
+  main > #process,
   main > #faq {
     min-height: calc(100svh - 4.5rem);
     display: flex;
