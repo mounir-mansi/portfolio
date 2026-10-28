@@ -94,9 +94,10 @@ export default function CgvPage() {
 
       <h2>12. Maintenance</h2>
       <p>
-        La maintenance, à 50 € par mois, comprend l'hébergement sécurisé, le nom de domaine (voir l'article 10), les
-        sauvegardes et la surveillance, les mises à jour de sécurité et un support réactif. Elle est facturée
-        mensuellement et se renouvelle chaque mois. Chaque partie peut y mettre fin par email, sans frais, moyennant un{" "}
+        La maintenance, à 50 € par mois, comprend les sauvegardes et la surveillance, les mises à jour de sécurité et un
+        support réactif. L'hébergement sécurisé et le nom de domaine (voir l'article 10) sont offerts avec tout contrat
+        de maintenance. Le contrat est sans engagement de durée : il est facturé mensuellement et se renouvelle chaque
+        mois, et chaque partie peut y mettre fin par email, sans frais, moyennant un{" "}
         <strong>préavis d'un mois</strong>. Le site reste hébergé jusqu'à la fin du préavis ; le client l'héberge ensuite
         où il le souhaite, avec les fichiers remis selon l'article 11. Les nouvelles fonctionnalités et les refontes font
         l'objet d'un devis distinct.
