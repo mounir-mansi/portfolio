@@ -431,7 +431,7 @@
 
   .hero-proof img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 2 / 1; /* format des captures de projets : l'image n'est plus rognée */
     object-fit: cover;
     object-position: top;
     border: 1px solid var(--line);
@@ -503,10 +503,6 @@
 
   .hero-call {
     font-size: clamp(0.95rem, 1.9vh, 1.2rem);
-  }
-
-  .hero-proof img {
-    aspect-ratio: 1 / 1;
   }
 
   .block-head {
@@ -655,24 +651,10 @@
     align-items: stretch;
   }
 
+  /* La capture garde son format (≈2:1) et se centre dans la colonne : la rogner pour égaler la hauteur du texte coupait la page */
   .hero-proof {
+    align-self: center;
     min-height: 0;
-  }
-
-  /* Photo et texte ont la même hauteur : la photo remplit sa colonne, la légende reste dessous */
-  .hero-proof {
-    align-self: stretch;
-    min-height: 0;
-  }
-
-  .hero-proof img {
-    flex: 1;
-    min-height: 0;
-    height: 0;
-    aspect-ratio: auto;
-    max-height: none;
-    /* cadre la photo sur l'enseigne plutôt que sur le centre */
-    object-position: 28% 50%;
   }
 
   /* Services : les trois cartes occupent toute la hauteur restante */
