@@ -140,7 +140,6 @@ export default function HomePage() {
       <section id="process" className="block">
         <div className="container">
           <header className="block-head reveal">
-            <p className="eyebrow">{t("home.process_eyebrow")}</p>
             <h2 className="block-title">{t("home.process_title")}</h2>
           </header>
 
@@ -155,6 +154,9 @@ export default function HomePage() {
           </ol>
         </div>
       </section>
+
+      {/* FAQ */}
+      <Faq />
 
       {/* RÉALISATIONS */}
       {!projectsLoaded && (
@@ -202,9 +204,6 @@ export default function HomePage() {
 
       {/* AVIS (invisible tant que src/data/reviews.js est vide) */}
       <Reviews />
-
-      {/* FAQ */}
-      <Faq />
 
       {/* APPEL FINAL */}
       <section className="block final">
