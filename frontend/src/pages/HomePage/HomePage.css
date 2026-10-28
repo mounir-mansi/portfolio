@@ -84,21 +84,56 @@
 }
 
 .hero-call {
-  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.75rem;
+  margin-top: 0.75rem;
   font-size: 0.95rem;
   color: var(--fg-muted);
 }
 
-.hero-call a {
-  color: var(--fg);
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 0.3em;
-  transition: color 0.2s;
+.hero-call-label {
+  margin-right: 0.25rem;
 }
 
-.hero-call a:hover {
-  color: var(--accent-text);
+/* Appel et WhatsApp en vrais boutons : une ligne de texte soulignée passait inaperçue */
+.hero-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  padding: 0.6em 1.1em;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--fg);
+  font-weight: 600;
+  line-height: 1;
+  transition: transform 0.35s var(--ease), background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.hero-call-btn svg {
+  display: block;
+  width: 1.05em;
+  height: 1.05em;
+  fill: currentColor;
+  flex: none;
+}
+
+.hero-call-btn:hover,
+.hero-call-btn:focus-visible {
+  background: var(--accent-dim);
+  transform: translateY(-2px);
+}
+
+.hero-call-btn--wa {
+  background: #0f7a39;
+  border-color: #0f7a39;
+  color: #fff;
+}
+
+.hero-call-btn--wa:hover,
+.hero-call-btn--wa:focus-visible {
+  background: #0c6a31;
 }
 
 /* ===== BLOCS ===== */
