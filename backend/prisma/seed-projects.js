@@ -173,10 +173,40 @@ const projects = [
     featured: false,
     order: 3,
   },
+  {
+    id: 8,
+    title: "Pizza del Nonno — Site vitrine & back-office",
+    description: "Site vitrine pour une pizzeria artisanale d'Avignon : pâte au levain, four à bois, carte par catégories, avis clients et back-office pour tout gérer sans toucher au code.",
+    longDescription: "Pizza del Nonno est un site vitrine fullstack réalisé pour une pizzeria artisanale d'Avignon, spécialisée dans la pizza napolitaine à la pâte au levain cuite au four à bois, avec des options végétariennes et vegan.\n\nLes visiteurs découvrent la carte organisée par catégories, les avis clients et les horaires, puis appellent directement pour commander (livraison gratuite ou à emporter). Le gérant dispose d'un back-office complet pour modifier le menu et ses photos, les catégories, les avis, les horaires, les coordonnées et les textes du site, sans aucune intervention technique.\n\nLe projet couvre toute la chaîne : API REST Node.js/Express, base PostgreSQL via Prisma, frontend React, stockage des photos sur Cloudflare R2 et déploiement sur VPS derrière Nginx.",
+    highlights: ["Carte dynamique par catégories (végétarienne, vegan…) entièrement gérée depuis l'admin", "Back-office complet : menu, catégories, avis clients, horaires, textes et photos", "Photos envoyées sur Cloudflare R2, avec images locales de secours en WebP", "Authentification JWT en cookie httpOnly, mots de passe hachés avec argon2, limitation des tentatives de connexion", "SEO local : données structurées Restaurant (JSON-LD) et Open Graph", "Déployé sur VPS avec Nginx, bannière cookies et mentions légales"],
+    title_en: "Pizza del Nonno — Showcase Website & Back-office",
+    title_it: "Pizza del Nonno — Sito Vetrina e Back-office",
+    title_es: "Pizza del Nonno — Sitio Vitrina y Back-office",
+    description_en: "Showcase website for an artisan pizzeria in Avignon: sourdough dough, wood-fired oven, menu by category, customer reviews and a back-office to manage everything without touching the code.",
+    description_it: "Sito vetrina per una pizzeria artigianale di Avignone: impasto a lievito madre, forno a legna, menu per categorie, recensioni dei clienti e back-office per gestire tutto senza toccare il codice.",
+    description_es: "Sitio vitrina para una pizzería artesanal de Aviñón: masa de masa madre, horno de leña, carta por categorías, reseñas de clientes y back-office para gestionar todo sin tocar el código.",
+    longDescription_en: "Pizza del Nonno is a fullstack showcase website built for an artisan pizzeria in Avignon (France), specialised in Neapolitan pizza made with sourdough and baked in a wood-fired oven, with vegetarian and vegan options.\n\nVisitors browse the menu organised by category, read customer reviews and check the opening hours, then call directly to order (free delivery or takeaway). The owner has a complete back-office to edit the menu and its photos, the categories, the reviews, the opening hours, the contact details and the site texts, with no technical help.\n\nThe project covers the whole chain: Node.js/Express REST API, PostgreSQL database via Prisma, React frontend, photo storage on Cloudflare R2 and deployment on a VPS behind Nginx.",
+    longDescription_it: "Pizza del Nonno è un sito vetrina fullstack realizzato per una pizzeria artigianale di Avignone (Francia), specializzata in pizza napoletana con impasto a lievito madre cotta nel forno a legna, con opzioni vegetariane e vegane.\n\nI visitatori sfogliano il menu organizzato per categorie, leggono le recensioni dei clienti e consultano gli orari, poi chiamano direttamente per ordinare (consegna gratuita o asporto). Il titolare dispone di un back-office completo per modificare il menu e le sue foto, le categorie, le recensioni, gli orari, i contatti e i testi del sito, senza alcun intervento tecnico.\n\nIl progetto copre l'intera catena: API REST Node.js/Express, database PostgreSQL tramite Prisma, frontend React, archiviazione delle foto su Cloudflare R2 e distribuzione su VPS dietro Nginx.",
+    longDescription_es: "Pizza del Nonno es un sitio vitrina fullstack realizado para una pizzería artesanal de Aviñón (Francia), especializada en pizza napolitana con masa madre cocida en horno de leña, con opciones vegetarianas y veganas.\n\nLos visitantes exploran la carta organizada por categorías, leen las reseñas de los clientes y consultan los horarios, y luego llaman directamente para pedir (entrega gratuita o para llevar). El propietario dispone de un back-office completo para modificar la carta y sus fotos, las categorías, las reseñas, los horarios, los datos de contacto y los textos del sitio, sin ninguna intervención técnica.\n\nEl proyecto cubre toda la cadena: API REST Node.js/Express, base de datos PostgreSQL con Prisma, frontend React, almacenamiento de fotos en Cloudflare R2 y despliegue en VPS detrás de Nginx.",
+    highlights_en: ["Dynamic menu by category (vegetarian, vegan…) fully managed from the admin", "Complete back-office: menu, categories, customer reviews, opening hours, texts and photos", "Photos uploaded to Cloudflare R2, with local WebP fallback images", "JWT authentication in an httpOnly cookie, passwords hashed with argon2, login attempt rate limiting", "Local SEO: Restaurant structured data (JSON-LD) and Open Graph", "Deployed on a VPS with Nginx, cookie banner and legal notice page"],
+    highlights_it: ["Menu dinamico per categorie (vegetariana, vegana…) gestito interamente dall'admin", "Back-office completo: menu, categorie, recensioni dei clienti, orari, testi e foto", "Foto caricate su Cloudflare R2, con immagini locali di riserva in WebP", "Autenticazione JWT in cookie httpOnly, password con hash argon2, limitazione dei tentativi di accesso", "SEO locale: dati strutturati Restaurant (JSON-LD) e Open Graph", "Distribuito su VPS con Nginx, banner cookie e pagina di note legali"],
+    highlights_es: ["Carta dinámica por categorías (vegetariana, vegana…) gestionada por completo desde el admin", "Back-office completo: carta, categorías, reseñas de clientes, horarios, textos y fotos", "Fotos subidas a Cloudflare R2, con imágenes locales de respaldo en WebP", "Autenticación JWT en cookie httpOnly, contraseñas con hash argon2, limitación de intentos de inicio de sesión", "SEO local: datos estructurados Restaurant (JSON-LD) y Open Graph", "Desplegado en VPS con Nginx, banner de cookies y página de aviso legal"],
+    stack: ["React","Vite","Node.js","Express","PostgreSQL","Prisma","Cloudflare R2","JWT","Nginx","VPS"],
+    imageKey: null,
+    imageUrl: "/main-pizzadelnonno.webp",
+    liveUrl: "https://pizzadelnonno.mandev.fr",
+    githubUrl: null,
+    featured: false,
+    order: 4,
+  },
 ];
 
+// Usage : node prisma/seed-projects.js        -> tous les projets (écrase les modifs faites dans l'admin)
+//         node prisma/seed-projects.js 8      -> uniquement le projet d'id 8 (ou "8,3" pour plusieurs)
+const ids = (process.argv[2] || "").split(",").map(Number).filter(Boolean);
+
 async function main() {
-  for (const p of projects) {
+  for (const p of projects.filter((x) => !ids.length || ids.includes(x.id))) {
     const { id, ...data } = p;
     await prisma.project.upsert({
       where: { id },
