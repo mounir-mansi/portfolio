@@ -1,15 +1,27 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
+import SkillsIndex from "../../components/SkillsIndex/SkillsIndex";
 import { apiFetch } from "../../utils/api";
+import usePageTitle from "../../utils/usePageTitle";
 import "./AboutPage.css";
+
+const VALUES = ["security", "perf", "responsive", "deploy"];
+const JOURNEY = ["simplon", "python", "wcs", "self"];
 
 export default function AboutPage() {
   const [section, setSection] = useState(null);
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
   const lp = (path) => `/${lang}${path}`;
+  const { hash } = useLocation();
+  usePageTitle(t("meta.about"));
+
+  // Ancre (#stack) après une redirection depuis l'ancienne page Compétences
+  useEffect(() => {
+    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+  }, [hash]);
 
   useEffect(() => {
     apiFetch(`/api/sections?lang=${lang}`)
@@ -22,111 +34,52 @@ export default function AboutPage() {
 
   return (
     <Layout>
-      <div className="about-page">
-        <div className="about-page-inner">
-          <div className="about-left">
-            <h1>{t("about.title1")}<br />{t("about.title2")}</h1>
+      <header className="page-head container">
+        <h1 className="page-title">{t("about.title1")}<br />{t("about.title2")}</h1>
+      </header>
 
-            <div className="about-page-body">
-              {text ? (
-                <p>{text}</p>
-              ) : (
-                <>
-                  <p>{t("about.p1")}</p>
-                  <p>{t("about.p2")}</p>
-                </>
-              )}
-            </div>
-
-            <div className="about-badges">
-              <span className="badge">React</span>
-              <span className="badge">Next.js</span>
-              <span className="badge">TypeScript</span>
-              <span className="badge">Node.js</span>
-              <span className="badge">Express</span>
-              <span className="badge">PostgreSQL</span>
-              <span className="badge">MySQL</span>
-              <span className="badge">Prisma</span>
-              <span className="badge">Linux / VPS</span>
-              <span className="badge">Nginx</span>
-              <span className="badge">Cloudflare</span>
-              <span className="badge">Git</span>
-              <span className="badge">Vite</span>
-              <span className="badge">REST API</span>
-              <span className="badge">Tailwind</span>
-              <span className="badge">JWT</span>
-              <span className="badge">PM2</span>
-            </div>
-
-            <div className="about-ctas">
-              <Link to={lp("/projets")} className="btn-about-primary">{t("about.see_projects")}</Link>
-              <Link to={lp("/contact")} className="btn-about-outline">{t("about.contact")}</Link>
-            </div>
-
-            {/* Parcours */}
-            <div className="about-timeline">
-              <h2 className="timeline-title"><i className="fa-solid fa-route" aria-hidden="true" /> {t("about.timeline_title")}</h2>
-              <div className="timeline">
-
-                <div className="timeline-item">
-                  <div className="timeline-dot" />
-                  <div className="timeline-content">
-                    <span className="timeline-label">{t("about.simplon_title")}</span>
-                    <p>{t("about.simplon_text")}</p>
-                  </div>
-                </div>
-
-                <div className="timeline-item">
-                  <div className="timeline-dot timeline-dot-sm" />
-                  <div className="timeline-content">
-                    <span className="timeline-label">{t("about.python_title")}</span>
-                    <p>{t("about.python_text")}</p>
-                  </div>
-                </div>
-
-                <div className="timeline-item">
-                  <div className="timeline-dot" />
-                  <div className="timeline-content">
-                    <span className="timeline-label">{t("about.wcs_title")}</span>
-                    <p>{t("about.wcs_text")}</p>
-                  </div>
-                </div>
-
-                <div className="timeline-item">
-                  <div className="timeline-dot timeline-dot-accent" />
-                  <div className="timeline-content">
-                    <span className="timeline-label">{t("about.self_title")}</span>
-                    <p>{t("about.self_text")}</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+      <div className="page-body container about-body">
+        <div className="about-text">
+          {text ? (
+            <p>{text}</p>
+          ) : (
+            <>
+              <p>{t("about.p1")}</p>
+              <p>{t("about.p2")}</p>
+            </>
+          )}
+          <div className="about-ctas">
+            <Link to={lp("/projets")} className="btn-primary">{t("about.see_projects")}</Link>
+            <Link to={lp("/contact")} className="btn-outline">{t("about.contact")}</Link>
           </div>
         </div>
 
-        <div className="about-values">
-          <div className="value-card">
-            <i className="fa-solid fa-shield-halved" aria-hidden="true" />
-            <h3>{t("about.val_security")}</h3>
-            <p>{t("about.val_security_desc")}</p>
-          </div>
-          <div className="value-card">
-            <i className="fa-solid fa-bolt" aria-hidden="true" />
-            <h3>{t("about.val_perf")}</h3>
-            <p>{t("about.val_perf_desc")}</p>
-          </div>
-          <div className="value-card">
-            <i className="fa-solid fa-mobile-screen" aria-hidden="true" />
-            <h3>{t("about.val_responsive")}</h3>
-            <p>{t("about.val_responsive_desc")}</p>
-          </div>
-          <div className="value-card">
-            <i className="fa-solid fa-rocket" aria-hidden="true" />
-            <h3>{t("about.val_deploy")}</h3>
-            <p>{t("about.val_deploy_desc")}</p>
-          </div>
-        </div>
+        <ul className="about-rows">
+          {VALUES.map((v) => (
+            <li key={v} className="about-row">
+              <h2 className="about-row-title">{t(`about.val_${v}`)}</h2>
+              <p className="about-row-text">{t(`about.val_${v}_desc`)}</p>
+            </li>
+          ))}
+        </ul>
+
+        <section id="stack" aria-labelledby="about-stack-title">
+          <h2 id="about-stack-title" className="about-section-title">{t("skills.title")}</h2>
+          <p className="about-section-intro">{t("skills.intro")}</p>
+          <SkillsIndex />
+        </section>
+
+        <section>
+          <h2 className="about-section-title">{t("about.timeline_title")}</h2>
+          <ol className="about-rows">
+            {JOURNEY.map((j) => (
+              <li key={j} className="about-row">
+                <h3 className="about-row-title">{t(`about.${j}_title`)}</h3>
+                <p className="about-row-text">{t(`about.${j}_text`)}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
       </div>
     </Layout>
   );

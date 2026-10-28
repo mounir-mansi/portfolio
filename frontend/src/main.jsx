@@ -6,6 +6,11 @@ import App from "./App";
 import "./i18n/index.js";
 import "./index.css";
 
+const theme = new URLSearchParams(window.location.search).get("theme");
+if (theme === "light" || theme === "dark") {
+  document.documentElement.dataset.theme = theme;
+}
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>

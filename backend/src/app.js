@@ -20,6 +20,8 @@ app.use(
         process.env.CORS_ORIGIN,
         "http://localhost:5173",
         "http://localhost:3002",
+        // 127.0.0.1 et localhost sont deux origines différentes pour le navigateur : en développement, les deux sont permises
+        ...(process.env.NODE_ENV !== "production" ? ["http://127.0.0.1:5173", "http://127.0.0.1:3002"] : []),
       ].filter(Boolean);
       if (!origin || allowed.includes(origin)) return cb(null, true);
       cb(new Error("CORS non autorisé"));
@@ -40,6 +42,15 @@ const loginLimiter = rateLimit({
   message: { error: "Trop de tentatives, réessayez dans 15 minutes." },
 });
 app.use("/login", loginLimiter);
+
+// Rate limit formulaires (demande de maquette, contact, brief)
+const contactLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 30,
+  skip: () => process.env.NODE_ENV !== "production",
+  message: { error: "Trop de tentatives, réessayez dans quelques minutes." },
+});
+app.use("/contact", contactLimiter);
 
 // Routes API
 app.use(router);

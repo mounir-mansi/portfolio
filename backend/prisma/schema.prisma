@@ -22,8 +22,29 @@ model BlacklistedToken {
 model ContactMessage {
   id        Int      @id @default(autoincrement())
   name      String
-  email     String
-  message   String
+  email     String?
+  phone     String?
+  activity  String?
+  company   String?
+  message   String?
+  source    String   @default("contact")
+  // Brief facultatif complété après l'envoi de la demande (formulaire en étapes)
+  pack           String?
+  // Identifiants (aléatoires) des fichiers importés ; le fichier est dans brief/<id du message>/<identifiant>
+  menuFiles      String[]
+  logoFile       String?
+  pages          String[]
+  pagesAutre     String?
+  theme          String?
+  couleurs       String?
+  police         String?
+  aLogo          Boolean?
+  echeance       String?
+  creneau        String?
+  briefDone      Boolean   @default(false)
+  // Empreinte (sha256) du jeton remis au visiteur : le jeton lui-même n'est jamais stocké
+  briefTokenHash String?   @unique
+  briefExpiresAt DateTime?
   read      Boolean  @default(false)
   replied   Boolean  @default(false)
   createdAt DateTime @default(now())

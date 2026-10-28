@@ -1,0 +1,39 @@
+.reviews .block-title {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.reviews .reviews-list {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+
+.reviews .reviews-item {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.reviews .reviews-item blockquote p {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.reviews .reviews-item figcaption {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+}
+
+.reviews .reviews-item figcaption a {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
+  transition: color 0.2s;
+}
+
+.reviews .reviews-item figcaption a:hover {
+  color: var(--accent-text);
+}

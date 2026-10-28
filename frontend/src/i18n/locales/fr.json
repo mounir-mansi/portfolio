@@ -6,22 +6,109 @@
     "projects": "Projets",
     "contact": "Me contacter",
     "admin": "Admin",
-    "logout": "Déconnexion"
+    "logout": "Déconnexion",
+    "services": "Services",
+    "quote": "Demander un devis",
+    "skip": "Aller au contenu",
+    "aria_main": "Navigation principale",
+    "aria_menu": "Menu",
+    "aria_lang_group": "Choisir la langue",
+    "aria_lang": "Langue : {{code}}",
+    "back_to_top": "Retour en haut",
+    "call": "Appeler",
+    "mockup": "Maquette gratuite",
+    "aria_contact": "Contact rapide"
   },
   "home": {
-    "greeting": "Bonjour, je suis",
-    "badge_dev": "Développeur Fullstack",
-    "badge_freelance": "Freelance",
-    "subtitle": "React & Node.js — de la DB au déploiement",
-    "desc": "Disponible pour vos projets web : sites vitrines, applications sur mesure, APIs. Je gère tout, du backend sécurisé à la mise en production sur VPS.",
-    "see_projects": "Voir mes projets",
-    "contact": "Me contacter"
+    "eyebrow": "Studio web · Toulouse et partout en France",
+    "title_a": "Des sites vitrines qui",
+    "title_em": "transforment",
+    "title_b": "vos visiteurs en clients.",
+    "sub": "Sites vitrines et applications web rapides, sécurisés et livrés clé en main pour les commerces et les PME.",
+    "cta_quote": "Recevoir ma maquette gratuite",
+    "cta_work": "Voir les réalisations",
+    "offer": "Maquette gratuite sous 72 h ouvrées · sans engagement",
+    "call": "Une question ?",
+    "services_eyebrow": "Services",
+    "services_title": "Ce que je construis pour vous",
+    "services_cta": "Recevoir ma maquette gratuite",
+    "popular": "Recommandé",
+    "services_cta_contact": "Me poser une question",
+    "price_note": "Prix en euros, TVA non applicable ({{article}}).",
+    "services": [
+      {
+        "tag": "Pack 01",
+        "name": "Vitrine",
+        "price_prefix": "À partir de",
+        "price": "490 €",
+        "desc": "Un site clair et rapide qui présente votre activité et donne envie de vous contacter.",
+        "items": [
+          "Une page avec plusieurs sections",
+          "Design sur mesure",
+          "Mentions légales",
+          "Bouton d'appel et formulaire de contact",
+          "Visible sur Google dans votre ville",
+          "Lisible sur téléphone, tablette et ordinateur"
+        ]
+      },
+      {
+        "tag": "Pack 02",
+        "name": "Vitrine +",
+        "price_prefix": "À partir de",
+        "price": "990 €",
+        "desc": "Un site de plusieurs pages qui met en valeur votre savoir-faire.",
+        "items": [
+          "Tout le pack Vitrine",
+          "Jusqu'à 5 pages, maquette validée avant le développement",
+          "Un espace privé pour modifier vous-même vos textes et vos photos",
+          "Multilingue"
+        ]
+      },
+      {
+        "tag": "Pack 03",
+        "name": "Maintenance",
+        "price_prefix": "",
+        "price": "50 € / mois",
+        "desc": "Une option pour plus de sérénité et de sécurité : j'héberge votre site, je le protège et je le mets à jour. Vous gardez l'esprit libre.",
+        "items": [
+          "Hébergement sécurisé",
+          "Sauvegardes et surveillance",
+          "Mises à jour régulières",
+          "Support réactif"
+        ]
+      }
+    ],
+    "work_eyebrow": "Réalisations",
+    "work_title": "Projets récents",
+    "work_all": "Tous les projets",
+    "process_eyebrow": "Méthode",
+    "process_title": "Un processus simple, sans surprise",
+    "steps": [
+      {
+        "title": "Échange",
+        "desc": "On définit ensemble vos besoins, votre cible et vos objectifs."
+      },
+      {
+        "title": "Maquette",
+        "desc": "Vous validez le design avant que la moindre ligne de code soit écrite."
+      },
+      {
+        "title": "Développement",
+        "desc": "Je construis le site, vous suivez l'avancement et donnez votre avis."
+      },
+      {
+        "title": "Mise en ligne",
+        "desc": "Déploiement, sécurité, référencement et prise en main."
+      }
+    ],
+    "final_eyebrow": "Prochaine étape",
+    "final_title": "Votre site, bien fait."
   },
   "about": {
     "title1": "Passionné par le web,",
     "title2": "de bout en bout",
-    "p1": "Développeur fullstack freelance, je conçois et livre des applications web complètes — du serveur jusqu'à l'interface — avec une attention particulière à la performance, la sécurité et l'expérience utilisateur.",
-    "p2": "Je travaille sur des projets variés : plateformes métier, applications interactives, outils sur mesure, sites vitrines. Disponible à distance, je m'adapte aux besoins de chaque client.",
+    "p1": "Je conçois et je livre des sites et des applications web complets pour les commerces et les PME : du design jusqu'à la mise en ligne, avec une attention particulière à la rapidité, à la sécurité et à la facilité d'utilisation.",
+    "p2": "Je travaille sur des projets variés : sites vitrines, commande et paiement en ligne, outils sur mesure. Je travaille à distance et je m'adapte aux besoins de chaque client.",
     "see_projects": "Voir mes projets",
     "contact": "Me contacter",
     "timeline_title": "Parcours",
@@ -34,20 +121,22 @@
     "self_title": "Autodidacte — en continu",
     "self_text": "Après les formations, j'ai continué seul : déployer sur VPS, sécuriser des serveurs, construire des projets de A à Z. Essayer, échouer, comprendre, recommencer. C'est là que j'ai vraiment appris.",
     "val_security": "Sécurité",
-    "val_security_desc": "JWT httpOnly, Fail2ban, UFW, Nginx — la sécurité n'est pas une option.",
+    "val_security_desc": "Connexion chiffrée, accès verrouillés et sauvegardes : votre site et les données de vos clients sont protégés.",
     "val_perf": "Performance",
-    "val_perf_desc": "Build Vite optimisé, PostgreSQL avec Prisma, cache Cloudflare.",
-    "val_responsive": "Responsive",
-    "val_responsive_desc": "Chaque projet est testé sur mobile, tablette et desktop.",
-    "val_deploy": "Déploiement",
-    "val_deploy_desc": "De zéro à la mise en production sur VPS avec SSL, PM2 et monitoring."
+    "val_perf_desc": "Un site qui s'affiche vite, y compris sur mobile.",
+    "val_responsive": "Sur tous les écrans",
+    "val_responsive_desc": "Chaque site est testé sur mobile, tablette et ordinateur.",
+    "val_deploy": "Mise en ligne",
+    "val_deploy_desc": "Je mets le site en ligne et je m'en occupe : hébergement, certificat HTTPS, surveillance."
   },
   "skills": {
-    "title": "Ma stack technique",
-    "intro": "Les technologies que j'utilise pour concevoir, développer et déployer des projets web complets — du frontend au serveur.",
-    "cat_database": "Base de données",
-    "cat_deploy": "Déploiement",
-    "cat_tools": "Outils"
+    "title": "Ce qui fait tourner votre site",
+    "intro": "Les outils que j'utilise pour que votre site reste rapide, sûr et facile à faire évoluer.",
+    "cat_frontend": "Des pages rapides, belles sur mobile",
+    "cat_backend": "Comptes, paiements et réservations",
+    "cat_database": "Des données fiables, sauvegardées",
+    "cat_deploy": "Un site en ligne, sécurisé",
+    "cat_tools": "Un suivi propre, des mises à jour"
   },
   "projects": {
     "title": "Mes réalisations",
@@ -63,12 +152,21 @@
     "name": "Nom",
     "name_placeholder": "Votre nom",
     "email": "Email",
+    "email_placeholder": "votre@email.com",
     "message": "Message",
     "message_placeholder": "Décrivez votre projet ou votre demande...",
     "submit": "Envoyer le message",
     "sending": "Envoi en cours...",
     "success": "Message envoyé ! Je vous réponds rapidement.",
-    "error": "Erreur lors de l'envoi."
+    "error": "Erreur lors de l'envoi.",
+    "error_name": "Indiquez votre nom.",
+    "error_email": "Saisissez une adresse email valide (par exemple nom@domaine.fr).",
+    "error_message": "Décrivez brièvement votre projet ou votre question.",
+    "error_check": "Le message n'a pas pu être envoyé. Vérifiez les champs et réessayez.",
+    "error_rate": "Trop de tentatives. Patientez une minute puis réessayez.",
+    "error_network": "Impossible d'envoyer le message pour le moment. Vos informations sont conservées : réessayez dans un instant, ou écrivez-moi à {{email}}.",
+    "alt_lead": "Vous préférez écrire ou appeler directement ?",
+    "alt_phone": "Téléphone"
   },
   "detail": {
     "loading": "Chargement...",
@@ -86,7 +184,165 @@
     "contact": "Me contacter",
     "placeholder": "La description détaillée de ce projet sera ajoutée prochainement depuis le panneau admin."
   },
+  "legal": {
+    "mentions": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "privacy_short": "Confidentialité",
+    "terms": "Conditions générales de vente",
+    "terms_short": "CGV",
+    "fr_only": "Ce document est rédigé en français, langue du contrat."
+  },
+  "faq": {
+    "title": "Vos questions, mes réponses",
+    "items": [
+      {
+        "q": "Comment se passe la maquette gratuite ?",
+        "a": "Vous remplissez un court formulaire en quelques étapes et vous choisissez le moment où je vous appelle. Cet appel me permet de comprendre votre métier et vos envies. Sous 72 h ouvrées après cet échange, je vous envoie une maquette de votre page d'accueil. Vous la regardez tranquillement et vous décidez ensuite, sans engagement."
+      },
+      {
+        "q": "Combien coûte un site internet ?",
+        "a": "Le pack Vitrine démarre à 490 €. Le pack Vitrine + (réservation, paiement en ligne, espace d'administration, multilingue) démarre à 990 €. La maintenance, avec hébergement sécurisé, sauvegardes et mises à jour, est à 50 € par mois. Je vous donne le prix exact avant de commencer."
+      },
+      {
+        "q": "En combien de temps mon site est-il en ligne ?",
+        "a": "Cela dépend du pack choisi et de la rapidité avec laquelle vous validez les étapes. Je vous confirme le délai dès notre premier échange, avant tout engagement."
+      },
+      {
+        "q": "Faut-il se rencontrer ?",
+        "a": "Non. Tout se fait à distance, par téléphone, WhatsApp et email, partout en France. Si vous êtes à Toulouse, nous pouvons aussi nous voir."
+      },
+      {
+        "q": "Que comprend la maintenance à 50 € par mois ?",
+        "a": "Avec l'essor des IA, les attaques automatisées repèrent les failles de sécurité bien plus vite : un site qui n'est plus mis à jour devient vite une cible. La maintenance est une option pour garder l'esprit tranquille. Elle comprend l'hébergement sécurisé, le nom de domaine, les mises à jour de sécurité, les sauvegardes régulières, la surveillance du site et un support réactif en cas de problème. Elle est résiliable avec un mois de préavis."
+      },
+      {
+        "q": "Le site m'appartient-il vraiment ?",
+        "a": "Oui. Une fois le paiement final reçu, le site et les textes sont à vous, et le nom de domaine est enregistré à votre nom. La maintenance est facultative. À tout moment, sur simple demande, je vous remets les fichiers de votre site, sans frais, pour que vous puissiez le faire héberger où vous voulez."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Ils m'ont fait confiance"
+  },
+  "quote": {
+    "title": "Recevez la maquette de votre page d'accueil",
+    "terms": [
+      "Gratuite",
+      "Sous 72 h ouvrées",
+      "Sans engagement"
+    ],
+    "offer": "Vous décidez ensuite si nous travaillons ensemble.",
+    "whatsapp": "Écrire sur WhatsApp",
+    "name": "Nom et prénom",
+    "phone": "Téléphone",
+    "activity": "Votre activité",
+    "activity_placeholder": "Boulangerie, plombier, restaurant…",
+    "email": "Email (facultatif)",
+    "submit": "Recevoir ma maquette gratuite",
+    "success": "Demande bien reçue. Je vous recontacte rapidement.",
+    "error_phone": "Saisissez un numéro de téléphone valide (par exemple 06 12 34 56 78).",
+    "error_activity": "Indiquez votre activité.",
+    "note": "Vos coordonnées servent uniquement à vous répondre.",
+    "company": "Nom du commerce ou de l'artisan",
+    "company_placeholder": "Boulangerie du Midi",
+    "error_company": "Indiquez le nom de votre commerce ou de votre entreprise.",
+    "progress": "Étape {{current}} sur {{total}}",
+    "next": "Continuer",
+    "skip": "Passer cette étape",
+    "finish": "Terminer, rappelez-moi",
+    "received": "Votre demande est bien reçue. Si vous le souhaitez, précisez votre projet pour que la maquette vous ressemble.",
+    "brief_error": "Vos réponses n'ont pas pu être enregistrées. Pas de souci : je vous rappelle et nous les verrons ensemble.",
+    "step2_title": "Quelles pages souhaitez-vous ?",
+    "step2_hint": "Cochez tout ce qui vous intéresse, nous ajusterons ensemble.",
+    "page_accueil": "Accueil",
+    "page_services": "Services ou prestations",
+    "page_realisations": "Réalisations ou galerie",
+    "page_apropos": "À propos",
+    "page_tarifs": "Tarifs",
+    "page_avis": "Avis clients",
+    "page_contact": "Contact",
+    "page_menu": "Menu ou carte",
+    "page_commande": "Commande en ligne",
+    "page_autre": "Autre",
+    "page_other_label": "Quelles autres pages ou sections ?",
+    "step3_title": "Votre style et votre identité visuelle",
+    "theme_label": "Fond du site",
+    "theme_clair": "Clair",
+    "theme_sombre": "Sombre",
+    "theme_indifferent": "Peu importe",
+    "yes": "Oui",
+    "no": "Non",
+    "step4_title": "Pour quand ?",
+    "echeance_label": "Quand avez-vous besoin du site ?",
+    "echeance_asap": "Dès que possible",
+    "echeance_1mois": "D'ici un mois",
+    "echeance_2-3mois": "Dans 2 à 3 mois",
+    "echeance_pas-presse": "Pas pressé",
+    "creneau_label": "Quand puis-je vous rappeler ?",
+    "creneau_matin": "Le matin",
+    "creneau_apres-midi": "L'après-midi",
+    "creneau_soir": "Le soir",
+    "creneau_peu-importe": "Peu importe",
+    "done_title": "C'est envoyé, merci !",
+    "done_text": "Je vous rappelle pour parler de votre maquette. Elle vous est envoyée sous 72 h ouvrées après notre échange.",
+    "type_title": "Quel type de site souhaitez-vous ?",
+    "type_hint": "Choisissez ce qui vous correspond, nous ajusterons ensemble.",
+    "type_vitrine": "Site vitrine",
+    "type_vitrine_desc": "Une seule page avec plusieurs sections",
+    "type_vitrine-plus": "Site vitrine +",
+    "type_vitrine-plus_desc": "Un site de plusieurs pages, jusqu'à 5",
+    "type_indecis": "Je ne sais pas encore",
+    "type_indecis_desc": "Conseillez-moi",
+    "sections_title": "Quelles sections souhaitez-vous ?",
+    "sections_hint": "Les sections s'enchaînent sur une seule page. Cochez tout ce qui vous intéresse.",
+    "pages_hint": "Jusqu'à 5 pages. Cochez celles qui vous intéressent.",
+    "contents_title": "Que souhaitez-vous présenter ?",
+    "section_accueil": "Présentation de votre activité",
+    "page_other_placeholder": "Galerie photos, Blog, Actualités",
+    "page_other_plus": "Elles comptent dans vos 5 pages.",
+    "page_other_item": "Page ou section {{n}}",
+    "page_add": "Ajouter une page",
+    "page_remove": "Retirer la page {{n}}",
+    "menu_upload_title": "Importez votre menu ou votre carte",
+    "menu_upload_hint": "PDF ou photos (JPEG, PNG, WebP), 3 fichiers de 10 Mo maximum. Facultatif.",
+    "logo_upload_title": "Importez votre logo ou votre charte graphique",
+    "logo_upload_hint": "PDF, JPEG, PNG ou WebP, 10 Mo maximum. Facultatif : si vous n'en avez pas, passez simplement à la suite.",
+    "file_choose": "Choisir un fichier",
+    "file_replace": "Remplacer le fichier",
+    "file_uploading": "Envoi en cours…",
+    "file_remove": "Retirer",
+    "file_error_type": "Format non accepté. Choisissez un PDF, un JPEG, un PNG ou un WebP.",
+    "file_error_size": "Fichier trop volumineux (10 Mo maximum).",
+    "file_error_max": "{{count}} fichiers au maximum.",
+    "file_error_generic": "Le fichier n'a pas pu être envoyé. Réessayez, ou transmettez-le moi par email : {{email}}.",
+    "charte_colors_label": "Les couleurs de votre charte graphique",
+    "charte_colors_hint": "Facultatif. Un code #hex ou RGB par couleur, séparés par une virgule. Par exemple : #C9A24B, rgb(30, 10, 16)",
+    "charte_colors_found": "Couleurs reconnues",
+    "charte_colors_error": "Je ne reconnais pas ce format. Utilisez un code comme #C9A24B ou rgb(201, 162, 75).",
+    "police_label": "Une police imposée par votre charte ?",
+    "police_placeholder": "Par exemple : Montserrat",
+    "police_hint": "Facultatif. Si vous ne savez pas, ce n'est pas grave."
+  },
+  "meta": {
+    "suffix": "ManDev Web",
+    "home": "Création de site internet à Toulouse, dès 490 € — ManDev Web",
+    "description": "Création de site internet clé en main à Toulouse et partout en France, dès 490 €. Maquette gratuite de votre page d'accueil sous 72 h ouvrées, sans engagement.",
+    "projects": "Projets",
+    "about": "À propos",
+    "contact": "Contact",
+    "notfound": "Page introuvable"
+  },
+  "notfound": {
+    "title": "Page introuvable",
+    "text": "Cette adresse n'existe pas ou a été déplacée.",
+    "home": "Retour à l'accueil",
+    "projects": "Voir les réalisations",
+    "contact": "Me contacter"
+  },
   "footer": {
-    "rights": "Tous droits réservés"
+    "rights": "Tous droits réservés",
+    "eyebrow": "Un projet en tête ?",
+    "big": "Parlons-en",
+    "zone": "Toulouse · partout en France, à distance"
   }
 }

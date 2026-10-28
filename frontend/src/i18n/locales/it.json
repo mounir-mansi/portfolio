@@ -6,22 +6,109 @@
     "projects": "Progetti",
     "contact": "Contattami",
     "admin": "Admin",
-    "logout": "Esci"
+    "logout": "Esci",
+    "services": "Servizi",
+    "quote": "Richiedi un preventivo",
+    "skip": "Vai al contenuto",
+    "aria_main": "Navigazione principale",
+    "aria_menu": "Menu",
+    "aria_lang_group": "Scegli la lingua",
+    "aria_lang": "Lingua: {{code}}",
+    "back_to_top": "Torna su",
+    "call": "Chiama",
+    "mockup": "Bozza gratuita",
+    "aria_contact": "Contatto rapido"
   },
   "home": {
-    "greeting": "Ciao, sono",
-    "badge_dev": "Sviluppatore Fullstack",
-    "badge_freelance": "Freelance",
-    "subtitle": "React & Node.js — dal DB al deploy",
-    "desc": "Disponibile per i tuoi progetti web: siti vetrina, applicazioni su misura, API. Gestisco tutto, dal backend sicuro alla messa in produzione su VPS.",
-    "see_projects": "Vedi i miei progetti",
-    "contact": "Contattami"
+    "eyebrow": "Studio web · Tolosa e in tutta la Francia",
+    "title_a": "Siti vetrina che",
+    "title_em": "trasformano",
+    "title_b": "i tuoi visitatori in clienti.",
+    "sub": "Siti vetrina e applicazioni web veloci, sicure e chiavi in mano per negozi e PMI.",
+    "cta_quote": "Ricevi la mia bozza gratuita",
+    "cta_work": "Vedi i lavori",
+    "offer": "Bozza gratuita entro 72 ore lavorative · senza impegno",
+    "call": "Una domanda?",
+    "services_eyebrow": "Servizi",
+    "services_title": "Cosa costruisco per te",
+    "services_cta": "Ricevi la mia bozza gratuita",
+    "popular": "Consigliato",
+    "services_cta_contact": "Fai una domanda",
+    "price_note": "Prezzi in euro, IVA non applicabile ({{article}}).",
+    "services": [
+      {
+        "tag": "Pack 01",
+        "name": "Vetrina",
+        "price_prefix": "Da",
+        "price": "490 €",
+        "desc": "Un sito chiaro e veloce che presenta la tua attività e invita a contattarti.",
+        "items": [
+          "Una pagina con più sezioni",
+          "Design su misura",
+          "Note legali",
+          "Pulsante di chiamata e modulo di contatto",
+          "Visibile su Google nella tua città",
+          "Leggibile su telefono, tablet e computer"
+        ]
+      },
+      {
+        "tag": "Pack 02",
+        "name": "Vetrina +",
+        "price_prefix": "Da",
+        "price": "990 €",
+        "desc": "Un sito di più pagine che valorizza il tuo mestiere.",
+        "items": [
+          "Tutto il pack Vetrina",
+          "Fino a 5 pagine, bozza approvata prima dello sviluppo",
+          "Un'area privata per modificare tu stesso testi e foto",
+          "Multilingua"
+        ]
+      },
+      {
+        "tag": "Pack 03",
+        "name": "Manutenzione",
+        "price_prefix": "",
+        "price": "50 € / mese",
+        "desc": "Un'opzione per più serenità e sicurezza: ospito il tuo sito, lo proteggo e lo tengo aggiornato. Tu pensi al tuo lavoro.",
+        "items": [
+          "Hosting sicuro",
+          "Backup e monitoraggio",
+          "Aggiornamenti regolari",
+          "Supporto reattivo"
+        ]
+      }
+    ],
+    "work_eyebrow": "Lavori",
+    "work_title": "Progetti recenti",
+    "work_all": "Tutti i progetti",
+    "process_eyebrow": "Metodo",
+    "process_title": "Un processo semplice, senza sorprese",
+    "steps": [
+      {
+        "title": "Confronto",
+        "desc": "Definiamo insieme esigenze, target e obiettivi."
+      },
+      {
+        "title": "Mockup",
+        "desc": "Approvi il design prima che venga scritta una riga di codice."
+      },
+      {
+        "title": "Sviluppo",
+        "desc": "Costruisco il sito e tu segui l'avanzamento."
+      },
+      {
+        "title": "Online",
+        "desc": "Pubblicazione, sicurezza, SEO e formazione."
+      }
+    ],
+    "final_eyebrow": "Prossimo passo",
+    "final_title": "Il tuo sito, fatto bene."
   },
   "about": {
     "title1": "Appassionato del web,",
     "title2": "da cima a fondo",
-    "p1": "Sviluppatore fullstack freelance, progetto e consegno applicazioni web complete — dal server all'interfaccia — con particolare attenzione alle prestazioni, alla sicurezza e all'esperienza utente.",
-    "p2": "Lavoro su progetti diversi: piattaforme aziendali, applicazioni interattive, strumenti personalizzati, siti vetrina. Disponibile da remoto, mi adatto alle esigenze di ogni cliente.",
+    "p1": "Progetto e consegno siti e applicazioni web completi per negozi e PMI: dal design alla messa online, con particolare attenzione a velocità, sicurezza e facilità d'uso.",
+    "p2": "Lavoro su progetti diversi: siti vetrina, ordini e pagamenti online, strumenti su misura. Lavoro da remoto e mi adatto alle esigenze di ogni cliente.",
     "see_projects": "Vedi i miei progetti",
     "contact": "Contattami",
     "timeline_title": "Percorso",
@@ -34,20 +121,22 @@
     "self_title": "Autodidatta — in continuo",
     "self_text": "Dopo i corsi, ho continuato da solo: deploy su VPS, messa in sicurezza di server, costruire progetti da zero. Provare, fallire, capire, ricominciare. È lì che ho davvero imparato.",
     "val_security": "Sicurezza",
-    "val_security_desc": "JWT httpOnly, Fail2ban, UFW, Nginx — la sicurezza non è opzionale.",
+    "val_security_desc": "Connessione cifrata, accessi protetti e backup: il tuo sito e i dati dei tuoi clienti sono al sicuro.",
     "val_perf": "Performance",
-    "val_perf_desc": "Build Vite ottimizzata, PostgreSQL con Prisma, cache Cloudflare.",
-    "val_responsive": "Responsive",
-    "val_responsive_desc": "Ogni progetto è testato su mobile, tablet e desktop.",
-    "val_deploy": "Deploy",
-    "val_deploy_desc": "Da zero alla produzione su VPS con SSL, PM2 e monitoring."
+    "val_perf_desc": "Un sito che si carica in fretta, anche da mobile.",
+    "val_responsive": "Su ogni schermo",
+    "val_responsive_desc": "Ogni sito è testato su mobile, tablet e computer.",
+    "val_deploy": "Messa online",
+    "val_deploy_desc": "Metto il sito online e me ne occupo: hosting, certificato HTTPS, monitoraggio."
   },
   "skills": {
-    "title": "Il mio stack tecnico",
-    "intro": "Le tecnologie che uso per progettare, sviluppare e distribuire progetti web completi — dal frontend al server.",
-    "cat_database": "Database",
-    "cat_deploy": "Deploy",
-    "cat_tools": "Strumenti"
+    "title": "Ciò che fa funzionare il tuo sito",
+    "intro": "Gli strumenti che uso perché il tuo sito resti veloce, sicuro e facile da far evolvere.",
+    "cat_frontend": "Pagine veloci, belle anche su mobile",
+    "cat_backend": "Account, pagamenti e prenotazioni",
+    "cat_database": "Dati affidabili e con backup",
+    "cat_deploy": "Un sito online e sicuro",
+    "cat_tools": "Controllo ordinato e aggiornamenti regolari"
   },
   "projects": {
     "title": "I miei lavori",
@@ -63,12 +152,21 @@
     "name": "Nome",
     "name_placeholder": "Il tuo nome",
     "email": "Email",
+    "email_placeholder": "tuo@email.com",
     "message": "Messaggio",
     "message_placeholder": "Descrivi il tuo progetto o la tua richiesta...",
     "submit": "Invia il messaggio",
     "sending": "Invio in corso...",
     "success": "Messaggio inviato! Ti rispondo presto.",
-    "error": "Errore durante l'invio."
+    "error": "Errore durante l'invio.",
+    "error_name": "Inserisci il tuo nome.",
+    "error_email": "Inserisci un indirizzo email valido (ad esempio nome@dominio.it).",
+    "error_message": "Descrivi brevemente il tuo progetto o la tua domanda.",
+    "error_check": "Non è stato possibile inviare il messaggio. Controlla i campi e riprova.",
+    "error_rate": "Troppi tentativi. Attendi un minuto e riprova.",
+    "error_network": "Impossibile inviare il messaggio al momento. I tuoi dati sono conservati: riprova tra poco, oppure scrivimi a {{email}}.",
+    "alt_lead": "Preferisci scrivere o chiamare direttamente?",
+    "alt_phone": "Telefono"
   },
   "detail": {
     "loading": "Caricamento...",
@@ -86,7 +184,165 @@
     "contact": "Contattami",
     "placeholder": "La descrizione dettagliata di questo progetto sarà aggiunta presto dal pannello admin."
   },
+  "legal": {
+    "mentions": "Note legali",
+    "privacy": "Informativa sulla privacy",
+    "privacy_short": "Privacy",
+    "terms": "Condizioni generali di vendita",
+    "terms_short": "CGV",
+    "fr_only": "Questo documento è redatto in francese, lingua del contratto."
+  },
+  "faq": {
+    "title": "Le tue domande, le mie risposte",
+    "items": [
+      {
+        "q": "Come funziona la bozza gratuita?",
+        "a": "Compili un breve modulo in pochi passaggi e scegli tu quando ti chiamo. Questa chiamata mi permette di capire il tuo mestiere e i tuoi gusti. Entro 72 ore lavorative da quella conversazione ti invio un mockup della tua home page. Lo guardi con calma e decidi poi, senza alcun impegno."
+      },
+      {
+        "q": "Quanto costa un sito web?",
+        "a": "Il pack Vetrina parte da 490 €. Il pack Vetrina + (prenotazioni, pagamento online, area di amministrazione, multilingua) parte da 990 €. La manutenzione, con hosting sicuro, backup e aggiornamenti, costa 50 € al mese. Ti do il prezzo esatto prima di iniziare."
+      },
+      {
+        "q": "In quanto tempo il mio sito è online?",
+        "a": "Dipende dal pack scelto e da quanto velocemente approvi le varie fasi. Ti confermo i tempi fin dal primo confronto, prima di qualsiasi impegno."
+      },
+      {
+        "q": "Serve incontrarsi?",
+        "a": "No. Tutto si fa a distanza, per telefono, WhatsApp ed email, in tutta la Francia. Se sei a Tolosa, possiamo anche vederci."
+      },
+      {
+        "q": "Cosa comprende la manutenzione da 50 € al mese?",
+        "a": "Con l'avvento delle IA, gli attacchi automatizzati individuano le falle di sicurezza molto più in fretta: un sito non più aggiornato diventa presto un bersaglio. La manutenzione è un'opzione per stare tranquilli. Comprende l'hosting sicuro, il nome di dominio, gli aggiornamenti di sicurezza, i backup regolari, il monitoraggio del sito e un supporto reattivo in caso di problemi. Si può disdire con un mese di preavviso."
+      },
+      {
+        "q": "Il sito è davvero mio?",
+        "a": "Sì. Una volta ricevuto il pagamento finale, il sito e i testi sono tuoi, e il nome di dominio è registrato a tuo nome. La manutenzione è facoltativa. In qualsiasi momento, su semplice richiesta, ti consegno i file del tuo sito, senza costi, così puoi ospitarlo dove preferisci."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Hanno scelto me"
+  },
+  "quote": {
+    "title": "Ricevi la bozza della tua home page",
+    "terms": [
+      "Gratuita",
+      "Entro 72 ore lavorative",
+      "Senza impegno"
+    ],
+    "offer": "Poi decidi tu se lavorare insieme.",
+    "whatsapp": "Scrivi su WhatsApp",
+    "name": "Nome e cognome",
+    "phone": "Telefono",
+    "activity": "La tua attività",
+    "activity_placeholder": "Panetteria, idraulico, ristorante…",
+    "email": "Email (facoltativa)",
+    "submit": "Ricevi la mia bozza gratuita",
+    "success": "Richiesta ricevuta. Ti ricontatto a breve.",
+    "error_phone": "Inserisci un numero di telefono valido (ad esempio 06 12 34 56 78).",
+    "error_activity": "Indica la tua attività.",
+    "note": "I tuoi dati servono solo per risponderti.",
+    "company": "Nome dell'attività",
+    "company_placeholder": "Panetteria Rossi",
+    "error_company": "Indica il nome della tua attività.",
+    "progress": "Passo {{current}} di {{total}}",
+    "next": "Continua",
+    "skip": "Salta questo passo",
+    "finish": "Termina, richiamatemi",
+    "received": "La tua richiesta è stata ricevuta. Se vuoi, descrivi meglio il tuo progetto perché la bozza ti assomigli.",
+    "brief_error": "Non è stato possibile salvare le tue risposte. Nessun problema: ti richiamo e le vediamo insieme.",
+    "step2_title": "Quali pagine vorresti?",
+    "step2_hint": "Seleziona tutto ciò che ti interessa, aggiusteremo insieme.",
+    "page_accueil": "Home",
+    "page_services": "Servizi",
+    "page_realisations": "Lavori o galleria",
+    "page_apropos": "Chi sono",
+    "page_tarifs": "Prezzi",
+    "page_avis": "Recensioni dei clienti",
+    "page_contact": "Contatti",
+    "page_menu": "Menu",
+    "page_commande": "Ordini online",
+    "page_autre": "Altro",
+    "page_other_label": "Quali altre pagine o sezioni?",
+    "step3_title": "Il tuo stile e la tua identità visiva",
+    "theme_label": "Sfondo del sito",
+    "theme_clair": "Chiaro",
+    "theme_sombre": "Scuro",
+    "theme_indifferent": "Indifferente",
+    "yes": "Sì",
+    "no": "No",
+    "step4_title": "Per quando?",
+    "echeance_label": "Quando ti serve il sito?",
+    "echeance_asap": "Il prima possibile",
+    "echeance_1mois": "Entro un mese",
+    "echeance_2-3mois": "Tra 2 e 3 mesi",
+    "echeance_pas-presse": "Nessuna fretta",
+    "creneau_label": "Quando posso richiamarti?",
+    "creneau_matin": "La mattina",
+    "creneau_apres-midi": "Il pomeriggio",
+    "creneau_soir": "La sera",
+    "creneau_peu-importe": "Indifferente",
+    "done_title": "Inviato, grazie!",
+    "done_text": "Ti richiamo per parlare della tua bozza. Te la invio entro 72 ore lavorative dalla nostra conversazione.",
+    "type_title": "Che tipo di sito desideri?",
+    "type_hint": "Scegli ciò che fa per te, aggiusteremo insieme.",
+    "type_vitrine": "Sito vetrina",
+    "type_vitrine_desc": "Una sola pagina con più sezioni",
+    "type_vitrine-plus": "Sito vetrina +",
+    "type_vitrine-plus_desc": "Un sito di più pagine, fino a 5",
+    "type_indecis": "Non lo so ancora",
+    "type_indecis_desc": "Consigliatemi",
+    "sections_title": "Quali sezioni vorresti?",
+    "sections_hint": "Le sezioni si susseguono su un'unica pagina. Seleziona tutto ciò che ti interessa.",
+    "pages_hint": "Fino a 5 pagine. Seleziona quelle che ti interessano.",
+    "contents_title": "Cosa vorresti presentare?",
+    "section_accueil": "Presentazione della tua attività",
+    "page_other_placeholder": "Galleria foto, Blog, Novità",
+    "page_other_plus": "Contano tra le tue 5 pagine.",
+    "page_other_item": "Pagina o sezione {{n}}",
+    "page_add": "Aggiungi una pagina",
+    "page_remove": "Rimuovi la pagina {{n}}",
+    "menu_upload_title": "Carica il tuo menu",
+    "menu_upload_hint": "PDF o foto (JPEG, PNG, WebP), fino a 3 file da 10 MB. Facoltativo.",
+    "logo_upload_title": "Carica il tuo logo o il tuo manuale di identità visiva",
+    "logo_upload_hint": "PDF, JPEG, PNG o WebP, 10 MB al massimo. Facoltativo: se non ne hai uno, vai avanti.",
+    "file_choose": "Scegli un file",
+    "file_replace": "Sostituisci il file",
+    "file_uploading": "Invio in corso…",
+    "file_remove": "Rimuovi",
+    "file_error_type": "Formato non accettato. Scegli un PDF, un JPEG, un PNG o un WebP.",
+    "file_error_size": "File troppo grande (10 MB al massimo).",
+    "file_error_max": "Al massimo {{count}} file.",
+    "file_error_generic": "Non è stato possibile inviare il file. Riprova, oppure mandamelo per email: {{email}}.",
+    "charte_colors_label": "I colori della tua identità visiva",
+    "charte_colors_hint": "Facoltativo. Un codice #hex o RGB per colore, separati da una virgola. Ad esempio: #C9A24B, rgb(30, 10, 16)",
+    "charte_colors_found": "Colori riconosciuti",
+    "charte_colors_error": "Non riconosco questo formato. Usa un codice come #C9A24B o rgb(201, 162, 75).",
+    "police_label": "Un carattere imposto dalla tua identità visiva?",
+    "police_placeholder": "Ad esempio: Montserrat",
+    "police_hint": "Facoltativo. Se non lo sai, non c'è problema."
+  },
+  "meta": {
+    "suffix": "ManDev Web",
+    "home": "Creazione di siti web a Tolosa e in tutta la Francia, da 490 € — ManDev Web",
+    "description": "Creazione di siti web chiavi in mano a Tolosa e in tutta la Francia, da 490 €. Bozza gratuita della tua home page entro 72 ore lavorative, senza impegno.",
+    "projects": "Progetti",
+    "about": "Chi sono",
+    "contact": "Contatti",
+    "notfound": "Pagina non trovata"
+  },
+  "notfound": {
+    "title": "Pagina non trovata",
+    "text": "Questo indirizzo non esiste o è stato spostato.",
+    "home": "Torna alla home",
+    "projects": "Vedi i progetti",
+    "contact": "Contattami"
+  },
   "footer": {
-    "rights": "Tutti i diritti riservati"
+    "rights": "Tutti i diritti riservati",
+    "eyebrow": "Hai un progetto in mente?",
+    "big": "Parliamone",
+    "zone": "Tolosa · in tutta la Francia, a distanza"
   }
 }

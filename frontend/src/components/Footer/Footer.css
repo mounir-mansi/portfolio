@@ -1,31 +1,136 @@
 .footer {
-  background: var(--navy);
-  color: rgba(255,255,255,0.7);
-  text-align: center;
-  padding: 0.5em 2em;
+  border-top: 1px solid var(--line);
+  padding-block: clamp(4rem, 8vw, 7rem) 2rem;
+  background: var(--bg-sunken);
+}
+
+/* Sans appel à l'action (page Contact) : pas besoin du grand espace du haut */
+.footer--compact {
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding-block: clamp(2rem, 6vh, 4rem) 1.5rem;
+  }
+
+  .footer-cta {
+    padding-bottom: clamp(1.5rem, 4vh, 3rem);
+  }
+}
+
+.footer-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.footer-big {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 300;
+  transition: color 0.3s;
+}
+
+.footer-big span {
+  display: inline-block;
+  color: var(--accent-text);
+  transition: transform 0.4s var(--ease);
+}
+
+.footer-big:hover {
+  color: var(--accent-text);
+}
+
+.footer-big:hover span {
+  transform: translate(0.08em, -0.08em);
+}
+
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+}
+
+.footer-contact-list a {
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
+  transition: color 0.2s;
+}
+
+.footer-contact-list a:hover {
+  color: var(--accent-text);
+}
+
+.footer-zone {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--fg-muted);
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--fg-muted);
+}
+
+.footer-legal a {
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+  color: var(--accent-text);
+}
+
+/* Zones tactiles confortables sur téléphone */
+@media (pointer: coarse) {
+  .footer-contact-list a,
+  .footer-links a,
+  .footer-legal a {
+    display: inline-block;
+    padding-block: 0.75rem;
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--fg-muted);
 }
 
 .footer-links {
   display: flex;
-  justify-content: center;
-  gap: 1.5em;
-  margin-bottom: 0.3em;
+  gap: 1.5rem;
 }
 
 .footer-links a {
-  color: rgba(255,255,255,0.7);
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4em;
   transition: color 0.2s;
 }
 
 .footer-links a:hover {
-  color: var(--gold-light);
-}
-
-.footer-copy {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.4);
+  color: var(--accent-text);
 }

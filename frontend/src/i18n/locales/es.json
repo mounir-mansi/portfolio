@@ -6,22 +6,109 @@
     "projects": "Proyectos",
     "contact": "Contáctame",
     "admin": "Admin",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "services": "Servicios",
+    "quote": "Pedir presupuesto",
+    "skip": "Saltar al contenido",
+    "aria_main": "Navegación principal",
+    "aria_menu": "Menú",
+    "aria_lang_group": "Elegir idioma",
+    "aria_lang": "Idioma: {{code}}",
+    "back_to_top": "Volver arriba",
+    "call": "Llamar",
+    "mockup": "Maqueta gratis",
+    "aria_contact": "Contacto rápido"
   },
   "home": {
-    "greeting": "Hola, soy",
-    "badge_dev": "Desarrollador Fullstack",
-    "badge_freelance": "Freelance",
-    "subtitle": "React & Node.js — de la BD al despliegue",
-    "desc": "Disponible para tus proyectos web: sitios vitrina, aplicaciones a medida, APIs. Me encargo de todo, desde el backend seguro hasta la producción en VPS.",
-    "see_projects": "Ver mis proyectos",
-    "contact": "Contáctame"
+    "eyebrow": "Estudio web · Toulouse y toda Francia",
+    "title_a": "Sitios web que",
+    "title_em": "convierten",
+    "title_b": "a tus visitantes en clientes.",
+    "sub": "Sitios escaparate y aplicaciones web rápidas, seguras y llave en mano para comercios y pymes.",
+    "cta_quote": "Recibir mi maqueta gratis",
+    "cta_work": "Ver trabajos",
+    "offer": "Maqueta gratis en 72 horas laborables · sin compromiso",
+    "call": "¿Una pregunta?",
+    "services_eyebrow": "Servicios",
+    "services_title": "Lo que construyo para ti",
+    "services_cta": "Recibir mi maqueta gratis",
+    "popular": "Recomendado",
+    "services_cta_contact": "Hacer una pregunta",
+    "price_note": "Precios en euros, IVA no aplicable ({{article}}).",
+    "services": [
+      {
+        "tag": "Pack 01",
+        "name": "Escaparate",
+        "price_prefix": "Desde",
+        "price": "490 €",
+        "desc": "Un sitio claro y rápido que presenta tu negocio y invita a contactarte.",
+        "items": [
+          "Una página con varias secciones",
+          "Diseño a medida",
+          "Aviso legal",
+          "Botón de llamada y formulario de contacto",
+          "Visible en Google en tu ciudad",
+          "Fácil de leer en móvil, tablet y ordenador"
+        ]
+      },
+      {
+        "tag": "Pack 02",
+        "name": "Escaparate +",
+        "price_prefix": "Desde",
+        "price": "990 €",
+        "desc": "Un sitio de varias páginas que destaca tu oficio.",
+        "items": [
+          "Todo el pack Escaparate",
+          "Hasta 5 páginas, maqueta aprobada antes del desarrollo",
+          "Un espacio privado para modificar tú mismo tus textos y fotos",
+          "Multilingüe"
+        ]
+      },
+      {
+        "tag": "Pack 03",
+        "name": "Mantenimiento",
+        "price_prefix": "",
+        "price": "50 € / mes",
+        "desc": "Una opción para más tranquilidad y seguridad: alojo tu sitio, lo protejo y lo mantengo actualizado. Tú te centras en tu negocio.",
+        "items": [
+          "Alojamiento seguro",
+          "Copias y supervisión",
+          "Actualizaciones regulares",
+          "Soporte rápido"
+        ]
+      }
+    ],
+    "work_eyebrow": "Trabajos",
+    "work_title": "Proyectos recientes",
+    "work_all": "Todos los proyectos",
+    "process_eyebrow": "Método",
+    "process_title": "Un proceso simple, sin sorpresas",
+    "steps": [
+      {
+        "title": "Conversación",
+        "desc": "Definimos juntos tus necesidades, tu público y tus objetivos."
+      },
+      {
+        "title": "Maqueta",
+        "desc": "Apruebas el diseño antes de escribir una sola línea de código."
+      },
+      {
+        "title": "Desarrollo",
+        "desc": "Construyo el sitio y tú sigues el avance."
+      },
+      {
+        "title": "Lanzamiento",
+        "desc": "Despliegue, seguridad, SEO y formación."
+      }
+    ],
+    "final_eyebrow": "Siguiente paso",
+    "final_title": "Tu web, bien hecha."
   },
   "about": {
     "title1": "Apasionado por la web,",
     "title2": "de principio a fin",
-    "p1": "Desarrollador fullstack freelance, diseño y entrego aplicaciones web completas — del servidor a la interfaz — con especial atención al rendimiento, la seguridad y la experiencia de usuario.",
-    "p2": "Trabajo en proyectos variados: plataformas de negocio, aplicaciones interactivas, herramientas a medida, sitios vitrina. Disponible de forma remota, me adapto a las necesidades de cada cliente.",
+    "p1": "Diseño y entrego sitios y aplicaciones web completos para comercios y pymes: del diseño a la puesta en línea, con especial atención a la rapidez, la seguridad y la facilidad de uso.",
+    "p2": "Trabajo en proyectos variados: sitios vitrina, pedidos y pagos en línea, herramientas a medida. Trabajo a distancia y me adapto a las necesidades de cada cliente.",
     "see_projects": "Ver mis proyectos",
     "contact": "Contáctame",
     "timeline_title": "Trayectoria",
@@ -34,20 +121,22 @@
     "self_title": "Autodidacta — en curso",
     "self_text": "Después de los cursos, seguí solo: desplegar en VPS, asegurar servidores, construir proyectos de A a Z. Intentar, fallar, entender, volver a empezar. Ahí es donde realmente aprendí.",
     "val_security": "Seguridad",
-    "val_security_desc": "JWT httpOnly, Fail2ban, UFW, Nginx — la seguridad no es opcional.",
+    "val_security_desc": "Conexión cifrada, accesos protegidos y copias de seguridad: tu sitio y los datos de tus clientes están protegidos.",
     "val_perf": "Rendimiento",
-    "val_perf_desc": "Build Vite optimizado, PostgreSQL con Prisma, caché Cloudflare.",
-    "val_responsive": "Responsive",
-    "val_responsive_desc": "Cada proyecto se prueba en móvil, tablet y escritorio.",
-    "val_deploy": "Despliegue",
-    "val_deploy_desc": "De cero a producción en VPS con SSL, PM2 y monitorización."
+    "val_perf_desc": "Un sitio que carga rápido, también en el móvil.",
+    "val_responsive": "En todas las pantallas",
+    "val_responsive_desc": "Cada sitio se prueba en móvil, tablet y ordenador.",
+    "val_deploy": "Puesta en línea",
+    "val_deploy_desc": "Pongo el sitio en línea y me ocupo de él: alojamiento, certificado HTTPS, monitorización."
   },
   "skills": {
-    "title": "Mi stack técnico",
-    "intro": "Las tecnologías que uso para diseñar, desarrollar y desplegar proyectos web completos — del frontend al servidor.",
-    "cat_database": "Base de datos",
-    "cat_deploy": "Despliegue",
-    "cat_tools": "Herramientas"
+    "title": "Lo que hace funcionar tu sitio",
+    "intro": "Las herramientas que uso para que tu sitio siga siendo rápido, seguro y fácil de evolucionar.",
+    "cat_frontend": "Páginas rápidas, bonitas en el móvil",
+    "cat_backend": "Cuentas, pagos y reservas",
+    "cat_database": "Datos fiables y con copia de seguridad",
+    "cat_deploy": "Un sitio en línea y seguro",
+    "cat_tools": "Seguimiento ordenado y actualizaciones regulares"
   },
   "projects": {
     "title": "Mis trabajos",
@@ -63,12 +152,21 @@
     "name": "Nombre",
     "name_placeholder": "Tu nombre",
     "email": "Email",
+    "email_placeholder": "tu@email.com",
     "message": "Mensaje",
     "message_placeholder": "Describe tu proyecto o solicitud...",
     "submit": "Enviar mensaje",
     "sending": "Enviando...",
     "success": "¡Mensaje enviado! Te respondo pronto.",
-    "error": "Error al enviar el mensaje."
+    "error": "Error al enviar el mensaje.",
+    "error_name": "Indica tu nombre.",
+    "error_email": "Introduce una dirección de email válida (por ejemplo nombre@dominio.es).",
+    "error_message": "Describe brevemente tu proyecto o tu pregunta.",
+    "error_check": "No se pudo enviar el mensaje. Revisa los campos e inténtalo de nuevo.",
+    "error_rate": "Demasiados intentos. Espera un minuto e inténtalo de nuevo.",
+    "error_network": "No se puede enviar el mensaje en este momento. Tus datos se conservan: inténtalo de nuevo en un momento, o escríbeme a {{email}}.",
+    "alt_lead": "¿Prefieres escribir o llamar directamente?",
+    "alt_phone": "Teléfono"
   },
   "detail": {
     "loading": "Cargando...",
@@ -86,7 +184,165 @@
     "contact": "Contáctame",
     "placeholder": "La descripción detallada de este proyecto se añadirá pronto desde el panel de administración."
   },
+  "legal": {
+    "mentions": "Aviso legal",
+    "privacy": "Política de privacidad",
+    "privacy_short": "Privacidad",
+    "terms": "Condiciones generales de venta",
+    "terms_short": "CGV",
+    "fr_only": "Este documento está redactado en francés, la lengua del contrato."
+  },
+  "faq": {
+    "title": "Tus preguntas, mis respuestas",
+    "items": [
+      {
+        "q": "¿Cómo funciona la maqueta gratuita?",
+        "a": "Rellenas un breve formulario en pocos pasos y eliges el momento en que te llamo. Esa llamada me permite entender tu negocio y tus gustos. En un plazo de 72 horas laborables tras esa llamada, te envío una maqueta de tu página de inicio. La miras con calma y decides después, sin compromiso."
+      },
+      {
+        "q": "¿Cuánto cuesta una web?",
+        "a": "El pack Escaparate empieza en 490 €. El pack Escaparate + (reservas, pago online, panel de administración, multilingüe) empieza en 990 €. El mantenimiento, con alojamiento seguro, copias y actualizaciones, cuesta 50 € al mes. Te doy el precio exacto antes de empezar."
+      },
+      {
+        "q": "¿En cuánto tiempo estará mi web en línea?",
+        "a": "Depende del pack y de lo rápido que valides cada etapa. Te confirmo el plazo en nuestra primera conversación, antes de cualquier compromiso."
+      },
+      {
+        "q": "¿Hace falta vernos?",
+        "a": "No. Todo se hace a distancia, por teléfono, WhatsApp y email, en toda Francia. Si estás en Toulouse, también podemos vernos."
+      },
+      {
+        "q": "¿Qué incluye el mantenimiento de 50 € al mes?",
+        "a": "Con el auge de las IA, los ataques automatizados detectan los fallos de seguridad mucho más rápido: un sitio que ya no se actualiza se convierte pronto en un objetivo. El mantenimiento es una opción para estar tranquilo. Incluye el alojamiento seguro, el nombre de dominio, las actualizaciones de seguridad, las copias de seguridad periódicas, la vigilancia del sitio y un soporte ágil en caso de problema. Se puede cancelar con un mes de preaviso."
+      },
+      {
+        "q": "¿El sitio es realmente mío?",
+        "a": "Sí. Una vez recibido el pago final, el sitio y los textos son tuyos, y el nombre de dominio está registrado a tu nombre. El mantenimiento es opcional. En cualquier momento, con una simple solicitud, te entrego los archivos de tu sitio, sin coste, para que puedas alojarlo donde quieras."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Confiaron en mí"
+  },
+  "quote": {
+    "title": "Recibe la maqueta de tu página de inicio",
+    "terms": [
+      "Gratuita",
+      "En 72 horas laborables",
+      "Sin compromiso"
+    ],
+    "offer": "Después decides si trabajamos juntos.",
+    "whatsapp": "Escribir por WhatsApp",
+    "name": "Nombre y apellidos",
+    "phone": "Teléfono",
+    "activity": "Tu actividad",
+    "activity_placeholder": "Panadería, fontanero, restaurante…",
+    "email": "Email (opcional)",
+    "submit": "Recibir mi maqueta gratis",
+    "success": "Solicitud recibida. Te contacto en breve.",
+    "error_phone": "Introduce un número de teléfono válido (por ejemplo 06 12 34 56 78).",
+    "error_activity": "Indica tu actividad.",
+    "note": "Tus datos solo se usan para responderte.",
+    "company": "Nombre del negocio",
+    "company_placeholder": "Panadería García",
+    "error_company": "Indica el nombre de tu negocio.",
+    "progress": "Paso {{current}} de {{total}}",
+    "next": "Continuar",
+    "skip": "Saltar este paso",
+    "finish": "Terminar, llámame",
+    "received": "Tu solicitud se ha recibido. Si quieres, cuéntame más sobre tu proyecto para que la maqueta se parezca a ti.",
+    "brief_error": "No se pudieron guardar tus respuestas. No pasa nada: te llamo y las vemos juntos.",
+    "step2_title": "¿Qué páginas quieres?",
+    "step2_hint": "Marca todo lo que te interese, lo ajustaremos juntos.",
+    "page_accueil": "Inicio",
+    "page_services": "Servicios",
+    "page_realisations": "Trabajos o galería",
+    "page_apropos": "Sobre mí",
+    "page_tarifs": "Precios",
+    "page_avis": "Opiniones de clientes",
+    "page_contact": "Contacto",
+    "page_menu": "Menú o carta",
+    "page_commande": "Pedidos en línea",
+    "page_autre": "Otra",
+    "page_other_label": "¿Qué otras páginas o secciones?",
+    "step3_title": "Tu estilo y tu identidad visual",
+    "theme_label": "Fondo del sitio",
+    "theme_clair": "Claro",
+    "theme_sombre": "Oscuro",
+    "theme_indifferent": "Me da igual",
+    "yes": "Sí",
+    "no": "No",
+    "step4_title": "¿Para cuándo?",
+    "echeance_label": "¿Cuándo necesitas el sitio?",
+    "echeance_asap": "Lo antes posible",
+    "echeance_1mois": "En un mes",
+    "echeance_2-3mois": "En 2 o 3 meses",
+    "echeance_pas-presse": "Sin prisa",
+    "creneau_label": "¿Cuándo puedo llamarte?",
+    "creneau_matin": "Por la mañana",
+    "creneau_apres-midi": "Por la tarde",
+    "creneau_soir": "Por la noche",
+    "creneau_peu-importe": "Me da igual",
+    "done_title": "¡Enviado, gracias!",
+    "done_text": "Te llamo para hablar de tu maqueta. Te la envío en 72 horas laborables tras nuestra conversación.",
+    "type_title": "¿Qué tipo de sitio quieres?",
+    "type_hint": "Elige lo que te convenga, lo ajustaremos juntos.",
+    "type_vitrine": "Sitio escaparate",
+    "type_vitrine_desc": "Una sola página con varias secciones",
+    "type_vitrine-plus": "Sitio escaparate +",
+    "type_vitrine-plus_desc": "Un sitio de varias páginas, hasta 5",
+    "type_indecis": "Todavía no lo sé",
+    "type_indecis_desc": "Aconséjame",
+    "sections_title": "¿Qué secciones quieres?",
+    "sections_hint": "Las secciones se suceden en una sola página. Marca todo lo que te interese.",
+    "pages_hint": "Hasta 5 páginas. Marca las que te interesen.",
+    "contents_title": "¿Qué quieres presentar?",
+    "section_accueil": "Presentación de tu actividad",
+    "page_other_placeholder": "Galería de fotos, Blog, Noticias",
+    "page_other_plus": "Cuentan dentro de tus 5 páginas.",
+    "page_other_item": "Página o sección {{n}}",
+    "page_add": "Añadir una página",
+    "page_remove": "Quitar la página {{n}}",
+    "menu_upload_title": "Sube tu menú o carta",
+    "menu_upload_hint": "PDF o fotos (JPEG, PNG, WebP), hasta 3 archivos de 10 MB. Opcional.",
+    "logo_upload_title": "Sube tu logotipo o tu manual de identidad visual",
+    "logo_upload_hint": "PDF, JPEG, PNG o WebP, 10 MB como máximo. Opcional: si no tienes, sigue adelante.",
+    "file_choose": "Elegir un archivo",
+    "file_replace": "Sustituir el archivo",
+    "file_uploading": "Enviando…",
+    "file_remove": "Quitar",
+    "file_error_type": "Formato no aceptado. Elige un PDF, un JPEG, un PNG o un WebP.",
+    "file_error_size": "Archivo demasiado grande (10 MB como máximo).",
+    "file_error_max": "{{count}} archivos como máximo.",
+    "file_error_generic": "No se pudo enviar el archivo. Inténtalo de nuevo, o envíamelo por email: {{email}}.",
+    "charte_colors_label": "Los colores de tu identidad visual",
+    "charte_colors_hint": "Opcional. Un código #hex o RGB por color, separados por una coma. Por ejemplo: #C9A24B, rgb(30, 10, 16)",
+    "charte_colors_found": "Colores reconocidos",
+    "charte_colors_error": "No reconozco este formato. Usa un código como #C9A24B o rgb(201, 162, 75).",
+    "police_label": "¿Una fuente impuesta por tu identidad visual?",
+    "police_placeholder": "Por ejemplo: Montserrat",
+    "police_hint": "Opcional. Si no lo sabes, no pasa nada."
+  },
+  "meta": {
+    "suffix": "ManDev Web",
+    "home": "Creación de sitios web en Toulouse y toda Francia, desde 490 € — ManDev Web",
+    "description": "Creación de sitios web llave en mano en Toulouse y toda Francia, desde 490 €. Maqueta gratuita de tu página de inicio en 72 horas laborables, sin compromiso.",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "notfound": "Página no encontrada"
+  },
+  "notfound": {
+    "title": "Página no encontrada",
+    "text": "Esta dirección no existe o se ha movido.",
+    "home": "Volver al inicio",
+    "projects": "Ver proyectos",
+    "contact": "Contáctame"
+  },
   "footer": {
-    "rights": "Todos los derechos reservados"
+    "rights": "Todos los derechos reservados",
+    "eyebrow": "¿Tienes un proyecto?",
+    "big": "Hablemos",
+    "zone": "Toulouse · toda Francia, a distancia"
   }
 }
