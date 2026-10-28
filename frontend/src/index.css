@@ -356,3 +356,10 @@ p {
   white-space: nowrap;
   border: 0;
 }
+
+/* Mobile et tablette : sections plus serrées (la valeur du bureau, en vh, n'est pas concernée) */
+@media (max-width: 1023px) {
+  :root {
+    --section-y: clamp(2.25rem, 7vw, 3.5rem);
+  }
+}
