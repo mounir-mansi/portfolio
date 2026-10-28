@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
@@ -53,6 +53,28 @@ export default function HomePage() {
   }, [hash, key]);
 
   const services = t("home.services", { returnObjects: true });
+
+  // Mobile : les packs défilent horizontalement ; les onglets au-dessus montrent les trois packs et suivent le défilement
+  const servicesRef = useRef(null);
+  const [activeService, setActiveService] = useState(0);
+  const servicesStart = (grid) => parseFloat(getComputedStyle(grid).paddingLeft) || 0;
+  const onServicesScroll = (e) => {
+    const grid = e.currentTarget;
+    const start = servicesStart(grid);
+    let best = 0;
+    let bestDistance = Infinity;
+    [...grid.children].forEach((card, i) => {
+      const distance = Math.abs(card.offsetLeft - start - grid.scrollLeft);
+      if (distance < bestDistance) { best = i; bestDistance = distance; }
+    });
+    setActiveService(best);
+  };
+  const goToService = (i) => {
+    const grid = servicesRef.current;
+    const card = grid?.children[i];
+    if (!grid || !card) return;
+    grid.scrollTo({ left: card.offsetLeft - servicesStart(grid), behavior: "smooth" });
+  };
   const steps = t("home.steps", { returnObjects: true });
 
   return (
@@ -106,7 +128,24 @@ export default function HomePage() {
             <h2 className="block-title">{t("home.services_title")}</h2>
           </header>
 
-          <div className="services">
+          {Array.isArray(services) && (
+            <div className="services-tabs" role="group" aria-label={t("home.services_title")}>
+              {services.map((s, i) => (
+                <button
+                  key={s.name}
+                  type="button"
+                  className={`services-tab${i === activeService ? " is-active" : ""}`}
+                  aria-pressed={i === activeService}
+                  onClick={() => goToService(i)}
+                >
+                  <span className="services-tab-name">{s.name}</span>
+                  <span className="services-tab-price">{s.price}</span>
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className="services" ref={servicesRef} onScroll={onServicesScroll}>
             {Array.isArray(services) && services.map((s, i) => (
               <article key={s.name} className={`service reveal ${i === 1 ? "service--featured" : ""}`} style={{ "--delay": `${i * 90}ms` }}>
                 {i === 1 && <span className="service-badge">{t("home.popular")}</span>}
