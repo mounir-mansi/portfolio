@@ -938,3 +938,58 @@
     display: none;
   }
 }
+
+/* ===== Mobile : onglets des trois packs au-dessus des cartes (repère et commande du défilement) ===== */
+.services-tabs {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .services-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: 1.1rem;
+  }
+
+  .services-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;
+    min-height: 3.1rem;
+    padding: 0.5rem 0.35rem;
+    font: inherit;
+    color: var(--fg-muted);
+    background: color-mix(in srgb, var(--fg) 5%, var(--bg));
+    border: 1px solid var(--line-strong);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+
+  .services-tab-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .services-tab-price {
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--fg);
+  }
+
+  .services-tab.is-active {
+    color: var(--fg);
+    background: var(--accent-dim);
+    border-color: var(--accent);
+  }
+
+  #services .services {
+    position: relative;
+    margin-top: 0.25rem;
+  }
+}
