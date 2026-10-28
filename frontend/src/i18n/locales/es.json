@@ -21,13 +21,13 @@
   },
   "home": {
     "eyebrow": "Estudio web · Toulouse y toda Francia",
-    "title_a": "Sitios web que",
+    "title_a": "Sitios web para artesanos y comerciantes que",
     "title_em": "convierten",
     "title_b": "a tus visitantes en clientes.",
-    "sub": "Sitios escaparate y aplicaciones web rápidas, seguras y llave en mano para comercios y pymes.",
+    "sub": "Un sitio escaparate claro y rápido que te trae llamadas y solicitudes de presupuesto, llave en mano.",
     "cta_quote": "Recibir mi maqueta gratis",
     "cta_work": "Ver trabajos",
-    "offer": "Maqueta gratis en 72 horas laborables · sin compromiso",
+    "offer": "Desde 490 € · Maqueta gratis en 72 horas laborables · Sin compromiso · Toda Francia",
     "call": "¿Una pregunta?",
     "services_eyebrow": "Servicios",
     "services_title": "Lo que construyo para ti",
@@ -102,7 +102,9 @@
       }
     ],
     "final_eyebrow": "Siguiente paso",
-    "final_title": "Tu web, bien hecha."
+    "final_title": "Tu web, bien hecha.",
+    "hero_quote_continue": "Cuéntame más sobre mi proyecto",
+    "hero_quote_activity_ph": "Fontanero, panadero…"
   },
   "about": {
     "title1": "Apasionado por la web,",

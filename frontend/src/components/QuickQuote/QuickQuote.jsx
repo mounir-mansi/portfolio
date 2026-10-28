@@ -9,14 +9,9 @@ import {
   CONTACT_WHATSAPP_HREF,
 } from "../../utils/contactInfo";
 import FileUploader from "./FileUploader";
+import { EMPTY, FIELDS, validate, sendQuoteRequest } from "./quoteForm";
 import "./QuickQuote.css";
 
-// Mêmes règles que le backend (contactController.js, source "devis")
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_SEPARATORS = /[\s.\-()]/g;
-const PHONE_REGEX = /^\+?\d{8,15}$/;
-const FIELDS = ["name", "company", "phone", "activity", "email"];
-const EMPTY = { name: "", company: "", phone: "", activity: "", email: "" };
 
 const PAGES = ["accueil", "services", "realisations", "apropos", "tarifs", "avis", "contact", "menu", "commande", "autre"];
 const THEMES = ["clair", "sombre", "indifferent"];
@@ -50,16 +45,6 @@ const MAX_OTHER_PAGES = 5;
 const MAX_MENU_FILES = 3;
 const TYPES = ["vitrine", "vitrine-plus", "indecis"];
 
-function validate(form) {
-  const errors = {};
-  if (!form.name.trim()) errors.name = "contact.error_name";
-  if (!form.company.trim()) errors.company = "quote.error_company";
-  if (!PHONE_REGEX.test(form.phone.trim().replace(PHONE_SEPARATORS, ""))) errors.phone = "quote.error_phone";
-  if (!form.activity.trim()) errors.activity = "quote.error_activity";
-  if (form.email.trim() && !EMAIL_REGEX.test(form.email.trim())) errors.email = "contact.error_email";
-  return errors;
-}
-
 // Section « Recevez la maquette gratuite » (ancre #devis sur l'accueil).
 // Étape 1 : la demande est envoyée tout de suite. Étapes 2 à 4 : brief facultatif qui complète la demande.
 export default function QuickQuote() {
@@ -78,9 +63,27 @@ export default function QuickQuote() {
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
 
+  // Quand la demande part du hero (HeroQuote), ce formulaire reprend à l'étape 2 sans déplacer la page
+  const startedFromHero = useRef(false);
+  useEffect(() => {
+    const onStarted = (e) => {
+      const { form: sent, token: sentToken } = e.detail || {};
+      if (!sentToken) return;
+      startedFromHero.current = true;
+      setForm({ ...EMPTY, ...sent });
+      setToken(sentToken);
+      setErrors({});
+      setStatus(null);
+      setStep(2);
+    };
+    window.addEventListener("quote:started", onStarted);
+    return () => window.removeEventListener("quote:started", onStarted);
+  }, []);
+
   // À chaque changement d'étape, le focus va sur le titre pour qu'il soit annoncé
   useEffect(() => {
-    if (step > 1) headingRef.current?.focus();
+    if (step > 1 && !startedFromHero.current) headingRef.current?.focus();
+    startedFromHero.current = false;
   }, [step]);
 
   const handleChange = (e) => {
@@ -126,17 +129,7 @@ export default function QuickQuote() {
     setLoading(true);
     setStatus(null);
     try {
-      const res = await apiFetch("/contact", {
-        method: "POST",
-        body: JSON.stringify({
-          source: "devis",
-          name: form.name.trim(),
-          company: form.company.trim(),
-          phone: form.phone.trim(),
-          activity: form.activity.trim(),
-          email: form.email.trim(),
-        }),
-      });
+      const res = await sendQuoteRequest(form);
       if (res.ok) {
         const data = await res.json().catch(() => ({}));
         setToken(data.token || null);

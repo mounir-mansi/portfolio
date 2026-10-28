@@ -6,6 +6,7 @@ import { apiFetch } from "../../utils/api";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
 import QuickQuote from "../../components/QuickQuote/QuickQuote";
+import HeroQuote from "../../components/HeroQuote/HeroQuote";
 import Faq from "../../components/Faq/Faq";
 import Reviews from "../../components/Reviews/Reviews";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from "../../utils/contactInfo";
@@ -72,13 +73,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {projects[0] && projects[0].imageUrl && (
-            <Link to={lp(`/projets/${projects[0].id}`)} className="hero-proof reveal" style={{ "--delay": "240ms" }}>
-              <img src={projects[0].imageUrl} alt="" />
-              <span className="hero-proof-title">{projects[0].title}</span>
-            </Link>
-          )}
-
+          <HeroQuote />
         </div>
       </section>
 

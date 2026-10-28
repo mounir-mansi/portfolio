@@ -21,13 +21,13 @@
   },
   "home": {
     "eyebrow": "Web studio · Toulouse and all over France",
-    "title_a": "Showcase websites that",
+    "title_a": "Websites for craftspeople and shop owners that",
     "title_em": "turn",
     "title_b": "your visitors into customers.",
-    "sub": "Fast, secure showcase sites and web apps, delivered turnkey for local businesses and SMEs.",
+    "sub": "A clear, fast showcase website that brings you calls and quote requests, delivered turnkey.",
     "cta_quote": "Get my free mockup",
     "cta_work": "See my work",
-    "offer": "Free mockup within 72 working hours · no commitment",
+    "offer": "From €490 · Free mockup within 72 working hours · No commitment · All over France",
     "call": "A question?",
     "services_eyebrow": "Services",
     "services_title": "What I build for you",
@@ -102,7 +102,9 @@
       }
     ],
     "final_eyebrow": "Next step",
-    "final_title": "Your website, done right."
+    "final_title": "Your website, done right.",
+    "hero_quote_continue": "Tell me more about my project",
+    "hero_quote_activity_ph": "Plumber, baker…"
   },
   "about": {
     "title1": "Passionate about the web,",

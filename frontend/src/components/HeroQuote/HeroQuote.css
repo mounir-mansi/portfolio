@@ -1,0 +1,106 @@
+/* Carte « maquette gratuite » du hero : visible seulement sur grand écran (sur mobile, le bouton du hero mène au formulaire) */
+.hero-quote {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-quote {
+    display: block;
+    align-self: center;
+    padding: clamp(1.25rem, 2.4vw, 2rem);
+    background: var(--bg-raised);
+    border: 1px solid var(--line-strong);
+    border-radius: calc(var(--radius) * 2);
+  }
+
+  .hero-quote-title {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+  }
+
+  .hero-quote-terms {
+    margin-top: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+  }
+
+  .hero-quote form,
+  .hero-quote-done {
+    margin-top: 1.25rem;
+  }
+
+  .hero-quote-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem 1rem;
+  }
+
+  .hero-quote-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+
+  .hero-quote-field label {
+    font-size: var(--step--1);
+    font-weight: 500;
+    color: var(--fg);
+  }
+
+  .hero-quote-field input {
+    width: 100%;
+    padding: 0.7em 0.85em;
+    font: inherit;
+    font-size: var(--step-0);
+    color: var(--fg);
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+  }
+
+  .hero-quote-field input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  .hero-quote-field input[aria-invalid="true"] {
+    border-color: #ff6b57;
+  }
+
+  .hero-quote-submit {
+    width: 100%;
+    margin-top: 1.1rem;
+    justify-content: center;
+  }
+
+  .hero-quote-note {
+    margin-top: 0.8rem;
+    font-size: var(--step--1);
+    color: var(--fg-muted);
+  }
+
+  .hero-quote-note a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .hero-quote-done p {
+    margin-bottom: 1rem;
+    color: var(--fg-muted);
+    line-height: 1.5;
+  }
+
+  /* Le formulaire du hero devient le bouton principal : le lien vers #devis du hero n'est plus utile */
+  .hero-ctas .btn-primary {
+    display: none;
+  }
+}
