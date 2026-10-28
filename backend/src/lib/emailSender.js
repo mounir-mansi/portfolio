@@ -1,6 +1,11 @@
+const path = require("path");
 const { Resend } = require("resend");
+const storage = require("./briefStorage");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Taille maximale des pièces jointes par email (les fichiers d'un même brief sont répartis sur plusieurs mails au-delà)
+const MAX_MAIL_BYTES = 15 * 1024 * 1024;
 
 const escapeHtml = (str) =>
   str
@@ -53,6 +58,43 @@ const THEME_LABELS = { clair: "Site clair", sombre: "Site sombre", indifferent: 
 const ECHEANCE_LABELS = { asap: "Dès que possible", "1mois": "D'ici un mois", "2-3mois": "Dans 2 à 3 mois", "pas-presse": "Pas pressé" };
 const CRENEAU_LABELS = { matin: "Le matin", "apres-midi": "L'après-midi", soir: "Le soir", "peu-importe": "Peu importe" };
 
+// Lit les fichiers importés (menu, logo) dans le stockage privé. Noms neutres : on ne reprend jamais le nom envoyé par le visiteur.
+// Un fichier illisible est ignoré (il reste téléchargeable dans l'admin), l'envoi du mail ne doit pas échouer à cause de lui.
+async function loadBriefAttachments(row) {
+  const entries = [
+    ...(row.menuFiles || []).map((fileId, i) => ({ fileId, base: `menu-${i + 1}` })),
+    ...(row.logoFile ? [{ fileId: row.logoFile, base: "logo" }] : []),
+  ];
+  const attachments = [];
+  for (const { fileId, base } of entries) {
+    try {
+      const content = await storage.get(`brief/${row.id}/${fileId}`);
+      attachments.push({ filename: `${base}${path.extname(fileId)}`, content });
+    } catch (err) {
+      console.error("Pièce jointe ignorée :", fileId, err.message);
+    }
+  }
+  return attachments;
+}
+
+// Répartit les fichiers en lots d'au plus MAX_MAIL_BYTES (un fichier seul fait au plus 10 Mo, il tient toujours dans un lot)
+function splitIntoBatches(attachments) {
+  const batches = [];
+  let current = [];
+  let size = 0;
+  for (const file of attachments) {
+    if (current.length && size + file.content.length > MAX_MAIL_BYTES) {
+      batches.push(current);
+      current = [];
+      size = 0;
+    }
+    current.push(file);
+    size += file.content.length;
+  }
+  if (current.length) batches.push(current);
+  return batches;
+}
+
 // Email envoyé quand le visiteur termine le brief de la demande de maquette
 async function sendBriefNotification(row) {
   const safeName = escapeHtml(row.name);
@@ -74,12 +116,32 @@ async function sendBriefNotification(row) {
   if (row.echeance) lines.push(`<p><strong>Pour quand :</strong> ${ECHEANCE_LABELS[row.echeance]}</p>`);
   if (row.creneau) lines.push(`<p><strong>Créneau de rappel :</strong> ${CRENEAU_LABELS[row.creneau]}</p>`);
 
+  const batches = splitIntoBatches(await loadBriefAttachments(row));
+  const total = Math.max(batches.length, 1);
+  const title = (n) => (total > 1 ? ` (fichiers ${n}/${total})` : "");
+
   await resend.emails.send({
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_CONTACT,
-    subject: `Brief complété : ${safeName}`,
+    subject: `Brief complété : ${safeName}${title(1)}`,
     html: `<h2>Brief de maquette complété</h2>\n${lines.join("\n")}`,
+    ...(batches[0] ? { attachments: batches[0] } : {}),
   });
+
+  // Fichiers restants : un mail par lot. Une erreur ici ne doit pas faire échouer le mail principal, déjà parti.
+  for (let i = 1; i < batches.length; i++) {
+    try {
+      await resend.emails.send({
+        from: process.env.EMAIL_FROM,
+        to: process.env.EMAIL_CONTACT,
+        subject: `Brief complété : ${safeName}${title(i + 1)}`,
+        html: `<p>Suite des fichiers du brief de <strong>${safeName}</strong>.</p>`,
+        attachments: batches[i],
+      });
+    } catch (err) {
+      console.error(`Brief email, lot ${i + 1}/${total} :`, err);
+    }
+  }
 }
 
 async function sendReply({ to, name, replyMessage }) {
@@ -99,4 +161,4 @@ async function sendReply({ to, name, replyMessage }) {
   });
 }
 
-module.exports = { sendContactNotification, sendBriefNotification, sendReply };
+module.exports = { splitIntoBatches, sendContactNotification, sendBriefNotification, sendReply };
