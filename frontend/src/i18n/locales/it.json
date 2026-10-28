@@ -308,7 +308,7 @@
     "menu_upload_title": "Carica il tuo menu",
     "menu_upload_hint": "PDF o foto (JPEG, PNG, WebP), fino a 3 file da 10 MB. Facoltativo.",
     "logo_upload_title": "Carica il tuo logo o il tuo manuale di identità visiva",
-    "logo_upload_hint": "PDF, JPEG, PNG o WebP, 10 MB al massimo. Facoltativo: se non ne hai uno, vai avanti.",
+    "logo_upload_hint": "PDF, JPEG, PNG o WebP, 10 MB al massimo.",
     "file_choose": "Scegli un file",
     "file_replace": "Sostituisci il file",
     "file_uploading": "Invio in corso…",
@@ -317,13 +317,14 @@
     "file_error_size": "File troppo grande (10 MB al massimo).",
     "file_error_max": "Al massimo {{count}} file.",
     "file_error_generic": "Non è stato possibile inviare il file. Riprova, oppure mandamelo per email: {{email}}.",
-    "charte_colors_label": "I colori della tua identità visiva",
-    "charte_colors_hint": "Facoltativo. Un codice #hex o RGB per colore, separati da una virgola. Ad esempio: #C9A24B, rgb(30, 10, 16)",
+    "charte_colors_label": "I colori della tua identità",
+    "charte_colors_hint": "Un codice #hex o RGB per colore, separati da una virgola.",
     "charte_colors_found": "Colori riconosciuti",
     "charte_colors_error": "Non riconosco questo formato. Usa un codice come #C9A24B o rgb(201, 162, 75).",
-    "police_label": "Un carattere imposto dalla tua identità visiva?",
-    "police_placeholder": "Ad esempio: Montserrat",
-    "police_hint": "Facoltativo. Se non lo sai, non c'è problema."
+    "police_label": "Un carattere obbligatorio?",
+    "police_placeholder": "Es. Montserrat",
+    "police_hint": "Facoltativo. Se non lo sai, non c'è problema.",
+    "step3_hint": "Tutto è facoltativo: se non sai, vai semplicemente avanti."
   },
   "meta": {
     "suffix": "ManDev Web",

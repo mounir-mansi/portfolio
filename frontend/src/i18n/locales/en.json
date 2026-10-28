@@ -308,7 +308,7 @@
     "menu_upload_title": "Upload your menu",
     "menu_upload_hint": "PDF or photos (JPEG, PNG, WebP), up to 3 files of 10 MB each. Optional.",
     "logo_upload_title": "Upload your logo or brand guidelines",
-    "logo_upload_hint": "PDF, JPEG, PNG or WebP, 10 MB maximum. Optional: if you don't have one, just move on.",
+    "logo_upload_hint": "PDF, JPEG, PNG or WebP, 10 MB maximum.",
     "file_choose": "Choose a file",
     "file_replace": "Replace the file",
     "file_uploading": "Uploading…",
@@ -317,13 +317,14 @@
     "file_error_size": "File too large (10 MB maximum).",
     "file_error_max": "{{count}} files maximum.",
     "file_error_generic": "The file could not be sent. Try again, or email it to me at {{email}}.",
-    "charte_colors_label": "The colours of your brand guidelines",
-    "charte_colors_hint": "Optional. One #hex or RGB code per colour, separated by a comma. For example: #C9A24B, rgb(30, 10, 16)",
+    "charte_colors_label": "Your brand colours",
+    "charte_colors_hint": "One #hex or RGB code per colour, separated by a comma.",
     "charte_colors_found": "Recognised colours",
     "charte_colors_error": "I don't recognise this format. Use a code like #C9A24B or rgb(201, 162, 75).",
-    "police_label": "A font required by your brand guidelines?",
-    "police_placeholder": "For example: Montserrat",
-    "police_hint": "Optional. If you don't know, no problem."
+    "police_label": "A required font?",
+    "police_placeholder": "E.g. Montserrat",
+    "police_hint": "Optional. If you don't know, no problem.",
+    "step3_hint": "Everything is optional: if you're not sure, just move on to the next step."
   },
   "meta": {
     "suffix": "ManDev Web",
