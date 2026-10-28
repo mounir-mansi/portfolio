@@ -418,9 +418,10 @@
 
 @media (min-width: 1024px) {
   .hero-grid {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    /* Colonne image la plus large possible : elle s'arrête à ~50 px du bouton « Voir les réalisations » (plus large, le bouton passerait à la ligne) */
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     align-items: center;
-    column-gap: clamp(2rem, 5vw, 4rem);
+    column-gap: clamp(1.25rem, 2.5vw, 2rem);
   }
 
   .hero-proof {
