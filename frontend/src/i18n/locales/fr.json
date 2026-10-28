@@ -325,7 +325,8 @@
     "police_label": "Une police imposée ?",
     "police_placeholder": "Ex. : Montserrat",
     "police_hint": "Facultatif. Si vous ne savez pas, ce n'est pas grave.",
-    "step3_hint": "Tout est facultatif : si vous ne savez pas, passez simplement à la suite."
+    "step3_hint": "Tout est facultatif : si vous ne savez pas, passez simplement à la suite.",
+    "close": "Fermer"
   },
   "meta": {
     "suffix": "ManDev Web",
