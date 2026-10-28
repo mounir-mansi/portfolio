@@ -67,7 +67,8 @@ export default function Navbar() {
     <header className={`navbar ${scrolled || open ? "navbar--solid" : ""}`}>
       <nav className="navbar-inner" aria-label={t("nav.aria_main")}>
         <Link to={lp("")} className="wordmark" onClick={close} aria-label="ManDev Web">
-          mandev<span className="wordmark-dot">.</span>
+          <img className="wordmark-mark" src="/favicon.svg" alt="" width="36" height="36" />
+          mandev
         </Link>
 
         <button

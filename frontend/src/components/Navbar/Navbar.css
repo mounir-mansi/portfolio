@@ -48,8 +48,18 @@
   z-index: 2;
 }
 
-.wordmark-dot {
-  color: var(--accent-text);
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Monogramme « m » (même dessin que l'icône d'onglet) */
+.wordmark-mark {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: none;
 }
 
 .nav-links {
