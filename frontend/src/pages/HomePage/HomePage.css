@@ -918,3 +918,16 @@
     transition: none;
   }
 }
+
+/* ===== Mobile et tablette : moins de vide entre les sections ===== */
+@media (max-width: 1023px) {
+  .hero {
+    padding-bottom: clamp(2rem, 6vw, 3rem);
+  }
+
+  .block-head,
+  #services .block-head,
+  #process .block-head {
+    margin-bottom: clamp(1.1rem, 4vw, 1.75rem);
+  }
+}
