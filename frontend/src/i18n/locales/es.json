@@ -326,7 +326,8 @@
     "police_placeholder": "Ej. Montserrat",
     "police_hint": "Opcional. Si no lo sabes, no pasa nada.",
     "step3_hint": "Todo es opcional: si no lo sabes, pasa simplemente al siguiente paso.",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "modal_title": "Recibe tu maqueta"
   },
   "meta": {
     "suffix": "ManDev Web",

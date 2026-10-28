@@ -466,12 +466,8 @@ export default function QuickQuote({ variant = "section", onClose } = {}) {
       <div className="quote quote--modal">
         {step === 1 && (
           <header className="quote-modal-intro">
-            <h2 id="quote-title" className="quote-modal-title">{t("quote.title")}</h2>
-            {Array.isArray(terms) && (
-              <ul className="quote-terms">
-                {terms.map((term) => <li key={term}>{term}</li>)}
-              </ul>
-            )}
+            <h2 id="quote-title" className="quote-modal-title">{t("quote.modal_title")}</h2>
+            {Array.isArray(terms) && <p className="quote-modal-terms">{terms.join(" · ")}</p>}
           </header>
         )}
         {formBlock}
