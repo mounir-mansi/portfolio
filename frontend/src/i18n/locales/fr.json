@@ -199,7 +199,7 @@
     "items": [
       {
         "q": "Comment se passe la maquette gratuite ?",
-        "a": "Vous remplissez un court formulaire en quelques étapes et vous choisissez le moment où je vous appelle. Cet appel me permet de comprendre votre métier et vos envies. Sous 72 h ouvrées après cet échange, je vous envoie une maquette de votre page d'accueil. Vous la regardez tranquillement et vous décidez ensuite, sans engagement."
+        "a": "Vous remplissez un court formulaire en quelques étapes et vous choisissez le moment où je vous appelle. Cet appel me permet de comprendre votre métier et vos envies. Sous 72 h après cet échange, je vous envoie une maquette de votre page d'accueil. Vous la regardez tranquillement et vous décidez ensuite, sans engagement."
       },
       {
         "q": "Combien coûte un site internet ?",
@@ -286,7 +286,7 @@
     "creneau_soir": "Le soir",
     "creneau_peu-importe": "Peu importe",
     "done_title": "C'est envoyé, merci !",
-    "done_text": "Je vous rappelle pour parler de votre maquette. Elle vous est envoyée sous 72 h ouvrées après notre échange.",
+    "done_text": "Je vous rappelle pour parler de votre maquette. Elle vous est envoyée sous 72 h après notre échange.",
     "type_title": "Quel type de site souhaitez-vous ?",
     "type_hint": "Choisissez ce qui vous correspond, nous ajusterons ensemble.",
     "type_vitrine": "Site vitrine",
@@ -328,7 +328,7 @@
   "meta": {
     "suffix": "ManDev Web",
     "home": "Création de site internet à Toulouse, dès 490 € — ManDev Web",
-    "description": "Création de site internet clé en main à Toulouse et partout en France, dès 490 €. Maquette gratuite de votre page d'accueil sous 72 h ouvrées, sans engagement.",
+    "description": "Création de site internet clé en main à Toulouse et partout en France, dès 490 €. Maquette gratuite de votre page d'accueil sous 72 h, sans engagement.",
     "projects": "Projets",
     "about": "À propos",
     "contact": "Contact",
