@@ -48,6 +48,17 @@ describe("Projects", () => {
     createdId = res.body.id;
   });
 
+  test("GET /api/projects/:id — un projet masqué est introuvable par son adresse directe", async () => {
+    const visible = await request(app).get(`/api/projects/${createdId}`);
+    expect(visible.status).toBe(200);
+
+    const hide = await request(app).patch(`/admin/projects/${createdId}/visible`).set("Cookie", cookie);
+    expect(hide.body.visible).toBe(false);
+
+    const hidden = await request(app).get(`/api/projects/${createdId}`);
+    expect(hidden.status).toBe(404);
+  });
+
   test("DELETE /admin/projects/:id — avec token supprime le projet", async () => {
     const res = await request(app)
       .delete(`/admin/projects/${createdId}`)

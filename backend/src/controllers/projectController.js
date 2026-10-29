@@ -71,7 +71,8 @@ async function getProjectById(req, res) {
   const lang = req.query.lang;
   try {
     const project = await prisma.project.findUnique({ where: { id } });
-    if (!project) return res.status(404).json({ error: "Projet introuvable" });
+    // Un projet masqué dans l'admin reste introuvable, même par son adresse directe
+    if (!project || !project.visible) return res.status(404).json({ error: "Projet introuvable" });
     res.json(applyLang(project, lang));
   } catch {
     res.status(500).json({ error: "Erreur serveur" });
