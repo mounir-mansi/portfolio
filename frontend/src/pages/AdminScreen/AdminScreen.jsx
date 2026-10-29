@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 // Icônes de l'admin, hébergées sur le site ; chargées seulement avec cette page (voir React.lazy dans App.jsx)
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { useAuth } from "../../utils/useAuth";
@@ -21,10 +21,7 @@ export default function AdminScreen() {
   const navigate = useNavigate();
   const [tab, setTab] = useState("messages");
 
-  if (!user) {
-    navigate("/connexion", { replace: true });
-    return null;
-  }
+  if (!user) return <Navigate to="/connexion" replace />;
 
   const handleLogout = async () => {
     await logout();
