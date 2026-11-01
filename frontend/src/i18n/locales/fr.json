@@ -562,16 +562,6 @@
           "text": "Lisible sur mobile, rapide à charger et construit pour être bien référencé quand on cherche un restaurant près de chez vous."
         }
       ],
-      "demo_eyebrow": "Un exemple",
-      "demo_title": "Un exemple de site pour un restaurant",
-      "demo_text": "{{name}}, un restaurant et snack à Turin : présentation, galerie photos et formulaire de contact, avec un espace d'administration pour gérer les photos et répondre aux messages.",
-      "demo_points": [
-        "Galerie photos modifiable depuis l'administration",
-        "Formulaire de contact avec réponse par mail",
-        "Pages Accueil, Menu, Galerie, Événements et Contact",
-        "Horaires, adresse et boutons d'appel"
-      ],
-      "demo_note": "Site imaginé par ManDev pour un restaurant fictif : le vôtre portera votre nom, vos photos et votre carte.",
       "offer_plus": "Jusqu'à 5 pages, avec la réservation de table, la commande ou le paiement en ligne si vous le souhaitez, et un espace d'administration pour modifier votre carte, vos photos et vos horaires vous-même.",
       "faq": [
         {
@@ -585,6 +575,10 @@
         {
           "q": "J'ai déjà une page Facebook ou Instagram, est-ce suffisant ?",
           "a": "Elle reste utile, et le site s'y relie. Mais un site à vous apparaît dans Google, affiche votre carte sans que le visiteur ait besoin d'un compte, et ne dépend d'aucun réseau social."
+        },
+        {
+          "q": "Avez-vous un exemple de site pour un restaurant ?",
+          "a": "Je n'ai pas encore de site de démonstration dédié aux restaurants. Celui de la pizzeria Il Subito, présenté sur la page « Site internet pour pizzeria », montre une carte, la commande en ligne et la réservation de table. Et la maquette gratuite vous montre la page d'accueil de votre restaurant, avec votre nom et vos photos, avant tout engagement."
         },
         {
           "q": "En combien de temps mon site est-il en ligne ?",
