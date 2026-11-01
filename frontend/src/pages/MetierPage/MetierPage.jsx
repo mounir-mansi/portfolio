@@ -6,6 +6,7 @@ import HeroQuote from "../../components/HeroQuote/HeroQuote";
 import QuoteSection from "../../components/QuickQuote/QuoteSection";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
+import { collecterJsonLd, faqJsonLd } from "../../utils/ssrHead";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from "../../utils/contactInfo";
 import "./MetierPage.css";
 
@@ -49,21 +50,39 @@ function MetierContent({ metier }) {
   const offer = pick("offer", { returnObjects: true });
   const demoPoints = m("demo_points", { returnObjects: true });
 
+  // Prérendu : données structurées FAQ déposées dans le collecteur (les effets ne tournent pas côté serveur)
+  if (import.meta.env.SSR && Array.isArray(faq) && faq.length > 0) collecterJsonLd("metier-faq-jsonld", faqJsonLd(faq));
+
+  if (import.meta.env.SSR) {
+    const url = `https://mandev.fr/fr/${metier.slug}`;
+    collecterJsonLd("metier-service-jsonld", {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: m("meta_title"),
+        serviceType: "Création de site internet",
+        url,
+        description: m("sub"),
+        provider: { "@id": "https://mandev.fr/#service" },
+        areaServed: [{ "@type": "City", name: "Toulouse" }, { "@type": "Country", name: "France" }],
+      });
+    collecterJsonLd("metier-breadcrumb-jsonld", {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ManDev Web", item: "https://mandev.fr/fr" },
+          { "@type": "ListItem", position: 2, name: m("meta_title"), item: url },
+        ],
+      });
+  }
+
   // Données structurées FAQ pour Google
   useEffect(() => {
     if (!Array.isArray(faq) || faq.length === 0) return;
+    document.getElementById("metier-faq-jsonld")?.remove(); // la page prérendue en contient déjà un
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.id = "metier-faq-jsonld";
-    script.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faq.map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: { "@type": "Answer", text: item.a },
-      })),
-    });
+    script.textContent = JSON.stringify(faqJsonLd(faq));
     document.head.appendChild(script);
     return () => script.remove();
   }, [faq]);

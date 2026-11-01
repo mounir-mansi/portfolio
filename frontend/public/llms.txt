@@ -1,0 +1,30 @@
+# ManDev Web
+
+> ManDev Web crée des sites internet clés en main pour les artisans, commerçants et petites entreprises, à Toulouse et partout en France (à distance). Maquette gratuite de la page d'accueil sous 72 h, sans engagement.
+
+Responsable : Mounir Mansi, développeur web indépendant. Contact : contact@mandev.fr, téléphone 07 66 09 99 12 (WhatsApp disponible).
+
+## Offres et prix de départ
+
+- Pack Vitrine, dès 490 € : une page claire avec plusieurs sections (présentation, horaires, adresse, bouton d'appel, formulaire de contact). Mis en ligne en 7 jours après validation de la maquette et réception des contenus.
+- Pack Vitrine +, dès 990 € : jusqu'à 5 pages, réservation ou prise de rendez-vous en ligne, paiement en ligne et espace d'administration pour modifier soi-même ses contenus. Mis en ligne en 2 semaines.
+- Maintenance, 49 € par mois : hébergement et nom de domaine offerts, mises à jour de sécurité et sauvegardes. Sans engagement, résiliable avec un préavis d'un mois.
+
+## Pages principales
+
+- [Accueil](https://mandev.fr/fr) : présentation des offres, FAQ et demande de maquette gratuite
+- [Projets réalisés](https://mandev.fr/fr/projets) : sites et applications livrés
+- [À propos](https://mandev.fr/fr/a-propos) : parcours et méthode
+- [Contact](https://mandev.fr/fr/contact)
+- [Conditions générales de vente](https://mandev.fr/fr/cgv)
+
+## Sites par métier
+
+- [Site internet pour pizzeria](https://mandev.fr/fr/site-pizzeria)
+- [Site internet pour coiffeur et barbier](https://mandev.fr/fr/site-coiffeur-barbier)
+
+## Remarques
+
+- Le site est disponible en français, anglais, italien et espagnol (https://mandev.fr/en, /it, /es). Les pages par métier n'existent qu'en français.
+- Les sites montrés comme exemples (Il Subito, Le Cercle Barbier, etc.) sont des sites de démonstration imaginés par ManDev pour des commerces fictifs, pas des clients réels.
+- Plan du site : https://mandev.fr/sitemap.xml

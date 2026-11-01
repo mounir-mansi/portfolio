@@ -1,5 +1,5 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./utils/useAuth";
 import App from "./App";
@@ -16,7 +16,7 @@ if (theme === "light" || theme === "dark") {
   document.documentElement.dataset.theme = theme;
 }
 
-createRoot(document.getElementById("root")).render(
+const app = (
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
@@ -25,3 +25,8 @@ createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </StrictMode>
 );
+
+// Page prérendue (scripts/prerender.mjs) : React reprend le HTML existant ; sinon rendu normal dans le navigateur
+const root = document.getElementById("root");
+if (root.hasChildNodes()) hydrateRoot(root, app);
+else createRoot(root).render(app);
