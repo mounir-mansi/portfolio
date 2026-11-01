@@ -5,7 +5,7 @@ export const METIERS = [
     slug: "site-pizzeria",
     key: "pizzeria",
     // Site de démonstration montré sur la page (voir public/ pour l'image)
-    demo: { name: "Il Subito", url: "https://ilsubito.mandev.fr", image: "/main-ilsubito.png" },
+    demo: { name: "Il Subito", url: "https://ilsubito.mandev.fr", image: "/main-ilsubito.webp" },
   },
   {
     slug: "site-coiffeur-barbier",
