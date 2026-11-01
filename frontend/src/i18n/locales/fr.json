@@ -440,6 +440,91 @@
       ],
       "final_title": "Recevez la maquette de votre pizzeria",
       "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre pizzeria, puis je vous envoie la maquette de votre page d'accueil."
+    },
+    "barbier": {
+      "meta_title": "Site internet pour coiffeur et barbier",
+      "eyebrow": "Sites pour coiffeurs et barbiers",
+      "title_a": "Un site pour votre salon qui prend",
+      "title_em": "vos rendez‑vous",
+      "title_b": "à votre place.",
+      "sub": "Vos prestations et vos tarifs lisibles sur téléphone, vos horaires, vos réalisations en photos et la prise de rendez-vous en ligne : vos clients choisissent leur créneau sans vous appeler, même quand le salon est fermé.",
+      "cta": "Recevoir la maquette de mon salon",
+      "points_eyebrow": "Pour vos clients",
+      "points_title": "Ce que vos clients veulent savoir avant de pousser la porte",
+      "points": [
+        {
+          "name": "Prendre rendez-vous",
+          "text": "Vos clients choisissent un créneau libre en ligne, à toute heure. Vous recevez la demande par mail et vous retrouvez vos rendez-vous dans votre espace d'administration."
+        },
+        {
+          "name": "Prestations et tarifs",
+          "text": "Coupe, dégradé, taille de barbe, rasage, forfaits : chaque prestation avec son prix et sa photo, lisible sur téléphone. Vous les modifiez quand vos tarifs changent."
+        },
+        {
+          "name": "Vos réalisations",
+          "text": "Vos plus belles coupes et l'ambiance du salon en photos, que vous ajoutez vous-même. Une photo de dégradé en dit plus que n'importe quelle description."
+        },
+        {
+          "name": "Horaires et accès",
+          "text": "Vos horaires, votre adresse et l'itinéraire en un clic, avec un bouton d'appel toujours visible. Plus de client devant un rideau baissé."
+        },
+        {
+          "name": "Vous gardez la main",
+          "text": "Vous ouvrez ou fermez des créneaux, annulez un rendez-vous et répondez aux messages depuis un seul espace, sur téléphone comme sur ordinateur."
+        },
+        {
+          "name": "Un site rapide, pensé pour Google",
+          "text": "Lisible sur mobile, rapide à charger et construit pour être bien référencé quand on cherche un coiffeur ou un barbier près de chez vous."
+        }
+      ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un exemple de site pour un salon",
+      "demo_text": "{{name}}, un coiffeur et barbier à Toulouse : les prestations avec leurs prix, une galerie, et la prise de rendez-vous en ligne sur des créneaux que le patron gère lui-même.",
+      "demo_points": [
+        "Prestations et tarifs modifiables depuis l'administration",
+        "Prise de rendez-vous en ligne sur des créneaux",
+        "Galerie photos que vous alimentez vous-même",
+        "Messages des clients et réponse depuis l'administration"
+      ],
+      "demo_note": "Site imaginé par ManDev pour un salon fictif : le vôtre portera votre nom, vos photos et vos tarifs.",
+      "offer": [
+        {
+          "name": "Pack Vitrine, dès 490 €",
+          "text": "Une page claire avec plusieurs sections : votre présentation, vos prestations, vos horaires, votre adresse, un bouton d'appel et un formulaire de contact."
+        },
+        {
+          "name": "Pack Vitrine +, dès 990 €",
+          "text": "Jusqu'à 5 pages, avec la prise de rendez-vous en ligne et un espace d'administration pour modifier vos prestations, vos photos et vos créneaux vous-même."
+        },
+        {
+          "name": "Maintenance, 49 € par mois",
+          "text": "L'hébergement et le nom de domaine sont offerts, avec les mises à jour de sécurité et les sauvegardes. Sans engagement, résiliable avec un préavis d'un mois."
+        },
+        {
+          "name": "Délai",
+          "text": "Une fois la maquette validée et vos contenus reçus, 7 jours pour un site Vitrine et 2 semaines pour un site Vitrine +."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Mes clients peuvent-ils prendre rendez-vous en ligne ?",
+          "a": "Oui, avec le pack Vitrine + : vous ouvrez des créneaux et vos clients en choisissent un. Vous recevez la demande par mail et vous la retrouvez dans votre espace d'administration, où vous pouvez aussi l'annuler."
+        },
+        {
+          "q": "Puis-je modifier mes tarifs et mes photos moi-même ?",
+          "a": "Oui, avec le pack Vitrine + : un espace d'administration vous permet de changer vos prestations, vos prix, vos photos et vos créneaux sans passer par moi."
+        },
+        {
+          "q": "Et si je n'ai pas de belles photos de mes coupes ?",
+          "a": "Envoyez-moi celles que vous avez, même prises avec un téléphone : je les mets en valeur. Vous pourrez en ajouter d'autres au fil des mois."
+        },
+        {
+          "q": "En combien de temps mon site est-il en ligne ?",
+          "a": "Une fois la maquette validée et vos contenus reçus, un site Vitrine est en ligne en 7 jours et un site Vitrine + en 2 semaines. Le délai exact est confirmé dès notre premier échange, avant tout engagement."
+        }
+      ],
+      "final_title": "Recevez la maquette de votre salon",
+      "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre salon, puis je vous envoie la maquette de votre page d'accueil."
     }
   },
   "seo": {

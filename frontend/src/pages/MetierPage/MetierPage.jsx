@@ -22,6 +22,8 @@ function MetierContent({ metier }) {
   const { hash, key } = useLocation();
   const m = (path, options) => t(`metiers.${metier.key}.${path}`, options);
   const c = (path, options) => t(`metiers.common.${path}`, options);
+  // Un métier peut avoir sa propre version d'un texte commun (ex. l'offre) ; sinon on prend celle du bloc commun
+  const pick = (path, options) => (i18n.exists(`metiers.${metier.key}.${path}`) ? m(path, options) : c(path, options));
 
   usePageTitle(m("meta_title"));
   useReveal([i18n.language]);
@@ -44,7 +46,7 @@ function MetierContent({ metier }) {
 
   const points = m("points", { returnObjects: true });
   const faq = m("faq", { returnObjects: true });
-  const offer = c("offer", { returnObjects: true });
+  const offer = pick("offer", { returnObjects: true });
   const demoPoints = m("demo_points", { returnObjects: true });
 
   // Données structurées FAQ pour Google
@@ -130,7 +132,7 @@ function MetierContent({ metier }) {
             <a className="btn-outline" href={metier.demo.url} target="_blank" rel="noopener noreferrer">
               {c("demo_link")} <span aria-hidden="true">↗</span>
             </a>
-            <p className="metier-note">{c("demo_note")}</p>
+            <p className="metier-note">{pick("demo_note")}</p>
           </div>
           <a className="metier-demo-shot reveal" style={{ "--delay": "120ms" }} href={metier.demo.url} target="_blank" rel="noopener noreferrer" aria-label={`${metier.demo.name} — ${c("demo_link")}`}>
             <img src={metier.demo.image} alt="" loading="lazy" width="1600" height="790" />
