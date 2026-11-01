@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { apiFetch } from "../../utils/api";
+import { preloaded } from "../../utils/preload";
 import "./SkillsIndex.css";
 
 const DEFAULT_SKILLS = [
@@ -44,7 +45,7 @@ const CAT_KEY_MAP = {
 
 // Rangées éditoriales : titre-bénéfice à gauche, technologies à droite
 export default function SkillsIndex() {
-  const [skills, setSkills] = useState(DEFAULT_SKILLS);
+  const [skills, setSkills] = useState(() => { const d = preloaded("/api/skills"); return Array.isArray(d) && d.length > 0 ? d : DEFAULT_SKILLS; });
   const { t } = useTranslation();
 
   useEffect(() => {

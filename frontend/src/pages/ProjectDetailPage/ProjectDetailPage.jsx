@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import usePageTitle from "../../utils/usePageTitle";
+import { preloaded } from "../../utils/preload";
 import "./ProjectDetailPage.css";
 
 const LOCALE_MAP = { fr: "fr-FR", en: "en-GB", it: "it-IT", es: "es-ES" };
@@ -12,19 +13,22 @@ export default function ProjectDetailPage() {
   const { id, lang = "fr" } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [project, setProject] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // Page prérendue : la fiche est déjà dans le HTML, on la garde affichée pendant le rafraîchissement
+  const [project, setProject] = useState(() => preloaded(`/api/projects/${id}?lang=${lang}`) ?? null);
+  const [loading, setLoading] = useState(() => preloaded(`/api/projects/${id}?lang=${lang}`) === undefined);
   const lp = (path) => `/${lang}${path}`;
   usePageTitle(project?.title);
 
   useEffect(() => {
     apiFetch(`/api/projects/${id}?lang=${lang}`)
       .then((r) => {
-        if (!r.ok) throw new Error("not found");
+        if (r.status === 404) throw new Error("not found");
+        if (!r.ok) throw new Error("erreur API");
         return r.json();
       })
       .then(setProject)
-      .catch(() => navigate(lp("/projets"), { replace: true }))
+      // Projet supprimé ou masqué : retour à la liste. Simple panne de l'API : on garde la fiche prérendue déjà affichée.
+      .catch((e) => { if (e.message === "not found" || preloaded(`/api/projects/${id}?lang=${lang}`) === undefined) navigate(lp("/projets"), { replace: true }); })
       .finally(() => setLoading(false));
   }, [id, lang]);
 
@@ -107,7 +111,7 @@ export default function ProjectDetailPage() {
             )}
             <div>
               <dt>{t("detail.date")}</dt>
-              <dd>{new Date(project.createdAt).toLocaleDateString(locale, { year: "numeric", month: "long" })}</dd>
+              <dd>{new Date(project.createdAt).toLocaleDateString(locale, { year: "numeric", month: "long", timeZone: "UTC" })}</dd>
             </div>
           </dl>
         </div>

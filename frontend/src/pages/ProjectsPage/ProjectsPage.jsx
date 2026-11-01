@@ -4,13 +4,15 @@ import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import usePageTitle from "../../utils/usePageTitle";
+import { preloaded } from "../../utils/preload";
 import "./ProjectsPage.css";
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
+  // Page prérendue : la liste est déjà dans le HTML, on la garde affichée pendant le rafraîchissement
+  const [projects, setProjects] = useState(() => { const d = preloaded(`/api/projects?lang=${lang}`); return Array.isArray(d) ? d : []; });
+  const [loading, setLoading] = useState(() => !Array.isArray(preloaded(`/api/projects?lang=${lang}`)));
   const lp = (path) => `/${lang}${path}`;
   usePageTitle(t("meta.projects"));
 
