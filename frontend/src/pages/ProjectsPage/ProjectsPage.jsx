@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
 import usePageTitle from "../../utils/usePageTitle";
+import useReveal from "../../utils/useReveal";
 import { preloaded } from "../../utils/preload";
 import "./ProjectsPage.css";
 
@@ -15,6 +16,7 @@ export default function ProjectsPage() {
   const [loading, setLoading] = useState(() => !Array.isArray(preloaded(`/api/projects?lang=${lang}`)));
   const lp = (path) => `/${lang}${path}`;
   usePageTitle(t("meta.projects"));
+  useReveal([projects.length, loading, lang]);
 
   useEffect(() => {
     apiFetch(`/api/projects?lang=${lang}`)
@@ -23,9 +25,6 @@ export default function ProjectsPage() {
       .catch(() => {})
       .finally(() => setLoading(false));
   }, [lang]);
-
-  const featured = projects.filter((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
 
   return (
     <Layout>
@@ -36,67 +35,30 @@ export default function ProjectsPage() {
 
       <div className="page-body container">
         {loading ? (
-          <div className="proj-features" aria-hidden="true">
-            <div className="proj-skeleton" />
-            <div className="proj-skeleton" />
-          </div>
+          <ul className="projects-grid" aria-hidden="true">
+            <li className="proj-skeleton" />
+            <li className="proj-skeleton" />
+            <li className="proj-skeleton" />
+          </ul>
+        ) : projects.length > 0 ? (
+          // Mêmes cartes que « Projets récents » de l'accueil (styles de HomePage.css)
+          <ul className="projects-grid">
+            {projects.map((p, i) => (
+              <li key={p.id} className="project-card reveal" style={{ "--delay": `${i * 90}ms` }}>
+                <Link to={lp(`/projets/${p.id}`)} className="project-card-link">
+                  <span className="project-card-media">
+                    {p.imageUrl && <img src={p.imageUrl} alt="" loading="lazy" width="1600" height="790" />}
+                  </span>
+                  <span className="project-card-title">{p.title}</span>
+                  <span className="project-card-desc">{p.description}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         ) : (
-          <>
-            {featured.length > 0 && (
-              <div className="proj-features">
-                {featured.map((p) => (
-                  <ProjectCard key={p.id} project={p} lp={lp} t={t} variant="feature" />
-                ))}
-              </div>
-            )}
-
-            {rest.length > 0 && (
-              <div className="proj-grid">
-                {rest.map((p) => (
-                  <ProjectCard key={p.id} project={p} lp={lp} t={t} variant="regular" />
-                ))}
-              </div>
-            )}
-
-            {projects.length === 0 && (
-              <p className="projects-empty">{t("projects.empty")}</p>
-            )}
-          </>
+          <p className="projects-empty">{t("projects.empty")}</p>
         )}
       </div>
     </Layout>
-  );
-}
-
-// Le titre porte le lien vers le détail (::after étend la zone cliquable à toute la carte).
-// « Voir le site » est un frère du titre, pas un enfant : pas de lien imbriqué.
-function ProjectCard({ project: p, lp, t, variant }) {
-  const Heading = variant === "feature" ? "h2" : "h3";
-  return (
-    <article className={`proj proj--${variant}`}>
-      <div className="proj-media">
-        {p.imageUrl ? (
-          <img src={p.imageUrl} alt="" loading="lazy" />
-        ) : (
-          <div className="proj-media-empty" />
-        )}
-      </div>
-      <div className="proj-body">
-        <Heading className="proj-title">
-          <Link to={lp(`/projets/${p.id}`)} className="proj-link">{p.title}</Link>
-        </Heading>
-        <p className="proj-desc">{p.description}</p>
-        {p.stack?.length > 0 && (
-          <ul className="proj-stack">
-            {p.stack.slice(0, 5).map((tag) => <li key={tag}>{tag}</li>)}
-          </ul>
-        )}
-        {p.liveUrl && (
-          <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="proj-site">
-            {t("projects.see_site")}
-          </a>
-        )}
-      </div>
-    </article>
   );
 }

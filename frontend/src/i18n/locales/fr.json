@@ -525,10 +525,335 @@
       ],
       "final_title": "Recevez la maquette de votre salon",
       "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre salon, puis je vous envoie la maquette de votre page d'accueil."
+    },
+    "restaurant": {
+      "meta_title": "Site internet pour restaurant",
+      "eyebrow": "Sites pour restaurants",
+      "title_a": "Un site pour votre restaurant qui donne",
+      "title_em": "envie de réserver",
+      "title_b": "dès la première image.",
+      "sub": "Votre carte et votre menu du jour à jour, vos photos, vos horaires et un bouton pour réserver ou appeler : vos clients se décident en quelques secondes depuis leur téléphone, et vous ne répondez plus aux mêmes questions.",
+      "cta": "Recevoir la maquette de mon restaurant",
+      "points_eyebrow": "Pour vos clients",
+      "points_title": "Ce que vos clients vérifient avant de choisir où dîner",
+      "points": [
+        {
+          "name": "Votre carte et le menu du jour",
+          "text": "Entrées, plats, desserts et vins avec leurs prix, lisibles sur téléphone. Le menu du jour se change en quelques minutes depuis votre espace d'administration."
+        },
+        {
+          "name": "Réserver une table",
+          "text": "Vos clients choisissent un jour, une heure et le nombre de couverts. Vous recevez la demande par mail et vous la confirmez ou la refusez."
+        },
+        {
+          "name": "Photos de la salle et des plats",
+          "text": "Une galerie qui montre l'ambiance, la terrasse et vos assiettes : c'est ce que regardent vos clients avant de lire le prix."
+        },
+        {
+          "name": "Horaires, fermetures, accès",
+          "text": "Service du midi, service du soir, jour de fermeture et congés : l'information est toujours à jour, et l'itinéraire s'ouvre en un clic."
+        },
+        {
+          "name": "Groupes et événements",
+          "text": "Une page pour les repas de groupe, les anniversaires et la privatisation de la salle, avec un formulaire de demande de devis."
+        },
+        {
+          "name": "Un site rapide, pensé pour Google",
+          "text": "Lisible sur mobile, rapide à charger et construit pour être bien référencé quand on cherche un restaurant près de chez vous."
+        }
+      ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un exemple de site pour un restaurant",
+      "demo_text": "{{name}}, un restaurant et snack à Turin : présentation, galerie photos et formulaire de contact, avec un espace d'administration pour gérer les photos et répondre aux messages.",
+      "demo_points": [
+        "Galerie photos modifiable depuis l'administration",
+        "Formulaire de contact avec réponse par mail",
+        "Pages Accueil, Menu, Galerie, Événements et Contact",
+        "Horaires, adresse et boutons d'appel"
+      ],
+      "demo_note": "Site imaginé par ManDev pour un restaurant fictif : le vôtre portera votre nom, vos photos et votre carte.",
+      "offer_plus": "Jusqu'à 5 pages, avec la réservation de table, la commande ou le paiement en ligne si vous le souhaitez, et un espace d'administration pour modifier votre carte, vos photos et vos horaires vous-même.",
+      "faq": [
+        {
+          "q": "Puis-je changer mon menu du jour moi-même ?",
+          "a": "Oui, avec le pack Vitrine + : depuis votre espace d'administration, vous modifiez vos plats, vos prix, vos photos et vos horaires, sans passer par moi."
+        },
+        {
+          "q": "Mes clients peuvent-ils réserver en ligne ?",
+          "a": "Oui, avec le pack Vitrine + : ils choisissent un créneau et vous recevez la demande par mail. Si vous préférez rester au téléphone, le site met votre numéro d'appel en évidence."
+        },
+        {
+          "q": "J'ai déjà une page Facebook ou Instagram, est-ce suffisant ?",
+          "a": "Elle reste utile, et le site s'y relie. Mais un site à vous apparaît dans Google, affiche votre carte sans que le visiteur ait besoin d'un compte, et ne dépend d'aucun réseau social."
+        },
+        {
+          "q": "En combien de temps mon site est-il en ligne ?",
+          "a": "Une fois la maquette validée et vos contenus reçus, un site Vitrine est en ligne en 7 jours et un site Vitrine + en 2 semaines. Le délai exact est confirmé dès notre premier échange, avant tout engagement."
+        }
+      ],
+      "final_title": "Recevez la maquette de votre restaurant",
+      "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre restaurant, puis je vous envoie la maquette de votre page d'accueil."
+    },
+    "boulangerie": {
+      "meta_title": "Site internet pour boulangerie et pâtisserie",
+      "eyebrow": "Sites pour boulangeries et pâtisseries",
+      "title_a": "Un site pour votre boulangerie qui met",
+      "title_em": "vos créations",
+      "title_b": "en vitrine, jour et nuit.",
+      "sub": "Vos pains, viennoiseries et pâtisseries en photos, vos horaires et vos jours de fermeture, et un moyen simple de commander un gâteau pour une fête : vos clients voient ce que vous faites avant de passer la porte.",
+      "cta": "Recevoir la maquette de ma boulangerie",
+      "points_eyebrow": "Pour vos clients",
+      "points_title": "Ce que vos clients cherchent avant de passer en boutique",
+      "points": [
+        {
+          "name": "Votre vitrine en photos",
+          "text": "Pains, viennoiseries, tartes, gâteaux : de belles photos qui donnent envie, que vous renouvelez vous-même au fil des saisons."
+        },
+        {
+          "name": "Gâteaux et commandes spéciales",
+          "text": "Anniversaires, mariages, galettes, bûches : un formulaire (date, nombre de parts, goût) vous évite les messages éparpillés et les appels pendant le coup de feu."
+        },
+        {
+          "name": "Horaires et jours de fermeture",
+          "text": "Horaires d'ouverture, congés annuels, fermeture du dimanche ou du lundi : l'information est toujours juste, et plus personne ne se retrouve devant une porte close."
+        },
+        {
+          "name": "Commander et retirer en boutique",
+          "text": "Avec le pack Vitrine +, vos clients précommandent et retirent leur commande en boutique, pour que la file du samedi matin se vide plus vite."
+        },
+        {
+          "name": "Composition et allergènes",
+          "text": "Gluten, fruits à coque, œufs, lait : vos produits indiquent leurs allergènes, ce que cherchent d'abord les clients concernés avant de venir."
+        },
+        {
+          "name": "Un site rapide, pensé pour Google",
+          "text": "Lisible sur mobile, rapide à charger et construit pour être bien référencé quand on cherche une boulangerie ou une pâtisserie près de chez soi."
+        }
+      ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un exemple de site pour un commerce de bouche",
+      "demo_text": "{{name}}, un glacier artisanal à Toulouse : les parfums présentés comme une carte que le patron modifie lui-même, une galerie photos, des événements et un espace d'administration.",
+      "demo_points": [
+        "Carte des parfums modifiable depuis l'administration",
+        "Galerie photos",
+        "Page des événements",
+        "Horaires, adresse et boutons d'appel"
+      ],
+      "demo_note": "Site imaginé par ManDev pour un glacier fictif : le vôtre portera votre nom, vos produits et vos photos.",
+      "offer_plus": "Jusqu'à 5 pages, avec la précommande à retirer en boutique, les demandes de gâteaux sur mesure et un espace d'administration pour modifier vos produits, vos photos et vos horaires vous-même.",
+      "faq": [
+        {
+          "q": "Puis-je modifier mes produits et mes photos moi-même ?",
+          "a": "Oui, avec le pack Vitrine + : depuis votre espace d'administration, vous changez vos produits, vos photos et vos horaires quand vous le souhaitez."
+        },
+        {
+          "q": "Mes clients peuvent-ils commander un gâteau en ligne ?",
+          "a": "Oui. Un formulaire recueille la date, le nombre de parts et vos précisions, et vous répondez par mail ou par téléphone. Le paiement en ligne est possible avec le pack Vitrine +."
+        },
+        {
+          "q": "Je n'ai pas le temps de mettre un site à jour, est-ce un problème ?",
+          "a": "Le site est pensé pour qu'une mise à jour prenne quelques minutes. L'essentiel (horaires, congés) ne change que quelques fois par an. La maintenance à 49 € par mois couvre l'hébergement, les mises à jour de sécurité et les sauvegardes."
+        },
+        {
+          "q": "En combien de temps mon site est-il en ligne ?",
+          "a": "Une fois la maquette validée et vos contenus reçus, un site Vitrine est en ligne en 7 jours et un site Vitrine + en 2 semaines. Le délai exact est confirmé dès notre premier échange, avant tout engagement."
+        }
+      ],
+      "final_title": "Recevez la maquette de votre boulangerie",
+      "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre boutique, puis je vous envoie la maquette de votre page d'accueil."
+    },
+    "artisan": {
+      "meta_title": "Site internet pour artisan du bâtiment",
+      "eyebrow": "Sites pour artisans du bâtiment",
+      "title_a": "Un site pour artisan qui montre",
+      "title_em": "votre travail",
+      "title_b": "et facilite la demande de devis.",
+      "sub": "Vos chantiers en photos, vos spécialités, votre zone d'intervention et un formulaire de demande de devis : un particulier qui hésite entre trois artisans choisit celui dont il a vu le travail et à qui il peut écrire en une minute.",
+      "cta": "Recevoir la maquette de mon site d'artisan",
+      "points_eyebrow": "Pour vos futurs clients",
+      "points_title": "Ce que vos futurs clients veulent voir avant de vous appeler",
+      "points": [
+        {
+          "name": "Vos chantiers en photos",
+          "text": "Salle de bain, toiture, peinture, rénovation : une galerie de réalisations, avec des photos avant et après si vous en avez, que vous complétez après chaque chantier."
+        },
+        {
+          "name": "Vos spécialités",
+          "text": "Plomberie, électricité, maçonnerie, peinture, menuiserie : chaque métier avec un texte clair, pour que le visiteur sache tout de suite que vous faites ce dont il a besoin."
+        },
+        {
+          "name": "Votre zone d'intervention",
+          "text": "Les communes où vous intervenez sont indiquées clairement : le client sait avant d'appeler si vous venez chez lui."
+        },
+        {
+          "name": "Demande de devis en ligne",
+          "text": "Un formulaire simple (type de travaux, adresse, photos, délai souhaité) : vous recevez des demandes déjà précises, sans que le client ait à décrire son chantier au téléphone."
+        },
+        {
+          "name": "Assurances et qualifications",
+          "text": "Votre garantie décennale, vos qualifications et vos labels, si vous en avez, bien visibles : c'est ce qui rassure avant de confier un chantier."
+        },
+        {
+          "name": "Un site rapide, pensé pour Google",
+          "text": "Lisible sur mobile, avec un bouton d'appel toujours visible, rapide à charger et construit pour être bien référencé quand on cherche un artisan près de chez soi."
+        }
+      ],
+      "offer_plus": "Jusqu'à 5 pages, avec la galerie de chantiers, le formulaire de demande de devis avec photos et un espace d'administration pour ajouter vos réalisations vous-même.",
+      "faq": [
+        {
+          "q": "Puis-je ajouter mes nouveaux chantiers moi-même ?",
+          "a": "Oui, avec le pack Vitrine + : depuis votre espace d'administration, vous ajoutez vos photos et vos descriptions après chaque chantier, sans passer par moi."
+        },
+        {
+          "q": "Comment arrivent les demandes de devis ?",
+          "a": "Par mail, avec les informations saisies par le client : type de travaux, adresse, photos et délai souhaité. Vous répondez directement."
+        },
+        {
+          "q": "Avez-vous un exemple de site pour un artisan du bâtiment ?",
+          "a": "Je n'ai pas encore de site de démonstration pour ce métier. C'est le rôle de la maquette gratuite : vous voyez la page d'accueil de votre entreprise, avec votre nom et vos photos, avant tout engagement."
+        },
+        {
+          "q": "En combien de temps mon site est-il en ligne ?",
+          "a": "Une fois la maquette validée et vos contenus reçus, un site Vitrine est en ligne en 7 jours et un site Vitrine + en 2 semaines. Le délai exact est confirmé dès notre premier échange, avant tout engagement."
+        }
+      ],
+      "final_title": "Recevez la maquette de votre site d'artisan",
+      "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre activité, puis je vous envoie la maquette de votre page d'accueil."
+    },
+    "garage": {
+      "meta_title": "Site internet pour garage automobile",
+      "eyebrow": "Sites pour garages",
+      "title_a": "Un site pour votre garage où l'on",
+      "title_em": "prend rendez-vous",
+      "title_b": "en quelques clics.",
+      "sub": "Vos prestations d'entretien et de réparation, vos horaires, votre adresse et la prise de rendez-vous en ligne : l'automobiliste voit ce que vous faites, sait où vous trouver et réserve son créneau sans attendre que l'atelier décroche.",
+      "cta": "Recevoir la maquette de mon garage",
+      "points_eyebrow": "Pour vos clients",
+      "points_title": "Ce que les automobilistes cherchent avant de choisir un garage",
+      "points": [
+        {
+          "name": "Vos prestations",
+          "text": "Entretien et vidange, freins, pneus, climatisation, diagnostic : chaque prestation expliquée simplement, avec un prix de départ si vous le souhaitez."
+        },
+        {
+          "name": "Prendre rendez-vous",
+          "text": "Le client choisit un créneau, indique son véhicule et la prestation. Vous recevez la demande par mail et vous la retrouvez dans votre espace d'administration."
+        },
+        {
+          "name": "Demande de devis",
+          "text": "Pour une réparation plus lourde : un formulaire avec la marque, le modèle et le problème constaté, pour que vous puissiez répondre sans tout redemander par téléphone."
+        },
+        {
+          "name": "Horaires, adresse, accès",
+          "text": "Horaires d'atelier, jours de fermeture, adresse et itinéraire en un clic, avec un bouton d'appel toujours visible sur mobile."
+        },
+        {
+          "name": "Marques et services",
+          "text": "Les marques que vous traitez, le prêt de véhicule ou la prise en charge si vous les proposez : tout ce qui fait choisir un garage plutôt qu'un autre."
+        },
+        {
+          "name": "Un site rapide, pensé pour Google",
+          "text": "Lisible sur mobile, rapide à charger et construit pour être bien référencé quand on cherche un garage près de chez soi."
+        }
+      ],
+      "offer_plus": "Jusqu'à 5 pages, avec la prise de rendez-vous en ligne, le formulaire de devis et un espace d'administration pour modifier vos prestations, vos horaires et vos créneaux vous-même.",
+      "faq": [
+        {
+          "q": "Les clients peuvent-ils prendre rendez-vous en ligne ?",
+          "a": "Oui, avec le pack Vitrine + : vous ouvrez des créneaux, vos clients en choisissent un et vous recevez la demande par mail. Vous pouvez l'annuler depuis votre espace d'administration."
+        },
+        {
+          "q": "Puis-je modifier mes prestations et mes horaires moi-même ?",
+          "a": "Oui, avec le pack Vitrine + : depuis votre espace d'administration, vous changez vos prestations, vos horaires, vos photos et vos créneaux sans passer par moi."
+        },
+        {
+          "q": "Avez-vous un exemple de site pour un garage ?",
+          "a": "Je n'ai pas encore de site de démonstration pour ce métier. C'est le rôle de la maquette gratuite : vous voyez la page d'accueil de votre entreprise, avec votre nom et vos photos, avant tout engagement."
+        },
+        {
+          "q": "En combien de temps mon site est-il en ligne ?",
+          "a": "Une fois la maquette validée et vos contenus reçus, un site Vitrine est en ligne en 7 jours et un site Vitrine + en 2 semaines. Le délai exact est confirmé dès notre premier échange, avant tout engagement."
+        }
+      ],
+      "final_title": "Recevez la maquette de votre garage",
+      "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre atelier, puis je vous envoie la maquette de votre page d'accueil."
+    },
+    "toulouse": {
+      "meta_title": "Création de site internet à Toulouse",
+      "eyebrow": "Création de site internet à Toulouse",
+      "title_a": "Un site internet clé en main pour les commerces et les entreprises de",
+      "title_em": "Toulouse",
+      "title_b": "et de son agglomération.",
+      "sub": "Je me déplace à Toulouse et dans l'agglomération pour comprendre votre activité et préparer votre site avec vous. Maquette gratuite de votre page d'accueil sous 72 h, sans engagement, à partir de 490 €.",
+      "cta": "Recevoir ma maquette gratuite",
+      "points_eyebrow": "Pourquoi travailler avec moi",
+      "points_title": "Un interlocuteur proche, un site fait pour vos clients",
+      "points": [
+        {
+          "name": "Un interlocuteur que vous pouvez rencontrer",
+          "text": "Je me déplace dans Toulouse et son agglomération, par exemple à Blagnac, Colomiers, Tournefeuille, Balma, L'Union, Ramonville-Saint-Agne, Cugnaux, Saint-Orens-de-Gameville ou Castanet-Tolosan. Je vois votre commerce, vos produits et vos clients au lieu de tout deviner à distance."
+        },
+        {
+          "name": "Des prix annoncés",
+          "text": "Pack Vitrine dès 490 €, pack Vitrine + dès 990 €, maintenance à 49 € par mois. Les prix sont affichés avant tout échange."
+        },
+        {
+          "name": "Un site pensé pour votre métier",
+          "text": "Pizzeria, restaurant, coiffeur et barbier, boulangerie, artisan du bâtiment, garage : des pages et des exemples adaptés à votre activité, pas un modèle générique."
+        },
+        {
+          "name": "Visible quand on vous cherche",
+          "text": "Un site rapide sur mobile, construit pour être bien référencé quand on cherche un coiffeur, une boulangerie ou un garage dans votre commune. Sans promesse de position : cela dépend aussi de la concurrence et du temps."
+        },
+        {
+          "name": "Vous restez maître de votre site",
+          "text": "Avec le pack Vitrine +, vous modifiez vos contenus vous-même depuis un espace d'administration. L'hébergement et le nom de domaine sont inclus dans la maintenance."
+        },
+        {
+          "name": "La maquette d'abord",
+          "text": "Vous voyez votre page d'accueil avant de vous engager. Si elle ne vous convient pas, vous ne payez rien."
+        }
+      ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un exemple de site pour un commerce toulousain",
+      "demo_text": "{{name}}, un coiffeur et barbier à Toulouse : les prestations avec leurs prix, une galerie, et la prise de rendez-vous en ligne sur des créneaux que le patron gère lui-même.",
+      "demo_points": [
+        "Prestations et tarifs modifiables depuis l'administration",
+        "Prise de rendez-vous en ligne sur des créneaux",
+        "Galerie photos que vous alimentez vous-même",
+        "Messages des clients et réponse depuis l'administration"
+      ],
+      "demo_note": "Site imaginé par ManDev pour un salon fictif : le vôtre portera votre nom, vos photos et vos tarifs.",
+      "offer_plus": "Jusqu'à 5 pages, avec la prise de rendez-vous ou la réservation en ligne, le paiement en ligne et un espace d'administration pour modifier vos contenus vous-même.",
+      "faq": [
+        {
+          "q": "Dans quelles communes intervenez-vous ?",
+          "a": "À Toulouse et dans son agglomération : Blagnac, Colomiers, Tournefeuille, Balma, L'Union, Ramonville-Saint-Agne, Cugnaux, Saint-Orens-de-Gameville, Castanet-Tolosan, Aucamville et les communes voisines. Je me déplace pour la rencontre, puis tout le reste peut se faire à distance si vous le préférez."
+        },
+        {
+          "q": "Avez-vous un local où venir vous voir ?",
+          "a": "Non, je n'ai pas de local ouvert au public. Je viens à vous, sur votre lieu d'activité, ou nous échangeons par téléphone ou en visioconférence."
+        },
+        {
+          "q": "Combien coûte un site internet à Toulouse ?",
+          "a": "Le pack Vitrine démarre à 490 € et le pack Vitrine + à 990 €. La maintenance, qui comprend l'hébergement, le nom de domaine, les mises à jour de sécurité et les sauvegardes, coûte 49 € par mois, sans engagement, résiliable avec un préavis d'un mois."
+        },
+        {
+          "q": "En combien de temps mon site est-il en ligne ?",
+          "a": "Une fois la maquette validée et vos contenus reçus, un site Vitrine est en ligne en 7 jours et un site Vitrine + en 2 semaines. Le délai exact est confirmé dès notre premier échange, avant tout engagement."
+        }
+      ],
+      "final_title": "Recevez la maquette de votre site",
+      "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre activité, puis je vous envoie la maquette de votre page d'accueil."
     }
   },
   "seo": {
     "site-pizzeria": "Site internet pour pizzeria : votre carte en ligne, un bouton d'appel et de commande, vos horaires et votre adresse. Maquette gratuite sous 72 h, dès 490 €.",
-    "site-coiffeur-barbier": "Site internet pour coiffeur et barbier : prestations, tarifs, galerie et prise de rendez-vous en ligne. Maquette gratuite sous 72 h, dès 490 €."
+    "site-coiffeur-barbier": "Site internet pour coiffeur et barbier : prestations, tarifs, galerie et prise de rendez-vous en ligne. Maquette gratuite sous 72 h, dès 490 €.",
+    "site-restaurant": "Site internet pour restaurant : carte et menu du jour, photos, réservation de table et horaires. Maquette gratuite sous 72 h, dès 490 €.",
+    "site-boulangerie-patisserie": "Site internet pour boulangerie et pâtisserie : vitrine en photos, gâteaux sur commande, précommande et horaires. Maquette gratuite sous 72 h, dès 490 €.",
+    "site-artisan-batiment": "Site internet pour artisan du bâtiment : galerie de chantiers, zone d'intervention et demande de devis en ligne. Maquette gratuite sous 72 h, dès 490 €.",
+    "site-garage": "Site internet pour garage : prestations, prise de rendez-vous en ligne, demande de devis et horaires. Maquette gratuite sous 72 h, dès 490 €.",
+    "creation-site-internet-toulouse": "Création de site internet à Toulouse et dans l'agglomération : maquette gratuite sous 72 h, dès 490 €. Je me déplace pour vous rencontrer."
   }
 }
