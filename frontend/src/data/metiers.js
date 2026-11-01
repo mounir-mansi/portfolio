@@ -15,7 +15,7 @@ export const METIERS = [
   {
     slug: "site-restaurant",
     key: "restaurant",
-    demo: { name: "La Pergola", url: "https://demo-restau.mandev.fr", image: "/main-demo-pergola.webp" },
+    demo: null, // pas de site de démonstration dédié aux restaurants : la section est masquée
   },
   {
     slug: "site-boulangerie-patisserie",
