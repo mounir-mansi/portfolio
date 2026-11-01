@@ -7,6 +7,7 @@ import {
   CONTACT_WHATSAPP_HREF,
   GITHUB_URL,
 } from "../../utils/contactInfo";
+import { METIERS } from "../../data/metiers";
 import "./Footer.css";
 
 export default function Footer({ hideCta = false }) {
@@ -52,6 +53,14 @@ export default function Footer({ hideCta = false }) {
             </li>
           </ul>
         </div>
+
+        {lang === "fr" && (
+          <ul className="footer-legal footer-metiers" aria-label="Sites par métier">
+            {METIERS.map((metier) => (
+              <li key={metier.slug}><Link to={`/fr/${metier.slug}`}>{t(`metiers.${metier.key}.meta_title`)}</Link></li>
+            ))}
+          </ul>
+        )}
 
         <ul className="footer-legal">
           <li><Link to={`/${lang}/mentions-legales`}>{t("legal.mentions")}</Link></li>

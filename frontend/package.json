@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/check-legal.mjs",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sitemap": "node scripts/generate-sitemap.mjs"
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "test": "node --test scripts/"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.3.0",
