@@ -7,4 +7,9 @@ export const METIERS = [
     // Site de démonstration montré sur la page (voir public/ pour l'image)
     demo: { name: "Il Subito", url: "https://ilsubito.mandev.fr", image: "/main-ilsubito.png" },
   },
+  {
+    slug: "site-coiffeur-barbier",
+    key: "barbier",
+    demo: { name: "Le Cercle Barbier", url: "https://cerclebarbier.mandev.fr", image: "/main-cerclebarbier.webp" },
+  },
 ];
