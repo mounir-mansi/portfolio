@@ -3,6 +3,7 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import { apiFetch } from "../../utils/api";
+import { preloaded } from "../../utils/preload";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
 import QuoteSection from "../../components/QuickQuote/QuoteSection";
@@ -16,10 +17,11 @@ import "./HomePage.css";
 const pad = (n) => String(n + 1).padStart(2, "0");
 
 export default function HomePage() {
-  const [projects, setProjects] = useState([]);
-  const [projectsLoaded, setProjectsLoaded] = useState(false);
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
+  // Page prérendue : les projets sont déjà dans le HTML, on les garde affichés pendant le rafraîchissement
+  const [projects, setProjects] = useState(() => { const d = preloaded(`/api/projects?lang=${lang}`); return Array.isArray(d) ? d.slice(0, 3) : []; });
+  const [projectsLoaded, setProjectsLoaded] = useState(() => Array.isArray(preloaded(`/api/projects?lang=${lang}`)));
   const { hash, key } = useLocation();
   const lp = (path) => `/${lang}${path}`;
 

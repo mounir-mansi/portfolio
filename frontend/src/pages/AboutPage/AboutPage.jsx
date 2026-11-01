@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
 import SkillsIndex from "../../components/SkillsIndex/SkillsIndex";
 import { apiFetch } from "../../utils/api";
+import { preloaded } from "../../utils/preload";
 import usePageTitle from "../../utils/usePageTitle";
 import "./AboutPage.css";
 
@@ -11,9 +12,10 @@ const VALUES = ["security", "perf", "responsive", "deploy"];
 const JOURNEY = ["simplon", "python", "wcs", "self"];
 
 export default function AboutPage() {
-  const [section, setSection] = useState(null);
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
+  // Page prérendue : le texte venu de l'administration est déjà dans le HTML
+  const [section, setSection] = useState(() => preloaded(`/api/sections?lang=${lang}`)?.about ?? null);
   const lp = (path) => `/${lang}${path}`;
   const { hash } = useLocation();
   usePageTitle(t("meta.about"));
