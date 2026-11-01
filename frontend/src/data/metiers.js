@@ -12,4 +12,29 @@ export const METIERS = [
     key: "barbier",
     demo: { name: "Le Cercle Barbier", url: "https://cerclebarbier.mandev.fr", image: "/main-cerclebarbier.webp" },
   },
+  {
+    slug: "site-restaurant",
+    key: "restaurant",
+    demo: { name: "La Pergola", url: "https://demo-restau.mandev.fr", image: "/main-demo-pergola.webp" },
+  },
+  {
+    slug: "site-boulangerie-patisserie",
+    key: "boulangerie",
+    demo: { name: "Gelateria Aurora", url: "https://gelateria-aurora.mandev.fr", image: "/main-demo-gelateria.webp" },
+  },
+  {
+    slug: "site-artisan-batiment",
+    key: "artisan",
+    demo: null, // pas encore de site de démonstration pour ce métier : la section est masquée
+  },
+  {
+    slug: "site-garage",
+    key: "garage",
+    demo: null,
+  },
+  {
+    slug: "creation-site-internet-toulouse",
+    key: "toulouse",
+    demo: { name: "Le Cercle Barbier", url: "https://cerclebarbier.mandev.fr", image: "/main-cerclebarbier.webp" },
+  },
 ];

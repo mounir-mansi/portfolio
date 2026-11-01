@@ -18,10 +18,17 @@ Responsable : Mounir Mansi, développeur web indépendant. Contact : contact@man
 - [Contact](https://mandev.fr/fr/contact)
 - [Conditions générales de vente](https://mandev.fr/fr/cgv)
 
-## Sites par métier
+## Pages par activité et par zone
 
+<!-- metiers:debut -->
 - [Site internet pour pizzeria](https://mandev.fr/fr/site-pizzeria)
 - [Site internet pour coiffeur et barbier](https://mandev.fr/fr/site-coiffeur-barbier)
+- [Site internet pour restaurant](https://mandev.fr/fr/site-restaurant)
+- [Site internet pour boulangerie et pâtisserie](https://mandev.fr/fr/site-boulangerie-patisserie)
+- [Site internet pour artisan du bâtiment](https://mandev.fr/fr/site-artisan-batiment)
+- [Site internet pour garage automobile](https://mandev.fr/fr/site-garage)
+- [Création de site internet à Toulouse](https://mandev.fr/fr/creation-site-internet-toulouse)
+<!-- metiers:fin -->
 
 ## Remarques
 

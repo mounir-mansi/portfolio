@@ -1,6 +1,6 @@
 // Génère public/sitemap.xml (4 langues, avec hreflang). À relancer quand on ajoute une page : npm run sitemap
 // Les pages de détail de projet (/projets/:id) viennent de la base : elles ne sont pas listées ici.
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { METIERS } from "../src/data/metiers.js";
 
 const SITE = "https://mandev.fr";
@@ -30,3 +30,16 @@ ${urls.join("\n")}
 
 writeFileSync(new URL("../public/sitemap.xml", import.meta.url), xml);
 console.log(`sitemap.xml écrit : ${urls.length} URL`);
+
+// llms.txt : la liste des pages par activité et par zone suit METIERS (entre les repères <!-- metiers:debut --> et <!-- metiers:fin -->)
+const fr = JSON.parse(readFileSync(new URL("../src/i18n/locales/fr.json", import.meta.url), "utf8"));
+const fichierLlms = new URL("../public/llms.txt", import.meta.url);
+const liste = METIERS.map((m) => `- [${fr.metiers[m.key].meta_title}](${SITE}/fr/${m.slug})`).join("\n");
+const llms = readFileSync(fichierLlms, "utf8");
+const debut = "<!-- metiers:debut -->";
+const fin = "<!-- metiers:fin -->";
+if (!llms.includes(debut) || !llms.includes(fin)) throw new Error("repères metiers:debut / metiers:fin absents de public/llms.txt");
+const avant = llms.slice(0, llms.indexOf(debut) + debut.length);
+const apres = llms.slice(llms.indexOf(fin));
+writeFileSync(fichierLlms, `${avant}\n${liste}\n${apres}`);
+console.log(`llms.txt mis à jour : ${METIERS.length} pages par activité et par zone`);

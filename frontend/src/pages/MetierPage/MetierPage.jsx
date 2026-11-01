@@ -47,8 +47,12 @@ function MetierContent({ metier }) {
 
   const points = m("points", { returnObjects: true });
   const faq = m("faq", { returnObjects: true });
-  const offer = pick("offer", { returnObjects: true });
-  const demoPoints = m("demo_points", { returnObjects: true });
+  const commonOffer = pick("offer", { returnObjects: true });
+  // Chaque activité peut adapter la phrase du pack Vitrine + (réservation de table, devis…) ; les autres lignes restent communes
+  const offerPlus = i18n.exists(`metiers.${metier.key}.offer_plus`) ? m("offer_plus") : null;
+  const offer = Array.isArray(commonOffer) && offerPlus ? commonOffer.map((row, i) => (i === 1 ? { ...row, text: offerPlus } : row)) : commonOffer;
+  // Une activité sans site de démonstration (metier.demo = null) n'affiche pas cette section : on ne montre pas un exemple qui n'existe pas
+  const demoPoints = metier.demo ? m("demo_points", { returnObjects: true }) : null;
 
   // Prérendu : données structurées FAQ déposées dans le collecteur (les effets ne tournent pas côté serveur)
   if (import.meta.env.SSR && Array.isArray(faq) && faq.length > 0) collecterJsonLd("metier-faq-jsonld", faqJsonLd(faq));
@@ -137,6 +141,7 @@ function MetierContent({ metier }) {
       )}
 
       {/* SITE DE DÉMONSTRATION */}
+      {metier.demo && (
       <section className="block block--raised metier-demo" aria-labelledby="metier-demo-title">
         <div className="container metier-demo-grid">
           <div className="metier-demo-text reveal">
@@ -158,6 +163,7 @@ function MetierContent({ metier }) {
           </a>
         </div>
       </section>
+      )}
 
       {/* CE QUE VOUS RECEVEZ */}
       {Array.isArray(offer) && (
