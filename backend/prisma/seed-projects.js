@@ -62,7 +62,7 @@ const projects = [
     longDescription_es: "Il Subito es una aplicación web fullstack desarrollada para un kebab-pizzería en Turín (Italia).\n\nLos clientes pueden explorar el menú interactivo, llenar su carrito, crear una cuenta u ordenar como invitado, y luego pagar en línea con Stripe. Un sistema de estados de pedido en tiempo real mantiene al cliente informado en cada paso.\n\nEl panel admin permite al restaurador gestionar el menú (platos, precios, disponibilidad, opciones), los pedidos en curso, la galería, eventos y mensajes de contacto. La autenticación está asegurada con JWT httpOnly y Google OAuth. El sitio está desplegado en VPS con Nginx, PM2 y SSL.",
     stack: ["React","Node.js","Express","PostgreSQL","Prisma","Stripe","Brevo","Google OAuth","Playwright","Nginx","VPS"],
     imageKey: null,
-    imageUrl: "/main-ilsubito.png",
+    imageUrl: "/main-ilsubito.webp",
     liveUrl: "https://ilsubito.mandev.fr",
     githubUrl: null,
     featured: true,
