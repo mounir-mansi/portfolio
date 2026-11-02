@@ -20,7 +20,7 @@ export const METIERS = [
   {
     slug: "site-boulangerie-patisserie",
     key: "boulangerie",
-    demo: { name: "Gelateria Aurora", url: "https://gelateria-aurora.mandev.fr", image: "/main-demo-gelateria.webp" },
+    demo: { name: "Maison Lévain", url: "https://boulangerie.mandev.fr", image: "/main-boulangerie.webp" },
   },
   {
     slug: "site-artisan-batiment",
