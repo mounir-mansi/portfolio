@@ -625,15 +625,15 @@
         }
       ],
       "demo_eyebrow": "Un exemple",
-      "demo_title": "Un exemple de site pour un commerce de bouche",
-      "demo_text": "{{name}}, un glacier artisanal à Toulouse : les parfums présentés comme une carte que le patron modifie lui-même, une galerie photos, des événements et un espace d'administration.",
+      "demo_title": "Un exemple de site pour une boulangerie",
+      "demo_text": "{{name}}, une boulangerie-pâtisserie à Toulouse : la carte avec ses prix, la commande à retirer en boutique sur un créneau choisi par le client, et un espace où le boulanger gère ses produits et prépare ses commandes.",
       "demo_points": [
-        "Carte des parfums modifiable depuis l'administration",
-        "Galerie photos",
-        "Page des événements",
-        "Horaires, adresse et boutons d'appel"
+        "Carte modifiable depuis l'administration, avec « épuisé aujourd'hui » en un clic",
+        "Commande à retirer sur créneaux, sans compte et sans paiement en ligne",
+        "Liste « à préparer » : les quantités à cuire pour chaque jour",
+        "Confirmation par email, galerie photos, horaires et ouvert/fermé en direct"
       ],
-      "demo_note": "Site imaginé par ManDev pour un glacier fictif : le vôtre portera votre nom, vos produits et vos photos.",
+      "demo_note": "Site imaginé par ManDev pour une boulangerie fictive : le vôtre portera votre nom, vos produits, vos photos et vos prix.",
       "offer_plus": "Jusqu'à 5 pages, avec la précommande à retirer en boutique, les demandes de gâteaux sur mesure et un espace d'administration pour modifier vos produits, vos photos et vos horaires vous-même.",
       "faq": [
         {
@@ -647,6 +647,10 @@
         {
           "q": "Je n'ai pas le temps de mettre un site à jour, est-ce un problème ?",
           "a": "Le site est pensé pour qu'une mise à jour prenne quelques minutes. L'essentiel (horaires, congés) ne change que quelques fois par an. La maintenance à 49 € par mois couvre l'hébergement, les mises à jour de sécurité et les sauvegardes."
+        },
+        {
+          "q": "Comment marche la commande à retirer ?",
+          "a": "Le client choisit ses produits, un jour et une heure de retrait, puis laisse son nom et son téléphone : il paie en boutique, aucun paiement en ligne. Vous fixez le nombre de commandes par créneau, vous recevez un email à chaque commande et vous voyez ce qu'il faut préparer pour la journée. Vous pouvez aussi marquer un produit épuisé en un clic."
         },
         {
           "q": "En combien de temps mon site est-il en ligne ?",
