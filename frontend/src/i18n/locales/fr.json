@@ -750,6 +750,16 @@
           "text": "Lisible sur mobile, rapide à charger et construit pour être bien référencé quand on cherche un garage près de chez soi."
         }
       ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un exemple de site pour un garage",
+      "demo_text": "{{name}}, un garage automobile à Toulouse : les prestations avec leurs prix de départ, la prise de rendez-vous en ligne sur des créneaux que le patron gère lui-même, une demande de devis et une galerie photos.",
+      "demo_points": [
+        "Prestations et prix de départ modifiables depuis l'administration",
+        "Prise de rendez-vous en ligne sur des créneaux, sans double réservation",
+        "Demande de devis avec la marque, le modèle et le problème",
+        "Messages des clients et réponse par mail depuis l'administration"
+      ],
+      "demo_note": "Site imaginé par ManDev pour un garage fictif : le vôtre portera votre nom, vos photos et vos tarifs.",
       "offer_plus": "Jusqu'à 5 pages, avec la prise de rendez-vous en ligne, le formulaire de devis et un espace d'administration pour modifier vos prestations, vos horaires et vos créneaux vous-même.",
       "faq": [
         {
@@ -762,7 +772,7 @@
         },
         {
           "q": "Avez-vous un exemple de site pour un garage ?",
-          "a": "Je n'ai pas encore de site de démonstration pour ce métier. C'est le rôle de la maquette gratuite : vous voyez la page d'accueil de votre entreprise, avec votre nom et vos photos, avant tout engagement."
+          "a": "Oui : Garage du Canal, un garage fictif à Toulouse, est en ligne avec les prestations, la prise de rendez-vous, la demande de devis et l'espace d'administration. Vous pouvez le tester. Pour votre propre garage, la maquette gratuite vous montre votre page d'accueil avec votre nom et vos photos, avant tout engagement."
         },
         {
           "q": "En combien de temps mon site est-il en ligne ?",

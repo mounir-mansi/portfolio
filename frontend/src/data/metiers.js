@@ -30,7 +30,7 @@ export const METIERS = [
   {
     slug: "site-garage",
     key: "garage",
-    demo: null,
+    demo: { name: "Garage du Canal", url: "https://garage.mandev.fr", image: "/main-garage.webp" },
   },
   {
     slug: "creation-site-internet-toulouse",
