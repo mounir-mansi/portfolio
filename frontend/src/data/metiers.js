@@ -25,7 +25,7 @@ export const METIERS = [
   {
     slug: "site-artisan-batiment",
     key: "artisan",
-    demo: null, // pas encore de site de démonstration pour ce métier : la section est masquée
+    demo: { name: "Garonne Plomberie Chauffage", url: "https://plombier.mandev.fr", image: "/main-plombier.webp" },
   },
   {
     slug: "site-garage",

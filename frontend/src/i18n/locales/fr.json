@@ -696,6 +696,16 @@
           "text": "Lisible sur mobile, avec un bouton d'appel toujours visible, rapide à charger et construit pour être bien référencé quand on cherche un artisan près de chez soi."
         }
       ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un exemple de site pour un artisan du bâtiment",
+      "demo_text": "{{name}}, un plombier-chauffagiste à Toulouse : une demande de rappel en 10 secondes pour les urgences, une demande de devis avec photos du problème, une galerie de chantiers avant et après et un espace où l'artisan suit ses demandes.",
+      "demo_points": [
+        "Demande de rappel en un champ : le client laisse son numéro, vous le rappelez",
+        "Demande de devis avec jusqu'à 3 photos, gardées privées et visibles de vous seul",
+        "Chantiers avant et après ajoutés depuis l'administration, sans passer par moi",
+        "Notification par email à chaque demande, avec le suivi (nouvelle, en cours, traitée)"
+      ],
+      "demo_note": "Site imaginé par ManDev pour un plombier fictif : le vôtre portera votre nom, vos photos, vos zones d'intervention et vos tarifs.",
       "offer_plus": "Jusqu'à 5 pages, avec la galerie de chantiers, le formulaire de demande de devis avec photos et un espace d'administration pour ajouter vos réalisations vous-même.",
       "faq": [
         {
@@ -708,7 +718,7 @@
         },
         {
           "q": "Avez-vous un exemple de site pour un artisan du bâtiment ?",
-          "a": "Je n'ai pas encore de site de démonstration pour ce métier. C'est le rôle de la maquette gratuite : vous voyez la page d'accueil de votre entreprise, avec votre nom et vos photos, avant tout engagement."
+          "a": "Oui : le site de démonstration d'un plombier-chauffagiste est en ligne, avec la demande de rappel, la demande de devis avec photos et les chantiers avant et après. La maquette gratuite vous montre ensuite la page d'accueil de votre entreprise, avec votre nom et vos photos, avant tout engagement."
         },
         {
           "q": "En combien de temps mon site est-il en ligne ?",
