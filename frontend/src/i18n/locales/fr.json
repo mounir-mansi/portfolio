@@ -927,10 +927,10 @@
       {
         "name": "Emails professionnels",
         "price": "mise en place : 90 €",
-        "desc": "Une adresse du type contact@votre-commerce.fr plutôt qu'une boîte gratuite : plus de confiance, et des messages qui n'arrivent pas dans les indésirables.",
+        "desc": "Une adresse du type contact@votre-commerce.fr plutôt qu'une boîte gratuite : plus de confiance, et vos messages arrivent dans la boîte de vos clients, pas dans leurs indésirables.",
         "points": [
           "Création des boîtes mail et configuration guidée sur votre téléphone et votre ordinateur",
-          "Réglages SPF et DKIM pour que vos emails arrivent bien",
+          "Réglages techniques (SPF, DKIM) pour que les emails que vous envoyez arrivent bien chez vos clients",
           "Reprise de votre ancienne adresse si vous en aviez une",
           "Nom de domaine offert avec la maintenance ; sinon acheté à votre nom, au prix coûtant",
           "Les boîtes mail sont facturées au prix du fournisseur, sans marge"
