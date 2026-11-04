@@ -1098,19 +1098,11 @@
           "text": "L'ancien site reste visible pendant les travaux. Le changement se fait d'un coup, quand tout est prêt."
         }
       ],
-      "prices_eyebrow": "Prix",
-      "prices_title": "Combien coûte une refonte",
-      "prices": [
-        {
-          "name": "Refonte d'un site vitrine, dès 590 €",
-          "text": "Pour un site de quelques pages : présentation, services, contact. Le prix exact dépend du nombre de pages et de ce qu'il y a à reprendre : je vous le donne avant de commencer."
-        },
-        {
-          "name": "Maintenance ensuite, dès 49 € par mois",
-          "text": "Facultative. L'hébergement, le nom de domaine, les sauvegardes et les mises à jour de sécurité sont décrits sur la page maintenance."
-        }
-      ],
       "faq": [
+        {
+          "q": "Combien coûte une refonte ?",
+          "a": "Dès 590 € pour un site vitrine de quelques pages (présentation, services, contact). Le prix exact dépend du nombre de pages et de ce qu'il y a à reprendre : je vous le donne avant de commencer. Prix en euros, TVA non applicable."
+        },
         {
           "q": "Vais-je perdre mon référencement sur Google ?",
           "a": "Pas si la refonte est préparée. Je dresse la liste de vos anciennes adresses et je les redirige vers les nouvelles. C'est cette étape qui évite de perdre vos positions."
