@@ -949,14 +949,14 @@
       },
       {
         "name": "Référencement local",
-        "price": "pack de lancement : 290 € · suivi : 59 € / mois",
+        "price": "pack de lancement : 490 € · suivi : 99 € / mois",
         "desc": "Apparaître quand on cherche votre activité près de chez vous. Je m'engage sur le travail réalisé et un rapport chiffré, pas sur une place dans les résultats : personne ne peut la garantir.",
         "points": [
           "Création et optimisation de la fiche Google Business",
           "Réglages techniques du site et déclaration dans la Search Console",
           "Une page par service lorsque c'est utile, avec un vrai contenu",
           "Mise en place d'un lien pour recueillir de vrais avis",
-          "En option : suivi mensuel et rapport (inclus dans la maintenance Complet)"
+          "En option : suivi mensuel et rapport détaillé (la maintenance Complet en comprend une version allégée)"
         ]
       }
     ],
@@ -1300,12 +1300,12 @@
       "prices_title": "Combien ça coûte",
       "prices": [
         {
-          "name": "Pack de lancement, 290 €",
+          "name": "Pack de lancement, 490 €",
           "text": "Fiche Google, réglages techniques du site, déclaration dans la Search Console, lien pour recueillir des avis. Payé une seule fois."
         },
         {
-          "name": "Suivi mensuel, 59 € par mois",
-          "text": "Rapport chiffré, ajustements et suivi de vos avis. Facultatif, et compris dans la maintenance Complet."
+          "name": "Suivi mensuel, 99 € par mois",
+          "text": "Rapport chiffré détaillé, ajustements et suivi de vos avis. Facultatif. La maintenance Complet en comprend une version allégée : une publication Google par mois et les réponses à vos avis."
         }
       ],
       "faq": [
@@ -1341,7 +1341,7 @@
   "seo": {
     "refonte-site-internet": "Refonte de site internet dès 590 € : audit, nouveau design lisible sur mobile, redirections pour garder votre référencement Google. Votre ancien site reste en ligne pendant les travaux.",
     "maintenance-site-internet": "Maintenance de site internet dès 49 € par mois : hébergement sécurisé, sauvegardes, surveillance et mises à jour. Trois niveaux, sans engagement.",
-    "referencement-local": "Référencement local : fiche Google Business, réglages du site, avis clients et rapport chiffré. Pack de lancement 290 €. Aucune place sur Google n'est promise.",
+    "referencement-local": "Référencement local : fiche Google Business, réglages du site, avis clients et rapport chiffré. Pack de lancement 490 €. Aucune place sur Google n'est promise.",
     "services": "Services autour de votre site : maintenance et hébergement dès 49 € par mois, refonte dès 590 €, mises à jour, emails professionnels, traduction, référencement local. Prix affichés, sans engagement.",
     "site-pizzeria": "Site internet pour pizzeria : votre carte en ligne, un bouton d'appel et de commande, vos horaires et votre adresse. Maquette gratuite sous 72 h, dès 490 €.",
     "site-coiffeur-barbier": "Site internet pour coiffeur et barbier : prestations, tarifs, galerie et prise de rendez-vous en ligne. Maquette gratuite sous 72 h, dès 490 €.",
