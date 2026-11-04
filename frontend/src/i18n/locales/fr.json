@@ -955,7 +955,7 @@
           "Création et optimisation de la fiche Google Business",
           "Réglages techniques du site et déclaration dans la Search Console",
           "Une page par service lorsque c'est utile, avec un vrai contenu",
-          "Un kit avis : carte QR code et messages tout prêts pour recueillir de vrais avis",
+          "Un kit avis : carte QR code et modèles de messages pour recueillir de vrais avis",
           "En option : suivi mensuel et rapport (inclus dans la maintenance Complet)"
         ]
       }
@@ -1243,7 +1243,7 @@
         {
           "name": "Avis et suivi",
           "short": "De vrais avis, un rapport",
-          "text": "Un kit avis (carte QR code et messages tout prêts) pour demander des avis à vos vrais clients, puis un rapport chiffré des visites et des apparitions dans Google."
+          "text": "Un kit avis (carte QR code et modèles de messages) pour demander des avis à vos vrais clients, puis un rapport chiffré des visites et des apparitions dans Google."
         }
       ],
       "points_eyebrow": "Ce que vous obtenez",
@@ -1263,7 +1263,7 @@
         },
         {
           "name": "Les avis de vos clients",
-          "text": "Un kit pour les demander au bon moment : une carte QR code à poser sur le comptoir, et des messages tout prêts (SMS, email, WhatsApp) à envoyer juste après la visite. Je n'en publie jamais de faux."
+          "text": "Un kit pour les demander au bon moment : une carte QR code à poser sur le comptoir, et des modèles de messages (SMS, email, WhatsApp) à envoyer juste après la visite. Je n'en publie jamais de faux."
         },
         {
           "name": "La Search Console",
@@ -1304,7 +1304,7 @@
             "Réglages techniques du site",
             "Déclaration dans la Search Console",
             "Carte QR code à poser sur le comptoir",
-            "Messages tout prêts pour demander un avis (SMS, email, WhatsApp)"
+            "Modèles de messages pour demander un avis (SMS, email, WhatsApp)"
           ]
         },
         {
@@ -1335,7 +1335,7 @@
         },
         {
           "q": "Pouvez-vous m'obtenir des avis ?",
-          "a": "Je vous fournis un kit avis : une carte QR code pour le comptoir et des messages tout prêts à envoyer à vos clients réels, juste après leur visite. Je ne publie jamais de faux avis : Google les détecte et les supprime, et vous risquez de perdre votre fiche."
+          "a": "Je vous fournis un kit avis : une carte QR code pour le comptoir et des modèles de messages à envoyer à vos clients réels, juste après leur visite. Je ne publie jamais de faux avis : Google les détecte et les supprime, et vous risquez de perdre votre fiche."
         },
         {
           "q": "Je me déplace chez mes clients, je n'ai pas de boutique.",
