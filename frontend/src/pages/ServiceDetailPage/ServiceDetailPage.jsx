@@ -133,8 +133,37 @@ function ServiceDetailContent({ service }) {
         </div>
       </section>
 
+      {/* PRIX, juste après l'essentiel : trois niveaux pour la maintenance, une liste pour les autres */}
+      {service.plans ? (
+        <section className="block block--raised" aria-label={t("services_page.plans_title")}>
+          <div className="container">
+            <MaintenancePlans as="h2" />
+          </div>
+        </section>
+      ) : (
+        Array.isArray(prices) && (
+          <section className="block block--raised metier-offer" aria-labelledby="service-prices-title">
+            <div className="container">
+              <header className="block-head reveal">
+                <p className="eyebrow">{p("prices_eyebrow")}</p>
+                <h2 id="service-prices-title" className="block-title">{p("prices_title")}</h2>
+              </header>
+              <dl className="metier-offer-list">
+                {prices.map((row, i) => (
+                  <div key={row.name} className="metier-offer-row reveal" style={{ "--delay": `${i * 70}ms` }}>
+                    <dt>{row.name}</dt>
+                    <dd>{row.text}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="metier-note svc-plans-note">{t("home.price_note", { article: vatArticle() })}</p>
+            </div>
+          </section>
+        )
+      )}
+
       {/* COMMENT ÇA SE PASSE */}
-      <section className="block block--raised metier-offer" aria-labelledby="service-steps-title">
+      <section className="block metier-offer" aria-labelledby="service-steps-title">
         <div className="container">
           <header className="block-head reveal">
             <p className="eyebrow">{c("steps_eyebrow")}</p>
@@ -153,7 +182,7 @@ function ServiceDetailContent({ service }) {
 
       {/* DÉLAIS RÉALISTES (référencement) */}
       {Array.isArray(timeline) && (
-        <section className="block metier-offer" aria-labelledby="service-timeline-title">
+        <section className="block block--raised metier-offer" aria-labelledby="service-timeline-title">
           <div className="container">
             <header className="block-head reveal">
               <p className="eyebrow">{p("timeline_eyebrow")}</p>
@@ -170,35 +199,6 @@ function ServiceDetailContent({ service }) {
             <p className="metier-note svc-plans-note reveal">{p("timeline_note")}</p>
           </div>
         </section>
-      )}
-
-      {/* PRIX : trois niveaux pour la maintenance, une liste pour les autres */}
-      {service.plans ? (
-        <section className="block" aria-label={t("services_page.plans_title")}>
-          <div className="container">
-            <MaintenancePlans as="h2" />
-          </div>
-        </section>
-      ) : (
-        Array.isArray(prices) && (
-          <section className="block metier-offer" aria-labelledby="service-prices-title">
-            <div className="container">
-              <header className="block-head reveal">
-                <p className="eyebrow">{p("prices_eyebrow")}</p>
-                <h2 id="service-prices-title" className="block-title">{p("prices_title")}</h2>
-              </header>
-              <dl className="metier-offer-list">
-                {prices.map((row, i) => (
-                  <div key={row.name} className="metier-offer-row reveal" style={{ "--delay": `${i * 70}ms` }}>
-                    <dt>{row.name}</dt>
-                    <dd>{row.text}</dd>
-                  </div>
-                ))}
-              </dl>
-              <p className="metier-note svc-plans-note">{t("home.price_note", { article: vatArticle() })}</p>
-            </div>
-          </section>
-        )
       )}
 
       {/* FAQ */}
