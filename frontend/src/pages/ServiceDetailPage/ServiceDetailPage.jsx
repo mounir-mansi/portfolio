@@ -131,14 +131,18 @@ function ServiceDetailContent({ service }) {
                 <p className="eyebrow">{p("prices_eyebrow")}</p>
                 <h2 id="service-prices-title" className="block-title">{p("prices_title")}</h2>
               </header>
-              <dl className="metier-offer-list">
+              <div className="svc-plans svc-plans--two">
                 {prices.map((row, i) => (
-                  <div key={row.name} className="metier-offer-row reveal" style={{ "--delay": `${i * 70}ms` }}>
-                    <dt>{row.name}</dt>
-                    <dd>{row.text}</dd>
-                  </div>
+                  <article key={row.name} className="svc-plan reveal" style={{ "--delay": `${i * 90}ms` }}>
+                    <h3 className="svc-plan-name">{row.name}</h3>
+                    <p className="svc-plan-price"><strong>{row.price}</strong> <span>{row.unit}</span></p>
+                    <p className="svc-plan-tagline">{row.tagline}</p>
+                    <ul className="metier-checks svc-plan-items">
+                      {row.items.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </article>
                 ))}
-              </dl>
+              </div>
               <p className="metier-note svc-plans-note">{t("home.price_note", { article: vatArticle() })}</p>
             </div>
           </section>
