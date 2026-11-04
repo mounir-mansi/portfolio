@@ -1,0 +1,103 @@
+/* Schémas de l'accueil : traits fins, tracés à l'apparition de leur carte (la classe is-visible vient de useReveal) */
+.schema {
+  display: block;
+  color: var(--fg-muted);
+  overflow: visible;
+}
+
+.schema--offer {
+  height: 5rem;
+  width: auto;
+  aspect-ratio: 2 / 1;
+  flex: none;
+}
+
+/* Offre : le schéma est au-dessus du nom (mobile) ou à sa droite (grand écran, où la section doit tenir dans la hauteur de la fenêtre) */
+.service-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+@media (min-width: 1024px) {
+  .service-head {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+  }
+
+  .service-head .schema--offer {
+    height: clamp(2.5rem, 6vh, 4.5rem);
+  }
+}
+
+.schema--step {
+  height: clamp(3rem, 9vh, 5.5rem);
+  width: auto;
+  aspect-ratio: 3 / 2;
+  flex: none;
+}
+
+.sd {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+.sd.sa {
+  stroke: var(--accent-text);
+  stroke-width: 1.8;
+}
+
+/* le trait pointillé du schéma Maintenance garde sa trame */
+.sd.sd--dash {
+  stroke-dasharray: 0.04 0.04;
+}
+
+/* Le fond des bulles de dialogue masque le trait de la bulle qui passe derrière */
+.sd.step-fill {
+  fill: var(--bg);
+}
+
+/* Tracé : le contenu reste visible par défaut, l'animation ne démarre qu'à l'apparition de la carte */
+.is-visible .schema .sd:not(.sd--dash) {
+  animation: schema-draw 1.2s var(--ease) both;
+}
+
+.is-visible .schema .sd--dash {
+  animation: schema-fade 0.9s var(--ease) 0.5s both;
+}
+
+.is-visible .schema .sd:nth-child(2n) { animation-delay: 0.12s; }
+.is-visible .schema .sd:nth-child(3n) { animation-delay: 0.24s; }
+.is-visible .schema .sd:nth-child(5n) { animation-delay: 0.38s; }
+
+@keyframes schema-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes schema-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-visible .schema .sd {
+    animation: none;
+  }
+}
+
+/* Numéro d'étape et son schéma sur une même ligne */
+.step-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}

@@ -9,6 +9,8 @@ import usePageTitle from "../../utils/usePageTitle";
 import QuoteSection from "../../components/QuickQuote/QuoteSection";
 import HeroQuote from "../../components/HeroQuote/HeroQuote";
 import Faq from "../../components/Faq/Faq";
+import DemoStrip from "../../components/DemoStrip/DemoStrip";
+import { OfferSchema, StepSchema } from "../../components/Schemas/Schemas";
 import Reviews from "../../components/Reviews/Reviews";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from "../../utils/contactInfo";
 import { vatArticle } from "../../data/legal";
@@ -120,6 +122,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SITES DE DÉMONSTRATION : bandeau défilant */}
+      <DemoStrip />
+
       {/* MAQUETTE GRATUITE */}
       <QuoteSection />
 
@@ -151,7 +156,10 @@ export default function HomePage() {
             {Array.isArray(services) && services.map((s, i) => (
               <article key={s.name} className={`service reveal ${i === 1 ? "service--featured" : ""}`} style={{ "--delay": `${i * 90}ms` }}>
                 {i === 1 && <span className="service-badge">{t("home.popular")}</span>}
-                <h3 className="service-name">{s.name}</h3>
+                <div className="service-head">
+                  {i < 3 && <OfferSchema kind={i} />}
+                  <h3 className="service-name">{s.name}</h3>
+                </div>
                 <p className="service-price">
                   {s.price_prefix && <span className="service-price-prefix">{s.price_prefix}</span>}
                   <strong>{s.price}</strong>
@@ -191,7 +199,10 @@ export default function HomePage() {
           <ol className="steps">
             {Array.isArray(steps) && steps.map((s, i) => (
               <li key={s.title} className="step reveal" style={{ "--delay": `${i * 90}ms` }}>
-                <span className="step-num">{pad(i)}</span>
+                <div className="step-head">
+                  <span className="step-num">{pad(i)}</span>
+                  {i < 4 && <StepSchema n={i} />}
+                </div>
                 <h3 className="step-title">{s.title}</h3>
                 <p className="step-desc">{s.desc}</p>
               </li>
