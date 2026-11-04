@@ -169,6 +169,35 @@
   }
 }
 
+/* Mobile : les trois niveaux de maintenance défilent horizontalement, comme les packs de l'accueil (une carte à la fois, la suivante dépasse) */
+@media (max-width: 760px) {
+  .svc-plans:not(.svc-plans--two) {
+    display: flex;
+    gap: 0.75rem;
+    margin-inline: calc(var(--gutter) * -1);
+    /* le badge « Recommandé » dépasse au-dessus de la carte : on lui laisse la place */
+    padding: 1.4rem var(--gutter) 0.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .svc-plans:not(.svc-plans--two)::-webkit-scrollbar {
+    display: none;
+  }
+
+  .svc-plans:not(.svc-plans--two) .svc-plan {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+  }
+
+  .svc-plans:not(.svc-plans--two) .svc-plan:hover {
+    transform: none;
+  }
+}
+
 /* Deux cartes de prix (référencement local) : deux colonnes, pas trois */
 @media (min-width: 900px) {
   .svc-plans--two {
