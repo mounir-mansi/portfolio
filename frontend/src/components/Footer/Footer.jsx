@@ -51,6 +51,11 @@ export default function Footer({ hideCta = false }) {
             <li>
               <Link to={`/${lang}/projets`}>{t("nav.projects")}</Link>
             </li>
+            {lang === "fr" && (
+              <li>
+                <Link to="/fr/services">{t("nav.services")}</Link>
+              </li>
+            )}
           </ul>
         </div>
 

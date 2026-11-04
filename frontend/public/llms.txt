@@ -15,6 +15,7 @@ Responsable : Mounir Mansi, développeur web indépendant. Contact : contact@man
 - [Accueil](https://mandev.fr/fr) : présentation des offres, FAQ et demande de maquette gratuite
 - [Projets réalisés](https://mandev.fr/fr/projets) : sites et applications livrés
 - [À propos](https://mandev.fr/fr/a-propos) : parcours et méthode
+- [Services autour du site](https://mandev.fr/fr/services) : maintenance et hébergement (49, 89 ou 149 € par mois), refonte dès 590 €, mises à jour de contenu, nom de domaine et emails pro, traduction, référencement local
 - [Contact](https://mandev.fr/fr/contact)
 - [Conditions générales de vente](https://mandev.fr/fr/cgv)
 

@@ -10,6 +10,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { METIERS } from "../src/data/metiers.js";
+import { SERVICES_SLUG } from "../src/data/services.js";
 
 const RACINE = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(RACINE, "dist");
@@ -25,7 +26,7 @@ export function routes({ projets = null } = {}) {
   const base = LANGS.flatMap((lang) => PAGES.map((p) => `/${lang}${p}`));
   const metiers = METIERS.map((m) => `/fr/${m.slug}`); // pages par métier : français seulement
   const pagesProjets = projets === null ? [] : LANGS.flatMap((lang) => [`/${lang}/projets`, ...projets.map((id) => `/${lang}/projets/${id}`)]);
-  return [...base, ...metiers, ...pagesProjets];
+  return [...base, `/fr/${SERVICES_SLUG}`, ...metiers, ...pagesProjets]; // page Services : français seulement
 }
 
 // Lecture de l'API du portfolio ; renvoie null (avec un avertissement) si elle est injoignable ou répond de travers

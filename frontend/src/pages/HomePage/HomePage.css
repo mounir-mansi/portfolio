@@ -993,3 +993,17 @@
     margin-top: 0.25rem;
   }
 }
+
+.services-more {
+  margin-top: 1rem;
+}
+
+.services-more a {
+  color: var(--accent-text);
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.25s;
+}
+
+.services-more a:hover {
+  opacity: 0.75;
+}
