@@ -1,0 +1,263 @@
+/* Page « Services » : le hero, la FAQ et les blocs viennent de l'accueil et de MetierPage.css, ici seulement ce qui est propre à la page */
+
+/* Hero : titre à gauche, sommaire des six services à droite */
+@media (min-width: 1000px) {
+  .svc-hero-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: center;
+  }
+}
+
+.svc-index {
+  padding: clamp(1.25rem, 2.4vw, 1.9rem);
+  background: var(--bg-raised);
+  border: 1px solid var(--line-strong);
+  border-radius: calc(var(--radius) * 2);
+}
+
+.svc-index-title {
+  margin-bottom: 0.9rem;
+}
+
+.svc-index ol {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+}
+
+.svc-index li {
+  border-top: 1px solid var(--line);
+  /* Chaque ligne arrive l'une après l'autre ; sans animation (ou si elle est coupée), tout reste visible */
+  animation: svc-row 0.7s var(--ease) both;
+  animation-delay: calc(0.45s + var(--i) * 0.14s);
+}
+
+.svc-index li:first-child {
+  border-top: 0;
+}
+
+.svc-index a {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.8rem;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  transition: transform 0.35s var(--ease);
+}
+
+.svc-index a:hover,
+.svc-index a:focus-visible {
+  transform: translateX(6px);
+}
+
+.svc-index-check {
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  animation: svc-check 0.55s var(--ease) both;
+  animation-delay: calc(0.75s + var(--i) * 0.14s);
+}
+
+.svc-index-name {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.2;
+}
+
+.svc-index-price {
+  grid-column: 2;
+  font-size: var(--step--1);
+  color: var(--fg-muted);
+}
+
+@keyframes svc-row {
+  from { opacity: 0; transform: translateX(28px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes svc-check {
+  0% { transform: scale(0) rotate(-40deg); }
+  70% { transform: scale(1.18) rotate(6deg); }
+  100% { transform: none; }
+}
+
+/* Un service : texte à gauche, liste des points à droite */
+.svc-block {
+  scroll-margin-top: 4.5rem;
+}
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .svc-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+}
+
+.svc-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.svc-price {
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  letter-spacing: 0.02em;
+  color: var(--accent-text);
+}
+
+.svc-desc {
+  max-width: 36rem;
+  color: var(--fg-muted);
+  line-height: 1.55;
+}
+
+.svc-points {
+  gap: 0.7rem;
+  line-height: 1.5;
+}
+
+/* Les trois niveaux de maintenance */
+.svc-plans-wrap {
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.svc-plans-title {
+  font-size: var(--step-2);
+}
+
+.svc-plans {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .svc-plans {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
+.svc-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: clamp(1.25rem, 2.4vw, 1.75rem);
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  border-radius: calc(var(--radius) * 2);
+  transition: transform 0.4s var(--ease), border-color 0.25s;
+}
+
+.svc-plan:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-text);
+}
+
+.svc-plan--featured {
+  border-color: var(--accent-text);
+}
+
+.svc-plan-badge {
+  position: absolute;
+  top: -0.7rem;
+  right: 1.25rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.svc-plan-name {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.svc-plan-price strong {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.svc-plan-price span {
+  color: var(--fg-muted);
+}
+
+.svc-plan-tagline {
+  min-height: 3em;
+  color: var(--fg-muted);
+  line-height: 1.45;
+}
+
+.svc-plan-rows {
+  display: flex;
+  flex-direction: column;
+  margin: 0.4rem 0 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.svc-plan-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--step--1);
+  line-height: 1.35;
+}
+
+.svc-plan-row dt {
+  color: var(--fg-muted);
+}
+
+.svc-plan-row dd {
+  flex: none;
+  margin: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+}
+
+.svc-plan-row.is-off dd {
+  color: var(--fg-faint);
+}
+
+.svc-plan .btn-primary,
+.svc-plan .btn-outline {
+  justify-content: center;
+  margin-top: auto;
+}
+
+.svc-plans-note {
+  margin-top: 1.25rem;
+  max-width: 46rem;
+}
+
+.svc-vat {
+  padding-block: 1.5rem 0;
+  font-size: var(--step--1);
+  color: var(--fg-faint);
+}

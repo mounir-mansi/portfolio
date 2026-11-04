@@ -35,6 +35,7 @@
     "popular": "Recommandé",
     "services_cta_contact": "Me poser une question",
     "price_note": "Prix en euros, TVA non applicable ({{article}}).",
+    "services_more": "Maintenance, refonte, mises à jour, emails pro, traduction, référencement local : voir tous les services",
     "services": [
       {
         "tag": "Pack 01",
@@ -875,7 +876,163 @@
       "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre activité, puis je vous envoie la maquette de votre page d'accueil."
     }
   },
+  "services_page": {
+    "meta_title": "Services autour de votre site internet",
+    "eyebrow": "Après la mise en ligne",
+    "title_a": "Un site en ligne, c'est le début.",
+    "title_em": "Je m'occupe du reste",
+    "title_b": "pour que vous restiez sur votre métier.",
+    "sub": "Maintenance, refonte, mises à jour, nom de domaine et emails professionnels, traduction, référencement local : chaque service se prend seul ou avec un site créé par mes soins, avec un prix affiché.",
+    "cta": "Demander un devis",
+    "cta_call": "Poser une question",
+    "index_title": "Six services, des prix clairs",
+    "index_aria": "Aller à un service",
+    "items": [
+      {
+        "name": "Maintenance et hébergement",
+        "price": "dès 49 € / mois",
+        "desc": "Votre site reste en ligne, rapide et à jour, sans que vous ayez à y penser. Trois niveaux, de la simple surveillance au suivi complet.",
+        "points": [
+          "Hébergement sécurisé et certificat SSL",
+          "Nom de domaine offert",
+          "Sauvegardes automatiques",
+          "Surveillance du site : je suis prévenu s'il tombe",
+          "Mises à jour de sécurité",
+          "Sans engagement, préavis d'un mois"
+        ]
+      },
+      {
+        "name": "Refonte de site",
+        "price": "dès 590 €",
+        "desc": "Votre site actuel est lent, daté ou illisible sur téléphone ? Je le reconstruis sans perdre ce que Google connaît déjà de lui.",
+        "points": [
+          "Audit de l'existant : ce qui marche est conservé",
+          "Nouveau design, lisible sur mobile",
+          "Redirections des anciennes adresses, pour garder votre référencement",
+          "Images allégées : un site plus rapide à charger",
+          "Reprise de vos textes et de vos photos",
+          "Jusqu'à 990 € si vous ajoutez réservation ou paiement en ligne"
+        ]
+      },
+      {
+        "name": "Mise à jour de contenu",
+        "price": "40 € la modification · pack de 5 : 160 €",
+        "desc": "Horaires de vacances, nouvelle carte, prix, photos, actualité : vous me l'envoyez, c'est en ligne, sans que vous ouvriez une interface.",
+        "points": [
+          "Une modification = un texte, un prix, une photo ou un lien (environ 30 minutes)",
+          "Texte rédigé à partir de vos informations, relu avant mise en ligne",
+          "Photos recadrées et allégées avant publication",
+          "Incluse chaque mois dans les niveaux Suivi et Complet de la maintenance"
+        ]
+      },
+      {
+        "name": "Nom de domaine et emails pro",
+        "price": "mise en place : 90 €",
+        "desc": "Une adresse du type contact@votre-commerce.fr plutôt qu'une boîte gratuite : plus de confiance, et des messages qui n'arrivent pas dans les indésirables.",
+        "points": [
+          "Achat ou transfert du nom de domaine, à votre nom",
+          "Création des boîtes mail et configuration sur votre téléphone",
+          "Réglages SPF et DKIM pour que vos emails arrivent bien",
+          "Le domaine est offert avec la maintenance ; les boîtes mail sont facturées au prix du fournisseur, sans marge"
+        ]
+      },
+      {
+        "name": "Traduction du site",
+        "price": "dès 150 € par langue",
+        "desc": "Pour les restaurants, hôtels et commerces qui accueillent des visiteurs étrangers : votre site dans leur langue, avec le bon réglage pour Google.",
+        "points": [
+          "Anglais, italien, espagnol (autres langues sur demande)",
+          "Traduction relue, pas un simple copier-coller d'un outil",
+          "Sélecteur de langue et balises hreflang",
+          "Pour un site de 1 à 5 pages"
+        ]
+      },
+      {
+        "name": "Référencement local",
+        "price": "pack de lancement : 290 € · suivi : 59 € / mois",
+        "desc": "Apparaître quand on cherche votre activité près de chez vous. Je m'engage sur le travail réalisé et un rapport chiffré, pas sur une place dans les résultats : personne ne peut la garantir.",
+        "points": [
+          "Création et optimisation de la fiche Google Business",
+          "Réglages techniques du site et déclaration dans la Search Console",
+          "Une page par service lorsque c'est utile, avec un vrai contenu",
+          "Mise en place d'un lien pour recueillir de vrais avis",
+          "En option : suivi mensuel et rapport (inclus dans la maintenance Complet)"
+        ]
+      }
+    ],
+    "plans_eyebrow": "Maintenance",
+    "plans_title": "Trois niveaux de maintenance",
+    "plans_text": "Le niveau Essentiel est celui affiché sur l'accueil, au même prix. Les deux autres ajoutent du temps de ma part chaque mois.",
+    "plans_recommended": "Recommandé",
+    "plans_cta": "Choisir ce niveau",
+    "plan_not_included": "non inclus",
+    "plan_rows": [
+      "Hébergement, SSL et sauvegardes",
+      "Surveillance du site",
+      "Mises à jour de sécurité",
+      "Modifications de contenu incluses",
+      "Délai de réponse",
+      "Rapport mensuel (visites, vitesse)",
+      "Suivi Search Console",
+      "Fiche Google : 1 publication par mois et réponses aux avis",
+      "Point trimestriel par téléphone",
+      "Restauration prioritaire en cas de panne"
+    ],
+    "plans": [
+      {
+        "name": "Essentiel",
+        "price": "49 €",
+        "unit": "/ mois",
+        "tagline": "Le site reste en ligne et en sécurité.",
+        "values": ["✓", "✓", "✓", "0 (40 € l'unité)", "72 h", "—", "—", "—", "—", "—"]
+      },
+      {
+        "name": "Suivi",
+        "price": "89 €",
+        "unit": "/ mois",
+        "tagline": "Vos petites modifications sont incluses et vous voyez ce que fait le site.",
+        "values": ["✓", "✓", "✓", "2 par mois", "48 h", "✓", "✓", "—", "—", "—"]
+      },
+      {
+        "name": "Complet",
+        "price": "149 €",
+        "unit": "/ mois",
+        "tagline": "Je m'occupe aussi de votre visibilité locale.",
+        "values": ["✓", "✓", "✓", "5 par mois", "24 h", "✓", "✓", "✓", "✓", "✓"]
+      }
+    ],
+    "plans_note": "Une modification inclut un changement de texte, d'horaires, de prix, de photo ou de lien, d'environ 30 minutes. Les modifications non utilisées ne sont pas reportées. Sans engagement, préavis d'un mois.",
+    "faq": [
+      {
+        "q": "Pourquoi payer une maintenance si mon site est terminé ?",
+        "a": "Un site n'est jamais « fini » : le serveur, le certificat de sécurité et les composants doivent être mis à jour, les sauvegardes vérifiées, et quelqu'un doit être prévenu si le site tombe un samedi soir. Sans cela, un site se dégrade ou se fait pirater. La maintenance, c'est ce suivi, fait à votre place."
+      },
+      {
+        "q": "Pouvez-vous me garantir la première place sur Google ?",
+        "a": "Non, et méfiez-vous de ceux qui le promettent : les résultats dépendent de Google et de vos concurrents. Ce que je garantis, c'est le travail fait et un rapport chiffré. Les premiers signes apparaissent en général après 4 à 8 semaines, et des positions stables sur des recherches locales peu concurrentielles demandent plutôt 3 à 6 mois."
+      },
+      {
+        "q": "Une refonte me fera-t-elle perdre mon référencement ?",
+        "a": "Pas si elle est préparée : je dresse la liste de vos anciennes adresses et je les redirige vers les nouvelles pour que Google comprenne le changement. C'est l'étape qui évite les mauvaises surprises."
+      },
+      {
+        "q": "Le nom de domaine sera-t-il à mon nom ?",
+        "a": "Oui. Le domaine est enregistré à votre nom, vous en restez propriétaire. Si un jour vous quittez la maintenance, vous gardez votre adresse."
+      },
+      {
+        "q": "Les modifications non utilisées sont-elles reportées ?",
+        "a": "Non, elles ne se cumulent pas d'un mois sur l'autre. Si vous avez besoin de plus que votre forfait, une modification supplémentaire coûte 40 €, ou 160 € le pack de 5."
+      },
+      {
+        "q": "Puis-je prendre ces services sans que vous ayez créé mon site ?",
+        "a": "Oui pour la plupart, après un court audit de votre site actuel. Si son fonctionnement ne permet pas de le maintenir correctement, je vous le dis avant de vous facturer quoi que ce soit."
+      }
+    ],
+    "final_title": "Dites-moi ce dont votre site a besoin",
+    "final_text": "Décrivez-moi votre situation en deux lignes. Je vous réponds avec le service adapté et un prix précis, sans engagement."
+  },
   "seo": {
+    "services": "Services autour de votre site : maintenance et hébergement dès 49 € par mois, refonte dès 590 €, mises à jour, nom de domaine et emails pro, traduction, référencement local. Prix affichés, sans engagement.",
     "site-pizzeria": "Site internet pour pizzeria : votre carte en ligne, un bouton d'appel et de commande, vos horaires et votre adresse. Maquette gratuite sous 72 h, dès 490 €.",
     "site-coiffeur-barbier": "Site internet pour coiffeur et barbier : prestations, tarifs, galerie et prise de rendez-vous en ligne. Maquette gratuite sous 72 h, dès 490 €.",
     "site-restaurant": "Site internet pour restaurant : carte et menu du jour, photos, réservation de table et horaires. Maquette gratuite sous 72 h, dès 490 €.",

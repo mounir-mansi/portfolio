@@ -225,6 +225,9 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mandev.fr/fr/cgv"/>
   </url>
   <url>
+    <loc>https://mandev.fr/fr/services</loc>
+  </url>
+  <url>
     <loc>https://mandev.fr/fr/site-pizzeria</loc>
   </url>
   <url>

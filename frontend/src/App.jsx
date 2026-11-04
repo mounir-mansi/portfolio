@@ -11,7 +11,9 @@ import MentionsLegalesPage from "./pages/LegalPages/MentionsLegalesPage";
 import ConfidentialitePage from "./pages/LegalPages/ConfidentialitePage";
 import CgvPage from "./pages/LegalPages/CgvPage";
 import MetierPage from "./pages/MetierPage/MetierPage";
+import ServicesPage from "./pages/ServicesPage/ServicesPage";
 import { METIERS } from "./data/metiers";
+import { SERVICES_SLUG } from "./data/services";
 import useSeoTags from "./utils/useSeoTags";
 
 // Connexion et admin sont chargés à la demande : leurs icônes (Font Awesome) ne pèsent pas sur les pages publiques
@@ -61,6 +63,7 @@ function LangRouter() {
       <Route path="mentions-legales" element={<MentionsLegalesPage />} />
       <Route path="confidentialite" element={<ConfidentialitePage />} />
       <Route path="cgv" element={<CgvPage />} />
+      <Route path={SERVICES_SLUG} element={<ServicesPage />} />
       {METIERS.map((metier) => (
         <Route key={metier.slug} path={metier.slug} element={<MetierPage metier={metier} />} />
       ))}
