@@ -949,13 +949,13 @@
       },
       {
         "name": "Référencement local",
-        "price": "pack de lancement : 290 € · suivi : 59 € / mois",
+        "price": "mise en place : 290 € · suivi : 49 € / mois",
         "desc": "Apparaître quand on cherche votre activité près de chez vous. Je m'engage sur le travail réalisé et un rapport chiffré, pas sur une place dans les résultats : personne ne peut la garantir.",
         "points": [
           "Création et optimisation de la fiche Google Business",
           "Réglages techniques du site et déclaration dans la Search Console",
           "Une page par service lorsque c'est utile, avec un vrai contenu",
-          "Mise en place d'un lien pour recueillir de vrais avis",
+          "Affichette avec QR code et messages tout prêts pour recueillir de vrais avis",
           "En option : suivi mensuel et rapport (inclus dans la maintenance Complet)"
         ]
       }
@@ -1222,7 +1222,7 @@
       "title_em": "votre activité",
       "title_b": "près de chez vous.",
       "sub": "Fiche Google Business, réglages du site, avis de vos clients : je mets en place ce qui fait apparaître un commerce local, et je vous montre les résultats chiffrés. Je ne promets pas une place sur Google : personne ne peut la garantir.",
-      "hero_price": "Pack de lancement 290 € · Suivi mensuel en option, 59 € par mois",
+      "hero_price": "Mise en place 290 € · Suivi du référencement en option, 49 € par mois",
       "aside_title": "Quatre étapes",
       "steps": [
         {
@@ -1243,7 +1243,7 @@
         {
           "name": "Avis et suivi",
           "short": "De vrais avis, un rapport",
-          "text": "Un lien et un QR code pour demander des avis à vos vrais clients, puis un rapport chiffré des visites et des apparitions dans Google."
+          "text": "Une affichette avec QR code et des messages tout prêts pour demander des avis à vos vrais clients, puis un rapport chiffré des visites et des apparitions dans Google."
         }
       ],
       "points_eyebrow": "Ce que vous obtenez",
@@ -1263,7 +1263,7 @@
         },
         {
           "name": "Les avis de vos clients",
-          "text": "Un lien et un QR code pour récolter de vrais avis. Je n'en publie jamais de faux."
+          "text": "Une affichette de comptoir avec QR code, et des messages tout prêts (SMS, email, WhatsApp) à envoyer juste après la visite. Je n'en publie jamais de faux."
         },
         {
           "name": "La Search Console",
@@ -1295,12 +1295,29 @@
       "prices_title": "Combien ça coûte",
       "prices": [
         {
-          "name": "Pack de lancement, 290 €",
-          "text": "Fiche Google, réglages techniques du site, déclaration dans la Search Console, lien pour recueillir des avis. Payé une seule fois."
+          "name": "Mise en place",
+          "price": "290 €",
+          "unit": "une seule fois",
+          "tagline": "Tout ce qu'il faut pour être trouvé et recueillir des avis.",
+          "items": [
+            "Fiche Google créée ou reprise et optimisée",
+            "Réglages techniques du site",
+            "Déclaration dans la Search Console",
+            "Affichette de comptoir avec QR code",
+            "Messages tout prêts pour demander un avis (SMS, email, WhatsApp)"
+          ]
         },
         {
-          "name": "Suivi mensuel, 59 € par mois",
-          "text": "Rapport chiffré, ajustements et suivi de vos avis. Facultatif, et compris dans la maintenance Complet."
+          "name": "Suivi du référencement",
+          "price": "49 €",
+          "unit": "par mois, facultatif",
+          "tagline": "Pour suivre les résultats et ajuster chaque mois.",
+          "items": [
+            "Rapport chiffré : visites, apparitions dans Google, appels",
+            "Ajustements de la fiche et du site",
+            "Réponses aux avis rédigées avec vous",
+            "Compris dans la maintenance Complet"
+          ]
         }
       ],
       "faq": [
@@ -1314,7 +1331,7 @@
         },
         {
           "q": "Pouvez-vous m'obtenir des avis ?",
-          "a": "Je vous donne le lien et le QR code pour en demander à vos clients réels. Je ne publie jamais de faux avis : Google les détecte et les supprime, et vous risquez de perdre votre fiche."
+          "a": "Je vous fournis une affichette avec QR code et des messages tout prêts à envoyer à vos clients réels, juste après leur visite. Je ne publie jamais de faux avis : Google les détecte et les supprime, et vous risquez de perdre votre fiche."
         },
         {
           "q": "Je me déplace chez mes clients, je n'ai pas de boutique.",
@@ -1325,8 +1342,8 @@
           "a": "C'est préférable : la fiche renvoie vers le site. Si vous n'en avez pas, je peux d'abord vous en créer un."
         },
         {
-          "q": "Faut-il prendre le suivi mensuel ?",
-          "a": "Non, il est facultatif. Le pack de lancement met tout en place. Le suivi sert si vous voulez des rapports et des ajustements réguliers."
+          "q": "Faut-il prendre le suivi du référencement ?",
+          "a": "Non, il est facultatif. La mise en place met tout en route. Le suivi sert si vous voulez des rapports et des ajustements réguliers."
         }
       ],
       "final_title": "Voyons où vous en êtes sur Google",
@@ -1336,7 +1353,7 @@
   "seo": {
     "refonte-site-internet": "Refonte de site internet dès 590 € : audit, nouveau design lisible sur mobile, redirections pour garder votre référencement Google. Votre ancien site reste en ligne pendant les travaux.",
     "maintenance-site-internet": "Maintenance de site internet dès 49 € par mois : hébergement sécurisé, sauvegardes, surveillance et mises à jour. Trois niveaux, sans engagement.",
-    "referencement-local": "Référencement local : fiche Google Business, réglages du site, avis clients et rapport chiffré. Pack de lancement 290 €. Aucune place sur Google n'est promise.",
+    "referencement-local": "Référencement local : fiche Google Business, réglages du site, avis clients et rapport chiffré. Mise en place 290 €. Aucune place sur Google n'est promise.",
     "services": "Services autour de votre site : maintenance et hébergement dès 49 € par mois, refonte dès 590 €, mises à jour, emails professionnels, traduction, référencement local. Prix affichés, sans engagement.",
     "site-pizzeria": "Site internet pour pizzeria : votre carte en ligne, un bouton d'appel et de commande, vos horaires et votre adresse. Maquette gratuite sous 72 h, dès 490 €.",
     "site-coiffeur-barbier": "Site internet pour coiffeur et barbier : prestations, tarifs, galerie et prise de rendez-vous en ligne. Maquette gratuite sous 72 h, dès 490 €.",
