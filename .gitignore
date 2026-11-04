@@ -24,3 +24,6 @@ Thumbs.db
 
 # Fichiers importés par les visiteurs (développement local)
 backend/private-uploads/
+
+# Enregistrement des vidéos de démos (scripts/enregistrer-demos.mjs)
+scripts/.tmp-demos/

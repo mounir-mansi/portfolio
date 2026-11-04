@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { METIERS } from "../../data/metiers";
@@ -15,6 +15,96 @@ const DEMOS = METIERS.filter((m, i, all) => m.demo && all.findIndex((o) => o.dem
 const VITESSE = 28; // pixels par seconde
 const REPRISE_MS = 2500; // l'avance automatique reprend 2,5 s après la dernière manipulation
 const SEUIL_GLISSE = 6; // pixels de glissement à la souris avant de considérer que ce n'est plus un clic
+
+// Chaque carte montre une affiche (accueil du site) ; une vidéo de cet accueil (héros animé, puis défilement jusqu'en bas)
+// se joue au survol, au focus clavier, ou, sans souris, quand la carte passe au centre de l'écran.
+// Fichiers générés par scripts/enregistrer-demos.mjs : /demos/<sous-domaine>.webp et .webm (bandeau « site fictif » retiré).
+const REDUIT = "(prefers-reduced-motion: reduce)";
+const mouvementAutorise = () => !window.matchMedia(REDUIT).matches;
+const abonnerMouvement = (rappel) => {
+  const mq = window.matchMedia(REDUIT);
+  mq.addEventListener("change", rappel);
+  return () => mq.removeEventListener("change", rappel);
+};
+
+function DemoCard({ m, copy, lang }) {
+  const carte = useRef(null);
+  const video = useRef(null);
+  const pret = useSyncExternalStore(abonnerMouvement, mouvementAutorise, () => false); // vidéo montée côté navigateur seulement (pas au prérendu, pas en mouvement réduit)
+  const [enLecture, setEnLecture] = useState(false);
+  const base = `/demos/${new URL(m.demo.url).hostname.split(".")[0]}`;
+
+  const lire = useCallback(() => {
+    // Le chargement du fichier démarre ici, au premier survol (preload="none")
+    video.current?.play().catch(() => {}); // refus ou interruption par un arrêt immédiat : l'affiche reste, rien à signaler
+  }, []);
+
+  const arreter = useCallback(() => {
+    video.current?.pause();
+    setEnLecture(false);
+  }, []);
+
+  // La vidéo repart du début une fois l'affiche revenue (fondu terminé)
+  useEffect(() => {
+    if (enLecture) return undefined;
+    const id = setTimeout(() => { if (video.current) video.current.currentTime = 0; }, 400);
+    return () => clearTimeout(id);
+  }, [enLecture]);
+
+  // Sans survol possible (téléphone, tablette) : la vidéo se joue quand la carte passe au centre de l'écran
+  useEffect(() => {
+    if (!pret || !carte.current || !window.matchMedia("(hover: none)").matches) return undefined;
+    const observateur = new IntersectionObserver(([entry]) => (entry.isIntersecting ? lire() : arreter()), { rootMargin: "0px -42% 0px -42%" });
+    observateur.observe(carte.current);
+    return () => observateur.disconnect();
+  }, [pret, lire, arreter]);
+
+  const inner = (
+    <>
+      <span className="demo-frame">
+        <span className="demo-frame-bar" aria-hidden="true"><i /><i /><i /></span>
+        <span className={`demo-shot${enLecture ? " is-playing" : ""}`}>
+          <img src={`${base}.webp`} alt="" loading="lazy" width="960" height="600" draggable="false" />
+          {pret && (
+            <video
+              ref={video}
+              className="demo-video"
+              muted
+              loop
+              playsInline
+              preload="none"
+              disablePictureInPicture
+              draggable="false"
+              aria-hidden="true"
+              tabIndex={-1}
+              onPlaying={() => setEnLecture(true)}
+            >
+              <source src={`${base}.webm`} type="video/webm" />
+            </video>
+          )}
+        </span>
+      </span>
+      <span className="demo-name">{m.demo.name}</span>
+    </>
+  );
+  const common = {
+    ref: carte,
+    className: "demo-card",
+    tabIndex: copy ? -1 : undefined,
+    draggable: false,
+    onPointerEnter: (e) => { if (e.pointerType === "mouse") lire(); },
+    onPointerLeave: (e) => { if (e.pointerType === "mouse") arreter(); },
+    onFocus: lire,
+    onBlur: arreter,
+  };
+  return (
+    <li aria-hidden={copy ? "true" : undefined}>
+      {lang === "fr"
+        ? <Link to={`/fr/${m.slug}`} {...common}>{inner}</Link>
+        : <a href={m.demo.url} target="_blank" rel="noopener noreferrer" {...common}>{inner}</a>}
+    </li>
+  );
+}
 
 export default function DemoStrip() {
   const { t } = useTranslation();
@@ -173,25 +263,9 @@ export default function DemoStrip() {
       </div>
       <div className="demo-strip-viewport" ref={viewport} tabIndex={0} role="region" aria-label={t("home.strip_title")}>
         <ul className="demo-strip-track" ref={track}>
-          {items.map(({ m, copy }, i) => {
-            const inner = (
-              <>
-                <span className="demo-frame">
-                  <span className="demo-frame-bar" aria-hidden="true"><i /><i /><i /></span>
-                  <img src={m.demo.image} alt="" loading="lazy" width="1600" height="790" draggable="false" />
-                </span>
-                <span className="demo-name">{m.demo.name}</span>
-              </>
-            );
-            const common = { className: "demo-card", tabIndex: copy ? -1 : undefined, draggable: false };
-            return (
-              <li key={`${m.slug}-${i}`} aria-hidden={copy ? "true" : undefined}>
-                {lang === "fr"
-                  ? <Link to={`/fr/${m.slug}`} {...common}>{inner}</Link>
-                  : <a href={m.demo.url} target="_blank" rel="noopener noreferrer" {...common}>{inner}</a>}
-              </li>
-            );
-          })}
+          {items.map(({ m, copy }, i) => (
+            <DemoCard key={`${m.slug}-${i}`} m={m} copy={copy} lang={lang} />
+          ))}
         </ul>
       </div>
     </section>
