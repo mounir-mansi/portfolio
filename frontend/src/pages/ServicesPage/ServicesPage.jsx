@@ -122,7 +122,6 @@ function ServicesContent() {
           >
             <div className="container svc-grid">
               <div className="svc-text reveal">
-                <p className="eyebrow">{String(i + 1).padStart(2, "0")}</p>
                 <h2 id={`svc-${svc.id}-title`} className="block-title">{item.name}</h2>
                 <p className="svc-price">{item.price}</p>
                 <p className="svc-desc">{item.desc}</p>
