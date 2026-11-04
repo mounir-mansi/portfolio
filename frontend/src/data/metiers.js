@@ -15,7 +15,7 @@ export const METIERS = [
   {
     slug: "site-restaurant",
     key: "restaurant",
-    demo: null, // pas de site de démonstration dédié aux restaurants : la section est masquée
+    demo: { name: "Maison Camille", url: "https://restaurant.mandev.fr", image: "/main-restaurant.webp" },
   },
   {
     slug: "site-boulangerie-patisserie",
