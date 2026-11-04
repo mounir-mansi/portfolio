@@ -81,6 +81,11 @@
     ],
     "work_eyebrow": "Réalisations",
     "work_title": "Projets récents",
+    "work_demos": {
+      "restaurant": "Réservation de table en ligne, carte du moment et photos pleine page.",
+      "artisan": "Demande de rappel en 10 minutes, zone d'intervention et devis en ligne.",
+      "barbier": "Prise de rendez-vous en ligne, prestations et galerie du salon."
+    },
     "strip_prev": "Sites précédents",
     "strip_next": "Sites suivants",
     "strip_title": "Des sites de démonstration à visiter",

@@ -1,5 +1,8 @@
 // Pages « Site internet pour [métier] ». Chaque métier a son adresse (/fr/<slug>) et ses textes dans fr.json (metiers.<key>).
 // Pour en ajouter un : une entrée ici, un bloc metiers.<key> dans fr.json, puis `npm run sitemap`.
+// Chemin (sans extension) des fichiers générés par scripts/enregistrer-demos.mjs : /demos/<sous-domaine>.webp (affiche) et .webm (vidéo)
+export const demoMedia = (m) => `/demos/${new URL(m.demo.url).hostname.split(".")[0]}`;
+
 export const METIERS = [
   {
     slug: "site-pizzeria",

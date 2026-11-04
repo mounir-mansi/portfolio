@@ -80,6 +80,11 @@
     ],
     "work_eyebrow": "Trabajos",
     "work_title": "Proyectos recientes",
+    "work_demos": {
+      "restaurant": "Reserva de mesa online, carta del momento y fotos a página completa.",
+      "artisan": "Solicitud de llamada en 10 minutos, zona de intervención y presupuesto online.",
+      "barbier": "Reserva de cita online, servicios y galería del salón."
+    },
     "strip_prev": "Sitios anteriores",
     "strip_next": "Sitios siguientes",
     "strip_title": "Sitios de demostración para visitar",

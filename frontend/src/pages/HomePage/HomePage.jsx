@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
-import { apiFetch } from "../../utils/api";
-import { preloaded } from "../../utils/preload";
+import { METIERS, demoMedia } from "../../data/metiers";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
 import QuoteSection from "../../components/QuickQuote/QuoteSection";
@@ -18,25 +17,17 @@ import "./HomePage.css";
 
 const pad = (n) => String(n + 1).padStart(2, "0");
 
+// Réalisations mises en avant sur l'accueil, dans cet ordre : trois des sites de démonstration (données de data/metiers.js)
+const REALISATIONS = ["restaurant", "artisan", "barbier"].map((key) => METIERS.find((m) => m.key === key));
+
 export default function HomePage() {
   const { t } = useTranslation();
   const { lang = "fr" } = useParams();
-  // Page prérendue : les projets sont déjà dans le HTML, on les garde affichés pendant le rafraîchissement
-  const [projects, setProjects] = useState(() => { const d = preloaded(`/api/projects?lang=${lang}`); return Array.isArray(d) ? d.slice(0, 3) : []; });
-  const [projectsLoaded, setProjectsLoaded] = useState(() => Array.isArray(preloaded(`/api/projects?lang=${lang}`)));
   const { hash, key } = useLocation();
   const lp = (path) => `/${lang}${path}`;
 
-  useEffect(() => {
-    apiFetch(`/api/projects?lang=${lang}`)
-      .then((r) => r.json())
-      .then((d) => setProjects(Array.isArray(d) ? d.slice(0, 3) : []))
-      .catch(() => {})
-      .finally(() => setProjectsLoaded(true));
-  }, [lang]);
-
   usePageTitle(t("meta.home"), { full: true });
-  useReveal([projects.length, lang]);
+  useReveal([lang]);
 
   // Défilement vers l'ancre (#services) après navigation depuis une autre page
   useEffect(() => {
@@ -215,36 +206,35 @@ export default function HomePage() {
       <Faq />
 
       {/* RÉALISATIONS */}
-      {!projectsLoaded && (
-        <section className="block block--raised" aria-hidden="true">
-          <div className="container work-skeleton">
-            <span /><span /><span />
-          </div>
-        </section>
-      )}
-      {projects.length > 0 && (
-        <section id="work" className="block block--raised">
-          <div className="container">
-            <header className="block-head reveal">
-              <h2 className="block-title">{t("home.work_title")}</h2>
-            </header>
+      {/* En français, la carte mène à la page du métier ; dans les autres langues (pas de pages métier), au site de démonstration */}
+      <section id="work" className="block block--raised">
+        <div className="container">
+          <header className="block-head reveal">
+            <h2 className="block-title">{t("home.work_title")}</h2>
+          </header>
 
-            <ul className="projects-grid">
-              {projects.map((p, i) => (
-                <li key={p.id} className="project-card reveal" style={{ "--delay": `${i * 90}ms` }}>
-                  <Link to={lp(`/projets/${p.id}`)} className="project-card-link">
-                    <span className="project-card-media">
-                      {p.imageUrl && <img src={p.imageUrl} alt="" loading="lazy" width="1600" height="790" />}
-                    </span>
-                    <span className="project-card-title">{p.title}</span>
-                    <span className="project-card-desc">{p.description}</span>
-                  </Link>
+          <ul className="projects-grid">
+            {REALISATIONS.map((m, i) => {
+              const inner = (
+                <>
+                  <span className="project-card-media">
+                    <img src={`${demoMedia(m)}.webp`} alt="" loading="lazy" width="960" height="600" />
+                  </span>
+                  <span className="project-card-title">{m.demo.name}</span>
+                  <span className="project-card-desc">{t(`home.work_demos.${m.key}`)}</span>
+                </>
+              );
+              return (
+                <li key={m.key} className="project-card reveal" style={{ "--delay": `${i * 90}ms` }}>
+                  {lang === "fr"
+                    ? <Link to={lp(`/${m.slug}`)} className="project-card-link">{inner}</Link>
+                    : <a href={m.demo.url} target="_blank" rel="noopener noreferrer" className="project-card-link">{inner}</a>}
                 </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
+              );
+            })}
+          </ul>
+        </div>
+      </section>
 
       {/* AVIS (invisible tant que src/data/reviews.js est vide) */}
       <Reviews />

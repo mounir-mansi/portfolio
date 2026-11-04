@@ -80,6 +80,11 @@
     ],
     "work_eyebrow": "Work",
     "work_title": "Recent projects",
+    "work_demos": {
+      "restaurant": "Online table booking, the current menu and full-page photos.",
+      "artisan": "Callback request within 10 minutes, service area and online quote.",
+      "barbier": "Online appointment booking, services and a gallery of the shop."
+    },
     "strip_prev": "Previous sites",
     "strip_next": "Next sites",
     "strip_title": "Demo sites to explore",

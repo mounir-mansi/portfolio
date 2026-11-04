@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { METIERS } from "../../data/metiers";
+import { METIERS, demoMedia } from "../../data/metiers";
 import "./DemoStrip.css";
 
 // Bandeau des sites de démonstration sous le hero de l'accueil : captures réelles, un clic mène à la page du métier
@@ -32,7 +32,7 @@ function DemoCard({ m, copy, lang }) {
   const video = useRef(null);
   const pret = useSyncExternalStore(abonnerMouvement, mouvementAutorise, () => false); // vidéo montée côté navigateur seulement (pas au prérendu, pas en mouvement réduit)
   const [enLecture, setEnLecture] = useState(false);
-  const base = `/demos/${new URL(m.demo.url).hostname.split(".")[0]}`;
+  const base = demoMedia(m);
 
   const lire = useCallback(() => {
     // Le chargement du fichier démarre ici, au premier survol (preload="none")
