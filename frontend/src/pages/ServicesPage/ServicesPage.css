@@ -8,6 +8,11 @@
   }
 }
 
+/* HeroQuote.css masque les boutons du hero sur grand écran (le formulaire de l'accueil les remplace) : ces pages n'ont pas de formulaire */
+.hero .svc-hero-grid .hero-ctas {
+  display: flex;
+}
+
 .svc-index {
   padding: clamp(1.25rem, 2.4vw, 1.9rem);
   background: var(--bg-raised);

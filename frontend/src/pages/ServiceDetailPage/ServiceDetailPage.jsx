@@ -91,6 +91,7 @@ function ServiceDetailContent({ service }) {
               </Link>
               <Link to="/fr/contact" className="btn-outline">{c("cta_question")}</Link>
             </div>
+            <p className="hero-offer reveal" style={{ "--delay": "280ms" }}>{p("hero_price")}</p>
             <div className="hero-call reveal" style={{ "--delay": "320ms" }}>
               <span className="hero-call-label">{t("home.call")}</span>
               <a className="hero-call-btn" href={`tel:${CONTACT_PHONE_HREF}`}>{CONTACT_PHONE_DISPLAY}</a>
@@ -115,25 +116,7 @@ function ServiceDetailContent({ service }) {
         </div>
       </section>
 
-      {/* CE QUE VOUS OBTENEZ */}
-      <section className="block metier-points" aria-labelledby="service-points-title">
-        <div className="container">
-          <header className="block-head reveal">
-            <p className="eyebrow">{p("points_eyebrow")}</p>
-            <h2 id="service-points-title" className="block-title">{p("points_title")}</h2>
-          </header>
-          <ul className="metier-grid">
-            {points.map((point, i) => (
-              <li key={point.name} className="metier-card reveal" style={{ "--delay": `${i * 70}ms` }}>
-                <h3>{point.name}</h3>
-                <p>{point.text}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* PRIX, juste après l'essentiel : trois niveaux pour la maintenance, une liste pour les autres */}
+      {/* PRIX, juste sous le hero : trois niveaux pour la maintenance, une liste pour les autres */}
       {service.plans ? (
         <section className="block block--raised" aria-label={t("services_page.plans_title")}>
           <div className="container">
@@ -162,8 +145,26 @@ function ServiceDetailContent({ service }) {
         )
       )}
 
+      {/* CE QUE VOUS OBTENEZ */}
+      <section className="block metier-points" aria-labelledby="service-points-title">
+        <div className="container">
+          <header className="block-head reveal">
+            <p className="eyebrow">{p("points_eyebrow")}</p>
+            <h2 id="service-points-title" className="block-title">{p("points_title")}</h2>
+          </header>
+          <ul className="metier-grid">
+            {points.map((point, i) => (
+              <li key={point.name} className="metier-card reveal" style={{ "--delay": `${i * 70}ms` }}>
+                <h3>{point.name}</h3>
+                <p>{point.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* COMMENT ÇA SE PASSE */}
-      <section className="block metier-offer" aria-labelledby="service-steps-title">
+      <section className="block block--raised metier-offer" aria-labelledby="service-steps-title">
         <div className="container">
           <header className="block-head reveal">
             <p className="eyebrow">{c("steps_eyebrow")}</p>
@@ -182,7 +183,7 @@ function ServiceDetailContent({ service }) {
 
       {/* DÉLAIS RÉALISTES (référencement) */}
       {Array.isArray(timeline) && (
-        <section className="block block--raised metier-offer" aria-labelledby="service-timeline-title">
+        <section className="block metier-offer" aria-labelledby="service-timeline-title">
           <div className="container">
             <header className="block-head reveal">
               <p className="eyebrow">{p("timeline_eyebrow")}</p>
