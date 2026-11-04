@@ -1,4 +1,4 @@
-/* Bandeau des sites de démonstration (accueil) : défile lentement, pause au survol et au clavier */
+/* Bandeau des sites de démonstration (accueil) : zone à défilement natif qui avance aussi seule (voir DemoStrip.jsx), flèches, glissement à la souris */
 .demo-strip {
   --demo-gap: 1.25rem;
   padding-block: clamp(1.5rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem);
@@ -21,10 +21,31 @@
   color: var(--fg-muted);
 }
 
+/* La zone défile à la main (doigt, trackpad, molette horizontale, flèches du clavier) ; la barre est masquée, les flèches du bandeau la remplacent */
 .demo-strip-viewport {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 6px; /* laisse de la place au soulèvement des cartes au survol */
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  cursor: grab;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.demo-strip-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.demo-strip-viewport:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: -2px;
+}
+
+/* Pendant un glissement à la souris : main fermée, pas de sélection de texte */
+.demo-strip-viewport.is-dragging {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .demo-strip-track {
@@ -33,18 +54,37 @@
   width: max-content;
   padding: 0;
   list-style: none;
-  animation: demo-scroll 80s linear infinite;
 }
 
-/* Pause quand on survole ou qu'on navigue au clavier : le visiteur peut cliquer sans courir après la carte */
-.demo-strip-viewport:hover .demo-strip-track,
-.demo-strip-viewport:focus-within .demo-strip-track {
-  animation-play-state: paused;
+/* Flèches précédent / suivant */
+.demo-strip-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
 }
 
-/* Deux listes identiques à la suite : on avance d'une liste (moitié de la piste + demi-écart) puis on recommence sans saut visible */
-@keyframes demo-scroll {
-  to { transform: translateX(calc(-50% - var(--demo-gap) / 2)); }
+.demo-strip-btn {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--fg);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s, transform 0.3s var(--ease);
+}
+
+.demo-strip-btn:hover,
+.demo-strip-btn:focus-visible {
+  border-color: var(--accent-text);
+  color: var(--accent-text);
+}
+
+.demo-strip-btn:active {
+  transform: scale(0.94);
 }
 
 .demo-strip-track li {
@@ -107,12 +147,7 @@
 
 /* Mouvement réduit : pas de défilement, on fait défiler à la main et on ne montre qu'une fois chaque site */
 @media (prefers-reduced-motion: reduce) {
-  .demo-strip-track {
-    animation: none;
-  }
-
   .demo-strip-viewport {
-    overflow-x: auto;
     -webkit-mask-image: none;
     mask-image: none;
   }
