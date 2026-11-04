@@ -562,6 +562,16 @@
           "text": "Lisible sur mobile, rapide à charger et construit pour être bien référencé quand on cherche un restaurant près de chez vous."
         }
       ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un exemple de site pour un restaurant",
+      "demo_text": "{{name}}, un bistrot de marché à Toulouse : la réservation de table avec choix du service, du créneau et du nombre de couverts, l'ardoise du jour que le patron met à jour lui-même, et un espace où il suit les réservations de la journée.",
+      "demo_points": [
+        "Réservation de table en ligne, avec une capacité par service que le patron règle ou ferme en un clic",
+        "Carte et ardoise modifiables depuis l'administration, avec « épuisé » barré partout tout de suite",
+        "Allergènes écrits en toutes lettres sous chaque plat",
+        "Demandes pour une occasion : anniversaire, repas d'équipe, groupe, privatisation"
+      ],
+      "demo_note": "Site imaginé par ManDev pour un restaurant fictif : le vôtre portera votre nom, vos plats, vos photos et vos horaires.",
       "offer_plus": "Jusqu'à 5 pages, avec la réservation de table, la commande ou le paiement en ligne si vous le souhaitez, et un espace d'administration pour modifier votre carte, vos photos et vos horaires vous-même.",
       "faq": [
         {
@@ -578,7 +588,7 @@
         },
         {
           "q": "Avez-vous un exemple de site pour un restaurant ?",
-          "a": "Je n'ai pas encore de site de démonstration dédié aux restaurants. Celui de la pizzeria Il Subito, présenté sur la page « Site internet pour pizzeria », montre une carte, la commande en ligne et la réservation de table. Et la maquette gratuite vous montre la page d'accueil de votre restaurant, avec votre nom et vos photos, avant tout engagement."
+          "a": "Oui : le site de démonstration d'un bistrot est en ligne, avec la réservation de table, l'ardoise du jour et l'espace de gestion. La pizzeria Il Subito, présentée sur la page « Site internet pour pizzeria », montre aussi la commande en ligne. Et la maquette gratuite vous montre la page d'accueil de votre restaurant, avec votre nom et vos photos, avant tout engagement."
         },
         {
           "q": "En combien de temps mon site est-il en ligne ?",
