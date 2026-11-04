@@ -10,7 +10,6 @@ import QuoteSection from "../../components/QuickQuote/QuoteSection";
 import HeroQuote from "../../components/HeroQuote/HeroQuote";
 import Faq from "../../components/Faq/Faq";
 import DemoStrip from "../../components/DemoStrip/DemoStrip";
-import HeroDevices from "../../components/HeroDevices/HeroDevices";
 import { OfferSchema, StepSchema } from "../../components/Schemas/Schemas";
 import Reviews from "../../components/Reviews/Reviews";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from "../../utils/contactInfo";
@@ -86,7 +85,7 @@ export default function HomePage() {
     <Layout>
       {/* HERO */}
       <section className="hero" aria-labelledby="hero-title">
-        <div className="container hero-grid hero-grid--devices">
+        <div className="container hero-grid">
           <div className="hero-main">
             <p className="eyebrow hero-eyebrow reveal">
               <span className="pulse" aria-hidden="true" /> {t("home.eyebrow")}
@@ -119,10 +118,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="hero-side">
-            <HeroDevices />
-            <HeroQuote />
-          </div>
+          <HeroQuote />
         </div>
       </section>
 
