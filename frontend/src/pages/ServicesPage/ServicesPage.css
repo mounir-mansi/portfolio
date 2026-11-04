@@ -37,7 +37,8 @@
   border-top: 0;
 }
 
-.svc-index a {
+.svc-index a,
+.svc-index .svc-index-row {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0.15rem 0.8rem;
@@ -123,6 +124,17 @@
   max-width: 36rem;
   color: var(--fg-muted);
   line-height: 1.55;
+}
+
+.svc-more {
+  align-self: flex-start;
+  color: var(--accent-text);
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.25s;
+}
+
+.svc-more:hover {
+  opacity: 0.75;
 }
 
 .svc-points {

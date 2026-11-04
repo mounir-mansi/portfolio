@@ -2,7 +2,7 @@
 // Les pages de détail de projet (/projets/:id) viennent de la base : elles ne sont pas listées ici.
 import { readFileSync, writeFileSync } from "node:fs";
 import { METIERS } from "../src/data/metiers.js";
-import { SERVICES_SLUG } from "../src/data/services.js";
+import { SERVICES_SLUG, SERVICE_PAGES } from "../src/data/services.js";
 
 const SITE = "https://mandev.fr";
 const LANGS = ["fr", "en", "it", "es"];
@@ -21,12 +21,12 @@ const metierUrls = METIERS.map((m) => `  <url>
     <loc>${SITE}/fr/${m.slug}</loc>
   </url>`);
 
-// Page Services : en français seulement, comme les pages par métier
-const servicesUrl = `  <url>
-    <loc>${SITE}/fr/${SERVICES_SLUG}</loc>
-  </url>`;
+// Page Services et pages dédiées à un service : en français seulement, comme les pages par métier
+const servicesUrls = [SERVICES_SLUG, ...SERVICE_PAGES.map((s) => s.slug)].map((slug) => `  <url>
+    <loc>${SITE}/fr/${slug}</loc>
+  </url>`);
 
-const urls = [...PAGES.flatMap((page) => LANGS.map((lang) => entry(lang, page))), servicesUrl, ...metierUrls];
+const urls = [...PAGES.flatMap((page) => LANGS.map((lang) => entry(lang, page))), ...servicesUrls, ...metierUrls];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
