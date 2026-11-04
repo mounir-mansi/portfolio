@@ -101,3 +101,10 @@
   justify-content: space-between;
   gap: 1rem;
 }
+
+/* Mobile : pas de schémas dans le processus, le numéro, le titre et le texte suffisent (même seuil que la mise en page mobile de #process) */
+@media (max-width: 760px) {
+  .schema--step {
+    display: none;
+  }
+}
