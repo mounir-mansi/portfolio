@@ -932,7 +932,6 @@
           "Création des boîtes mail et configuration guidée sur votre téléphone et votre ordinateur",
           "Réglages techniques (SPF, DKIM) pour que les emails que vous envoyez arrivent bien chez vos clients",
           "Reprise de votre ancienne adresse si vous en aviez une",
-          "Nom de domaine offert avec la maintenance ; sinon acheté à votre nom, au prix coûtant",
           "Les boîtes mail sont facturées au prix du fournisseur, sans marge"
         ]
       },
@@ -1017,7 +1016,7 @@
       },
       {
         "q": "Le nom de domaine sera-t-il à mon nom ?",
-        "a": "Oui. Le domaine est enregistré à votre nom, vous en restez propriétaire. Si un jour vous quittez la maintenance, vous gardez votre adresse."
+        "a": "Oui. Le domaine est enregistré à votre nom, vous en restez propriétaire. Il est offert avec la maintenance ; sans maintenance, je l'achète à votre nom, au prix coûtant. Si un jour vous quittez la maintenance, vous gardez votre adresse."
       },
       {
         "q": "Les modifications non utilisées sont-elles reportées ?",
