@@ -974,7 +974,7 @@
       "Délai de réponse",
       "Rapport mensuel (visites, vitesse)",
       "Suivi Search Console",
-      "Fiche Google : 1 publication par mois et réponses aux avis",
+      "Fiche Google : 1 publication par mois et réponses aux avis (jusqu'à 5 par mois)",
       "Point trimestriel par téléphone",
       "Restauration prioritaire en cas de panne"
     ],
@@ -1315,7 +1315,7 @@
           "items": [
             "Rapport chiffré : visites, apparitions dans Google, appels",
             "Ajustements de la fiche et du site",
-            "Réponses aux avis rédigées avec vous",
+            "Réponses à vos avis, rédigées pour vous (jusqu'à 5 par mois)",
             "Compris dans la maintenance Complet"
           ]
         }
@@ -1328,6 +1328,10 @@
         {
           "q": "Pourquoi une fiche Google Business ?",
           "a": "Quand quelqu'un cherche « boulangerie près de moi », Google affiche d'abord une carte avec quelques fiches. Sans fiche à jour (horaires, photos, avis), vous n'y êtes pas, ou vous y êtes mal."
+        },
+        {
+          "q": "Comment se passent les réponses à mes avis ?",
+          "a": "Vous m'ajoutez comme gestionnaire de votre fiche Google : vous gardez la main et pouvez me retirer à tout moment, sans me donner de mot de passe. Je rédige une réponse à chaque nouvel avis, jusqu'à 5 par mois, sous 2 à 3 jours. Pour un avis positif, je publie directement ; pour un avis négatif ou délicat, je vous envoie ma réponse avant de la publier."
         },
         {
           "q": "Pouvez-vous m'obtenir des avis ?",
