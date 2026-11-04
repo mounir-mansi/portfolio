@@ -882,7 +882,7 @@
     "title_a": "Un site en ligne, c'est le début.",
     "title_em": "Je m'occupe du reste",
     "title_b": "pour que vous restiez sur votre métier.",
-    "sub": "Maintenance, refonte, mises à jour, nom de domaine et emails professionnels, traduction, référencement local : chaque service se prend seul ou avec un site créé par mes soins, avec un prix affiché.",
+    "sub": "Maintenance, refonte, mises à jour, emails professionnels, traduction, référencement local : chaque service se prend seul ou avec un site créé par mes soins, avec un prix affiché.",
     "cta": "Demander un devis",
     "cta_call": "Poser une question",
     "index_title": "Six services, des prix clairs",
@@ -925,14 +925,15 @@
         ]
       },
       {
-        "name": "Nom de domaine et emails pro",
+        "name": "Emails professionnels",
         "price": "mise en place : 90 €",
         "desc": "Une adresse du type contact@votre-commerce.fr plutôt qu'une boîte gratuite : plus de confiance, et des messages qui n'arrivent pas dans les indésirables.",
         "points": [
-          "Achat ou transfert du nom de domaine, à votre nom",
-          "Création des boîtes mail et configuration sur votre téléphone",
+          "Création des boîtes mail et configuration sur votre téléphone et votre ordinateur",
           "Réglages SPF et DKIM pour que vos emails arrivent bien",
-          "Le domaine est offert avec la maintenance ; les boîtes mail sont facturées au prix du fournisseur, sans marge"
+          "Reprise de votre ancienne adresse si vous en aviez une",
+          "Nom de domaine offert avec la maintenance ; sinon acheté à votre nom, au prix coûtant",
+          "Les boîtes mail sont facturées au prix du fournisseur, sans marge"
         ]
       },
       {
@@ -1031,7 +1032,7 @@
     "final_text": "Décrivez-moi votre situation en deux lignes. Je vous réponds avec le service adapté et un prix précis, sans engagement."
   },
   "seo": {
-    "services": "Services autour de votre site : maintenance et hébergement dès 49 € par mois, refonte dès 590 €, mises à jour, nom de domaine et emails pro, traduction, référencement local. Prix affichés, sans engagement.",
+    "services": "Services autour de votre site : maintenance et hébergement dès 49 € par mois, refonte dès 590 €, mises à jour, emails professionnels, traduction, référencement local. Prix affichés, sans engagement.",
     "site-pizzeria": "Site internet pour pizzeria : votre carte en ligne, un bouton d'appel et de commande, vos horaires et votre adresse. Maquette gratuite sous 72 h, dès 490 €.",
     "site-coiffeur-barbier": "Site internet pour coiffeur et barbier : prestations, tarifs, galerie et prise de rendez-vous en ligne. Maquette gratuite sous 72 h, dès 490 €.",
     "site-restaurant": "Site internet pour restaurant : carte et menu du jour, photos, réservation de table et horaires. Maquette gratuite sous 72 h, dès 490 €.",
