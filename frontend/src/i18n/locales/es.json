@@ -83,7 +83,9 @@
     "work_demos": {
       "restaurant": "Reserva de mesa online, carta del momento y fotos a página completa.",
       "artisan": "Solicitud de llamada en 10 minutos, zona de intervención y presupuesto online.",
-      "barbier": "Reserva de cita online, servicios y galería del salón."
+      "barbier": "Reserva de cita online, servicios y galería del salón.",
+      "boulangerie": "Pedido online para recoger, con elección de la franja de recogida.",
+      "garage": "Reserva de cita online, servicios con precios y solicitud de presupuesto."
     },
     "strip_prev": "Sitios anteriores",
     "strip_next": "Sitios siguientes",

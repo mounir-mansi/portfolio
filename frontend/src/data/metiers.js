@@ -3,6 +3,9 @@
 // Chemin (sans extension) des fichiers générés par scripts/enregistrer-demos.mjs : /demos/<sous-domaine>.webp (affiche) et .webm (vidéo)
 export const demoMedia = (m) => `/demos/${new URL(m.demo.url).hostname.split(".")[0]}`;
 
+// Les métiers demandés, dans l'ordre des clés (ex. metiersParCle(["restaurant", "barbier"]))
+export const metiersParCle = (cles) => cles.map((cle) => METIERS.find((m) => m.key === cle));
+
 export const METIERS = [
   {
     slug: "site-pizzeria",

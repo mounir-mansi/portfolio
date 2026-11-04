@@ -127,31 +127,11 @@
   background: var(--line-strong);
 }
 
-/* Affiche sous la vidéo : l'image donne sa hauteur à la carte, la vidéo la recouvre et apparaît en fondu quand elle joue */
-.demo-shot {
-  position: relative;
-  display: block;
-}
-
-.demo-frame img,
-.demo-video {
+/* L'affiche donne sa hauteur à la carte ; la vidéo qui la recouvre est gérée par HoverVideo */
+.demo-frame img {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.demo-video {
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.35s var(--ease);
-  pointer-events: none;
-}
-
-.demo-shot.is-playing .demo-video {
-  opacity: 1;
 }
 
 .demo-name {

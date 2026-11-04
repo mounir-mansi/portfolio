@@ -6,7 +6,12 @@ import { apiFetch } from "../../utils/api";
 import usePageTitle from "../../utils/usePageTitle";
 import useReveal from "../../utils/useReveal";
 import { preloaded } from "../../utils/preload";
+import { metiersParCle } from "../../data/metiers";
+import WorkCard from "../../components/WorkCard/WorkCard";
 import "./ProjectsPage.css";
+
+// Les sites de démonstration par métier, dans l'ordre d'affichage (Il Subito, la pizzeria, est déjà un projet de la base)
+const SITES_METIER = metiersParCle(["restaurant", "boulangerie", "artisan", "garage", "barbier"]);
 
 export default function ProjectsPage() {
   const { t } = useTranslation();
@@ -34,17 +39,19 @@ export default function ProjectsPage() {
       </header>
 
       <div className="page-body container">
-        {loading ? (
-          <ul className="projects-grid" aria-hidden="true">
-            <li className="proj-skeleton" />
-            <li className="proj-skeleton" />
-            <li className="proj-skeleton" />
-          </ul>
-        ) : projects.length > 0 ? (
-          // Mêmes cartes que « Projets récents » de l'accueil (styles de HomePage.css)
-          <ul className="projects-grid">
-            {projects.map((p, i) => (
-              <li key={p.id} className="project-card reveal" style={{ "--delay": `${i * 90}ms` }}>
+        {/* Mêmes cartes que « Projets récents » de l'accueil (styles de HomePage.css) : d'abord les sites par métier (statiques,
+            affichés sans attendre l'API), puis les projets de la base. Il Subito est dans la base : pas de doublon. */}
+        <ul className="projects-grid" aria-busy={loading}>
+          {SITES_METIER.map((m, i) => <WorkCard key={m.key} m={m} delay={i * 90} />)}
+          {loading ? (
+            <>
+              <li className="proj-skeleton" aria-hidden="true" />
+              <li className="proj-skeleton" aria-hidden="true" />
+              <li className="proj-skeleton" aria-hidden="true" />
+            </>
+          ) : (
+            projects.map((p, i) => (
+              <li key={p.id} className="project-card reveal" style={{ "--delay": `${(SITES_METIER.length + i) * 90}ms` }}>
                 <Link to={lp(`/projets/${p.id}`)} className="project-card-link">
                   <span className="project-card-media">
                     {p.imageUrl && <img src={p.imageUrl} alt="" loading="lazy" width="1600" height="790" />}
@@ -53,11 +60,9 @@ export default function ProjectsPage() {
                   <span className="project-card-desc">{p.description}</span>
                 </Link>
               </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="projects-empty">{t("projects.empty")}</p>
-        )}
+            ))
+          )}
+        </ul>
       </div>
     </Layout>
   );

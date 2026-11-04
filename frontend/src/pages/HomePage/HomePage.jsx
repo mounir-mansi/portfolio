@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout/Layout";
-import { METIERS, demoMedia } from "../../data/metiers";
+import { metiersParCle } from "../../data/metiers";
+import WorkCard from "../../components/WorkCard/WorkCard";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
 import QuoteSection from "../../components/QuickQuote/QuoteSection";
@@ -18,7 +19,7 @@ import "./HomePage.css";
 const pad = (n) => String(n + 1).padStart(2, "0");
 
 // Réalisations mises en avant sur l'accueil, dans cet ordre : trois des sites de démonstration (données de data/metiers.js)
-const REALISATIONS = ["restaurant", "artisan", "barbier"].map((key) => METIERS.find((m) => m.key === key));
+const REALISATIONS = metiersParCle(["restaurant", "artisan", "barbier"]);
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -206,7 +207,6 @@ export default function HomePage() {
       <Faq />
 
       {/* RÉALISATIONS */}
-      {/* En français, la carte mène à la page du métier ; dans les autres langues (pas de pages métier), au site de démonstration */}
       <section id="work" className="block block--raised">
         <div className="container">
           <header className="block-head reveal">
@@ -214,24 +214,7 @@ export default function HomePage() {
           </header>
 
           <ul className="projects-grid">
-            {REALISATIONS.map((m, i) => {
-              const inner = (
-                <>
-                  <span className="project-card-media">
-                    <img src={`${demoMedia(m)}.webp`} alt="" loading="lazy" width="960" height="600" />
-                  </span>
-                  <span className="project-card-title">{m.demo.name}</span>
-                  <span className="project-card-desc">{t(`home.work_demos.${m.key}`)}</span>
-                </>
-              );
-              return (
-                <li key={m.key} className="project-card reveal" style={{ "--delay": `${i * 90}ms` }}>
-                  {lang === "fr"
-                    ? <Link to={lp(`/${m.slug}`)} className="project-card-link">{inner}</Link>
-                    : <a href={m.demo.url} target="_blank" rel="noopener noreferrer" className="project-card-link">{inner}</a>}
-                </li>
-              );
-            })}
+            {REALISATIONS.map((m, i) => <WorkCard key={m.key} m={m} delay={i * 90} />)}
           </ul>
         </div>
       </section>

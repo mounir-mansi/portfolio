@@ -83,7 +83,9 @@
     "work_demos": {
       "restaurant": "Prenotazione del tavolo online, menu del momento e foto a tutta pagina.",
       "artisan": "Richiesta di richiamata in 10 minuti, zona d'intervento e preventivo online.",
-      "barbier": "Prenotazione online, servizi e galleria del salone."
+      "barbier": "Prenotazione online, servizi e galleria del salone.",
+      "boulangerie": "Ordine online da ritirare, con scelta della fascia oraria di ritiro.",
+      "garage": "Prenotazione online, servizi con prezzi e richiesta di preventivo."
     },
     "strip_prev": "Siti precedenti",
     "strip_next": "Siti successivi",

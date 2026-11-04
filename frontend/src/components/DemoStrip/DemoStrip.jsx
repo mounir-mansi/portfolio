@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { METIERS, demoMedia } from "../../data/metiers";
+import HoverVideo from "../HoverVideo/HoverVideo";
 import "./DemoStrip.css";
 
 // Bandeau des sites de démonstration sous le hero de l'accueil : captures réelles, un clic mène à la page du métier
@@ -16,87 +17,20 @@ const VITESSE = 28; // pixels par seconde
 const REPRISE_MS = 2500; // l'avance automatique reprend 2,5 s après la dernière manipulation
 const SEUIL_GLISSE = 6; // pixels de glissement à la souris avant de considérer que ce n'est plus un clic
 
-// Chaque carte montre une affiche (accueil du site) ; une vidéo de cet accueil (héros animé, puis défilement jusqu'en bas)
-// se joue au survol, au focus clavier, ou, sans souris, quand la carte passe au centre de l'écran.
-// Fichiers générés par scripts/enregistrer-demos.mjs : /demos/<sous-domaine>.webp et .webm (bandeau « site fictif » retiré).
-const REDUIT = "(prefers-reduced-motion: reduce)";
-const mouvementAutorise = () => !window.matchMedia(REDUIT).matches;
-const abonnerMouvement = (rappel) => {
-  const mq = window.matchMedia(REDUIT);
-  mq.addEventListener("change", rappel);
-  return () => mq.removeEventListener("change", rappel);
-};
-
+// Chaque carte montre une affiche (accueil du site) ; HoverVideo joue la vidéo de cet accueil (héros animé, puis défilement
+// jusqu'en bas) au survol, au focus clavier, ou, sans souris, quand la carte passe au centre de l'écran.
 function DemoCard({ m, copy, lang }) {
-  const carte = useRef(null);
-  const video = useRef(null);
-  const pret = useSyncExternalStore(abonnerMouvement, mouvementAutorise, () => false); // vidéo montée côté navigateur seulement (pas au prérendu, pas en mouvement réduit)
-  const [enLecture, setEnLecture] = useState(false);
   const base = demoMedia(m);
-
-  const lire = useCallback(() => {
-    // Le chargement du fichier démarre ici, au premier survol (preload="none")
-    video.current?.play().catch(() => {}); // refus ou interruption par un arrêt immédiat : l'affiche reste, rien à signaler
-  }, []);
-
-  const arreter = useCallback(() => {
-    video.current?.pause();
-    setEnLecture(false);
-  }, []);
-
-  // La vidéo repart du début une fois l'affiche revenue (fondu terminé)
-  useEffect(() => {
-    if (enLecture) return undefined;
-    const id = setTimeout(() => { if (video.current) video.current.currentTime = 0; }, 400);
-    return () => clearTimeout(id);
-  }, [enLecture]);
-
-  // Sans survol possible (téléphone, tablette) : la vidéo se joue quand la carte passe au centre de l'écran
-  useEffect(() => {
-    if (!pret || !carte.current || !window.matchMedia("(hover: none)").matches) return undefined;
-    const observateur = new IntersectionObserver(([entry]) => (entry.isIntersecting ? lire() : arreter()), { rootMargin: "0px -42% 0px -42%" });
-    observateur.observe(carte.current);
-    return () => observateur.disconnect();
-  }, [pret, lire, arreter]);
-
   const inner = (
     <>
       <span className="demo-frame">
         <span className="demo-frame-bar" aria-hidden="true"><i /><i /><i /></span>
-        <span className={`demo-shot${enLecture ? " is-playing" : ""}`}>
-          <img src={`${base}.webp`} alt="" loading="lazy" width="960" height="600" draggable="false" />
-          {pret && (
-            <video
-              ref={video}
-              className="demo-video"
-              muted
-              loop
-              playsInline
-              preload="none"
-              disablePictureInPicture
-              draggable="false"
-              aria-hidden="true"
-              tabIndex={-1}
-              onPlaying={() => setEnLecture(true)}
-            >
-              <source src={`${base}.webm`} type="video/webm" />
-            </video>
-          )}
-        </span>
+        <HoverVideo poster={`${base}.webp`} src={`${base}.webm`} axis="x" />
       </span>
       <span className="demo-name">{m.demo.name}</span>
     </>
   );
-  const common = {
-    ref: carte,
-    className: "demo-card",
-    tabIndex: copy ? -1 : undefined,
-    draggable: false,
-    onPointerEnter: (e) => { if (e.pointerType === "mouse") lire(); },
-    onPointerLeave: (e) => { if (e.pointerType === "mouse") arreter(); },
-    onFocus: lire,
-    onBlur: arreter,
-  };
+  const common = { className: "demo-card", tabIndex: copy ? -1 : undefined, draggable: false };
   return (
     <li aria-hidden={copy ? "true" : undefined}>
       {lang === "fr"

@@ -1,0 +1,32 @@
+/* Affiche sous la vidéo : l'affiche donne sa hauteur à la vignette, la vidéo la recouvre et apparaît en fondu quand elle joue */
+.hover-video {
+  position: relative;
+  display: block;
+}
+
+/* Dans une carte de projet, le cadre a un format fixe (2:1) : la vignette le remplit */
+.project-card-media .hover-video {
+  height: 100%;
+}
+
+.hover-video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease), transform 0.6s var(--ease);
+  pointer-events: none;
+}
+
+.hover-video.is-playing video {
+  opacity: 1;
+}
+
+/* Même zoom au survol que l'affiche des cartes de projet (HomePage.css) */
+.project-card-link:hover .hover-video video,
+.project-card-link:focus-visible .hover-video video {
+  transform: scale(1.04);
+}
