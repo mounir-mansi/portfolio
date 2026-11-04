@@ -887,6 +887,7 @@
     "cta_call": "Poser une question",
     "index_title": "Six services, des prix clairs",
     "index_aria": "Aller à un service",
+    "more": "En savoir plus sur ce service",
     "items": [
       {
         "name": "Maintenance et hébergement",
@@ -1030,7 +1031,317 @@
     "final_title": "Dites-moi ce dont votre site a besoin",
     "final_text": "Décrivez-moi votre situation en deux lignes. Je vous réponds avec le service adapté et un prix précis, sans engagement."
   },
+  "service_pages": {
+    "common": {
+      "cta": "Demander un devis",
+      "cta_question": "Poser une question",
+      "steps_eyebrow": "Étapes",
+      "steps_title": "Comment ça se passe",
+      "all_services": "Voir tous les services"
+    },
+    "refonte": {
+      "meta_title": "Refonte de site internet",
+      "eyebrow": "Refonte de site",
+      "title_a": "Votre site date ?",
+      "title_em": "Reconstruisons-le",
+      "title_b": "sans perdre ce que Google connaît déjà.",
+      "sub": "Je refais votre site pour qu'il soit rapide, lisible sur téléphone et pensé pour vous apporter des demandes de clients, en gardant vos textes utiles, vos photos et vos adresses connues de Google.",
+      "aside_title": "Quatre étapes",
+      "steps": [
+        {
+          "name": "Audit de l'existant",
+          "short": "Ce qui marche, ce qui bloque",
+          "text": "Je regarde votre site actuel : les pages qui amènent des visiteurs, ce qui est lent, ce qui manque sur téléphone. Ce qui fonctionne est conservé."
+        },
+        {
+          "name": "Maquette",
+          "short": "La nouvelle page d'accueil",
+          "text": "Je vous montre la nouvelle page d'accueil avant de reconstruire le reste. Vous validez, ou vous demandez des changements."
+        },
+        {
+          "name": "Reconstruction",
+          "short": "Textes, photos, redirections",
+          "text": "Je reprends vos textes et vos photos, j'allège les images et je dresse la liste de vos anciennes adresses pour les rediriger vers les nouvelles."
+        },
+        {
+          "name": "Mise en ligne",
+          "short": "Sans coupure, puis contrôle",
+          "text": "L'ancien site reste en ligne jusqu'au basculement. Ensuite je contrôle les redirections et je déclare le site dans la Search Console."
+        }
+      ],
+      "points_eyebrow": "Ce que vous obtenez",
+      "points_title": "Un site refait, pas seulement repeint",
+      "points": [
+        {
+          "name": "Un état des lieux",
+          "text": "Un audit de votre site actuel : ce que vous gardez, ce que vous changez, et pourquoi."
+        },
+        {
+          "name": "Un design lisible sur mobile",
+          "text": "La plupart de vos visiteurs viennent d'un téléphone. Le nouveau site est pensé pour eux d'abord."
+        },
+        {
+          "name": "Vos anciennes adresses redirigées",
+          "text": "Chaque ancienne page renvoie vers sa nouvelle version, pour que Google comprenne le changement et garde votre référencement."
+        },
+        {
+          "name": "Un site plus rapide",
+          "text": "Images allégées, code propre : le site s'affiche vite, ce qui compte pour vos visiteurs comme pour Google."
+        },
+        {
+          "name": "Vos contenus repris",
+          "text": "Vos textes utiles et vos photos sont repris et retouchés : vous n'avez pas à tout réécrire."
+        },
+        {
+          "name": "Une mise en ligne sans coupure",
+          "text": "L'ancien site reste visible pendant les travaux. Le changement se fait d'un coup, quand tout est prêt."
+        }
+      ],
+      "prices_eyebrow": "Prix",
+      "prices_title": "Combien coûte une refonte",
+      "prices": [
+        {
+          "name": "Refonte d'un site vitrine, dès 590 €",
+          "text": "Pour un site de quelques pages : présentation, services, contact. Le prix exact dépend du nombre de pages et de ce qu'il y a à reprendre : je vous le donne avant de commencer."
+        },
+        {
+          "name": "Maintenance ensuite, dès 49 € par mois",
+          "text": "Facultative. L'hébergement, le nom de domaine, les sauvegardes et les mises à jour de sécurité sont décrits sur la page maintenance."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Vais-je perdre mon référencement sur Google ?",
+          "a": "Pas si la refonte est préparée. Je dresse la liste de vos anciennes adresses et je les redirige vers les nouvelles. C'est cette étape qui évite de perdre vos positions."
+        },
+        {
+          "q": "Mon site est sur Wix, WordPress ou une autre plateforme : c'est possible ?",
+          "a": "Oui. Je reprends vos contenus quelle que soit la plateforme d'origine. Je vous demande les accès nécessaires, que vous me communiquez de façon sécurisée, pour récupérer vos textes, vos photos et la liste de vos pages."
+        },
+        {
+          "q": "Mon site restera-t-il en ligne pendant les travaux ?",
+          "a": "Oui. L'ancien site reste visible jusqu'au jour de la mise en ligne du nouveau. Le changement se fait d'un coup, quand tout est vérifié."
+        },
+        {
+          "q": "Combien de temps cela prend-il ?",
+          "a": "Une fois vos contenus récupérés et la maquette validée, comptez 7 jours à 2 semaines selon la taille du site, comme pour un nouveau site."
+        },
+        {
+          "q": "Pourquoi refaire le site plutôt que le corriger ?",
+          "a": "Quand le site repose sur un modèle ancien, qu'il est lent ou illisible sur téléphone, les corrections coûtent souvent plus cher qu'une reconstruction propre. Après l'audit, je vous le dis franchement : si quelques corrections suffisent, je vous les propose à la place."
+        },
+        {
+          "q": "Puis-je garder mon nom de domaine et mes adresses email ?",
+          "a": "Oui. L'adresse de votre site et vos adresses email restent les mêmes : rien ne change pour vos clients."
+        }
+      ],
+      "final_title": "Parlons de votre site actuel",
+      "final_text": "Envoyez-moi son adresse. Je le regarde et je vous dis honnêtement s'il faut le refaire ou le corriger, avec un prix."
+    },
+    "maintenance": {
+      "meta_title": "Maintenance de site internet",
+      "eyebrow": "Maintenance",
+      "title_a": "Votre site reste en ligne,",
+      "title_em": "à jour et protégé",
+      "title_b": "sans que vous y pensiez.",
+      "sub": "Hébergement sécurisé, sauvegardes, surveillance et mises à jour : je m'occupe de la partie technique, vous gardez votre métier. Dès 49 € par mois, sans engagement.",
+      "aside_title": "Ce qui tourne pour vous",
+      "steps": [
+        {
+          "name": "Prise en charge",
+          "short": "État des lieux de votre site",
+          "text": "Je regarde votre site, je le prends en charge (ou je l'héberge, si je l'ai créé) et je vérifie que les sauvegardes fonctionnent."
+        },
+        {
+          "name": "Surveillance",
+          "short": "Alerte si le site tombe",
+          "text": "Votre site est surveillé en continu. S'il ne répond plus, je suis prévenu et je m'en occupe, y compris un samedi soir."
+        },
+        {
+          "name": "Mises à jour",
+          "short": "Sécurité et sauvegardes",
+          "text": "Les mises à jour de sécurité sont faites régulièrement et les sauvegardes sont automatiques."
+        },
+        {
+          "name": "Vos demandes",
+          "short": "Vous écrivez, c'est fait",
+          "text": "Un changement d'horaires, de prix, de photo ou de texte : vous m'écrivez, et c'est mis en ligne dans le délai de votre niveau."
+        }
+      ],
+      "points_eyebrow": "Ce qui est compris",
+      "points_title": "Ce que comprend la maintenance",
+      "points": [
+        {
+          "name": "Hébergement sécurisé et certificat SSL",
+          "text": "Votre site est hébergé sur un serveur sécurisé, avec le certificat qui affiche le cadenas dans le navigateur."
+        },
+        {
+          "name": "Nom de domaine offert",
+          "text": "Votre adresse (votre-commerce.fr) est enregistrée à votre nom, et vous la gardez si vous arrêtez la maintenance."
+        },
+        {
+          "name": "Sauvegardes automatiques",
+          "text": "Une copie de votre site et de ses données est conservée, pour le remettre en ligne en cas de problème."
+        },
+        {
+          "name": "Surveillance du site",
+          "text": "Une alerte me prévient si votre site ne répond plus. Vous n'avez pas à vous en apercevoir vous-même."
+        },
+        {
+          "name": "Mises à jour de sécurité",
+          "text": "Le serveur et les composants du site sont mis à jour pour éviter les failles connues."
+        },
+        {
+          "name": "Modifications de contenu",
+          "text": "Selon votre niveau, 2 ou 5 modifications par mois sont comprises : horaires, prix, photos, textes."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Pourquoi payer une maintenance si mon site est terminé ?",
+          "a": "Un site n'est jamais « fini » : le serveur, le certificat de sécurité et les composants doivent être mis à jour, les sauvegardes vérifiées, et quelqu'un doit être prévenu si le site tombe un samedi soir. Sans cela, un site se dégrade ou se fait pirater. La maintenance, c'est ce suivi, fait à votre place."
+        },
+        {
+          "q": "Que se passe-t-il si mon site tombe ?",
+          "a": "Je suis prévenu par l'alerte de surveillance et je m'en occupe. Selon la cause, je remets le site en ligne à partir d'une sauvegarde. Avec le niveau Complet, la restauration est prioritaire."
+        },
+        {
+          "q": "Mon site a été créé par quelqu'un d'autre : pouvez-vous le maintenir ?",
+          "a": "Oui pour la plupart, après un court audit. Si son fonctionnement ne permet pas de le maintenir correctement, je vous le dis avant de vous facturer quoi que ce soit."
+        },
+        {
+          "q": "Puis-je arrêter quand je veux ?",
+          "a": "Oui. C'est sans engagement, avec un préavis d'un mois. Votre nom de domaine reste à vous."
+        },
+        {
+          "q": "Qu'est-ce qu'une modification ?",
+          "a": "Un changement de texte, d'horaires, de prix, de photo ou de lien, d'environ 30 minutes. Les modifications non utilisées ne se reportent pas d'un mois sur l'autre. Une modification en plus coûte 40 €, ou 160 € le pack de 5."
+        }
+      ],
+      "final_title": "Choisissez le niveau qui vous convient",
+      "final_text": "Dites-moi de quel site il s'agit et ce dont vous avez besoin : je vous conseille le bon niveau, sans engagement."
+    },
+    "referencement": {
+      "meta_title": "Référencement local",
+      "eyebrow": "Référencement local",
+      "title_a": "Soyez trouvé quand on cherche",
+      "title_em": "votre activité",
+      "title_b": "près de chez vous.",
+      "sub": "Fiche Google Business, réglages du site, avis de vos clients : je mets en place ce qui fait apparaître un commerce local, et je vous montre les résultats chiffrés. Je ne promets pas une place sur Google : personne ne peut la garantir.",
+      "aside_title": "Quatre étapes",
+      "steps": [
+        {
+          "name": "Diagnostic",
+          "short": "Où vous apparaissez aujourd'hui",
+          "text": "Je regarde ce que Google montre quand on cherche votre activité et votre nom, et où se trouvent vos concurrents proches."
+        },
+        {
+          "name": "Fiche Google",
+          "short": "Création ou reprise",
+          "text": "Je crée ou je reprends votre fiche Google Business : catégories, horaires, photos, description, zone d'intervention."
+        },
+        {
+          "name": "Votre site",
+          "short": "Réglages et pages utiles",
+          "text": "Réglages techniques du site, déclaration dans la Search Console, et une page par service quand elle répond à une vraie recherche."
+        },
+        {
+          "name": "Avis et suivi",
+          "short": "De vrais avis, un rapport",
+          "text": "Un lien et un QR code pour demander des avis à vos vrais clients, puis un rapport chiffré des visites et des apparitions dans Google."
+        }
+      ],
+      "points_eyebrow": "Ce que vous obtenez",
+      "points_title": "Ce qui fait apparaître un commerce local",
+      "points": [
+        {
+          "name": "Une fiche Google Business",
+          "text": "La fiche qui s'affiche avec la carte quand on cherche votre activité. C'est le levier le plus rentable pour un commerce local."
+        },
+        {
+          "name": "Un site rapide et lisible",
+          "text": "Réglages techniques : vitesse, version mobile, titres et descriptions, pour que Google comprenne votre site."
+        },
+        {
+          "name": "Des pages par service",
+          "text": "Une page par service lorsqu'on le cherche vraiment, avec un vrai contenu, des prix indicatifs et des photos. Jamais des pages copiées les unes sur les autres."
+        },
+        {
+          "name": "Les avis de vos clients",
+          "text": "Un lien et un QR code pour récolter de vrais avis. Je n'en publie jamais de faux."
+        },
+        {
+          "name": "La Search Console",
+          "text": "Le site est déclaré, les pages sont indexées, et vous voyez les recherches qui vous amènent des visiteurs."
+        },
+        {
+          "name": "Un rapport chiffré",
+          "text": "Visites, apparitions dans Google, appels : ce qui a bougé, expliqué simplement."
+        }
+      ],
+      "timeline_eyebrow": "Délais réalistes",
+      "timeline_title": "Quand voir des résultats",
+      "timeline": [
+        {
+          "when": "Quelques jours",
+          "text": "La fiche Google est en ligne et le site est déclaré dans la Search Console."
+        },
+        {
+          "when": "4 à 8 semaines",
+          "text": "Les premiers signes : le site apparaît sur certaines recherches et les premiers clics arrivent."
+        },
+        {
+          "when": "3 à 6 mois",
+          "text": "Des positions plus stables sur des recherches locales peu concurrentielles."
+        }
+      ],
+      "timeline_note": "Sur une recherche très concurrentielle, comme « plombier Toulouse », les résultats peuvent être plus longs, ou ne pas venir. Je vous le dis avant de commencer.",
+      "prices_eyebrow": "Prix",
+      "prices_title": "Combien ça coûte",
+      "prices": [
+        {
+          "name": "Pack de lancement, 290 €",
+          "text": "Fiche Google, réglages techniques du site, déclaration dans la Search Console, lien pour recueillir des avis. Payé une seule fois."
+        },
+        {
+          "name": "Suivi mensuel, 59 € par mois",
+          "text": "Rapport chiffré, ajustements et suivi de vos avis. Facultatif, et compris dans la maintenance Complet."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Pouvez-vous me garantir la première place sur Google ?",
+          "a": "Non, et méfiez-vous de ceux qui le promettent : les résultats dépendent de Google et de vos concurrents. Ce que je garantis, c'est le travail fait et un rapport chiffré."
+        },
+        {
+          "q": "Pourquoi une fiche Google Business ?",
+          "a": "Quand quelqu'un cherche « boulangerie près de moi », Google affiche d'abord une carte avec quelques fiches. Sans fiche à jour (horaires, photos, avis), vous n'y êtes pas, ou vous y êtes mal."
+        },
+        {
+          "q": "Pouvez-vous m'obtenir des avis ?",
+          "a": "Je vous donne le lien et le QR code pour en demander à vos clients réels. Je ne publie jamais de faux avis : Google les détecte et les supprime, et vous risquez de perdre votre fiche."
+        },
+        {
+          "q": "Je me déplace chez mes clients, je n'ai pas de boutique.",
+          "a": "Google permet d'indiquer une zone d'intervention à la place d'une adresse. Je configure la fiche en ce sens."
+        },
+        {
+          "q": "Dois-je déjà avoir un site ?",
+          "a": "C'est préférable : la fiche renvoie vers le site. Si vous n'en avez pas, je peux d'abord vous en créer un."
+        },
+        {
+          "q": "Faut-il prendre le suivi mensuel ?",
+          "a": "Non, il est facultatif. Le pack de lancement met tout en place. Le suivi sert si vous voulez des rapports et des ajustements réguliers."
+        }
+      ],
+      "final_title": "Voyons où vous en êtes sur Google",
+      "final_text": "Donnez-moi le nom de votre activité et votre ville. Je regarde ce que Google montre aujourd'hui et je vous dis ce qui peut être amélioré, sans engagement."
+    }
+  },
   "seo": {
+    "refonte-site-internet": "Refonte de site internet dès 590 € : audit, nouveau design lisible sur mobile, redirections pour garder votre référencement Google. Votre ancien site reste en ligne pendant les travaux.",
+    "maintenance-site-internet": "Maintenance de site internet dès 49 € par mois : hébergement sécurisé, sauvegardes, surveillance et mises à jour. Trois niveaux, sans engagement.",
+    "referencement-local": "Référencement local : fiche Google Business, réglages du site, avis clients et rapport chiffré. Pack de lancement 290 €. Aucune place sur Google n'est promise.",
     "services": "Services autour de votre site : maintenance et hébergement dès 49 € par mois, refonte dès 590 €, mises à jour, emails professionnels, traduction, référencement local. Prix affichés, sans engagement.",
     "site-pizzeria": "Site internet pour pizzeria : votre carte en ligne, un bouton d'appel et de commande, vos horaires et votre adresse. Maquette gratuite sous 72 h, dès 490 €.",
     "site-coiffeur-barbier": "Site internet pour coiffeur et barbier : prestations, tarifs, galerie et prise de rendez-vous en ligne. Maquette gratuite sous 72 h, dès 490 €.",
