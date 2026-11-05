@@ -1494,14 +1494,25 @@
           ]
         },
         {
-          "name": "Espace de gestion, SMS, fidélité",
+          "name": "Espace de gestion du site",
+          "price": "dès 290 €",
+          "unit": "",
+          "tagline": "Vous modifiez votre site vous-même, sans m'appeler pour chaque changement.",
+          "items": [
+            "Vos textes, vos photos et votre carte modifiables quand vous voulez",
+            "Avis : ajout et modification selon vos besoins",
+            "Accès protégé par identifiant et mot de passe"
+          ]
+        },
+        {
+          "name": "SMS, fidélité, cartes cadeaux",
           "price": "sur devis",
-          "unit": "selon le besoin",
+          "unit": "",
           "tagline": "Les fonctions plus larges, étudiées au cas par cas.",
           "items": [
-            "Espace pour gérer vos contenus, vos commandes ou vos réservations",
             "Envoi de SMS : le coût des SMS est refacturé",
-            "Cartes de fidélité et cartes cadeaux"
+            "Cartes de fidélité",
+            "Cartes cadeaux"
           ]
         }
       ],
