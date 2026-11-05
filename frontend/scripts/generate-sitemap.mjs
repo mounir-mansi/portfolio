@@ -22,11 +22,14 @@ const metierUrls = METIERS.map((m) => `  <url>
   </url>`);
 
 // Page Services et pages dédiées à un service : en français seulement, comme les pages par métier
-const servicesUrls = [SERVICES_SLUG, ...SERVICE_PAGES.map((s) => s.slug)].map((slug) => `  <url>
+const servicesUrls = [SERVICES_SLUG, ...SERVICE_PAGES.filter((s) => !s.multilang).map((s) => s.slug)].map((slug) => `  <url>
     <loc>${SITE}/fr/${slug}</loc>
   </url>`);
 
-const urls = [...PAGES.flatMap((page) => LANGS.map((lang) => entry(lang, page))), ...servicesUrls, ...metierUrls];
+// Pages de service traduites : 4 langues, avec hreflang
+const servicesTraduites = SERVICE_PAGES.filter((s) => s.multilang).flatMap((s) => LANGS.map((lang) => entry(lang, `/${s.slug}`)));
+
+const urls = [...PAGES.flatMap((page) => LANGS.map((lang) => entry(lang, page))), ...servicesUrls, ...servicesTraduites, ...metierUrls];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">

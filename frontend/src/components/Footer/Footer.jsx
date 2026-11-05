@@ -68,10 +68,10 @@ export default function Footer({ hideCta = false }) {
           </ul>
         )}
 
-        {lang === "fr" && (
+        {SERVICE_PAGES.some((service) => lang === "fr" || service.multilang) && (
           <ul className="footer-legal footer-metiers" aria-label="Services">
-            {SERVICE_PAGES.map((service) => (
-              <li key={service.slug}><Link to={`/fr/${service.slug}`}>{t(`service_pages.${service.key}.meta_title`)}</Link></li>
+            {SERVICE_PAGES.filter((service) => lang === "fr" || service.multilang).map((service) => (
+              <li key={service.slug}><Link to={`/${lang}/${service.slug}`}>{t(`service_pages.${service.key}.meta_title`)}</Link></li>
             ))}
           </ul>
         )}

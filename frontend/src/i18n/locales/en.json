@@ -17,7 +17,9 @@
     "back_to_top": "Back to top",
     "call": "Call",
     "mockup": "Free mockup",
-    "aria_contact": "Quick contact"
+    "aria_contact": "Quick contact",
+    "offers": "My offers",
+    "custom": "Custom features"
   },
   "home": {
     "eyebrow": "Web studio · Toulouse and all over France",
@@ -361,5 +363,184 @@
     "eyebrow": "Got a project in mind?",
     "big": "Let's talk",
     "zone": "Toulouse · all over France, remotely"
+  },
+  "seo": {
+    "fonctions-sur-mesure": "Add the features your business needs to your website: online booking, click and collect, online payment, appointments, quotes, reviews and loyalty. Prices shown, no commitment."
+  },
+  "service_pages": {
+    "common": {
+      "cta": "Get a quote",
+      "cta_question": "Ask a question",
+      "steps_eyebrow": "Steps",
+      "steps_title": "How it works",
+      "all_services": "More offers"
+    },
+    "fonctions": {
+      "meta_title": "Custom features for your website",
+      "eyebrow": "Custom features",
+      "title_a": "Your website can do",
+      "title_em": "more than show",
+      "title_b": "your opening hours and photos.",
+      "sub": "Booking, click and collect, online payment, appointments, reviews, loyalty: I add to your website the features your business really needs, and nothing more.",
+      "hero_price": "From €190 · Exact price given before we start · No commitment",
+      "aside_title": "Four steps",
+      "steps": [
+        {
+          "name": "Your need",
+          "short": "What costs you time",
+          "text": "You tell me what you do by hand today: taking bookings by phone, writing down orders, following up with customers. Together we choose the feature that helps you most."
+        },
+        {
+          "name": "Price first",
+          "short": "Before we start",
+          "text": "I give you the exact price before we begin. The price depends on your site and on what you want in the feature: the prices on this page are starting points."
+        },
+        {
+          "name": "Set-up",
+          "short": "Added to your site",
+          "text": "I add the feature to your website, test it with you and show you how to use it."
+        },
+        {
+          "name": "Daily use",
+          "short": "You are independent",
+          "text": "You manage bookings, orders or reviews yourself. If something gets stuck, you call me."
+        }
+      ],
+      "points_eyebrow": "Why custom",
+      "points_title": "A feature that fits your business",
+      "points": [
+        {
+          "name": "Made for your trade",
+          "text": "A bakery does not have the same needs as a restaurant or a garage. I set the feature up for the way you work."
+        },
+        {
+          "name": "Built into your site",
+          "text": "Same look, same address: your customers are not sent to a third-party platform."
+        },
+        {
+          "name": "No required subscription",
+          "text": "You pay for the set-up once. Maintenance is optional and chosen separately."
+        }
+      ],
+      "prices_eyebrow": "The features",
+      "prices_title": "What I can add to your website",
+      "prices": [
+        {
+          "name": "Click and collect",
+          "price": "€190",
+          "unit": "",
+          "tagline": "Your customers order online and pay in store when they pick up.",
+          "items": [
+            "Menu or catalogue with the products available",
+            "Choice of pick-up time slot",
+            "Notification for every order",
+            "Automatic emails to the customer and to you",
+            "No online payment"
+          ]
+        },
+        {
+          "name": "Click and collect with online payment",
+          "price": "€490",
+          "unit": "",
+          "tagline": "Same feature, with card payment when the order is placed.",
+          "items": [
+            "Everything in click and collect",
+            "Secure payment by Stripe",
+            "Confirmation sent to the customer",
+            "Stripe fees are charged by Stripe"
+          ]
+        },
+        {
+          "name": "Online booking",
+          "price": "from €290",
+          "unit": "",
+          "tagline": "Your customers book a table or a time slot without calling you.",
+          "items": [
+            "Choice of date, time and number of people",
+            "Confirmation by email",
+            "List of bookings for you",
+            "Automatic emails to the customer and to you"
+          ]
+        },
+        {
+          "name": "Reviews display",
+          "price": "from €290",
+          "unit": "",
+          "tagline": "A new visitor hesitates? Your customers' reviews reassure them before they call you.",
+          "items": [
+            "Your reviews right on the home page, so visitors do not have to look for them on Google",
+            "Management area: you add, edit or remove your reviews yourself",
+            "Only real reviews, never invented"
+          ]
+        },
+        {
+          "name": "Appointment booking",
+          "price": "from €290",
+          "unit": "",
+          "tagline": "Your customers or patients book an appointment without calling you.",
+          "items": [
+            "Your availability shown live: the customer picks the slot that suits them",
+            "You set your days, hours, time off and the length of each appointment",
+            "A booked slot is blocked: no double booking",
+            "Email confirmation to the customer and to you, appointment list always up to date"
+          ]
+        },
+        {
+          "name": "Quote request",
+          "price": "from €290",
+          "unit": "",
+          "tagline": "The customer describes their need from the site, you receive everything by email.",
+          "items": [
+            "Form adapted to your trade",
+            "Photos attached to the request",
+            "Request received by email"
+          ]
+        },
+        {
+          "name": "Website management area",
+          "price": "from €290",
+          "unit": "",
+          "tagline": "You edit your website yourself, without calling me for every change.",
+          "items": [
+            "Your texts, photos and menu editable whenever you want",
+            "Reviews: add and edit as you need",
+            "Access protected by username and password"
+          ]
+        },
+        {
+          "name": "Loyalty, customer database and offers",
+          "price": "from €490",
+          "unit": "",
+          "tagline": "Bring your customers back and keep in touch with them.",
+          "items": [
+            "Digital loyalty card with stamps or points, in your shop's colours and logo",
+            "You set up the programme and the rewards yourself",
+            "Customer database and tracking of their visits",
+            "Statistics on visits, loyalty and rewards given out",
+            "Create and manage your offer and promotion campaigns from your area, by email or WhatsApp"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Are the prices final?",
+          "a": "No, they are starting points. The exact price depends on your site and on what you want in the feature. I give it to you before we start, and nothing is done without your agreement."
+        },
+        {
+          "q": "Can I add a feature to a site you did not build?",
+          "a": "It depends on how your site is built. Send me your website address: I will look and tell you whether it is possible, or whether it is better to rebuild it."
+        },
+        {
+          "q": "What is the difference between click and collect at €190 and at €490?",
+          "a": "With the €190 version, the customer orders online and pays in store at pick-up. With the €490 version, they pay online by card when ordering, through Stripe."
+        },
+        {
+          "q": "Is there a subscription to pay?",
+          "a": "No, the set-up is paid once. Website maintenance is optional and chosen separately. Some third-party services have their own fees, such as Stripe for payments or WhatsApp for sending campaigns: I tell you before."
+        }
+      ],
+      "final_title": "Tell me what you would like to automate",
+      "final_text": "Describe your business and what you do by hand today. I will tell you what is possible and at what price, with no commitment."
+    }
   }
 }

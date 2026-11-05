@@ -15,15 +15,15 @@ import "../ServicesPage/ServicesPage.css";
 // Les textes existent seulement en français : les autres langues renvoient vers la version française.
 export default function ServiceDetailPage({ service }) {
   const { lang = "fr" } = useParams();
-  if (lang !== "fr") return <Navigate to={`/fr/${service.slug}`} replace />;
-  return <ServiceDetailContent service={service} />;
+  if (lang !== "fr" && !service.multilang) return <Navigate to={`/fr/${service.slug}`} replace />;
+  return <ServiceDetailContent service={service} lang={lang} />;
 }
 
-function ServiceDetailContent({ service }) {
+function ServiceDetailContent({ service, lang }) {
   const { t, i18n } = useTranslation();
   const p = (path, options) => t(`service_pages.${service.key}.${path}`, options);
   const c = (path, options) => t(`service_pages.common.${path}`, options);
-  const url = `https://mandev.fr/fr/${service.slug}`;
+  const url = `https://mandev.fr/${lang}/${service.slug}`;
   const idScript = `service-${service.key}-faq-jsonld`;
 
   usePageTitle(p("meta_title"));
@@ -52,9 +52,9 @@ function ServiceDetailContent({ service }) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "ManDev Web", item: "https://mandev.fr/fr" },
-        { "@type": "ListItem", position: 2, name: t("services_page.meta_title"), item: "https://mandev.fr/fr/services" },
-        { "@type": "ListItem", position: 3, name: p("meta_title"), item: url },
+        { "@type": "ListItem", position: 1, name: "ManDev Web", item: `https://mandev.fr/${lang}` },
+        ...(lang === "fr" ? [{ "@type": "ListItem", position: 2, name: t("services_page.meta_title"), item: "https://mandev.fr/fr/services" }] : []),
+        { "@type": "ListItem", position: lang === "fr" ? 3 : 2, name: p("meta_title"), item: url },
       ],
     });
   }
@@ -86,10 +86,10 @@ function ServiceDetailContent({ service }) {
             </h1>
             <p className="hero-sub reveal" style={{ "--delay": "160ms" }}>{p("sub")}</p>
             <div className="hero-ctas reveal" style={{ "--delay": "240ms" }}>
-              <Link to={{ pathname: "/fr", hash: "#devis" }} className="btn-primary">
+              <Link to={{ pathname: `/${lang}`, hash: "#devis" }} className="btn-primary">
                 {c("cta")} <span aria-hidden="true">↗</span>
               </Link>
-              <Link to="/fr/contact" className="btn-outline">{c("cta_question")}</Link>
+              <Link to={`/${lang}/contact`} className="btn-outline">{c("cta_question")}</Link>
             </div>
             <p className="hero-offer reveal" style={{ "--delay": "280ms" }}>{p("hero_price")}</p>
             <div className="hero-call reveal" style={{ "--delay": "320ms" }}>
@@ -234,10 +234,11 @@ function ServiceDetailContent({ service }) {
           <h2 id="service-final-title" className="block-title">{p("final_title")}</h2>
           <p>{p("final_text")}</p>
           <div className="hero-ctas">
-            <Link to="/fr/contact" className="btn-primary">
+            <Link to={`/${lang}/contact`} className="btn-primary">
               {t("nav.contact")} <span aria-hidden="true">↗</span>
             </Link>
-            <Link to="/fr/services" className="btn-outline">{c("all_services")}</Link>
+            {/* Les pages Services n'existent qu'en français : les autres langues reviennent aux offres de l'accueil */}
+            <Link to={lang === "fr" ? "/fr/services" : { pathname: `/${lang}`, hash: "#services" }} className="btn-outline">{c("all_services")}</Link>
           </div>
         </div>
       </section>

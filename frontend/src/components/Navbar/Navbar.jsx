@@ -58,7 +58,8 @@ export default function Navbar() {
   const close = () => setOpen(false);
 
   const NAV_LINKS = [
-    { to: { pathname: lp(""), hash: "#services" }, label: t("nav.services"), key: "services" },
+    { to: { pathname: lp(""), hash: "#services" }, label: t("nav.offers"), key: "services" },
+    { to: lp("/fonctions-sur-mesure"), label: t("nav.custom"), key: "fonctions", active: isActive("fonctions-sur-mesure") },
     { to: lp("/projets"), label: t("nav.projects"), key: "projets", active: isActive("projets") },
     { to: lp("/a-propos"), label: t("nav.about"), key: "a-propos", active: isActive("a-propos") },
   ];
