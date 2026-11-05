@@ -1375,7 +1375,7 @@
       "title_em": "plus qu'afficher",
       "title_b": "vos horaires et vos photos.",
       "sub": "Réservation, commande à retirer, paiement en ligne, emails automatiques, avis : j'ajoute à votre site les fonctions dont votre activité a vraiment besoin, et rien de plus.",
-      "hero_price": "Dès 120 € · Prix exact donné avant de commencer · Sans engagement",
+      "hero_price": "Dès 190 € · Prix exact donné avant de commencer · Sans engagement",
       "aside_title": "Quatre étapes",
       "steps": [
         {
@@ -1461,11 +1461,13 @@
         },
         {
           "name": "Affichage des avis",
-          "price": "dès 120 €",
+          "price": "dès 290 €",
           "unit": "",
-          "tagline": "Les vrais avis de vos clients, visibles sur votre site.",
+          "tagline": "Un nouveau visiteur hésite ? Les avis de vos clients le rassurent avant qu'il vous appelle.",
           "items": [
-            "Avis affichés sur la page d'accueil",
+            "Vos avis dès la page d'accueil, sans que le visiteur ait à les chercher sur Google",
+            "Espace de gestion : vous ajoutez, modifiez ou retirez vos avis vous-même",
+            "Lien vers l'avis sur Google, si vous le souhaitez",
             "Seulement de vrais avis, jamais inventés"
           ]
         },
