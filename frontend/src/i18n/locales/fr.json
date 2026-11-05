@@ -1429,9 +1429,7 @@
             "Notification de chaque commande",
             "Emails automatiques au client et à vous",
             "Pas de paiement en ligne"
-          ],
-          "demo_label": "Voir la démo boulangerie",
-          "demo_url": "https://boulangerie.mandev.fr"
+          ]
         },
         {
           "name": "Commande à retirer avec paiement en ligne",
@@ -1455,9 +1453,7 @@
             "Confirmation par email",
             "Liste des réservations pour vous",
             "Emails automatiques au client et à vous"
-          ],
-          "demo_label": "Voir la démo restaurant",
-          "demo_url": "https://restaurant.mandev.fr"
+          ]
         },
         {
           "name": "Affichage des avis",
