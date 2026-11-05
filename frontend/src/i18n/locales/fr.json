@@ -1533,7 +1533,7 @@
         },
         {
           "q": "Y a-t-il un abonnement à payer ?",
-          "a": "Non, la mise en place se paie une fois. La maintenance du site est facultative et se choisit séparément. Certains services tiers ont leurs propres frais, comme Stripe pour les paiements ou WhatsApp pour l'envoi de messages : je vous les indique avant."
+          "a": "Non, la mise en place se paie une fois. La maintenance du site est facultative et se choisit séparément. Certains services tiers ont leurs propres frais, comme Stripe pour les paiements ou WhatsApp pour l'envoi de campagnes : je vous les indique avant."
         }
       ],
       "final_title": "Dites-moi ce que vous aimeriez automatiser",
