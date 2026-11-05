@@ -1505,14 +1505,15 @@
           ]
         },
         {
-          "name": "SMS, fidélité, cartes cadeaux",
+          "name": "Fidélité, base clients et offres",
           "price": "sur devis",
           "unit": "",
-          "tagline": "Les fonctions plus larges, étudiées au cas par cas.",
+          "tagline": "Faites revenir vos clients et gardez le contact avec eux.",
           "items": [
-            "Envoi de SMS : le coût des SMS est refacturé",
-            "Cartes de fidélité",
-            "Cartes cadeaux"
+            "Carte de fidélité numérique à tampons ou à points",
+            "Base de données de vos clients, avec leur accord, et sa gestion",
+            "Campagnes : envoi d'offres et de promotions par email ou SMS",
+            "Le coût des SMS est refacturé"
           ]
         }
       ],
