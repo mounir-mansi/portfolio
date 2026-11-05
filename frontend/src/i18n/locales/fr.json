@@ -1421,7 +1421,7 @@
         {
           "name": "Commande à retirer",
           "price": "190 €",
-          "unit": "une seule fois",
+          "unit": "",
           "tagline": "Vos clients commandent en ligne et paient au retrait, en boutique.",
           "items": [
             "Carte ou catalogue avec les produits disponibles",
@@ -1435,7 +1435,7 @@
         {
           "name": "Commande à retirer avec paiement en ligne",
           "price": "490 €",
-          "unit": "une seule fois",
+          "unit": "",
           "tagline": "Même fonction, avec le paiement par carte au moment de la commande.",
           "items": [
             "Tout ce que contient la commande à retirer",
@@ -1447,7 +1447,7 @@
         {
           "name": "Réservation en ligne",
           "price": "dès 290 €",
-          "unit": "une seule fois",
+          "unit": "",
           "tagline": "Vos clients réservent une table ou un créneau sans vous appeler.",
           "items": [
             "Choix de la date, de l'heure et du nombre de personnes",
@@ -1460,7 +1460,7 @@
         {
           "name": "Emails automatiques",
           "price": "dès 90 €",
-          "unit": "une seule fois",
+          "unit": "",
           "tagline": "Le client reçoit un message sans que vous ayez à l'écrire.",
           "items": [
             "Confirmation de réservation ou de commande",
@@ -1471,7 +1471,7 @@
         {
           "name": "Affichage des avis",
           "price": "dès 120 €",
-          "unit": "une seule fois",
+          "unit": "",
           "tagline": "Les vrais avis de vos clients, visibles sur votre site.",
           "items": [
             "Avis affichés sur la page d'accueil",
@@ -1482,7 +1482,7 @@
         {
           "name": "Rendez-vous et devis en ligne",
           "price": "dès 390 €",
-          "unit": "une seule fois",
+          "unit": "",
           "tagline": "Pour les artisans et les services : le client demande un rendez-vous ou un devis depuis le site.",
           "items": [
             "Formulaire adapté à votre métier",
