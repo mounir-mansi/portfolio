@@ -1467,9 +1467,7 @@
           "items": [
             "Avis affichés sur la page d'accueil",
             "Seulement de vrais avis, jamais inventés"
-          ],
-          "link_label": "Collecte et réponses aux avis : voir le référencement local",
-          "link_to": "/fr/referencement-local"
+          ]
         },
         {
           "name": "Rendez-vous et devis en ligne",
