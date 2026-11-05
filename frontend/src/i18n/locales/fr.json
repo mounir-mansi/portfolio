@@ -1534,10 +1534,6 @@
         {
           "q": "Y a-t-il un abonnement à payer ?",
           "a": "Non, la mise en place se paie une fois. La maintenance du site est facultative et se choisit séparément. Certains services tiers ont leurs propres frais, comme Stripe pour les paiements ou les SMS : je vous les indique avant."
-        },
-        {
-          "q": "Pouvez-vous me montrer une démo ?",
-          "a": "Oui pour la commande à retirer et la réservation : les démos sont en ligne sur cette page. Pour les autres fonctions, je peux vous en montrer une sur demande."
         }
       ],
       "final_title": "Dites-moi ce que vous aimeriez automatiser",
