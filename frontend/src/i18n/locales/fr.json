@@ -1478,8 +1478,7 @@
           "items": [
             "Choix d'un créneau selon vos horaires",
             "Confirmation par email",
-            "Liste des rendez-vous pour vous",
-            "Démo disponible sur demande"
+            "Liste des rendez-vous pour vous"
           ]
         },
         {
@@ -1490,8 +1489,7 @@
           "items": [
             "Formulaire adapté à votre métier",
             "Photos jointes à la demande",
-            "Demande reçue par email",
-            "Démo disponible sur demande"
+            "Demande reçue par email"
           ]
         },
         {
@@ -1502,8 +1500,7 @@
           "items": [
             "Espace pour gérer vos contenus, vos commandes ou vos réservations",
             "Envoi de SMS : le coût des SMS est refacturé",
-            "Cartes de fidélité et cartes cadeaux",
-            "Démo disponible sur demande"
+            "Cartes de fidélité et cartes cadeaux"
           ]
         }
       ],
