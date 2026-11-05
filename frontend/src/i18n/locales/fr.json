@@ -1471,13 +1471,27 @@
           ]
         },
         {
-          "name": "Rendez-vous et devis en ligne",
-          "price": "dès 390 €",
+          "name": "Prise de rendez-vous",
+          "price": "dès 290 €",
           "unit": "",
-          "tagline": "Pour les artisans et les services : le client demande un rendez-vous ou un devis depuis le site.",
+          "tagline": "Vos clients ou vos patients prennent rendez-vous sans vous appeler.",
+          "items": [
+            "Choix d'un créneau selon vos horaires",
+            "Confirmation par email",
+            "Liste des rendez-vous pour vous",
+            "Sans informations médicales : pas de motif de santé enregistré",
+            "Démo disponible sur demande"
+          ]
+        },
+        {
+          "name": "Demande de devis",
+          "price": "dès 290 €",
+          "unit": "",
+          "tagline": "Le client décrit son besoin depuis le site, vous recevez tout par email.",
           "items": [
             "Formulaire adapté à votre métier",
-            "Choix d'un créneau de rendez-vous",
+            "Photos jointes à la demande",
+            "Demande reçue par email",
             "Démo disponible sur demande"
           ]
         },
