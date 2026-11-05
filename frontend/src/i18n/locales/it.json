@@ -17,7 +17,9 @@
     "back_to_top": "Torna su",
     "call": "Chiama",
     "mockup": "Bozza gratuita",
-    "aria_contact": "Contatto rapido"
+    "aria_contact": "Contatto rapido",
+    "offers": "Le mie proposte",
+    "custom": "Funzioni su misura"
   },
   "home": {
     "eyebrow": "Studio web · Tolosa e in tutta la Francia",
@@ -361,5 +363,184 @@
     "eyebrow": "Hai un progetto in mente?",
     "big": "Parliamone",
     "zone": "Tolosa · in tutta la Francia, a distanza"
+  },
+  "seo": {
+    "fonctions-sur-mesure": "Aggiungi al tuo sito le funzioni di cui la tua attività ha bisogno: prenotazione online, ordine da ritirare, pagamento online, appuntamenti, preventivi, recensioni e fidelizzazione. Prezzi indicati, senza impegno."
+  },
+  "service_pages": {
+    "common": {
+      "cta": "Richiedi un preventivo",
+      "cta_question": "Fai una domanda",
+      "steps_eyebrow": "Passaggi",
+      "steps_title": "Come funziona",
+      "all_services": "Altre proposte"
+    },
+    "fonctions": {
+      "meta_title": "Funzioni su misura per il tuo sito",
+      "eyebrow": "Funzioni su misura",
+      "title_a": "Il tuo sito può fare",
+      "title_em": "più che mostrare",
+      "title_b": "i tuoi orari e le tue foto.",
+      "sub": "Prenotazione, ordine da ritirare, pagamento online, appuntamenti, recensioni, fidelizzazione: aggiungo al tuo sito le funzioni di cui la tua attività ha davvero bisogno, e nient'altro.",
+      "hero_price": "Da 190 € · Prezzo esatto comunicato prima di iniziare · Senza impegno",
+      "aside_title": "Quattro passaggi",
+      "steps": [
+        {
+          "name": "Il tuo bisogno",
+          "short": "Cosa ti fa perdere tempo",
+          "text": "Mi dici cosa fai a mano oggi: prendere prenotazioni al telefono, annotare ordini, ricontattare i clienti. Scegliamo insieme la funzione che ti è più utile."
+        },
+        {
+          "name": "Prezzo prima",
+          "short": "Prima di iniziare",
+          "text": "Ti comunico il prezzo esatto prima di iniziare. Il prezzo cambia in base al tuo sito e a ciò che vuoi nella funzione: i prezzi di questa pagina sono punti di partenza."
+        },
+        {
+          "name": "Messa in opera",
+          "short": "Aggiunta al tuo sito",
+          "text": "Aggiungo la funzione al tuo sito, la provo con te e ti mostro come usarla."
+        },
+        {
+          "name": "Utilizzo",
+          "short": "Sei autonomo",
+          "text": "Gestisci tu stesso prenotazioni, ordini o recensioni. Se qualcosa si blocca, mi chiami."
+        }
+      ],
+      "points_eyebrow": "Perché su misura",
+      "points_title": "Una funzione adatta alla tua attività",
+      "points": [
+        {
+          "name": "Pensata per il tuo mestiere",
+          "text": "Un panificio non ha le stesse esigenze di un ristorante o di un'officina. Configuro la funzione per il tuo modo di lavorare."
+        },
+        {
+          "name": "Integrata nel tuo sito",
+          "text": "Stesso aspetto, stesso indirizzo: i tuoi clienti non vengono mandati su una piattaforma esterna."
+        },
+        {
+          "name": "Nessun abbonamento obbligatorio",
+          "text": "Paghi la messa in opera una sola volta. La manutenzione è facoltativa e si sceglie a parte."
+        }
+      ],
+      "prices_eyebrow": "Le funzioni",
+      "prices_title": "Cosa posso aggiungere al tuo sito",
+      "prices": [
+        {
+          "name": "Ordine da ritirare",
+          "price": "190 €",
+          "unit": "",
+          "tagline": "I tuoi clienti ordinano online e pagano al ritiro, in negozio.",
+          "items": [
+            "Menu o catalogo con i prodotti disponibili",
+            "Scelta della fascia oraria di ritiro",
+            "Notifica di ogni ordine",
+            "Email automatiche al cliente e a te",
+            "Nessun pagamento online"
+          ]
+        },
+        {
+          "name": "Ordine da ritirare con pagamento online",
+          "price": "490 €",
+          "unit": "",
+          "tagline": "Stessa funzione, con pagamento con carta al momento dell'ordine.",
+          "items": [
+            "Tutto ciò che contiene l'ordine da ritirare",
+            "Pagamento sicuro con Stripe",
+            "Conferma inviata al cliente",
+            "Le commissioni di Stripe sono addebitate da Stripe"
+          ]
+        },
+        {
+          "name": "Prenotazione online",
+          "price": "da 290 €",
+          "unit": "",
+          "tagline": "I tuoi clienti prenotano un tavolo o una fascia oraria senza chiamarti.",
+          "items": [
+            "Scelta di data, ora e numero di persone",
+            "Conferma via email",
+            "Elenco delle prenotazioni per te",
+            "Email automatiche al cliente e a te"
+          ]
+        },
+        {
+          "name": "Visualizzazione delle recensioni",
+          "price": "da 290 €",
+          "unit": "",
+          "tagline": "Un nuovo visitatore esita? Le recensioni dei tuoi clienti lo rassicurano prima che ti chiami.",
+          "items": [
+            "Le tue recensioni già nella home page, senza che il visitatore debba cercarle su Google",
+            "Area di gestione: aggiungi, modifichi o togli tu stesso le tue recensioni",
+            "Solo recensioni vere, mai inventate"
+          ]
+        },
+        {
+          "name": "Prenotazione di appuntamenti",
+          "price": "da 290 €",
+          "unit": "",
+          "tagline": "I tuoi clienti o pazienti prenotano un appuntamento senza chiamarti.",
+          "items": [
+            "Le tue disponibilità mostrate in tempo reale: il cliente sceglie la fascia che preferisce",
+            "Imposti tu giorni, orari, ferie e durata di ogni appuntamento",
+            "Una fascia prenotata è bloccata: nessuna doppia prenotazione",
+            "Conferma via email al cliente e a te, elenco degli appuntamenti sempre aggiornato"
+          ]
+        },
+        {
+          "name": "Richiesta di preventivo",
+          "price": "da 290 €",
+          "unit": "",
+          "tagline": "Il cliente descrive la sua esigenza dal sito, tu ricevi tutto via email.",
+          "items": [
+            "Modulo adattato al tuo mestiere",
+            "Foto allegate alla richiesta",
+            "Richiesta ricevuta via email"
+          ]
+        },
+        {
+          "name": "Area di gestione del sito",
+          "price": "da 290 €",
+          "unit": "",
+          "tagline": "Modifichi il tuo sito da solo, senza chiamarmi per ogni cambiamento.",
+          "items": [
+            "Testi, foto e menu modificabili quando vuoi",
+            "Recensioni: aggiunta e modifica secondo le tue esigenze",
+            "Accesso protetto da nome utente e password"
+          ]
+        },
+        {
+          "name": "Fidelizzazione, database clienti e offerte",
+          "price": "da 490 €",
+          "unit": "",
+          "tagline": "Fai tornare i tuoi clienti e resta in contatto con loro.",
+          "items": [
+            "Carta fedeltà digitale a timbri o a punti, con i colori e il logo della tua attività",
+            "Configuri tu stesso il programma e i premi",
+            "Database dei tuoi clienti e monitoraggio delle loro visite",
+            "Statistiche su frequentazione, fedeltà e premi distribuiti",
+            "Crea e gestisci le tue campagne di offerte e promozioni dalla tua area, via email o WhatsApp"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "I prezzi sono definitivi?",
+          "a": "No, sono punti di partenza. Il prezzo esatto dipende dal tuo sito e da ciò che vuoi nella funzione. Te lo comunico prima di iniziare e non si fa nulla senza il tuo consenso."
+        },
+        {
+          "q": "Posso aggiungere una funzione a un sito che non hai fatto tu?",
+          "a": "Dipende da come è costruito il tuo sito. Scrivimi l'indirizzo del tuo sito: guardo e ti dico se è possibile o se conviene rifarlo."
+        },
+        {
+          "q": "Che differenza c'è tra ordine da ritirare a 190 € e a 490 €?",
+          "a": "Con la versione da 190 €, il cliente ordina online e paga in negozio al ritiro. Con la versione da 490 €, paga online con carta al momento dell'ordine, tramite Stripe."
+        },
+        {
+          "q": "C'è un abbonamento da pagare?",
+          "a": "No, la messa in opera si paga una sola volta. La manutenzione del sito è facoltativa e si sceglie a parte. Alcuni servizi esterni hanno costi propri, come Stripe per i pagamenti o WhatsApp per l'invio di campagne: te li indico prima."
+        }
+      ],
+      "final_title": "Dimmi cosa vorresti automatizzare",
+      "final_text": "Descrivimi la tua attività e ciò che fai a mano oggi. Ti dico cosa è possibile e a quale prezzo, senza impegno."
+    }
   }
 }

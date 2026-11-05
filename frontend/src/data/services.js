@@ -13,12 +13,13 @@ export const SERVICES = [
 export const SERVICES_SLUG = "services";
 
 // Pages dédiées à un service (/fr/<slug>). Les textes sont dans fr.json (service_pages.<key>).
+// multilang : page traduite dans les 4 langues (les autres ne le sont qu'en français).
 // plans : la page affiche les trois niveaux de maintenance plutôt qu'une liste de prix.
 export const SERVICE_PAGES = [
   { slug: "maintenance-site-internet", key: "maintenance", plans: true },
   { slug: "refonte-site-internet", key: "refonte" },
   { slug: "referencement-local", key: "referencement" },
-  { slug: "fonctions-sur-mesure", key: "fonctions" },
+  { slug: "fonctions-sur-mesure", key: "fonctions", multilang: true },
 ];
 
 // Page « Aller plus loin » liée depuis /fr/services

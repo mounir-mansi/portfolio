@@ -17,7 +17,9 @@
     "back_to_top": "Volver arriba",
     "call": "Llamar",
     "mockup": "Maqueta gratis",
-    "aria_contact": "Contacto rápido"
+    "aria_contact": "Contacto rápido",
+    "offers": "Mis ofertas",
+    "custom": "Funciones a medida"
   },
   "home": {
     "eyebrow": "Estudio web · Toulouse y toda Francia",
@@ -361,5 +363,184 @@
     "eyebrow": "¿Tienes un proyecto?",
     "big": "Hablemos",
     "zone": "Toulouse · toda Francia, a distancia"
+  },
+  "seo": {
+    "fonctions-sur-mesure": "Añade a tu web las funciones que tu negocio necesita: reserva en línea, pedido para recoger, pago en línea, citas, presupuestos, reseñas y fidelización. Precios indicados, sin compromiso."
+  },
+  "service_pages": {
+    "common": {
+      "cta": "Pedir presupuesto",
+      "cta_question": "Hacer una pregunta",
+      "steps_eyebrow": "Pasos",
+      "steps_title": "Cómo funciona",
+      "all_services": "Más ofertas"
+    },
+    "fonctions": {
+      "meta_title": "Funciones a medida para tu web",
+      "eyebrow": "Funciones a medida",
+      "title_a": "Tu web puede hacer",
+      "title_em": "más que mostrar",
+      "title_b": "tu horario y tus fotos.",
+      "sub": "Reserva, pedido para recoger, pago en línea, citas, reseñas, fidelización: añado a tu web las funciones que tu negocio realmente necesita, y nada más.",
+      "hero_price": "Desde 190 € · Precio exacto antes de empezar · Sin compromiso",
+      "aside_title": "Cuatro pasos",
+      "steps": [
+        {
+          "name": "Tu necesidad",
+          "short": "Lo que te hace perder tiempo",
+          "text": "Me cuentas lo que haces a mano hoy: coger reservas por teléfono, apuntar pedidos, volver a contactar a clientes. Elegimos juntos la función que más te ayuda."
+        },
+        {
+          "name": "Precio antes",
+          "short": "Antes de empezar",
+          "text": "Te doy el precio exacto antes de empezar. El precio cambia según tu web y lo que quieras en la función: los precios de esta página son puntos de partida."
+        },
+        {
+          "name": "Puesta en marcha",
+          "short": "Añadida a tu web",
+          "text": "Añado la función a tu web, la pruebo contigo y te enseño a usarla."
+        },
+        {
+          "name": "Uso",
+          "short": "Eres autónomo",
+          "text": "Gestionas tú mismo las reservas, los pedidos o las reseñas. Si algo se atasca, me llamas."
+        }
+      ],
+      "points_eyebrow": "Por qué a medida",
+      "points_title": "Una función adaptada a tu negocio",
+      "points": [
+        {
+          "name": "Pensada para tu oficio",
+          "text": "Una panadería no tiene las mismas necesidades que un restaurante o un taller. Configuro la función para tu forma de trabajar."
+        },
+        {
+          "name": "Integrada en tu web",
+          "text": "Mismo aspecto, misma dirección: tus clientes no son enviados a una plataforma externa."
+        },
+        {
+          "name": "Sin suscripción obligatoria",
+          "text": "Pagas la puesta en marcha una sola vez. El mantenimiento es opcional y se elige aparte."
+        }
+      ],
+      "prices_eyebrow": "Las funciones",
+      "prices_title": "Lo que puedo añadir a tu web",
+      "prices": [
+        {
+          "name": "Pedido para recoger",
+          "price": "190 €",
+          "unit": "",
+          "tagline": "Tus clientes piden en línea y pagan al recoger, en la tienda.",
+          "items": [
+            "Carta o catálogo con los productos disponibles",
+            "Elección de la franja horaria de recogida",
+            "Notificación de cada pedido",
+            "Correos automáticos al cliente y a ti",
+            "Sin pago en línea"
+          ]
+        },
+        {
+          "name": "Pedido para recoger con pago en línea",
+          "price": "490 €",
+          "unit": "",
+          "tagline": "La misma función, con pago con tarjeta en el momento del pedido.",
+          "items": [
+            "Todo lo que incluye el pedido para recoger",
+            "Pago seguro con Stripe",
+            "Confirmación enviada al cliente",
+            "Las comisiones de Stripe las cobra Stripe"
+          ]
+        },
+        {
+          "name": "Reserva en línea",
+          "price": "desde 290 €",
+          "unit": "",
+          "tagline": "Tus clientes reservan una mesa o una franja horaria sin llamarte.",
+          "items": [
+            "Elección de fecha, hora y número de personas",
+            "Confirmación por correo",
+            "Lista de reservas para ti",
+            "Correos automáticos al cliente y a ti"
+          ]
+        },
+        {
+          "name": "Muestra de reseñas",
+          "price": "desde 290 €",
+          "unit": "",
+          "tagline": "¿Un nuevo visitante duda? Las reseñas de tus clientes le tranquilizan antes de que te llame.",
+          "items": [
+            "Tus reseñas desde la página de inicio, sin que el visitante tenga que buscarlas en Google",
+            "Espacio de gestión: añades, modificas o quitas tus reseñas tú mismo",
+            "Solo reseñas reales, nunca inventadas"
+          ]
+        },
+        {
+          "name": "Reserva de citas",
+          "price": "desde 290 €",
+          "unit": "",
+          "tagline": "Tus clientes o pacientes piden cita sin llamarte.",
+          "items": [
+            "Tu disponibilidad en directo: el cliente elige la franja que le conviene",
+            "Tú ajustas tus días, horarios, vacaciones y la duración de cada cita",
+            "Una franja reservada queda bloqueada: sin reservas dobles",
+            "Confirmación por correo al cliente y a ti, lista de citas siempre al día"
+          ]
+        },
+        {
+          "name": "Solicitud de presupuesto",
+          "price": "desde 290 €",
+          "unit": "",
+          "tagline": "El cliente describe su necesidad desde la web, tú recibes todo por correo.",
+          "items": [
+            "Formulario adaptado a tu oficio",
+            "Fotos adjuntas a la solicitud",
+            "Solicitud recibida por correo"
+          ]
+        },
+        {
+          "name": "Espacio de gestión de la web",
+          "price": "desde 290 €",
+          "unit": "",
+          "tagline": "Modificas tu web tú mismo, sin llamarme para cada cambio.",
+          "items": [
+            "Tus textos, fotos y carta modificables cuando quieras",
+            "Reseñas: añadir y modificar según tus necesidades",
+            "Acceso protegido con usuario y contraseña"
+          ]
+        },
+        {
+          "name": "Fidelización, base de clientes y ofertas",
+          "price": "desde 490 €",
+          "unit": "",
+          "tagline": "Haz que tus clientes vuelvan y mantén el contacto con ellos.",
+          "items": [
+            "Tarjeta de fidelización digital de sellos o puntos, con los colores y el logotipo de tu negocio",
+            "Configuras tú mismo el programa y las recompensas",
+            "Base de datos de tus clientes y seguimiento de sus visitas",
+            "Estadísticas de visitas, fidelidad y recompensas entregadas",
+            "Crea y gestiona tus campañas de ofertas y promociones desde tu espacio, por correo o WhatsApp"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Los precios son definitivos?",
+          "a": "No, son puntos de partida. El precio exacto depende de tu web y de lo que quieras en la función. Te lo doy antes de empezar y no se hace nada sin tu acuerdo."
+        },
+        {
+          "q": "¿Puedo añadir una función a una web que no hiciste tú?",
+          "a": "Depende de cómo esté construida tu web. Escríbeme la dirección de tu web: la reviso y te digo si es posible o si conviene rehacerla."
+        },
+        {
+          "q": "¿Qué diferencia hay entre pedido para recoger a 190 € y a 490 €?",
+          "a": "Con la versión de 190 €, el cliente pide en línea y paga en la tienda al recoger. Con la versión de 490 €, paga en línea con tarjeta en el momento del pedido, a través de Stripe."
+        },
+        {
+          "q": "¿Hay que pagar una suscripción?",
+          "a": "No, la puesta en marcha se paga una sola vez. El mantenimiento de la web es opcional y se elige aparte. Algunos servicios externos tienen sus propias tarifas, como Stripe para los pagos o WhatsApp para el envío de campañas: te las indico antes."
+        }
+      ],
+      "final_title": "Cuéntame qué te gustaría automatizar",
+      "final_text": "Descríbeme tu negocio y lo que haces a mano hoy. Te digo qué es posible y a qué precio, sin compromiso."
+    }
   }
 }

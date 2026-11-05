@@ -27,7 +27,8 @@ export function routes({ projets = null } = {}) {
   const metiers = METIERS.map((m) => `/fr/${m.slug}`); // pages par métier : français seulement
   const pagesProjets = projets === null ? [] : LANGS.flatMap((lang) => [`/${lang}/projets`, ...projets.map((id) => `/${lang}/projets/${id}`)]);
   const services = [SERVICES_SLUG, ...SERVICE_PAGES.map((s) => s.slug)].map((slug) => `/fr/${slug}`); // pages Services : français seulement
-  return [...base, ...services, ...metiers, ...pagesProjets];
+  const traduites = SERVICE_PAGES.filter((s) => s.multilang).flatMap((s) => LANGS.filter((l) => l !== "fr").map((l) => `/${l}/${s.slug}`)); // sauf celles traduites
+  return [...base, ...services, ...traduites, ...metiers, ...pagesProjets];
 }
 
 // Lecture de l'API du portfolio ; renvoie null (avec un avertissement) si elle est injoignable ou répond de travers

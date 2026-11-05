@@ -8,6 +8,8 @@
     "admin": "Admin",
     "logout": "Déconnexion",
     "services": "Services",
+    "offers": "Mes offres",
+    "custom": "Fonctions sur mesure",
     "quote": "Demander un devis",
     "skip": "Aller au contenu",
     "aria_main": "Navigation principale",
@@ -1052,7 +1054,7 @@
       "cta_question": "Poser une question",
       "steps_eyebrow": "Étapes",
       "steps_title": "Comment ça se passe",
-      "all_services": "Voir tous les services"
+      "all_services": "Plus de services"
     },
     "refonte": {
       "meta_title": "Refonte de site internet",
@@ -1537,6 +1539,7 @@
     }
   },
   "seo": {
+    "fonctions-sur-mesure": "Ajoutez à votre site les fonctions dont votre activité a besoin : réservation en ligne, commande à retirer, paiement en ligne, rendez-vous, devis, avis et fidélité. Prix affichés, sans engagement.",
     "refonte-site-internet": "Refonte de site internet dès 590 € : audit, nouveau design lisible sur mobile, redirections pour garder votre référencement Google. Votre ancien site reste en ligne pendant les travaux.",
     "maintenance-site-internet": "Maintenance de site internet dès 49 € par mois : hébergement sécurisé, sauvegardes, surveillance et mises à jour. Trois niveaux, sans engagement.",
     "referencement-local": "Référencement local : fiche Google Business, réglages du site, avis clients et rapport chiffré. Mise en place 290 €. Aucune place sur Google n'est promise.",
