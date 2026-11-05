@@ -140,6 +140,11 @@ function ServiceDetailContent({ service }) {
                     <ul className="metier-checks svc-plan-items">
                       {row.items.map((item) => <li key={item}>{item}</li>)}
                     </ul>
+                    {row.link_to && (
+                      <Link className="svc-more svc-plan-demo" to={row.link_to}>
+                        {row.link_label} <span aria-hidden="true">→</span>
+                      </Link>
+                    )}
                     {row.demo_url && (
                       <a className="svc-more svc-plan-demo" href={row.demo_url} target="_blank" rel="noopener noreferrer">
                         {row.demo_label} <span aria-hidden="true">↗</span>
