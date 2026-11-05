@@ -1476,9 +1476,10 @@
           "unit": "",
           "tagline": "Vos clients ou vos patients prennent rendez-vous sans vous appeler.",
           "items": [
-            "Choix d'un créneau selon vos horaires",
-            "Confirmation par email",
-            "Liste des rendez-vous pour vous"
+            "Vos disponibilités affichées en direct : le client choisit le créneau qui lui convient",
+            "Vous réglez vos jours, vos horaires, vos congés et la durée de chaque rendez-vous",
+            "Un créneau pris est bloqué : pas de double réservation",
+            "Confirmation par email au client et à vous, liste des rendez-vous toujours à jour"
           ]
         },
         {
