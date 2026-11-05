@@ -7,7 +7,7 @@ import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
 import { collecterJsonLd, faqJsonLd } from "../../utils/ssrHead";
 import { vatArticle } from "../../data/legal";
-import { SERVICES, SERVICES_SLUG } from "../../data/services";
+import { FONCTIONS_PAGE, SERVICES, SERVICES_SLUG } from "../../data/services";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from "../../utils/contactInfo";
 import "../MetierPage/MetierPage.css";
 import "./ServicesPage.css";
@@ -144,6 +144,18 @@ function ServicesContent() {
           </section>
         );
       })}
+
+      {/* ALLER PLUS LOIN : lien vers la page des fonctions sur mesure */}
+      <section className="block svc-beyond" aria-labelledby="services-beyond-title">
+        <div className="container svc-beyond-inner reveal">
+          <p className="eyebrow">{s("beyond_eyebrow")}</p>
+          <h2 id="services-beyond-title" className="block-title">{s("beyond_title")}</h2>
+          <p className="svc-desc">{s("beyond_text")}</p>
+          <Link to={`/fr/${FONCTIONS_PAGE}`} className="btn-outline">
+            {s("beyond_cta")} <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
 
       <p className="container svc-vat">{t("home.price_note", { article: vatArticle() })}</p>
 

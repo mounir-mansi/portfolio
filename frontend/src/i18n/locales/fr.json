@@ -971,6 +971,10 @@
         ]
       }
     ],
+    "beyond_eyebrow": "Aller plus loin",
+    "beyond_title": "Des fonctions sur mesure pour votre site",
+    "beyond_text": "Réservation en ligne, commande à retirer, paiement par carte, emails automatiques, avis : je peux ajouter à votre site les fonctions dont votre activité a besoin.",
+    "beyond_cta": "Voir les fonctions et les prix",
     "plans_eyebrow": "Maintenance",
     "plans_title": "Trois niveaux de maintenance",
     "plans_text": "Le niveau Essentiel est celui affiché sur l'accueil, au même prix. Les deux autres ajoutent du temps de ma part chaque mois.",
@@ -1363,6 +1367,166 @@
       ],
       "final_title": "Voyons où vous en êtes sur Google",
       "final_text": "Donnez-moi le nom de votre activité et votre ville. Je regarde ce que Google montre aujourd'hui et je vous dis ce qui peut être amélioré, sans engagement."
+    },
+    "fonctions": {
+      "meta_title": "Fonctions sur mesure pour votre site",
+      "eyebrow": "Fonctions sur mesure",
+      "title_a": "Votre site peut faire",
+      "title_em": "plus qu'afficher",
+      "title_b": "vos horaires et vos photos.",
+      "sub": "Réservation, commande à retirer, paiement en ligne, emails automatiques, avis : j'ajoute à votre site les fonctions dont votre activité a vraiment besoin, et rien de plus.",
+      "hero_price": "Dès 90 € · Prix exact donné avant de commencer · Sans engagement",
+      "aside_title": "Quatre étapes",
+      "steps": [
+        {
+          "name": "Votre besoin",
+          "short": "Ce qui vous fait perdre du temps",
+          "text": "Vous me dites ce que vous faites à la main aujourd'hui : prendre des réservations au téléphone, noter des commandes, relancer des clients. On choisit ensemble la fonction qui vous rend le plus service."
+        },
+        {
+          "name": "Prix annoncé",
+          "short": "Avant de commencer",
+          "text": "Je vous donne le prix exact avant de commencer. Le prix change selon votre site et ce que vous voulez dans la fonction : les prix de cette page sont des points de départ."
+        },
+        {
+          "name": "Mise en place",
+          "short": "Ajoutée à votre site",
+          "text": "J'ajoute la fonction à votre site, je la teste avec vous et je vous montre comment l'utiliser."
+        },
+        {
+          "name": "Utilisation",
+          "short": "Vous êtes autonome",
+          "text": "Vous gérez les réservations, les commandes ou les avis vous-même. Si quelque chose bloque, vous m'appelez."
+        }
+      ],
+      "points_eyebrow": "Pourquoi sur mesure",
+      "points_title": "Une fonction adaptée à votre activité",
+      "points": [
+        {
+          "name": "Pensée pour votre métier",
+          "text": "Une boulangerie n'a pas les mêmes besoins qu'un restaurant ou qu'un garage. Je configure la fonction pour votre façon de travailler."
+        },
+        {
+          "name": "Intégrée à votre site",
+          "text": "Même apparence, même adresse : vos clients ne sont pas envoyés vers une plateforme tierce."
+        },
+        {
+          "name": "Sans abonnement obligatoire",
+          "text": "Vous payez la mise en place une fois. La maintenance est facultative et se choisit à part."
+        }
+      ],
+      "prices_eyebrow": "Les fonctions",
+      "prices_title": "Ce que je peux ajouter à votre site",
+      "prices": [
+        {
+          "name": "Commande à retirer",
+          "price": "190 €",
+          "unit": "une seule fois",
+          "tagline": "Vos clients commandent en ligne et paient au retrait, en boutique.",
+          "items": [
+            "Carte ou catalogue avec les produits disponibles",
+            "Choix du créneau de retrait",
+            "Notification de chaque commande",
+            "Pas de paiement en ligne"
+          ],
+          "demo_label": "Voir la démo boulangerie",
+          "demo_url": "https://boulangerie.mandev.fr"
+        },
+        {
+          "name": "Commande à retirer avec paiement en ligne",
+          "price": "490 €",
+          "unit": "une seule fois",
+          "tagline": "Même fonction, avec le paiement par carte au moment de la commande.",
+          "items": [
+            "Tout ce que contient la commande à retirer",
+            "Paiement sécurisé par Stripe",
+            "Confirmation envoyée au client",
+            "Les frais de Stripe sont facturés par Stripe"
+          ]
+        },
+        {
+          "name": "Réservation en ligne",
+          "price": "dès 290 €",
+          "unit": "une seule fois",
+          "tagline": "Vos clients réservent une table ou un créneau sans vous appeler.",
+          "items": [
+            "Choix de la date, de l'heure et du nombre de personnes",
+            "Confirmation par email",
+            "Liste des réservations pour vous"
+          ],
+          "demo_label": "Voir la démo restaurant",
+          "demo_url": "https://restaurant.mandev.fr"
+        },
+        {
+          "name": "Emails automatiques",
+          "price": "dès 90 €",
+          "unit": "une seule fois",
+          "tagline": "Le client reçoit un message sans que vous ayez à l'écrire.",
+          "items": [
+            "Confirmation de réservation ou de commande",
+            "Message envoyé à vous aussi, pour être prévenu",
+            "Textes écrits avec vous"
+          ]
+        },
+        {
+          "name": "Affichage des avis",
+          "price": "dès 120 €",
+          "unit": "une seule fois",
+          "tagline": "Les vrais avis de vos clients, visibles sur votre site.",
+          "items": [
+            "Avis affichés sur la page d'accueil",
+            "Seulement de vrais avis, jamais inventés",
+            "Collecte des avis : voir le référencement local"
+          ]
+        },
+        {
+          "name": "Rendez-vous et devis en ligne",
+          "price": "dès 390 €",
+          "unit": "une seule fois",
+          "tagline": "Pour les artisans et les services : le client demande un rendez-vous ou un devis depuis le site.",
+          "items": [
+            "Formulaire adapté à votre métier",
+            "Choix d'un créneau de rendez-vous",
+            "Démo disponible sur demande"
+          ]
+        },
+        {
+          "name": "Espace de gestion, SMS, fidélité",
+          "price": "sur devis",
+          "unit": "selon le besoin",
+          "tagline": "Les fonctions plus larges, étudiées au cas par cas.",
+          "items": [
+            "Espace pour gérer vos contenus, vos commandes ou vos réservations",
+            "Envoi de SMS : le coût des SMS est refacturé",
+            "Cartes de fidélité et cartes cadeaux",
+            "Démo disponible sur demande"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Les prix sont-ils définitifs ?",
+          "a": "Non, ce sont des points de départ. Le prix exact dépend de votre site et de ce que vous voulez dans la fonction. Je vous le donne avant de commencer, et rien n'est fait sans votre accord."
+        },
+        {
+          "q": "Puis-je ajouter une fonction à un site que vous n'avez pas fait ?",
+          "a": "Cela dépend de la façon dont votre site est construit. Écrivez-moi l'adresse de votre site : je regarde et je vous dis si c'est possible, ou s'il vaut mieux le refaire."
+        },
+        {
+          "q": "Quelle différence entre commande à retirer à 190 € et à 490 € ?",
+          "a": "Avec la version à 190 €, le client commande en ligne et paie en boutique au retrait. Avec la version à 490 €, il paie en ligne par carte au moment de la commande, via Stripe."
+        },
+        {
+          "q": "Y a-t-il un abonnement à payer ?",
+          "a": "Non, la mise en place se paie une fois. La maintenance du site est facultative et se choisit séparément. Certains services tiers ont leurs propres frais, comme Stripe pour les paiements ou les SMS : je vous les indique avant."
+        },
+        {
+          "q": "Pouvez-vous me montrer une démo ?",
+          "a": "Oui pour la commande à retirer et la réservation : les démos sont en ligne sur cette page. Pour les autres fonctions, je peux vous en montrer une sur demande."
+        }
+      ],
+      "final_title": "Dites-moi ce que vous aimeriez automatiser",
+      "final_text": "Décrivez-moi votre activité et ce que vous faites à la main aujourd'hui. Je vous dis ce qui est possible et à quel prix, sans engagement."
     }
   },
   "seo": {

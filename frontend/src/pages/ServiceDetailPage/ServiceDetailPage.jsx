@@ -131,7 +131,7 @@ function ServiceDetailContent({ service }) {
                 <p className="eyebrow">{p("prices_eyebrow")}</p>
                 <h2 id="service-prices-title" className="block-title">{p("prices_title")}</h2>
               </header>
-              <div className="svc-plans svc-plans--two">
+              <div className={`svc-plans svc-plans--two${prices.length > 2 ? " svc-plans--many" : ""}`}>
                 {prices.map((row, i) => (
                   <article key={row.name} className="svc-plan reveal" style={{ "--delay": `${i * 90}ms` }}>
                     <h3 className="svc-plan-name">{row.name}</h3>
@@ -140,6 +140,11 @@ function ServiceDetailContent({ service }) {
                     <ul className="metier-checks svc-plan-items">
                       {row.items.map((item) => <li key={item}>{item}</li>)}
                     </ul>
+                    {row.demo_url && (
+                      <a className="svc-more svc-plan-demo" href={row.demo_url} target="_blank" rel="noopener noreferrer">
+                        {row.demo_label} <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
                   </article>
                 ))}
               </div>

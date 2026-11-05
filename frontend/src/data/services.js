@@ -18,4 +18,8 @@ export const SERVICE_PAGES = [
   { slug: "maintenance-site-internet", key: "maintenance", plans: true },
   { slug: "refonte-site-internet", key: "refonte" },
   { slug: "referencement-local", key: "referencement" },
+  { slug: "fonctions-sur-mesure", key: "fonctions" },
 ];
+
+// Page « Aller plus loin » liée depuis /fr/services
+export const FONCTIONS_PAGE = "fonctions-sur-mesure";
