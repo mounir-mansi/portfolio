@@ -143,15 +143,16 @@ export default function PropositionPage() {
 
   return (
     <Layout hideFooterCta>
-      <header className="page-head container">
-        <h1 className="page-title">Votre proposition</h1>
-        <p className="page-intro">Une minute suffit : votre nom, ce qui vous intéresse, et c'est parti. Je vous réponds avec un devis simple, sans engagement.</p>
+      <header className="page-head container prop-head">
+        <h1 className="page-title prop-title">Votre proposition</h1>
+        <p className="page-intro prop-intro">Une minute, sans engagement.</p>
       </header>
 
       <div className="page-body container">
         <form className="contact-form prop-form" onSubmit={handleSubmit} noValidate>
           <Honeypot />
 
+          <div className="prop-layout">
           {/* 1. Qui êtes-vous */}
           <div className="prop-identite">
             <div className="form-group">
@@ -159,8 +160,8 @@ export default function PropositionPage() {
               <input id="prop-name" name="name" type="text" autoComplete="name" maxLength={MAX_NAME} value={name} onChange={(e) => setName(e.target.value)} placeholder="Prénom Nom" />
             </div>
             <div className="form-group">
-              <label htmlFor="prop-phone">Téléphone <span className="prop-opt">(facultatif)</span></label>
-              <input id="prop-phone" name="phone" type="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="06 12 34 56 78" />
+              <label htmlFor="prop-phone">Téléphone</label>
+              <input id="prop-phone" name="phone" type="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Facultatif" />
             </div>
           </div>
 
@@ -175,9 +176,9 @@ export default function PropositionPage() {
           </fieldset>
 
           {/* 3. Informations complémentaires */}
-          <div className="form-group">
+          <div className="form-group prop-info">
             <label htmlFor="prop-message">Informations complémentaires <span className="prop-opt">(facultatif)</span></label>
-            <textarea id="prop-message" name="message" rows={4} maxLength={MAX_MESSAGE} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Une précision, une question, le meilleur moment pour vous joindre…" />
+            <textarea id="prop-message" name="message" rows={3} maxLength={MAX_MESSAGE} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Une précision, une question, le meilleur moment pour vous joindre…" />
           </div>
 
           {/* 4. Ajouter des fonctionnalités ? Non : le formulaire part tel quel. Oui : la liste se déplie. */}
@@ -186,7 +187,7 @@ export default function PropositionPage() {
               <input type="checkbox" checked={ouvert} onChange={() => setOuvert((o) => !o)} aria-expanded={ouvert} aria-controls="prop-ajouts" />
               <span className="prop-box" aria-hidden="true" />
               <span className="prop-text">
-                <span className="prop-label">Je souhaite aussi ajouter des fonctionnalités ou des services</span>
+                <span className="prop-label"><span className="prop-long">Je souhaite aussi ajouter des fonctionnalités ou des services</span><span className="prop-short">Ajouter des fonctionnalités ou services</span></span>
                 <span className="prop-detail">Réservation en ligne, bouton d'appel, Instagram, référencement… Sinon, laissez décoché.</span>
               </span>
             </label>
@@ -201,18 +202,21 @@ export default function PropositionPage() {
               </fieldset>
             )}
           </div>
+          </div>
 
           <div ref={statusRef} tabIndex={-1} role="status" aria-live="polite" className="form-status-box">
             {error && <p className="form-status err">{error}</p>}
           </div>
 
-          <button type="submit" className="btn-primary contact-submit" disabled={loading}>
-            {loading ? "Envoi…" : "Envoyer ma demande"}
-          </button>
-          <p className="contact-note">
-            Votre nom et votre message ne servent qu'à vous répondre.{" "}
-            <Link to={`/${lang}/confidentialite`}>Politique de confidentialité</Link>
-          </p>
+          <div className="prop-envoi">
+            <button type="submit" className="btn-primary contact-submit" disabled={loading}>
+              {loading ? "Envoi…" : "Envoyer ma demande"}
+            </button>
+            <p className="contact-note">
+              <span className="prop-note-texte">Votre nom et votre message ne servent qu'à vous répondre.</span>{" "}
+              <Link to={`/${lang}/confidentialite`}>Confidentialité</Link>
+            </p>
+          </div>
         </form>
       </div>
     </Layout>

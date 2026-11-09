@@ -8,9 +8,8 @@
   gap: 1rem;
 }
 
-@media (max-width: 560px) {
-  .prop-identite { grid-template-columns: 1fr; }
-}
+/* Nom et téléphone restent côte à côte, même sur mobile (gain de place) */
+.prop-identite { gap: 0.75rem; }
 
 .prop-pole {
   margin: 0;
@@ -149,4 +148,73 @@
 @media (prefers-reduced-motion: reduce) {
   .prop-reveal, .prop-deplie { animation: none; }
   .prop-choice, .prop-box, .prop-box::after { transition: none; }
+}
+
+/* ---------- Tout le formulaire sur un seul écran (fermé) ---------- */
+
+/* En-tête réduit */
+.page-head.prop-head { padding-block: clamp(1rem, 3vh, 2rem) clamp(0.6rem, 1.5vh, 1.1rem); }
+.page-title.prop-title { font-size: var(--step-2); max-width: none; }
+.page-intro.prop-intro { margin-top: 0.35rem; font-size: var(--step-0); }
+.page-head.prop-head + .page-body { padding-bottom: 2.5rem; }
+
+/* Champs et textarea resserrés */
+.contact-form.prop-form { gap: 1rem; }
+.prop-form .form-group { gap: 0.35rem; }
+.prop-form .form-group input,
+.prop-form .form-group textarea { padding: 0.65em 0.85em; }
+.prop-form .prop-info textarea { min-height: 5.25rem; }
+
+/* Grille : une colonne (mobile), l'ordre est celui de la page */
+.prop-layout { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.prop-layout > * { min-width: 0; }
+
+/* Bouton et note sur une ligne */
+.prop-envoi { display: flex; align-items: center; gap: 0.5rem 1.25rem; flex-wrap: wrap; }
+.prop-envoi .contact-submit { flex: none; }
+.prop-envoi .contact-note { margin: 0; flex: 1 1 14rem; font-size: 0.8rem; }
+
+/* Ordinateur : deux colonnes (identité + message à gauche, proposition + ajouts à droite) */
+@media (min-width: 900px) {
+  .contact-form.prop-form { max-width: 58rem; }
+  .prop-layout {
+    grid-template-columns: 1fr 1fr;
+    /* À gauche identité + message, à droite la proposition (sur deux lignes) ; « ajouter des fonctionnalités » dessous, pleine largeur */
+    grid-template-areas: "ident prop" "info prop" "plus plus";
+    column-gap: 2rem;
+    row-gap: 1rem;
+    align-items: start;
+  }
+  .prop-layout > .prop-identite { grid-area: ident; }
+  .prop-layout > .prop-pole--main { grid-area: prop; }
+  .prop-layout > .prop-info { grid-area: info; }
+  .prop-layout > .prop-plus { grid-area: plus; }
+}
+
+.prop-short { display: none; }
+
+/* Mobile : on garde le titre de chaque case, on masque les explications */
+@media (max-width: 899px) {
+  .prop-long { display: none; }
+  .prop-short { display: inline; }
+  .prop-note-texte { display: none; }
+  .page-head.prop-head { padding-block: 0.6rem 0.4rem; }
+  .page-title.prop-title { font-size: 1.75rem; }
+  .page-intro.prop-intro { font-size: 0.92rem; margin-top: 0.2rem; }
+  .contact-form.prop-form, .prop-layout { gap: 0.75rem; }
+  .prop-form .form-group { gap: 0.25rem; }
+  .prop-form .form-group label { font-size: 0.85rem; }
+  .prop-form .form-group input,
+  .prop-form .form-group textarea { padding: 0.55em 0.75em; font-size: 0.95rem; }
+  .prop-form .prop-info textarea { height: 3.6rem; min-height: 3.6rem; }
+  .page-head.prop-head + .page-body { padding-bottom: 1.5rem; }
+  .prop-pole--main .prop-detail,
+  .prop-choice--toggle .prop-detail { display: none; }
+  .prop-pole--main .prop-choice,
+  .prop-choice--toggle { min-height: 2.6rem; padding: 0.5rem 0.8rem; align-items: center; }
+  .prop-pole--main .prop-box,
+  .prop-choice--toggle .prop-box { margin-top: 0; }
+  .prop-pole { gap: 0.4rem; }
+  .prop-pole legend { margin-bottom: 0.4rem; }
+  .prop-envoi .contact-note { font-size: 0.74rem; }
 }
