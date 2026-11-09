@@ -9,6 +9,7 @@ const { submitContact, updateBrief, requireBriefToken, receiveFile, uploadBriefF
 const { getProjects, getAllProjects, getProjectById, createProject, updateProject, deleteProject, toggleVisible } = require("../controllers/projectController");
 const { getSkills, createSkill, updateSkill, deleteSkill } = require("../controllers/skillController");
 const { getSections, uploadSection } = require("../controllers/sectionController");
+const { getReviews, submitReview, getAllReviews, setReviewStatus, deleteReview } = require("../controllers/reviewController");
 
 // Auth
 router.post("/login", login);
@@ -25,6 +26,13 @@ router.get("/admin/messages", verifyToken, getMessages);
 router.patch("/admin/messages/:id/read", verifyToken, markRead);
 router.delete("/admin/messages/:id", verifyToken, deleteMessage);
 router.post("/admin/messages/:id/reply", verifyToken, replyMessage);
+
+// Avis clients (dépôt public, publication après validation dans l'admin)
+router.get("/api/reviews", getReviews);
+router.post("/api/reviews", submitReview);
+router.get("/admin/reviews", verifyToken, getAllReviews);
+router.patch("/admin/reviews/:id/status", verifyToken, setReviewStatus);
+router.delete("/admin/reviews/:id", verifyToken, deleteReview);
 
 // Projets
 router.get("/api/projects", getProjects);

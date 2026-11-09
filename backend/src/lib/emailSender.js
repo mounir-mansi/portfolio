@@ -175,4 +175,24 @@ async function sendReply({ to, name, replyMessage }) {
   });
 }
 
-module.exports = { splitIntoBatches, sendContactNotification, sendBriefNotification, sendReply };
+// Prévient d'un nouvel avis à relire (il n'est publié qu'après validation dans l'admin)
+async function sendReviewNotification({ name, role, rating, text, email }) {
+  const safeName = escapeHtml(name);
+  const lines = [
+    `<p><strong>Prénom :</strong> ${safeName}</p>`,
+    `<p><strong>Note :</strong> ${"★".repeat(rating)}${"☆".repeat(5 - rating)} (${rating}/5)</p>`,
+  ];
+  if (role) lines.push(`<p><strong>Métier / entreprise :</strong> ${escapeHtml(role)}</p>`);
+  if (email) lines.push(`<p><strong>Email (non affiché) :</strong> ${escapeHtml(email)}</p>`);
+  lines.push(`<p><strong>Avis :</strong></p>`, `<p>${escapeHtml(text).replace(/\n/g, "<br>")}</p>`);
+  lines.push(`<p>Il n'est pas visible sur le site tant que vous ne l'avez pas publié, dans l'espace admin, onglet Avis.</p>`);
+
+  await resend.emails.send({
+    from: process.env.EMAIL_FROM,
+    to: process.env.EMAIL_CONTACT,
+    subject: `Nouvel avis à valider : ${name} (${rating}/5)`,
+    html: `<h2>Nouvel avis reçu sur le portfolio</h2>\n${lines.join("\n")}`,
+  });
+}
+
+module.exports = { splitIntoBatches, sendContactNotification, sendBriefNotification, sendReply, sendReviewNotification };

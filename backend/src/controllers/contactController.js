@@ -5,6 +5,7 @@ const storage = require("../lib/briefStorage");
 const { detectFileType, MIME_BY_EXT, FILE_ID_REGEX } = require("../lib/fileType");
 const { sendContactNotification, sendBriefNotification, sendReply } = require("../lib/emailSender");
 const { LABELS: PROPOSITION_LABELS } = require("../lib/propositions");
+const { clean, HONEYPOT_FIELD, hasLink } = require("../lib/antispam");
 
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
 const MAX_MENU_FILES = 3;
@@ -25,13 +26,7 @@ const PHONE_SEPARATORS = /[\s.\-()]/g;
 const PHONE_REGEX = /^\+?\d{8,15}$/;
 const MAX = { name: 100, email: 254, phone: 30, activity: 100, company: 100, message: 2000 };
 
-const clean = (value) => (typeof value === "string" ? value.trim() : "");
-
-// Anti-spam : champ piège invisible (seuls les robots le remplissent) et refus des liens dans les champs texte.
-// Un vrai visiteur n'écrit presque jamais d'adresse web dans une demande de contact ou de maquette.
-const HONEYPOT_FIELD = "website_url_check";
-const LINK_REGEX = /(?:https?:\/\/|www\.)\S+|\b[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}\/\S+/i;
-const hasLink = (...values) => values.some((v) => LINK_REGEX.test(v));
+// Anti-spam (champ piège, refus des liens) : voir lib/antispam.js
 
 // Liste d'identifiants de propositions (cases cochées) : retourne le tableau sans doublon, ou null si une valeur est inconnue.
 // Object.hasOwn : « constructor » ou « toString » ne doivent pas passer pour des propositions.
