@@ -574,3 +574,16 @@
   margin-right: 0.75em;
   text-decoration: underline;
 }
+
+/* Onglet Avis */
+.rev-help {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.rev-stars {
+  color: #b45309;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+}

@@ -52,6 +52,15 @@ const contactLimiter = rateLimit({
 });
 app.use("/contact", contactLimiter);
 
+// Rate limit dépôt d'avis (POST seulement, plus strict que le contact : un client laisse un avis, pas dix)
+const reviewLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  skip: (req) => req.method !== "POST" || process.env.NODE_ENV !== "production",
+  message: { error: "Trop de tentatives, réessayez dans quelques minutes." },
+});
+app.use("/api/reviews", reviewLimiter);
+
 // Routes API
 app.use(router);
 

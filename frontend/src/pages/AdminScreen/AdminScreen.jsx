@@ -4,6 +4,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { useAuth } from "../../utils/useAuth";
 import AdminMessages from "./tabs/AdminMessages";
+import AdminReviews from "./tabs/AdminReviews";
 import AdminProjects from "./tabs/AdminProjects";
 import AdminSkills from "./tabs/AdminSkills";
 import AdminSections from "./tabs/AdminSections";
@@ -11,6 +12,7 @@ import "./AdminScreen.css";
 
 const TABS = [
   { id: "messages", label: "Messages", icon: "fa-envelope" },
+  { id: "reviews", label: "Avis", icon: "fa-comment-dots" },
   { id: "projects", label: "Projets", icon: "fa-code" },
   { id: "skills", label: "Compétences", icon: "fa-star" },
   { id: "sections", label: "Sections", icon: "fa-image" },
@@ -52,6 +54,7 @@ export default function AdminScreen() {
 
       <div className="admin-content">
         {tab === "messages" && <AdminMessages />}
+        {tab === "reviews" && <AdminReviews />}
         {tab === "projects" && <AdminProjects />}
         {tab === "skills" && <AdminSkills />}
         {tab === "sections" && <AdminSections />}

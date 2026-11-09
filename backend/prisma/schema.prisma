@@ -105,3 +105,20 @@ model Section {
   text_es   String?
   updatedAt DateTime @updatedAt
 }
+
+// Avis laissés par les clients sur la page /fr/avis. Chaque avis arrive « pending » et n'est visible
+// publiquement qu'une fois publié depuis l'admin. L'email (facultatif) n'est jamais affiché.
+model Review {
+  id          Int       @id @default(autoincrement())
+  name        String
+  role        String?
+  rating      Int
+  text        String
+  email       String?
+  // pending (à relire) | published (affiché) | hidden (masqué)
+  status      String    @default("pending")
+  createdAt   DateTime  @default(now())
+  publishedAt DateTime?
+
+  @@index([status, publishedAt])
+}

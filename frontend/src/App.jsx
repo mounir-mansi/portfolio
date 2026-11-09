@@ -7,6 +7,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import PropositionPage from "./pages/PropositionPage/PropositionPage";
+import AvisPage from "./pages/AvisPage/AvisPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage/ProjectDetailPage";
 import MentionsLegalesPage from "./pages/LegalPages/MentionsLegalesPage";
 import ConfidentialitePage from "./pages/LegalPages/ConfidentialitePage";
@@ -63,6 +64,7 @@ function LangRouter() {
       <Route path="projets/:id" element={<ProjectDetailPage />} />
       <Route path="contact" element={<ContactPage />} />
       <Route path="proposition" element={<PropositionPage />} />
+      <Route path="avis" element={<AvisPage />} />
       <Route path="mentions-legales" element={<MentionsLegalesPage />} />
       <Route path="confidentialite" element={<ConfidentialitePage />} />
       <Route path="cgv" element={<CgvPage />} />
