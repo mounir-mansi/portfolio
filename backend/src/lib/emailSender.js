@@ -1,6 +1,7 @@
 const path = require("path");
 const { Resend } = require("resend");
 const storage = require("./briefStorage");
+const { LABELS: PROPOSITION_LABELS } = require("./propositions");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -14,10 +15,19 @@ const escapeHtml = (str) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-async function sendContactNotification({ name, email, phone, activity, company, message, source }) {
+async function sendContactNotification({ name, email, phone, activity, company, message, source, propositions = [], ajouts = [], prospectCode }) {
   const isQuote = source === "devis";
+  const isProposition = source === "proposition";
   const safeName = escapeHtml(name);
   const lines = [`<p><strong>Nom :</strong> ${safeName}</p>`];
+
+  // Réponse à un email de prospection : propositions retenues, ajouts, et code du prospect (le tableau de suivi s'en sert)
+  if (isProposition) {
+    const liste = (ids) => ids.map((id) => `<li>${escapeHtml(PROPOSITION_LABELS[id] || id)}</li>`).join("");
+    if (propositions.length) lines.push(`<p><strong>Propositions retenues :</strong></p><ul>${liste(propositions)}</ul>`);
+    if (ajouts.length) lines.push(`<p><strong>Ajouts souhaités :</strong></p><ul>${liste(ajouts)}</ul>`);
+    if (prospectCode) lines.push(`<p><strong>Code prospect :</strong> ${escapeHtml(prospectCode)}</p>`);
+  }
 
   if (phone) {
     const safePhone = escapeHtml(phone);
@@ -35,11 +45,13 @@ async function sendContactNotification({ name, email, phone, activity, company, 
   await resend.emails.send({
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_CONTACT,
-    subject: isQuote
-      ? `Demande de maquette gratuite de ${safeName}`
-      : `Nouveau message de ${safeName} — Portfolio`,
+    subject: isProposition
+      ? `Proposition${prospectCode ? ` [${prospectCode}]` : ""} : réponse de ${name}`
+      : isQuote
+        ? `Demande de maquette gratuite de ${safeName}`
+        : `Nouveau message de ${safeName} — Portfolio`,
     html: `
-      <h2>${isQuote ? "Nouvelle demande de maquette gratuite" : "Nouveau message depuis le portfolio"}</h2>
+      <h2>${isProposition ? "Réponse à votre proposition" : isQuote ? "Nouvelle demande de maquette gratuite" : "Nouveau message depuis le portfolio"}</h2>
       ${lines.join("\n      ")}
     `,
   });

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { apiFetch } from "../../../utils/api";
+import { TOUTES } from "../../../data/propositions";
 import "./AdminTab.css";
+
+const libelles = (ids) => ids.map((id) => TOUTES[id]?.label || id).join(", ");
 
 export default function AdminMessages() {
   const [messages, setMessages] = useState([]);
@@ -66,6 +69,8 @@ export default function AdminMessages() {
                 {!msg.read && <span className="unread-dot" />}
                 <strong>{msg.name}</strong>
                 {msg.source === "devis" && <span className="tag-quote">Maquette gratuite</span>}
+                {msg.source === "proposition" && <span className="tag-quote">Proposition</span>}
+                {msg.prospectCode && <span className="msg-email">code {msg.prospectCode}</span>}
                 {msg.phone && (
                   <a className="msg-email" href={`tel:${msg.phone.replace(/[^\d+]/g, "")}`}>{msg.phone}</a>
                 )}
@@ -76,6 +81,12 @@ export default function AdminMessages() {
               </div>
               <span className="msg-date">{new Date(msg.createdAt).toLocaleDateString("fr-FR")}</span>
             </div>
+            {(msg.propositions?.length > 0 || msg.ajouts?.length > 0) && (
+              <p className="msg-body msg-brief">
+                {msg.propositions?.length > 0 && <span><strong>Propositions retenues :</strong> {libelles(msg.propositions)}. </span>}
+                {msg.ajouts?.length > 0 && <span><strong>Ajouts souhaités :</strong> {libelles(msg.ajouts)}.</span>}
+              </p>
+            )}
             {msg.message && <p className="msg-body">{msg.message}</p>}
             {(msg.pack || msg.police || msg.pages?.length > 0 || msg.theme || msg.couleurs || msg.echeance || msg.creneau || msg.aLogo !== null) && (
               <p className="msg-body msg-brief">

@@ -45,6 +45,11 @@ model ContactMessage {
   // Empreinte (sha256) du jeton remis au visiteur : le jeton lui-même n'est jamais stocké
   briefTokenHash String?   @unique
   briefExpiresAt DateTime?
+  // Réponse à une proposition envoyée par email (page /fr/proposition) : propositions cochées, ajouts souhaités,
+  // et code aléatoire du prospect (aucune donnée personnelle dedans)
+  propositions   String[]
+  ajouts         String[]
+  prospectCode   String?
   read      Boolean  @default(false)
   replied   Boolean  @default(false)
   createdAt DateTime @default(now())

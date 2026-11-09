@@ -4,6 +4,7 @@ const prisma = require("../lib/prisma");
 const storage = require("../lib/briefStorage");
 const { detectFileType, MIME_BY_EXT, FILE_ID_REGEX } = require("../lib/fileType");
 const { sendContactNotification, sendBriefNotification, sendReply } = require("../lib/emailSender");
+const { LABELS: PROPOSITION_LABELS } = require("../lib/propositions");
 
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
 const MAX_MENU_FILES = 3;
@@ -32,14 +33,77 @@ const HONEYPOT_FIELD = "website_url_check";
 const LINK_REGEX = /(?:https?:\/\/|www\.)\S+|\b[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}\/\S+/i;
 const hasLink = (...values) => values.some((v) => LINK_REGEX.test(v));
 
-// Deux formulaires alimentent cette route :
+// Liste d'identifiants de propositions (cases cochées) : retourne le tableau sans doublon, ou null si une valeur est inconnue.
+// Object.hasOwn : « constructor » ou « toString » ne doivent pas passer pour des propositions.
+function pickIds(value) {
+  if (value === undefined) return [];
+  if (!Array.isArray(value) || value.length > Object.keys(PROPOSITION_LABELS).length) return null;
+  if (!value.every((v) => typeof v === "string" && Object.hasOwn(PROPOSITION_LABELS, v))) return null;
+  return [...new Set(value)];
+}
+
+// Le code du prospect est aléatoire (lettres minuscules et chiffres) : il ne contient aucune donnée personnelle.
+const PROSPECT_CODE_REGEX = /^[a-z0-9]{6,12}$/;
+
+// Page /fr/proposition : lien personnalisé reçu dans un email de prospection.
+// Seul le nom est requis ; téléphone et message sont facultatifs ; au moins une case ou un message.
+async function submitProposition(req, res) {
+  const body = req.body || {};
+  const name = clean(body.name);
+  const phone = clean(body.phone);
+  const message = clean(body.message);
+  const code = clean(body.code).toLowerCase();
+  const propositions = pickIds(body.propositions);
+  const ajouts = pickIds(body.ajouts);
+
+  if (!name) return res.status(400).json({ error: "Votre nom est requis." });
+  if (name.length > MAX.name) return res.status(400).json({ error: "Nom trop long." });
+  if (phone && (phone.length > MAX.phone || !PHONE_REGEX.test(phone.replace(PHONE_SEPARATORS, ""))))
+    return res.status(400).json({ error: "Téléphone invalide." });
+  if (message.length > MAX.message) return res.status(400).json({ error: "Message trop long." });
+  if (code && !PROSPECT_CODE_REGEX.test(code)) return res.status(400).json({ error: "Lien invalide." });
+  if (!propositions || !ajouts) return res.status(400).json({ error: "Choix invalides." });
+  if (!propositions.length && !ajouts.length && !message)
+    return res.status(400).json({ error: "Cochez au moins une proposition ou écrivez un message." });
+  if (hasLink(name, message))
+    return res.status(400).json({ error: "Les liens ne sont pas acceptés dans ce formulaire.", code: "LINKS" });
+
+  try {
+    await prisma.contactMessage.create({
+      data: {
+        name,
+        phone: phone || null,
+        message: message || null,
+        source: "proposition",
+        propositions,
+        ajouts,
+        prospectCode: code || null,
+      },
+    });
+
+    // Email best-effort (pas bloquant)
+    sendContactNotification({ name, phone, message, source: "proposition", propositions, ajouts, prospectCode: code }).catch((err) =>
+      console.error("Email notification error:", err)
+    );
+
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("proposition error:", err);
+    res.status(500).json({ error: "Erreur serveur" });
+  }
+}
+
+// Trois formulaires alimentent cette route :
 // - "contact" (page Contact) : nom, email et message requis
 // - "devis" (demande de maquette sur l'accueil) : nom, téléphone et activité requis, email facultatif
+// - "proposition" (page /fr/proposition, lien d'un email de prospection) : nom requis, voir submitProposition
 async function submitContact(req, res) {
   const body = req.body || {};
 
   // Champ piège rempli : c'est un robot. On répond comme si tout allait bien, sans rien enregistrer ni envoyer.
   if (clean(body[HONEYPOT_FIELD])) return res.json({ ok: true });
+
+  if (body.source === "proposition") return submitProposition(req, res);
 
   const source = body.source === "devis" ? "devis" : "contact";
   const name = clean(body.name);

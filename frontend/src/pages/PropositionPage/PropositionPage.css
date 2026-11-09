@@ -1,0 +1,114 @@
+/* Page /fr/proposition : cases à cocher en cartes, deux pôles. Réutilise les champs de ContactPage.css. */
+.prop-form { gap: 1.5rem; }
+
+.prop-pole {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.prop-pole legend {
+  padding: 0;
+  margin-bottom: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.prop-pole--main legend { color: var(--accent-text); }
+
+.prop-choice {
+  position: relative;
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  min-height: 3.25rem; /* cible tactile confortable */
+  padding: 0.85rem 1rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.prop-choice:hover { border-color: var(--fg-faint); }
+
+/* La vraie case est masquée visuellement mais reste au clavier et pour les lecteurs d'écran */
+.prop-choice input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.prop-box {
+  flex: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.1rem;
+  border: 2px solid var(--fg-faint);
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.prop-box::after {
+  content: "";
+  width: 0.7rem;
+  height: 0.4rem;
+  border-left: 2.5px solid var(--accent-ink);
+  border-bottom: 2.5px solid var(--accent-ink);
+  transform: translateY(-1px) rotate(-45deg) scale(0);
+  transition: transform 0.25s var(--ease);
+}
+
+.prop-text { display: flex; flex-direction: column; gap: 0.15rem; }
+.prop-label { font-weight: 600; color: var(--fg); }
+.prop-detail { font-size: 0.9rem; color: var(--fg-muted); line-height: 1.4; }
+
+.prop-choice:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.prop-choice:has(input:checked) .prop-box {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.prop-choice:has(input:checked) .prop-box::after {
+  transform: translateY(-1px) rotate(-45deg) scale(1);
+}
+
+.prop-choice:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.prop-opt { font-weight: 400; color: var(--fg-muted); }
+
+.prop-done { display: flex; flex-direction: column; gap: 0.75rem; font-size: var(--step-0); }
+.prop-done a { color: var(--accent-text); }
+
+/* Apparition en cascade (opacité et position seulement ; contenu visible sans animation) */
+@keyframes prop-monte {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.prop-reveal { animation: prop-monte 0.5s var(--ease) backwards; animation-delay: calc(var(--i, 0) * 45ms); }
+
+@media (prefers-reduced-motion: reduce) {
+  .prop-reveal { animation: none; }
+  .prop-choice, .prop-box, .prop-box::after { transition: none; }
+}
