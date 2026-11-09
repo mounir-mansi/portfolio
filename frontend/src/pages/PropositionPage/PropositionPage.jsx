@@ -27,14 +27,15 @@ function useNoindex() {
   }, []);
 }
 
-function Choice({ id, info, checked, onChange }) {
+// Case à cocher en carte. compact : sans la ligne d'explication (liste des ajouts), le détail reste en infobulle.
+function Choice({ id, info, checked, onChange, compact = false }) {
   return (
-    <label className="prop-choice">
+    <label className={`prop-choice${compact ? " prop-choice--compact" : ""}`} title={compact ? info.detail : undefined}>
       <input type="checkbox" checked={checked} onChange={() => onChange(id)} />
       <span className="prop-box" aria-hidden="true" />
       <span className="prop-text">
         <span className="prop-label">{info.label}</span>
-        <span className="prop-detail">{info.detail}</span>
+        {!compact && <span className="prop-detail">{info.detail}</span>}
       </span>
     </label>
   );
@@ -61,6 +62,7 @@ export default function PropositionPage() {
 
   const [coches1, setCoches1] = useState(() => new Set(pole1));
   const [coches2, setCoches2] = useState(() => new Set());
+  const [ouvert, setOuvert] = useState(false); // « je veux ajouter des fonctionnalités » : déplie la liste du pôle 2
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
@@ -90,9 +92,11 @@ export default function PropositionPage() {
     const nom = name.trim();
     const tel = phone.trim();
     const texte = message.trim();
+    // Les ajouts ne comptent que si la liste est dépliée : « non » = le formulaire part tel quel
+    const ajouts = ouvert ? [...coches2] : [];
     if (!nom) { setError("Indiquez votre nom pour que je sache à qui répondre."); document.getElementById("prop-name")?.focus(); return; }
     if (tel && !PHONE_REGEX.test(tel.replace(/[\s.\-()]/g, ""))) { setError("Le numéro de téléphone n'a pas l'air valide (ou laissez le champ vide)."); document.getElementById("prop-phone")?.focus(); return; }
-    if (!coches1.size && !coches2.size && !texte) { setError("Cochez au moins une case, ou écrivez-moi un message."); return; }
+    if (!coches1.size && !ajouts.length && !texte) { setError("Cochez au moins une case, ou écrivez-moi un message."); return; }
 
     setLoading(true);
     try {
@@ -104,7 +108,7 @@ export default function PropositionPage() {
           phone: tel,
           code,
           propositions: [...coches1],
-          ajouts: [...coches2],
+          ajouts,
           message: texte,
           [HONEYPOT_FIELD]: trap,
         }),
@@ -141,13 +145,26 @@ export default function PropositionPage() {
     <Layout hideFooterCta>
       <header className="page-head container">
         <h1 className="page-title">Votre proposition</h1>
-        <p className="page-intro">Cochez ce qui vous intéresse, ajoutez un mot si vous voulez : une minute suffit. Je vous réponds avec un devis simple, sans engagement.</p>
+        <p className="page-intro">Une minute suffit : votre nom, ce qui vous intéresse, et c'est parti. Je vous réponds avec un devis simple, sans engagement.</p>
       </header>
 
       <div className="page-body container">
         <form className="contact-form prop-form" onSubmit={handleSubmit} noValidate>
           <Honeypot />
 
+          {/* 1. Qui êtes-vous */}
+          <div className="prop-identite">
+            <div className="form-group">
+              <label htmlFor="prop-name">Votre nom</label>
+              <input id="prop-name" name="name" type="text" autoComplete="name" maxLength={MAX_NAME} value={name} onChange={(e) => setName(e.target.value)} placeholder="Prénom Nom" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="prop-phone">Téléphone <span className="prop-opt">(facultatif)</span></label>
+              <input id="prop-phone" name="phone" type="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="06 12 34 56 78" />
+            </div>
+          </div>
+
+          {/* 2. Ma proposition */}
           <fieldset className="prop-pole prop-pole--main">
             <legend>Ce que je vous propose</legend>
             {pole1.map((id, i) => (
@@ -157,26 +174,32 @@ export default function PropositionPage() {
             ))}
           </fieldset>
 
-          <fieldset className="prop-pole">
-            <legend>Vous pouvez aussi ajouter</legend>
-            {pole2.map((id, i) => (
-              <div key={id} className="prop-reveal" style={{ "--i": i + pole1.length }}>
-                <Choice id={id} info={TOUTES[id]} checked={coches2.has(id)} onChange={basculer(setCoches2)} />
-              </div>
-            ))}
-          </fieldset>
-
-          <div className="form-group">
-            <label htmlFor="prop-name">Votre nom</label>
-            <input id="prop-name" name="name" type="text" autoComplete="name" maxLength={MAX_NAME} value={name} onChange={(e) => setName(e.target.value)} placeholder="Prénom Nom" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="prop-phone">Téléphone <span className="prop-opt">(facultatif)</span></label>
-            <input id="prop-phone" name="phone" type="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="06 12 34 56 78" />
-          </div>
+          {/* 3. Informations complémentaires */}
           <div className="form-group">
             <label htmlFor="prop-message">Informations complémentaires <span className="prop-opt">(facultatif)</span></label>
-            <textarea id="prop-message" name="message" rows={5} maxLength={MAX_MESSAGE} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Une précision, une question, le meilleur moment pour vous joindre…" />
+            <textarea id="prop-message" name="message" rows={4} maxLength={MAX_MESSAGE} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Une précision, une question, le meilleur moment pour vous joindre…" />
+          </div>
+
+          {/* 4. Ajouter des fonctionnalités ? Non : le formulaire part tel quel. Oui : la liste se déplie. */}
+          <div className="prop-plus">
+            <label className="prop-choice prop-choice--toggle">
+              <input type="checkbox" checked={ouvert} onChange={() => setOuvert((o) => !o)} aria-expanded={ouvert} aria-controls="prop-ajouts" />
+              <span className="prop-box" aria-hidden="true" />
+              <span className="prop-text">
+                <span className="prop-label">Je souhaite aussi ajouter des fonctionnalités ou des services</span>
+                <span className="prop-detail">Réservation en ligne, bouton d'appel, Instagram, référencement… Sinon, laissez décoché.</span>
+              </span>
+            </label>
+            {ouvert && (
+              <fieldset id="prop-ajouts" className="prop-pole prop-pole--ajouts prop-deplie">
+                <legend>Cochez ce qui vous intéresse</legend>
+                <div className="prop-grid">
+                  {pole2.map((id) => (
+                    <Choice key={id} id={id} info={TOUTES[id]} checked={coches2.has(id)} onChange={basculer(setCoches2)} compact />
+                  ))}
+                </div>
+              </fieldset>
+            )}
           </div>
 
           <div ref={statusRef} tabIndex={-1} role="status" aria-live="polite" className="form-status-box">
