@@ -6,6 +6,7 @@ import Honeypot from "../../components/Honeypot/Honeypot";
 import { HONEYPOT_FIELD, readHoneypot } from "../../components/Honeypot/honeypotField";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "../../utils/contactInfo";
 import usePageTitle from "../../utils/usePageTitle";
+import useNoindex from "../../utils/useNoindex";
 import { PROPOSITIONS, AJOUTS, TOUTES, PAR_DEFAUT } from "../../data/propositions";
 import "../ContactPage/ContactPage.css";
 import "./PropositionPage.css";
@@ -15,17 +16,6 @@ const MAX_NAME = 100;
 const MAX_MESSAGE = 2000;
 const PHONE_REGEX = /^\+?\d{8,15}$/;
 const CODE_REGEX = /^[a-z0-9]{6,12}$/;
-
-// Page non destinée à Google : on la marque « noindex » le temps de la visite
-function useNoindex() {
-  useEffect(() => {
-    const meta = document.createElement("meta");
-    meta.name = "robots";
-    meta.content = "noindex, nofollow";
-    document.head.appendChild(meta);
-    return () => meta.remove();
-  }, []);
-}
 
 // Case à cocher en carte. compact : sans la ligne d'explication (liste des ajouts), le détail reste en infobulle.
 function Choice({ id, info, checked, onChange, compact = false }) {

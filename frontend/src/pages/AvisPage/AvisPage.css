@@ -1,0 +1,295 @@
+/* Page « Laisser un avis » (/fr/avis). Sélecteurs préfixés avis- : le projet a une seule feuille CSS globale. */
+
+/* --- En-tête : cinq étoiles qui s'allument une à une --- */
+.avis-head {
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.avis-hero-stars {
+  display: flex;
+  gap: clamp(0.35rem, 1vw, 0.7rem);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.avis-hero-star {
+  width: clamp(1.7rem, 3.2vw, 2.6rem);
+  height: clamp(1.7rem, 3.2vw, 2.6rem);
+  fill: var(--accent-text);
+  transform-origin: center;
+  transform-box: fill-box;
+  /* Visibles par défaut : l'animation part d'une étoile éteinte et la rallume (jamais de contenu caché) */
+  animation: avis-allume 0.8s var(--ease) both;
+  animation-delay: calc(var(--i) * 140ms + 250ms);
+}
+
+@keyframes avis-allume {
+  from { fill: var(--line-strong); opacity: 0.45; transform: scale(0.7) rotate(-20deg); }
+  55%  { opacity: 1; transform: scale(1.22) rotate(8deg); }
+  to   { fill: var(--accent-text); opacity: 1; transform: none; }
+}
+
+.page-title.avis-title { max-width: 20ch; }
+
+/* --- Mise en page : formulaire à gauche, avis publiés à droite --- */
+.avis-layout {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .avis-layout {
+    grid-template-columns: minmax(0, 36rem) minmax(0, 1fr);
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+}
+
+/* La barre de navigation est fixe : un champ mis en avant par une erreur ne doit pas passer dessous */
+.avis-form input,
+.avis-form textarea,
+.avis-form fieldset,
+.avis-form .avis-consent,
+.avis-form .form-status-box {
+  scroll-margin-top: 6.5rem;
+}
+
+/* --- Note en étoiles --- */
+.avis-rate {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.avis-rate legend {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.avis-rate-row {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.avis-rate-item { position: relative; }
+
+.avis-rate-item input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  /* Le champ reste atteignable au clavier, mais la souris atteint l'étoile (le <label>), qui coche le champ */
+  pointer-events: none;
+}
+
+.avis-rate-item label {
+  display: inline-flex;
+  padding: 0.35rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.avis-rate-item input:focus-visible + label {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.avis-star {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  fill: transparent;
+  stroke: var(--fg-faint);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  transition: fill 0.2s, stroke 0.2s, transform 0.3s var(--ease);
+}
+
+.avis-star.is-lit {
+  fill: var(--accent-text);
+  stroke: var(--accent-text);
+}
+
+.avis-rate-item label:hover .avis-star { transform: scale(1.14) rotate(-6deg); }
+.avis-rate-item input:checked + label .avis-star { transform: scale(1.08); }
+
+.avis-rate-word {
+  margin-left: 0.85rem;
+  min-width: 6.5rem; /* réserve la place du mot : pas de saut de mise en page quand il apparaît */
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* --- Champs --- */
+.avis-duo {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .avis-duo { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+}
+
+.avis-opt {
+  font-weight: 400;
+  color: var(--fg-muted);
+}
+
+.avis-count {
+  margin: 0;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+}
+
+.avis-count.is-short { color: var(--danger); }
+
+/* --- Consentement --- */
+.avis-consent {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.avis-consent input {
+  position: absolute;
+  opacity: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+}
+
+.avis-box {
+  flex: none;
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  background: var(--bg-raised);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.avis-box::after {
+  content: "";
+  position: absolute;
+  left: 0.38rem;
+  top: 0.14rem;
+  width: 0.34rem;
+  height: 0.68rem;
+  border: solid var(--accent-ink);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.25s var(--ease);
+}
+
+.avis-consent:hover .avis-box { border-color: var(--fg-faint); }
+.avis-consent input:checked + .avis-box { background: var(--accent); border-color: var(--accent); }
+.avis-consent input:checked + .avis-box::after { transform: rotate(45deg) scale(1); }
+.avis-consent input:focus-visible + .avis-box { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.avis-envoi { display: flex; flex-direction: column; gap: 0.9rem; }
+
+/* --- Remerciement --- */
+.avis-done {
+  max-width: 36rem;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 2px solid var(--accent);
+  color: var(--fg-muted);
+  line-height: 1.55;
+}
+
+.avis-done p { margin: 0 0 1rem; }
+.avis-done a { color: var(--fg); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.3em; }
+.avis-done a:hover { color: var(--accent-text); }
+
+/* --- Avis publiés --- */
+.avis-aside-title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.avis-vide { margin: 0; color: var(--fg-muted); }
+
+.avis-liste {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.avis-carte {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.avis-carte figure { margin: 0; }
+
+.avis-stars { display: inline-flex; gap: 0.15rem; }
+.avis-stars .avis-star { width: 1.05rem; height: 1.05rem; }
+
+.avis-carte blockquote { margin: 0.75rem 0 0; }
+
+.avis-carte blockquote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--step-0);
+  font-weight: 300;
+  line-height: 1.5;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.avis-carte figcaption {
+  margin-top: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--fg-muted);
+}
+
+.avis-date { color: var(--fg-faint); }
+
+/* --- Information sur le traitement des avis --- */
+.avis-regles {
+  margin-top: 2.5rem;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+}
+
+.avis-regles h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.avis-regles p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--fg-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Étoiles toutes allumées, immobiles */
+  .avis-hero-star { animation: none; }
+}
