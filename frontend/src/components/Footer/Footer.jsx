@@ -6,6 +6,7 @@ import {
   CONTACT_PHONE_HREF,
   CONTACT_WHATSAPP_HREF,
   GITHUB_URL,
+  INSTAGRAM_URL,
 } from "../../utils/contactInfo";
 import { METIERS } from "../../data/metiers";
 import { SERVICE_PAGES } from "../../data/services";
@@ -43,6 +44,9 @@ export default function Footer({ hideCta = false }) {
             &copy; {new Date().getFullYear()} ManDev Web — {t("footer.rights")}
           </p>
           <ul className="footer-links">
+            <li>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
+            </li>
             <li>
               <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
             </li>
