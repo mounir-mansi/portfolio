@@ -38,9 +38,34 @@ export const METIERS = [
     key: "garage",
     demo: { name: "Garage du Canal", url: "https://garage.mandev.fr", image: "/main-garage.webp" },
   },
+  // Pages par ville (champ `ville`) : listées à part dans le pied de page, avec un lien vers les autres villes.
+  // Elles reprennent la démo d'un métier déjà présent plus haut : DemoStrip écarte les doublons.
   {
     slug: "creation-site-internet-toulouse",
     key: "toulouse",
+    ville: "Toulouse",
     demo: { name: "Le Cercle Barbier", url: "https://cerclebarbier.mandev.fr", image: "/main-cerclebarbier.webp" },
   },
+  {
+    slug: "creation-site-internet-muret",
+    key: "muret",
+    ville: "Muret",
+    demo: { name: "Garage du Canal", url: "https://garage.mandev.fr", image: "/main-garage.webp" },
+  },
+  {
+    slug: "creation-site-internet-colomiers",
+    key: "colomiers",
+    ville: "Colomiers",
+    demo: { name: "Maison Lévain", url: "https://boulangerie.mandev.fr", image: "/main-boulangerie.webp" },
+  },
+  {
+    slug: "creation-site-internet-blagnac",
+    key: "blagnac",
+    ville: "Blagnac",
+    demo: { name: "Maison Camille", url: "https://restaurant.mandev.fr", image: "/main-restaurant.webp" },
+  },
 ];
+
+// Pages par ville et pages par activité, séparées (pied de page, liens entre villes)
+export const VILLES = METIERS.filter((m) => m.ville);
+export const ACTIVITES = METIERS.filter((m) => !m.ville);

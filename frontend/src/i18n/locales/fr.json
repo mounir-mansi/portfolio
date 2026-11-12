@@ -368,6 +368,7 @@
   "metiers": {
     "common": {
       "offer_title": "Ce que vous recevez",
+      "villes_title": "Nous travaillons aussi avec les commerces et artisans de",
       "offer": [
         {
           "name": "Pack Vitrine, dès 490 €",
@@ -887,6 +888,222 @@
       ],
       "final_title": "Recevez la maquette de votre site",
       "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre activité, puis je vous envoie la maquette de votre page d'accueil."
+    },
+    "muret": {
+      "meta_title": "Création de site internet à Muret",
+      "eyebrow": "Création de site internet à Muret",
+      "title_a": "Votre site internet à",
+      "title_em": "Muret",
+      "title_b": "et dans le Muretain, pensé pour les commerces et les artisans.",
+      "sub": "Commerce du centre ancien, artisan installé en zone d'activités ou profession de proximité : je construis votre site à distance, par téléphone ou en visioconférence, et je me déplace à Muret sur demande. Maquette gratuite de votre page d'accueil sous 72 h, sans engagement, à partir de 490 €.",
+      "cta": "Recevoir ma maquette gratuite",
+      "points_eyebrow": "Pourquoi travailler avec moi",
+      "points_title": "Un site fait pour les clients de Muret et du Muretain",
+      "points": [
+        {
+          "name": "Pour le centre ancien comme pour les zones d'activités",
+          "text": "Muret a un centre ancien avec ses rues commerçantes et, autour, plusieurs zones d'activités où travaillent artisans et petites entreprises. Un commerçant a besoin d'horaires, de produits et d'un plan d'accès. Un artisan, de montrer ses réalisations et de se faire contacter facilement. Je construis le site selon votre cas."
+        },
+        {
+          "name": "À distance d'abord, sur place si vous le souhaitez",
+          "text": "Je travaille surtout par téléphone, WhatsApp et visioconférence, ce qui vous évite de perdre du temps entre deux clients. Muret est à une vingtaine de minutes de Toulouse en voiture : si vous préférez que l'on se voie, je me déplace sur demande."
+        },
+        {
+          "name": "Des prix annoncés",
+          "text": "Pack Vitrine dès 490 €, pack Vitrine + dès 990 €, maintenance à 49 € par mois. Les prix sont affichés avant tout échange."
+        },
+        {
+          "name": "Trouvé quand on cherche près de chez soi",
+          "text": "Les clients tapent « boulangerie Muret », « plombier Muret » ou « coiffeur Muret ». Votre site est construit pour répondre à ces recherches : une page claire, rapide sur téléphone, avec les informations de votre commune. Sans promesse de position : cela dépend aussi de la concurrence et du temps."
+        },
+        {
+          "name": "Vous restez maître de votre site",
+          "text": "Avec le pack Vitrine +, vous modifiez vous-même vos horaires, vos prix et vos photos depuis un espace d'administration. L'hébergement et le nom de domaine sont inclus dans la maintenance."
+        },
+        {
+          "name": "La maquette d'abord",
+          "text": "Vous voyez votre page d'accueil avant de vous engager. Si elle ne vous convient pas, vous ne payez rien."
+        }
+      ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un exemple de site pour un garage ou un artisan",
+      "demo_text": "{{name}}, un garage automobile : les prestations avec leurs prix de départ, la prise de rendez-vous en ligne sur des créneaux que le patron gère lui-même, une demande de devis et une galerie photos. La même logique convient à un artisan du bâtiment installé en zone d'activités.",
+      "demo_points": [
+        "Prestations et prix de départ modifiables depuis l'administration",
+        "Prise de rendez-vous en ligne sur des créneaux, sans double réservation",
+        "Demande de devis avec la marque, le modèle et le problème",
+        "Messages des clients et réponse par mail depuis l'administration"
+      ],
+      "demo_note": "Site imaginé par ManDev pour un garage fictif : le vôtre portera votre nom, vos photos et vos tarifs.",
+      "offer_plus": "Jusqu'à 5 pages, avec la prise de rendez-vous en ligne, la demande de devis, le paiement en ligne et un espace d'administration pour modifier vos contenus vous-même.",
+      "faq": [
+        {
+          "q": "Travaillez-vous à Muret ?",
+          "a": "Oui. Je travaille surtout à distance, par téléphone, WhatsApp ou visioconférence. Muret est à une vingtaine de minutes de Toulouse en voiture : je me déplace sur demande si vous préférez que l'on se rencontre."
+        },
+        {
+          "q": "Intervenez-vous autour de Muret ?",
+          "a": "Oui, dans le Muretain et les communes voisines, avec le même fonctionnement : échanges à distance, déplacement possible sur demande."
+        },
+        {
+          "q": "Avez-vous un local où venir vous voir ?",
+          "a": "Non, je n'ai pas de local ouvert au public. Nous échangeons à distance, ou je viens à vous sur demande."
+        },
+        {
+          "q": "Combien coûte un site internet à Muret ?",
+          "a": "Le pack Vitrine démarre à 490 € et le pack Vitrine + à 990 €. La maintenance, qui comprend l'hébergement, le nom de domaine, les mises à jour de sécurité et les sauvegardes, coûte 49 € par mois, sans engagement, résiliable avec un préavis d'un mois."
+        },
+        {
+          "q": "En combien de temps mon site est-il en ligne ?",
+          "a": "Une fois la maquette validée et vos contenus reçus, un site Vitrine est en ligne en 7 jours et un site Vitrine + en 2 semaines. Le délai exact est confirmé dès notre premier échange, avant tout engagement."
+        }
+      ],
+      "final_title": "Recevez la maquette de votre site à Muret",
+      "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre activité, puis je vous envoie la maquette de votre page d'accueil sous 72 h."
+    },
+    "colomiers": {
+      "meta_title": "Création de site internet à Colomiers",
+      "eyebrow": "Création de site internet à Colomiers",
+      "title_a": "Commerçants et artisans de",
+      "title_em": "Colomiers",
+      "title_b": ": un site à votre image, qui vous démarque des grandes enseignes.",
+      "sub": "Commerçant du centre-ville, indépendant installé près des grandes enseignes ou artisan en zone d'activités : je construis votre site avec vous, par téléphone ou en visioconférence, et je me déplace à Colomiers sur demande. Maquette gratuite de votre page d'accueil sous 72 h, sans engagement, à partir de 490 €.",
+      "cta": "Recevoir ma maquette gratuite",
+      "points_eyebrow": "Pourquoi travailler avec moi",
+      "points_title": "Un site qui vous distingue des grandes enseignes",
+      "points": [
+        {
+          "name": "Un indépendant face aux grandes enseignes",
+          "text": "À Colomiers, la zone commerciale du Perget accueille de grandes enseignes. Un commerce indépendant ou un artisan se distingue autrement : un site qui montre qui vous êtes, ce que vous proposez et comment vous joindre, et qui apparaît quand on cherche près de chez soi."
+        },
+        {
+          "name": "Centre-ville, quartiers et zones d'activités",
+          "text": "Colomiers a un centre-ville commerçant, plusieurs quartiers et des zones d'activités comme En Jacca, où sont installés artisans et petites entreprises. Chacun a ses besoins : horaires et produits pour une boutique, réalisations et demande de devis pour un artisan."
+        },
+        {
+          "name": "À distance d'abord, sur place sur demande",
+          "text": "Nous échangeons par téléphone, WhatsApp ou visioconférence, au moment qui vous arrange. Colomiers faisant partie de l'agglomération toulousaine, je me déplace sans difficulté si vous souhaitez que l'on se rencontre."
+        },
+        {
+          "name": "Des prix annoncés",
+          "text": "Pack Vitrine dès 490 €, pack Vitrine + dès 990 €, maintenance à 49 € par mois, affichés avant tout échange."
+        },
+        {
+          "name": "Visible sur votre commune",
+          "text": "On cherche « boulangerie Colomiers », « coiffeur Colomiers » ou « garage Colomiers ». Votre site répond à ces recherches avec une page rapide sur téléphone et les informations utiles. Sans promesse de position : cela dépend aussi de la concurrence et du temps."
+        },
+        {
+          "name": "La maquette d'abord, votre site en main",
+          "text": "Vous voyez votre page d'accueil avant de vous engager, et avec le pack Vitrine + vous modifiez vos contenus vous-même depuis un espace d'administration."
+        }
+      ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un exemple de site pour un commerce de centre-ville",
+      "demo_text": "{{name}}, une boulangerie-pâtisserie : la carte avec ses prix, la commande à retirer en boutique sur un créneau choisi par le client, et un espace où le boulanger gère ses produits et prépare ses commandes. Un commerce indépendant propose ainsi l'essentiel sans passer par une plateforme.",
+      "demo_points": [
+        "Carte modifiable depuis l'administration, avec « épuisé aujourd'hui » en un clic",
+        "Commande à retirer sur créneaux, sans compte et sans paiement en ligne",
+        "Liste « à préparer » : les quantités à cuire pour chaque jour",
+        "Confirmation par email, galerie photos, horaires et ouvert/fermé en direct"
+      ],
+      "demo_note": "Site imaginé par ManDev pour une boulangerie fictive : le vôtre portera votre nom, vos produits, vos photos et vos prix.",
+      "offer_plus": "Jusqu'à 5 pages, avec la commande à retirer ou la prise de rendez-vous, le paiement en ligne et un espace d'administration pour modifier vos contenus vous-même.",
+      "faq": [
+        {
+          "q": "Travaillez-vous à Colomiers ?",
+          "a": "Oui. Je travaille d'abord à distance, par téléphone, WhatsApp ou visioconférence, et je me déplace à Colomiers sur demande."
+        },
+        {
+          "q": "Pourquoi un site plutôt qu'une page sur un réseau social ?",
+          "a": "Un site à votre nom vous appartient : vous choisissez ce que vous montrez, et vos clients vous trouvent sur Google sans dépendre d'une plateforme. Il complète votre fiche Google et vos réseaux, il ne les remplace pas."
+        },
+        {
+          "q": "Avez-vous un local où venir vous voir ?",
+          "a": "Non, je n'ai pas de local ouvert au public. Nous échangeons à distance, ou je viens à vous sur demande."
+        },
+        {
+          "q": "Combien coûte un site internet à Colomiers ?",
+          "a": "Le pack Vitrine démarre à 490 € et le pack Vitrine + à 990 €. La maintenance, qui comprend l'hébergement, le nom de domaine, les mises à jour de sécurité et les sauvegardes, coûte 49 € par mois, sans engagement, résiliable avec un préavis d'un mois."
+        },
+        {
+          "q": "En combien de temps mon site est-il en ligne ?",
+          "a": "Une fois la maquette validée et vos contenus reçus, un site Vitrine est en ligne en 7 jours et un site Vitrine + en 2 semaines. Le délai exact est confirmé dès notre premier échange, avant tout engagement."
+        }
+      ],
+      "final_title": "Recevez la maquette de votre site à Colomiers",
+      "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre activité, puis je vous envoie la maquette de votre page d'accueil sous 72 h."
+    },
+    "blagnac": {
+      "meta_title": "Création de site internet à Blagnac",
+      "eyebrow": "Création de site internet à Blagnac",
+      "title_a": "À",
+      "title_em": "Blagnac",
+      "title_b": ": un site pour que vos clients vous trouvent, restaurant, boutique ou atelier.",
+      "sub": "Restaurant, coiffeur, commerce du centre ancien ou artisan : je construis votre site avec vous, par téléphone ou en visioconférence, et je me déplace à Blagnac sur demande. Maquette gratuite de votre page d'accueil sous 72 h, sans engagement, à partir de 490 €.",
+      "cta": "Recevoir ma maquette gratuite",
+      "points_eyebrow": "Pourquoi travailler avec moi",
+      "points_title": "Un site pour les clients de Blagnac",
+      "points": [
+        {
+          "name": "Des commerces de proximité à mettre en avant",
+          "text": "Le centre ancien de Blagnac a ses commerçants et ses artisans, qui se retrouvent par exemple lors d'une braderie annuelle. Un site vous permet d'exister toute l'année, pas seulement les jours d'animation, et de donner envie de venir."
+        },
+        {
+          "name": "Des clients qui cherchent depuis leur téléphone",
+          "text": "Blagnac compte beaucoup d'emplois autour de l'aéroport et de l'aéronautique, donc beaucoup de personnes qui passent dans la commune pour travailler. Pour un restaurant, un coiffeur ou une boutique, les horaires, la réservation ou la commande à retirer doivent se trouver en un clic."
+        },
+        {
+          "name": "À distance d'abord, sur place sur demande",
+          "text": "Nous échangeons par téléphone, WhatsApp ou visioconférence. Blagnac faisant partie de l'agglomération toulousaine, je me déplace facilement si vous préférez que l'on se rencontre."
+        },
+        {
+          "name": "Des prix annoncés",
+          "text": "Pack Vitrine dès 490 €, pack Vitrine + dès 990 €, maintenance à 49 € par mois, affichés avant tout échange."
+        },
+        {
+          "name": "Visible quand on cherche à Blagnac",
+          "text": "On cherche « restaurant Blagnac », « coiffeur Blagnac » ou « boulangerie Blagnac ». Votre site répond à ces recherches avec une page rapide sur téléphone et les informations utiles. Sans promesse de position : cela dépend aussi de la concurrence et du temps."
+        },
+        {
+          "name": "La maquette d'abord, votre site en main",
+          "text": "Vous voyez votre page d'accueil avant de vous engager, et avec le pack Vitrine + vous mettez à jour vos contenus vous-même depuis un espace d'administration."
+        }
+      ],
+      "demo_eyebrow": "Un exemple",
+      "demo_title": "Un exemple de site pour un restaurant",
+      "demo_text": "{{name}}, un bistrot de marché : la réservation de table avec choix du service, du créneau et du nombre de couverts, l'ardoise du jour que le patron met à jour lui-même, et un espace où il suit les réservations de la journée.",
+      "demo_points": [
+        "Réservation de table en ligne, avec une capacité par service que le patron règle ou ferme en un clic",
+        "Carte et ardoise modifiables depuis l'administration, avec « épuisé » barré partout tout de suite",
+        "Allergènes écrits en toutes lettres sous chaque plat",
+        "Demandes pour une occasion : anniversaire, repas d'équipe, groupe, privatisation"
+      ],
+      "demo_note": "Site imaginé par ManDev pour un restaurant fictif : le vôtre portera votre nom, vos plats, vos photos et vos horaires.",
+      "offer_plus": "Jusqu'à 5 pages, avec la réservation de table ou la prise de rendez-vous en ligne, le paiement en ligne et un espace d'administration pour modifier vos contenus vous-même.",
+      "faq": [
+        {
+          "q": "Travaillez-vous à Blagnac ?",
+          "a": "Oui. Je travaille d'abord à distance, par téléphone, WhatsApp ou visioconférence, et je me déplace à Blagnac sur demande."
+        },
+        {
+          "q": "Mon commerce est dans le centre ancien : que mettre sur mon site ?",
+          "a": "L'essentiel pour vos clients : ce que vous proposez, vos horaires, votre adresse avec le plan d'accès, et un moyen de vous joindre ou de réserver. Je vous aide à choisir ce qui compte avant de dessiner la maquette."
+        },
+        {
+          "q": "Avez-vous un local où venir vous voir ?",
+          "a": "Non, je n'ai pas de local ouvert au public. Nous échangeons à distance, ou je viens à vous sur demande."
+        },
+        {
+          "q": "Combien coûte un site internet à Blagnac ?",
+          "a": "Le pack Vitrine démarre à 490 € et le pack Vitrine + à 990 €. La maintenance, qui comprend l'hébergement, le nom de domaine, les mises à jour de sécurité et les sauvegardes, coûte 49 € par mois, sans engagement, résiliable avec un préavis d'un mois."
+        },
+        {
+          "q": "En combien de temps mon site est-il en ligne ?",
+          "a": "Une fois la maquette validée et vos contenus reçus, un site Vitrine est en ligne en 7 jours et un site Vitrine + en 2 semaines. Le délai exact est confirmé dès notre premier échange, avant tout engagement."
+        }
+      ],
+      "final_title": "Recevez la maquette de votre site à Blagnac",
+      "final_text": "Gratuite et sans engagement. Je vous rappelle pour comprendre votre activité, puis je vous envoie la maquette de votre page d'accueil sous 72 h."
     }
   },
   "services_page": {
@@ -1550,6 +1767,9 @@
     "site-boulangerie-patisserie": "Site internet pour boulangerie et pâtisserie : vitrine en photos, gâteaux sur commande, précommande et horaires. Maquette gratuite sous 72 h, dès 490 €.",
     "site-artisan-batiment": "Site internet pour artisan du bâtiment : galerie de chantiers, zone d'intervention et demande de devis en ligne. Maquette gratuite sous 72 h, dès 490 €.",
     "site-garage": "Site internet pour garage : prestations, prise de rendez-vous en ligne, demande de devis et horaires. Maquette gratuite sous 72 h, dès 490 €.",
-    "creation-site-internet-toulouse": "Création de site internet à Toulouse et dans l'agglomération : maquette gratuite sous 72 h, dès 490 €. Je me déplace pour vous rencontrer."
+    "creation-site-internet-toulouse": "Création de site internet à Toulouse et dans l'agglomération : maquette gratuite sous 72 h, dès 490 €. Je me déplace pour vous rencontrer.",
+    "creation-site-internet-muret": "Création de site internet à Muret et dans le Muretain : maquette gratuite sous 72 h, dès 490 €. Échanges à distance, déplacement sur demande.",
+    "creation-site-internet-colomiers": "Création de site internet à Colomiers pour commerçants et artisans : maquette gratuite sous 72 h, dès 490 €. À distance, déplacement sur demande.",
+    "creation-site-internet-blagnac": "Création de site internet à Blagnac pour restaurants, commerces et artisans : maquette gratuite sous 72 h, dès 490 €. À distance, déplacement sur demande."
   }
 }

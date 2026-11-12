@@ -9,7 +9,7 @@ import {
   INSTAGRAM_URL,
   LINKEDIN_URL,
 } from "../../utils/contactInfo";
-import { METIERS } from "../../data/metiers";
+import { ACTIVITES, VILLES } from "../../data/metiers";
 import { SERVICE_PAGES } from "../../data/services";
 import "./Footer.css";
 
@@ -70,7 +70,15 @@ export default function Footer({ hideCta = false }) {
 
         {lang === "fr" && (
           <ul className="footer-legal footer-metiers" aria-label="Sites par métier">
-            {METIERS.map((metier) => (
+            {ACTIVITES.map((metier) => (
+              <li key={metier.slug}><Link to={`/fr/${metier.slug}`}>{t(`metiers.${metier.key}.meta_title`)}</Link></li>
+            ))}
+          </ul>
+        )}
+
+        {lang === "fr" && (
+          <ul className="footer-legal footer-metiers" aria-label="Sites par ville">
+            {VILLES.map((metier) => (
               <li key={metier.slug}><Link to={`/fr/${metier.slug}`}>{t(`metiers.${metier.key}.meta_title`)}</Link></li>
             ))}
           </ul>
