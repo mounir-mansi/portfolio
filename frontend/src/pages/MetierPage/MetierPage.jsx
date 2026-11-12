@@ -6,6 +6,7 @@ import HeroQuote from "../../components/HeroQuote/HeroQuote";
 import QuoteSection from "../../components/QuickQuote/QuoteSection";
 import useReveal from "../../utils/useReveal";
 import usePageTitle from "../../utils/usePageTitle";
+import { VILLES } from "../../data/metiers";
 import { collecterJsonLd, faqJsonLd } from "../../utils/ssrHead";
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_HREF } from "../../utils/contactInfo";
 import "./MetierPage.css";
@@ -67,7 +68,7 @@ function MetierContent({ metier }) {
         url,
         description: m("sub"),
         provider: { "@id": "https://mandev.fr/#service" },
-        areaServed: [{ "@type": "City", name: "Toulouse" }, { "@type": "Country", name: "France" }],
+        areaServed: [{ "@type": "City", name: metier.ville || "Toulouse" }, { "@type": "Country", name: "France" }],
       });
     collecterJsonLd("metier-breadcrumb-jsonld", {
         "@context": "https://schema.org",
@@ -197,6 +198,20 @@ function MetierContent({ metier }) {
                 </details>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* AUTRES VILLES : liens entre les pages par ville (seulement sur une page par ville) */}
+      {metier.ville && (
+        <section className="block metier-villes" aria-labelledby="metier-villes-title">
+          <div className="container reveal">
+            <h2 id="metier-villes-title" className="metier-villes-title">{c("villes_title")}</h2>
+            <ul className="metier-villes-list">
+              {VILLES.filter((v) => v.slug !== metier.slug).map((v) => (
+                <li key={v.slug}><Link to={`/fr/${v.slug}`}>{v.ville}</Link></li>
+              ))}
+            </ul>
           </div>
         </section>
       )}

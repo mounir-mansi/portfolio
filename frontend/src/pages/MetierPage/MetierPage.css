@@ -164,3 +164,36 @@
   color: var(--fg-muted);
   line-height: 1.55;
 }
+
+/* Liens vers les autres pages par ville */
+.metier-villes-title {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+
+.metier-villes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.metier-villes-list a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--fg);
+  text-decoration: none;
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.metier-villes-list a:hover,
+.metier-villes-list a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
