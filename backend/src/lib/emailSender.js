@@ -176,10 +176,10 @@ async function sendReply({ to, name, replyMessage }) {
 }
 
 // Prévient d'un nouvel avis à relire (il n'est publié qu'après validation dans l'admin)
-async function sendReviewNotification({ name, role, rating, text, email }) {
-  const safeName = escapeHtml(name);
+async function sendReviewNotification({ name, lastName, role, rating, text, email }) {
+  const fullName = [name, lastName].filter(Boolean).join(" ");
   const lines = [
-    `<p><strong>Prénom :</strong> ${safeName}</p>`,
+    `<p><strong>Nom :</strong> ${escapeHtml(fullName)} (le site n'affichera que l'initiale du nom)</p>`,
     `<p><strong>Note :</strong> ${"★".repeat(rating)}${"☆".repeat(5 - rating)} (${rating}/5)</p>`,
   ];
   if (role) lines.push(`<p><strong>Métier / entreprise :</strong> ${escapeHtml(role)}</p>`);
@@ -190,7 +190,7 @@ async function sendReviewNotification({ name, role, rating, text, email }) {
   await resend.emails.send({
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_CONTACT,
-    subject: `Nouvel avis à valider : ${name} (${rating}/5)`,
+    subject: `Nouvel avis à valider : ${fullName} (${rating}/5)`,
     html: `<h2>Nouvel avis reçu sur le portfolio</h2>\n${lines.join("\n")}`,
   });
 }

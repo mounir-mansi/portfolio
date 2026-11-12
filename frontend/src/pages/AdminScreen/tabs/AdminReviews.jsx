@@ -65,7 +65,7 @@ export default function AdminReviews() {
             <div className="msg-header">
               <div className="msg-meta">
                 {r.status === "pending" && <span className="unread-dot" />}
-                <strong>{r.name}</strong>
+                <strong>{[r.name, r.lastName].filter(Boolean).join(" ")}</strong>
                 <span className="rev-stars" role="img" aria-label={`Note : ${r.rating} sur 5`}>{stars(r.rating)}</span>
                 <span className={STATUS_TAGS[r.status]}>{STATUS_LABELS[r.status] || r.status}</span>
                 {r.role && <span className="msg-email">{r.role}</span>}

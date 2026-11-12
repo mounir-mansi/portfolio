@@ -30,18 +30,18 @@ afterAll(async () => {
 });
 
 const avis = (extra = {}) =>
-  request(app).post("/api/reviews").send({ name: `${AUTO} base`, rating: 5, text: TEXTE, consent: true, ...extra });
+  request(app).post("/api/reviews").send({ name: `${AUTO} base`, lastName: "Dupont", rating: 5, text: TEXTE, consent: true, ...extra });
 const lignes = (name) => prisma.review.findMany({ where: { name } });
 
 describe("Dépôt d'un avis", () => {
   test("avis valide : enregistré « pending », notification envoyée", async () => {
-    const res = await avis({ name: `${AUTO} ok`, role: "Restaurateur", email: "client@test.fr" });
+    const res = await avis({ name: `${AUTO} ok`, lastName: "Martin", role: "Restaurateur", email: "client@test.fr" });
     expect(res.status).toBe(200);
     expect(res.body.ok).toBe(true);
     const [row] = await lignes(`${AUTO} ok`);
-    expect(row).toMatchObject({ status: "pending", rating: 5, role: "Restaurateur", email: "client@test.fr", publishedAt: null });
+    expect(row).toMatchObject({ lastName: "Martin", status: "pending", rating: 5, role: "Restaurateur", email: "client@test.fr", publishedAt: null });
     expect(sendReviewNotification).toHaveBeenCalledTimes(1);
-    expect(sendReviewNotification.mock.calls[0][0]).toMatchObject({ name: `${AUTO} ok`, rating: 5 });
+    expect(sendReviewNotification.mock.calls[0][0]).toMatchObject({ name: `${AUTO} ok`, lastName: "Martin", rating: 5 });
   });
 
   test("champs facultatifs vides : stockés à null", async () => {
@@ -82,6 +82,10 @@ describe("Validation", () => {
   test.each([
     ["prénom manquant", { name: "" }],
     ["prénom trop long", { name: "x".repeat(61) }],
+    ["nom manquant", { lastName: "" }],
+    ["nom absent", { lastName: undefined }],
+    ["nom trop long", { lastName: "x".repeat(61) }],
+    ["nom en nombre", { lastName: 42 }],
     ["métier trop long", { role: "x".repeat(101) }],
     ["note à 0", { rating: 0 }],
     ["note à 6", { rating: 6 }],
@@ -106,6 +110,7 @@ describe("Validation", () => {
     ["dans l'avis", { text: "Super travail, voir https://spam.example/promo pour la suite" }],
     ["dans le métier", { role: "www.spam.example" }],
     ["dans le prénom", { name: `${AUTO} http://spam.example` }],
+    ["dans le nom", { lastName: "www.spam.example" }],
   ])("lien refusé %s", async (_cas, extra) => {
     const res = await avis(extra);
     expect(res.status).toBe(400);
@@ -129,20 +134,22 @@ describe("Administration", () => {
   });
 
   test("publier, republier, masquer, supprimer", async () => {
-    await avis({ name: `${AUTO} cycle`, email: "prive@test.fr", role: "Garagiste" });
+    await avis({ name: `${AUTO} cycle`, lastName: "Garnier", email: "prive@test.fr", role: "Garagiste" });
     const liste = await request(app).get("/admin/reviews").set("Cookie", cookie);
     expect(liste.status).toBe(200);
     const mien = liste.body.find((r) => r.name === `${AUTO} cycle`);
-    expect(mien).toMatchObject({ status: "pending", email: "prive@test.fr" });
+    // L'admin voit le nom complet
+    expect(mien).toMatchObject({ status: "pending", email: "prive@test.fr", lastName: "Garnier" });
 
-    // Publié : visible publiquement, sans email ni statut
+    // Publié : visible publiquement avec l'initiale seulement, sans email, sans nom de famille ni statut
     const pub = await request(app).patch(`/admin/reviews/${mien.id}/status`).set("Cookie", cookie).send({ status: "published" });
     expect(pub.status).toBe(200);
     expect(pub.body.publishedAt).toBeTruthy();
     const publique = await request(app).get("/api/reviews");
-    const visible = publique.body.find((r) => r.name === `${AUTO} cycle`);
-    expect(visible).toEqual({ id: mien.id, name: `${AUTO} cycle`, role: "Garagiste", rating: 5, text: TEXTE, publishedAt: pub.body.publishedAt });
+    const visible = publique.body.find((r) => r.id === mien.id);
+    expect(visible).toEqual({ id: mien.id, name: `${AUTO} cycle G.`, role: "Garagiste", rating: 5, text: TEXTE, publishedAt: pub.body.publishedAt });
     expect(JSON.stringify(publique.body)).not.toContain("prive@test.fr");
+    expect(JSON.stringify(publique.body)).not.toContain("Garnier");
 
     // Masqué puis republié : la date de première publication est conservée
     const masque = await request(app).patch(`/admin/reviews/${mien.id}/status`).set("Cookie", cookie).send({ status: "hidden" });
@@ -155,6 +162,23 @@ describe("Administration", () => {
     const sup = await request(app).delete(`/admin/reviews/${mien.id}`).set("Cookie", cookie);
     expect(sup.status).toBe(200);
     expect(await lignes(`${AUTO} cycle`)).toHaveLength(0);
+  });
+
+  test("l'initiale affichée est en majuscule, accents compris, et les espaces autour sont ignorés", async () => {
+    await avis({ name: `${AUTO} initiale`, lastName: "  étienne " });
+    const [row] = await lignes(`${AUTO} initiale`);
+    expect(row.lastName).toBe("étienne");
+    await request(app).patch(`/admin/reviews/${row.id}/status`).set("Cookie", cookie).send({ status: "published" });
+    const visible = (await request(app).get("/api/reviews")).body.find((r) => r.id === row.id);
+    expect(visible.name).toBe(`${AUTO} initiale É.`);
+  });
+
+  test("ancien avis sans nom de famille : seul le prénom s'affiche", async () => {
+    const ancien = await prisma.review.create({
+      data: { name: `${AUTO} ancien`, rating: 4, text: TEXTE, status: "published", publishedAt: new Date() },
+    });
+    const visible = (await request(app).get("/api/reviews")).body.find((r) => r.id === ancien.id);
+    expect(visible.name).toBe(`${AUTO} ancien`);
   });
 
   test("statut inconnu, identifiant invalide ou absent", async () => {

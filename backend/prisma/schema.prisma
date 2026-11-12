@@ -111,6 +111,8 @@ model Section {
 model Review {
   id          Int       @id @default(autoincrement())
   name        String
+  // Nom de famille : jamais renvoyé par la route publique (elle n'affiche que l'initiale)
+  lastName    String?
   role        String?
   rating      Int
   text        String

@@ -34,6 +34,42 @@ function Stars({ value }) {
   );
 }
 
+// Questions fréquentes : la première (traitement des avis) reste ouverte, c'est l'information que la loi demande de rendre visible
+const FAQ = [
+  {
+    q: "Comment sont traités les avis ?",
+    a: (
+      <>
+        Chaque avis est relu avant publication, puis affiché avec sa date. Je publie les avis sincères, positifs comme critiques,
+        et je ne retire que les messages injurieux, publicitaires ou sans rapport avec mon travail. Aucun avis n'est rémunéré,
+        aucune contrepartie n'est proposée, et je ne modifie pas les textes. L'identité des auteurs n'est pas vérifiée au-delà de
+        notre échange direct.
+      </>
+    ),
+  },
+  {
+    q: "Mon nom complet est-il affiché ?",
+    a: "Non. Seuls votre prénom et l'initiale de votre nom sont affichés (par exemple Marie D.). Votre nom complet n'est vu que par moi, pour vérifier que vous êtes bien client.",
+  },
+  {
+    q: "Mon avis sera-t-il publié ?",
+    a: "Oui, s'il est sincère. Je le relis, puis je le publie en général sous quelques jours. Votre prénom, l'initiale de votre nom, votre métier et votre avis sont affichés. Votre email n'est jamais affiché.",
+  },
+  {
+    q: "Puis-je modifier ou supprimer mon avis ?",
+    a: (
+      <>
+        Oui. Écrivez-moi à <a href="mailto:contact@mandev.fr">contact@mandev.fr</a> en indiquant votre prénom et la date de l'avis :
+        je le corrige ou je le retire.
+      </>
+    ),
+  },
+  {
+    q: "Faut-il avoir été client ?",
+    a: "Oui. Cette page est réservée aux personnes avec qui j'ai réalisé un projet. Un avis sans projet réalisé ensemble n'est pas publié.",
+  },
+];
+
 const moisAnnee = (iso) => {
   try {
     return new Date(iso).toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
@@ -50,6 +86,7 @@ export default function AvisPage() {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [role, setRole] = useState("");
   const [text, setText] = useState("");
   const [email, setEmail] = useState("");
@@ -89,12 +126,14 @@ export default function AvisPage() {
     setError("");
 
     const prenom = name.trim();
+    const nom = lastName.trim();
     const metier = role.trim();
     const avisTexte = text.trim();
     const mail = email.trim();
     const echec = (message, id) => { setError(message); if (id) document.getElementById(id)?.focus(); };
 
     if (!prenom) return echec("Indiquez votre prénom.", "avis-name");
+    if (!nom) return echec("Indiquez votre nom.", "avis-lastname");
     if (!rating) return echec("Choisissez une note de 1 à 5 étoiles.");
     if (avisTexte.length < MIN_TEXT) return echec(`Votre avis est un peu court : ${MIN_TEXT} caractères minimum.`, "avis-text");
     if (mail && !EMAIL_REGEX.test(mail)) return echec("L'adresse email n'a pas l'air valide (ou laissez le champ vide).", "avis-email");
@@ -104,7 +143,7 @@ export default function AvisPage() {
     try {
       const res = await apiFetch("/api/reviews", {
         method: "POST",
-        body: JSON.stringify({ name: prenom, role: metier, rating, text: avisTexte, email: mail, consent: true, [HONEYPOT_FIELD]: trap }),
+        body: JSON.stringify({ name: prenom, lastName: nom, role: metier, rating, text: avisTexte, email: mail, consent: true, [HONEYPOT_FIELD]: trap }),
       });
       if (res.ok) setDone({ name: prenom });
       else if (res.status === 400) {
@@ -179,9 +218,15 @@ export default function AvisPage() {
                   <input id="avis-name" name="name" type="text" autoComplete="given-name" maxLength={MAX.name} value={name} onChange={(e) => setName(e.target.value)} placeholder="Prénom" />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="avis-role">Votre métier ou commerce <span className="avis-opt">(facultatif)</span></label>
-                  <input id="avis-role" name="role" type="text" maxLength={MAX.role} value={role} onChange={(e) => setRole(e.target.value)} placeholder="Ex. restaurateur" />
+                  <label htmlFor="avis-lastname">Votre nom</label>
+                  <input id="avis-lastname" name="lastName" type="text" autoComplete="family-name" maxLength={MAX.name} value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Nom" aria-describedby="avis-lastname-note" />
                 </div>
+              </div>
+              <p id="avis-lastname-note" className="avis-note-nom">Seule l'initiale de votre nom sera affichée (ex. Marie D.).</p>
+
+              <div className="form-group">
+                <label htmlFor="avis-role">Votre métier ou commerce <span className="avis-opt">(facultatif)</span></label>
+                <input id="avis-role" name="role" type="text" maxLength={MAX.role} value={role} onChange={(e) => setRole(e.target.value)} placeholder="Ex. restaurateur" />
               </div>
 
               <div className="form-group">
@@ -200,7 +245,7 @@ export default function AvisPage() {
               <label className="avis-consent">
                 <input id="avis-consent" type="checkbox" checked={consent} onChange={() => setConsent((c) => !c)} />
                 <span className="avis-box" aria-hidden="true" />
-                <span>J'accepte que mon prénom, mon métier et mon avis soient publiés sur ce site.</span>
+                <span>J'accepte que mon prénom, l'initiale de mon nom, mon métier et mon avis soient publiés sur ce site.</span>
               </label>
 
               <div ref={statusRef} tabIndex={-1} role="status" aria-live="polite" className="form-status-box">
@@ -243,14 +288,15 @@ export default function AvisPage() {
             </ul>
           )}
 
-          <div className="avis-regles">
-            <h3>Comment sont traités les avis</h3>
-            <p>
-              Chaque avis est relu avant d'être publié. Je publie tous les avis sincères, positifs comme critiques, et je ne retire que
-              les messages injurieux, publicitaires ou sans rapport avec mon travail. Les avis ne sont pas rémunérés et je ne les modifie pas.
-              Je ne vérifie pas l'identité de leurs auteurs au-delà du contact direct que nous avons eu.
-            </p>
-          </div>
+          <section className="avis-faq" aria-labelledby="avis-faq-titre">
+            <h2 id="avis-faq-titre" className="avis-aside-title">Questions fréquentes</h2>
+            {FAQ.map((item, i) => (
+              <details key={item.q} className="avis-faq-item" open={i === 0}>
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </section>
         </aside>
       </div>
     </Layout>

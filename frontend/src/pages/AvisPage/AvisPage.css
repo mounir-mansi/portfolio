@@ -144,6 +144,13 @@
   color: var(--fg-muted);
 }
 
+/* Rassure sur le nom de famille : seule l'initiale est publiée */
+.avis-note-nom {
+  margin: -0.75rem 0 0;
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+}
+
 .avis-count {
   margin: 0;
   text-align: right;
@@ -267,29 +274,62 @@
 
 .avis-date { color: var(--fg-faint); }
 
-/* --- Information sur le traitement des avis --- */
-.avis-regles {
-  margin-top: 2.5rem;
-  padding: 1.15rem 1.25rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--bg-raised);
-}
+/* --- Questions fréquentes (dont le traitement des avis) --- */
+.avis-faq { margin-top: 2.5rem; }
 
-.avis-regles h3 {
-  margin: 0 0 0.5rem;
-  font-size: 0.95rem;
+.avis-faq-item { border-bottom: 1px solid var(--line-strong); }
+.avis-faq-item:first-of-type { border-top: 1px solid var(--line-strong); }
+
+.avis-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 44px;
+  padding-block: 0.85rem;
+  font-size: 1rem;
   font-weight: 500;
+  line-height: 1.3;
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.2s;
 }
 
-.avis-regles p {
+.avis-faq-item summary::-webkit-details-marker { display: none; }
+.avis-faq-item summary:hover { color: var(--accent-text); }
+.avis-faq-item summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+/* Plus dessiné en CSS, qui devient une croix à l'ouverture */
+.avis-faq-item summary::after {
+  content: "";
+  flex: none;
+  width: 12px;
+  height: 12px;
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1.5px 100% no-repeat;
+  transition: transform 0.3s var(--ease);
+}
+
+.avis-faq-item[open] summary::after { transform: rotate(45deg); }
+
+.avis-faq-item p {
   margin: 0;
-  font-size: 0.88rem;
+  max-width: 40rem;
+  padding-bottom: 1rem;
+  font-size: 0.92rem;
   line-height: 1.6;
   color: var(--fg-muted);
+}
+
+.avis-faq-item p a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   /* Étoiles toutes allumées, immobiles */
   .avis-hero-star { animation: none; }
+  .avis-faq-item summary::after { transition: none; }
 }

@@ -24,6 +24,11 @@ export default function ConfidentialitePage() {
           <strong>Formulaire de contact :</strong> nom, adresse email et message.
         </li>
         <li>
+          <strong>Dépôt d'un avis :</strong> prénom, nom, note, texte de l'avis, métier ou commerce et adresse email
+          (ces deux derniers facultatifs). Seuls votre prénom, l'initiale de votre nom, votre métier, la note, votre avis
+          et sa date sont publiés. Votre nom complet et votre email ne sont jamais affichés.
+        </li>
+        <li>
           <strong>Échanges directs</strong> (téléphone, WhatsApp, email) : les informations que vous choisissez de
           me transmettre.
         </li>
@@ -37,6 +42,7 @@ export default function ConfidentialitePage() {
       <ul>
         <li>Répondre à votre demande, vous envoyer la maquette et établir un devis (mesures précontractuelles).</li>
         <li>Assurer le suivi de la relation commerciale et des prestations (exécution du contrat).</li>
+        <li>Publier votre avis, après relecture, avec votre consentement (case cochée sur le formulaire).</li>
         <li>Protéger le site contre les abus et les intrusions (intérêt légitime).</li>
       </ul>
       <p>Vos données ne sont ni vendues ni utilisées à des fins publicitaires.</p>
@@ -62,6 +68,7 @@ export default function ConfidentialitePage() {
           Clients : pendant la durée de la relation contractuelle, puis pendant les durées légales de conservation des
           documents comptables.
         </li>
+        <li>Avis : tant que vous n'en demandez pas le retrait ou la suppression.</li>
       </ul>
 
       <h2>Vos droits</h2>

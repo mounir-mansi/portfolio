@@ -7,16 +7,22 @@ const MAX = { name: 60, role: 100, email: 254, text: 1000 };
 const MIN_TEXT = 20;
 const STATUSES = ["pending", "published", "hidden"];
 
-// Avis publiés, visibles par tout le monde. Jamais d'email ni de statut : seulement ce qui s'affiche.
+// Nom affiché : « Marie D. ». Le nom de famille complet ne quitte jamais le serveur.
+function displayName(name, lastName) {
+  const initial = lastName ? [...lastName][0] : "";
+  return initial ? `${name} ${initial.toLocaleUpperCase("fr-FR")}.` : name;
+}
+
+// Avis publiés, visibles par tout le monde. Jamais d'email, de nom de famille ni de statut : seulement ce qui s'affiche.
 async function getReviews(req, res) {
   try {
     const reviews = await prisma.review.findMany({
       where: { status: "published" },
       orderBy: { publishedAt: "desc" },
       take: 50,
-      select: { id: true, name: true, role: true, rating: true, text: true, publishedAt: true },
+      select: { id: true, name: true, lastName: true, role: true, rating: true, text: true, publishedAt: true },
     });
-    res.json(reviews);
+    res.json(reviews.map(({ lastName, name, ...rest }) => ({ ...rest, name: displayName(name, lastName) })));
   } catch (err) {
     console.error("reviews list error:", err);
     res.status(500).json({ error: "Erreur serveur" });
@@ -31,6 +37,7 @@ async function submitReview(req, res) {
   if (clean(body[HONEYPOT_FIELD])) return res.json({ ok: true });
 
   const name = clean(body.name);
+  const lastName = clean(body.lastName);
   const role = clean(body.role);
   const email = clean(body.email);
   const text = clean(body.text);
@@ -38,6 +45,8 @@ async function submitReview(req, res) {
 
   if (!name) return res.status(400).json({ error: "Votre prénom est requis." });
   if (name.length > MAX.name) return res.status(400).json({ error: "Prénom trop long." });
+  if (!lastName) return res.status(400).json({ error: "Votre nom est requis." });
+  if (lastName.length > MAX.name) return res.status(400).json({ error: "Nom trop long." });
   if (role.length > MAX.role) return res.status(400).json({ error: "Métier ou entreprise trop long." });
   // typeof : « true » ou « "5" » ne passent pas pour une note
   if (typeof rating !== "number" || !Number.isInteger(rating) || rating < 1 || rating > 5)
@@ -48,17 +57,17 @@ async function submitReview(req, res) {
   if (email && (email.length > MAX.email || !EMAIL_REGEX.test(email)))
     return res.status(400).json({ error: "Email invalide." });
   if (body.consent !== true)
-    return res.status(400).json({ error: "Vous devez accepter la publication de votre prénom et de votre avis." });
-  if (hasLink(name, role, text))
+    return res.status(400).json({ error: "Vous devez accepter la publication de votre prénom, de l'initiale de votre nom et de votre avis." });
+  if (hasLink(name, lastName, role, text))
     return res.status(400).json({ error: "Les liens ne sont pas acceptés dans ce formulaire.", code: "LINKS" });
 
   try {
     await prisma.review.create({
-      data: { name, role: role || null, rating, text, email: email || null },
+      data: { name, lastName, role: role || null, rating, text, email: email || null },
     });
 
     // Email best-effort (pas bloquant) : l'échec est journalisé, jamais avalé
-    sendReviewNotification({ name, role, rating, text, email }).catch((err) =>
+    sendReviewNotification({ name, lastName, role, rating, text, email }).catch((err) =>
       console.error("Review email notification error:", err)
     );
 
