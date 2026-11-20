@@ -206,3 +206,28 @@
     display: none;
   }
 }
+/* Sélecteur de langue : sur mobile il sort du menu plein écran et se place à gauche des deux traits */
+.nav-lang-mobile {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .nav-lang-mobile {
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: 0.15rem;
+  }
+
+  .nav-lang-desktop {
+    display: none;
+  }
+
+  /* La liste s'ouvre sous le drapeau, alignée à droite (dans le menu plein écran elle était dans la colonne) */
+  .nav-lang-mobile .lang-list {
+    position: absolute;
+    margin-top: 0;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  }
+}

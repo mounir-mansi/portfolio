@@ -45,7 +45,8 @@ function Flag({ code }) {
 }
 
 // Bouton rond avec le drapeau de la langue en cours ; il ouvre la liste des langues.
-export default function LangMenu({ lang, langs, onSelect }) {
+// `listId` : la barre du haut (mobile) et le menu (ordinateur) ont chacun leur sélecteur, avec des identifiants distincts.
+export default function LangMenu({ lang, langs, onSelect, listId = "lang-menu-list" }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const rootRef = useRef(null);
@@ -85,13 +86,13 @@ export default function LangMenu({ lang, langs, onSelect }) {
         onClick={() => setOpen((o) => !o)}
         aria-label={`${t("nav.aria_lang_group")} (${NAMES[lang] || lang})`}
         aria-expanded={open}
-        aria-controls="lang-menu-list"
+        aria-controls={listId}
       >
         <Flag code={lang} />
       </button>
 
       {open && (
-        <ul id="lang-menu-list" className="lang-list">
+        <ul id={listId} className="lang-list">
           {langs.map((code) => (
             <li key={code}>
               <button
