@@ -13,7 +13,7 @@ const { getReviews, submitReview, getAllReviews, setReviewStatus, deleteReview }
 
 // Auth
 router.post("/login", login);
-router.get("/logout", logout);
+router.post("/logout", logout);
 router.get("/admin/me", verifyToken, me);
 
 // Contact
