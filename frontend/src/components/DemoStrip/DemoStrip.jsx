@@ -19,7 +19,7 @@ const SEUIL_GLISSE = 6; // pixels de glissement à la souris avant de considére
 
 // Chaque carte montre une affiche (accueil du site) ; HoverVideo joue la vidéo de cet accueil (héros animé, puis défilement
 // jusqu'en bas) au survol, au focus clavier, ou, sans souris, quand la carte passe au centre de l'écran.
-function DemoCard({ m, copy, lang }) {
+function DemoCard({ m, copy, lang, trade }) {
   const base = demoMedia(m);
   const inner = (
     <>
@@ -28,6 +28,8 @@ function DemoCard({ m, copy, lang }) {
         <HoverVideo poster={`${base}.webp`} src={`${base}.webm`} axis="x" />
       </span>
       <span className="demo-name">{m.demo.name}</span>
+      {/* Le métier sous le nom commercial : on voit tout de suite si son activité est couverte, sans faire défiler le bandeau */}
+      <span className="demo-trade">{trade}</span>
     </>
   );
   const common = { className: "demo-card", tabIndex: copy ? -1 : undefined, draggable: false };
@@ -198,10 +200,14 @@ export default function DemoStrip() {
       <div className="demo-strip-viewport" ref={viewport} tabIndex={0} role="region" aria-label={t("home.strip_title")}>
         <ul className="demo-strip-track" ref={track}>
           {items.map(({ m, copy }, i) => (
-            <DemoCard key={`${m.slug}-${i}`} m={m} copy={copy} lang={lang} />
+            <DemoCard key={`${m.slug}-${i}`} m={m} copy={copy} lang={lang} trade={t(`home.strip_trades.${m.key}`)} />
           ))}
         </ul>
       </div>
+      <p className="container demo-strip-more">
+        <span>{t("home.strip_more")}</span>{" "}
+        <Link to={{ pathname: `/${lang}`, hash: "#devis" }}>{t("home.strip_more_link")} <span aria-hidden="true">→</span></Link>
+      </p>
     </section>
   );
 }

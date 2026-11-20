@@ -157,3 +157,20 @@
     display: none;
   }
 }
+/* Métier sous le nom commercial de chaque démo, et ligne « votre métier n'est pas là ? » sous le bandeau */
+.demo-trade {
+  margin-top: -0.3rem;
+  font-size: var(--step--1);
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.demo-strip-more {
+  margin-top: clamp(0.9rem, 2.5vw, 1.4rem);
+  color: var(--fg-muted);
+}
+
+.demo-strip-more a {
+  color: var(--accent-text);
+  border-bottom: 1px solid currentColor;
+}
