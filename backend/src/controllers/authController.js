@@ -9,6 +9,13 @@ const COOKIE_OPTIONS = {
   maxAge: 8 * 60 * 60 * 1000, // 8h
 };
 
+// Pour effacer le cookie, le navigateur exige les mêmes attributs qu'à sa création (sans la durée)
+const CLEAR_COOKIE_OPTIONS = {
+  httpOnly: COOKIE_OPTIONS.httpOnly,
+  secure: COOKIE_OPTIONS.secure,
+  sameSite: COOKIE_OPTIONS.sameSite,
+};
+
 async function login(req, res) {
   const { username, password } = req.body;
   if (!username || !password)
@@ -35,14 +42,37 @@ async function login(req, res) {
   }
 }
 
+// Un jeton dure 8 h : une ligne de la liste noire plus vieille que ça ne sert plus à rien
+const DUREE_JETON_MS = 8 * 60 * 60 * 1000;
+
+function jetonValide(token) {
+  try {
+    jwt.verify(token, process.env.JWT_SECRET);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function logout(req, res) {
   const token = req.cookies?.token;
-  if (token) {
+  // Seuls les jetons que nous avons signés entrent dans la liste noire : un cookie inventé ne laisse aucune trace
+  if (token && jetonValide(token)) {
     try {
       await prisma.blacklistedToken.create({ data: { token } });
-    } catch {}
+    } catch (err) {
+      // P2002 = déjà révoqué : normal. Jamais le jeton dans les logs, seulement le code d'erreur.
+      if (err.code !== "P2002") console.error("logout: écriture liste noire:", err.code || err.name);
+    }
+    try {
+      await prisma.blacklistedToken.deleteMany({
+        where: { createdAt: { lt: new Date(Date.now() - DUREE_JETON_MS) } },
+      });
+    } catch (err) {
+      console.error("logout: purge liste noire:", err.code || err.name);
+    }
   }
-  res.clearCookie("token");
+  res.clearCookie("token", CLEAR_COOKIE_OPTIONS);
   res.json({ ok: true });
 }
 

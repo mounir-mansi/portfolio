@@ -29,7 +29,7 @@ export function AuthProvider({ children }) {
   }
 
   async function logout() {
-    await apiFetch("/logout");
+    await apiFetch("/logout", { method: "POST" });
     setUser(null);
     localStorage.removeItem("portfolio_admin");
   }
