@@ -27,3 +27,14 @@ backend/private-uploads/
 
 # Enregistrement des vidéos de démos (scripts/enregistrer-demos.mjs)
 scripts/.tmp-demos/
+
+# Variantes d'environnement (.env.production, .env.local...), sauf l'exemple
+.env.*
+!.env.example
+
+# Résultats de tests Playwright
+test-results/
+playwright-report/
+
+# Worktrees et réglages locaux de Claude Code
+.claude/
