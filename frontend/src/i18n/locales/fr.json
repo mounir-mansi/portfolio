@@ -26,7 +26,7 @@
     "title_a": "Des sites pour artisans et commerçants qui",
     "title_em": "transforment",
     "title_b": "vos visiteurs en clients.",
-    "sub": "Un site vitrine clair et rapide qui vous apporte des appels et des demandes de devis, livré clé en main.",
+    "sub": "Un site vitrine clair et rapide pour artisans, commerçants et indépendants : des appels et des demandes de devis, livré clé en main.",
     "cta_quote": "Recevoir ma maquette gratuite",
     "cta_work": "Voir les réalisations",
     "offer": "Dès 490 € · Maquette gratuite sous 72 h · Sans engagement",
@@ -38,7 +38,8 @@
     "popular": "Recommandé",
     "services_cta_contact": "Me poser une question",
     "price_note": "Prix en euros, TVA non applicable ({{article}}).",
-    "services_shop": "Boutique en ligne, commande ou paiement : sur devis.",
+    "services_shop_title": "Vendre ou prendre des commandes en ligne",
+    "services_shop_text": "Boutique en ligne, commande à retirer, paiement : j'ajoute ces fonctions à votre site, sur devis.",
     "services_shop_link": "Voir les fonctions sur mesure",
     "services_more": "Maintenance, refonte, mises à jour, emails pro, traduction, référencement local : voir tous les services",
     "services": [
@@ -56,7 +57,7 @@
           "Visible sur Google dans votre ville",
           "Lisible sur téléphone, tablette et ordinateur"
         ],
-        "note": "Hébergement et nom de domaine non inclus : offerts avec la maintenance."
+        "note": "Hébergement : le serveur qui met votre site en ligne. Nom de domaine : votre adresse (ex. monsite.fr). Non inclus dans le pack, offerts avec la maintenance."
       },
       {
         "tag": "Pack 02",
@@ -70,7 +71,7 @@
           "Un espace privé pour modifier vous-même vos textes et vos photos",
           "Multilingue"
         ],
-        "note": "Hébergement et nom de domaine non inclus : offerts avec la maintenance."
+        "note": "Hébergement : le serveur qui met votre site en ligne. Nom de domaine : votre adresse (ex. monsite.fr). Non inclus dans le pack, offerts avec la maintenance."
       },
       {
         "tag": "Pack 03",
@@ -98,7 +99,7 @@
     "strip_prev": "Sites précédents",
     "strip_next": "Sites suivants",
     "strip_title": "Des sites de démonstration à visiter",
-    "strip_note": "Imaginés par ManDev pour des commerces fictifs : le vôtre portera votre nom, vos photos et vos horaires.",
+    "strip_note": "Sites de démonstration conçus par ManDev : le vôtre portera votre nom, vos photos et vos horaires.",
     "about_title": "Qui est derrière ManDev ?",
     "about_text": "Je m'appelle Mounir, je suis développeur web indépendant à Toulouse. Je conçois et je code moi-même chaque site : pas d'agence, pas de sous-traitance. Vous parlez directement à la personne qui construit votre site.",
     "about_text2": "Vous voyez la maquette de votre page d'accueil avant de décider quoi que ce soit. Elle est gratuite et sans engagement.",
@@ -111,8 +112,8 @@
       "artisan": "Plombier · Artisan du bâtiment",
       "garage": "Garage automobile"
     },
-    "strip_more": "Votre métier n'est pas là ?",
-    "strip_more_link": "Je prépare quand même votre maquette, gratuitement",
+    "strip_chips_label": "Choisir votre métier",
+    "strip_other": "Autre métier",
     "work_all": "Tous les projets",
     "process_eyebrow": "Méthode",
     "process_title": "Un processus simple, sans surprise",
@@ -234,6 +235,10 @@
       {
         "q": "Comment se passe la maquette gratuite ?",
         "a": "Vous remplissez un court formulaire en quelques étapes et vous choisissez le moment où je vous appelle. Cet appel me permet de comprendre votre métier et vos envies. Sous 72 h après cet échange, je vous envoie une maquette de votre page d'accueil. Vous la regardez tranquillement et vous décidez ensuite, sans engagement."
+      },
+      {
+        "q": "Que dois-je préparer pour la maquette ?",
+        "a": "Rien n'est obligatoire. Si vous les avez : votre logo, quelques photos, quelques phrases sur votre activité, les liens de vos réseaux. Sinon, on voit ça ensemble lors de l'appel."
       },
       {
         "q": "Combien coûte un site internet ?",

@@ -26,7 +26,7 @@
     "title_a": "Sitios web para artesanos y comerciantes que",
     "title_em": "convierten",
     "title_b": "a tus visitantes en clientes.",
-    "sub": "Un sitio escaparate claro y rápido que te trae llamadas y solicitudes de presupuesto, llave en mano.",
+    "sub": "Un sitio escaparate claro y rápido para artesanos, comerciantes y autónomos: llamadas y solicitudes de presupuesto, llave en mano.",
     "cta_quote": "Recibir mi maqueta gratis",
     "cta_work": "Ver trabajos",
     "offer": "Desde 490 € · Maqueta gratis en 72 horas · Sin compromiso",
@@ -38,7 +38,8 @@
     "popular": "Recomendado",
     "services_cta_contact": "Hacer una pregunta",
     "price_note": "Precios en euros, IVA no aplicable ({{article}}).",
-    "services_shop": "Tienda online, pedidos o pagos: bajo presupuesto.",
+    "services_shop_title": "Vender o recibir pedidos en línea",
+    "services_shop_text": "Tienda online, pedido para recoger, pago: añado estas funciones a su sitio, bajo presupuesto.",
     "services_shop_link": "Ver las funciones a medida",
     "services": [
       {
@@ -55,7 +56,7 @@
           "Visible en Google en tu ciudad",
           "Fácil de leer en móvil, tablet y ordenador"
         ],
-        "note": "Alojamiento y nombre de dominio no incluidos: gratis con el mantenimiento."
+        "note": "Alojamiento: el servidor que pone su sitio en línea. Nombre de dominio: su dirección (p. ej. misitio.es). No incluidos en el pack, gratis con el mantenimiento."
       },
       {
         "tag": "Pack 02",
@@ -69,7 +70,7 @@
           "Un espacio privado para modificar tú mismo tus textos y fotos",
           "Multilingüe"
         ],
-        "note": "Alojamiento y nombre de dominio no incluidos: gratis con el mantenimiento."
+        "note": "Alojamiento: el servidor que pone su sitio en línea. Nombre de dominio: su dirección (p. ej. misitio.es). No incluidos en el pack, gratis con el mantenimiento."
       },
       {
         "tag": "Pack 03",
@@ -97,7 +98,7 @@
     "strip_prev": "Sitios anteriores",
     "strip_next": "Sitios siguientes",
     "strip_title": "Sitios de demostración para visitar",
-    "strip_note": "Imaginados por ManDev para negocios ficticios: el suyo llevará su nombre, sus fotos y sus horarios.",
+    "strip_note": "Sitios de demostración creados por ManDev: el suyo llevará su nombre, sus fotos y sus horarios.",
     "about_title": "¿Quién está detrás de ManDev?",
     "about_text": "Me llamo Mounir, soy desarrollador web independiente en Toulouse. Diseño y programo yo mismo cada sitio: sin agencia ni subcontratación. Usted habla directamente con la persona que construye su sitio.",
     "about_text2": "Ve la maqueta de su página de inicio antes de decidir nada. Es gratuita y sin compromiso.",
@@ -110,8 +111,8 @@
       "artisan": "Fontanero · Oficios de la construcción",
       "garage": "Taller mecánico"
     },
-    "strip_more": "¿Su oficio no está aquí?",
-    "strip_more_link": "Le preparo igualmente su maqueta, gratis",
+    "strip_chips_label": "Elija su oficio",
+    "strip_other": "Otro oficio",
     "work_all": "Todos los proyectos",
     "process_eyebrow": "Método",
     "process_title": "Un proceso simple, sin sorpresas",
@@ -233,6 +234,10 @@
       {
         "q": "¿Cómo funciona la maqueta gratuita?",
         "a": "Rellenas un breve formulario en pocos pasos y eliges el momento en que te llamo. Esa llamada me permite entender tu negocio y tus gustos. En un plazo de 72 horas tras esa llamada, te envío una maqueta de tu página de inicio. La miras con calma y decides después, sin compromiso."
+      },
+      {
+        "q": "¿Qué debo preparar para la maqueta?",
+        "a": "Nada es obligatorio. Si los tiene: su logotipo, algunas fotos, unas frases sobre su actividad y los enlaces de sus redes. Si no, lo vemos juntos durante la llamada."
       },
       {
         "q": "¿Cuánto cuesta una web?",

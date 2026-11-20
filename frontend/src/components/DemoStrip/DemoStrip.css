@@ -157,7 +157,7 @@
     display: none;
   }
 }
-/* Métier sous le nom commercial de chaque démo, et ligne « votre métier n'est pas là ? » sous le bandeau */
+/* Métier sous le nom commercial de chaque démo, et puces de métiers au-dessus du bandeau */
 .demo-trade {
   margin-top: -0.3rem;
   font-size: var(--step--1);
@@ -165,12 +165,38 @@
   color: var(--fg);
 }
 
-.demo-strip-more {
-  margin-top: clamp(0.9rem, 2.5vw, 1.4rem);
-  color: var(--fg-muted);
+.demo-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
 }
 
-.demo-strip-more a {
+.demo-chip {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  min-height: 44px;
+  line-height: 1.6;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: var(--step--1);
+  font-weight: 500;
+  color: var(--fg);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.demo-chip:hover,
+.demo-chip:focus-visible {
+  border-color: var(--accent-text);
+  transform: translateY(-1px);
+}
+
+.demo-chip--other {
+  border-style: dashed;
   color: var(--accent-text);
-  border-bottom: 1px solid currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-chip { transition: none; }
+  .demo-chip:hover, .demo-chip:focus-visible { transform: none; }
 }
