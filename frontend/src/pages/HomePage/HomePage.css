@@ -172,6 +172,53 @@
   max-width: 20ch;
 }
 
+/* ===== QUI EST DERRIÈRE MANDEV ===== */
+.about-me-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+}
+
+@media (min-width: 52em) {
+  .about-me-inner {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+  }
+}
+
+.about-me-title {
+  font-size: var(--step-3);
+  font-weight: 300;
+  max-width: 16ch;
+}
+
+.about-me-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 60ch;
+  color: var(--fg-muted);
+}
+
+.about-me-strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+.about-me-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+  margin-top: 0.25rem;
+}
+
+.about-me-links a {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  padding-block: 0.5rem;
+}
+
 /* ===== SERVICES ===== */
 .services {
   display: grid;
@@ -1006,4 +1053,70 @@
 
 .services-more a:hover {
   opacity: 0.75;
+}
+/* ===== HERO COMPACT MOBILE : bouton, prix et téléphone visibles sans défiler (test visiteurs du 20/11) ===== */
+@media (max-width: 760px) {
+  .hero {
+    padding-top: 1.5rem;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 1rem;
+  }
+
+  .hero-title,
+  html[lang="en"] .hero-title {
+    font-size: clamp(2.1rem, 9.4vw, 2.8rem);
+  }
+
+  .hero-sub {
+    margin-top: 0.9rem;
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  .hero-ctas {
+    margin-top: 1.15rem;
+  }
+
+  .hero-offer {
+    margin-top: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-call {
+    margin-top: 0.6rem;
+  }
+}
+/* ===== Aperçu gratuit sous l'offre, note des packs, ligne boutique en ligne ===== */
+.hero-preview {
+  margin-top: 0.5rem;
+  max-width: 38rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--fg-muted);
+}
+
+@media (max-width: 760px) {
+  .hero-preview {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+  }
+}
+
+.service-note {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--fg-muted);
+}
+
+.services-shop {
+  margin-top: 0.5rem;
+  font-size: var(--step--1);
+  color: var(--fg-muted);
+}
+
+.services-shop a {
+  color: var(--accent-text);
+  border-bottom: 1px solid currentColor;
 }

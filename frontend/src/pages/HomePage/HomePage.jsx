@@ -92,6 +92,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="hero-offer reveal" style={{ "--delay": "280ms" }}>{t("home.offer")}</p>
+            <p className="hero-preview reveal" style={{ "--delay": "300ms" }}>{t("home.offer_preview")}</p>
             <div className="hero-call reveal" style={{ "--delay": "320ms" }}>
               <span className="hero-call-label">{t("home.call")}</span>
               {/* Icônes téléphone et WhatsApp — Font Awesome Free 6.4.0 (CC BY 4.0), en SVG */}
@@ -116,6 +117,21 @@ export default function HomePage() {
 
       {/* SITES DE DÉMONSTRATION : bandeau défilant */}
       <DemoStrip />
+
+      {/* QUI EST DERRIÈRE MANDEV : preuve de sérieux sous le bandeau de démos (sans photo) */}
+      <section id="about-me" className="block about-me" aria-labelledby="about-me-title">
+        <div className="container about-me-inner reveal">
+          <h2 id="about-me-title" className="about-me-title">{t("home.about_title")}</h2>
+          <div className="about-me-body">
+            <p>{t("home.about_text")}</p>
+            <p className="about-me-strong">{t("home.about_text2")}</p>
+            <p className="about-me-links">
+              <Link to={lp("/a-propos")}>{t("home.about_more")} <span aria-hidden="true">→</span></Link>
+              <Link to={lp("/mentions-legales")}>{t("legal.mentions")}</Link>
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* MAQUETTE GRATUITE */}
       <QuoteSection />
@@ -160,6 +176,7 @@ export default function HomePage() {
                 <ul className="service-list">
                   {s.items.map((it) => <li key={it}>{it}</li>)}
                 </ul>
+                {s.note && <p className="service-note">{s.note}</p>}
                 {i < 2 ? (
                   <Link to={{ pathname: lp(""), hash: "#devis" }} className={`service-link ${i === 1 ? "btn-primary" : "btn-outline"}`}>
                     {t("home.services_cta")} <span aria-hidden="true">→</span>
@@ -173,6 +190,10 @@ export default function HomePage() {
             ))}
           </div>
           <p className="services-note">{t("home.price_note", { article: vatArticle() })}</p>
+          <p className="services-shop">
+            {t("home.services_shop")}{" "}
+            <Link to={lp("/fonctions-sur-mesure")}>{t("home.services_shop_link")} <span aria-hidden="true">→</span></Link>
+          </p>
           {lang === "fr" && (
             <p className="services-more">
               <Link to="/fr/services">{t("home.services_more")} <span aria-hidden="true">→</span></Link>

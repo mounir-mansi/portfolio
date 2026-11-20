@@ -30,6 +30,7 @@
     "cta_quote": "Recevoir ma maquette gratuite",
     "cta_work": "Voir les réalisations",
     "offer": "Dès 490 € · Maquette gratuite sous 72 h · Sans engagement",
+    "offer_preview": "Un aperçu de votre future page d'accueil, avec vos couleurs et vos textes. Gratuit, sans engagement : vous n'avez rien à payer.",
     "call": "Une question ?",
     "services_eyebrow": "Services",
     "services_title": "Ce que je construis pour vous",
@@ -37,6 +38,8 @@
     "popular": "Recommandé",
     "services_cta_contact": "Me poser une question",
     "price_note": "Prix en euros, TVA non applicable ({{article}}).",
+    "services_shop": "Boutique en ligne, commande ou paiement : sur devis.",
+    "services_shop_link": "Voir les fonctions sur mesure",
     "services_more": "Maintenance, refonte, mises à jour, emails pro, traduction, référencement local : voir tous les services",
     "services": [
       {
@@ -52,7 +55,8 @@
           "Bouton d'appel et formulaire de contact",
           "Visible sur Google dans votre ville",
           "Lisible sur téléphone, tablette et ordinateur"
-        ]
+        ],
+        "note": "Hébergement et nom de domaine non inclus : offerts avec la maintenance."
       },
       {
         "tag": "Pack 02",
@@ -65,7 +69,8 @@
           "Jusqu'à 5 pages, maquette validée avant le développement",
           "Un espace privé pour modifier vous-même vos textes et vos photos",
           "Multilingue"
-        ]
+        ],
+        "note": "Hébergement et nom de domaine non inclus : offerts avec la maintenance."
       },
       {
         "tag": "Pack 03",
@@ -74,7 +79,7 @@
         "price": "49 € / mois",
         "desc": "Une option pour plus de sérénité et de sécurité : j'héberge votre site, je le protège et je le mets à jour. Vous gardez l'esprit libre.",
         "items": [
-          "Hébergement sécurisé",
+          "Hébergement sécurisé et nom de domaine offerts",
           "Sauvegardes et surveillance",
           "Mises à jour régulières",
           "Support réactif"
@@ -94,6 +99,20 @@
     "strip_next": "Sites suivants",
     "strip_title": "Des sites de démonstration à visiter",
     "strip_note": "Imaginés par ManDev pour des commerces fictifs : le vôtre portera votre nom, vos photos et vos horaires.",
+    "about_title": "Qui est derrière ManDev ?",
+    "about_text": "Je m'appelle Mounir, je suis développeur web indépendant à Toulouse. Je conçois et je code moi-même chaque site : pas d'agence, pas de sous-traitance. Vous parlez directement à la personne qui construit votre site.",
+    "about_text2": "Vous voyez la maquette de votre page d'accueil avant de décider quoi que ce soit. Elle est gratuite et sans engagement.",
+    "about_more": "En savoir plus sur moi",
+    "strip_trades": {
+      "pizzeria": "Pizzeria",
+      "barbier": "Coiffeur · Barbier",
+      "restaurant": "Restaurant",
+      "boulangerie": "Boulangerie · Pâtisserie",
+      "artisan": "Plombier · Artisan du bâtiment",
+      "garage": "Garage automobile"
+    },
+    "strip_more": "Votre métier n'est pas là ?",
+    "strip_more_link": "Je prépare quand même votre maquette, gratuitement",
     "work_all": "Tous les projets",
     "process_eyebrow": "Méthode",
     "process_title": "Un processus simple, sans surprise",

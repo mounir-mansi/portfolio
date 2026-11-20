@@ -30,6 +30,7 @@
     "cta_quote": "Ricevi la mia bozza gratuita",
     "cta_work": "Vedi i lavori",
     "offer": "Da 490 € · Bozza gratuita entro 72 ore · Senza impegno",
+    "offer_preview": "Un'anteprima della vostra futura home page, con i vostri colori e i vostri testi. Gratuita, senza impegno: non avete nulla da pagare.",
     "call": "Una domanda?",
     "services_eyebrow": "Servizi",
     "services_title": "Cosa costruisco per te",
@@ -37,6 +38,8 @@
     "popular": "Consigliato",
     "services_cta_contact": "Fai una domanda",
     "price_note": "Prezzi in euro, IVA non applicabile ({{article}}).",
+    "services_shop": "Negozio online, ordini o pagamenti: su preventivo.",
+    "services_shop_link": "Scopri le funzioni su misura",
     "services": [
       {
         "tag": "Pack 01",
@@ -51,7 +54,8 @@
           "Pulsante di chiamata e modulo di contatto",
           "Visibile su Google nella tua città",
           "Leggibile su telefono, tablet e computer"
-        ]
+        ],
+        "note": "Hosting e nome di dominio non inclusi: gratuiti con la manutenzione."
       },
       {
         "tag": "Pack 02",
@@ -64,7 +68,8 @@
           "Fino a 5 pagine, bozza approvata prima dello sviluppo",
           "Un'area privata per modificare tu stesso testi e foto",
           "Multilingua"
-        ]
+        ],
+        "note": "Hosting e nome di dominio non inclusi: gratuiti con la manutenzione."
       },
       {
         "tag": "Pack 03",
@@ -73,7 +78,7 @@
         "price": "49 € / mese",
         "desc": "Un'opzione per più serenità e sicurezza: ospito il tuo sito, lo proteggo e lo tengo aggiornato. Tu pensi al tuo lavoro.",
         "items": [
-          "Hosting sicuro",
+          "Hosting sicuro e nome di dominio inclusi",
           "Backup e monitoraggio",
           "Aggiornamenti regolari",
           "Supporto reattivo"
@@ -93,6 +98,20 @@
     "strip_next": "Siti successivi",
     "strip_title": "Siti dimostrativi da visitare",
     "strip_note": "Ideati da ManDev per attività fittizie: il vostro avrà il vostro nome, le vostre foto e i vostri orari.",
+    "about_title": "Chi c'è dietro ManDev?",
+    "about_text": "Mi chiamo Mounir, sono uno sviluppatore web indipendente a Tolosa. Progetto e programmo personalmente ogni sito: nessuna agenzia, nessun subappalto. Parlate direttamente con la persona che costruisce il vostro sito.",
+    "about_text2": "Vedete la bozza della vostra home page prima di decidere qualsiasi cosa. È gratuita e senza impegno.",
+    "about_more": "Scoprite di più su di me",
+    "strip_trades": {
+      "pizzeria": "Pizzeria",
+      "barbier": "Parrucchiere · Barbiere",
+      "restaurant": "Ristorante",
+      "boulangerie": "Panificio · Pasticceria",
+      "artisan": "Idraulico · Artigiano edile",
+      "garage": "Officina meccanica"
+    },
+    "strip_more": "La vostra attività non c'è?",
+    "strip_more_link": "Preparo comunque la vostra bozza, gratis",
     "work_all": "Tutti i progetti",
     "process_eyebrow": "Metodo",
     "process_title": "Un processo semplice, senza sorprese",
