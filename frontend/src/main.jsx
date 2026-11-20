@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from "./utils/useAuth";
+import { AuthProvider } from "./utils/AuthProvider";
 import App from "./App";
 import "./i18n/index.js";
 // Polices hébergées sur le site : aucun serveur tiers contacté pour l'affichage

@@ -1,6 +1,6 @@
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
-import { AuthProvider } from "./utils/useAuth";
+import { AuthProvider } from "./utils/AuthProvider";
 import App from "./App";
 import i18n from "./i18n/index.js";
 import { ssrHead, resetSsrHead } from "./utils/ssrHead";
