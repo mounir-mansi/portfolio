@@ -1054,3 +1054,37 @@
 .services-more a:hover {
   opacity: 0.75;
 }
+/* ===== HERO COMPACT MOBILE : bouton, prix et téléphone visibles sans défiler (test visiteurs du 20/11) ===== */
+@media (max-width: 760px) {
+  .hero {
+    padding-top: 1.5rem;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 1rem;
+  }
+
+  .hero-title,
+  html[lang="en"] .hero-title {
+    font-size: clamp(2.1rem, 9.4vw, 2.8rem);
+  }
+
+  .hero-sub {
+    margin-top: 0.9rem;
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  .hero-ctas {
+    margin-top: 1.15rem;
+  }
+
+  .hero-offer {
+    margin-top: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-call {
+    margin-top: 0.6rem;
+  }
+}
