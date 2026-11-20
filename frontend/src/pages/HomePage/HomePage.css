@@ -172,6 +172,53 @@
   max-width: 20ch;
 }
 
+/* ===== QUI EST DERRIÈRE MANDEV ===== */
+.about-me-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+}
+
+@media (min-width: 52em) {
+  .about-me-inner {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+  }
+}
+
+.about-me-title {
+  font-size: var(--step-3);
+  font-weight: 300;
+  max-width: 16ch;
+}
+
+.about-me-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 60ch;
+  color: var(--fg-muted);
+}
+
+.about-me-strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+.about-me-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+  margin-top: 0.25rem;
+}
+
+.about-me-links a {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  padding-block: 0.5rem;
+}
+
 /* ===== SERVICES ===== */
 .services {
   display: grid;

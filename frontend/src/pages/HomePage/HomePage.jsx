@@ -117,6 +117,21 @@ export default function HomePage() {
       {/* SITES DE DÉMONSTRATION : bandeau défilant */}
       <DemoStrip />
 
+      {/* QUI EST DERRIÈRE MANDEV : preuve de sérieux sous le bandeau de démos (sans photo) */}
+      <section id="about-me" className="block about-me" aria-labelledby="about-me-title">
+        <div className="container about-me-inner reveal">
+          <h2 id="about-me-title" className="about-me-title">{t("home.about_title")}</h2>
+          <div className="about-me-body">
+            <p>{t("home.about_text")}</p>
+            <p className="about-me-strong">{t("home.about_text2")}</p>
+            <p className="about-me-links">
+              <Link to={lp("/a-propos")}>{t("home.about_more")} <span aria-hidden="true">→</span></Link>
+              <Link to={lp("/mentions-legales")}>{t("legal.mentions")}</Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* MAQUETTE GRATUITE */}
       <QuoteSection />
 
