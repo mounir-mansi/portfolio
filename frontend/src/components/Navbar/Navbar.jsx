@@ -73,6 +73,11 @@ export default function Navbar() {
           mandev
         </Link>
 
+        {/* Mobile : le drapeau sort du menu et se place à côté des deux traits (caché sur ordinateur, voir Navbar.css) */}
+        <div className="nav-lang-mobile">
+          <LangMenu lang={lang} langs={LANGS} onSelect={switchLang} listId="lang-menu-list-mobile" />
+        </div>
+
         <button
           ref={burgerRef}
           className="burger"
@@ -108,7 +113,7 @@ export default function Navbar() {
               </li>
             </>
           )}
-          <li>
+          <li className="nav-lang-desktop">
             <LangMenu lang={lang} langs={LANGS} onSelect={switchLang} />
           </li>
           <li className="nav-phone-item">
