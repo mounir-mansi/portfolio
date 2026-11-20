@@ -200,7 +200,7 @@ export default function DemoStrip() {
       {/* Tous les métiers d'un coup, avant le carrousel : on trouve le sien sans faire défiler */}
       <ul className="container demo-chips" aria-label={t("home.strip_chips_label")}>
         {DEMOS.map((m) => {
-          const label = t(`home.strip_trades.${m.key}`);
+          const label = t(`home.strip_short.${m.key}`);
           return (
             <li key={m.slug}>
               {lang === "fr"

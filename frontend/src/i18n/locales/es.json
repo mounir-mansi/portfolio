@@ -111,6 +111,14 @@
       "artisan": "Fontanero · Oficios de la construcción",
       "garage": "Taller mecánico"
     },
+    "strip_short": {
+      "pizzeria": "Pizzería",
+      "barbier": "Peluquería",
+      "restaurant": "Restaurante",
+      "boulangerie": "Panadería",
+      "artisan": "Fontanero",
+      "garage": "Taller"
+    },
     "strip_chips_label": "Elija su oficio",
     "strip_other": "Otro oficio",
     "work_all": "Todos los proyectos",

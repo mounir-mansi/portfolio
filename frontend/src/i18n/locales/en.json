@@ -111,6 +111,14 @@
       "artisan": "Plumber · Building trades",
       "garage": "Car garage"
     },
+    "strip_short": {
+      "pizzeria": "Pizzeria",
+      "barbier": "Hairdresser",
+      "restaurant": "Restaurant",
+      "boulangerie": "Bakery",
+      "artisan": "Plumber",
+      "garage": "Garage"
+    },
     "strip_chips_label": "Pick your trade",
     "strip_other": "Other trade",
     "work_all": "All projects",

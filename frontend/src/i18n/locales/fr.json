@@ -112,6 +112,14 @@
       "artisan": "Plombier · Artisan du bâtiment",
       "garage": "Garage automobile"
     },
+    "strip_short": {
+      "pizzeria": "Pizzeria",
+      "barbier": "Coiffeur",
+      "restaurant": "Restaurant",
+      "boulangerie": "Boulangerie",
+      "artisan": "Plombier",
+      "garage": "Garage"
+    },
     "strip_chips_label": "Choisir votre métier",
     "strip_other": "Autre métier",
     "work_all": "Tous les projets",
