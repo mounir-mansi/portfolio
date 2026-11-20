@@ -30,6 +30,7 @@
     "cta_quote": "Get my free mockup",
     "cta_work": "See my work",
     "offer": "From €490 · Free mockup within 72 hours · No commitment",
+    "offer_preview": "A preview of your future home page, with your colors and your texts. Free, no commitment: you have nothing to pay.",
     "call": "A question?",
     "services_eyebrow": "Services",
     "services_title": "What I build for you",
@@ -37,6 +38,8 @@
     "popular": "Recommended",
     "services_cta_contact": "Ask a question",
     "price_note": "Prices in euros, VAT not applicable ({{article}}).",
+    "services_shop": "Online shop, ordering or payment: on quote.",
+    "services_shop_link": "See custom features",
     "services": [
       {
         "tag": "Pack 01",
@@ -51,7 +54,8 @@
           "Call button and contact form",
           "Visible on Google in your city",
           "Easy to read on phone, tablet and computer"
-        ]
+        ],
+        "note": "Hosting and domain name not included: free with the maintenance plan."
       },
       {
         "tag": "Pack 02",
@@ -64,7 +68,8 @@
           "Up to 5 pages, mockup approved before development",
           "A private area to edit your texts and photos yourself",
           "Multilingual"
-        ]
+        ],
+        "note": "Hosting and domain name not included: free with the maintenance plan."
       },
       {
         "tag": "Pack 03",
@@ -73,7 +78,7 @@
         "price": "€49 / month",
         "desc": "An option for extra peace of mind and security: I host your site, protect it and keep it up to date, so you can focus on your business.",
         "items": [
-          "Secure hosting",
+          "Secure hosting and domain name included",
           "Backups and monitoring",
           "Regular updates",
           "Responsive support"
@@ -97,6 +102,16 @@
     "about_text": "I'm Mounir, an independent web developer based in Toulouse. I design and code every site myself: no agency, no subcontracting. You talk directly to the person who builds your site.",
     "about_text2": "You see the mockup of your home page before deciding anything. It is free and with no commitment.",
     "about_more": "More about me",
+    "strip_trades": {
+      "pizzeria": "Pizzeria",
+      "barbier": "Hairdresser · Barber",
+      "restaurant": "Restaurant",
+      "boulangerie": "Bakery · Pastry shop",
+      "artisan": "Plumber · Building trades",
+      "garage": "Car garage"
+    },
+    "strip_more": "Your trade isn't here?",
+    "strip_more_link": "I'll still prepare your mockup, for free",
     "work_all": "All projects",
     "process_eyebrow": "Method",
     "process_title": "A simple process, no surprises",

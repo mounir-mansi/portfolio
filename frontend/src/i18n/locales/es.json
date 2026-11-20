@@ -30,6 +30,7 @@
     "cta_quote": "Recibir mi maqueta gratis",
     "cta_work": "Ver trabajos",
     "offer": "Desde 490 € · Maqueta gratis en 72 horas · Sin compromiso",
+    "offer_preview": "Una vista previa de su futura página de inicio, con sus colores y sus textos. Gratis, sin compromiso: no tiene nada que pagar.",
     "call": "¿Una pregunta?",
     "services_eyebrow": "Servicios",
     "services_title": "Lo que construyo para ti",
@@ -37,6 +38,8 @@
     "popular": "Recomendado",
     "services_cta_contact": "Hacer una pregunta",
     "price_note": "Precios en euros, IVA no aplicable ({{article}}).",
+    "services_shop": "Tienda online, pedidos o pagos: bajo presupuesto.",
+    "services_shop_link": "Ver las funciones a medida",
     "services": [
       {
         "tag": "Pack 01",
@@ -51,7 +54,8 @@
           "Botón de llamada y formulario de contacto",
           "Visible en Google en tu ciudad",
           "Fácil de leer en móvil, tablet y ordenador"
-        ]
+        ],
+        "note": "Alojamiento y nombre de dominio no incluidos: gratis con el mantenimiento."
       },
       {
         "tag": "Pack 02",
@@ -64,7 +68,8 @@
           "Hasta 5 páginas, maqueta aprobada antes del desarrollo",
           "Un espacio privado para modificar tú mismo tus textos y fotos",
           "Multilingüe"
-        ]
+        ],
+        "note": "Alojamiento y nombre de dominio no incluidos: gratis con el mantenimiento."
       },
       {
         "tag": "Pack 03",
@@ -73,7 +78,7 @@
         "price": "49 € / mes",
         "desc": "Una opción para más tranquilidad y seguridad: alojo tu sitio, lo protejo y lo mantengo actualizado. Tú te centras en tu negocio.",
         "items": [
-          "Alojamiento seguro",
+          "Alojamiento seguro y nombre de dominio incluidos",
           "Copias y supervisión",
           "Actualizaciones regulares",
           "Soporte rápido"
@@ -97,6 +102,16 @@
     "about_text": "Me llamo Mounir, soy desarrollador web independiente en Toulouse. Diseño y programo yo mismo cada sitio: sin agencia ni subcontratación. Usted habla directamente con la persona que construye su sitio.",
     "about_text2": "Ve la maqueta de su página de inicio antes de decidir nada. Es gratuita y sin compromiso.",
     "about_more": "Más sobre mí",
+    "strip_trades": {
+      "pizzeria": "Pizzería",
+      "barbier": "Peluquero · Barbero",
+      "restaurant": "Restaurante",
+      "boulangerie": "Panadería · Pastelería",
+      "artisan": "Fontanero · Oficios de la construcción",
+      "garage": "Taller mecánico"
+    },
+    "strip_more": "¿Su oficio no está aquí?",
+    "strip_more_link": "Le preparo igualmente su maqueta, gratis",
     "work_all": "Todos los proyectos",
     "process_eyebrow": "Método",
     "process_title": "Un proceso simple, sin sorpresas",
