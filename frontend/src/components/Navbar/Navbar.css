@@ -188,3 +188,21 @@
     padding: 0.8em 1.6em;
   }
 }
+/* Numéro de téléphone cliquable à côté du bouton de devis (test visiteurs du 20/11 : beaucoup préfèrent appeler) */
+.nav-links a.nav-phone {
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+}
+
+.nav-links a.nav-phone:hover {
+  color: var(--accent-text);
+}
+
+/* Entre le menu mobile et les grands écrans la barre est trop étroite : le numéro reste dans le hero */
+@media (min-width: 861px) and (max-width: 1279px) {
+  .nav-phone-item {
+    display: none;
+  }
+}

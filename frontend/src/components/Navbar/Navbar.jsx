@@ -3,6 +3,7 @@ import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../utils/useAuth";
 import LangMenu from "../LangMenu/LangMenu";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "../../utils/contactInfo";
 import "./Navbar.css";
 
 const LANGS = ["fr", "en", "it", "es"];
@@ -109,6 +110,9 @@ export default function Navbar() {
           )}
           <li>
             <LangMenu lang={lang} langs={LANGS} onSelect={switchLang} />
+          </li>
+          <li className="nav-phone-item">
+            <a className="nav-phone" href={`tel:${CONTACT_PHONE_HREF}`} onClick={close}>{CONTACT_PHONE_DISPLAY}</a>
           </li>
           <li>
             <Link
