@@ -111,6 +111,14 @@
       "artisan": "Idraulico · Artigiano edile",
       "garage": "Officina meccanica"
     },
+    "strip_short": {
+      "pizzeria": "Pizzeria",
+      "barbier": "Parrucchiere",
+      "restaurant": "Ristorante",
+      "boulangerie": "Panetteria",
+      "artisan": "Idraulico",
+      "garage": "Officina"
+    },
     "strip_chips_label": "Scegliete la vostra attività",
     "strip_other": "Altra attività",
     "work_all": "Tutti i progetti",
