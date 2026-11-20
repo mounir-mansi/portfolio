@@ -26,7 +26,7 @@
     "title_a": "Websites for craftspeople and shop owners that",
     "title_em": "turn",
     "title_b": "your visitors into customers.",
-    "sub": "A clear, fast showcase website that brings you calls and quote requests, delivered turnkey.",
+    "sub": "A clear, fast showcase website for tradespeople, shopkeepers and self-employed professionals: calls and quote requests, delivered turnkey.",
     "cta_quote": "Get my free mockup",
     "cta_work": "See my work",
     "offer": "From €490 · Free mockup within 72 hours · No commitment",
@@ -38,7 +38,8 @@
     "popular": "Recommended",
     "services_cta_contact": "Ask a question",
     "price_note": "Prices in euros, VAT not applicable ({{article}}).",
-    "services_shop": "Online shop, ordering or payment: on quote.",
+    "services_shop_title": "Sell or take orders online",
+    "services_shop_text": "Online shop, click and collect, payment: I add these features to your website, on quote.",
     "services_shop_link": "See custom features",
     "services": [
       {
@@ -55,7 +56,7 @@
           "Visible on Google in your city",
           "Easy to read on phone, tablet and computer"
         ],
-        "note": "Hosting and domain name not included: free with the maintenance plan."
+        "note": "Hosting: the server that puts your website online. Domain name: your address (e.g. mysite.com). Not included in the pack, free with the maintenance plan."
       },
       {
         "tag": "Pack 02",
@@ -69,7 +70,7 @@
           "A private area to edit your texts and photos yourself",
           "Multilingual"
         ],
-        "note": "Hosting and domain name not included: free with the maintenance plan."
+        "note": "Hosting: the server that puts your website online. Domain name: your address (e.g. mysite.com). Not included in the pack, free with the maintenance plan."
       },
       {
         "tag": "Pack 03",
@@ -97,7 +98,7 @@
     "strip_prev": "Previous sites",
     "strip_next": "Next sites",
     "strip_title": "Demo sites to explore",
-    "strip_note": "Imagined by ManDev for fictional businesses: yours will carry your name, your photos and your opening hours.",
+    "strip_note": "Demo websites designed by ManDev: yours will carry your name, your photos and your opening hours.",
     "about_title": "Who is behind ManDev?",
     "about_text": "I'm Mounir, an independent web developer based in Toulouse. I design and code every site myself: no agency, no subcontracting. You talk directly to the person who builds your site.",
     "about_text2": "You see the mockup of your home page before deciding anything. It is free and with no commitment.",
@@ -110,8 +111,8 @@
       "artisan": "Plumber · Building trades",
       "garage": "Car garage"
     },
-    "strip_more": "Your trade isn't here?",
-    "strip_more_link": "I'll still prepare your mockup, for free",
+    "strip_chips_label": "Pick your trade",
+    "strip_other": "Other trade",
     "work_all": "All projects",
     "process_eyebrow": "Method",
     "process_title": "A simple process, no surprises",
@@ -233,6 +234,10 @@
       {
         "q": "How does the free mockup work?",
         "a": "You fill in a short form in a few steps and choose when I call you. That call lets me understand your business and what you like. Within 72 hours of that call, I send you a mockup of your home page. You look at it at your own pace and decide afterwards, with no commitment."
+      },
+      {
+        "q": "What should I prepare for the mockup?",
+        "a": "Nothing is required. If you have them: your logo, a few photos, a few sentences about your business, links to your social networks. If not, we sort it out together during the call."
       },
       {
         "q": "How much does a website cost?",

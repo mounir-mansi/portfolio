@@ -197,6 +197,22 @@ export default function DemoStrip() {
           </button>
         </div>
       </div>
+      {/* Tous les métiers d'un coup, avant le carrousel : on trouve le sien sans faire défiler */}
+      <ul className="container demo-chips" aria-label={t("home.strip_chips_label")}>
+        {DEMOS.map((m) => {
+          const label = t(`home.strip_trades.${m.key}`);
+          return (
+            <li key={m.slug}>
+              {lang === "fr"
+                ? <Link to={`/fr/${m.slug}`} className="demo-chip">{label}</Link>
+                : <a href={m.demo.url} target="_blank" rel="noopener noreferrer" className="demo-chip">{label}</a>}
+            </li>
+          );
+        })}
+        <li>
+          <Link to={{ pathname: `/${lang}`, hash: "#devis" }} className="demo-chip demo-chip--other">{t("home.strip_other")} <span aria-hidden="true">→</span></Link>
+        </li>
+      </ul>
       <div className="demo-strip-viewport" ref={viewport} tabIndex={0} role="region" aria-label={t("home.strip_title")}>
         <ul className="demo-strip-track" ref={track}>
           {items.map(({ m, copy }, i) => (
@@ -204,10 +220,6 @@ export default function DemoStrip() {
           ))}
         </ul>
       </div>
-      <p className="container demo-strip-more">
-        <span>{t("home.strip_more")}</span>{" "}
-        <Link to={{ pathname: `/${lang}`, hash: "#devis" }}>{t("home.strip_more_link")} <span aria-hidden="true">→</span></Link>
-      </p>
     </section>
   );
 }

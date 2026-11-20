@@ -190,10 +190,11 @@ export default function HomePage() {
             ))}
           </div>
           <p className="services-note">{t("home.price_note", { article: vatArticle() })}</p>
-          <p className="services-shop">
-            {t("home.services_shop")}{" "}
+          <aside className="services-shop" aria-labelledby="services-shop-title">
+            <h3 id="services-shop-title" className="services-shop-title">{t("home.services_shop_title")}</h3>
+            <p>{t("home.services_shop_text")}</p>
             <Link to={lp("/fonctions-sur-mesure")}>{t("home.services_shop_link")} <span aria-hidden="true">→</span></Link>
-          </p>
+          </aside>
           {lang === "fr" && (
             <p className="services-more">
               <Link to="/fr/services">{t("home.services_more")} <span aria-hidden="true">→</span></Link>
