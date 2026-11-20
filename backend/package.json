@@ -16,6 +16,8 @@
   "description": "",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1014.0",
+    "@prisma/adapter-pg": "^7.5.0",
+    "@prisma/client": "^7.5.0",
     "argon2": "^0.44.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
@@ -30,8 +32,6 @@
     "resend": "^6.9.4"
   },
   "devDependencies": {
-    "@prisma/adapter-pg": "^7.5.0",
-    "@prisma/client": "^7.5.0",
     "jest": "^30.3.0",
     "nodemon": "^3.1.14",
     "prisma": "^7.5.0",
