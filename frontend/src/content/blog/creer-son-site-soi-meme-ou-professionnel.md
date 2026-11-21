@@ -1,4 +1,4 @@
-Les publicités promettent de créer un site internet « en quelques clics et gratuitement ». Si des outils comme Wix, Squarespace ou Webflow sont séduisants sur le papier, conviennent-ils vraiment à une entreprise qui cherche à attirer des clients ? Comparons les deux approches, sans parti pris : pour certains projets, faire soi-même est un bon choix.
+Les publicités promettent de créer un site internet « en quelques clics et gratuitement ». Si des outils comme Wix, Squarespace, Webflow, Jimdo, Canva, e-monsite ou Sitew sont séduisants sur le papier, conviennent-ils vraiment à une entreprise qui cherche à attirer des clients ? Comparons les deux approches, sans parti pris : pour certains projets, faire soi-même est un bon choix.
 
 ### Créer son site soi-même : pour qui et à quel prix ?
 
