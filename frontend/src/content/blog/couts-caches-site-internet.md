@@ -39,15 +39,14 @@ Un site web n'est pas figé. Les technologies évoluent et des failles de sécur
 
 - **Essentiel, 49 € par mois :** le site reste en ligne et en sécurité (hébergement, certificat, sauvegardes, surveillance, mises à jour de sécurité). Les petites modifications sont à 40 € l'unité.
 - **Suivi, 89 € par mois :** en plus, 2 modifications par mois incluses, réponse sous 48 h, rapport mensuel et suivi Search Console.
-- **Complet, 149 € par mois :** 5 modifications par mois, réponse sous 24 h, suivi de votre fiche Google, point trimestriel par téléphone et remise en route prioritaire en cas de panne.
+- **Complet, 149 € par mois :** 5 modifications par mois, réponse sous 24 h, suivi de votre fiche Google, point trimestriel et remise en route prioritaire en cas de panne.
 
 À titre d'illustration, la formule Essentiel représente 588 € par an (49 € × 12), nom de domaine et hébergement compris.
 
 ### 5. Les petits coûts qu'on oublie souvent
 
 - **Les adresses e-mail professionnelles** (contact@votreentreprise.fr plutôt qu'une boîte gratuite) : plus de confiance, et vos messages arrivent mieux dans la boîte de vos clients. Chez moi, la mise en place est à 90 €.
-- **Les modifications de contenu** : changer un tarif, ajouter une photo ou une page. Selon les prestataires, c'est inclus ou facturé à l'unité. Chez moi, 40 € l'unité, ou 160 € le pack de 5.
-- **Les options à venir** : réservation en ligne, paiement, espace client. Elles se chiffrent à part, au moment où vous en avez besoin.
+- **Les modifications de contenu** : changer un tarif, ajouter une photo ou une page. Selon les prestataires, c'est inclus ou facturé à l'unité. Chez moi, des modifications sont incluses dans la maintenance : 2 par mois avec la formule Suivi, 5 par mois avec la formule Complet. Avec la formule Essentiel, comptez 40 € l'unité, ou 160 € le pack de 5.
 
 ### Questions fréquentes
 
