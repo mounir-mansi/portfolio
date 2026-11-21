@@ -1,15 +1,19 @@
 /* Corps d'un article de blog : texte confortable à lire, colonne d'environ 70 caractères */
 .blog-body {
-  max-width: 44rem;
   min-width: 0;
   overflow-wrap: anywhere;
-  font-size: var(--step-0);
+  font-size: clamp(1.05rem, 1rem + 0.25vw, 1.2rem); /* un peu plus gros que le texte courant : la colonne est large */
   line-height: 1.75;
   color: var(--fg);
 }
 
 .blog-body > * + * {
   margin-top: 1.15rem;
+}
+
+.blog-body h2,
+.blog-body h3 {
+  scroll-margin-top: 6.5rem; /* sous la barre de navigation et la barre de progression quand on arrive par le sommaire */
 }
 
 .blog-body h2 {
