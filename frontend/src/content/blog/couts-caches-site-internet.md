@@ -45,7 +45,7 @@ Un site web n'est pas figé. Les technologies évoluent et des failles de sécur
 
 ### 5. Les petits coûts qu'on oublie souvent
 
-- **Les adresses e-mail professionnelles** (contact@votreentreprise.fr plutôt qu'une boîte gratuite) : plus de confiance, et vos messages arrivent mieux dans la boîte de vos clients. Chez moi, la mise en place est à 90 €.
+- **Les adresses e-mail professionnelles** (contact@votreentreprise.fr plutôt qu'une boîte gratuite) : plus de confiance, et vos messages arrivent mieux dans la boîte de vos clients. Elles ne sont pas incluses dans l'hébergement : la location de la boîte est un abonnement chez le fournisseur de votre choix, à votre charge. Je recommande Google Workspace, le plus fiable et le plus pratique à mon avis, à environ 7 à 8 € par mois et par adresse. Chez moi, la création des boîtes et leur configuration sont à 90 €.
 - **Les modifications de contenu** : changer un tarif, ajouter une photo ou une page. Selon les prestataires, c'est inclus ou facturé à l'unité. Chez moi, des modifications sont incluses dans la maintenance : 2 par mois avec la formule Suivi, 5 par mois avec la formule Complet. Avec la formule Essentiel, comptez 40 € l'unité, ou 160 € le pack de 5.
 
 ### Questions fréquentes
