@@ -24,7 +24,7 @@ export default function BlogContent({ blocs }) {
   return blocs.map((b, i) => {
     if (b.type === "titre") {
       const Tag = `h${Math.min(6, Math.max(2, b.niveau - 1))}`;
-      return <Tag key={i}><T texte={b.texte} /></Tag>;
+      return <Tag key={i} id={b.id}><T texte={b.texte} /></Tag>;
     }
     if (b.type === "paragraphe") return <p key={i}><T texte={b.texte} /></p>;
     if (b.type === "liste") {

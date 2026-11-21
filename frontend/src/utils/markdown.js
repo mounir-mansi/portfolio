@@ -28,8 +28,18 @@ const estSeparateurTableau = (l) => /^\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)*\|?\
 const estRegle = (l) => /^---+\s*$/.test(l);
 const decouperLigne = (l) => l.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
 
+// Adresse d'ancre d'un titre (sans accents, en minuscules, tirets) ; un titre répété reçoit -2, -3…
+const ancre = (texte) => texte.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/&/g, "et").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "section";
+
 export function parseMarkdown(md) {
   const lignes = md.replace(/\r\n?/g, "\n").split("\n");
+  const utilises = new Map();
+  const idUnique = (texte) => {
+    const base = ancre(enTexteBrut(texte));
+    const n = (utilises.get(base) || 0) + 1;
+    utilises.set(base, n);
+    return n === 1 ? base : `${base}-${n}`;
+  };
   const debutTableau = (i) => estLigneTableau(lignes[i]) && i + 1 < lignes.length && estSeparateurTableau(lignes[i + 1]);
   const blocs = [];
   let i = 0;
@@ -38,7 +48,7 @@ export function parseMarkdown(md) {
     if (!l.trim() || estRegle(l)) { i++; continue; }
 
     const titre = l.match(/^(#{1,6})\s+(.+?)\s*$/);
-    if (titre) { blocs.push({ type: "titre", niveau: titre[1].length, texte: titre[2] }); i++; continue; }
+    if (titre) { blocs.push({ type: "titre", niveau: titre[1].length, texte: titre[2], id: idUnique(titre[2]) }); i++; continue; }
 
     if (debutTableau(i)) {
       const entetes = decouperLigne(l);

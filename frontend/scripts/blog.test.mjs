@@ -37,12 +37,25 @@ test("blog : publication cachée par défaut tant que Mounir n'a pas relu (BLOG_
 
 test("markdown : titres, paragraphes, listes, cases à cocher, tableaux", () => {
   const blocs = parseMarkdown("### Titre\n\nUn **gras** et un [lien](/fr/contact).\nSuite du paragraphe.\n\n- un\n- deux\n  suite\n\n1. a\n2. b\n\n- [ ] à faire\n- [x] fait\n\n| | A | B |\n|---|---|---|\n| ligne | 1 | 2 |\n");
-  assert.deepEqual(blocs[0], { type: "titre", niveau: 3, texte: "Titre" });
+  assert.deepEqual(blocs[0], { type: "titre", niveau: 3, texte: "Titre", id: "titre" });
   assert.deepEqual(blocs[1], { type: "paragraphe", texte: "Un **gras** et un [lien](/fr/contact). Suite du paragraphe." });
   assert.deepEqual(blocs[2], { type: "liste", ordonnee: false, items: [{ texte: "un", coche: null }, { texte: "deux suite", coche: null }] });
   assert.equal(blocs[3].ordonnee, true);
   assert.deepEqual(blocs[4].items, [{ texte: "à faire", coche: false }, { texte: "fait", coche: true }]);
   assert.deepEqual(blocs[5], { type: "tableau", entetes: ["", "A", "B"], lignes: [["ligne", "1", "2"]] });
+});
+
+test("markdown : chaque titre a une adresse d'ancre sans accent, unique dans l'article", () => {
+  const ids = parseMarkdown("### Le nom de domaine : votre adresse\n\n### Questions fréquentes\n\n### Questions fréquentes\n\n### À quoi ça sert ?\n").map((b) => b.id);
+  assert.deepEqual(ids, ["le-nom-de-domaine-votre-adresse", "questions-frequentes", "questions-frequentes-2", "a-quoi-ca-sert"]);
+});
+
+test("articles : les adresses d'ancre de chaque article sont uniques", () => {
+  for (const a of BLOG_ARTICLES) {
+    const ids = parseMarkdown(texteArticle(a.slug)).filter((b) => b.type === "titre").map((b) => b.id);
+    assert.equal(new Set(ids).size, ids.length, `ancres en double dans ${a.slug}`);
+    assert.ok(ids.every((id) => /^[a-z0-9-]+$/.test(id)), `ancres invalides dans ${a.slug}`);
+  }
 });
 
 test("markdown : mise en forme en ligne, liens internes et externes", () => {

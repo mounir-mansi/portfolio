@@ -128,7 +128,7 @@
 }
 
 .blog-head .page-title {
-  max-width: 26ch;
+  max-width: 30ch;
   font-size: clamp(2rem, 1.5rem + 2.2vw, 3.3rem);
 }
 
@@ -148,8 +148,41 @@
   border-radius: 999px;
 }
 
+/* Article : une seule colonne, centrée, plus large qu'une colonne de lecture classique.
+   L'en-tête et le texte partagent la même largeur pour rester alignés. */
+.container.blog-head,
+.container.blog-layout {
+  max-width: 62rem;
+}
+
 .blog-layout {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3rem);
   padding-bottom: var(--section-y);
+}
+
+/* Encadré de contact en fin d'article */
+.blog-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.blog-cta-title {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.15;
+}
+
+.blog-cta p:not(.blog-cta-title) {
+  color: var(--fg-muted);
+  line-height: 1.55;
 }
 
 /* Barre de progression de lecture, juste sous la barre de navigation */

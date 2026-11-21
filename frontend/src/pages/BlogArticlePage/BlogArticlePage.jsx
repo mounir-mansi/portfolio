@@ -112,6 +112,12 @@ function ArticleContent({ article }) {
           <div className="blog-body">
             <BlogContent blocs={blocs} />
           </div>
+
+          <div className="blog-cta">
+            <p className="blog-cta-title">Un projet de site ?</p>
+            <p>Je crée des sites vitrine sur mesure pour les commerçants et artisans de Toulouse et de toute la France.</p>
+            <Link to="/fr/contact" className="btn-primary">Me contacter <span aria-hidden="true">↗</span></Link>
+          </div>
         </div>
       </article>
 
