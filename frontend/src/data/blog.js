@@ -27,9 +27,9 @@ export const BLOG_ARTICLES = [
   },
   {
     "slug": "creer-son-site-soi-meme-ou-professionnel",
-    "title": "Créer son site soi-même (Wix, Squarespace) ou passer par un professionnel ?",
+    "title": "Créer son site soi-même (Wix, Canva, Squarespace…) ou passer par un professionnel ?",
     "metaTitle": "Site Wix ou professionnel : que choisir ?",
-    "description": "Wix, Squarespace ou développeur web ? Comparatif complet pour choisir la meilleure option selon votre budget, vos objectifs et votre stratégie SEO.",
+    "description": "Wix, Canva ou développeur web ? Comparatif complet pour choisir la meilleure option selon votre budget, vos objectifs et votre stratégie SEO.",
     "keyword": "site internet Wix ou professionnel",
     "date": "2026-11-21"
   },
