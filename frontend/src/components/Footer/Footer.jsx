@@ -11,6 +11,7 @@ import {
 } from "../../utils/contactInfo";
 import { ACTIVITES, VILLES } from "../../data/metiers";
 import { SERVICE_PAGES } from "../../data/services";
+import { BLOG_PUBLIC, BLOG_SLUG } from "../../data/blog";
 import "./Footer.css";
 
 export default function Footer({ hideCta = false }) {
@@ -63,6 +64,11 @@ export default function Footer({ hideCta = false }) {
             {lang === "fr" && (
               <li>
                 <Link to="/fr/services">{t("nav.services")}</Link>
+              </li>
+            )}
+            {lang === "fr" && BLOG_PUBLIC && (
+              <li>
+                <Link to={`/fr/${BLOG_SLUG}`}>Blog</Link>
               </li>
             )}
           </ul>

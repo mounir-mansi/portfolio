@@ -15,6 +15,9 @@ import CgvPage from "./pages/LegalPages/CgvPage";
 import MetierPage from "./pages/MetierPage/MetierPage";
 import ServicesPage from "./pages/ServicesPage/ServicesPage";
 import ServiceDetailPage from "./pages/ServiceDetailPage/ServiceDetailPage";
+import BlogPage from "./pages/BlogPage/BlogPage";
+import BlogArticlePage from "./pages/BlogArticlePage/BlogArticlePage";
+import { BLOG_SLUG } from "./data/blog";
 import { METIERS } from "./data/metiers";
 import { SERVICES_SLUG, SERVICE_PAGES } from "./data/services";
 import useSeoTags from "./utils/useSeoTags";
@@ -75,6 +78,8 @@ function LangRouter() {
       {METIERS.map((metier) => (
         <Route key={metier.slug} path={metier.slug} element={<MetierPage metier={metier} />} />
       ))}
+      <Route path={BLOG_SLUG} element={<BlogPage />} />
+      <Route path={`${BLOG_SLUG}/:slug`} element={<BlogArticlePage />} />
       <Route path="connexion" element={<ConnexionScreen />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

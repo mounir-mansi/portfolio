@@ -41,6 +41,14 @@ test("composer : remplace les balises de la page, garde les autres, langue et co
   controler("/en/contact", page);
 });
 
+test("composer : une page cachée (noindex) a sa balise robots dans le HTML, une page normale n'en a pas", () => {
+  const cachee = composer(MODELE, "/en/contact", rendu({ robots: "noindex, nofollow" }));
+  assert.match(cachee, /<meta name="robots" content="noindex, nofollow" \/>/);
+  controler("/en/contact", cachee);
+  assert.ok(!composer(MODELE, "/en/contact", rendu()).includes('name="robots"'));
+  assert.throws(() => controler("/en/contact", cachee.replace("</head>", '<meta name="robots" content="noindex" /></head>')), /robots/);
+});
+
 test("composer : le JSON-LD ne peut pas fermer la balise script", () => {
   const page = composer(MODELE, "/en/contact", rendu());
   assert.ok(!page.includes("</script><b>"));
