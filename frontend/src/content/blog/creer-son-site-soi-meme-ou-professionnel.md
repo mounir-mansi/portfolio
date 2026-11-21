@@ -17,6 +17,10 @@ Ces plateformes fonctionnent par glisser-déposer, avec des modèles prêts à l
 - **Des limites en référencement (SEO).** Ces outils se sont améliorés, mais le code généré est souvent plus lourd, ce qui ralentit le chargement face à un site optimisé, et vous avez moins de contrôle sur la structure technique.
 - **Un site lié à la plateforme.** Vous payez un abonnement tant que vous voulez garder le site, et il est en général difficile de le déplacer ailleurs : changer de plateforme signifie le reconstruire.
 
+### Et WordPress ?
+
+WordPress est un cas à part : c'est un logiciel que l'on installe sur son propre hébergement, plus ouvert que les plateformes ci-dessus. Le site peut être déplacé ailleurs et on peut presque tout y ajouter grâce aux extensions. En contrepartie, il demande de l'entretien : mises à jour, extensions à surveiller, sécurité. Un WordPress qu'on ne met plus à jour devient vulnérable. Ce n'est donc pas « gratuit et sans souci » : il faut du temps, ou quelqu'un qui s'en occupe.
+
 ### Passer par un développeur web : un investissement rentable
 
 Faire appel à un professionnel, c'est déléguer la technique et la stratégie pour vous concentrer sur votre métier.
