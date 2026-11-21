@@ -11,6 +11,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { METIERS } from "../src/data/metiers.js";
 import { SERVICES_SLUG, SERVICE_PAGES } from "../src/data/services.js";
+import { BLOG_SLUG, BLOG_ARTICLES } from "../src/data/blog.js";
 
 const RACINE = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(RACINE, "dist");
@@ -28,7 +29,8 @@ export function routes({ projets = null } = {}) {
   const pagesProjets = projets === null ? [] : LANGS.flatMap((lang) => [`/${lang}/projets`, ...projets.map((id) => `/${lang}/projets/${id}`)]);
   const services = [SERVICES_SLUG, ...SERVICE_PAGES.map((s) => s.slug)].map((slug) => `/fr/${slug}`); // pages Services : français seulement
   const traduites = SERVICE_PAGES.filter((s) => s.multilang).flatMap((s) => LANGS.filter((l) => l !== "fr").map((l) => `/${l}/${s.slug}`)); // sauf celles traduites
-  return [...base, ...services, ...traduites, ...metiers, ...pagesProjets];
+  const blog = [`/fr/${BLOG_SLUG}`, ...BLOG_ARTICLES.map((a) => `/fr/${BLOG_SLUG}/${a.slug}`)]; // blog : français seulement (caché tant que BLOG_PUBLIC est false)
+  return [...base, ...services, ...traduites, ...metiers, ...blog, ...pagesProjets];
 }
 
 // Lecture de l'API du portfolio ; renvoie null (avec un avertissement) si elle est injoignable ou répond de travers
@@ -96,6 +98,7 @@ export function composer(modele, url, rendu, donnees = {}) {
     `<title>${echapper(titre)}</title>`,
     `<meta name="description" content="${echapper(description)}" />`,
     `<link rel="canonical" href="${echapper(head.canonical)}" />`,
+    ...(head.robots ? [`<meta name="robots" content="${echapper(head.robots)}" />`] : []),
     ...head.alternates.map(([l, href]) => `<link rel="alternate" hreflang="${l}" href="${echapper(href)}" />`),
     `<meta property="og:title" content="${echapper(titre)}" />`,
     `<meta property="og:description" content="${echapper(description)}" />`,
@@ -122,6 +125,7 @@ export function controler(url, page) {
   const unique = [["<title>", /<title>/g], ["description", /<meta name="description"/g], ["canonical", /<link rel="canonical"/g], ["og:title", /<meta property="og:title"/g], ["og:url", /<meta property="og:url"/g]];
   for (const [nom, re] of unique) if (compte(re) !== 1) problemes.push(`${nom} : ${compte(re)} exemplaire(s) au lieu de 1`);
   if (compte(/<link rel="alternate" hreflang=/g) !== 5) problemes.push("hreflang : 5 attendus");
+  if (compte(/<meta name="robots"/g) > 1) problemes.push("robots : plus d'un exemplaire");
   if (compte(/<h1[ >]/g) < 1) problemes.push("aucun titre H1 dans le HTML");
   if (/>\s*undefined\s*</.test(page) || /content="undefined"/.test(page)) problemes.push("valeur « undefined » dans le HTML");
   const texte = page.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, " ");

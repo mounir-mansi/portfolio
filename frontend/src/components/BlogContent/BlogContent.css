@@ -1,0 +1,134 @@
+/* Corps d'un article de blog : texte confortable à lire, colonne d'environ 70 caractères */
+.blog-body {
+  max-width: 44rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: var(--step-0);
+  line-height: 1.75;
+  color: var(--fg);
+}
+
+.blog-body > * + * {
+  margin-top: 1.15rem;
+}
+
+.blog-body h2 {
+  margin-top: 3rem;
+  font-size: var(--step-2);
+  font-weight: 300;
+  line-height: 1.12;
+}
+
+.blog-body h3 {
+  margin-top: 2rem;
+  font-size: var(--step-1);
+  line-height: 1.2;
+}
+
+.blog-body strong {
+  font-weight: 600;
+}
+
+.blog-body a {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.blog-body a:hover,
+.blog-body a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+.blog-body ul,
+.blog-body ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-left: 1.4rem;
+}
+
+.blog-body ul {
+  list-style: disc;
+}
+
+.blog-body ol {
+  list-style: decimal;
+}
+
+.blog-body li::marker {
+  color: var(--accent-text);
+}
+
+.blog-body code {
+  padding: 0.1em 0.4em;
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* Liste de contrôle : une case vide devant chaque point */
+.blog-body .blog-checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.blog-body .blog-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.blog-box {
+  flex: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.4rem;
+  border: 1.5px solid var(--accent-text);
+  border-radius: 3px;
+}
+
+/* Tableau : défile dans son cadre sur petit écran, la page ne déborde jamais */
+.blog-table {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.blog-table table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.blog-table th,
+.blog-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.45;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-table tbody tr:last-child th,
+.blog-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.blog-table thead th {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  background: var(--bg-raised);
+}
+
+.blog-table tbody th {
+  font-weight: 500;
+  white-space: nowrap;
+}

@@ -3,6 +3,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { METIERS } from "../src/data/metiers.js";
 import { SERVICES_SLUG, SERVICE_PAGES } from "../src/data/services.js";
+import { BLOG_PUBLIC, BLOG_SLUG, BLOG_ARTICLES } from "../src/data/blog.js";
 
 const SITE = "https://mandev.fr";
 const LANGS = ["fr", "en", "it", "es"];
@@ -29,7 +30,14 @@ const servicesUrls = [SERVICES_SLUG, ...SERVICE_PAGES.filter((s) => !s.multilang
 // Pages de service traduites : 4 langues, avec hreflang
 const servicesTraduites = SERVICE_PAGES.filter((s) => s.multilang).flatMap((s) => LANGS.map((lang) => entry(lang, `/${s.slug}`)));
 
-const urls = [...PAGES.flatMap((page) => LANGS.map((lang) => entry(lang, page))), ...servicesUrls, ...servicesTraduites, ...metierUrls];
+// Blog : en français seulement, et seulement une fois publié (BLOG_PUBLIC dans src/data/blog.js) : caché tant qu'il est en relecture
+const blogUrls = BLOG_PUBLIC
+  ? [BLOG_SLUG, ...BLOG_ARTICLES.map((a) => `${BLOG_SLUG}/${a.slug}`)].map((chemin) => `  <url>
+    <loc>${SITE}/fr/${chemin}</loc>
+  </url>`)
+  : [];
+
+const urls = [...PAGES.flatMap((page) => LANGS.map((lang) => entry(lang, page))), ...servicesUrls, ...servicesTraduites, ...metierUrls, ...blogUrls];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">

@@ -1,0 +1,164 @@
+/* Blog : liste des articles et en-tête d'un article. Le corps du texte est dans components/BlogContent. */
+
+/* Trait d'accent qui se trace sous le titre de la liste (transform seulement) */
+.blog-line {
+  display: block;
+  width: min(10rem, 40%);
+  height: 2px;
+  margin-top: 1.5rem;
+  background: var(--accent);
+  transform-origin: left;
+  animation: blog-line 1.1s var(--ease) 0.35s both;
+}
+
+@keyframes blog-line {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.blog-index-head .page-title {
+  max-width: 22ch;
+}
+
+/* Liste d'articles : cartes séparées par un filet, 1 colonne sur mobile, 2 sur grand écran */
+.blog-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  padding: 0;
+  list-style: none;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+@media (min-width: 900px) {
+  .blog-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog-list--trois {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog-card {
+  background: var(--bg);
+}
+
+.blog-card a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  height: 100%;
+  padding: clamp(1.25rem, 2.4vw, 2rem);
+  transition: background 0.3s var(--ease);
+}
+
+.blog-card a:hover,
+.blog-card a:focus-visible {
+  background: var(--bg-raised);
+}
+
+.blog-card h2,
+.blog-card h3 {
+  font-size: var(--step-1);
+  font-weight: 400;
+  line-height: 1.18;
+}
+
+.blog-card p {
+  color: var(--fg-muted);
+  line-height: 1.55;
+}
+
+.blog-card-cta {
+  display: inline-block;
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  transition: transform 0.35s var(--ease);
+}
+
+.blog-card a:hover .blog-card-cta,
+.blog-card a:focus-visible .blog-card-cta {
+  transform: translateX(4px);
+}
+
+/* Page d'un article */
+.blog-crumbs {
+  margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.blog-crumbs a:hover,
+.blog-crumbs a:focus-visible {
+  color: var(--accent-text);
+}
+
+.blog-head .page-title {
+  max-width: 26ch;
+  font-size: clamp(2rem, 1.5rem + 2.2vw, 3.3rem);
+}
+
+.blog-meta {
+  margin-top: 1.25rem;
+}
+
+/* Bandeau visible seulement pendant la relecture (BLOG_PUBLIC = false) */
+.blog-preview {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.4em 1em;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--accent-text);
+  border: 1px dashed var(--accent-text);
+  border-radius: 999px;
+}
+
+.blog-layout {
+  padding-bottom: var(--section-y);
+}
+
+/* Barre de progression de lecture, juste sous la barre de navigation */
+.blog-progress {
+  position: fixed;
+  top: 4.5rem;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  height: 2px;
+  pointer-events: none;
+}
+
+.blog-progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(var(--p, 0));
+  transform-origin: left;
+}
+
+.blog-related-title {
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: var(--step-2);
+  font-weight: 300;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-line {
+    animation: none;
+  }
+
+  .blog-card a,
+  .blog-card-cta {
+    transition: none;
+  }
+}
