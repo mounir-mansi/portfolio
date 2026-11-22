@@ -7,7 +7,7 @@ export const BLOG_SLUG = "blog";
 // Publication en deux temps :
 //   false = relecture : pages en ligne mais cachées (« noindex », absentes du plan du site et du pied de page)
 //   true  = publication : pages indexables, dans le plan du site et dans le pied de page
-export const BLOG_PUBLIC = false;
+export const BLOG_PUBLIC = true;
 
 export const BLOG_INDEX = {
   metaTitle: "Blog : conseils pour votre site internet",
