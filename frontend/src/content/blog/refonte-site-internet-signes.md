@@ -42,7 +42,7 @@ C'est la crainte la plus fréquente. Une refonte bien faite conserve ce que Goog
 
 ### Questions fréquentes
 
-**Combien coûte une refonte de site ?** Chez moi, elle démarre à 590 €, avec un prix exact donné avant de commencer.
+**Combien coûte une refonte de site ?** Chez moi, une refonte complète démarre à 590 €, avec un prix exact donné avant de commencer. Une refonte partielle peut coûter moins cher, selon ce qu'il y a à refaire.
 
 **Mon site actuel est-il perdu ?** Non : ce qui fonctionne (contenus, pages qui rapportent du trafic) est conservé et repris.
 
