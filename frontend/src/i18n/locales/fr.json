@@ -395,7 +395,28 @@
     "rights": "Tous droits réservés",
     "eyebrow": "Un projet en tête ?",
     "big": "Parlons-en",
-    "zone": "Toulouse · partout en France, à distance"
+    "zone": "Toulouse · partout en France, à distance",
+    "col_services": "Services",
+    "all_services": "Tous les services",
+    "col_metiers": "Sites par métier",
+    "col_zones": "Autour de Toulouse",
+    "col_contact": "Contact",
+    "short": {
+      "pizzeria": "Pizzeria",
+      "barbier": "Coiffeur / barbier",
+      "restaurant": "Restaurant",
+      "boulangerie": "Boulangerie / pâtisserie",
+      "artisan": "Artisan du bâtiment",
+      "garage": "Garage automobile",
+      "toulouse": "Toulouse",
+      "muret": "Muret",
+      "colomiers": "Colomiers",
+      "blagnac": "Blagnac",
+      "maintenance": "Maintenance",
+      "refonte": "Refonte de site",
+      "referencement": "Référencement local",
+      "fonctions": "Fonctions sur mesure"
+    }
   },
   "metiers": {
     "common": {
