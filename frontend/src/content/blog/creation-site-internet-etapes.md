@@ -40,4 +40,4 @@ Un site a besoin d'être entretenu : hébergement, sauvegardes, mises à jour de
 
 **Mon site sera-t-il visible sur Google ?** Il est construit pour être bien lu par Google dès le départ. Le classement, lui, prend du temps et dépend de votre concurrence, comme je l'explique dans mon article sur [les raisons pour lesquelles un site n'apparaît pas sur Google](/fr/blog/site-internet-invisible-google).
 
-Vous avez un projet de site à Toulouse ou ailleurs en France ? [Contactez-moi](/fr/contact) pour en discuter : la maquette est gratuite sous 72 h et la création démarre à 490 €.
+Vous avez un projet de site à Toulouse ou ailleurs en France ? [Contactez-moi](/fr/contact) pour en discuter : la maquette est gratuite sous 48 h et la création démarre à 490 €.

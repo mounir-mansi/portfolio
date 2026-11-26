@@ -1,6 +1,6 @@
 # ManDev Web
 
-> ManDev Web crée des sites internet clés en main pour les artisans, commerçants et petites entreprises, à Toulouse et partout en France (à distance). Maquette gratuite de la page d'accueil sous 72 h, sans engagement.
+> ManDev Web crée des sites internet clés en main pour les artisans, commerçants et petites entreprises, à Toulouse et partout en France (à distance). Maquette gratuite de la page d'accueil sous 48 h, sans engagement.
 
 Responsable : Mounir Mansi, développeur web indépendant. Contact : contact@mandev.fr, téléphone 07 66 09 99 12 (WhatsApp disponible).
 
