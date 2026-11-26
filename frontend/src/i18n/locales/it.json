@@ -29,7 +29,7 @@
     "sub": "Un sito vetrina chiaro e veloce per artigiani, commercianti e professionisti: chiamate e richieste di preventivo, chiavi in mano.",
     "cta_quote": "Ricevi la mia bozza gratuita",
     "cta_work": "Vedi i lavori",
-    "offer": "Da 490 € · Bozza gratuita entro 72 ore · Senza impegno",
+    "offer": "Da 490 € · Bozza gratuita entro 48 ore · Senza impegno",
     "offer_preview": "Un'anteprima della vostra futura home page, con i vostri colori e i vostri testi. Gratuita, senza impegno: non avete nulla da pagare.",
     "call": "Una domanda?",
     "services_eyebrow": "Servizi",
@@ -241,7 +241,7 @@
     "items": [
       {
         "q": "Come funziona la bozza gratuita?",
-        "a": "Compili un breve modulo in pochi passaggi e scegli tu quando ti chiamo. Questa chiamata mi permette di capire il tuo mestiere e i tuoi gusti. Entro 72 ore da quella conversazione ti invio un mockup della tua home page. Lo guardi con calma e decidi poi, senza alcun impegno."
+        "a": "Compili un breve modulo in pochi passaggi e scegli tu quando ti chiamo. Questa chiamata mi permette di capire il tuo mestiere e i tuoi gusti. Entro 48 ore da quella conversazione ti invio un mockup della tua home page. Lo guardi con calma e decidi poi, senza alcun impegno."
       },
       {
         "q": "Cosa devo preparare per la bozza?",
@@ -276,7 +276,7 @@
     "title": "Ricevi la bozza della tua home page",
     "terms": [
       "Gratuita",
-      "Entro 72 ore",
+      "Entro 48 ore",
       "Senza impegno"
     ],
     "offer": "Poi decidi tu se lavorare insieme.",
@@ -332,7 +332,7 @@
     "creneau_soir": "La sera",
     "creneau_peu-importe": "Indifferente",
     "done_title": "Inviato, grazie!",
-    "done_text": "Ti richiamo per parlare della tua bozza. Te la invio entro 72 ore dalla nostra conversazione.",
+    "done_text": "Ti richiamo per parlare della tua bozza. Te la invio entro 48 ore dalla nostra conversazione.",
     "type_title": "Che tipo di sito desideri?",
     "type_hint": "Scegli ciò che fa per te, aggiusteremo insieme.",
     "type_vitrine": "Sito vetrina",
@@ -377,7 +377,7 @@
   "meta": {
     "suffix": "ManDev Web",
     "home": "Creazione di siti web a Tolosa e in tutta la Francia, da 490 € — ManDev Web",
-    "description": "Creazione di siti web chiavi in mano a Tolosa e in tutta la Francia, da 490 €. Bozza gratuita della tua home page entro 72 ore, senza impegno.",
+    "description": "Creazione di siti web chiavi in mano a Tolosa e in tutta la Francia, da 490 €. Bozza gratuita della tua home page entro 48 ore, senza impegno.",
     "projects": "Progetti",
     "about": "Chi sono",
     "contact": "Contatti",

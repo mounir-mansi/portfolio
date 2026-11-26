@@ -29,7 +29,7 @@
     "sub": "Un sitio escaparate claro y rápido para artesanos, comerciantes y autónomos: llamadas y solicitudes de presupuesto, llave en mano.",
     "cta_quote": "Recibir mi maqueta gratis",
     "cta_work": "Ver trabajos",
-    "offer": "Desde 490 € · Maqueta gratis en 72 horas · Sin compromiso",
+    "offer": "Desde 490 € · Maqueta gratis en 48 horas · Sin compromiso",
     "offer_preview": "Una vista previa de su futura página de inicio, con sus colores y sus textos. Gratis, sin compromiso: no tiene nada que pagar.",
     "call": "¿Una pregunta?",
     "services_eyebrow": "Servicios",
@@ -241,7 +241,7 @@
     "items": [
       {
         "q": "¿Cómo funciona la maqueta gratuita?",
-        "a": "Rellenas un breve formulario en pocos pasos y eliges el momento en que te llamo. Esa llamada me permite entender tu negocio y tus gustos. En un plazo de 72 horas tras esa llamada, te envío una maqueta de tu página de inicio. La miras con calma y decides después, sin compromiso."
+        "a": "Rellenas un breve formulario en pocos pasos y eliges el momento en que te llamo. Esa llamada me permite entender tu negocio y tus gustos. En un plazo de 48 horas tras esa llamada, te envío una maqueta de tu página de inicio. La miras con calma y decides después, sin compromiso."
       },
       {
         "q": "¿Qué debo preparar para la maqueta?",
@@ -276,7 +276,7 @@
     "title": "Recibe la maqueta de tu página de inicio",
     "terms": [
       "Gratuita",
-      "En 72 horas",
+      "En 48 horas",
       "Sin compromiso"
     ],
     "offer": "Después decides si trabajamos juntos.",
@@ -332,7 +332,7 @@
     "creneau_soir": "Por la noche",
     "creneau_peu-importe": "Me da igual",
     "done_title": "¡Enviado, gracias!",
-    "done_text": "Te llamo para hablar de tu maqueta. Te la envío en 72 horas tras nuestra conversación.",
+    "done_text": "Te llamo para hablar de tu maqueta. Te la envío en 48 horas tras nuestra conversación.",
     "type_title": "¿Qué tipo de sitio quieres?",
     "type_hint": "Elige lo que te convenga, lo ajustaremos juntos.",
     "type_vitrine": "Sitio escaparate",
@@ -377,7 +377,7 @@
   "meta": {
     "suffix": "ManDev Web",
     "home": "Creación de sitios web en Toulouse y toda Francia, desde 490 € — ManDev Web",
-    "description": "Creación de sitios web llave en mano en Toulouse y toda Francia, desde 490 €. Maqueta gratuita de tu página de inicio en 72 horas, sin compromiso.",
+    "description": "Creación de sitios web llave en mano en Toulouse y toda Francia, desde 490 €. Maqueta gratuita de tu página de inicio en 48 horas, sin compromiso.",
     "projects": "Proyectos",
     "about": "Sobre mí",
     "contact": "Contacto",
